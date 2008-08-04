@@ -30,9 +30,6 @@ namespace music_tagger
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager( typeof( MainFrm ) );
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +59,11 @@ namespace music_tagger
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.fileTree1 = new music_tagger.FileTree();
+            this.view1 = new music_tagger.View();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -72,21 +74,21 @@ namespace music_tagger
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.fileTree1 = new music_tagger.FileTree();
-            this.view1 = new music_tagger.View();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
+            this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
             this.toolStripContainer.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer.SuspendLayout();
@@ -110,62 +112,6 @@ namespace music_tagger
             this.menuStrip1.Size = new System.Drawing.Size( 845, 24 );
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripContainer
-            // 
-            // 
-            // toolStripContainer.ContentPanel
-            // 
-            this.toolStripContainer.ContentPanel.Controls.Add( this.splitContainer1 );
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 845, 597 );
-            this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer.Location = new System.Drawing.Point( 0, 0 );
-            this.toolStripContainer.Name = "toolStripContainer";
-            this.toolStripContainer.Size = new System.Drawing.Size( 845, 646 );
-            this.toolStripContainer.TabIndex = 1;
-            this.toolStripContainer.Text = "toolStripContainer1";
-            // 
-            // toolStripContainer.TopToolStripPanel
-            // 
-            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.menuStrip1 );
-            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip1 );
-            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip2 );
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point( 0, 0 );
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add( this.fileTree1 );
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add( this.view1 );
-            this.splitContainer1.Size = new System.Drawing.Size( 845, 597 );
-            this.splitContainer1.SplitterDistance = 215;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.printToolStripButton,
-            this.toolStripSeparator6,
-            this.cutToolStripButton,
-            this.copyToolStripButton,
-            this.pasteToolStripButton,
-            this.toolStripSeparator7,
-            this.helpToolStripButton} );
-            this.toolStrip1.Location = new System.Drawing.Point( 6, 24 );
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size( 206, 25 );
-            this.toolStrip1.TabIndex = 1;
             // 
             // fileToolStripMenuItem
             // 
@@ -389,6 +335,82 @@ namespace music_tagger
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
+            // toolStripContainer
+            // 
+            // 
+            // toolStripContainer.BottomToolStripPanel
+            // 
+            this.toolStripContainer.BottomToolStripPanel.Controls.Add( this.statusStrip1 );
+            // 
+            // toolStripContainer.ContentPanel
+            // 
+            this.toolStripContainer.ContentPanel.Controls.Add( this.splitContainer1 );
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 845, 575 );
+            this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer.Location = new System.Drawing.Point( 0, 0 );
+            this.toolStripContainer.Name = "toolStripContainer";
+            this.toolStripContainer.Size = new System.Drawing.Size( 845, 646 );
+            this.toolStripContainer.TabIndex = 1;
+            this.toolStripContainer.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer.TopToolStripPanel
+            // 
+            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.menuStrip1 );
+            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip2 );
+            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip1 );
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point( 0, 0 );
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add( this.fileTree1 );
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add( this.view1 );
+            this.splitContainer1.Size = new System.Drawing.Size( 845, 575 );
+            this.splitContainer1.SplitterDistance = 215;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // fileTree1
+            // 
+            this.fileTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileTree1.Location = new System.Drawing.Point( 0, 0 );
+            this.fileTree1.Name = "fileTree1";
+            this.fileTree1.Size = new System.Drawing.Size( 215, 575 );
+            this.fileTree1.TabIndex = 0;
+            // 
+            // view1
+            // 
+            this.view1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view1.Location = new System.Drawing.Point( 0, 0 );
+            this.view1.Name = "view1";
+            this.view1.Size = new System.Drawing.Size( 626, 575 );
+            this.view1.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripButton,
+            this.openToolStripButton,
+            this.saveToolStripButton,
+            this.printToolStripButton,
+            this.toolStripSeparator6,
+            this.cutToolStripButton,
+            this.copyToolStripButton,
+            this.pasteToolStripButton,
+            this.toolStripSeparator7,
+            this.helpToolStripButton} );
+            this.toolStrip1.Location = new System.Drawing.Point( 3, 24 );
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size( 206, 25 );
+            this.toolStrip1.TabIndex = 1;
+            // 
             // newToolStripButton
             // 
             this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -471,6 +493,26 @@ namespace music_tagger
             this.helpToolStripButton.Size = new System.Drawing.Size( 23, 22 );
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripSeparator8,
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripButton7,
+            this.toolStripButton8,
+            this.toolStripButton9,
+            this.toolStripButton10} );
+            this.toolStrip2.Location = new System.Drawing.Point( 211, 24 );
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size( 246, 25 );
+            this.toolStrip2.TabIndex = 2;
+            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -507,6 +549,11 @@ namespace music_tagger
             this.toolStripButton4.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton4.Text = "toolStripButton4";
             // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size( 6, 25 );
+            // 
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -515,11 +562,6 @@ namespace music_tagger
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton5.Text = "toolStripButton5";
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size( 6, 25 );
             // 
             // toolStripButton6
             // 
@@ -538,26 +580,6 @@ namespace music_tagger
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton7.Text = "toolStripButton7";
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip2.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripSeparator8,
-            this.toolStripButton5,
-            this.toolStripButton6,
-            this.toolStripButton7,
-            this.toolStripButton8,
-            this.toolStripButton9,
-            this.toolStripButton10} );
-            this.toolStrip2.Location = new System.Drawing.Point( 216, 24 );
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size( 246, 25 );
-            this.toolStrip2.TabIndex = 2;
             // 
             // toolStripButton8
             // 
@@ -586,21 +608,13 @@ namespace music_tagger
             this.toolStripButton10.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton10.Text = "toolStripButton10";
             // 
-            // fileTree1
+            // statusStrip1
             // 
-            this.fileTree1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fileTree1.Location = new System.Drawing.Point( 0, 0 );
-            this.fileTree1.Name = "fileTree1";
-            this.fileTree1.Size = new System.Drawing.Size( 215, 597 );
-            this.fileTree1.TabIndex = 0;
-            // 
-            // view1
-            // 
-            this.view1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.view1.Location = new System.Drawing.Point( 0, 0 );
-            this.view1.Name = "view1";
-            this.view1.Size = new System.Drawing.Size( 626, 597 );
-            this.view1.TabIndex = 0;
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip1.Location = new System.Drawing.Point( 0, 0 );
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size( 845, 22 );
+            this.statusStrip1.TabIndex = 0;
             // 
             // MainFrm
             // 
@@ -613,6 +627,8 @@ namespace music_tagger
             this.Text = "Music Tagger";
             this.menuStrip1.ResumeLayout( false );
             this.menuStrip1.PerformLayout();
+            this.toolStripContainer.BottomToolStripPanel.ResumeLayout( false );
+            this.toolStripContainer.BottomToolStripPanel.PerformLayout();
             this.toolStripContainer.ContentPanel.ResumeLayout( false );
             this.toolStripContainer.TopToolStripPanel.ResumeLayout( false );
             this.toolStripContainer.TopToolStripPanel.PerformLayout();
@@ -688,6 +704,7 @@ namespace music_tagger
         private View view1;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 

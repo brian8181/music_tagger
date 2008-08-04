@@ -13,6 +13,7 @@ namespace music_tagger
         public FileTree()
         {
             InitializeComponent();
+            treeView.Configure();
         }
     }
 }

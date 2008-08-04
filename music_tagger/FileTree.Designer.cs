@@ -28,7 +28,7 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView = new System.Windows.Forms.TreeView();
+            this.treeView = new BKP.Online.GUI.FileTreeView();
             this.SuspendLayout();
             // 
             // treeView
@@ -52,6 +52,6 @@ namespace music_tagger
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView;
+        private BKP.Online.GUI.FileTreeView treeView;
     }
 }
