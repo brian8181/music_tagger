@@ -5,28 +5,28 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using System.IO;
 
 namespace music_tagger
 {
-    public partial class EditV1Frm : Form
+    public partial class EditMultiV1Frm : music_tagger.EditV1Frm
     {
         /// <summary>
         /// 
         /// </summary>
-        public EditV1Frm()
+        public EditMultiV1Frm()
         {
             InitializeComponent();
         }
 
-        /// <summary>
+         /// <summary>
         /// 
         /// </summary>
         /// <param name="lv"></param>
-        public EditV1Frm(ListView lv) 
+        public EditMultiV1Frm( ListView lv )
+            : base( lv )
         {
             InitializeComponent();
-            editCtrl.Configure( lv );
         }
-   }
+    }
 }
+

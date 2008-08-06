@@ -542,6 +542,7 @@ namespace music_tagger
             this.tsb_EditV1Multi.Name = "tsb_EditV1Multi";
             this.tsb_EditV1Multi.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV1Multi.Text = "Edit Multi-Ver.1";
+            this.tsb_EditV1Multi.Click += new System.EventHandler( this.tsb_EditV1Multi_Click );
             // 
             // tsb_EditV2
             // 
@@ -551,6 +552,7 @@ namespace music_tagger
             this.tsb_EditV2.Name = "tsb_EditV2";
             this.tsb_EditV2.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV2.Text = "Edit Ver.2";
+            this.tsb_EditV2.Click += new System.EventHandler( this.tsb_EditV2_Click );
             // 
             // tsb_EditV2Multi
             // 
@@ -560,6 +562,7 @@ namespace music_tagger
             this.tsb_EditV2Multi.Name = "tsb_EditV2Multi";
             this.tsb_EditV2Multi.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV2Multi.Text = "Edit Multi-Ver.2";
+            this.tsb_EditV2Multi.Click += new System.EventHandler( this.tsb_EditV2Multi_Click );
             // 
             // toolStripSeparator8
             // 

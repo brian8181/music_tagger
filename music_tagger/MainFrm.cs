@@ -22,9 +22,32 @@ namespace music_tagger
             EditV1Frm dlg = new EditV1Frm(view.ListView);
             if(dlg.ShowDialog() == DialogResult.OK)
             {
-              
+                // todo  
             }
             
+        }
+
+        private void tsb_EditV1Multi_Click( object sender, EventArgs e )
+        {
+            EditMultiV1Frm dlg = new EditMultiV1Frm( view.ListView );
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+        private void tsb_EditV2_Click( object sender, EventArgs e )
+        {
+            EditV2Frm dlg = new EditV2Frm();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+        private void tsb_EditV2Multi_Click( object sender, EventArgs e )
+        {
+            // todo
         }
 
     }

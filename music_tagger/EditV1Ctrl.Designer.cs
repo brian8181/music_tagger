@@ -32,9 +32,9 @@ namespace music_tagger
             this.expando1 = new XPExplorerBar.Expando();
             this.taskPrevious = new XPExplorerBar.TaskItem();
             this.taskNext = new XPExplorerBar.TaskItem();
-            this.taskItem3 = new XPExplorerBar.TaskItem();
-            this.taskItem4 = new XPExplorerBar.TaskItem();
-            this.taskItem5 = new XPExplorerBar.TaskItem();
+            this.taskSwapArtist_Title = new XPExplorerBar.TaskItem();
+            this.taskSwapArtist_Album = new XPExplorerBar.TaskItem();
+            this.taskSwapTitle_Album = new XPExplorerBar.TaskItem();
             this.button2 = new System.Windows.Forms.Button();
             this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@ namespace music_tagger
             this.expando1} );
             this.taskPane1.Location = new System.Drawing.Point( 1, 2 );
             this.taskPane1.Name = "taskPane1";
-            this.taskPane1.Size = new System.Drawing.Size( 210, 281 );
+            this.taskPane1.Size = new System.Drawing.Size( 210, 270 );
             this.taskPane1.TabIndex = 39;
             this.taskPane1.Text = "taskPane1";
             // 
@@ -79,9 +79,9 @@ namespace music_tagger
             this.expando1.Items.AddRange( new System.Windows.Forms.Control[] {
             this.taskPrevious,
             this.taskNext,
-            this.taskItem3,
-            this.taskItem4,
-            this.taskItem5} );
+            this.taskSwapArtist_Title,
+            this.taskSwapArtist_Album,
+            this.taskSwapTitle_Album} );
             this.expando1.Location = new System.Drawing.Point( 12, 12 );
             this.expando1.Name = "expando1";
             this.expando1.Size = new System.Drawing.Size( 186, 200 );
@@ -101,6 +101,7 @@ namespace music_tagger
             this.taskPrevious.Text = "Previous File";
             this.taskPrevious.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.taskPrevious.UseVisualStyleBackColor = false;
+            this.taskPrevious.Click += new System.EventHandler( this.taskPrevious_Click );
             // 
             // taskNext
             // 
@@ -115,115 +116,118 @@ namespace music_tagger
             this.taskNext.Text = "Next File";
             this.taskNext.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.taskNext.UseVisualStyleBackColor = false;
+            this.taskNext.Click += new System.EventHandler( this.taskNext_Click );
             // 
-            // taskItem3
+            // taskSwapArtist_Title
             // 
-            this.taskItem3.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
+            this.taskSwapArtist_Title.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
                         | System.Windows.Forms.AnchorStyles.Right ) ) );
-            this.taskItem3.BackColor = System.Drawing.Color.Transparent;
-            this.taskItem3.Image = null;
-            this.taskItem3.Location = new System.Drawing.Point( 16, 84 );
-            this.taskItem3.Name = "taskItem3";
-            this.taskItem3.Size = new System.Drawing.Size( 119, 19 );
-            this.taskItem3.TabIndex = 2;
-            this.taskItem3.Text = "Swap Artist-Title";
-            this.taskItem3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.taskItem3.UseVisualStyleBackColor = false;
+            this.taskSwapArtist_Title.BackColor = System.Drawing.Color.Transparent;
+            this.taskSwapArtist_Title.Image = null;
+            this.taskSwapArtist_Title.Location = new System.Drawing.Point( 16, 84 );
+            this.taskSwapArtist_Title.Name = "taskSwapArtist_Title";
+            this.taskSwapArtist_Title.Size = new System.Drawing.Size( 119, 19 );
+            this.taskSwapArtist_Title.TabIndex = 2;
+            this.taskSwapArtist_Title.Text = "Swap Artist-Title";
+            this.taskSwapArtist_Title.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.taskSwapArtist_Title.UseVisualStyleBackColor = false;
+            this.taskSwapArtist_Title.Click += new System.EventHandler( this.taskSwapArtist_Title_Click );
             // 
-            // taskItem4
+            // taskSwapArtist_Album
             // 
-            this.taskItem4.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
+            this.taskSwapArtist_Album.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
                         | System.Windows.Forms.AnchorStyles.Right ) ) );
-            this.taskItem4.BackColor = System.Drawing.Color.Transparent;
-            this.taskItem4.Image = null;
-            this.taskItem4.Location = new System.Drawing.Point( 16, 108 );
-            this.taskItem4.Name = "taskItem4";
-            this.taskItem4.Size = new System.Drawing.Size( 119, 19 );
-            this.taskItem4.TabIndex = 3;
-            this.taskItem4.Text = "Swap Artist-Album";
-            this.taskItem4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.taskItem4.UseVisualStyleBackColor = false;
+            this.taskSwapArtist_Album.BackColor = System.Drawing.Color.Transparent;
+            this.taskSwapArtist_Album.Image = null;
+            this.taskSwapArtist_Album.Location = new System.Drawing.Point( 16, 108 );
+            this.taskSwapArtist_Album.Name = "taskSwapArtist_Album";
+            this.taskSwapArtist_Album.Size = new System.Drawing.Size( 119, 19 );
+            this.taskSwapArtist_Album.TabIndex = 3;
+            this.taskSwapArtist_Album.Text = "Swap Artist-Album";
+            this.taskSwapArtist_Album.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.taskSwapArtist_Album.UseVisualStyleBackColor = false;
+            this.taskSwapArtist_Album.Click += new System.EventHandler( this.taskSwapArtist_Album_Click );
             // 
-            // taskItem5
+            // taskSwapTitle_Album
             // 
-            this.taskItem5.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
+            this.taskSwapTitle_Album.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
                         | System.Windows.Forms.AnchorStyles.Right ) ) );
-            this.taskItem5.BackColor = System.Drawing.Color.Transparent;
-            this.taskItem5.Image = null;
-            this.taskItem5.Location = new System.Drawing.Point( 16, 132 );
-            this.taskItem5.Name = "taskItem5";
-            this.taskItem5.Size = new System.Drawing.Size( 119, 19 );
-            this.taskItem5.TabIndex = 4;
-            this.taskItem5.Text = "Swap Title-Album";
-            this.taskItem5.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.taskItem5.UseVisualStyleBackColor = false;
+            this.taskSwapTitle_Album.BackColor = System.Drawing.Color.Transparent;
+            this.taskSwapTitle_Album.Image = null;
+            this.taskSwapTitle_Album.Location = new System.Drawing.Point( 16, 132 );
+            this.taskSwapTitle_Album.Name = "taskSwapTitle_Album";
+            this.taskSwapTitle_Album.Size = new System.Drawing.Size( 119, 19 );
+            this.taskSwapTitle_Album.TabIndex = 4;
+            this.taskSwapTitle_Album.Text = "Swap Title-Album";
+            this.taskSwapTitle_Album.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.taskSwapTitle_Album.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point( 550, 260 );
+            this.button2.Location = new System.Drawing.Point( 550, 249 );
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size( 75, 23 );
-            this.button2.TabIndex = 38;
+            this.button2.TabIndex = 8;
             this.button2.Text = "&OK";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // cmbGenre
             // 
             this.cmbGenre.FormattingEnabled = true;
-            this.cmbGenre.Location = new System.Drawing.Point( 308, 198 );
+            this.cmbGenre.Location = new System.Drawing.Point( 308, 193 );
             this.cmbGenre.Name = "cmbGenre";
             this.cmbGenre.Size = new System.Drawing.Size( 317, 21 );
-            this.cmbGenre.TabIndex = 36;
+            this.cmbGenre.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point( 469, 260 );
+            this.button1.Location = new System.Drawing.Point( 469, 249 );
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size( 75, 23 );
-            this.button1.TabIndex = 37;
+            this.button1.TabIndex = 7;
             this.button1.Text = "&Cancel";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // cmbArtist
             // 
             this.cmbArtist.FormattingEnabled = true;
-            this.cmbArtist.Location = new System.Drawing.Point( 308, 48 );
+            this.cmbArtist.Location = new System.Drawing.Point( 308, 43 );
             this.cmbArtist.Name = "cmbArtist";
             this.cmbArtist.Size = new System.Drawing.Size( 317, 21 );
-            this.cmbArtist.TabIndex = 35;
+            this.cmbArtist.TabIndex = 0;
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point( 308, 228 );
+            this.txtComment.Location = new System.Drawing.Point( 308, 223 );
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size( 317, 20 );
-            this.txtComment.TabIndex = 34;
+            this.txtComment.TabIndex = 6;
             // 
             // txtTrack
             // 
-            this.txtTrack.Location = new System.Drawing.Point( 308, 171 );
+            this.txtTrack.Location = new System.Drawing.Point( 308, 166 );
             this.txtTrack.Name = "txtTrack";
             this.txtTrack.Size = new System.Drawing.Size( 100, 20 );
-            this.txtTrack.TabIndex = 33;
+            this.txtTrack.TabIndex = 4;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point( 308, 140 );
+            this.txtYear.Location = new System.Drawing.Point( 308, 135 );
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size( 100, 20 );
-            this.txtYear.TabIndex = 32;
+            this.txtYear.TabIndex = 3;
             // 
             // txtAlbum
             // 
-            this.txtAlbum.Location = new System.Drawing.Point( 308, 110 );
+            this.txtAlbum.Location = new System.Drawing.Point( 308, 105 );
             this.txtAlbum.Name = "txtAlbum";
             this.txtAlbum.Size = new System.Drawing.Size( 317, 20 );
-            this.txtAlbum.TabIndex = 31;
+            this.txtAlbum.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point( 225, 141 );
+            this.label4.Location = new System.Drawing.Point( 225, 136 );
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size( 32, 13 );
             this.label4.TabIndex = 26;
@@ -232,7 +236,7 @@ namespace music_tagger
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point( 225, 111 );
+            this.label3.Location = new System.Drawing.Point( 225, 106 );
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size( 39, 13 );
             this.label3.TabIndex = 25;
@@ -241,7 +245,7 @@ namespace music_tagger
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point( 225, 81 );
+            this.label2.Location = new System.Drawing.Point( 225, 76 );
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size( 30, 13 );
             this.label2.TabIndex = 24;
@@ -250,7 +254,7 @@ namespace music_tagger
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point( 225, 51 );
+            this.label1.Location = new System.Drawing.Point( 225, 46 );
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size( 33, 13 );
             this.label1.TabIndex = 23;
@@ -258,15 +262,15 @@ namespace music_tagger
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point( 308, 78 );
+            this.txtTitle.Location = new System.Drawing.Point( 308, 73 );
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size( 317, 20 );
-            this.txtTitle.TabIndex = 30;
+            this.txtTitle.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point( 225, 231 );
+            this.label7.Location = new System.Drawing.Point( 225, 226 );
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size( 54, 13 );
             this.label7.TabIndex = 29;
@@ -275,7 +279,7 @@ namespace music_tagger
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point( 225, 201 );
+            this.label6.Location = new System.Drawing.Point( 225, 196 );
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size( 39, 13 );
             this.label6.TabIndex = 28;
@@ -284,7 +288,7 @@ namespace music_tagger
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point( 225, 171 );
+            this.label5.Location = new System.Drawing.Point( 225, 166 );
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size( 78, 13 );
             this.label5.TabIndex = 27;
@@ -293,7 +297,7 @@ namespace music_tagger
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point( 224, 14 );
+            this.label8.Location = new System.Drawing.Point( 225, 14 );
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size( 71, 13 );
             this.label8.TabIndex = 40;
@@ -301,6 +305,7 @@ namespace music_tagger
             // 
             // lblFile
             // 
+            this.lblFile.AutoEllipsis = true;
             this.lblFile.AutoSize = true;
             this.lblFile.Location = new System.Drawing.Point( 305, 14 );
             this.lblFile.Name = "lblFile";
@@ -332,7 +337,7 @@ namespace music_tagger
             this.Controls.Add( this.label6 );
             this.Controls.Add( this.label5 );
             this.Name = "EditV1Ctrl";
-            this.Size = new System.Drawing.Size( 632, 287 );
+            this.Size = new System.Drawing.Size( 629, 275 );
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).EndInit();
             this.taskPane1.ResumeLayout( false );
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).EndInit();
@@ -348,9 +353,9 @@ namespace music_tagger
         private XPExplorerBar.Expando expando1;
         private XPExplorerBar.TaskItem taskPrevious;
         private XPExplorerBar.TaskItem taskNext;
-        private XPExplorerBar.TaskItem taskItem3;
-        private XPExplorerBar.TaskItem taskItem4;
-        private XPExplorerBar.TaskItem taskItem5;
+        private XPExplorerBar.TaskItem taskSwapArtist_Title;
+        private XPExplorerBar.TaskItem taskSwapArtist_Album;
+        private XPExplorerBar.TaskItem taskSwapTitle_Album;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmbGenre;
         private System.Windows.Forms.Button button1;

@@ -119,7 +119,7 @@ namespace Tools
                     node.Nodes.Add( child );
                     node.Intialized = true;
                 }
-                node.Expand();
+                //node.Expand();
             }
             catch(UnauthorizedAccessException)
             {
