@@ -1,6 +1,6 @@
 namespace music_tagger
 {
-    partial class FileTree
+    partial class FileTreeViewCtrl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,14 +28,17 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.treeView = new BKP.Online.GUI.FileTreeView();
             this.SuspendLayout();
             // 
             // treeView
             // 
             this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView.ImageIndex = 0;
             this.treeView.Location = new System.Drawing.Point( 0, 0 );
             this.treeView.Name = "treeView";
+            this.treeView.SelectedImageIndex = 0;
             this.treeView.Size = new System.Drawing.Size( 230, 569 );
             this.treeView.TabIndex = 0;
             // 
@@ -52,6 +55,7 @@ namespace music_tagger
 
         #endregion
 
-        private BKP.Online.GUI.FileTreeView treeView;
+        public BKP.Online.GUI.FileTreeView treeView;
+
     }
 }

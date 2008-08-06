@@ -31,16 +31,45 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp, Version=2.0.3.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\taglib-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileTree.cs">
+    <Compile Include="EditV1Ctrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FileTree.Designer.cs">
-      <DependentUpon>FileTree.cs</DependentUpon>
+    <Compile Include="EditV1Ctrl.Designer.cs">
+      <DependentUpon>EditV1Ctrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV1Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditV1Frm.Designer.cs">
+      <DependentUpon>EditV1Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV2Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditV2Frm.Designer.cs">
+      <DependentUpon>EditV2Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV2_MainCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_MainCtrl.Designer.cs">
+      <DependentUpon>EditV2_MainCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="File2TagV2Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="File2TagV2Frm.Designer.cs">
+      <DependentUpon>File2TagV2Frm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
@@ -50,9 +79,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FileTree.resx">
+    <EmbeddedResource Include="EditV1Ctrl.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>FileTree.cs</DependentUpon>
+      <DependentUpon>EditV1Ctrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditV1Frm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV1Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditV2Frm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditV2_MainCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2_MainCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File2TagV2Frm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>File2TagV2Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">
       <SubType>Designer</SubType>
@@ -86,11 +131,16 @@
     <Compile Include="View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\utility\Utility2\Utility2.csproj">
       <Project>{4DFC8774-E67D-4EFF-9249-301C0D5EB158}</Project>
       <Name>Utility2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XPExplorerBar VS2005\XPExplorerBar.csproj">
+      <Project>{D4B2101F-AF3A-4E28-B3BE-6F69C131BFB5}</Project>
+      <Name>XPExplorerBar</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,19 @@ namespace music_tagger
         public MainFrm()
         {
             InitializeComponent();
+            tree.Configure();
+            view.Configure( tree );
         }
+
+        private void tsb_EditV1_Click( object sender, EventArgs e )
+        {
+            EditV1Frm dlg = new EditV1Frm(view.ListView);
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+              
+            }
+            
+        }
+
     }
 }
