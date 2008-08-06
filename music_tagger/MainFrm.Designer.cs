@@ -63,7 +63,7 @@ namespace music_tagger
             this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tree = new BKP.Online.GUI.FileTreeView();
+            this.tree = new Tools.FileTreeView();
             this.view = new music_tagger.View();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -707,7 +707,7 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private BKP.Online.GUI.FileTreeView tree;
+        private Tools.FileTreeView tree;
         private View view;
     }
 }

@@ -134,9 +134,9 @@
     <Compile Include="ViewManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\utility\Utility2\Utility2.csproj">
-      <Project>{4DFC8774-E67D-4EFF-9249-301C0D5EB158}</Project>
-      <Name>Utility2</Name>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{159597FE-1BA8-4542-9528-1A81F771C7D1}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
     <ProjectReference Include="..\XPExplorerBar VS2005\XPExplorerBar.csproj">
       <Project>{D4B2101F-AF3A-4E28-B3BE-6F69C131BFB5}</Project>
