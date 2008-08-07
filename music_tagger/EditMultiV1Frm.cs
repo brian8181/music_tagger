@@ -27,10 +27,19 @@ namespace music_tagger
             : base( lv )
         {
             InitializeComponent();
+            
+            this.editCtrl.ckAlbum.Visible = true;
+            this.editCtrl.ckArtist.Visible = true;
+            this.editCtrl.ckComment.Visible = true;
+            this.editCtrl.ckGenre.Visible = true;
+            this.editCtrl.ckTitle.Visible = true;
+            this.editCtrl.ckTrack.Visible = true;
+            this.editCtrl.ckYear.Visible = true;
+
             Coalesce();
         }
 
-        public string Coalesce()
+        public void Coalesce()
         {
             //TODO 
 
@@ -52,9 +61,8 @@ namespace music_tagger
             }
 
             this.editCtrl.Fill( last_tag );
-
-            return "";
         }
+
     }
 }
 

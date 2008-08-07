@@ -33,7 +33,7 @@ namespace music_tagger
             // EditMultiV1Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
-            this.ClientSize = new System.Drawing.Size( 659, 246 );
+            this.ClientSize = new System.Drawing.Size( 654, 245 );
             this.Name = "EditMultiV1Frm";
             this.Text = "Edit Multi Version 1 Tag";
             this.ResumeLayout( false );

@@ -73,7 +73,7 @@ namespace music_tagger
             this.expando1} );
             this.taskPane1.Location = new System.Drawing.Point( 1, 2 );
             this.taskPane1.Name = "taskPane1";
-            this.taskPane1.Size = new System.Drawing.Size( 210, 239 );
+            this.taskPane1.Size = new System.Drawing.Size( 210, 241 );
             this.taskPane1.TabIndex = 39;
             this.taskPane1.Text = "taskPane1";
             // 
@@ -91,7 +91,7 @@ namespace music_tagger
             this.taskSwapTitle_Album} );
             this.expando1.Location = new System.Drawing.Point( 12, 12 );
             this.expando1.Name = "expando1";
-            this.expando1.Size = new System.Drawing.Size( 186, 207 );
+            this.expando1.Size = new System.Drawing.Size( 186, 209 );
             this.expando1.TabIndex = 0;
             this.expando1.Text = "Commands";
             // 
@@ -171,7 +171,7 @@ namespace music_tagger
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point( 550, 218 );
+            this.button2.Location = new System.Drawing.Point( 550, 220 );
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size( 75, 23 );
             this.button2.TabIndex = 8;
@@ -181,14 +181,15 @@ namespace music_tagger
             // cmbGenre
             // 
             this.cmbGenre.FormattingEnabled = true;
-            this.cmbGenre.Location = new System.Drawing.Point( 308, 159 );
+            this.cmbGenre.Location = new System.Drawing.Point( 308, 155 );
             this.cmbGenre.Name = "cmbGenre";
             this.cmbGenre.Size = new System.Drawing.Size( 317, 21 );
             this.cmbGenre.TabIndex = 5;
+            this.cmbGenre.SelectedIndexChanged += new System.EventHandler( this.cmbGenre_SelectedIndexChanged );
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point( 469, 218 );
+            this.button1.Location = new System.Drawing.Point( 469, 220 );
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size( 75, 23 );
             this.button1.TabIndex = 7;
@@ -198,43 +199,48 @@ namespace music_tagger
             // cmbArtist
             // 
             this.cmbArtist.FormattingEnabled = true;
-            this.cmbArtist.Location = new System.Drawing.Point( 308, 43 );
+            this.cmbArtist.Location = new System.Drawing.Point( 308, 39 );
             this.cmbArtist.Name = "cmbArtist";
             this.cmbArtist.Size = new System.Drawing.Size( 317, 21 );
             this.cmbArtist.TabIndex = 0;
+            this.cmbArtist.SelectedIndexChanged += new System.EventHandler( this.cmbArtist_SelectedIndexChanged );
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point( 308, 183 );
+            this.txtComment.Location = new System.Drawing.Point( 308, 179 );
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size( 317, 20 );
             this.txtComment.TabIndex = 6;
+            this.txtComment.TextChanged += new System.EventHandler( this.txtComment_TextChanged );
             // 
             // txtTrack
             // 
-            this.txtTrack.Location = new System.Drawing.Point( 308, 136 );
+            this.txtTrack.Location = new System.Drawing.Point( 308, 132 );
             this.txtTrack.Name = "txtTrack";
             this.txtTrack.Size = new System.Drawing.Size( 100, 20 );
             this.txtTrack.TabIndex = 4;
+            this.txtTrack.TextChanged += new System.EventHandler( this.txtTrack_TextChanged );
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point( 308, 113 );
+            this.txtYear.Location = new System.Drawing.Point( 308, 109 );
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size( 100, 20 );
             this.txtYear.TabIndex = 3;
+            this.txtYear.TextChanged += new System.EventHandler( this.txtYear_TextChanged );
             // 
             // txtAlbum
             // 
-            this.txtAlbum.Location = new System.Drawing.Point( 308, 90 );
+            this.txtAlbum.Location = new System.Drawing.Point( 308, 86 );
             this.txtAlbum.Name = "txtAlbum";
             this.txtAlbum.Size = new System.Drawing.Size( 317, 20 );
             this.txtAlbum.TabIndex = 2;
+            this.txtAlbum.TextChanged += new System.EventHandler( this.txtAlbum_TextChanged );
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point( 226, 116 );
+            this.label4.Location = new System.Drawing.Point( 226, 112 );
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size( 32, 13 );
             this.label4.TabIndex = 26;
@@ -243,7 +249,7 @@ namespace music_tagger
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point( 225, 93 );
+            this.label3.Location = new System.Drawing.Point( 225, 89 );
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size( 39, 13 );
             this.label3.TabIndex = 25;
@@ -252,7 +258,7 @@ namespace music_tagger
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point( 225, 70 );
+            this.label2.Location = new System.Drawing.Point( 225, 66 );
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size( 30, 13 );
             this.label2.TabIndex = 24;
@@ -261,7 +267,7 @@ namespace music_tagger
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point( 225, 46 );
+            this.label1.Location = new System.Drawing.Point( 225, 42 );
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size( 33, 13 );
             this.label1.TabIndex = 23;
@@ -269,15 +275,16 @@ namespace music_tagger
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point( 308, 67 );
+            this.txtTitle.Location = new System.Drawing.Point( 308, 63 );
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size( 317, 20 );
             this.txtTitle.TabIndex = 1;
+            this.txtTitle.TextChanged += new System.EventHandler( this.txtTitle_TextChanged );
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point( 226, 186 );
+            this.label7.Location = new System.Drawing.Point( 226, 182 );
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size( 54, 13 );
             this.label7.TabIndex = 29;
@@ -286,7 +293,7 @@ namespace music_tagger
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point( 226, 162 );
+            this.label6.Location = new System.Drawing.Point( 226, 158 );
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size( 39, 13 );
             this.label6.TabIndex = 28;
@@ -295,7 +302,7 @@ namespace music_tagger
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point( 226, 139 );
+            this.label5.Location = new System.Drawing.Point( 226, 135 );
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size( 78, 13 );
             this.label5.TabIndex = 27;
@@ -323,65 +330,72 @@ namespace music_tagger
             // ckComment
             // 
             this.ckComment.AutoSize = true;
-            this.ckComment.Location = new System.Drawing.Point( 631, 186 );
+            this.ckComment.Location = new System.Drawing.Point( 631, 182 );
             this.ckComment.Name = "ckComment";
             this.ckComment.Size = new System.Drawing.Size( 15, 14 );
             this.ckComment.TabIndex = 48;
             this.ckComment.UseVisualStyleBackColor = true;
+            this.ckComment.Visible = false;
             // 
             // ckGenre
             // 
             this.ckGenre.AutoSize = true;
-            this.ckGenre.Location = new System.Drawing.Point( 631, 162 );
+            this.ckGenre.Location = new System.Drawing.Point( 631, 158 );
             this.ckGenre.Name = "ckGenre";
             this.ckGenre.Size = new System.Drawing.Size( 15, 14 );
             this.ckGenre.TabIndex = 47;
             this.ckGenre.UseVisualStyleBackColor = true;
+            this.ckGenre.Visible = false;
             // 
             // ckTrack
             // 
             this.ckTrack.AutoSize = true;
-            this.ckTrack.Location = new System.Drawing.Point( 631, 139 );
+            this.ckTrack.Location = new System.Drawing.Point( 631, 135 );
             this.ckTrack.Name = "ckTrack";
             this.ckTrack.Size = new System.Drawing.Size( 15, 14 );
             this.ckTrack.TabIndex = 46;
             this.ckTrack.UseVisualStyleBackColor = true;
+            this.ckTrack.Visible = false;
             // 
             // ckYear
             // 
             this.ckYear.AutoSize = true;
-            this.ckYear.Location = new System.Drawing.Point( 631, 116 );
+            this.ckYear.Location = new System.Drawing.Point( 631, 112 );
             this.ckYear.Name = "ckYear";
             this.ckYear.Size = new System.Drawing.Size( 15, 14 );
             this.ckYear.TabIndex = 45;
             this.ckYear.UseVisualStyleBackColor = true;
+            this.ckYear.Visible = false;
             // 
             // ckAlbum
             // 
             this.ckAlbum.AutoSize = true;
-            this.ckAlbum.Location = new System.Drawing.Point( 631, 92 );
+            this.ckAlbum.Location = new System.Drawing.Point( 631, 88 );
             this.ckAlbum.Name = "ckAlbum";
             this.ckAlbum.Size = new System.Drawing.Size( 15, 14 );
             this.ckAlbum.TabIndex = 44;
             this.ckAlbum.UseVisualStyleBackColor = true;
+            this.ckAlbum.Visible = false;
             // 
             // ckTitle
             // 
             this.ckTitle.AutoSize = true;
-            this.ckTitle.Location = new System.Drawing.Point( 631, 70 );
+            this.ckTitle.Location = new System.Drawing.Point( 631, 66 );
             this.ckTitle.Name = "ckTitle";
             this.ckTitle.Size = new System.Drawing.Size( 15, 14 );
             this.ckTitle.TabIndex = 43;
             this.ckTitle.UseVisualStyleBackColor = true;
+            this.ckTitle.Visible = false;
             // 
             // ckArtist
             // 
             this.ckArtist.AutoSize = true;
-            this.ckArtist.Location = new System.Drawing.Point( 631, 46 );
+            this.ckArtist.Location = new System.Drawing.Point( 631, 42 );
             this.ckArtist.Name = "ckArtist";
             this.ckArtist.Size = new System.Drawing.Size( 15, 14 );
             this.ckArtist.TabIndex = 42;
             this.ckArtist.UseVisualStyleBackColor = true;
+            this.ckArtist.Visible = false;
             // 
             // EditV1Ctrl
             // 
@@ -451,12 +465,12 @@ namespace music_tagger
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblFile;
-        private System.Windows.Forms.CheckBox ckComment;
-        private System.Windows.Forms.CheckBox ckGenre;
-        private System.Windows.Forms.CheckBox ckTrack;
-        private System.Windows.Forms.CheckBox ckYear;
-        private System.Windows.Forms.CheckBox ckAlbum;
-        private System.Windows.Forms.CheckBox ckTitle;
-        private System.Windows.Forms.CheckBox ckArtist;
+        public System.Windows.Forms.CheckBox ckComment;
+        public System.Windows.Forms.CheckBox ckGenre;
+        public System.Windows.Forms.CheckBox ckTrack;
+        public System.Windows.Forms.CheckBox ckYear;
+        public System.Windows.Forms.CheckBox ckAlbum;
+        public System.Windows.Forms.CheckBox ckTitle;
+        public System.Windows.Forms.CheckBox ckArtist;
     }
 }

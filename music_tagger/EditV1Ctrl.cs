@@ -130,6 +130,41 @@ namespace music_tagger
             txtAlbum.Text = txtTitle.Text;
             txtTitle.Text = org_album;
         }
+
+        private void cmbArtist_SelectedIndexChanged( object sender, EventArgs e )
+        {
+            ckAlbum.Checked = true;
+        }
+
+        private void txtTitle_TextChanged( object sender, EventArgs e )
+        {
+            ckArtist.Checked = true;
+        }
+
+        private void txtAlbum_TextChanged( object sender, EventArgs e )
+        {
+            ckAlbum.Checked = true;
+        }
+
+        private void txtYear_TextChanged( object sender, EventArgs e )
+        {
+            ckYear.Checked = true;
+        }
+
+        private void txtTrack_TextChanged( object sender, EventArgs e )
+        {
+            ckTrack.Checked = true;
+        }
+
+        private void cmbGenre_SelectedIndexChanged( object sender, EventArgs e )
+        {
+            ckGenre.Checked = true;
+        }
+
+        private void txtComment_TextChanged( object sender, EventArgs e )
+        {
+            ckComment.Checked = true;
+        }
       
     }
 }
