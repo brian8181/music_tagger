@@ -48,12 +48,16 @@ namespace music_tagger
         private void tsb_EditV2Multi_Click( object sender, EventArgs e )
         {
             // todo
+            
         }
 
-        private void anlyseToolStripMenuItem_Click( object sender, EventArgs e )
+        private void mnPrefs_Click( object sender, EventArgs e )
         {
-
+            PrefFrm dlg = new PrefFrm();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
         }
-
     }
 }

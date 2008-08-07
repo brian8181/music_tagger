@@ -65,11 +65,47 @@
     <Compile Include="EditV2Frm.Designer.cs">
       <DependentUpon>EditV2Frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditV2_DetailCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_DetailCtrl.Designer.cs">
+      <DependentUpon>EditV2_DetailCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV2_LyricCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_LyricCtrl.Designer.cs">
+      <DependentUpon>EditV2_LyricCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditV2_MainCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="EditV2_MainCtrl.Designer.cs">
       <DependentUpon>EditV2_MainCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV2_OriginalCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_OriginalCtrl.Designer.cs">
+      <DependentUpon>EditV2_OriginalCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV2_PeopleCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_PeopleCtrl.Designer.cs">
+      <DependentUpon>EditV2_PeopleCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV2_PictureCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_PictureCtrl.Designer.cs">
+      <DependentUpon>EditV2_PictureCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV2_WebCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_WebCtrl.Designer.cs">
+      <DependentUpon>EditV2_WebCtrl.cs</DependentUpon>
     </Compile>
     <Compile Include="File2TagV2Frm.cs">
       <SubType>Form</SubType>
@@ -82,6 +118,12 @@
     </Compile>
     <Compile Include="MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrefFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrefFrm.Designer.cs">
+      <DependentUpon>PrefFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,9 +143,25 @@
       <SubType>Designer</SubType>
       <DependentUpon>EditV2Frm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditV2_DetailCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2_DetailCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditV2_LyricCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2_LyricCtrl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditV2_MainCtrl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditV2_MainCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditV2_PeopleCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2_PeopleCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditV2_WebCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2_WebCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="File2TagV2Frm.resx">
       <SubType>Designer</SubType>
@@ -155,6 +213,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -66,7 +66,7 @@ namespace music_tagger
             this.expando1} );
             this.taskPane1.Location = new System.Drawing.Point( 1, 2 );
             this.taskPane1.Name = "taskPane1";
-            this.taskPane1.Size = new System.Drawing.Size( 210, 270 );
+            this.taskPane1.Size = new System.Drawing.Size( 210, 239 );
             this.taskPane1.TabIndex = 39;
             this.taskPane1.Text = "taskPane1";
             // 
@@ -84,7 +84,7 @@ namespace music_tagger
             this.taskSwapTitle_Album} );
             this.expando1.Location = new System.Drawing.Point( 12, 12 );
             this.expando1.Name = "expando1";
-            this.expando1.Size = new System.Drawing.Size( 186, 200 );
+            this.expando1.Size = new System.Drawing.Size( 186, 207 );
             this.expando1.TabIndex = 0;
             this.expando1.Text = "Commands";
             // 
@@ -164,7 +164,7 @@ namespace music_tagger
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point( 550, 249 );
+            this.button2.Location = new System.Drawing.Point( 550, 218 );
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size( 75, 23 );
             this.button2.TabIndex = 8;
@@ -174,14 +174,14 @@ namespace music_tagger
             // cmbGenre
             // 
             this.cmbGenre.FormattingEnabled = true;
-            this.cmbGenre.Location = new System.Drawing.Point( 308, 193 );
+            this.cmbGenre.Location = new System.Drawing.Point( 308, 159 );
             this.cmbGenre.Name = "cmbGenre";
             this.cmbGenre.Size = new System.Drawing.Size( 317, 21 );
             this.cmbGenre.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point( 469, 249 );
+            this.button1.Location = new System.Drawing.Point( 469, 218 );
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size( 75, 23 );
             this.button1.TabIndex = 7;
@@ -198,28 +198,28 @@ namespace music_tagger
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point( 308, 223 );
+            this.txtComment.Location = new System.Drawing.Point( 308, 183 );
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size( 317, 20 );
             this.txtComment.TabIndex = 6;
             // 
             // txtTrack
             // 
-            this.txtTrack.Location = new System.Drawing.Point( 308, 166 );
+            this.txtTrack.Location = new System.Drawing.Point( 308, 136 );
             this.txtTrack.Name = "txtTrack";
             this.txtTrack.Size = new System.Drawing.Size( 100, 20 );
             this.txtTrack.TabIndex = 4;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point( 308, 135 );
+            this.txtYear.Location = new System.Drawing.Point( 308, 113 );
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size( 100, 20 );
             this.txtYear.TabIndex = 3;
             // 
             // txtAlbum
             // 
-            this.txtAlbum.Location = new System.Drawing.Point( 308, 105 );
+            this.txtAlbum.Location = new System.Drawing.Point( 308, 90 );
             this.txtAlbum.Name = "txtAlbum";
             this.txtAlbum.Size = new System.Drawing.Size( 317, 20 );
             this.txtAlbum.TabIndex = 2;
@@ -227,7 +227,7 @@ namespace music_tagger
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point( 225, 136 );
+            this.label4.Location = new System.Drawing.Point( 226, 116 );
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size( 32, 13 );
             this.label4.TabIndex = 26;
@@ -236,7 +236,7 @@ namespace music_tagger
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point( 225, 106 );
+            this.label3.Location = new System.Drawing.Point( 225, 93 );
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size( 39, 13 );
             this.label3.TabIndex = 25;
@@ -245,7 +245,7 @@ namespace music_tagger
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point( 225, 76 );
+            this.label2.Location = new System.Drawing.Point( 225, 70 );
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size( 30, 13 );
             this.label2.TabIndex = 24;
@@ -262,7 +262,7 @@ namespace music_tagger
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point( 308, 73 );
+            this.txtTitle.Location = new System.Drawing.Point( 308, 67 );
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size( 317, 20 );
             this.txtTitle.TabIndex = 1;
@@ -270,7 +270,7 @@ namespace music_tagger
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point( 225, 226 );
+            this.label7.Location = new System.Drawing.Point( 226, 186 );
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size( 54, 13 );
             this.label7.TabIndex = 29;
@@ -279,7 +279,7 @@ namespace music_tagger
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point( 225, 196 );
+            this.label6.Location = new System.Drawing.Point( 226, 162 );
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size( 39, 13 );
             this.label6.TabIndex = 28;
@@ -288,7 +288,7 @@ namespace music_tagger
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point( 225, 166 );
+            this.label5.Location = new System.Drawing.Point( 226, 139 );
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size( 78, 13 );
             this.label5.TabIndex = 27;
@@ -337,7 +337,7 @@ namespace music_tagger
             this.Controls.Add( this.label6 );
             this.Controls.Add( this.label5 );
             this.Name = "EditV1Ctrl";
-            this.Size = new System.Drawing.Size( 629, 275 );
+            this.Size = new System.Drawing.Size( 629, 246 );
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).EndInit();
             this.taskPane1.ResumeLayout( false );
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).EndInit();
