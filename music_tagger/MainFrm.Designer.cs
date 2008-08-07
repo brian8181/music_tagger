@@ -156,7 +156,7 @@ namespace music_tagger
             this.helpToolStripMenuItem} );
             this.menuStrip.Location = new System.Drawing.Point( 0, 0 );
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size( 988, 24 );
+            this.menuStrip.Size = new System.Drawing.Size( 1119, 24 );
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -500,7 +500,7 @@ namespace music_tagger
             // mnPrefs
             // 
             this.mnPrefs.Name = "mnPrefs";
-            this.mnPrefs.Size = new System.Drawing.Size( 152, 22 );
+            this.mnPrefs.Size = new System.Drawing.Size( 143, 22 );
             this.mnPrefs.Text = "Preferences";
             this.mnPrefs.Click += new System.EventHandler( this.mnPrefs_Click );
             // 
@@ -555,27 +555,27 @@ namespace music_tagger
             // toolStripContainer.ContentPanel
             // 
             this.toolStripContainer.ContentPanel.Controls.Add( this.splitContainer1 );
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 988, 525 );
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 1119, 559 );
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point( 0, 0 );
             this.toolStripContainer.Name = "toolStripContainer";
-            this.toolStripContainer.Size = new System.Drawing.Size( 988, 646 );
+            this.toolStripContainer.Size = new System.Drawing.Size( 1119, 630 );
             this.toolStripContainer.TabIndex = 1;
             this.toolStripContainer.Text = "toolStripContainer1";
             // 
             // toolStripContainer.TopToolStripPanel
             // 
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.menuStrip );
-            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip1 );
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip2 );
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip3 );
+            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip1 );
             // 
             // statusStrip1
             // 
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Location = new System.Drawing.Point( 0, 0 );
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size( 988, 22 );
+            this.statusStrip1.Size = new System.Drawing.Size( 1119, 22 );
             this.statusStrip1.TabIndex = 0;
             // 
             // splitContainer1
@@ -591,8 +591,8 @@ namespace music_tagger
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add( this.view );
-            this.splitContainer1.Size = new System.Drawing.Size( 988, 525 );
-            this.splitContainer1.SplitterDistance = 251;
+            this.splitContainer1.Size = new System.Drawing.Size( 1119, 559 );
+            this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 0;
             // 
             // tree
@@ -602,7 +602,7 @@ namespace music_tagger
             this.tree.Location = new System.Drawing.Point( 0, 0 );
             this.tree.Name = "tree";
             this.tree.SelectedImageIndex = 0;
-            this.tree.Size = new System.Drawing.Size( 251, 525 );
+            this.tree.Size = new System.Drawing.Size( 284, 559 );
             this.tree.TabIndex = 0;
             // 
             // toolStrip1
@@ -721,7 +721,7 @@ namespace music_tagger
             this.toolStripButton8,
             this.toolStripButton9,
             this.toolStripButton10} );
-            this.toolStrip2.Location = new System.Drawing.Point( 3, 49 );
+            this.toolStrip2.Location = new System.Drawing.Point( 209, 24 );
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size( 246, 25 );
             this.toolStrip2.TabIndex = 2;
@@ -730,7 +730,7 @@ namespace music_tagger
             // 
             this.tsb_EditV1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsb_EditV1.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV1.Image" ) ) );
-            this.tsb_EditV1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_EditV1.ImageTransparentColor = System.Drawing.Color.White;
             this.tsb_EditV1.Name = "tsb_EditV1";
             this.tsb_EditV1.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV1.Text = "Edit Ver.1";
@@ -740,7 +740,7 @@ namespace music_tagger
             // 
             this.tsb_EditV1Multi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsb_EditV1Multi.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV1Multi.Image" ) ) );
-            this.tsb_EditV1Multi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_EditV1Multi.ImageTransparentColor = System.Drawing.Color.White;
             this.tsb_EditV1Multi.Name = "tsb_EditV1Multi";
             this.tsb_EditV1Multi.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV1Multi.Text = "Edit Multi-Ver.1";
@@ -750,7 +750,7 @@ namespace music_tagger
             // 
             this.tsb_EditV2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsb_EditV2.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV2.Image" ) ) );
-            this.tsb_EditV2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_EditV2.ImageTransparentColor = System.Drawing.Color.White;
             this.tsb_EditV2.Name = "tsb_EditV2";
             this.tsb_EditV2.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV2.Text = "Edit Ver.2";
@@ -760,7 +760,7 @@ namespace music_tagger
             // 
             this.tsb_EditV2Multi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsb_EditV2Multi.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV2Multi.Image" ) ) );
-            this.tsb_EditV2Multi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_EditV2Multi.ImageTransparentColor = System.Drawing.Color.White;
             this.tsb_EditV2Multi.Name = "tsb_EditV2Multi";
             this.tsb_EditV2Multi.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV2Multi.Text = "Edit Multi-Ver.2";
@@ -775,7 +775,7 @@ namespace music_tagger
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton5.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton5.Image" ) ) );
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton5.Text = "toolStripButton5";
@@ -784,7 +784,7 @@ namespace music_tagger
             // 
             this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton6.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton6.Image" ) ) );
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton6.Text = "toolStripButton6";
@@ -793,7 +793,7 @@ namespace music_tagger
             // 
             this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton7.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton7.Image" ) ) );
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton7.Text = "toolStripButton7";
@@ -802,7 +802,7 @@ namespace music_tagger
             // 
             this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton8.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton8.Image" ) ) );
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton8.Text = "toolStripButton8";
@@ -811,7 +811,7 @@ namespace music_tagger
             // 
             this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton9.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton9.Image" ) ) );
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton9.Name = "toolStripButton9";
             this.toolStripButton9.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton9.Text = "toolStripButton9";
@@ -820,7 +820,7 @@ namespace music_tagger
             // 
             this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton10.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton10.Image" ) ) );
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton10.Name = "toolStripButton10";
             this.toolStripButton10.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton10.Text = "toolStripButton10";
@@ -846,7 +846,7 @@ namespace music_tagger
             this.toolStripSplitButton3,
             this.toolStripSplitButton4,
             this.toolStripButton15} );
-            this.toolStrip3.Location = new System.Drawing.Point( 3, 74 );
+            this.toolStrip3.Location = new System.Drawing.Point( 455, 24 );
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size( 387, 25 );
             this.toolStrip3.TabIndex = 3;
@@ -855,7 +855,7 @@ namespace music_tagger
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton1.Image" ) ) );
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton1.Text = "toolStripButton1";
@@ -864,7 +864,7 @@ namespace music_tagger
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton2.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton2.Image" ) ) );
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton2.Text = "toolStripButton2";
@@ -878,7 +878,7 @@ namespace music_tagger
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton3.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton3.Image" ) ) );
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size( 32, 22 );
             this.toolStripButton3.Text = "toolStripButton3";
@@ -887,7 +887,7 @@ namespace music_tagger
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton4.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton4.Image" ) ) );
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size( 32, 22 );
             this.toolStripButton4.Text = "toolStripButton4";
@@ -956,7 +956,7 @@ namespace music_tagger
             // 
             this.toolStripSplitButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripSplitButton2.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripSplitButton2.Image" ) ) );
-            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripSplitButton2.Name = "toolStripSplitButton2";
             this.toolStripSplitButton2.Size = new System.Drawing.Size( 32, 22 );
             this.toolStripSplitButton2.Text = "toolStripSplitButton2";
@@ -965,7 +965,7 @@ namespace music_tagger
             // 
             this.toolStripSplitButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripSplitButton3.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripSplitButton3.Image" ) ) );
-            this.toolStripSplitButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton3.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripSplitButton3.Name = "toolStripSplitButton3";
             this.toolStripSplitButton3.Size = new System.Drawing.Size( 32, 22 );
             this.toolStripSplitButton3.Text = "toolStripSplitButton3";
@@ -974,7 +974,7 @@ namespace music_tagger
             // 
             this.toolStripSplitButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripSplitButton4.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripSplitButton4.Image" ) ) );
-            this.toolStripSplitButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton4.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripSplitButton4.Name = "toolStripSplitButton4";
             this.toolStripSplitButton4.Size = new System.Drawing.Size( 32, 22 );
             this.toolStripSplitButton4.Text = "toolStripSplitButton4";
@@ -983,7 +983,7 @@ namespace music_tagger
             // 
             this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton15.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton15.Image" ) ) );
-            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton15.Name = "toolStripButton15";
             this.toolStripButton15.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton15.Text = "toolStripButton15";
@@ -993,14 +993,14 @@ namespace music_tagger
             this.view.Dock = System.Windows.Forms.DockStyle.Fill;
             this.view.Location = new System.Drawing.Point( 0, 0 );
             this.view.Name = "view";
-            this.view.Size = new System.Drawing.Size( 733, 525 );
+            this.view.Size = new System.Drawing.Size( 831, 559 );
             this.view.TabIndex = 0;
             // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size( 988, 646 );
+            this.ClientSize = new System.Drawing.Size( 1119, 630 );
             this.Controls.Add( this.toolStripContainer );
             this.Name = "MainFrm";
             this.Text = "Music Tagger";

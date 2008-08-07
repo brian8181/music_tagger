@@ -143,5 +143,7 @@ namespace music_tagger
                 listView.Columns[i].AutoResize(style);
             }
         }
+
+       
     }
 }
