@@ -41,12 +41,19 @@ namespace music_tagger
         ///  fill from tag
         /// </summary>
         /// <param name="idx"></param>
-        private void Fill(int idx)
+        public void Fill(int idx)
         {
             FileInfo fi = (FileInfo)lv.SelectedItems[idx].Tag;
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );
             TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-
+            Fill( id3v1 );
+        }
+        /// <summary>
+        ///  fill from tag
+        /// </summary>
+        /// <param name="idx"></param>
+        public void Fill( TagLib.Tag id3v1 )
+        {
             if(id3v1 != null)
             {
                 if(id3v1.Performers.Length > 0)

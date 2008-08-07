@@ -36,7 +36,7 @@ namespace music_tagger
             }
         }
 
-        private void tsb_EditV2_Click( object sender, EventArgs e )
+        private void tsb_EditV2_Click( object sender,   EventArgs e )
         {
             EditV2Frm dlg = new EditV2Frm();
             if(dlg.ShowDialog() == DialogResult.OK)
@@ -48,6 +48,11 @@ namespace music_tagger
         private void tsb_EditV2Multi_Click( object sender, EventArgs e )
         {
             // todo
+        }
+
+        private void anlyseToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+
         }
 
     }

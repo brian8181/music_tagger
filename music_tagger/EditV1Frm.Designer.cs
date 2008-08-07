@@ -53,7 +53,8 @@ namespace music_tagger
 
         #endregion
 
-        private EditV1Ctrl editCtrl;
+        public EditV1Ctrl editCtrl;
+
 
     }
 }

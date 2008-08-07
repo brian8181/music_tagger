@@ -70,34 +70,36 @@ namespace music_tagger
             this.expando2.Font = new System.Drawing.Font( "Tahoma", 8.25F );
             this.expando2.Location = new System.Drawing.Point( 12, 124 );
             this.expando2.Name = "expando2";
-            this.expando2.Size = new System.Drawing.Size( 186, 254 );
+            this.expando2.Size = new System.Drawing.Size( 186, 100 );
             this.expando2.TabIndex = 1;
             this.expando2.Text = "expando2";
             // 
             // panel1
             // 
             this.panel1.Controls.Add( this.editV2_MainCtrl1 );
-            this.panel1.Location = new System.Drawing.Point( 216, 12 );
+            this.panel1.Location = new System.Drawing.Point( 213, 7 );
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size( 520, 499 );
+            this.panel1.Size = new System.Drawing.Size( 612, 506 );
             this.panel1.TabIndex = 1;
             // 
             // editV2_MainCtrl1
             // 
-            this.editV2_MainCtrl1.Location = new System.Drawing.Point( 3, 3 );
+            this.editV2_MainCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editV2_MainCtrl1.Location = new System.Drawing.Point( 0, 0 );
             this.editV2_MainCtrl1.Name = "editV2_MainCtrl1";
-            this.editV2_MainCtrl1.Size = new System.Drawing.Size( 502, 489 );
+            this.editV2_MainCtrl1.Size = new System.Drawing.Size( 612, 506 );
             this.editV2_MainCtrl1.TabIndex = 0;
             // 
             // EditV2Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size( 739, 513 );
+            this.ClientSize = new System.Drawing.Size( 831, 515 );
             this.Controls.Add( this.panel1 );
             this.Controls.Add( this.taskPane1 );
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EditV2Frm";
-            this.Text = "EditV2Frm";
+            this.Text = "Edit Tag Version 2 ";
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).EndInit();
             this.taskPane1.ResumeLayout( false );
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).EndInit();

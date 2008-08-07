@@ -11,6 +11,7 @@ namespace music_tagger
 {
     public partial class EditV1Frm : Form
     {
+        protected ListView lv = null;
         /// <summary>
         /// 
         /// </summary>
@@ -26,6 +27,7 @@ namespace music_tagger
         public EditV1Frm(ListView lv) 
         {
             InitializeComponent();
+            this.lv = lv;
             editCtrl.Configure( lv );
         }
    }
