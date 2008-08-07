@@ -33,16 +33,16 @@ namespace music_tagger
             // 
             // editCtrl
             // 
-            this.editCtrl.Location = new System.Drawing.Point( 1, 0 );
+            this.editCtrl.Location = new System.Drawing.Point( -5, -1 );
             this.editCtrl.Name = "editCtrl";
-            this.editCtrl.Size = new System.Drawing.Size( 630, 280 );
+            this.editCtrl.Size = new System.Drawing.Size( 649, 248 );
             this.editCtrl.TabIndex = 0;
             // 
             // EditV1Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size( 636, 282 );
+            this.ClientSize = new System.Drawing.Size( 650, 248 );
             this.Controls.Add( this.editCtrl );
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "EditV1Frm";
@@ -54,6 +54,8 @@ namespace music_tagger
         #endregion
 
         public EditV1Ctrl editCtrl;
+
+
 
 
     }

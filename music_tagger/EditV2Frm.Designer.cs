@@ -33,9 +33,11 @@ namespace music_tagger
             this.expando2 = new XPExplorerBar.Expando();
             this.panel1 = new System.Windows.Forms.Panel();
             this.editV2_MainCtrl1 = new music_tagger.EditV2_MainCtrl();
+            this.taskItem1 = new XPExplorerBar.TaskItem();
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).BeginInit();
             this.taskPane1.SuspendLayout();
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).BeginInit();
+            this.expando1.SuspendLayout();
             ( (System.ComponentModel.ISupportInitialize)( this.expando2 ) ).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +59,8 @@ namespace music_tagger
             this.expando1.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
                         | System.Windows.Forms.AnchorStyles.Right ) ) );
             this.expando1.Font = new System.Drawing.Font( "Tahoma", 8.25F );
+            this.expando1.Items.AddRange( new System.Windows.Forms.Control[] {
+            this.taskItem1} );
             this.expando1.Location = new System.Drawing.Point( 12, 12 );
             this.expando1.Name = "expando1";
             this.expando1.Size = new System.Drawing.Size( 186, 100 );
@@ -90,6 +94,20 @@ namespace music_tagger
             this.editV2_MainCtrl1.Size = new System.Drawing.Size( 612, 506 );
             this.editV2_MainCtrl1.TabIndex = 0;
             // 
+            // taskItem1
+            // 
+            this.taskItem1.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
+                        | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.taskItem1.BackColor = System.Drawing.Color.Transparent;
+            this.taskItem1.Image = null;
+            this.taskItem1.Location = new System.Drawing.Point( 4, 41 );
+            this.taskItem1.Name = "taskItem1";
+            this.taskItem1.Size = new System.Drawing.Size( 162, 16 );
+            this.taskItem1.TabIndex = 0;
+            this.taskItem1.Text = "taskItem1";
+            this.taskItem1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.taskItem1.UseVisualStyleBackColor = false;
+            // 
             // EditV2Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
@@ -103,6 +121,7 @@ namespace music_tagger
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).EndInit();
             this.taskPane1.ResumeLayout( false );
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).EndInit();
+            this.expando1.ResumeLayout( false );
             ( (System.ComponentModel.ISupportInitialize)( this.expando2 ) ).EndInit();
             this.panel1.ResumeLayout( false );
             this.ResumeLayout( false );
@@ -116,5 +135,6 @@ namespace music_tagger
         private XPExplorerBar.Expando expando2;
         private System.Windows.Forms.Panel panel1;
         private EditV2_MainCtrl editV2_MainCtrl1;
+        private XPExplorerBar.TaskItem taskItem1;
     }
 }

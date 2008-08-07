@@ -27,9 +27,10 @@ namespace music_tagger
             : base( lv )
         {
             InitializeComponent();
+            Coalesce();
         }
 
-        public string Coalesce(string[] str)
+        public string Coalesce()
         {
             //TODO 
 
@@ -49,6 +50,8 @@ namespace music_tagger
                 last_tag.Track = last_tag.Track != 0 && tag.Track == last_tag.Track ? tag.Track : 0;
                 last_tag.Year = last_tag.Year != 0 && tag.Year == last_tag.Year ? tag.Year : 0;
             }
+
+            this.editCtrl.Fill( last_tag );
 
             return "";
         }

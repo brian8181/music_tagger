@@ -59,5 +59,10 @@ namespace music_tagger
                 // todo
             }
         }
+
+        private void OnToggleVer( object sender, EventArgs e )
+        {
+            tsb_ToggleVer.Text = tsb_ToggleVer.Text == "Shown Ver. 1" ? "Shown Ver. 2" : "Shown Ver. 1";    
+        }
     }
 }
