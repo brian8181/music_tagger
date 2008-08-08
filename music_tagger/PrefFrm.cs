@@ -13,11 +13,22 @@ namespace music_tagger
         public PrefFrm()
         {
             InitializeComponent();
-        }
-
-        private void tabPage1_Click( object sender, EventArgs e )
-        {
-
+           
+            columnList.Items.Add( "File Name" );
+            columnList.Items.Add( "File Path" );
+            columnList.Items.Add( "Size" );
+            columnList.Items.Add( "Attributes" );
+            columnList.Items.Add( "Last Access" );
+            columnList.Items.Add( "Last Write" );
+            columnList.Items.Add( "Created" );
+            columnList.Items.Add( "Track" );
+            columnList.Items.Add( "Artist" );
+            columnList.Items.Add( "Album" );
+            columnList.Items.Add( "Title" );
+            columnList.Items.Add( "Year" );
+            columnList.Items.Add( "Comment" );
+            columnList.Items.Add( "Genre" );
+            columnList.Items.Add( "Lenght" );
         }
     }
 }
