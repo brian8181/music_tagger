@@ -34,7 +34,11 @@ namespace music_tagger
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -53,6 +57,9 @@ namespace music_tagger
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add( this.comboBox3 );
+            this.tabPage1.Controls.Add( this.comboBox2 );
+            this.tabPage1.Controls.Add( this.comboBox1 );
             this.tabPage1.Location = new System.Drawing.Point( 4, 22 );
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding( 3 );
@@ -99,6 +106,32 @@ namespace music_tagger
             this.tabPage5.Text = "Tools";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point( 33, 51 );
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size( 121, 21 );
+            this.comboBox1.TabIndex = 0;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point( 160, 51 );
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size( 121, 21 );
+            this.comboBox2.TabIndex = 1;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point( 287, 51 );
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size( 121, 150 );
+            this.comboBox3.TabIndex = 2;
+            // 
             // PrefFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
@@ -108,6 +141,7 @@ namespace music_tagger
             this.Name = "PrefFrm";
             this.Text = "PrefFrm";
             this.tabControl1.ResumeLayout( false );
+            this.tabPage1.ResumeLayout( false );
             this.ResumeLayout( false );
 
         }
@@ -120,5 +154,8 @@ namespace music_tagger
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

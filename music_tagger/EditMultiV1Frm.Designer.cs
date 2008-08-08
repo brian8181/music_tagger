@@ -30,6 +30,10 @@ namespace music_tagger
         {
             this.SuspendLayout();
             // 
+            // editCtrl
+            // 
+            this.editCtrl.Location = new System.Drawing.Point( 3, -1 );
+            // 
             // EditMultiV1Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
@@ -41,6 +45,7 @@ namespace music_tagger
         }
 
         #endregion
+
 
     }
 }

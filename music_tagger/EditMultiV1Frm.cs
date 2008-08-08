@@ -19,7 +19,7 @@ namespace music_tagger
             InitializeComponent();
         }
 
-         /// <summary>
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="lv"></param>
@@ -27,16 +27,25 @@ namespace music_tagger
             : base( lv )
         {
             InitializeComponent();
-            
             this.editCtrl.ckAlbum.Visible = true;
+            this.editCtrl.ckAlbum.Checked = false;
             this.editCtrl.ckArtist.Visible = true;
+            this.editCtrl.ckArtist.Checked = false;
             this.editCtrl.ckComment.Visible = true;
+            this.editCtrl.ckComment.Checked = false;
             this.editCtrl.ckGenre.Visible = true;
+            this.editCtrl.ckGenre.Checked = false;
             this.editCtrl.ckTitle.Visible = true;
+            this.editCtrl.ckTitle.Checked = false;
             this.editCtrl.ckTrack.Visible = true;
+            this.editCtrl.ckTrack.Checked = false;
             this.editCtrl.ckYear.Visible = true;
-
+            this.editCtrl.ckYear.Checked = false;
             Coalesce();
+        }
+
+        public override void Initialize()
+        {
         }
 
         public void Coalesce()

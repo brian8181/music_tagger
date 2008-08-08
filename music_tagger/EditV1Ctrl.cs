@@ -44,6 +44,8 @@ namespace music_tagger
         public void Fill(int idx)
         {
             FileInfo fi = (FileInfo)lv.SelectedItems[idx].Tag;
+            lblFile.Text = fi.FullName;
+
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );
             TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
             Fill( id3v1 );

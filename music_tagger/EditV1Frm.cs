@@ -18,6 +18,7 @@ namespace music_tagger
         public EditV1Frm()
         {
             InitializeComponent();
+            
         }
 
         /// <summary>
@@ -29,6 +30,14 @@ namespace music_tagger
             InitializeComponent();
             this.lv = lv;
             editCtrl.Configure( lv );
+            Initialize();
+           
+        }
+
+        public virtual void Initialize()
+        {
+            this.editCtrl.lblFile.Visible = true;
+            this.editCtrl.lblFileTag.Visible = true;
         }
    }
 }

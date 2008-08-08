@@ -88,6 +88,8 @@ namespace music_tagger
                         ni.Tag = files[i];
                         ni.ImageIndex = images.Images.IndexOfKey(sInfo.hIcon.ToString());
                         listView.Items.Add( ni );
+                        // fill
+                        Fill(ni);
                     }
                     if (len > 0)
                         SizeAll(listView, ColumnHeaderAutoResizeStyle.ColumnContent);
@@ -98,7 +100,79 @@ namespace music_tagger
             }
         }
 
-     
+        /// <summary>
+        ///  fill from tag
+        /// </summary>
+        /// <param name="idx"></param>
+        public void Fill(ListViewItem  item)
+        {
+
+            FileInfo fi = (FileInfo)item.Tag;
+            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+            TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+
+            //ColumnHeader col = listView.Columns["Track"];
+            //col.DisplayIndex;
+                                      
+            if(id3v1 != null)
+            {
+                //ListViewItem.ListViewSubItem[] items = new ListViewItem.ListViewSubItem[listView.Columns.Count];
+                //items.Initialize();
+                //item.SubItems.AddRange( items );
+
+                //ListView.ListViewItemCollection item = new ListView.ListViewItemCollection(listView);
+                //item.Add( "Track", id3v1.Track.ToString(), "" ); 
+
+                foreach(ColumnHeader col in listView.Columns)
+                {
+                    switch(col.Text)
+                    {
+                    case "Track":
+                        item.SubItems.Add( id3v1.Track.ToString() );
+                        break;
+                    case "Artist":
+                        item.SubItems.Add( id3v1.Performers[0] );
+                        break;
+                    case "Album":
+                        item.SubItems.Add( id3v1.Album.ToString() );
+                        break;
+                    case "Title":
+                        item.SubItems.Add( id3v1.Title.ToString() );
+                        break;
+                    case "Year":
+                        item.SubItems.Add( id3v1.Year.ToString() );
+                        break;
+                    case "Name":
+                    case "Attributes":
+                    case "Size":
+                    case "Last Access":
+                    case "Last Write":
+                    case "Created":
+                        break;
+                    default:
+                         item.SubItems.Add( "" );
+                         break;
+                    }
+                }
+
+                //if(id3v1.Performers.Length > 0)
+                //{
+                //    item.SubItems.Add( id3v1.Performers[0] );
+                //}
+
+                //item.SubItems.AddRange( new string[] { 
+                //    id3v1.Album, 
+                //    id3v1.Title, 
+                //    id3v1.Year.ToString(), 
+                //    id3v1.Comment } );
+               
+                //if(id3v1.Genres.Length > 0)
+                //{
+                //    item.SubItems.Add( id3v1.Genres[0] );
+                //}
+            }
+        }
+
         private void InitiListView()
         {
             //listView = new ListView();
@@ -108,17 +182,18 @@ namespace music_tagger
             listView.AllowColumnReorder = true;
             listView.FullRowSelect = true;
             listView.MultiSelect = true;
-            listView.Columns.AddRange(CreateCols());
+            listView.Columns.AddRange(CreateColumns());
             //this.Controls.Add(listView);
             //listView.SelectedIndexChanged += new EventHandler(OnSelectionChanged);
-            CreateCols();
+            //CreateCols();
             //listView.Dock = DockStyle.Fill;
             //this.Controls.Add(listView);
         }
 
-        private ColumnHeader[] CreateCols()
+        private ColumnHeader[] CreateColumns()
         {
-            ColumnHeader[] cols = new ColumnHeader[6];
+            //todo coloumn mappings
+            ColumnHeader[] cols = new ColumnHeader[13];
             cols[0] = new ColumnHeader();
             cols[0].Text = "Name";
             cols[1] = new ColumnHeader();
@@ -131,7 +206,22 @@ namespace music_tagger
             cols[4].Text = "Last Write";
             cols[5] = new ColumnHeader();
             cols[5].Text = "Created";
-            cols[5] = new ColumnHeader();
+         
+            cols[6] = new ColumnHeader();
+            cols[6].Text = "Track";
+            cols[7] = new ColumnHeader();
+            cols[7].Text = "Artist";
+            cols[8] = new ColumnHeader();
+            cols[8].Text = "Album";
+            cols[9] = new ColumnHeader();
+            cols[9].Text = "Title";
+            cols[10] = new ColumnHeader();
+            cols[10].Text = "Year";
+            cols[11] = new ColumnHeader();
+            cols[11].Text = "Comment";
+            cols[12] = new ColumnHeader();
+            cols[12].Text = "Genre";
+
             return cols;
         }
 

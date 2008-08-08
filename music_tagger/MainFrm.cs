@@ -19,36 +19,47 @@ namespace music_tagger
 
         private void tsb_EditV1_Click( object sender, EventArgs e )
         {
-            EditV1Frm dlg = new EditV1Frm(view.ListView);
-            if(dlg.ShowDialog() == DialogResult.OK)
+            if(this.view.ListView.SelectedItems.Count > 0)
             {
-                // todo  
+                EditV1Frm dlg = new EditV1Frm( view.ListView );
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // todo  
+                }
             }
             
         }
 
         private void tsb_EditV1Multi_Click( object sender, EventArgs e )
         {
-            EditMultiV1Frm dlg = new EditMultiV1Frm( view.ListView );
-            if(dlg.ShowDialog() == DialogResult.OK)
+            if(this.view.ListView.SelectedItems.Count > 0)
             {
-                // todo
+                EditMultiV1Frm dlg = new EditMultiV1Frm( view.ListView );
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // todo
+                }
             }
         }
 
         private void tsb_EditV2_Click( object sender,   EventArgs e )
         {
-            EditV2Frm dlg = new EditV2Frm();
-            if(dlg.ShowDialog() == DialogResult.OK)
+            if(this.view.ListView.SelectedItems.Count > 0)
             {
-                // todo
+                EditV2Frm dlg = new EditV2Frm();
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // todo
+                }
             }
         }
 
         private void tsb_EditV2Multi_Click( object sender, EventArgs e )
         {
-            // todo
-            
+            if(this.view.ListView.SelectedItems.Count > 0)
+            {
+                // todo
+            }
         }
 
         private void mnPrefs_Click( object sender, EventArgs e )
