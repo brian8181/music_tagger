@@ -28,7 +28,7 @@ namespace music_tagger
         /// intialize listview  
         /// </summary>
         /// <param name="lv"></param>
-        public virtual void Configure( ListView lv )
+        public virtual void Initialize( ListView lv )
         {
             this.lv = lv;
             if(lv.SelectedItems.Count > 0)

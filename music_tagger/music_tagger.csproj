@@ -113,11 +113,24 @@
     <Compile Include="File2TagV2Frm.Designer.cs">
       <DependentUpon>File2TagV2Frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormatCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormatCtrl.Designer.cs">
+      <DependentUpon>FormatCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormatEvaluator.cs" />
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganizeFrm.Designer.cs">
+      <DependentUpon>OrganizeFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="PrefFrm.cs">
       <SubType>Form</SubType>
@@ -126,6 +139,12 @@
       <DependentUpon>PrefFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgressCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProgressCtrl.Designer.cs">
+      <DependentUpon>ProgressCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EditMultiV1Frm.resx">
       <SubType>Designer</SubType>
@@ -167,13 +186,25 @@
       <SubType>Designer</SubType>
       <DependentUpon>File2TagV2Frm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormatCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormatCtrl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrganizeFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OrganizeFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrefFrm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PrefFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProgressCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -218,9 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

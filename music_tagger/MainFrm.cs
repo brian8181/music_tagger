@@ -17,6 +17,19 @@ namespace music_tagger
             view.Configure( tree );
         }
 
+        private void LoadSettings()
+        {
+            // menu
+            mnViewV1.Checked = Properties.Settings.Default.view_ver1;
+            mnViewV2.Checked = !mnViewV1.Checked;
+            //Properties.Settings.Default.scan_subdirs;
+        }
+
+        private void SaveSettings()
+        {
+
+        }
+
         private void tsb_EditV1_Click( object sender, EventArgs e )
         {
             if(this.view.ListView.SelectedItems.Count > 0)
@@ -73,7 +86,35 @@ namespace music_tagger
 
         private void OnToggleVer( object sender, EventArgs e )
         {
-            tsb_ToggleVer.Text = tsb_ToggleVer.Text == "Shown Ver. 1" ? "Shown Ver. 2" : "Shown Ver. 1";    
+            ToggleVer();   
         }
+
+        private void ToggleVer()
+        {
+             tsb_ToggleVer.Text = tsb_ToggleVer.Text == "Shown Ver. 1" ? "Shown Ver. 2" : "Shown Ver. 1";    
+        }
+
+        //  todo combine these !!
+        private void mnViewV1_Click( object sender, EventArgs e )
+        {
+            mnViewV2.Checked = !mnViewV1.Checked;
+            ToggleVer();
+        }
+        private void mnViewV2_Click( object sender, EventArgs e )
+        {
+            mnViewV1.Checked = !mnViewV2.Checked;
+            ToggleVer();
+        }
+
+        private void mnFileOrganize_Click( object sender, EventArgs e )
+        {
+            OrganizeFrm dlg = new OrganizeFrm( view.ListView );
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+       
     }
 }

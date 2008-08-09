@@ -75,5 +75,81 @@ namespace music_tagger.Properties {
                 this["restore_dir"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool scan_subdirs {
+            get {
+                return ((bool)(this["scan_subdirs"]));
+            }
+            set {
+                this["scan_subdirs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool view_ver1 {
+            get {
+                return ((bool)(this["view_ver1"]));
+            }
+            set {
+                this["view_ver1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>&lt;K&gt;-&lt;A&gt;-&lt;B&gt;-&lt;T&gt;</string>
+  <string>&lt;A&gt;\&lt;B&gt;\&lt;K&gt;-&lt;T&gt;</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection org_formats {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["org_formats"]));
+            }
+            set {
+                this["org_formats"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool org_ver1 {
+            get {
+                return ((bool)(this["org_ver1"]));
+            }
+            set {
+                this["org_ver1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool org_overwrite {
+            get {
+                return ((bool)(this["org_overwrite"]));
+            }
+            set {
+                this["org_overwrite"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool org_copy {
+            get {
+                return ((bool)(this["org_copy"]));
+            }
+            set {
+                this["org_copy"] = value;
+            }
+        }
     }
 }

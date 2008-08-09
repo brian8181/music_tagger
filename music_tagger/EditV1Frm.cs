@@ -29,7 +29,7 @@ namespace music_tagger
         {
             InitializeComponent();
             this.lv = lv;
-            editCtrl.Configure( lv );
+            editCtrl.Initialize( lv );
             Initialize();
            
         }

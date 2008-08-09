@@ -43,7 +43,7 @@ namespace music_tagger
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-            this.organizeFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnFileOrganize = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +54,8 @@ namespace music_tagger
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewTagVer1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewTagVer2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnViewV1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnViewV2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.iD3FunctionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnEditV1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +76,7 @@ namespace music_tagger
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compareFilename2TagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opitonsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scanSubDirectoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnPrefs = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +88,7 @@ namespace music_tagger
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tree = new Tools.FileTreeView();
+            this.view = new music_tagger.View();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -135,8 +137,6 @@ namespace music_tagger
             this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSplitButton4 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.view = new music_tagger.View();
-            this.scanSubDirectoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -182,7 +182,7 @@ namespace music_tagger
             this.toolStripSeparator2,
             this.exitToolStripMenuItem,
             this.toolStripSeparator15,
-            this.organizeFilesToolStripMenuItem} );
+            this.mnFileOrganize} );
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size( 35, 20 );
             this.fileToolStripMenuItem.Text = "&File";
@@ -263,11 +263,12 @@ namespace music_tagger
             this.toolStripSeparator15.Name = "toolStripSeparator15";
             this.toolStripSeparator15.Size = new System.Drawing.Size( 149, 6 );
             // 
-            // organizeFilesToolStripMenuItem
+            // mnFileOrganize
             // 
-            this.organizeFilesToolStripMenuItem.Name = "organizeFilesToolStripMenuItem";
-            this.organizeFilesToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
-            this.organizeFilesToolStripMenuItem.Text = "Organize Files";
+            this.mnFileOrganize.Name = "mnFileOrganize";
+            this.mnFileOrganize.Size = new System.Drawing.Size( 152, 22 );
+            this.mnFileOrganize.Text = "Organize Files";
+            this.mnFileOrganize.Click += new System.EventHandler( this.mnFileOrganize_Click );
             // 
             // editToolStripMenuItem
             // 
@@ -343,25 +344,32 @@ namespace music_tagger
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.CheckOnClick = true;
             this.viewToolStripMenuItem.DropDownItems.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.viewTagVer1ToolStripMenuItem,
-            this.viewTagVer2ToolStripMenuItem,
+            this.mnViewV1,
+            this.mnViewV2,
             this.toolStripSeparator13} );
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size( 41, 20 );
             this.viewToolStripMenuItem.Text = "&View";
             // 
-            // viewTagVer1ToolStripMenuItem
+            // mnViewV1
             // 
-            this.viewTagVer1ToolStripMenuItem.Name = "viewTagVer1ToolStripMenuItem";
-            this.viewTagVer1ToolStripMenuItem.Size = new System.Drawing.Size( 160, 22 );
-            this.viewTagVer1ToolStripMenuItem.Text = "View Tag Ver. 1";
+            this.mnViewV1.Checked = true;
+            this.mnViewV1.CheckOnClick = true;
+            this.mnViewV1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mnViewV1.Name = "mnViewV1";
+            this.mnViewV1.Size = new System.Drawing.Size( 160, 22 );
+            this.mnViewV1.Text = "View Tag Ver. 1";
+            this.mnViewV1.Click += new System.EventHandler( this.mnViewV1_Click );
             // 
-            // viewTagVer2ToolStripMenuItem
+            // mnViewV2
             // 
-            this.viewTagVer2ToolStripMenuItem.Name = "viewTagVer2ToolStripMenuItem";
-            this.viewTagVer2ToolStripMenuItem.Size = new System.Drawing.Size( 160, 22 );
-            this.viewTagVer2ToolStripMenuItem.Text = "View Tag Ver. 2";
+            this.mnViewV2.CheckOnClick = true;
+            this.mnViewV2.Name = "mnViewV2";
+            this.mnViewV2.Size = new System.Drawing.Size( 160, 22 );
+            this.mnViewV2.Text = "View Tag Ver. 2";
+            this.mnViewV2.Click += new System.EventHandler( this.mnViewV2_Click );
             // 
             // toolStripSeparator13
             // 
@@ -506,6 +514,13 @@ namespace music_tagger
             this.opitonsToolStripMenuItem.Size = new System.Drawing.Size( 56, 20 );
             this.opitonsToolStripMenuItem.Text = "&Opitons";
             // 
+            // scanSubDirectoriesToolStripMenuItem
+            // 
+            this.scanSubDirectoriesToolStripMenuItem.CheckOnClick = true;
+            this.scanSubDirectoriesToolStripMenuItem.Name = "scanSubDirectoriesToolStripMenuItem";
+            this.scanSubDirectoriesToolStripMenuItem.Size = new System.Drawing.Size( 179, 22 );
+            this.scanSubDirectoriesToolStripMenuItem.Text = "Scan Subdirectories";
+            // 
             // mnPrefs
             // 
             this.mnPrefs.Name = "mnPrefs";
@@ -613,6 +628,14 @@ namespace music_tagger
             this.tree.SelectedImageIndex = 0;
             this.tree.Size = new System.Drawing.Size( 284, 509 );
             this.tree.TabIndex = 0;
+            // 
+            // view
+            // 
+            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view.Location = new System.Drawing.Point( 0, 0 );
+            this.view.Name = "view";
+            this.view.Size = new System.Drawing.Size( 831, 509 );
+            this.view.TabIndex = 0;
             // 
             // toolStrip1
             // 
@@ -1048,20 +1071,6 @@ namespace music_tagger
             this.toolStripButton15.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton15.Text = "toolStripButton15";
             // 
-            // view
-            // 
-            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.view.Location = new System.Drawing.Point( 0, 0 );
-            this.view.Name = "view";
-            this.view.Size = new System.Drawing.Size( 831, 509 );
-            this.view.TabIndex = 0;
-            // 
-            // scanSubDirectoriesToolStripMenuItem
-            // 
-            this.scanSubDirectoriesToolStripMenuItem.Name = "scanSubDirectoriesToolStripMenuItem";
-            this.scanSubDirectoriesToolStripMenuItem.Size = new System.Drawing.Size( 179, 22 );
-            this.scanSubDirectoriesToolStripMenuItem.Text = "Scan Subdirectories";
-            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
@@ -1173,8 +1182,8 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripMenuItem extentedFunctionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem anlyseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem opitonsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewTagVer1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewTagVer2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnViewV1;
+        private System.Windows.Forms.ToolStripMenuItem mnViewV2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripMenuItem mnEditV1;
         private System.Windows.Forms.ToolStripMenuItem mnEditV2;
@@ -1191,7 +1200,7 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripMenuItem transferConvertTagsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
-        private System.Windows.Forms.ToolStripMenuItem organizeFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnFileOrganize;
         private System.Windows.Forms.ToolStripMenuItem compareFilename2TagToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnPrefs;
         private System.Windows.Forms.ToolStripButton tsb_ToggleVer;
