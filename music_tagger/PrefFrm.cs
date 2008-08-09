@@ -30,5 +30,16 @@ namespace music_tagger
             columnList.Items.Add( "Genre" );
             columnList.Items.Add( "Lenght" );
         }
+
+       
+        private void btnOK_Click( object sender, EventArgs e )
+        {
+
+        }
+
+        private void btnApply_Click( object sender, EventArgs e )
+        {
+
+        }
     }
 }

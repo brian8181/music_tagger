@@ -51,5 +51,29 @@ namespace music_tagger.Properties {
                 this["columns"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string last_dir {
+            get {
+                return ((string)(this["last_dir"]));
+            }
+            set {
+                this["last_dir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool restore_dir {
+            get {
+                return ((bool)(this["restore_dir"]));
+            }
+            set {
+                this["restore_dir"] = value;
+            }
+        }
     }
 }

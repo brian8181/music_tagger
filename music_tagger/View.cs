@@ -9,11 +9,31 @@ using Tools;
 using System.IO;
 using OS.Win32;
 using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace music_tagger
 {
     public partial class View : UserControl
     {
+        // Implements the manual sorting of items by columns.
+        class ListViewItemComparer : IComparer
+        {
+            private int col;
+            public ListViewItemComparer()
+            {
+                col = 0;
+            }
+            public ListViewItemComparer( int column )
+            {
+                col = column;
+            }
+            public int Compare( object x, object y )
+            {
+                return String.Compare( ( (ListViewItem)x ).SubItems[col].Text, ( (ListViewItem)y ).SubItems[col].Text );
+            }
+        }
+
+        
         FileTreeView tree = null;
         ImageList images = new ImageList();
 
@@ -39,6 +59,7 @@ namespace music_tagger
             //images.Images.Add(Image.FromFile(@"../../file.ico"));               // 2
             //images.Images.Add(Image.FromFile(@"../../unk.ico"));                // 3
             //listView.SmallImageList = images;
+            listView.Sorting = SortOrder.None;
             tree.AfterSelect += new TreeViewEventHandler( tree_AfterSelect );
         }
 
@@ -217,6 +238,14 @@ namespace music_tagger
                 Properties.Settings.Default.columns.Add( String.Format("{0},{1}", col.Text, col.DisplayIndex ));
             }
             Properties.Settings.Default.Save();
+        }
+
+        private void listView_ColumnClick( object sender, ColumnClickEventArgs e )
+        {
+            // Set the ListViewItemSorter property to a new ListViewItemComparer 
+            // object. Setting this property immediately sorts the 
+            // ListView using the ListViewItemComparer object.
+            this.listView.ListViewItemSorter = new ListViewItemComparer( e.Column );
         }
     }
 }

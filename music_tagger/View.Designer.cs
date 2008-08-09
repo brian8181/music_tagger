@@ -39,9 +39,11 @@ namespace music_tagger
             this.listView.Location = new System.Drawing.Point( 0, 0 );
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size( 774, 641 );
+            this.listView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
+            this.listView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler( this.listView_ColumnClick );
             this.listView.ColumnReordered += new System.Windows.Forms.ColumnReorderedEventHandler( this.listView_ColumnReordered );
             // 
             // View
