@@ -8,16 +8,24 @@ namespace Tools
     public class FileTreeNode : TreeNodeExt
     {
         private System.IO.FileSystemInfo fi;
-        private bool intialized = false;
         private DriveInfo drive = null;
 
-        public FileTreeNode()
+        public FileTreeNode( string name, FileSystemInfo fi, int img_idx, int sel_img )
+            : base( name, img_idx, sel_img )
         {
+            this.fi = fi;
+            Initialize();
         }
+
         public FileTreeNode( string name, FileSystemInfo fi )
             : base( name )
         {
             this.fi = fi;
+            Initialize();
+        }
+
+        public override void Initialize()
+        {
             string root = Path.GetPathRoot( fi.FullName );
             DriveInfo[] drives = DriveInfo.GetDrives();
             foreach(DriveInfo drive in drives)
@@ -30,50 +38,30 @@ namespace Tools
             }
         }
 
-        public bool Intialized
-        {
-            get
-            {
-                bool i = intialized;
-                intialized = true;
-                return i;
-            }
-            set
-            {
-                intialized = value;
-            }
-
-        }
-
         public System.IO.FileSystemInfo FileSystemInfo
         {
             get { return fi; }
             set { fi = value; }
         }
 
-        public override void Initialize()
-        {
-            throw new Exception( "The method or operation is not implemented." );
-        }
-
         public override void RefreshNode()
         {
             throw new Exception( "The method or operation is not implemented." );
         }
     }
 
-    public class DriveTreeNode : FileTreeNode
-    {
-        //DirectoryInfo di = null;
+    //public class DriveTreeNode : FileTreeNode
+    //{
+    //    //DirectoryInfo di = null;
 
-        public override void Initialize()
-        {
-            throw new Exception( "The method or operation is not implemented." );
-        }
+    //    public override void Initialize()
+    //    {
+    //        throw new Exception( "The method or operation is not implemented." );
+    //    }
 
-        public override void RefreshNode()
-        {
-            throw new Exception( "The method or operation is not implemented." );
-        }
-    }
+    //    public override void RefreshNode()
+    //    {
+    //        throw new Exception( "The method or operation is not implemented." );
+    //    }
+    //}
 }

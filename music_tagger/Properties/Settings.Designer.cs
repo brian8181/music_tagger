@@ -151,5 +151,17 @@ namespace music_tagger.Properties {
                 this["org_copy"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string org_root_dir {
+            get {
+                return ((string)(this["org_root_dir"]));
+            }
+            set {
+                this["org_root_dir"] = value;
+            }
+        }
     }
 }

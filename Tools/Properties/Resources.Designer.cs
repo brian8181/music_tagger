@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace music_tagger.Properties {
+namespace Tools.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace music_tagger.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("music_tagger.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tools.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,48 @@ namespace music_tagger.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        internal static System.Drawing.Bitmap closed_folder {
+            get {
+                object obj = ResourceManager.GetObject("closed_folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap hard_drive {
+            get {
+                object obj = ResourceManager.GetObject("hard_drive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap net_drive {
+            get {
+                object obj = ResourceManager.GetObject("net_drive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap opened_folder {
+            get {
+                object obj = ResourceManager.GetObject("opened_folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap rom_drive {
+            get {
+                object obj = ResourceManager.GetObject("rom_drive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap unconnected_drive {
+            get {
+                object obj = ResourceManager.GetObject("unconnected_drive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

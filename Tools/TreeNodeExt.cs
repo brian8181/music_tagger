@@ -23,6 +23,12 @@ namespace Tools
         public TreeNodeExt()
         {
         }
+        
+        public TreeNodeExt( string text, int img_idx, int sel_img_idx )
+            : base( text, img_idx, sel_img_idx )
+        {
+        }
+
         public TreeNodeExt( string text )
             : base( text )
         {

@@ -1,23 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
 namespace music_tagger
 {
-    public partial class ProgressCtrl : UserControl
+    public partial class OrgProgressFrm : Form
     {
-        public ProgressCtrl()
+        public OrgProgressFrm()
         {
             InitializeComponent();
-        }
-
-        public void UpdateStatus( string file )
-        {
-            lblFile.Text = file;
         }
     }
 }

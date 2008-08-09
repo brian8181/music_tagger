@@ -45,6 +45,11 @@
       <DependentUpon>FileTreeView.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TreeNodeExt.cs" />
     <Compile Include="W32.cs" />
     <Compile Include="W32_FileLoader.cs" />
@@ -57,33 +62,32 @@
       <DependentUpon>FileTreeView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.ico" />
+    <None Include="Resources\shell32.dll_I0009_0409_p7.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CD.ico" />
+    <None Include="Resources\shell32.dll_I000a_0409_p7.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="file.ico" />
+    <None Include="Resources\shell32.dll_I000b_0409_p7.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="fd.ico" />
+    <None Include="Resources\shell32.dll_I000c_0409_p7.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="hd.ico" />
+    <None Include="Resources\shell32.dll_I0004_0409_p11.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="open.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="unk.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="usb.ico" />
+    <None Include="Resources\shell32.dll_I0005_0409_p7.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -132,6 +132,12 @@
     <Compile Include="OrganizeFrm.Designer.cs">
       <DependentUpon>OrganizeFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrgProgressFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrgProgressFrm.Designer.cs">
+      <DependentUpon>OrgProgressFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrefFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>OrganizeFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrgProgressFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OrgProgressFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrefFrm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PrefFrm.cs</DependentUpon>
@@ -218,6 +228,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
@@ -249,6 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
