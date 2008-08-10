@@ -41,9 +41,11 @@ namespace music_tagger
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnFileCopyTo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnFileMoveTo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnFileOrganize = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +78,7 @@ namespace music_tagger
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compareFilename2TagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opitonsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scanSubDirectoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnOptionsScanSubs = new System.Windows.Forms.ToolStripMenuItem();
             this.mnPrefs = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -180,9 +182,11 @@ namespace music_tagger
             this.printToolStripMenuItem,
             this.printPreviewToolStripMenuItem,
             this.toolStripSeparator2,
-            this.exitToolStripMenuItem,
+            this.mnFileCopyTo,
+            this.mnFileMoveTo,
+            this.mnFileOrganize,
             this.toolStripSeparator15,
-            this.mnFileOrganize} );
+            this.exitToolStripMenuItem} );
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size( 35, 20 );
             this.fileToolStripMenuItem.Text = "&File";
@@ -193,7 +197,7 @@ namespace music_tagger
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N ) ) );
-            this.newToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+            this.newToolStripMenuItem.Size = new System.Drawing.Size( 192, 22 );
             this.newToolStripMenuItem.Text = "&New";
             // 
             // openToolStripMenuItem
@@ -252,23 +256,36 @@ namespace music_tagger
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size( 149, 6 );
             // 
-            // exitToolStripMenuItem
+            // mnFileCopyTo
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.mnFileCopyTo.Name = "mnFileCopyTo";
+            this.mnFileCopyTo.Size = new System.Drawing.Size( 152, 22 );
+            this.mnFileCopyTo.Text = "CopyTo";
+            // 
+            // mnFileMoveTo
+            // 
+            this.mnFileMoveTo.Name = "mnFileMoveTo";
+            this.mnFileMoveTo.Size = new System.Drawing.Size( 152, 22 );
+            this.mnFileMoveTo.Text = "MoveTo";
+            // 
+            // mnFileOrganize
+            // 
+            this.mnFileOrganize.Name = "mnFileOrganize";
+            this.mnFileOrganize.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O ) ) );
+            this.mnFileOrganize.Size = new System.Drawing.Size( 192, 22 );
+            this.mnFileOrganize.Text = "&Organize Files";
+            this.mnFileOrganize.Click += new System.EventHandler( this.mnFileOrganize_Click );
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
             this.toolStripSeparator15.Size = new System.Drawing.Size( 149, 6 );
             // 
-            // mnFileOrganize
+            // exitToolStripMenuItem
             // 
-            this.mnFileOrganize.Name = "mnFileOrganize";
-            this.mnFileOrganize.Size = new System.Drawing.Size( 152, 22 );
-            this.mnFileOrganize.Text = "Organize Files";
-            this.mnFileOrganize.Click += new System.EventHandler( this.mnFileOrganize_Click );
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+            this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // editToolStripMenuItem
             // 
@@ -508,18 +525,18 @@ namespace music_tagger
             // opitonsToolStripMenuItem
             // 
             this.opitonsToolStripMenuItem.DropDownItems.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.scanSubDirectoriesToolStripMenuItem,
+            this.mnOptionsScanSubs,
             this.mnPrefs} );
             this.opitonsToolStripMenuItem.Name = "opitonsToolStripMenuItem";
             this.opitonsToolStripMenuItem.Size = new System.Drawing.Size( 56, 20 );
             this.opitonsToolStripMenuItem.Text = "&Opitons";
             // 
-            // scanSubDirectoriesToolStripMenuItem
+            // mnOptionsScanSubs
             // 
-            this.scanSubDirectoriesToolStripMenuItem.CheckOnClick = true;
-            this.scanSubDirectoriesToolStripMenuItem.Name = "scanSubDirectoriesToolStripMenuItem";
-            this.scanSubDirectoriesToolStripMenuItem.Size = new System.Drawing.Size( 179, 22 );
-            this.scanSubDirectoriesToolStripMenuItem.Text = "Scan Subdirectories";
+            this.mnOptionsScanSubs.CheckOnClick = true;
+            this.mnOptionsScanSubs.Name = "mnOptionsScanSubs";
+            this.mnOptionsScanSubs.Size = new System.Drawing.Size( 179, 22 );
+            this.mnOptionsScanSubs.Text = "Scan Subdirectories";
             // 
             // mnPrefs
             // 
@@ -568,6 +585,7 @@ namespace music_tagger
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
             this.aboutToolStripMenuItem.Text = "&About...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler( this.aboutToolStripMenuItem_Click );
             // 
             // toolStripContainer
             // 
@@ -1210,7 +1228,9 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem scanSubDirectoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnOptionsScanSubs;
+        private System.Windows.Forms.ToolStripMenuItem mnFileMoveTo;
+        private System.Windows.Forms.ToolStripMenuItem mnFileCopyTo;
     }
 }
 

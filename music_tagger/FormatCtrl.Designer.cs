@@ -32,7 +32,7 @@ namespace music_tagger
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblBMP = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -43,28 +43,32 @@ namespace music_tagger
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblComposer = new System.Windows.Forms.Label();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.lblTrack = new System.Windows.Forms.Label();
+            this.lblComment = new System.Windows.Forms.Label();
+            this.lblArtist = new System.Windows.Forms.Label();
+            this.lblBitrate = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label21
             // 
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label21.Location = new System.Drawing.Point( 3, 165 );
+            this.label21.Location = new System.Drawing.Point( 3, 177 );
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size( 435, 62 );
+            this.label21.Size = new System.Drawing.Size( 435, 50 );
             this.label21.TabIndex = 24;
             this.label21.Text = "This function offers the possiblity of...";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add( this.label20 );
+            this.groupBox1.Controls.Add( this.lblBitrate );
             this.groupBox1.Controls.Add( this.label18 );
             this.groupBox1.Controls.Add( this.label17 );
-            this.groupBox1.Controls.Add( this.label16 );
+            this.groupBox1.Controls.Add( this.lblBMP );
             this.groupBox1.Controls.Add( this.label11 );
             this.groupBox1.Controls.Add( this.label12 );
             this.groupBox1.Controls.Add( this.label13 );
@@ -75,14 +79,14 @@ namespace music_tagger
             this.groupBox1.Controls.Add( this.label8 );
             this.groupBox1.Controls.Add( this.label9 );
             this.groupBox1.Controls.Add( this.label10 );
-            this.groupBox1.Controls.Add( this.label5 );
-            this.groupBox1.Controls.Add( this.label4 );
-            this.groupBox1.Controls.Add( this.label3 );
-            this.groupBox1.Controls.Add( this.label2 );
-            this.groupBox1.Controls.Add( this.label1 );
+            this.groupBox1.Controls.Add( this.lblComposer );
+            this.groupBox1.Controls.Add( this.lblPosition );
+            this.groupBox1.Controls.Add( this.lblTrack );
+            this.groupBox1.Controls.Add( this.lblComment );
+            this.groupBox1.Controls.Add( this.lblArtist );
             this.groupBox1.Location = new System.Drawing.Point( 3, 3 );
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size( 435, 159 );
+            this.groupBox1.Size = new System.Drawing.Size( 435, 171 );
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Format Specifiers";
@@ -90,7 +94,7 @@ namespace music_tagger
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point( 303, 125 );
+            this.label18.Location = new System.Drawing.Point( 304, 117 );
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size( 75, 13 );
             this.label18.TabIndex = 17;
@@ -99,25 +103,25 @@ namespace music_tagger
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point( 140, 125 );
+            this.label17.Location = new System.Drawing.Point( 144, 117 );
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size( 146, 13 );
             this.label17.TabIndex = 16;
             this.label17.Text = "<M> = Modified / Remixed by";
             // 
-            // label16
+            // lblBMP
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point( 15, 125 );
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size( 117, 13 );
-            this.label16.TabIndex = 15;
-            this.label16.Text = "<E> = Beats per minute";
+            this.lblBMP.AutoSize = true;
+            this.lblBMP.Location = new System.Drawing.Point( 6, 117 );
+            this.lblBMP.Name = "lblBMP";
+            this.lblBMP.Size = new System.Drawing.Size( 117, 13 );
+            this.lblBMP.TabIndex = 15;
+            this.lblBMP.Text = "<E> = Beats per minute";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point( 303, 105 );
+            this.label11.Location = new System.Drawing.Point( 304, 99 );
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size( 121, 13 );
             this.label11.TabIndex = 14;
@@ -126,7 +130,7 @@ namespace music_tagger
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point( 303, 85 );
+            this.label12.Location = new System.Drawing.Point( 304, 81 );
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size( 88, 13 );
             this.label12.TabIndex = 13;
@@ -135,7 +139,7 @@ namespace music_tagger
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point( 301, 65 );
+            this.label13.Location = new System.Drawing.Point( 304, 63 );
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size( 105, 13 );
             this.label13.TabIndex = 12;
@@ -144,7 +148,7 @@ namespace music_tagger
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point( 301, 45 );
+            this.label14.Location = new System.Drawing.Point( 304, 45 );
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size( 90, 13 );
             this.label14.TabIndex = 11;
@@ -153,7 +157,7 @@ namespace music_tagger
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point( 301, 25 );
+            this.label15.Location = new System.Drawing.Point( 304, 27 );
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size( 67, 13 );
             this.label15.TabIndex = 10;
@@ -162,7 +166,7 @@ namespace music_tagger
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point( 140, 105 );
+            this.label6.Location = new System.Drawing.Point( 144, 99 );
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size( 73, 13 );
             this.label6.TabIndex = 9;
@@ -171,7 +175,7 @@ namespace music_tagger
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point( 140, 85 );
+            this.label7.Location = new System.Drawing.Point( 144, 81 );
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size( 143, 13 );
             this.label7.TabIndex = 8;
@@ -180,7 +184,7 @@ namespace music_tagger
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point( 137, 65 );
+            this.label8.Location = new System.Drawing.Point( 144, 63 );
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size( 139, 13 );
             this.label8.TabIndex = 7;
@@ -189,7 +193,7 @@ namespace music_tagger
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point( 140, 45 );
+            this.label9.Location = new System.Drawing.Point( 144, 45 );
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size( 58, 13 );
             this.label9.TabIndex = 6;
@@ -198,56 +202,74 @@ namespace music_tagger
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point( 140, 25 );
+            this.label10.Location = new System.Drawing.Point( 144, 27 );
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size( 54, 13 );
             this.label10.TabIndex = 5;
             this.label10.Text = "<T> = title";
             // 
-            // label5
+            // lblComposer
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point( 15, 105 );
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size( 85, 13 );
-            this.label5.TabIndex = 4;
-            this.label5.Text = "<R> = composer";
+            this.lblComposer.AutoSize = true;
+            this.lblComposer.Location = new System.Drawing.Point( 6, 99 );
+            this.lblComposer.Name = "lblComposer";
+            this.lblComposer.Size = new System.Drawing.Size( 85, 13 );
+            this.lblComposer.TabIndex = 4;
+            this.lblComposer.Text = "<R> = composer";
             // 
-            // label4
+            // lblPosition
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point( 15, 85 );
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size( 114, 13 );
-            this.label4.TabIndex = 3;
-            this.label4.Text = "<P> = positon in media";
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Location = new System.Drawing.Point( 6, 81 );
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size( 114, 13 );
+            this.lblPosition.TabIndex = 3;
+            this.lblPosition.Text = "<P> = positon in media";
             // 
-            // label3
+            // lblTrack
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point( 15, 65 );
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size( 106, 13 );
-            this.label3.TabIndex = 2;
-            this.label3.Text = "<K> = Track Number";
+            this.lblTrack.AutoSize = true;
+            this.lblTrack.Location = new System.Drawing.Point( 6, 63 );
+            this.lblTrack.Name = "lblTrack";
+            this.lblTrack.Size = new System.Drawing.Size( 106, 13 );
+            this.lblTrack.TabIndex = 2;
+            this.lblTrack.Text = "<K> = Track Number";
             // 
-            // label2
+            // lblComment
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point( 15, 45 );
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size( 82, 13 );
-            this.label2.TabIndex = 1;
-            this.label2.Text = "<C> = Comment";
+            this.lblComment.AutoSize = true;
+            this.lblComment.Location = new System.Drawing.Point( 6, 45 );
+            this.lblComment.Name = "lblComment";
+            this.lblComment.Size = new System.Drawing.Size( 82, 13 );
+            this.lblComment.TabIndex = 1;
+            this.lblComment.Text = "<C> = Comment";
             // 
-            // label1
+            // lblArtist
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point( 15, 25 );
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size( 61, 13 );
-            this.label1.TabIndex = 0;
-            this.label1.Text = "<A> = Artist";
+            this.lblArtist.AutoSize = true;
+            this.lblArtist.Location = new System.Drawing.Point( 6, 27 );
+            this.lblArtist.Name = "lblArtist";
+            this.lblArtist.Size = new System.Drawing.Size( 61, 13 );
+            this.lblArtist.TabIndex = 0;
+            this.lblArtist.Text = "<A> = Artist";
+            // 
+            // lblBitrate
+            // 
+            this.lblBitrate.AutoSize = true;
+            this.lblBitrate.Location = new System.Drawing.Point( 6, 135 );
+            this.lblBitrate.Name = "lblBitrate";
+            this.lblBitrate.Size = new System.Drawing.Size( 64, 13 );
+            this.lblBitrate.TabIndex = 18;
+            this.lblBitrate.Text = "<I> = Bitrate";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point( 144, 135 );
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size( 53, 13 );
+            this.label20.TabIndex = 19;
+            this.label20.Text = "\\ = Folder";
             // 
             // FormatCtrl
             // 
@@ -269,7 +291,7 @@ namespace music_tagger
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblBMP;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -280,10 +302,12 @@ namespace music_tagger
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblComposer;
+        private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.Label lblTrack;
+        private System.Windows.Forms.Label lblComment;
+        private System.Windows.Forms.Label lblArtist;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblBitrate;
     }
 }

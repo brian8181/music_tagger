@@ -32,10 +32,9 @@ namespace music_tagger
                 return String.Compare( ( (ListViewItem)x ).SubItems[col].Text, ( (ListViewItem)y ).SubItems[col].Text );
             }
         }
-
-        
-        FileTreeView tree = null;
-        ImageList images = new ImageList();
+                
+        private FileTreeView tree = null;
+        private ImageList images = new ImageList();
 
         public ListView ListView
         {
@@ -58,7 +57,7 @@ namespace music_tagger
             //images.Images.Add(Image.FromFile(@"../../open.ico"));               // 1
             //images.Images.Add(Image.FromFile(@"../../file.ico"));               // 2
             //images.Images.Add(Image.FromFile(@"../../unk.ico"));                // 3
-            //listView.SmallImageList = images;
+            listView.SmallImageList = images;
             listView.Sorting = SortOrder.None;
             tree.AfterSelect += new TreeViewEventHandler( tree_AfterSelect );
         }
@@ -88,27 +87,22 @@ namespace music_tagger
                     for (int i = 0; i < len; ++i)
                     {
                         ListViewItem ni = new ListViewItem( files[i].Name );
-                        //ListViewItem ni = new ListViewItem(
-                        //    new string[6] {	files[i].Name, files[i].Length.ToString(),
-                        //                        files[i].Attributes.ToString(),
-                        //                        files[i].LastAccessTime.ToShortDateString(),
-                        //                        files[i].LastWriteTime.ToLocalTime().ToString(),
-                        //                        files[i].CreationTime.ToLocalTime().ToLongTimeString() });
 
-                        //Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
+                        Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
                         ////Use this to get the small Icon
-                        //IntPtr handle = Win32.SHGetFileInfo(files[i].FullName, 0, ref sInfo, (uint)Marshal.SizeOf(sInfo), 
-                        //    Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON);
+                        IntPtr handle = Win32.SHGetFileInfo( files[i].FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
+                            Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
 
-                        //if (images.Images.ContainsKey(sInfo.hIcon.ToString()) != true)
-                        //{
-                        //    //The icon is returned in the hIcon member of the shinfo struct
-                        //    System.Drawing.Icon icon = System.Drawing.Icon.FromHandle(sInfo.hIcon);
-                        //    images.Images.Add(sInfo.hIcon.ToString(), icon);
-                        //}
-                     
+                        if(images.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
+                        {
+                            //The icon is returned in the hIcon member of the shinfo struct
+                            System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
+                            images.Images.Add( sInfo.hIcon.ToString(), icon );
+                        }
+                        ni.ImageIndex = images.Images.IndexOfKey( sInfo.hIcon.ToString() );
+
                         ni.Tag = files[i];
-                        //ni.ImageIndex = images.Images.IndexOfKey(sInfo.hIcon.ToString());
+                        
                         // fill
                         Fill(ni);
                         listView.Items.Add( ni );
@@ -246,6 +240,37 @@ namespace music_tagger
             // object. Setting this property immediately sorts the 
             // ListView using the ListViewItemComparer object.
             this.listView.ListViewItemSorter = new ListViewItemComparer( e.Column );
+        }
+
+        private void mnViewCopyTo_Click( object sender, EventArgs e )
+        {
+            CopyTo( false );   
+        }
+
+        private void mnViewMoveTo_Click( object sender, EventArgs e )
+        {
+            CopyTo( true );
+        }
+
+        private void CopyTo(bool isMove)
+        {
+            if(listView.SelectedItems.Count > 0)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                FolderBrowserDialog dlg = new FolderBrowserDialog();
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    foreach(ListViewItem item in listView.SelectedItems)
+                    {
+                        FileInfo fi = (FileInfo)item.Tag;
+                        if(isMove)
+                            fi.MoveTo( dlg.SelectedPath + "\\" + fi.Name );
+                        else
+                            fi.CopyTo( dlg.SelectedPath + "\\" +  fi.Name );
+                    }
+                }
+                Cursor.Current = Cursors.Default;
+            }
         }
     }
 }

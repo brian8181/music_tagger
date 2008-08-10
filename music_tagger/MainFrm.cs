@@ -22,7 +22,7 @@ namespace music_tagger
             // menu
             mnViewV1.Checked = Properties.Settings.Default.view_ver1;
             mnViewV2.Checked = !mnViewV1.Checked;
-            //Properties.Settings.Default.scan_subdirs;
+            mnOptionsScanSubs.Checked = Properties.Settings.Default.scan_subdirs;
         }
 
         private void SaveSettings()
@@ -115,6 +115,10 @@ namespace music_tagger
             }
         }
 
-       
+        private void aboutToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+            ( new AboutBox() ).ShowDialog();
+        }
+      
     }
 }

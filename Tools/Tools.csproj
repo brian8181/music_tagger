@@ -35,7 +35,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Functions.cs" />
     <Compile Include="FileMask.cs" />
     <Compile Include="FileTreeNode.cs" />
     <Compile Include="FileTreeView.cs">

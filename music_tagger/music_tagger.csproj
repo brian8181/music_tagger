@@ -41,6 +41,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditMultiV1Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,10 @@
       <DependentUpon>ProgressCtrl.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditMultiV1Frm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditMultiV1Frm.cs</DependentUpon>
