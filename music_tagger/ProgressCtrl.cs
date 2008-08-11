@@ -15,8 +15,14 @@ namespace music_tagger
             InitializeComponent();
         }
 
+        private delegate void UpdateDelegate( string file );
         public void UpdateStatus( string file )
         {
+            if(InvokeRequired)
+            {
+                this.Invoke( new UpdateDelegate( UpdateStatus ), file );
+            }
+            
             lblFile.Text = file;
         }
     }

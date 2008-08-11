@@ -29,17 +29,19 @@ namespace music_tagger
             columnList.Items.Add( "Comment" );
             columnList.Items.Add( "Genre" );
             columnList.Items.Add( "Lenght" );
+
+            ckRestoreFolder.Checked = Properties.Settings.Default.restore_dir;
         }
 
        
         private void btnOK_Click( object sender, EventArgs e )
         {
-
+            Properties.Settings.Default.Save();
         }
 
         private void btnApply_Click( object sender, EventArgs e )
         {
-
+            Properties.Settings.Default.Save();
         }
     }
 }

@@ -138,6 +138,9 @@
     <Compile Include="OrganizeFrm.Designer.cs">
       <DependentUpon>OrganizeFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrganizeThread.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OrgProgressFrm.cs">
       <SubType>Form</SubType>
     </Compile>

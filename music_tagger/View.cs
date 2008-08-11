@@ -13,9 +13,14 @@ using System.Collections;
 
 namespace music_tagger
 {
+    /// <summary>
+    /// files list view usercontrol
+    /// </summary>
     public partial class View : UserControl
     {
-        // Implements the manual sorting of items by columns.
+        /// <summary>
+        /// Implements the manual sorting of items by columns. 
+        /// </summary>
         class ListViewItemComparer : IComparer
         {
             private int col;
@@ -52,11 +57,14 @@ namespace music_tagger
         public void Configure(FileTreeView tree)
         {
             this.tree = tree;
-            this.InitiListView();
-            //images.Images.Add("default", Image.FromFile(@"../../default.ico")); // 0
-            //images.Images.Add(Image.FromFile(@"../../open.ico"));               // 1
-            //images.Images.Add(Image.FromFile(@"../../file.ico"));               // 2
-            //images.Images.Add(Image.FromFile(@"../../unk.ico"));                // 3
+            
+            listView.Dock = DockStyle.Fill;
+            listView.View = System.Windows.Forms.View.Details;
+            listView.GridLines = true;
+            listView.AllowColumnReorder = true;
+            listView.FullRowSelect = true;
+            listView.MultiSelect = true;
+            listView.Columns.AddRange(CreateColumns());
             listView.SmallImageList = images;
             listView.Sorting = SortOrder.None;
             tree.AfterSelect += new TreeViewEventHandler( tree_AfterSelect );
@@ -111,8 +119,9 @@ namespace music_tagger
                         SizeAll(listView, ColumnHeaderAutoResizeStyle.ColumnContent);
                 }
             }
-            catch (UnauthorizedAccessException)
+            catch (UnauthorizedAccessException exp)
             {
+                MessageBox.Show( exp.Message );
             }
         }
 
@@ -181,24 +190,7 @@ namespace music_tagger
                 }
             }
         }
-
-        private void InitiListView()
-        {
-            //listView = new ListView();
-            listView.Dock = DockStyle.Fill;
-            listView.View = System.Windows.Forms.View.Details;
-            listView.GridLines = true;
-            listView.AllowColumnReorder = true;
-            listView.FullRowSelect = true;
-            listView.MultiSelect = true;
-            listView.Columns.AddRange(CreateColumns());
-            //this.Controls.Add(listView);
-            //listView.SelectedIndexChanged += new EventHandler(OnSelectionChanged);
-            //CreateCols();
-            //listView.Dock = DockStyle.Fill;
-            //this.Controls.Add(listView);
-        }
-
+              
         private ColumnHeader[] CreateColumns()
         {
             int len = Properties.Settings.Default.columns.Count;
@@ -270,6 +262,31 @@ namespace music_tagger
                     }
                 }
                 Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private void listView_DragDrop( object sender, DragEventArgs e )
+        {
+        }
+        private void listView_DragEnter( object sender, DragEventArgs e )
+        {
+        }
+        private void listView_DragLeave( object sender, EventArgs e )
+        {
+        }
+        private void listView_DragOver( object sender, DragEventArgs e )
+        {
+        }
+
+        private void mnViewSelectAll_Click( object sender, EventArgs e )
+        {
+            SelectAll();
+        }
+        public void SelectAll()
+        {
+            foreach(ListViewItem item in listView.Items)
+            {
+                item.Selected = true;
             }
         }
     }

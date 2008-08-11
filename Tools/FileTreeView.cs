@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 //using BKP.Online.IO;
 
 namespace Tools
@@ -45,7 +46,18 @@ namespace Tools
             this.ImageList = list;
             ImageIndex = closed_img_idx;
             SelectedImageIndex = opened_img_idx;
+
+            //Nodes = null;
         }
+
+
+        //public new TreeNodeCollection Nodes
+        //{
+        //    get
+        //    {
+        //        return null;
+        //    }
+        //}
 
         /// <summary>
         /// 
@@ -96,15 +108,18 @@ namespace Tools
         //todo
         //protected override void OnBeforeExpand( TreeViewCancelEventArgs e )
         //{
-        //    base.OnBeforeExpand( e );  
+        //    base.OnBeforeExpand( e );
         //    // change the focus
         //    FileTreeNode node = (FileTreeNode)e.Node;
         //    if(CanReadFile( node.FileSystemInfo ))
         //    {
-        //        if(!node.Intialized)
-        //            InitializeNode( node );
-        //        else
-        //            this.RefreshTree( node );
+        //        foreach(FileTreeNode n in node.Nodes)
+        //        {
+        //            if(!n.Intialized)
+        //                InitializeNode( n );
+        //            else
+        //                this.RefreshTree( n );
+        //        }
         //    }
         //}
         /// <summary>
@@ -147,7 +162,7 @@ namespace Tools
                     string name = files[i].Name;
                     FileSystemInfo fi = (FileSystemInfo)files[i];
                     FileTreeNode child = new FileTreeNode( name, fi, 0, 1 );
-                    node.Nodes.Add( child );
+                    node.Nodes.Add(child );
                     node.Intialized = true;
                 }
 
@@ -190,7 +205,10 @@ namespace Tools
             string name = di.Name;
             if(drive.IsReady)
                 name = drive.VolumeLabel + " (" + di.Name + ")";
-            FileTreeNode node = new FileTreeNode( name, di );
+            DriveTreeNode node = new DriveTreeNode( name, di );
+
+            Debug.WriteLine("TOSTRING: " + node.ToString() );
+
             int idx = 0;
             switch(drive.DriveType)
             {

@@ -2,9 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Tools
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class FileTreeNode : TreeNodeExt
     {
         private System.IO.FileSystemInfo fi;
@@ -23,7 +27,7 @@ namespace Tools
             this.fi = fi;
             Initialize();
         }
-
+        
         public override void Initialize()
         {
             string root = Path.GetPathRoot( fi.FullName );
@@ -50,18 +54,27 @@ namespace Tools
         }
     }
 
-    //public class DriveTreeNode : FileTreeNode
+    /// <summary>
+    /// 
+    /// </summary>
+    public class DriveTreeNode : FileTreeNode
+    {
+        public DriveTreeNode( string name, FileSystemInfo fi, int img_idx, int sel_img )
+            : base( name, fi, img_idx, sel_img )
+        {
+        }
+
+        public DriveTreeNode( string name, FileSystemInfo fi )
+            : base( name, fi )
+        {
+          
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    //public class FileTreeNodeCollection : TreeNodeCollection
     //{
-    //    //DirectoryInfo di = null;
-
-    //    public override void Initialize()
-    //    {
-    //        throw new Exception( "The method or operation is not implemented." );
-    //    }
-
-    //    public override void RefreshNode()
-    //    {
-    //        throw new Exception( "The method or operation is not implemented." );
-    //    }
     //}
 }

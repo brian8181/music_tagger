@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace music_tagger
 {
@@ -23,6 +24,10 @@ namespace music_tagger
             mnViewV1.Checked = Properties.Settings.Default.view_ver1;
             mnViewV2.Checked = !mnViewV1.Checked;
             mnOptionsScanSubs.Checked = Properties.Settings.Default.scan_subdirs;
+
+            string[] dirs = Properties.Settings.Default.last_dir.Split('\\');
+            //tree.Nodes.Add(ContainsKey();
+            //todo
         }
 
         private void SaveSettings()
@@ -75,6 +80,11 @@ namespace music_tagger
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnPrefs_Click( object sender, EventArgs e )
         {
             PrefFrm dlg = new PrefFrm();
@@ -84,11 +94,19 @@ namespace music_tagger
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnToggleVer( object sender, EventArgs e )
         {
             ToggleVer();   
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void ToggleVer()
         {
              tsb_ToggleVer.Text = tsb_ToggleVer.Text == "Shown Ver. 1" ? "Shown Ver. 2" : "Shown Ver. 1";    
@@ -106,6 +124,11 @@ namespace music_tagger
             ToggleVer();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnFileOrganize_Click( object sender, EventArgs e )
         {
             OrganizeFrm dlg = new OrganizeFrm( view.ListView );
@@ -119,6 +142,49 @@ namespace music_tagger
         {
             ( new AboutBox() ).ShowDialog();
         }
-      
+
+        private void mnEditUndo_Click( object sender, EventArgs e )
+        {
+        }
+
+        private void mnEditRedo_Click( object sender, EventArgs e )
+        {
+        }
+
+        private void mnEditCut_Click( object sender, EventArgs e )
+        {
+        }
+
+        private void mnEditCopy_Click( object sender, EventArgs e )
+        {
+        }
+
+        private void mnEditPast_Click( object sender, EventArgs e )
+        {
+        }
+
+        private void mnEditSelectAll_Click( object sender, EventArgs e )
+        {
+            view.SelectAll();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainFrm_FormClosing( object sender, FormClosingEventArgs e )
+        {
+            // extract path from node path
+            string full_path = tree.SelectedNode.FullPath;
+            string pattern = @"^.*\((?<DRIVE>[A-Z]:).*\)(?<PATH>\\.*$)";
+            Regex regx = new Regex(pattern);
+            Match m = regx.Match( full_path );
+            string drive = m.Groups["DRIVE"].Value;
+            string path = m.Groups["PATH"].Value;
+
+            Properties.Settings.Default.last_dir = drive + path;
+            Properties.Settings.Default.Save();
+        }
+
     }
 }
