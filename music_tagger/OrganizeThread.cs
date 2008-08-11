@@ -6,6 +6,9 @@ using System.Threading;
 
 namespace music_tagger
 {
+    /// <summary>
+    /// Isolate threading
+    /// </summary>
     class OrganizeThread : OrgProgressFrm 
     {
         /// <summary>
