@@ -439,7 +439,6 @@ namespace music_tagger
             this.PerformLayout();
 
         }
-
         #endregion
 
         private XPExplorerBar.TaskPane taskPane1;

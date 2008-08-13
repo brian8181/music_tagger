@@ -18,7 +18,6 @@ namespace music_tagger
         public EditV1Frm()
         {
             InitializeComponent();
-            
         }
 
         /// <summary>
@@ -28,10 +27,8 @@ namespace music_tagger
         public EditV1Frm(ListView lv) 
         {
             InitializeComponent();
-            this.lv = lv;
             editCtrl.Initialize( lv );
-            Initialize();
-           
+            Initialize();                                                               
         }
 
         public virtual void Initialize()

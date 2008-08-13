@@ -64,7 +64,7 @@ namespace music_tagger
         {
             if(this.view.ListView.SelectedItems.Count > 0)
             {
-                EditV2Frm dlg = new EditV2Frm();
+                EditV2Frm dlg = new EditV2Frm(view.ListView);
                 if(dlg.ShowDialog() == DialogResult.OK)
                 {
                     // todo
@@ -184,6 +184,79 @@ namespace music_tagger
 
             Properties.Settings.Default.last_dir = drive + path;
             Properties.Settings.Default.Save();
+        }
+
+        private void mnRemoveTagV1_Click( object sender, EventArgs e )
+        {
+                    
+        }
+
+        private void mnFile2TagV1_Click( object sender, EventArgs e )
+        {
+            File2TagV1Frm dlg = new File2TagV1Frm();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+        private void mnTag2FileV1_Click( object sender, EventArgs e )
+        {
+            TagV12FileFrm dlg = new TagV12FileFrm();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+        private void mnRemoveTagV2_Click( object sender, EventArgs e )
+        {
+
+        }
+
+        private void mnFile2TagV2_Click( object sender, EventArgs e )
+        {
+            File2TagV2Frm dlg = new File2TagV2Frm();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+        private void mnTag2FileV2_Click( object sender, EventArgs e )
+        {
+            TagV22FileFrm dlg = new TagV22FileFrm();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+        private void On_CaseConvert( object sender, EventArgs e )
+        {
+            CaseConvertFrm dlg = new CaseConvertFrm();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+        private void mnFindDuplicates_Click( object sender, EventArgs e )
+        {
+            FindDuplicateFrm dlg = new FindDuplicateFrm();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+        private void mnCompareFile2Tag_Click( object sender, EventArgs e )
+        {
+            CompareFile2TagFrm dlg = new CompareFile2TagFrm();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
         }
 
     }

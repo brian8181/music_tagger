@@ -205,7 +205,7 @@ namespace music_tagger
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size( 444, 386 );
+            this.ClientSize = new System.Drawing.Size( 442, 386 );
             this.Controls.Add( this.label3 );
             this.Controls.Add( this.rbV1 );
             this.Controls.Add( this.rbV2 );

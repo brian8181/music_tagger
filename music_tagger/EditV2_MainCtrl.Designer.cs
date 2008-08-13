@@ -28,12 +28,12 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbGenre = new System.Windows.Forms.ComboBox();
+            this.cmbArtist = new System.Windows.Forms.ComboBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.txtAlbum = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,26 +41,26 @@ namespace music_tagger
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btnV1Artist = new System.Windows.Forms.Button();
+            this.btnV1Title = new System.Windows.Forms.Button();
+            this.btnV1Album = new System.Windows.Forms.Button();
+            this.btnV1Year = new System.Windows.Forms.Button();
+            this.btnV1Track = new System.Windows.Forms.Button();
+            this.btnV1Genre = new System.Windows.Forms.Button();
+            this.btnV1Comment = new System.Windows.Forms.Button();
+            this.genreList = new System.Windows.Forms.ListBox();
+            this.txtBPM = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txtDisc = new System.Windows.Forms.TextBox();
+            this.lblDics = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtDiscCount = new System.Windows.Forms.TextBox();
+            this.txtTrackCount = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txtTrack = new System.Windows.Forms.TextBox();
+            this.cmbCommentLang = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -68,12 +68,12 @@ namespace music_tagger
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnRemoveGenre = new System.Windows.Forms.Button();
+            this.btnAddGenre = new System.Windows.Forms.Button();
+            this.btnTopGenre = new System.Windows.Forms.Button();
+            this.btnAddComment = new System.Windows.Forms.Button();
+            this.btnRemoveComment = new System.Windows.Forms.Button();
+            this.btnTopComment = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -83,50 +83,50 @@ namespace music_tagger
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // cmbGenre
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point( 120, 13 );
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size( 346, 21 );
-            this.comboBox2.TabIndex = 33;
+            this.cmbGenre.FormattingEnabled = true;
+            this.cmbGenre.Location = new System.Drawing.Point( 120, 13 );
+            this.cmbGenre.Name = "cmbGenre";
+            this.cmbGenre.Size = new System.Drawing.Size( 346, 21 );
+            this.cmbGenre.TabIndex = 33;
             // 
-            // comboBox1
+            // cmbArtist
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point( 121, 15 );
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size( 414, 21 );
-            this.comboBox1.TabIndex = 32;
+            this.cmbArtist.FormattingEnabled = true;
+            this.cmbArtist.Location = new System.Drawing.Point( 121, 15 );
+            this.cmbArtist.Name = "cmbArtist";
+            this.cmbArtist.Size = new System.Drawing.Size( 414, 21 );
+            this.cmbArtist.TabIndex = 32;
             // 
-            // textBox6
+            // txtComment
             // 
-            this.textBox6.Location = new System.Drawing.Point( 117, 68 );
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size( 414, 73 );
-            this.textBox6.TabIndex = 31;
+            this.txtComment.Location = new System.Drawing.Point( 117, 68 );
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size( 414, 73 );
+            this.txtComment.TabIndex = 31;
             // 
-            // textBox3
+            // txtYear
             // 
-            this.textBox3.Location = new System.Drawing.Point( 121, 93 );
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size( 100, 20 );
-            this.textBox3.TabIndex = 29;
+            this.txtYear.Location = new System.Drawing.Point( 121, 93 );
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size( 100, 20 );
+            this.txtYear.TabIndex = 29;
             // 
-            // textBox2
+            // txtAlbum
             // 
-            this.textBox2.Location = new System.Drawing.Point( 121, 67 );
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox2.TabIndex = 28;
+            this.txtAlbum.Location = new System.Drawing.Point( 121, 67 );
+            this.txtAlbum.Name = "txtAlbum";
+            this.txtAlbum.Size = new System.Drawing.Size( 414, 20 );
+            this.txtAlbum.TabIndex = 28;
             // 
-            // textBox1
+            // txtTitle
             // 
-            this.textBox1.Location = new System.Drawing.Point( 120, 41 );
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox1.TabIndex = 27;
+            this.txtTitle.Location = new System.Drawing.Point( 120, 41 );
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size( 414, 20 );
+            this.txtTitle.TabIndex = 27;
             // 
             // label7
             // 
@@ -191,108 +191,115 @@ namespace music_tagger
             this.label1.TabIndex = 20;
             this.label1.Text = "Artist:";
             // 
-            // button1
+            // btnV1Artist
             // 
-            this.button1.Location = new System.Drawing.Point( 541, 15 );
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size( 59, 20 );
-            this.button1.TabIndex = 34;
-            this.button1.Text = "<-- Ver 1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnV1Artist.Location = new System.Drawing.Point( 541, 15 );
+            this.btnV1Artist.Name = "btnV1Artist";
+            this.btnV1Artist.Size = new System.Drawing.Size( 59, 20 );
+            this.btnV1Artist.TabIndex = 34;
+            this.btnV1Artist.Text = "<-- Ver 1";
+            this.btnV1Artist.UseVisualStyleBackColor = true;
+            this.btnV1Artist.Click += new System.EventHandler( this.btnV1Artist_Click );
             // 
-            // button2
+            // btnV1Title
             // 
-            this.button2.Location = new System.Drawing.Point( 541, 40 );
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size( 59, 20 );
-            this.button2.TabIndex = 35;
-            this.button2.Text = "<-- Ver 1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnV1Title.Location = new System.Drawing.Point( 541, 40 );
+            this.btnV1Title.Name = "btnV1Title";
+            this.btnV1Title.Size = new System.Drawing.Size( 59, 20 );
+            this.btnV1Title.TabIndex = 35;
+            this.btnV1Title.Text = "<-- Ver 1";
+            this.btnV1Title.UseVisualStyleBackColor = true;
+            this.btnV1Title.Click += new System.EventHandler( this.btnV1Title_Click );
             // 
-            // button3
+            // btnV1Album
             // 
-            this.button3.Location = new System.Drawing.Point( 541, 67 );
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size( 59, 20 );
-            this.button3.TabIndex = 36;
-            this.button3.Text = "<-- Ver 1";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnV1Album.Location = new System.Drawing.Point( 541, 67 );
+            this.btnV1Album.Name = "btnV1Album";
+            this.btnV1Album.Size = new System.Drawing.Size( 59, 20 );
+            this.btnV1Album.TabIndex = 36;
+            this.btnV1Album.Text = "<-- Ver 1";
+            this.btnV1Album.UseVisualStyleBackColor = true;
+            this.btnV1Album.Click += new System.EventHandler( this.btnV1Album_Click );
             // 
-            // button4
+            // btnV1Year
             // 
-            this.button4.Location = new System.Drawing.Point( 240, 92 );
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size( 59, 20 );
-            this.button4.TabIndex = 37;
-            this.button4.Text = "<-- Ver 1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnV1Year.Location = new System.Drawing.Point( 240, 92 );
+            this.btnV1Year.Name = "btnV1Year";
+            this.btnV1Year.Size = new System.Drawing.Size( 59, 20 );
+            this.btnV1Year.TabIndex = 37;
+            this.btnV1Year.Text = "<-- Ver 1";
+            this.btnV1Year.UseVisualStyleBackColor = true;
+            this.btnV1Year.Click += new System.EventHandler( this.btnV1Year_Click );
             // 
-            // button5
+            // btnV1Track
             // 
-            this.button5.Location = new System.Drawing.Point( 240, 123 );
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size( 59, 20 );
-            this.button5.TabIndex = 38;
-            this.button5.Text = "<-- Ver 1";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnV1Track.Location = new System.Drawing.Point( 240, 123 );
+            this.btnV1Track.Name = "btnV1Track";
+            this.btnV1Track.Size = new System.Drawing.Size( 59, 20 );
+            this.btnV1Track.TabIndex = 38;
+            this.btnV1Track.Text = "<-- Ver 1";
+            this.btnV1Track.UseVisualStyleBackColor = true;
+            this.btnV1Track.Click += new System.EventHandler( this.btnV1Track_Click );
             // 
-            // button6
+            // btnV1Genre
             // 
-            this.button6.Location = new System.Drawing.Point( 537, 38 );
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size( 59, 20 );
-            this.button6.TabIndex = 39;
-            this.button6.Text = "<-- Ver 1";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnV1Genre.Location = new System.Drawing.Point( 537, 38 );
+            this.btnV1Genre.Name = "btnV1Genre";
+            this.btnV1Genre.Size = new System.Drawing.Size( 59, 20 );
+            this.btnV1Genre.TabIndex = 39;
+            this.btnV1Genre.Text = "<-- Ver 1";
+            this.btnV1Genre.UseVisualStyleBackColor = true;
+            this.btnV1Genre.Click += new System.EventHandler( this.btnV1Genre_Click );
             // 
-            // button7
+            // btnV1Comment
             // 
-            this.button7.Location = new System.Drawing.Point( 537, 93 );
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size( 59, 20 );
-            this.button7.TabIndex = 40;
-            this.button7.Text = "<-- Ver 1";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnV1Comment.Location = new System.Drawing.Point( 537, 93 );
+            this.btnV1Comment.Name = "btnV1Comment";
+            this.btnV1Comment.Size = new System.Drawing.Size( 59, 20 );
+            this.btnV1Comment.TabIndex = 40;
+            this.btnV1Comment.Text = "<-- Ver 1";
+            this.btnV1Comment.UseVisualStyleBackColor = true;
+            this.btnV1Comment.Click += new System.EventHandler( this.btnV1Comment_Click );
             // 
-            // listBox1
+            // genreList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point( 120, 38 );
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size( 171, 56 );
-            this.listBox1.TabIndex = 41;
+            this.genreList.FormattingEnabled = true;
+            this.genreList.Location = new System.Drawing.Point( 120, 38 );
+            this.genreList.Name = "genreList";
+            this.genreList.Size = new System.Drawing.Size( 171, 56 );
+            this.genreList.TabIndex = 41;
             // 
-            // textBox5
+            // txtBPM
             // 
-            this.textBox5.Location = new System.Drawing.Point( 432, 93 );
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size( 103, 20 );
-            this.textBox5.TabIndex = 43;
+            this.txtBPM.Location = new System.Drawing.Point( 432, 93 );
+            this.txtBPM.Name = "txtBPM";
+            this.txtBPM.Size = new System.Drawing.Size( 103, 20 );
+            this.txtBPM.TabIndex = 43;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point( 321, 100 );
+            this.label8.Location = new System.Drawing.Point( 377, 96 );
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size( 33, 13 );
             this.label8.TabIndex = 42;
-            this.label8.Text = "BMP:";
+            this.label8.Text = "BPM:";
             // 
-            // textBox7
+            // txtDisc
             // 
-            this.textBox7.Location = new System.Drawing.Point( 432, 123 );
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size( 35, 20 );
-            this.textBox7.TabIndex = 45;
+            this.txtDisc.Location = new System.Drawing.Point( 432, 123 );
+            this.txtDisc.Name = "txtDisc";
+            this.txtDisc.Size = new System.Drawing.Size( 35, 20 );
+            this.txtDisc.TabIndex = 45;
             // 
-            // label9
+            // lblDics
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point( 321, 127 );
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size( 89, 13 );
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Position in media:";
+            this.lblDics.AutoSize = true;
+            this.lblDics.Location = new System.Drawing.Point( 379, 130 );
+            this.lblDics.Name = "lblDics";
+            this.lblDics.Size = new System.Drawing.Size( 31, 13 );
+            this.lblDics.TabIndex = 44;
+            this.lblDics.Text = "Disc:";
             // 
             // numericUpDown1
             // 
@@ -319,19 +326,19 @@ namespace music_tagger
             this.label10.TabIndex = 48;
             this.label10.Text = "of";
             // 
-            // textBox8
+            // txtDiscCount
             // 
-            this.textBox8.Location = new System.Drawing.Point( 500, 124 );
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size( 35, 20 );
-            this.textBox8.TabIndex = 49;
+            this.txtDiscCount.Location = new System.Drawing.Point( 500, 124 );
+            this.txtDiscCount.Name = "txtDiscCount";
+            this.txtDiscCount.Size = new System.Drawing.Size( 35, 20 );
+            this.txtDiscCount.TabIndex = 49;
             // 
-            // textBox9
+            // txtTrackCount
             // 
-            this.textBox9.Location = new System.Drawing.Point( 191, 123 );
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size( 35, 20 );
-            this.textBox9.TabIndex = 52;
+            this.txtTrackCount.Location = new System.Drawing.Point( 191, 123 );
+            this.txtTrackCount.Name = "txtTrackCount";
+            this.txtTrackCount.Size = new System.Drawing.Size( 35, 20 );
+            this.txtTrackCount.TabIndex = 52;
             // 
             // label11
             // 
@@ -342,20 +349,20 @@ namespace music_tagger
             this.label11.TabIndex = 51;
             this.label11.Text = "of";
             // 
-            // textBox10
+            // txtTrack
             // 
-            this.textBox10.Location = new System.Drawing.Point( 121, 123 );
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size( 35, 20 );
-            this.textBox10.TabIndex = 50;
+            this.txtTrack.Location = new System.Drawing.Point( 121, 123 );
+            this.txtTrack.Name = "txtTrack";
+            this.txtTrack.Size = new System.Drawing.Size( 35, 20 );
+            this.txtTrack.TabIndex = 50;
             // 
-            // comboBox3
+            // cmbCommentLang
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point( 117, 40 );
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size( 414, 21 );
-            this.comboBox3.TabIndex = 53;
+            this.cmbCommentLang.FormattingEnabled = true;
+            this.cmbCommentLang.Location = new System.Drawing.Point( 117, 40 );
+            this.cmbCommentLang.Name = "cmbCommentLang";
+            this.cmbCommentLang.Size = new System.Drawing.Size( 414, 21 );
+            this.cmbCommentLang.TabIndex = 53;
             // 
             // comboBox4
             // 
@@ -412,71 +419,77 @@ namespace music_tagger
             this.columnHeader3.Text = "Language";
             this.columnHeader3.Width = 100;
             // 
-            // button8
+            // btnRemoveGenre
             // 
-            this.button8.Location = new System.Drawing.Point( 537, 12 );
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size( 59, 20 );
-            this.button8.TabIndex = 58;
-            this.button8.Text = "Remove";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnRemoveGenre.Location = new System.Drawing.Point( 537, 12 );
+            this.btnRemoveGenre.Name = "btnRemoveGenre";
+            this.btnRemoveGenre.Size = new System.Drawing.Size( 59, 20 );
+            this.btnRemoveGenre.TabIndex = 58;
+            this.btnRemoveGenre.Text = "Remove";
+            this.btnRemoveGenre.UseVisualStyleBackColor = true;
+            this.btnRemoveGenre.Click += new System.EventHandler( this.btnRemoveGenre_Click );
             // 
-            // button9
+            // btnAddGenre
             // 
-            this.button9.Location = new System.Drawing.Point( 472, 12 );
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size( 59, 20 );
-            this.button9.TabIndex = 59;
-            this.button9.Text = "Add";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnAddGenre.Location = new System.Drawing.Point( 472, 12 );
+            this.btnAddGenre.Name = "btnAddGenre";
+            this.btnAddGenre.Size = new System.Drawing.Size( 59, 20 );
+            this.btnAddGenre.TabIndex = 59;
+            this.btnAddGenre.Text = "Add";
+            this.btnAddGenre.UseVisualStyleBackColor = true;
+            this.btnAddGenre.Click += new System.EventHandler( this.btnAddGenre_Click );
             // 
-            // button10
+            // btnTopGenre
             // 
-            this.button10.Location = new System.Drawing.Point( 472, 38 );
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size( 59, 20 );
-            this.button10.TabIndex = 60;
-            this.button10.Text = "Top";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnTopGenre.Location = new System.Drawing.Point( 472, 38 );
+            this.btnTopGenre.Name = "btnTopGenre";
+            this.btnTopGenre.Size = new System.Drawing.Size( 59, 20 );
+            this.btnTopGenre.TabIndex = 60;
+            this.btnTopGenre.Text = "Top";
+            this.btnTopGenre.UseVisualStyleBackColor = true;
+            this.btnTopGenre.Click += new System.EventHandler( this.btnTopGenre_Click );
             // 
-            // button11
+            // btnAddComment
             // 
-            this.button11.Location = new System.Drawing.Point( 537, 16 );
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size( 59, 20 );
-            this.button11.TabIndex = 62;
-            this.button11.Text = "Add";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnAddComment.Location = new System.Drawing.Point( 537, 16 );
+            this.btnAddComment.Name = "btnAddComment";
+            this.btnAddComment.Size = new System.Drawing.Size( 59, 20 );
+            this.btnAddComment.TabIndex = 62;
+            this.btnAddComment.Text = "Add";
+            this.btnAddComment.UseVisualStyleBackColor = true;
+            this.btnAddComment.Click += new System.EventHandler( this.btnAddComment_Click );
             // 
-            // button12
+            // btnRemoveComment
             // 
-            this.button12.Location = new System.Drawing.Point( 537, 43 );
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size( 59, 20 );
-            this.button12.TabIndex = 61;
-            this.button12.Text = "Remove";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnRemoveComment.Location = new System.Drawing.Point( 537, 43 );
+            this.btnRemoveComment.Name = "btnRemoveComment";
+            this.btnRemoveComment.Size = new System.Drawing.Size( 59, 20 );
+            this.btnRemoveComment.TabIndex = 61;
+            this.btnRemoveComment.Text = "Remove";
+            this.btnRemoveComment.UseVisualStyleBackColor = true;
+            this.btnRemoveComment.Click += new System.EventHandler( this.btnRemoveComment_Click );
             // 
-            // button13
+            // btnTopComment
             // 
-            this.button13.Location = new System.Drawing.Point( 537, 67 );
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size( 59, 20 );
-            this.button13.TabIndex = 63;
-            this.button13.Text = "Top";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnTopComment.Location = new System.Drawing.Point( 537, 67 );
+            this.btnTopComment.Name = "btnTopComment";
+            this.btnTopComment.Size = new System.Drawing.Size( 59, 20 );
+            this.btnTopComment.TabIndex = 63;
+            this.btnTopComment.Text = "Top";
+            this.btnTopComment.UseVisualStyleBackColor = true;
+            this.btnTopComment.Click += new System.EventHandler( this.btnTopComment_Click );
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add( this.comboBox4 );
-            this.groupBox1.Controls.Add( this.button13 );
+            this.groupBox1.Controls.Add( this.btnTopComment );
             this.groupBox1.Controls.Add( this.label7 );
-            this.groupBox1.Controls.Add( this.button11 );
+            this.groupBox1.Controls.Add( this.btnAddComment );
             this.groupBox1.Controls.Add( this.listView1 );
-            this.groupBox1.Controls.Add( this.textBox6 );
-            this.groupBox1.Controls.Add( this.button12 );
-            this.groupBox1.Controls.Add( this.button7 );
-            this.groupBox1.Controls.Add( this.comboBox3 );
+            this.groupBox1.Controls.Add( this.txtComment );
+            this.groupBox1.Controls.Add( this.btnRemoveComment );
+            this.groupBox1.Controls.Add( this.btnV1Comment );
+            this.groupBox1.Controls.Add( this.cmbCommentLang );
             this.groupBox1.Controls.Add( this.label12 );
             this.groupBox1.Controls.Add( this.label13 );
             this.groupBox1.Location = new System.Drawing.Point( 3, 250 );
@@ -487,13 +500,13 @@ namespace music_tagger
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add( this.listBox1 );
-            this.groupBox2.Controls.Add( this.button10 );
+            this.groupBox2.Controls.Add( this.genreList );
+            this.groupBox2.Controls.Add( this.btnTopGenre );
             this.groupBox2.Controls.Add( this.label6 );
-            this.groupBox2.Controls.Add( this.button9 );
-            this.groupBox2.Controls.Add( this.comboBox2 );
-            this.groupBox2.Controls.Add( this.button8 );
-            this.groupBox2.Controls.Add( this.button6 );
+            this.groupBox2.Controls.Add( this.btnAddGenre );
+            this.groupBox2.Controls.Add( this.cmbGenre );
+            this.groupBox2.Controls.Add( this.btnRemoveGenre );
+            this.groupBox2.Controls.Add( this.btnV1Genre );
             this.groupBox2.Location = new System.Drawing.Point( 3, 150 );
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size( 608, 100 );
@@ -504,27 +517,27 @@ namespace music_tagger
             // 
             this.groupBox3.Controls.Add( this.label1 );
             this.groupBox3.Controls.Add( this.label2 );
-            this.groupBox3.Controls.Add( this.textBox9 );
+            this.groupBox3.Controls.Add( this.txtTrackCount );
             this.groupBox3.Controls.Add( this.label3 );
             this.groupBox3.Controls.Add( this.label11 );
             this.groupBox3.Controls.Add( this.label4 );
-            this.groupBox3.Controls.Add( this.textBox10 );
+            this.groupBox3.Controls.Add( this.txtTrack );
             this.groupBox3.Controls.Add( this.label5 );
-            this.groupBox3.Controls.Add( this.textBox8 );
-            this.groupBox3.Controls.Add( this.textBox1 );
+            this.groupBox3.Controls.Add( this.txtDiscCount );
+            this.groupBox3.Controls.Add( this.txtTitle );
             this.groupBox3.Controls.Add( this.label10 );
-            this.groupBox3.Controls.Add( this.textBox2 );
-            this.groupBox3.Controls.Add( this.textBox3 );
-            this.groupBox3.Controls.Add( this.comboBox1 );
-            this.groupBox3.Controls.Add( this.textBox7 );
-            this.groupBox3.Controls.Add( this.button1 );
-            this.groupBox3.Controls.Add( this.label9 );
-            this.groupBox3.Controls.Add( this.button2 );
-            this.groupBox3.Controls.Add( this.textBox5 );
-            this.groupBox3.Controls.Add( this.button3 );
+            this.groupBox3.Controls.Add( this.txtAlbum );
+            this.groupBox3.Controls.Add( this.txtYear );
+            this.groupBox3.Controls.Add( this.cmbArtist );
+            this.groupBox3.Controls.Add( this.txtDisc );
+            this.groupBox3.Controls.Add( this.btnV1Artist );
+            this.groupBox3.Controls.Add( this.lblDics );
+            this.groupBox3.Controls.Add( this.btnV1Title );
+            this.groupBox3.Controls.Add( this.txtBPM );
+            this.groupBox3.Controls.Add( this.btnV1Album );
             this.groupBox3.Controls.Add( this.label8 );
-            this.groupBox3.Controls.Add( this.button4 );
-            this.groupBox3.Controls.Add( this.button5 );
+            this.groupBox3.Controls.Add( this.btnV1Year );
+            this.groupBox3.Controls.Add( this.btnV1Track );
             this.groupBox3.Location = new System.Drawing.Point( 4, 0 );
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size( 608, 151 );
@@ -556,12 +569,12 @@ namespace music_tagger
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbGenre;
+        private System.Windows.Forms.ComboBox cmbArtist;
+        private System.Windows.Forms.TextBox txtComment;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.TextBox txtAlbum;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -569,26 +582,26 @@ namespace music_tagger
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button btnV1Artist;
+        private System.Windows.Forms.Button btnV1Title;
+        private System.Windows.Forms.Button btnV1Album;
+        private System.Windows.Forms.Button btnV1Year;
+        private System.Windows.Forms.Button btnV1Track;
+        private System.Windows.Forms.Button btnV1Genre;
+        private System.Windows.Forms.Button btnV1Comment;
+        private System.Windows.Forms.ListBox genreList;
+        private System.Windows.Forms.TextBox txtBPM;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtDisc;
+        private System.Windows.Forms.Label lblDics;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtDiscCount;
+        private System.Windows.Forms.TextBox txtTrackCount;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox txtTrack;
+        private System.Windows.Forms.ComboBox cmbCommentLang;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -596,12 +609,12 @@ namespace music_tagger
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnRemoveGenre;
+        private System.Windows.Forms.Button btnAddGenre;
+        private System.Windows.Forms.Button btnTopGenre;
+        private System.Windows.Forms.Button btnAddComment;
+        private System.Windows.Forms.Button btnRemoveComment;
+        private System.Windows.Forms.Button btnTopComment;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;

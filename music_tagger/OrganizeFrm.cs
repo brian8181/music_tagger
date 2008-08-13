@@ -54,11 +54,11 @@ namespace music_tagger
             ckCopy.Checked = Properties.Settings.Default.org_copy;
             ckOverwrite.Checked = Properties.Settings.Default.org_overwrite;
             txtPath.Text = Properties.Settings.Default.org_root_dir;
-       
-            //string[] fmts = new string[Properties.Settings.Default.org_formats.Count];
-            //Properties.Settings.Default.org_formats.CopyTo( fmts, 0 );
-            //cmbFormat.Items.AddRange( fmts );
-            //cmbFormat.SelectedIndex = 0;
+
+            string[] fmts = new string[Properties.Settings.Default.org_formats.Count];
+            Properties.Settings.Default.org_formats.CopyTo( fmts, 0 );
+            cmbFormat.Items.AddRange( fmts );
+            cmbFormat.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -73,6 +73,7 @@ namespace music_tagger
             // formats
             string[] fmts = new string[cmbFormat.Items.Count];
             cmbFormat.Items.CopyTo( fmts, 0 );
+            Properties.Settings.Default.org_formats.Clear();
             Properties.Settings.Default.org_formats.AddRange( fmts );
             Properties.Settings.Default.Save();
         }

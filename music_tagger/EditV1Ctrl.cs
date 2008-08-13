@@ -24,6 +24,7 @@ namespace music_tagger
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// intialize listview  
         /// </summary>

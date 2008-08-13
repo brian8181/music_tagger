@@ -47,11 +47,27 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CaseConvertFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaseConvertFrm.Designer.cs">
+      <DependentUpon>CaseConvertFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompareFile2TagFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompareFile2TagFrm.Designer.cs">
+      <DependentUpon>CompareFile2TagFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditFrm.cs" />
     <Compile Include="EditMultiV1Frm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditMultiV1Frm.Designer.cs">
       <DependentUpon>EditMultiV1Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="EditV1Ctrl.cs">
       <SubType>UserControl</SubType>
@@ -113,11 +129,23 @@
     <Compile Include="EditV2_WebCtrl.Designer.cs">
       <DependentUpon>EditV2_WebCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="File2TagV1Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="File2TagV1Frm.Designer.cs">
+      <DependentUpon>File2TagV1Frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="File2TagV2Frm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="File2TagV2Frm.Designer.cs">
       <DependentUpon>File2TagV2Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindDuplicateFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindDuplicateFrm.Designer.cs">
+      <DependentUpon>FindDuplicateFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormatCtrl.cs">
       <SubType>UserControl</SubType>
@@ -197,9 +225,17 @@
       <SubType>Designer</SubType>
       <DependentUpon>EditV2_PeopleCtrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditV2_PictureCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2_PictureCtrl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditV2_WebCtrl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditV2_WebCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File2TagV1Frm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>File2TagV1Frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="File2TagV2Frm.resx">
       <SubType>Designer</SubType>
@@ -234,6 +270,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TagV12FileFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TagV12FileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagV22FileFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TagV22FileFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <SubType>Designer</SubType>
       <DependentUpon>View.cs</DependentUpon>
@@ -252,6 +296,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TagV12FileFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagV12FileFrm.Designer.cs">
+      <DependentUpon>TagV12FileFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagV22FileFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagV22FileFrm.Designer.cs">
+      <DependentUpon>TagV22FileFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="View.cs">
       <SubType>UserControl</SubType>

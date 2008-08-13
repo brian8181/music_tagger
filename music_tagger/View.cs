@@ -86,7 +86,17 @@ namespace music_tagger
             //DirectoryInfo di = new DirectoryInfo(focus.File.FullName);
             try
             {
-                FileInfo[] files = di.GetFiles("*.mp3");
+                // todo is ready!
+                FileInfo[] files = null;
+                try
+                {
+                   files  = di.GetFiles( "*.mp3" );
+                }
+                catch(IOException)
+                {
+                    return;
+                }
+                
                 listView.Items.Clear();
                 if (files != null)  //be none
                 {

@@ -28,33 +28,37 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFile = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // progressBar1
+            // progressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point( 3, 54 );
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size( 384, 21 );
-            this.progressBar1.TabIndex = 0;
+            this.progressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.progressBar.Location = new System.Drawing.Point( 7, 42 );
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size( 384, 21 );
+            this.progressBar.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point( 3, 25 );
+            this.label1.Font = new System.Drawing.Font( "Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ) );
+            this.label1.Location = new System.Drawing.Point( 4, 14 );
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size( 26, 13 );
+            this.label1.Size = new System.Drawing.Size( 75, 13 );
             this.label1.TabIndex = 1;
-            this.label1.Text = "File:";
+            this.label1.Text = "Source File:";
             // 
             // lblFile
             // 
+            this.lblFile.AutoEllipsis = true;
             this.lblFile.AutoSize = true;
-            this.lblFile.Location = new System.Drawing.Point( 44, 25 );
+            this.lblFile.Font = new System.Drawing.Font( "Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ) );
+            this.lblFile.Location = new System.Drawing.Point( 85, 14 );
             this.lblFile.Name = "lblFile";
-            this.lblFile.Size = new System.Drawing.Size( 16, 13 );
+            this.lblFile.Size = new System.Drawing.Size( 19, 13 );
             this.lblFile.TabIndex = 2;
             this.lblFile.Text = "...";
             // 
@@ -62,11 +66,13 @@ namespace music_tagger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add( this.lblFile );
             this.Controls.Add( this.label1 );
-            this.Controls.Add( this.progressBar1 );
+            this.Controls.Add( this.progressBar );
             this.Name = "ProgressCtrl";
-            this.Size = new System.Drawing.Size( 390, 98 );
+            this.Size = new System.Drawing.Size( 397, 76 );
             this.ResumeLayout( false );
             this.PerformLayout();
 
@@ -74,8 +80,8 @@ namespace music_tagger
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFile;
+        public System.Windows.Forms.ProgressBar progressBar;
     }
 }

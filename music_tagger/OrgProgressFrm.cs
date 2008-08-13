@@ -16,6 +16,7 @@ namespace music_tagger
         public OrgProgressFrm()
         {
             InitializeComponent();
+            progressCtrl.progressBar.Style = ProgressBarStyle.Marquee;
         }
         /// <summary>
         /// 
