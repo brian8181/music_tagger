@@ -31,19 +31,19 @@ namespace music_tagger
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager( typeof( File2TagV1Frm ) );
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFormat = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -76,75 +76,15 @@ namespace music_tagger
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parameters";
             // 
-            // label2
+            // label10
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Location = new System.Drawing.Point( 13, 21 );
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size( 61, 13 );
-            this.label2.TabIndex = 0;
-            this.label2.Text = "<A> = Artist";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Location = new System.Drawing.Point( 13, 38 );
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size( 82, 13 );
-            this.label3.TabIndex = 1;
-            this.label3.Text = "<C> = Comment";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Location = new System.Drawing.Point( 13, 55 );
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size( 66, 13 );
-            this.label4.TabIndex = 2;
-            this.label4.Text = "<K> = Track";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Location = new System.Drawing.Point( 134, 55 );
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size( 75, 13 );
-            this.label5.TabIndex = 3;
-            this.label5.Text = "<X> = Unused";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Location = new System.Drawing.Point( 134, 38 );
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size( 60, 13 );
-            this.label6.TabIndex = 4;
-            this.label6.Text = "<Y> = Year";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Location = new System.Drawing.Point( 134, 21 );
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size( 58, 13 );
-            this.label7.TabIndex = 5;
-            this.label7.Text = "<T> = Title";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label8.Location = new System.Drawing.Point( 264, 55 );
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size( 53, 13 );
-            this.label8.TabIndex = 6;
-            this.label8.Text = "\\ = Folder";
+            this.label10.AutoSize = true;
+            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label10.Location = new System.Drawing.Point( 264, 21 );
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size( 67, 13 );
+            this.label10.TabIndex = 8;
+            this.label10.Text = "<B> = Album";
             // 
             // label9
             // 
@@ -156,15 +96,75 @@ namespace music_tagger
             this.label9.TabIndex = 7;
             this.label9.Text = "<G> = Genre";
             // 
-            // label10
+            // label8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label10.Location = new System.Drawing.Point( 264, 21 );
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size( 67, 13 );
-            this.label10.TabIndex = 8;
-            this.label10.Text = "<B> = Album";
+            this.label8.AutoSize = true;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label8.Location = new System.Drawing.Point( 264, 55 );
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size( 53, 13 );
+            this.label8.TabIndex = 6;
+            this.label8.Text = "\\ = Folder";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Location = new System.Drawing.Point( 134, 21 );
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size( 58, 13 );
+            this.label7.TabIndex = 5;
+            this.label7.Text = "<T> = Title";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Location = new System.Drawing.Point( 134, 38 );
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size( 60, 13 );
+            this.label6.TabIndex = 4;
+            this.label6.Text = "<Y> = Year";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.Location = new System.Drawing.Point( 134, 55 );
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size( 75, 13 );
+            this.label5.TabIndex = 3;
+            this.label5.Text = "<X> = Unused";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Location = new System.Drawing.Point( 13, 55 );
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size( 66, 13 );
+            this.label4.TabIndex = 2;
+            this.label4.Text = "<K> = Track";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Location = new System.Drawing.Point( 13, 38 );
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size( 82, 13 );
+            this.label3.TabIndex = 1;
+            this.label3.Text = "<C> = Comment";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Location = new System.Drawing.Point( 13, 21 );
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size( 61, 13 );
+            this.label2.TabIndex = 0;
+            this.label2.Text = "<A> = Artist";
             // 
             // label11
             // 
@@ -195,13 +195,13 @@ namespace music_tagger
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler( this.btnRemove_Click );
             // 
-            // comboBox1
+            // cmbFormat
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point( 61, 6 );
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size( 361, 21 );
-            this.comboBox1.TabIndex = 12;
+            this.cmbFormat.FormattingEnabled = true;
+            this.cmbFormat.Location = new System.Drawing.Point( 61, 6 );
+            this.cmbFormat.Name = "cmbFormat";
+            this.cmbFormat.Size = new System.Drawing.Size( 361, 21 );
+            this.cmbFormat.TabIndex = 12;
             // 
             // btnCancel
             // 
@@ -209,7 +209,7 @@ namespace music_tagger
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size( 75, 23 );
             this.btnCancel.TabIndex = 14;
-            this.btnCancel.Text = "&Cancle";
+            this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler( this.btnCancel_Click );
             // 
@@ -230,7 +230,7 @@ namespace music_tagger
             this.ClientSize = new System.Drawing.Size( 423, 228 );
             this.Controls.Add( this.btnCancel );
             this.Controls.Add( this.btnOK );
-            this.Controls.Add( this.comboBox1 );
+            this.Controls.Add( this.cmbFormat );
             this.Controls.Add( this.btnRemove );
             this.Controls.Add( this.btnAdd );
             this.Controls.Add( this.label11 );
@@ -239,7 +239,6 @@ namespace music_tagger
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "File2TagV1Frm";
             this.Text = "Filename - > TAG ver. 1";
-            this.Load += new System.EventHandler( this.File2TagV1Frm_Load );
             this.groupBox1.ResumeLayout( false );
             this.groupBox1.PerformLayout();
             this.ResumeLayout( false );
@@ -263,7 +262,7 @@ namespace music_tagger
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFormat;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
     }

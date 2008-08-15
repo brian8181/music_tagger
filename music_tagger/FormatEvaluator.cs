@@ -13,6 +13,7 @@ namespace music_tagger
         private string exp = @"\<[ABCEGKPRTYkp]\>";
         private TagLib.Tag tag = null;
         private string value;
+        private int digits = 2;
 
         /// <summary>
         /// return formatted string
@@ -43,6 +44,16 @@ namespace music_tagger
         /// <returns></returns>
         private string ReplaceFunc( Match m )
         {
+            return Replacer( m );    
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="m"></param>
+        /// <param name="tag"></param>
+        /// <returns></returns>
+        protected virtual string Replacer( Match m )
+        {
             switch(m.Value)
             {
             case "<A>":
@@ -64,7 +75,8 @@ namespace music_tagger
             case "<T>":
                 return tag.Title;
             case "<K>":
-                return tag.Track.ToString();
+                string track_format = new string('0', digits );
+                return tag.Track.ToString(track_format);
             case "<k>":
                 return tag.TrackCount.ToString();
             case "<Y>":
@@ -85,5 +97,15 @@ namespace music_tagger
                 return m.Value;
             }
         }
+
+        //public string Replacer( TagLib.Id3v2.Tag tag )
+        //{
+                  
+        //}
+
+        //public string Replacer( TagLib.Id3v1.Tag tag )
+        //{
+           
+        //}
     }
 }

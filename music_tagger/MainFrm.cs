@@ -202,7 +202,7 @@ namespace music_tagger
 
         private void mnTag2FileV1_Click( object sender, EventArgs e )
         {
-            TagV12FileFrm dlg = new TagV12FileFrm();
+            TagV12FileFrm dlg = new TagV12FileFrm( view );
             if(dlg.ShowDialog() == DialogResult.OK)
             {
                 // todo
@@ -257,6 +257,16 @@ namespace music_tagger
             {
                 // todo
             }
+        }
+
+        private void spit1ToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+
+        }
+
+        private void split2ToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+
         }
 
     }

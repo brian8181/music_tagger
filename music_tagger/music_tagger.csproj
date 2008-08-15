@@ -59,7 +59,9 @@
     <Compile Include="CompareFile2TagFrm.Designer.cs">
       <DependentUpon>CompareFile2TagFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditFrm.cs" />
+    <Compile Include="EditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EditMultiV1Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +156,12 @@
       <DependentUpon>FormatCtrl.cs</DependentUpon>
     </Compile>
     <Compile Include="FormatEvaluator.cs" />
+    <Compile Include="FreeDBFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreeDBFrm.Designer.cs">
+      <DependentUpon>FreeDBFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,14 +174,17 @@
     <Compile Include="OrganizeFrm.Designer.cs">
       <DependentUpon>OrganizeFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrganizeThread.cs">
+    <Compile Include="ProgressThreads.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrgProgressFrm.cs">
+    <Compile Include="ProgressThread.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrgProgressFrm.Designer.cs">
-      <DependentUpon>OrgProgressFrm.cs</DependentUpon>
+    <Compile Include="ProgressFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressFrm.Designer.cs">
+      <DependentUpon>ProgressFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="PrefFrm.cs">
       <SubType>Form</SubType>
@@ -253,9 +264,13 @@
       <SubType>Designer</SubType>
       <DependentUpon>OrganizeFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrgProgressFrm.resx">
+    <EmbeddedResource Include="ProgressThread.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>OrgProgressFrm.cs</DependentUpon>
+      <DependentUpon>ProgressThread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProgressFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrefFrm.resx">
       <SubType>Designer</SubType>
@@ -288,6 +303,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

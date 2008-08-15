@@ -30,6 +30,8 @@ namespace music_tagger
         {
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblBitrate = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblBMP = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@ namespace music_tagger
             this.lblTrack = new System.Windows.Forms.Label();
             this.lblComment = new System.Windows.Forms.Label();
             this.lblArtist = new System.Windows.Forms.Label();
-            this.lblBitrate = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,6 +90,24 @@ namespace music_tagger
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Format Specifiers";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point( 144, 135 );
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size( 53, 13 );
+            this.label20.TabIndex = 19;
+            this.label20.Text = "\\ = Folder";
+            // 
+            // lblBitrate
+            // 
+            this.lblBitrate.AutoSize = true;
+            this.lblBitrate.Location = new System.Drawing.Point( 6, 135 );
+            this.lblBitrate.Name = "lblBitrate";
+            this.lblBitrate.Size = new System.Drawing.Size( 64, 13 );
+            this.lblBitrate.TabIndex = 18;
+            this.lblBitrate.Text = "<I> = Bitrate";
             // 
             // label18
             // 
@@ -204,9 +222,9 @@ namespace music_tagger
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point( 144, 27 );
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size( 54, 13 );
+            this.label10.Size = new System.Drawing.Size( 58, 13 );
             this.label10.TabIndex = 5;
-            this.label10.Text = "<T> = title";
+            this.label10.Text = "<T> = Title";
             // 
             // lblComposer
             // 
@@ -252,24 +270,6 @@ namespace music_tagger
             this.lblArtist.Size = new System.Drawing.Size( 61, 13 );
             this.lblArtist.TabIndex = 0;
             this.lblArtist.Text = "<A> = Artist";
-            // 
-            // lblBitrate
-            // 
-            this.lblBitrate.AutoSize = true;
-            this.lblBitrate.Location = new System.Drawing.Point( 6, 135 );
-            this.lblBitrate.Name = "lblBitrate";
-            this.lblBitrate.Size = new System.Drawing.Size( 64, 13 );
-            this.lblBitrate.TabIndex = 18;
-            this.lblBitrate.Text = "<I> = Bitrate";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point( 144, 135 );
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size( 53, 13 );
-            this.label20.TabIndex = 19;
-            this.label20.Text = "\\ = Folder";
             // 
             // FormatCtrl
             // 

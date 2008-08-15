@@ -56,15 +56,16 @@ namespace music_tagger
             // 
             this.expando1.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
                         | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.expando1.ExpandedHeight = 200;
             this.expando1.Font = new System.Drawing.Font( "Tahoma", 8.25F );
             this.expando1.Items.AddRange( new System.Windows.Forms.Control[] {
             this.taskMain,
             this.taskDetails,
             this.taskLyrics,
             this.taskPicture} );
-            this.expando1.Location = new System.Drawing.Point( 12, 28 );
+            this.expando1.Location = new System.Drawing.Point( 12, 12 );
             this.expando1.Name = "expando1";
-            this.expando1.Size = new System.Drawing.Size( 186, 300 );
+            this.expando1.Size = new System.Drawing.Size( 186, 200 );
             this.expando1.TabIndex = 0;
             this.expando1.Text = "expando1";
             // 
@@ -130,9 +131,9 @@ namespace music_tagger
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point( 213, 7 );
+            this.panel1.Location = new System.Drawing.Point( 216, 2 );
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size( 612, 496 );
+            this.panel1.Size = new System.Drawing.Size( 612, 510 );
             this.panel1.TabIndex = 1;
             // 
             // EditV2Frm

@@ -1,6 +1,6 @@
 namespace music_tagger
 {
-    partial class OrgProgressFrm
+    partial class ProgressFrm
     {
         /// <summary>
         /// Required designer variable.

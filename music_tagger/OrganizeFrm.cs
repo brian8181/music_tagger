@@ -23,7 +23,7 @@ namespace music_tagger
         public OrganizeFrm()
         {
             InitializeComponent();
-            Initialize();
+                Initialize();
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace music_tagger
             //thread.Priority = ThreadPriority.BelowNormal;
             //thread.Start( infos );
 
-            OrganizeThread thread = new OrganizeThread( 
+            OrgProgressThread thread = new OrgProgressThread( 
                 infos, 
                 cmbFormat.Text, 
                 txtPath.Text, 

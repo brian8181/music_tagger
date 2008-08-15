@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace music_tagger
 {
-    public partial class OrgProgressFrm : Form
+    public partial class ProgressFrm : Form
     {
         /// <summary>
         /// 
         /// </summary>
-        public OrgProgressFrm()
+        public ProgressFrm()
         {
             InitializeComponent();
             progressCtrl.progressBar.Style = ProgressBarStyle.Marquee;
@@ -36,7 +36,9 @@ namespace music_tagger
             {
                 this.Invoke( 
                     new EventHandler( SafeClose ), sender, args);
+                return;
             }
+
             Close();
         }
     }

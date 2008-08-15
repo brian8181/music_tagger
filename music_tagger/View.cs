@@ -41,6 +41,9 @@ namespace music_tagger
         private FileTreeView tree = null;
         private ImageList images = new ImageList();
 
+        /// <summary>
+        /// 
+        /// </summary>
         public ListView ListView
         {
             get
@@ -48,12 +51,17 @@ namespace music_tagger
                 return listView;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public View()
         {
             InitializeComponent();
         }
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tree"></param>
         public void Configure(FileTreeView tree)
         {
             this.tree = tree;
@@ -69,18 +77,19 @@ namespace music_tagger
             listView.Sorting = SortOrder.None;
             tree.AfterSelect += new TreeViewEventHandler( tree_AfterSelect );
         }
-
-        private void tree_AfterSelect( object sender, TreeViewEventArgs e )
+        /// <summary>
+        /// 
+        /// </summary>
+        public void RefreshView()
         {
-            DirectoryInfo di = ((FileTreeNode)e.Node).FileSystemInfo as DirectoryInfo;
-            Sync( di );
+            DirectoryInfo di = ( (FileTreeNode)tree.SelectedNode ).FileSystemInfo as DirectoryInfo;
+            RefreshView( di );
         }
-
-         /// <summary>
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="focus"></param>
-        private void Sync( DirectoryInfo di )
+        public void RefreshView( DirectoryInfo di )
         {
             //this.focus = focus;
             //DirectoryInfo di = new DirectoryInfo(focus.File.FullName);
@@ -134,7 +143,6 @@ namespace music_tagger
                 MessageBox.Show( exp.Message );
             }
         }
-
         /// <summary>
         ///  fill from tag
         /// </summary>
@@ -200,31 +208,61 @@ namespace music_tagger
                 }
             }
         }
-              
-        private ColumnHeader[] CreateColumns()
+        /// <summary>
+        /// 
+        /// </summary>
+        public void SelectAll()
         {
-            int len = Properties.Settings.Default.columns.Count;
-            ColumnHeader[] cols = new ColumnHeader[len];
-            for(int idx = 0; idx < len; ++idx )
+            foreach(ListViewItem item in listView.Items)
             {
-                cols[idx] = new ColumnHeader();
-                string[] split = Properties.Settings.Default.columns[idx].Split( ',' ); 
-                cols[idx].Text = split[0];
-                cols[idx].DisplayIndex = int.Parse(split[1]);
-            }
-
-            return cols;
-        }
-
-        private void SizeAll(ListView listView, ColumnHeaderAutoResizeStyle style)
-        {
-            int len = listView.Columns.Count;
-            for (int i = 0; i < len; ++i)
-            {
-                listView.Columns[i].AutoResize(style);
+                item.Selected = true;
             }
         }
-
+     
+        
+        #region Event Handlers
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnViewCopyTo_Click( object sender, EventArgs e )
+        {
+            CopyTo( false );
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnViewMoveTo_Click( object sender, EventArgs e )
+        {
+            CopyTo( true );
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnViewSelectAll_Click( object sender, EventArgs e )
+        {
+            SelectAll();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tree_AfterSelect( object sender, TreeViewEventArgs e )
+        {
+            DirectoryInfo di = ( (FileTreeNode)e.Node ).FileSystemInfo as DirectoryInfo;
+            RefreshView( di );
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listView_ColumnReordered( object sender, ColumnReorderedEventArgs e )
         {
             Properties.Settings.Default.columns.Clear();
@@ -235,7 +273,11 @@ namespace music_tagger
             }
             Properties.Settings.Default.Save();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listView_ColumnClick( object sender, ColumnClickEventArgs e )
         {
             // Set the ListViewItemSorter property to a new ListViewItemComparer 
@@ -243,17 +285,42 @@ namespace music_tagger
             // ListView using the ListViewItemComparer object.
             this.listView.ListViewItemSorter = new ListViewItemComparer( e.Column );
         }
-
-        private void mnViewCopyTo_Click( object sender, EventArgs e )
+        private void listView_DragDrop( object sender, DragEventArgs e )
         {
-            CopyTo( false );   
         }
-
-        private void mnViewMoveTo_Click( object sender, EventArgs e )
+        private void listView_DragEnter( object sender, DragEventArgs e )
         {
-            CopyTo( true );
         }
+        private void listView_DragLeave( object sender, EventArgs e )
+        {
+        }
+        private void listView_DragOver( object sender, DragEventArgs e )
+        {
+        }
+        #endregion
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private ColumnHeader[] CreateColumns()
+        {
+            int len = Properties.Settings.Default.columns.Count;
+            ColumnHeader[] cols = new ColumnHeader[len];
+            for(int idx = 0; idx < len; ++idx)
+            {
+                cols[idx] = new ColumnHeader();
+                string[] split = Properties.Settings.Default.columns[idx].Split( ',' );
+                cols[idx].Text = split[0];
+                cols[idx].DisplayIndex = int.Parse( split[1] );
+            }
+
+            return cols;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="isMove"></param>
         private void CopyTo(bool isMove)
         {
             if(listView.SelectedItems.Count > 0)
@@ -274,29 +341,17 @@ namespace music_tagger
                 Cursor.Current = Cursors.Default;
             }
         }
-
-        private void listView_DragDrop( object sender, DragEventArgs e )
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listView"></param>
+        /// <param name="style"></param>
+        private void SizeAll( ListView listView, ColumnHeaderAutoResizeStyle style )
         {
-        }
-        private void listView_DragEnter( object sender, DragEventArgs e )
-        {
-        }
-        private void listView_DragLeave( object sender, EventArgs e )
-        {
-        }
-        private void listView_DragOver( object sender, DragEventArgs e )
-        {
-        }
-
-        private void mnViewSelectAll_Click( object sender, EventArgs e )
-        {
-            SelectAll();
-        }
-        public void SelectAll()
-        {
-            foreach(ListViewItem item in listView.Items)
+            int len = listView.Columns.Count;
+            for(int i = 0; i < len; ++i)
             {
-                item.Selected = true;
+                listView.Columns[i].AutoResize( style );
             }
         }
     }
