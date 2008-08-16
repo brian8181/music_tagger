@@ -98,13 +98,18 @@ namespace music_tagger
             listView.Sorting = SortOrder.None;
             tree.AfterSelect += new TreeViewEventHandler( tree_AfterSelect );
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void RefreshView()
         {
             DirectoryInfo di = ( (FileTreeNode)tree.SelectedNode ).FileSystemInfo as DirectoryInfo;
             RefreshView( di );
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="di"></param>
         public void RefreshView( DirectoryInfo di )
         {
             FileInfo[] files = null;
@@ -119,7 +124,10 @@ namespace music_tagger
                 return;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="files"></param>
         public void RefreshView( FileInfo[] files )
         {
             ListView.Items.Clear();
@@ -223,152 +231,7 @@ namespace music_tagger
 
             return "";
         }
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        //public void RefreshView()
-        //{
-        //    DirectoryInfo di = ( (FileTreeNode)tree.SelectedNode ).FileSystemInfo as DirectoryInfo;
-        //    RefreshView( di );
-        //}
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="focus"></param>
-        //public void RefreshView( DirectoryInfo di )
-        //{
-        //    //this.focus = focus;
-        //    //DirectoryInfo di = new DirectoryInfo(focus.File.FullName);
-        //    try
-        //    {
-        //        // todo is ready!
-        //        FileInfo[] files = null;
-        //        try
-        //        {
-        //           files  = di.GetFiles( "*.mp3" );
-        //        }
-        //        catch(IOException)
-        //        {
-        //            return;
-        //        }
-                
-        //        listView.Items.Clear();
-        //        if (files != null)  //be none
-        //        {
-        //            int len = files.Length;
-        //            //items = listView.Items;
-        //            for (int i = 0; i < len; ++i)
-        //            {
-        //                ListViewItem ni = new ListViewItem( files[i].Name );
-
-        //                Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
-        //                ////Use this to get the small Icon
-        //                IntPtr handle = Win32.SHGetFileInfo( files[i].FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
-        //                    Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
-
-        //                if(images.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
-        //                {
-        //                    //The icon is returned in the hIcon member of the shinfo struct
-        //                    System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
-        //                    images.Images.Add( sInfo.hIcon.ToString(), icon );
-        //                }
-        //                ni.ImageIndex = images.Images.IndexOfKey( sInfo.hIcon.ToString() );
-
-        //                ni.Tag = files[i];
-                        
-        //                // fill
-        //                Fill(ni);
-        //                listView.Items.Add( ni );
-        //            }
-        //            if(len > 0)
-        //            {
-        //                SizeAll( listView, ColumnHeaderAutoResizeStyle.ColumnContent );
-        //            }
-        //        }
-        //    }
-        //    catch (UnauthorizedAccessException exp)
-        //    {
-        //        MessageBox.Show( exp.Message );
-        //    }
-        //}
-        ///// <summary>
-        /////  fill from tag
-        ///// </summary>
-        ///// <param name="idx"></param>
-        //public void Fill(ListViewItem  item)
-        //{
-
-        //    FileInfo fi = (FileInfo)item.Tag;
-        //    TagLib.File tag_file = TagLib.File.Create( fi.FullName );
-        //    TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-                                      
-        //    if(id3v1 != null)
-        //    {
-        //        foreach(ColumnHeader col in listView.Columns)
-        //        {
-        //            switch(col.Text)
-        //            {
-        //            case "Track":
-        //                item.SubItems.Add( id3v1.Track.ToString() );
-        //                break;
-        //            case "Artist":
-        //                item.SubItems.Add( id3v1.FirstPerformer );
-        //                break;
-        //            case "Album":
-        //                item.SubItems.Add( id3v1.Album.ToString() );
-        //                break;
-        //            case "Title":
-        //                item.SubItems.Add( id3v1.Title.ToString() );
-        //                break;
-        //            case "Year":
-        //                item.SubItems.Add( id3v1.Year.ToString() );
-        //                break;
-        //            case "Comment":
-        //                item.SubItems.Add( id3v1.Comment );
-        //                break;
-        //            case "Genre":
-        //                item.SubItems.Add( id3v1.FirstGenre );
-        //                break;
-        //            case "Length":
-        //                item.SubItems.Add( fi.Length.ToString() );
-        //                break;
-        //            case "File Path":
-        //                item.SubItems.Add( fi.FullName );
-        //                break;
-        //            case "Attributes":
-        //                item.SubItems.Add( fi.Attributes.ToString() );
-        //                break;
-        //            case "Size":
-        //                item.SubItems.Add( fi.Length.ToString() );
-        //                break;
-        //            case "Last Access":
-        //                item.SubItems.Add( fi.LastAccessTime.ToShortTimeString() );
-        //                break;
-        //            case "Last Write":
-        //                item.SubItems.Add( fi.LastWriteTime.ToShortTimeString() );
-        //                break;
-        //            case "Created":
-        //                item.SubItems.Add( fi.CreationTime.ToShortTimeString() );
-        //                break;
-        //            default:
-        //                 break;
-        //            }
-        //        }
-        //    }
-        //}
-        /// <summary>
-        /// 
-        /// </summary>
-        public void SelectAll()
-        {
-            foreach(ListViewItem item in listView.Items)
-            {
-                item.Selected = true;
-            }
-        }
-     
-        
+            
         #region Event Handlers
         /// <summary>
         /// 
