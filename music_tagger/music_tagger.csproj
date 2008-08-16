@@ -162,6 +162,7 @@
     <Compile Include="FreeDBFrm.Designer.cs">
       <DependentUpon>FreeDBFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Globals.cs" />
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>

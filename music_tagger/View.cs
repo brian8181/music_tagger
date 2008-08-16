@@ -37,7 +37,28 @@ namespace music_tagger
                 return String.Compare( ( (ListViewItem)x ).SubItems[col].Text, ( (ListViewItem)y ).SubItems[col].Text );
             }
         }
-                
+
+        /// <summary>
+        /// Column enumeration
+        /// </summary>
+        public enum Column
+        {
+            Path,
+            Size,
+            Attributes,
+            Created,
+            Accessed,
+            Modified,
+            Album,
+            Artist,
+            Title,
+            Track,
+            Comment,
+            Year,
+            Genre,
+            Length
+        }
+
         private FileTreeView tree = null;
         private ImageList images = new ImageList();
 
@@ -77,137 +98,265 @@ namespace music_tagger
             listView.Sorting = SortOrder.None;
             tree.AfterSelect += new TreeViewEventHandler( tree_AfterSelect );
         }
-        /// <summary>
-        /// 
-        /// </summary>
+
         public void RefreshView()
         {
             DirectoryInfo di = ( (FileTreeNode)tree.SelectedNode ).FileSystemInfo as DirectoryInfo;
             RefreshView( di );
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="focus"></param>
+
         public void RefreshView( DirectoryInfo di )
         {
-            //this.focus = focus;
-            //DirectoryInfo di = new DirectoryInfo(focus.File.FullName);
+            FileInfo[] files = null;
             try
             {
-                // todo is ready!
-                FileInfo[] files = null;
-                try
-                {
-                   files  = di.GetFiles( "*.mp3" );
-                }
-                catch(IOException)
-                {
-                    return;
-                }
-                
-                listView.Items.Clear();
-                if (files != null)  //be none
-                {
-                    int len = files.Length;
-                    //items = listView.Items;
-                    for (int i = 0; i < len; ++i)
-                    {
-                        ListViewItem ni = new ListViewItem( files[i].Name );
-
-                        Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
-                        ////Use this to get the small Icon
-                        IntPtr handle = Win32.SHGetFileInfo( files[i].FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
-                            Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
-
-                        if(images.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
-                        {
-                            //The icon is returned in the hIcon member of the shinfo struct
-                            System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
-                            images.Images.Add( sInfo.hIcon.ToString(), icon );
-                        }
-                        ni.ImageIndex = images.Images.IndexOfKey( sInfo.hIcon.ToString() );
-
-                        ni.Tag = files[i];
-                        
-                        // fill
-                        Fill(ni);
-                        listView.Items.Add( ni );
-                    }
-                    if (len > 0)
-                        SizeAll(listView, ColumnHeaderAutoResizeStyle.ColumnContent);
-                }
+                files = di.GetFiles( "*.mp3" );
+                if( files != null)
+                    RefreshView( files );
             }
-            catch (UnauthorizedAccessException exp)
+            catch(IOException)
             {
-                MessageBox.Show( exp.Message );
+                return;
             }
         }
-        /// <summary>
-        ///  fill from tag
-        /// </summary>
-        /// <param name="idx"></param>
-        public void Fill(ListViewItem  item)
+
+        public void RefreshView( FileInfo[] files )
         {
+            ListView.Items.Clear();
+           // fill items
+           foreach(FileInfo fi in files)
+           {
+               // init main item, by key (filename)
+               ListViewItem lvi = new ListViewItem(fi.Name, 0);
+               lvi.Name = fi.Name;
+               lvi.Tag = fi;
 
-            FileInfo fi = (FileInfo)item.Tag;
-            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
-            TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-                                      
-            if(id3v1 != null)
+               Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
+               ////Use this to get the small Icon
+               IntPtr handle = Win32.SHGetFileInfo( fi.FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
+                   Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
+
+               if(images.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
+               {
+                   //The icon is returned in the hIcon member of the shinfo struct
+                   System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
+                   images.Images.Add( sInfo.hIcon.ToString(), icon );
+               }
+               lvi.ImageIndex = images.Images.IndexOfKey( sInfo.hIcon.ToString() );
+
+               Dictionary<Column, Column> tmp_items = new Dictionary<Column,Column>();
+               // fill dictionary with all values
+               foreach( Column c in Enum.GetValues( typeof(Column ) ) ) 
+               {
+                   tmp_items.Add( c, c ); 
+               }
+
+               // add configured, then remove
+               foreach(ColumnHeader header in ListView.Columns)
+               {
+                   if(header.Text == "File")
+                       continue;
+                   Column key = (Column)Enum.Parse( typeof( Column ), header.Text );
+                   string val = GetString( key, fi );
+                   ListViewItem.ListViewSubItem sub_item = new ListViewItem.ListViewSubItem( lvi, val );
+                   sub_item.Name = key.ToString();
+                   lvi.SubItems.Add( sub_item );
+                   tmp_items.Remove( key );  
+               }
+
+               // add the leftovers
+               foreach(Column key in tmp_items.Keys)
+               {
+                   string val = GetString( key, fi );
+                   ListViewItem.ListViewSubItem sub_item = new ListViewItem.ListViewSubItem( lvi, val );
+                   sub_item.Name = key.ToString();
+                   lvi.SubItems.Add( sub_item );
+               }
+
+               // add it to listview
+               ListView.Items.Add( lvi );
+            }
+            if(files.Length > 0)
             {
-                foreach(ColumnHeader col in listView.Columns)
-                {
-                    switch(col.Text)
-                    {
-                    case "Track":
-                        item.SubItems.Add( id3v1.Track.ToString() );
-                        break;
-                    case "Artist":
-                        item.SubItems.Add( id3v1.FirstPerformer );
-                        break;
-                    case "Album":
-                        item.SubItems.Add( id3v1.Album.ToString() );
-                        break;
-                    case "Title":
-                        item.SubItems.Add( id3v1.Title.ToString() );
-                        break;
-                    case "Year":
-                        item.SubItems.Add( id3v1.Year.ToString() );
-                        break;
-                    case "Comment":
-                        item.SubItems.Add( id3v1.Comment );
-                        break;
-                    case "Genre":
-                        item.SubItems.Add( id3v1.FirstGenre );
-                        break;
-                    case "Length":
-                        item.SubItems.Add( fi.Length.ToString() );
-                        break;
-                    case "File Path":
-                        item.SubItems.Add( fi.FullName );
-                        break;
-                    case "Attributes":
-                        item.SubItems.Add( fi.Attributes.ToString() );
-                        break;
-                    case "Size":
-                        item.SubItems.Add( fi.Length.ToString() );
-                        break;
-                    case "Last Access":
-                        item.SubItems.Add( fi.LastAccessTime.ToShortTimeString() );
-                        break;
-                    case "Last Write":
-                        item.SubItems.Add( fi.LastWriteTime.ToShortTimeString() );
-                        break;
-                    case "Created":
-                        item.SubItems.Add( fi.CreationTime.ToShortTimeString() );
-                        break;
-                    default:
-                         break;
-                    }
-                }
+                SizeAll( listView, ColumnHeaderAutoResizeStyle.ColumnContent );
             }
         }
+
+        public string GetString( Column c, FileInfo fi )
+        {
+            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+            TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+
+            switch(c)
+            {
+            case Column.Path:
+                return fi.FullName;
+            case Column.Size:
+                return fi.Length.ToString();
+            case Column.Attributes:
+                return fi.Attributes.ToString();
+            case Column.Created:
+                return fi.CreationTime.ToString();
+            case Column.Accessed:
+                return fi.LastAccessTime.ToString();
+            case Column.Modified:
+                return fi.LastWriteTime.ToString();
+            case Column.Artist:
+                return tag.FirstPerformer;
+            case Column.Album:
+                return tag.Album;
+            case Column.Title:
+                return tag.Title;
+            case Column.Track:
+                return tag.Track.ToString();
+            case Column.Year:
+                return tag.Year.ToString();
+            case Column.Comment:
+                return tag.Comment;
+            case Column.Genre:
+                return tag.FirstGenre;
+            case Column.Length:
+                return tag_file.Properties.Duration.ToString();
+            default:
+                break;
+            }
+
+            return "";
+        }
+
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public void RefreshView()
+        //{
+        //    DirectoryInfo di = ( (FileTreeNode)tree.SelectedNode ).FileSystemInfo as DirectoryInfo;
+        //    RefreshView( di );
+        //}
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="focus"></param>
+        //public void RefreshView( DirectoryInfo di )
+        //{
+        //    //this.focus = focus;
+        //    //DirectoryInfo di = new DirectoryInfo(focus.File.FullName);
+        //    try
+        //    {
+        //        // todo is ready!
+        //        FileInfo[] files = null;
+        //        try
+        //        {
+        //           files  = di.GetFiles( "*.mp3" );
+        //        }
+        //        catch(IOException)
+        //        {
+        //            return;
+        //        }
+                
+        //        listView.Items.Clear();
+        //        if (files != null)  //be none
+        //        {
+        //            int len = files.Length;
+        //            //items = listView.Items;
+        //            for (int i = 0; i < len; ++i)
+        //            {
+        //                ListViewItem ni = new ListViewItem( files[i].Name );
+
+        //                Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
+        //                ////Use this to get the small Icon
+        //                IntPtr handle = Win32.SHGetFileInfo( files[i].FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
+        //                    Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
+
+        //                if(images.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
+        //                {
+        //                    //The icon is returned in the hIcon member of the shinfo struct
+        //                    System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
+        //                    images.Images.Add( sInfo.hIcon.ToString(), icon );
+        //                }
+        //                ni.ImageIndex = images.Images.IndexOfKey( sInfo.hIcon.ToString() );
+
+        //                ni.Tag = files[i];
+                        
+        //                // fill
+        //                Fill(ni);
+        //                listView.Items.Add( ni );
+        //            }
+        //            if(len > 0)
+        //            {
+        //                SizeAll( listView, ColumnHeaderAutoResizeStyle.ColumnContent );
+        //            }
+        //        }
+        //    }
+        //    catch (UnauthorizedAccessException exp)
+        //    {
+        //        MessageBox.Show( exp.Message );
+        //    }
+        //}
+        ///// <summary>
+        /////  fill from tag
+        ///// </summary>
+        ///// <param name="idx"></param>
+        //public void Fill(ListViewItem  item)
+        //{
+
+        //    FileInfo fi = (FileInfo)item.Tag;
+        //    TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+        //    TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+                                      
+        //    if(id3v1 != null)
+        //    {
+        //        foreach(ColumnHeader col in listView.Columns)
+        //        {
+        //            switch(col.Text)
+        //            {
+        //            case "Track":
+        //                item.SubItems.Add( id3v1.Track.ToString() );
+        //                break;
+        //            case "Artist":
+        //                item.SubItems.Add( id3v1.FirstPerformer );
+        //                break;
+        //            case "Album":
+        //                item.SubItems.Add( id3v1.Album.ToString() );
+        //                break;
+        //            case "Title":
+        //                item.SubItems.Add( id3v1.Title.ToString() );
+        //                break;
+        //            case "Year":
+        //                item.SubItems.Add( id3v1.Year.ToString() );
+        //                break;
+        //            case "Comment":
+        //                item.SubItems.Add( id3v1.Comment );
+        //                break;
+        //            case "Genre":
+        //                item.SubItems.Add( id3v1.FirstGenre );
+        //                break;
+        //            case "Length":
+        //                item.SubItems.Add( fi.Length.ToString() );
+        //                break;
+        //            case "File Path":
+        //                item.SubItems.Add( fi.FullName );
+        //                break;
+        //            case "Attributes":
+        //                item.SubItems.Add( fi.Attributes.ToString() );
+        //                break;
+        //            case "Size":
+        //                item.SubItems.Add( fi.Length.ToString() );
+        //                break;
+        //            case "Last Access":
+        //                item.SubItems.Add( fi.LastAccessTime.ToShortTimeString() );
+        //                break;
+        //            case "Last Write":
+        //                item.SubItems.Add( fi.LastWriteTime.ToShortTimeString() );
+        //                break;
+        //            case "Created":
+        //                item.SubItems.Add( fi.CreationTime.ToShortTimeString() );
+        //                break;
+        //            default:
+        //                 break;
+        //            }
+        //        }
+        //    }
+        //}
         /// <summary>
         /// 
         /// </summary>
@@ -311,6 +460,7 @@ namespace music_tagger
             {
                 cols[idx] = new ColumnHeader();
                 string[] split = Properties.Settings.Default.columns[idx].Split( ',' );
+                cols[idx].Name = split[0];
                 cols[idx].Text = split[0];
                 cols[idx].DisplayIndex = int.Parse( split[1] );
             }

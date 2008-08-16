@@ -27,21 +27,19 @@ namespace music_tagger.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
-  <string>File Name,0</string>
-  <string>File Path,1</string>
-  <string>Size,2</string>
-  <string>Attributes,3</string>
-  <string>Last Access,4</string>
-  <string>Last Write,5</string>
-  <string>Created,6</string>
-  <string>Track,7</string>
-  <string>Artist,8</string>
-  <string>Album,9</string>
-  <string>Title,10</string>
-  <string>Year,11</string>
-  <string>Comment,12</string>
-  <string>Genre,13</string>
-  <string>Lenght,14</string>
+  <string>File,12</string>
+  <string>Path,0</string>
+  <string>Size,1</string>
+  <string>Attributes,2</string>
+  <string>Created,3</string>
+  <string>Track,4</string>
+  <string>Artist,5</string>
+  <string>Album,6</string>
+  <string>Title,7</string>
+  <string>Year,8</string>
+  <string>Comment,9</string>
+  <string>Genre,10</string>
+  <string>Length,11</string>
 </ArrayOfString>")]
         public global::System.Collections.Specialized.StringCollection columns {
             get {

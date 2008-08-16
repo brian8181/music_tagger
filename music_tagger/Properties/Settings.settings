@@ -5,21 +5,19 @@
     <Setting Name="columns" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;File Name,0&lt;/string&gt;
-  &lt;string&gt;File Path,1&lt;/string&gt;
-  &lt;string&gt;Size,2&lt;/string&gt;
-  &lt;string&gt;Attributes,3&lt;/string&gt;
-  &lt;string&gt;Last Access,4&lt;/string&gt;
-  &lt;string&gt;Last Write,5&lt;/string&gt;
-  &lt;string&gt;Created,6&lt;/string&gt;
-  &lt;string&gt;Track,7&lt;/string&gt;
-  &lt;string&gt;Artist,8&lt;/string&gt;
-  &lt;string&gt;Album,9&lt;/string&gt;
-  &lt;string&gt;Title,10&lt;/string&gt;
-  &lt;string&gt;Year,11&lt;/string&gt;
-  &lt;string&gt;Comment,12&lt;/string&gt;
-  &lt;string&gt;Genre,13&lt;/string&gt;
-  &lt;string&gt;Lenght,14&lt;/string&gt;
+  &lt;string&gt;File,12&lt;/string&gt;
+  &lt;string&gt;Path,0&lt;/string&gt;
+  &lt;string&gt;Size,1&lt;/string&gt;
+  &lt;string&gt;Attributes,2&lt;/string&gt;
+  &lt;string&gt;Created,3&lt;/string&gt;
+  &lt;string&gt;Track,4&lt;/string&gt;
+  &lt;string&gt;Artist,5&lt;/string&gt;
+  &lt;string&gt;Album,6&lt;/string&gt;
+  &lt;string&gt;Title,7&lt;/string&gt;
+  &lt;string&gt;Year,8&lt;/string&gt;
+  &lt;string&gt;Comment,9&lt;/string&gt;
+  &lt;string&gt;Genre,10&lt;/string&gt;
+  &lt;string&gt;Length,11&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="last_dir" Type="System.String" Scope="User">
