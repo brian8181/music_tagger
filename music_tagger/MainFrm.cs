@@ -269,5 +269,10 @@ namespace music_tagger
 
         }
 
+        private void On_Save( object sender, EventArgs e )
+        {
+            view.Commit();
+        }
+
     }
 }

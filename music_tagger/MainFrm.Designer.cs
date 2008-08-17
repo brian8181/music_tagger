@@ -32,14 +32,7 @@ namespace music_tagger
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager( typeof( MainFrm ) );
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnFileSave = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnFileCopyTo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnFileMoveTo = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,9 +44,16 @@ namespace music_tagger
             this.mnEditRedo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnEditCut = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnEditCopy = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnEditPast = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnEditCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyVer1TagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyVer2TagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyVer12TagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnEditPast = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            this.spit1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.split2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.mnEditSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnViewV1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,12 +90,8 @@ namespace music_tagger
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tree = new Tools.FileTreeView();
-            this.view = new music_tagger.View();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -142,13 +138,7 @@ namespace music_tagger
             this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSplitButton4 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.copyVer1TagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyVer2TagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyVer12TagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spit1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.split2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
+            this.view = new music_tagger.View();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -183,14 +173,7 @@ namespace music_tagger
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.toolStripSeparator,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.printToolStripMenuItem,
-            this.printPreviewToolStripMenuItem,
+            this.mnFileSave,
             this.toolStripSeparator2,
             this.mnFileCopyTo,
             this.mnFileMoveTo,
@@ -201,65 +184,15 @@ namespace music_tagger
             this.fileToolStripMenuItem.Size = new System.Drawing.Size( 35, 20 );
             this.fileToolStripMenuItem.Text = "&File";
             // 
-            // newToolStripMenuItem
+            // mnFileSave
             // 
-            this.newToolStripMenuItem.Image = ( (System.Drawing.Image)( resources.GetObject( "newToolStripMenuItem.Image" ) ) );
-            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N ) ) );
-            this.newToolStripMenuItem.Size = new System.Drawing.Size( 192, 22 );
-            this.newToolStripMenuItem.Text = "&New";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = ( (System.Drawing.Image)( resources.GetObject( "openToolStripMenuItem.Image" ) ) );
-            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O ) ) );
-            this.openToolStripMenuItem.Size = new System.Drawing.Size( 192, 22 );
-            this.openToolStripMenuItem.Text = "&Open";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size( 189, 6 );
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ( (System.Drawing.Image)( resources.GetObject( "saveToolStripMenuItem.Image" ) ) );
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S ) ) );
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size( 192, 22 );
-            this.saveToolStripMenuItem.Text = "&Save";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size( 192, 22 );
-            this.saveAsToolStripMenuItem.Text = "Save &As";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size( 189, 6 );
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Image = ( (System.Drawing.Image)( resources.GetObject( "printToolStripMenuItem.Image" ) ) );
-            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P ) ) );
-            this.printToolStripMenuItem.Size = new System.Drawing.Size( 192, 22 );
-            this.printToolStripMenuItem.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Image = ( (System.Drawing.Image)( resources.GetObject( "printPreviewToolStripMenuItem.Image" ) ) );
-            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size( 192, 22 );
-            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
+            this.mnFileSave.Image = ( (System.Drawing.Image)( resources.GetObject( "mnFileSave.Image" ) ) );
+            this.mnFileSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnFileSave.Name = "mnFileSave";
+            this.mnFileSave.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S ) ) );
+            this.mnFileSave.Size = new System.Drawing.Size( 192, 22 );
+            this.mnFileSave.Text = "&Save";
+            this.mnFileSave.Click += new System.EventHandler( this.On_Save );
             // 
             // toolStripSeparator2
             // 
@@ -320,7 +253,7 @@ namespace music_tagger
             // 
             this.mnEditUndo.Name = "mnEditUndo";
             this.mnEditUndo.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z ) ) );
-            this.mnEditUndo.Size = new System.Drawing.Size( 230, 22 );
+            this.mnEditUndo.Size = new System.Drawing.Size( 249, 22 );
             this.mnEditUndo.Text = "&Undo";
             this.mnEditUndo.Click += new System.EventHandler( this.mnEditUndo_Click );
             // 
@@ -328,14 +261,14 @@ namespace music_tagger
             // 
             this.mnEditRedo.Name = "mnEditRedo";
             this.mnEditRedo.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y ) ) );
-            this.mnEditRedo.Size = new System.Drawing.Size( 230, 22 );
+            this.mnEditRedo.Size = new System.Drawing.Size( 249, 22 );
             this.mnEditRedo.Text = "&Redo";
             this.mnEditRedo.Click += new System.EventHandler( this.mnEditRedo_Click );
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size( 227, 6 );
+            this.toolStripSeparator3.Size = new System.Drawing.Size( 246, 6 );
             // 
             // mnEditCut
             // 
@@ -343,9 +276,14 @@ namespace music_tagger
             this.mnEditCut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.mnEditCut.Name = "mnEditCut";
             this.mnEditCut.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X ) ) );
-            this.mnEditCut.Size = new System.Drawing.Size( 230, 22 );
+            this.mnEditCut.Size = new System.Drawing.Size( 249, 22 );
             this.mnEditCut.Text = "Search";
             this.mnEditCut.Click += new System.EventHandler( this.mnEditCut_Click );
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size( 246, 6 );
             // 
             // mnEditCopy
             // 
@@ -357,9 +295,27 @@ namespace music_tagger
             this.mnEditCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.mnEditCopy.Name = "mnEditCopy";
             this.mnEditCopy.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C ) ) );
-            this.mnEditCopy.Size = new System.Drawing.Size( 230, 22 );
+            this.mnEditCopy.Size = new System.Drawing.Size( 249, 22 );
             this.mnEditCopy.Text = "&Copy Tag Infomration";
             this.mnEditCopy.Click += new System.EventHandler( this.mnEditCopy_Click );
+            // 
+            // copyVer1TagToolStripMenuItem
+            // 
+            this.copyVer1TagToolStripMenuItem.Name = "copyVer1TagToolStripMenuItem";
+            this.copyVer1TagToolStripMenuItem.Size = new System.Drawing.Size( 175, 22 );
+            this.copyVer1TagToolStripMenuItem.Text = "Copy Ver. 1 Tag ";
+            // 
+            // copyVer2TagToolStripMenuItem
+            // 
+            this.copyVer2TagToolStripMenuItem.Name = "copyVer2TagToolStripMenuItem";
+            this.copyVer2TagToolStripMenuItem.Size = new System.Drawing.Size( 175, 22 );
+            this.copyVer2TagToolStripMenuItem.Text = "Copy Ver. 2 Tag";
+            // 
+            // copyVer12TagToolStripMenuItem
+            // 
+            this.copyVer12TagToolStripMenuItem.Name = "copyVer12TagToolStripMenuItem";
+            this.copyVer12TagToolStripMenuItem.Size = new System.Drawing.Size( 175, 22 );
+            this.copyVer12TagToolStripMenuItem.Text = "Copy Ver. 1 & 2 Tag";
             // 
             // mnEditPast
             // 
@@ -367,20 +323,39 @@ namespace music_tagger
             this.mnEditPast.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.mnEditPast.Name = "mnEditPast";
             this.mnEditPast.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V ) ) );
-            this.mnEditPast.Size = new System.Drawing.Size( 230, 22 );
+            this.mnEditPast.Size = new System.Drawing.Size( 249, 22 );
             this.mnEditPast.Text = "&Paste Tag Information";
             this.mnEditPast.Click += new System.EventHandler( this.mnEditPast_Click );
             // 
-            // toolStripSeparator4
+            // toolStripSeparator16
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size( 227, 6 );
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            this.toolStripSeparator16.Size = new System.Drawing.Size( 246, 6 );
+            // 
+            // spit1ToolStripMenuItem
+            // 
+            this.spit1ToolStripMenuItem.Name = "spit1ToolStripMenuItem";
+            this.spit1ToolStripMenuItem.Size = new System.Drawing.Size( 249, 22 );
+            this.spit1ToolStripMenuItem.Text = "Split Artist into Artist && Title Ver. 1";
+            this.spit1ToolStripMenuItem.Click += new System.EventHandler( this.spit1ToolStripMenuItem_Click );
+            // 
+            // split2ToolStripMenuItem
+            // 
+            this.split2ToolStripMenuItem.Name = "split2ToolStripMenuItem";
+            this.split2ToolStripMenuItem.Size = new System.Drawing.Size( 249, 22 );
+            this.split2ToolStripMenuItem.Text = "Split Artist into Artist && Title Ver. 2";
+            this.split2ToolStripMenuItem.Click += new System.EventHandler( this.split2ToolStripMenuItem_Click );
+            // 
+            // toolStripSeparator17
+            // 
+            this.toolStripSeparator17.Name = "toolStripSeparator17";
+            this.toolStripSeparator17.Size = new System.Drawing.Size( 246, 6 );
             // 
             // mnEditSelectAll
             // 
             this.mnEditSelectAll.Name = "mnEditSelectAll";
             this.mnEditSelectAll.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A ) ) );
-            this.mnEditSelectAll.Size = new System.Drawing.Size( 230, 22 );
+            this.mnEditSelectAll.Size = new System.Drawing.Size( 249, 22 );
             this.mnEditSelectAll.Text = "Select &All";
             this.mnEditSelectAll.Click += new System.EventHandler( this.mnEditSelectAll_Click );
             // 
@@ -681,22 +656,11 @@ namespace music_tagger
             this.tree.Size = new System.Drawing.Size( 284, 509 );
             this.tree.TabIndex = 0;
             // 
-            // view
-            // 
-            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.view.Location = new System.Drawing.Point( 0, 0 );
-            this.view.Name = "view";
-            this.view.Size = new System.Drawing.Size( 831, 509 );
-            this.view.TabIndex = 0;
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton,
-            this.openToolStripButton,
             this.saveToolStripButton,
-            this.printToolStripButton,
             this.toolStripSeparator6,
             this.cutToolStripButton,
             this.copyToolStripButton,
@@ -705,26 +669,8 @@ namespace music_tagger
             this.helpToolStripButton} );
             this.toolStrip1.Location = new System.Drawing.Point( 3, 24 );
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size( 206, 25 );
+            this.toolStrip1.Size = new System.Drawing.Size( 137, 25 );
             this.toolStrip1.TabIndex = 1;
-            // 
-            // newToolStripButton
-            // 
-            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "newToolStripButton.Image" ) ) );
-            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size( 23, 22 );
-            this.newToolStripButton.Text = "&New";
-            // 
-            // openToolStripButton
-            // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "openToolStripButton.Image" ) ) );
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size( 23, 22 );
-            this.openToolStripButton.Text = "&Open";
             // 
             // saveToolStripButton
             // 
@@ -734,15 +680,6 @@ namespace music_tagger
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size( 23, 22 );
             this.saveToolStripButton.Text = "&Save";
-            // 
-            // printToolStripButton
-            // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "printToolStripButton.Image" ) ) );
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size( 23, 22 );
-            this.printToolStripButton.Text = "&Print";
             // 
             // toolStripSeparator6
             // 
@@ -1153,47 +1090,13 @@ namespace music_tagger
             this.toolStripButton15.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton15.Text = "toolStripButton15";
             // 
-            // copyVer1TagToolStripMenuItem
+            // view
             // 
-            this.copyVer1TagToolStripMenuItem.Name = "copyVer1TagToolStripMenuItem";
-            this.copyVer1TagToolStripMenuItem.Size = new System.Drawing.Size( 175, 22 );
-            this.copyVer1TagToolStripMenuItem.Text = "Copy Ver. 1 Tag ";
-            // 
-            // copyVer2TagToolStripMenuItem
-            // 
-            this.copyVer2TagToolStripMenuItem.Name = "copyVer2TagToolStripMenuItem";
-            this.copyVer2TagToolStripMenuItem.Size = new System.Drawing.Size( 175, 22 );
-            this.copyVer2TagToolStripMenuItem.Text = "Copy Ver. 2 Tag";
-            // 
-            // copyVer12TagToolStripMenuItem
-            // 
-            this.copyVer12TagToolStripMenuItem.Name = "copyVer12TagToolStripMenuItem";
-            this.copyVer12TagToolStripMenuItem.Size = new System.Drawing.Size( 175, 22 );
-            this.copyVer12TagToolStripMenuItem.Text = "Copy Ver. 1 & 2 Tag";
-            // 
-            // spit1ToolStripMenuItem
-            // 
-            this.spit1ToolStripMenuItem.Name = "spit1ToolStripMenuItem";
-            this.spit1ToolStripMenuItem.Size = new System.Drawing.Size( 249, 22 );
-            this.spit1ToolStripMenuItem.Text = "Split Artist into Artist && Title Ver. 1";
-            this.spit1ToolStripMenuItem.Click += new System.EventHandler( this.spit1ToolStripMenuItem_Click );
-            // 
-            // split2ToolStripMenuItem
-            // 
-            this.split2ToolStripMenuItem.Name = "split2ToolStripMenuItem";
-            this.split2ToolStripMenuItem.Size = new System.Drawing.Size( 249, 22 );
-            this.split2ToolStripMenuItem.Text = "Split Artist into Artist && Title Ver. 2";
-            this.split2ToolStripMenuItem.Click += new System.EventHandler( this.split2ToolStripMenuItem_Click );
-            // 
-            // toolStripSeparator16
-            // 
-            this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size( 227, 6 );
-            // 
-            // toolStripSeparator17
-            // 
-            this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size( 227, 6 );
+            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view.Location = new System.Drawing.Point( 0, 0 );
+            this.view.Name = "view";
+            this.view.Size = new System.Drawing.Size( 831, 509 );
+            this.view.TabIndex = 0;
             // 
             // MainFrm
             // 
@@ -1234,14 +1137,7 @@ namespace music_tagger
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnFileSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
@@ -1259,10 +1155,7 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton cutToolStripButton;
         private System.Windows.Forms.ToolStripButton copyToolStripButton;
