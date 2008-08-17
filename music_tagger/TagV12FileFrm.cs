@@ -12,34 +12,38 @@ namespace music_tagger
     public partial class TagV12FileFrm : EditFrm
     {
         View view = null;
-
+        /// <summary>
+        /// 
+        /// </summary>
         public TagV12FileFrm()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="view"></param>
         public TagV12FileFrm( View view )
-            : this( view.ListView )
+            : base( view.ListView )
         {
             this.view = view;
-        }
-
-        public TagV12FileFrm(ListView lv) : base(lv)
-        {
             InitializeComponent();
             Initialize();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public override void Initialize()
         {
             base.Initialize();
-
             string[] fmts = new string[Properties.Settings.Default.tagv12file_formats.Count];
             Properties.Settings.Default.tagv12file_formats.CopyTo( fmts, 0 );
             cmbFormat.Items.AddRange( fmts );
             cmbFormat.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void SaveSettings()
         {
             // formats
@@ -49,7 +53,11 @@ namespace music_tagger
             Properties.Settings.Default.tagv12file_formats.AddRange( fmts );
             Properties.Settings.Default.Save();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOK_Click( object sender, EventArgs e )
         {
             if(String.IsNullOrEmpty( cmbFormat.Text ))
@@ -61,26 +69,26 @@ namespace music_tagger
                     MessageBoxIcon.Asterisk );
                 return;
             }
-
             ListView.SelectedListViewItemCollection items = lv.SelectedItems;
             int len = items.Count;
             FileInfo[] infos = new FileInfo[len];
-
             for(int i = 0; i < len; ++i)
             {
                 infos[i] = items[i].Tag as FileInfo;
             }
-
             TagV12FileProgressThread thread = new TagV12FileProgressThread(
                 infos,
                 cmbFormat.Text );
             thread.StatusUpdate += new EventHandler<ProgressThread.StatusArgs>( thread_StatusUpdate );
             thread.Start();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void thread_StatusUpdate( object sender, ProgressThread.StatusArgs e )
         {
-
             if(InvokeRequired)
             {
                 this.Invoke(
@@ -93,12 +101,10 @@ namespace music_tagger
                 view.RefreshView();
             }
         }
-
         private void btnCancel_Click( object sender, EventArgs e )
         {
             Close();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -112,7 +118,6 @@ namespace music_tagger
             }
             SaveSettings();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -126,7 +131,5 @@ namespace music_tagger
             }
             SaveSettings();
         }
-
-       
     }
 }

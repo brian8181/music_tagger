@@ -32,17 +32,12 @@ namespace Tools
             ImageList list = new ImageList();
             list.Images.Add( Properties.Resources.closed_folder ); // 0
             list.Images.Add( Properties.Resources.opened_folder ); // 1
-            //list.Images.Add( Image.FromFile( @"file.ico" ) ); 
             hard_drive_img_idx = 2;
             list.Images.Add( Properties.Resources.hard_drive );
             rom_drive_img_idx = 3;
             list.Images.Add( Properties.Resources.rom_drive ); 
             net_drive_img_idx = 4;
             list.Images.Add( Properties.Resources.net_drive ); 
-            //list.Images.Add( Image.FromFile( @"unk.ico" ) ); 
-            //list.Images.Add( Image.FromFile( @"usb.ico" ) ); 
-            //list.Images.Add( Image.FromFile( @"fd.ico" ) ); 
-            //list.Images.Add( Image.FromFile( @"unk.ico" ) ); 
             this.ImageList = list;
             ImageIndex = closed_img_idx;
             SelectedImageIndex = opened_img_idx;

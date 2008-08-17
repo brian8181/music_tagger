@@ -27,7 +27,9 @@ namespace Tools
             this.fi = fi;
             Initialize();
         }
-        
+        /// <summary>
+        /// 
+        /// </summary>
         public override void Initialize()
         {
             string root = Path.GetPathRoot( fi.FullName );
@@ -41,7 +43,9 @@ namespace Tools
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public System.IO.FileSystemInfo FileSystemInfo
         {
             get { return fi; }
