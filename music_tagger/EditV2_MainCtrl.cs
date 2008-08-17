@@ -158,7 +158,7 @@ namespace music_tagger
 
         private void btnTopComment_Click( object sender, EventArgs e )
         {
-            ListViewItem lvi = commentList.Items[cmbCommentDesciptor.Text];
+            ListViewItem lvi     = commentList.Items[cmbCommentDesciptor.Text];
             commentList.Items.RemoveByKey( cmbCommentDesciptor.Text );
             commentList.Items.Insert( 0, lvi );
         }
