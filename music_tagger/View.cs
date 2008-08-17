@@ -58,7 +58,6 @@ namespace music_tagger
             Genre,
             Length
         }
-
         private FileTreeView tree = null;
         private ImageList images = new ImageList();
 
@@ -79,6 +78,8 @@ namespace music_tagger
         {
             InitializeComponent();
         }
+
+        #region Public Methods
         /// <summary>
         /// 
         /// </summary>
@@ -99,7 +100,7 @@ namespace music_tagger
             tree.AfterSelect += new TreeViewEventHandler( tree_AfterSelect );
         }
         /// <summary>
-        /// 
+        /// refresh the view
         /// </summary>
         public void RefreshView()
         {
@@ -107,7 +108,7 @@ namespace music_tagger
             RefreshView( di );
         }
         /// <summary>
-        /// 
+        /// refresh view base on directory
         /// </summary>
         /// <param name="di"></param>
         public void RefreshView( DirectoryInfo di )
@@ -125,7 +126,7 @@ namespace music_tagger
             }
         }
         /// <summary>
-        /// 
+        ///  refresh view based on files
         /// </summary>
         /// <param name="files"></param>
         public void RefreshView( FileInfo[] files )
@@ -189,49 +190,31 @@ namespace music_tagger
                 SizeAll( listView, ColumnHeaderAutoResizeStyle.ColumnContent );
             }
         }
-
-        public string GetString( Column c, FileInfo fi )
+        /// <summary>
+        /// select all 
+        /// </summary>
+        public void SelectAll()
         {
-            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
-            TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-
-            switch(c)
+            foreach(ListViewItem item in listView.Items)
             {
-            case Column.Path:
-                return fi.FullName;
-            case Column.Size:
-                return fi.Length.ToString();
-            case Column.Attributes:
-                return fi.Attributes.ToString();
-            case Column.Created:
-                return fi.CreationTime.ToString();
-            case Column.Accessed:
-                return fi.LastAccessTime.ToString();
-            case Column.Modified:
-                return fi.LastWriteTime.ToString();
-            case Column.Artist:
-                return tag.FirstPerformer;
-            case Column.Album:
-                return tag.Album;
-            case Column.Title:
-                return tag.Title;
-            case Column.Track:
-                return tag.Track.ToString();
-            case Column.Year:
-                return tag.Year.ToString();
-            case Column.Comment:
-                return tag.Comment;
-            case Column.Genre:
-                return tag.FirstGenre;
-            case Column.Length:
-                return tag_file.Properties.Duration.ToString();
-            default:
-                break;
+                item.Selected = true;
             }
-
-            return "";
         }
-            
+        /// <summary>
+        /// commit changes to file
+        /// </summary>
+        public void Commit()
+        {
+            foreach(ListViewItem item in ListView.Items)
+            {
+                if( /*dirty=*/ true)
+                {
+
+                }
+            }
+        }
+        #endregion
+                 
         #region Event Handlers
         /// <summary>
         /// 
@@ -311,6 +294,54 @@ namespace music_tagger
         }
         #endregion
 
+        #region Utility Functions
+        /// <summary>
+        /// returns subitem string from file by column key 
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="fi"></param>
+        /// <returns></returns>
+        public string GetString( Column c, FileInfo fi )
+        {
+            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+            TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+
+            switch(c)
+            {
+            case Column.Path:
+                return fi.FullName;
+            case Column.Size:
+                return fi.Length.ToString();
+            case Column.Attributes:
+                return fi.Attributes.ToString();
+            case Column.Created:
+                return fi.CreationTime.ToString();
+            case Column.Accessed:
+                return fi.LastAccessTime.ToString();
+            case Column.Modified:
+                return fi.LastWriteTime.ToString();
+            case Column.Artist:
+                return tag.FirstPerformer;
+            case Column.Album:
+                return tag.Album;
+            case Column.Title:
+                return tag.Title;
+            case Column.Track:
+                return tag.Track.ToString();
+            case Column.Year:
+                return tag.Year.ToString();
+            case Column.Comment:
+                return tag.Comment;
+            case Column.Genre:
+                return tag.FirstGenre;
+            case Column.Length:
+                return tag_file.Properties.Duration.ToString();
+            default:
+                break;
+            }
+
+            return "";
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -367,5 +398,7 @@ namespace music_tagger
                 listView.Columns[i].AutoResize( style );
             }
         }
+        #endregion
+
     }
 }
