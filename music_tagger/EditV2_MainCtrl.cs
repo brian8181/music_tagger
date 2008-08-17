@@ -144,17 +144,23 @@ namespace music_tagger
 
         private void btnAddComment_Click( object sender, EventArgs e )
         {
-
+            ListViewItem lvi = commentList.Items.Add( 
+                cmbCommentDesciptor.Text, cmbCommentDesciptor.Text, 0 );
+            lvi.SubItems.Add( cmbCommentLang.Text );
+            lvi.SubItems.Add( txtComment.Text );
+            
         }
 
         private void btnRemoveComment_Click( object sender, EventArgs e )
         {
-
+            commentList.Items.RemoveByKey( cmbCommentDesciptor.Text );    
         }
 
         private void btnTopComment_Click( object sender, EventArgs e )
         {
-
+            ListViewItem lvi = commentList.Items[cmbCommentDesciptor.Text];
+            commentList.Items.RemoveByKey( cmbCommentDesciptor.Text );
+            commentList.Items.Insert( 0, lvi );
         }
     }
 }

@@ -61,10 +61,10 @@ namespace music_tagger
             this.label11 = new System.Windows.Forms.Label();
             this.txtTrack = new System.Windows.Forms.TextBox();
             this.cmbCommentLang = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cmbCommentDesciptor = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.commentList = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
@@ -364,13 +364,13 @@ namespace music_tagger
             this.cmbCommentLang.Size = new System.Drawing.Size( 414, 21 );
             this.cmbCommentLang.TabIndex = 53;
             // 
-            // comboBox4
+            // cmbCommentDesciptor
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point( 117, 15 );
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size( 414, 21 );
-            this.comboBox4.TabIndex = 54;
+            this.cmbCommentDesciptor.FormattingEnabled = true;
+            this.cmbCommentDesciptor.Location = new System.Drawing.Point( 117, 15 );
+            this.cmbCommentDesciptor.Name = "cmbCommentDesciptor";
+            this.cmbCommentDesciptor.Size = new System.Drawing.Size( 414, 21 );
+            this.cmbCommentDesciptor.TabIndex = 54;
             // 
             // label12
             // 
@@ -390,19 +390,19 @@ namespace music_tagger
             this.label13.TabIndex = 56;
             this.label13.Text = "Comment Language:";
             // 
-            // listView1
+            // commentList
             // 
-            this.listView1.Columns.AddRange( new System.Windows.Forms.ColumnHeader[] {
+            this.commentList.Columns.AddRange( new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3} );
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point( 117, 147 );
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size( 479, 72 );
-            this.listView1.TabIndex = 57;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.commentList.GridLines = true;
+            this.commentList.Location = new System.Drawing.Point( 117, 147 );
+            this.commentList.Name = "commentList";
+            this.commentList.Size = new System.Drawing.Size( 479, 72 );
+            this.commentList.TabIndex = 57;
+            this.commentList.UseCompatibleStateImageBehavior = false;
+            this.commentList.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -481,11 +481,11 @@ namespace music_tagger
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add( this.comboBox4 );
+            this.groupBox1.Controls.Add( this.cmbCommentDesciptor );
             this.groupBox1.Controls.Add( this.btnTopComment );
             this.groupBox1.Controls.Add( this.label7 );
             this.groupBox1.Controls.Add( this.btnAddComment );
-            this.groupBox1.Controls.Add( this.listView1 );
+            this.groupBox1.Controls.Add( this.commentList );
             this.groupBox1.Controls.Add( this.txtComment );
             this.groupBox1.Controls.Add( this.btnRemoveComment );
             this.groupBox1.Controls.Add( this.btnV1Comment );
@@ -602,10 +602,10 @@ namespace music_tagger
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtTrack;
         private System.Windows.Forms.ComboBox cmbCommentLang;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cmbCommentDesciptor;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView commentList;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
