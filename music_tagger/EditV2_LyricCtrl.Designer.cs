@@ -53,17 +53,17 @@ namespace music_tagger
             // 
             // txtLyrics
             // 
-            this.txtLyrics.Location = new System.Drawing.Point( 68, 77 );
+            this.txtLyrics.Location = new System.Drawing.Point( 68, 64 );
             this.txtLyrics.Multiline = true;
             this.txtLyrics.Name = "txtLyrics";
-            this.txtLyrics.Size = new System.Drawing.Size( 481, 224 );
+            this.txtLyrics.Size = new System.Drawing.Size( 544, 237 );
             this.txtLyrics.TabIndex = 1;
             // 
             // txtDescriptor
             // 
             this.txtDescriptor.Location = new System.Drawing.Point( 68, 11 );
             this.txtDescriptor.Name = "txtDescriptor";
-            this.txtDescriptor.Size = new System.Drawing.Size( 192, 20 );
+            this.txtDescriptor.Size = new System.Drawing.Size( 299, 20 );
             this.txtDescriptor.TabIndex = 2;
             // 
             // cmbLanguage
@@ -71,14 +71,14 @@ namespace music_tagger
             this.cmbLanguage.FormattingEnabled = true;
             this.cmbLanguage.Location = new System.Drawing.Point( 68, 37 );
             this.cmbLanguage.Name = "cmbLanguage";
-            this.cmbLanguage.Size = new System.Drawing.Size( 192, 21 );
+            this.cmbLanguage.Size = new System.Drawing.Size( 299, 21 );
             this.cmbLanguage.TabIndex = 3;
             // 
             // lyricsList
             // 
-            this.lyricsList.Location = new System.Drawing.Point( 6, 336 );
+            this.lyricsList.Location = new System.Drawing.Point( 3, 336 );
             this.lyricsList.Name = "lyricsList";
-            this.lyricsList.Size = new System.Drawing.Size( 543, 97 );
+            this.lyricsList.Size = new System.Drawing.Size( 609, 171 );
             this.lyricsList.TabIndex = 4;
             this.lyricsList.UseCompatibleStateImageBehavior = false;
             // 
@@ -102,7 +102,7 @@ namespace music_tagger
             // 
             // btnTop
             // 
-            this.btnTop.Location = new System.Drawing.Point( 393, 307 );
+            this.btnTop.Location = new System.Drawing.Point( 456, 307 );
             this.btnTop.Name = "btnTop";
             this.btnTop.Size = new System.Drawing.Size( 75, 23 );
             this.btnTop.TabIndex = 7;
@@ -111,7 +111,7 @@ namespace music_tagger
             // 
             // btnFile
             // 
-            this.btnFile.Location = new System.Drawing.Point( 474, 307 );
+            this.btnFile.Location = new System.Drawing.Point( 537, 307 );
             this.btnFile.Name = "btnFile";
             this.btnFile.Size = new System.Drawing.Size( 75, 23 );
             this.btnFile.TabIndex = 8;
@@ -130,7 +130,7 @@ namespace music_tagger
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point( 3, 80 );
+            this.label3.Location = new System.Drawing.Point( 3, 67 );
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size( 37, 13 );
             this.label3.TabIndex = 10;
@@ -152,7 +152,7 @@ namespace music_tagger
             this.Controls.Add( this.txtLyrics );
             this.Controls.Add( this.label1 );
             this.Name = "EditV2_LyricCtrl";
-            this.Size = new System.Drawing.Size( 552, 436 );
+            this.Size = new System.Drawing.Size( 615, 510 );
             this.ResumeLayout( false );
             this.PerformLayout();
 

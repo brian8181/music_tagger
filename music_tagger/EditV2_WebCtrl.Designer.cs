@@ -35,7 +35,7 @@ namespace music_tagger
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "EditV2_WebCtrl";
-            this.Size = new System.Drawing.Size( 643, 480 );
+            this.Size = new System.Drawing.Size( 615, 510 );
             this.ResumeLayout( false );
 
         }

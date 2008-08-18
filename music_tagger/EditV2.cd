@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="music_tagger.EditV2_DetailCtrl">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_DetailCtrl.cs</FileName>
+      <HashCode>81AAAgAAACIAQhQAAACAMAACAAAACEAAADBAgAEIAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2_LyricCtrl">
+    <Position X="5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_LyricCtrl.cs</FileName>
+      <HashCode>AAAAAAAAQCAAApAQAACAAgACAAAAiAAAQAAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2_MainCtrl">
+    <Position X="1.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_MainCtrl.cs</FileName>
+      <HashCode>8AECQiBFgGAAIBQFgACAmADSAyA6CABARCAIgFEgAQI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2_PictureCtrl">
+    <Position X="6.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_PictureCtrl.cs</FileName>
+      <HashCode>ADAAAIAAACAAABAQAACAgACCAyAAiAAAEAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.ViewCtrlBase">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ViewCtrlBase.cs</FileName>
+      <HashCode>AAAAAAAAACgAAQAAAACAAAACAAQACAAAAAIAAAAAAgE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.View" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>View.cs</FileName>
+      <HashCode>AAAAAEAEICIAAAAAgBDMBEEGEAAAAEAAkCEAAYAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2Frm" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2Frm.cs</FileName>
+      <HashCode>AAAAAAAEACAIAQkAEQCAANASoAAgAEAAgIIAEQEBKAU=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

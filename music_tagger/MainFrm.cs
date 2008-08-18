@@ -271,7 +271,16 @@ namespace music_tagger
 
         private void On_Save( object sender, EventArgs e )
         {
-            view.Commit();
+            DialogResult dr = MessageBox.Show(
+                    "Are you sure you wish to commit all changes?",
+                    "Commit",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Asterisk );
+
+            if(dr == DialogResult.OK)
+            {
+                view.Commit();
+            }
         }
 
     }

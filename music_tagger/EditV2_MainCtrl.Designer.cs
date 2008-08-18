@@ -554,7 +554,7 @@ namespace music_tagger
             this.Controls.Add( this.numericUpDown1 );
             this.Controls.Add( this.label20 );
             this.Name = "EditV2_MainCtrl";
-            this.Size = new System.Drawing.Size( 615, 509 );
+            this.Size = new System.Drawing.Size( 615, 510 );
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).EndInit();
             this.groupBox1.ResumeLayout( false );
             this.groupBox1.PerformLayout();
@@ -570,11 +570,7 @@ namespace music_tagger
         #endregion
 
         private System.Windows.Forms.ComboBox cmbGenre;
-        private System.Windows.Forms.ComboBox cmbArtist;
         private System.Windows.Forms.TextBox txtComment;
-        private System.Windows.Forms.TextBox txtYear;
-        private System.Windows.Forms.TextBox txtAlbum;
-        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -589,23 +585,16 @@ namespace music_tagger
         private System.Windows.Forms.Button btnV1Track;
         private System.Windows.Forms.Button btnV1Genre;
         private System.Windows.Forms.Button btnV1Comment;
-        private System.Windows.Forms.ListBox genreList;
-        private System.Windows.Forms.TextBox txtBPM;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtDisc;
         private System.Windows.Forms.Label lblDics;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtDiscCount;
-        private System.Windows.Forms.TextBox txtTrackCount;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTrack;
         private System.Windows.Forms.ComboBox cmbCommentLang;
         private System.Windows.Forms.ComboBox cmbCommentDesciptor;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ListView commentList;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -618,5 +607,16 @@ namespace music_tagger
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.ComboBox cmbArtist;
+        public System.Windows.Forms.TextBox txtYear;
+        public System.Windows.Forms.TextBox txtAlbum;
+        public System.Windows.Forms.TextBox txtTitle;
+        public System.Windows.Forms.ListBox genreList;
+        public System.Windows.Forms.TextBox txtBPM;
+        public System.Windows.Forms.TextBox txtDisc;
+        public System.Windows.Forms.TextBox txtDiscCount;
+        public System.Windows.Forms.TextBox txtTrackCount;
+        public System.Windows.Forms.TextBox txtTrack;
+        public System.Windows.Forms.ListView commentList;
     }
 }

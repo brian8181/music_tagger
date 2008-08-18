@@ -4,9 +4,31 @@ using System.Text;
 
 namespace music_tagger
 {
-    class Globals
+    /// <summary>
+    /// Column enumeration
+    /// </summary>
+    public enum Column
     {
-        //public const string[] fields = new string[] { "File", "Path", "Size", "Attributes", "Created", 
-        //    "Last Access", "Last Write", "Artist", "Album", "Title", "Track", "Comment", "Genre", "Length"  };
+        File,
+        Path,
+        Size,
+        Attributes,
+        Created,
+        Accessed,
+        Modified,
+        Album,
+        Artist,
+        Title,
+        Track,
+        Comment,
+        Year,
+        Genre,
+        Length
+    }
+    /// <summary>
+    /// globals
+    /// </summary>
+    public static class Globals
+    {
     }
 }

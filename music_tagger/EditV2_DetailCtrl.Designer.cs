@@ -29,37 +29,40 @@ namespace music_tagger
         private void InitializeComponent()
         {
             this.txtBand = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtConductor = new System.Windows.Forms.TextBox();
+            this.txtComposer = new System.Windows.Forms.TextBox();
+            this.txtRemixed = new System.Windows.Forms.TextBox();
+            this.txtWriter = new System.Windows.Forms.TextBox();
+            this.txtPublisher = new System.Windows.Forms.TextBox();
+            this.txtEncoded = new System.Windows.Forms.TextBox();
+            this.txtCopyright = new System.Windows.Forms.TextBox();
+            this.txtContentGroup = new System.Windows.Forms.TextBox();
+            this.txtSubTitle = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txtTitleSortName = new System.Windows.Forms.TextBox();
+            this.txtArtistSortName = new System.Windows.Forms.TextBox();
+            this.txtAlbumSortName = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbMediaType = new System.Windows.Forms.ComboBox();
+            this.txtTrackLength = new System.Windows.Forms.TextBox();
+            this.btnFromFile = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -73,68 +76,68 @@ namespace music_tagger
             this.txtBand.Size = new System.Drawing.Size( 414, 20 );
             this.txtBand.TabIndex = 28;
             // 
-            // textBox2
+            // txtConductor
             // 
-            this.textBox2.Location = new System.Drawing.Point( 169, 37 );
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox2.TabIndex = 29;
+            this.txtConductor.Location = new System.Drawing.Point( 169, 37 );
+            this.txtConductor.Name = "txtConductor";
+            this.txtConductor.Size = new System.Drawing.Size( 414, 20 );
+            this.txtConductor.TabIndex = 29;
             // 
-            // textBox3
+            // txtComposer
             // 
-            this.textBox3.Location = new System.Drawing.Point( 169, 85 );
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox3.TabIndex = 30;
+            this.txtComposer.Location = new System.Drawing.Point( 169, 85 );
+            this.txtComposer.Name = "txtComposer";
+            this.txtComposer.Size = new System.Drawing.Size( 414, 20 );
+            this.txtComposer.TabIndex = 30;
             // 
-            // textBox4
+            // txtRemixed
             // 
-            this.textBox4.Location = new System.Drawing.Point( 169, 61 );
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox4.TabIndex = 31;
+            this.txtRemixed.Location = new System.Drawing.Point( 169, 61 );
+            this.txtRemixed.Name = "txtRemixed";
+            this.txtRemixed.Size = new System.Drawing.Size( 414, 20 );
+            this.txtRemixed.TabIndex = 31;
             // 
-            // textBox5
+            // txtWriter
             // 
-            this.textBox5.Location = new System.Drawing.Point( 169, 109 );
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox5.TabIndex = 32;
+            this.txtWriter.Location = new System.Drawing.Point( 169, 109 );
+            this.txtWriter.Name = "txtWriter";
+            this.txtWriter.Size = new System.Drawing.Size( 414, 20 );
+            this.txtWriter.TabIndex = 32;
             // 
-            // textBox6
+            // txtPublisher
             // 
-            this.textBox6.Location = new System.Drawing.Point( 169, 133 );
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox6.TabIndex = 33;
+            this.txtPublisher.Location = new System.Drawing.Point( 169, 133 );
+            this.txtPublisher.Name = "txtPublisher";
+            this.txtPublisher.Size = new System.Drawing.Size( 414, 20 );
+            this.txtPublisher.TabIndex = 33;
             // 
-            // textBox7
+            // txtEncoded
             // 
-            this.textBox7.Location = new System.Drawing.Point( 169, 157 );
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox7.TabIndex = 34;
+            this.txtEncoded.Location = new System.Drawing.Point( 169, 157 );
+            this.txtEncoded.Name = "txtEncoded";
+            this.txtEncoded.Size = new System.Drawing.Size( 414, 20 );
+            this.txtEncoded.TabIndex = 34;
             // 
-            // textBox8
+            // txtCopyright
             // 
-            this.textBox8.Location = new System.Drawing.Point( 169, 181 );
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox8.TabIndex = 35;
+            this.txtCopyright.Location = new System.Drawing.Point( 169, 181 );
+            this.txtCopyright.Name = "txtCopyright";
+            this.txtCopyright.Size = new System.Drawing.Size( 414, 20 );
+            this.txtCopyright.TabIndex = 35;
             // 
-            // textBox9
+            // txtContentGroup
             // 
-            this.textBox9.Location = new System.Drawing.Point( 169, 18 );
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox9.TabIndex = 36;
+            this.txtContentGroup.Location = new System.Drawing.Point( 169, 18 );
+            this.txtContentGroup.Name = "txtContentGroup";
+            this.txtContentGroup.Size = new System.Drawing.Size( 414, 20 );
+            this.txtContentGroup.TabIndex = 36;
             // 
-            // textBox10
+            // txtSubTitle
             // 
-            this.textBox10.Location = new System.Drawing.Point( 169, 42 );
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox10.TabIndex = 37;
+            this.txtSubTitle.Location = new System.Drawing.Point( 169, 42 );
+            this.txtSubTitle.Name = "txtSubTitle";
+            this.txtSubTitle.Size = new System.Drawing.Size( 414, 20 );
+            this.txtSubTitle.TabIndex = 37;
             // 
             // groupBox1
             // 
@@ -147,129 +150,27 @@ namespace music_tagger
             this.groupBox1.Controls.Add( this.label2 );
             this.groupBox1.Controls.Add( this.label1 );
             this.groupBox1.Controls.Add( this.txtBand );
-            this.groupBox1.Controls.Add( this.textBox2 );
-            this.groupBox1.Controls.Add( this.textBox3 );
-            this.groupBox1.Controls.Add( this.textBox8 );
-            this.groupBox1.Controls.Add( this.textBox4 );
-            this.groupBox1.Controls.Add( this.textBox7 );
-            this.groupBox1.Controls.Add( this.textBox5 );
-            this.groupBox1.Controls.Add( this.textBox6 );
+            this.groupBox1.Controls.Add( this.txtConductor );
+            this.groupBox1.Controls.Add( this.txtComposer );
+            this.groupBox1.Controls.Add( this.txtCopyright );
+            this.groupBox1.Controls.Add( this.txtRemixed );
+            this.groupBox1.Controls.Add( this.txtEncoded );
+            this.groupBox1.Controls.Add( this.txtWriter );
+            this.groupBox1.Controls.Add( this.txtPublisher );
             this.groupBox1.Location = new System.Drawing.Point( 3, 3 );
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size( 600, 209 );
+            this.groupBox1.Size = new System.Drawing.Size( 609, 209 );
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             // 
-            // groupBox2
+            // label8
             // 
-            this.groupBox2.Controls.Add( this.label9 );
-            this.groupBox2.Controls.Add( this.label10 );
-            this.groupBox2.Controls.Add( this.textBox9 );
-            this.groupBox2.Controls.Add( this.textBox10 );
-            this.groupBox2.Location = new System.Drawing.Point( 3, 218 );
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size( 600, 68 );
-            this.groupBox2.TabIndex = 39;
-            this.groupBox2.TabStop = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add( this.label11 );
-            this.groupBox3.Controls.Add( this.label12 );
-            this.groupBox3.Controls.Add( this.label13 );
-            this.groupBox3.Controls.Add( this.textBox13 );
-            this.groupBox3.Controls.Add( this.textBox11 );
-            this.groupBox3.Controls.Add( this.textBox12 );
-            this.groupBox3.Location = new System.Drawing.Point( 3, 292 );
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size( 600, 105 );
-            this.groupBox3.TabIndex = 40;
-            this.groupBox3.TabStop = false;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point( 169, 66 );
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox13.TabIndex = 38;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point( 169, 18 );
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox11.TabIndex = 36;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point( 169, 42 );
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size( 414, 20 );
-            this.textBox12.TabIndex = 37;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add( this.label15 );
-            this.groupBox4.Controls.Add( this.label14 );
-            this.groupBox4.Location = new System.Drawing.Point( 3, 403 );
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size( 600, 78 );
-            this.groupBox4.TabIndex = 40;
-            this.groupBox4.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point( 18, 16 );
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size( 89, 13 );
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Band / Orchestra";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point( 18, 40 );
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size( 56, 13 );
-            this.label2.TabIndex = 36;
-            this.label2.Text = "&Conductor";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point( 18, 64 );
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size( 102, 13 );
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Modified \\  Remixed";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point( 18, 88 );
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size( 54, 13 );
-            this.label4.TabIndex = 38;
-            this.label4.Text = "Co&mposer";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point( 18, 112 );
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size( 100, 13 );
-            this.label5.TabIndex = 39;
-            this.label5.Text = "Lyrics \\ Text Writer:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point( 18, 136 );
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size( 53, 13 );
-            this.label6.TabIndex = 40;
-            this.label6.Text = "&Publisher:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point( 18, 184 );
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size( 54, 13 );
+            this.label8.TabIndex = 42;
+            this.label8.Text = "Copyright:";
             // 
             // label7
             // 
@@ -280,14 +181,71 @@ namespace music_tagger
             this.label7.TabIndex = 41;
             this.label7.Text = "Encoded by:";
             // 
-            // label8
+            // label6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point( 18, 184 );
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size( 54, 13 );
-            this.label8.TabIndex = 42;
-            this.label8.Text = "Copyright:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point( 18, 136 );
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size( 53, 13 );
+            this.label6.TabIndex = 40;
+            this.label6.Text = "&Publisher:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point( 18, 112 );
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size( 100, 13 );
+            this.label5.TabIndex = 39;
+            this.label5.Text = "Lyrics \\ Text Writer:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point( 18, 88 );
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size( 54, 13 );
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Co&mposer";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point( 18, 64 );
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size( 102, 13 );
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Modified \\  Remixed";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point( 18, 40 );
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size( 56, 13 );
+            this.label2.TabIndex = 36;
+            this.label2.Text = "&Conductor";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point( 18, 16 );
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size( 89, 13 );
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Band / Orchestra";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add( this.label9 );
+            this.groupBox2.Controls.Add( this.label10 );
+            this.groupBox2.Controls.Add( this.txtContentGroup );
+            this.groupBox2.Controls.Add( this.txtSubTitle );
+            this.groupBox2.Location = new System.Drawing.Point( 3, 218 );
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size( 609, 68 );
+            this.groupBox2.TabIndex = 39;
+            this.groupBox2.TabStop = false;
             // 
             // label9
             // 
@@ -307,50 +265,122 @@ namespace music_tagger
             this.label10.TabIndex = 44;
             this.label10.Text = "Sub Title:";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add( this.label11 );
+            this.groupBox3.Controls.Add( this.label12 );
+            this.groupBox3.Controls.Add( this.label13 );
+            this.groupBox3.Controls.Add( this.txtTitleSortName );
+            this.groupBox3.Controls.Add( this.txtArtistSortName );
+            this.groupBox3.Controls.Add( this.txtAlbumSortName );
+            this.groupBox3.Location = new System.Drawing.Point( 3, 292 );
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size( 609, 105 );
+            this.groupBox3.TabIndex = 40;
+            this.groupBox3.TabStop = false;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point( 18, 25 );
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size( 41, 13 );
+            this.label11.Size = new System.Drawing.Size( 129, 13 );
             this.label11.TabIndex = 45;
-            this.label11.Text = "label11";
+            this.label11.Text = "Artist Sort Name (Ver 2.4):";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point( 18, 45 );
+            this.label12.Location = new System.Drawing.Point( 18, 49 );
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size( 41, 13 );
+            this.label12.Size = new System.Drawing.Size( 135, 13 );
             this.label12.TabIndex = 46;
-            this.label12.Text = "label12";
+            this.label12.Text = "Album Sort Name (Ver 2.4):";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point( 18, 69 );
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size( 41, 13 );
+            this.label13.Size = new System.Drawing.Size( 126, 13 );
             this.label13.TabIndex = 47;
-            this.label13.Text = "label13";
+            this.label13.Text = "Title Sort Name (Ver 2.4):";
+            // 
+            // txtTitleSortName
+            // 
+            this.txtTitleSortName.Location = new System.Drawing.Point( 169, 66 );
+            this.txtTitleSortName.Name = "txtTitleSortName";
+            this.txtTitleSortName.Size = new System.Drawing.Size( 414, 20 );
+            this.txtTitleSortName.TabIndex = 38;
+            // 
+            // txtArtistSortName
+            // 
+            this.txtArtistSortName.Location = new System.Drawing.Point( 169, 18 );
+            this.txtArtistSortName.Name = "txtArtistSortName";
+            this.txtArtistSortName.Size = new System.Drawing.Size( 414, 20 );
+            this.txtArtistSortName.TabIndex = 36;
+            // 
+            // txtAlbumSortName
+            // 
+            this.txtAlbumSortName.Location = new System.Drawing.Point( 169, 42 );
+            this.txtAlbumSortName.Name = "txtAlbumSortName";
+            this.txtAlbumSortName.Size = new System.Drawing.Size( 414, 20 );
+            this.txtAlbumSortName.TabIndex = 37;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add( this.btnFromFile );
+            this.groupBox4.Controls.Add( this.txtTrackLength );
+            this.groupBox4.Controls.Add( this.cmbMediaType );
+            this.groupBox4.Controls.Add( this.label15 );
+            this.groupBox4.Controls.Add( this.label14 );
+            this.groupBox4.Location = new System.Drawing.Point( 3, 403 );
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size( 609, 104 );
+            this.groupBox4.TabIndex = 40;
+            this.groupBox4.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point( 18, 64 );
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size( 74, 13 );
+            this.label15.TabIndex = 49;
+            this.label15.Text = "Track Length:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point( 18, 26 );
+            this.label14.Location = new System.Drawing.Point( 19, 34 );
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size( 66, 13 );
             this.label14.TabIndex = 48;
             this.label14.Text = "Media Type:";
             // 
-            // label15
+            // cmbMediaType
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point( 18, 53 );
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size( 74, 13 );
-            this.label15.TabIndex = 49;
-            this.label15.Text = "Track Length:";
+            this.cmbMediaType.FormattingEnabled = true;
+            this.cmbMediaType.Location = new System.Drawing.Point( 169, 31 );
+            this.cmbMediaType.Name = "cmbMediaType";
+            this.cmbMediaType.Size = new System.Drawing.Size( 303, 21 );
+            this.cmbMediaType.TabIndex = 50;
+            // 
+            // txtTrackLength
+            // 
+            this.txtTrackLength.Location = new System.Drawing.Point( 169, 61 );
+            this.txtTrackLength.Name = "txtTrackLength";
+            this.txtTrackLength.Size = new System.Drawing.Size( 221, 20 );
+            this.txtTrackLength.TabIndex = 48;
+            // 
+            // btnFromFile
+            // 
+            this.btnFromFile.Location = new System.Drawing.Point( 397, 59 );
+            this.btnFromFile.Name = "btnFromFile";
+            this.btnFromFile.Size = new System.Drawing.Size( 75, 23 );
+            this.btnFromFile.TabIndex = 51;
+            this.btnFromFile.Text = "From File";
+            this.btnFromFile.UseVisualStyleBackColor = true;
             // 
             // EditV2_DetailCtrl
             // 
@@ -361,7 +391,7 @@ namespace music_tagger
             this.Controls.Add( this.groupBox2 );
             this.Controls.Add( this.groupBox1 );
             this.Name = "EditV2_DetailCtrl";
-            this.Size = new System.Drawing.Size( 606, 483 );
+            this.Size = new System.Drawing.Size( 615, 510 );
             this.groupBox1.ResumeLayout( false );
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout( false );
@@ -377,21 +407,21 @@ namespace music_tagger
         #endregion
 
         private System.Windows.Forms.TextBox txtBand;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtConductor;
+        private System.Windows.Forms.TextBox txtComposer;
+        private System.Windows.Forms.TextBox txtRemixed;
+        private System.Windows.Forms.TextBox txtWriter;
+        private System.Windows.Forms.TextBox txtPublisher;
+        private System.Windows.Forms.TextBox txtEncoded;
+        private System.Windows.Forms.TextBox txtCopyright;
+        private System.Windows.Forms.TextBox txtContentGroup;
+        private System.Windows.Forms.TextBox txtSubTitle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtArtistSortName;
+        private System.Windows.Forms.TextBox txtAlbumSortName;
+        private System.Windows.Forms.TextBox txtTitleSortName;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -408,5 +438,8 @@ namespace music_tagger
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtTrackLength;
+        private System.Windows.Forms.ComboBox cmbMediaType;
+        private System.Windows.Forms.Button btnFromFile;
     }
 }

@@ -14,5 +14,10 @@ namespace music_tagger
         {
             InitializeComponent();
         }
+
+        private void EditV2_OriginalCtrl_Load( object sender, EventArgs e )
+        {
+
+        }
     }
 }

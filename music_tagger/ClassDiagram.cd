@@ -5,38 +5,302 @@
     <Position X="4.26" Y="1.281" Height="0.521" Width="1.523" />
   </Comment>
   <Class Name="music_tagger.ProgressThread" Collapsed="true">
-    <Position X="2.5" Y="1.75" Width="1.5" />
+    <Position X="3" Y="4" Width="1.5" />
     <TypeIdentifier>
       <FileName>ProgressThread.cs</FileName>
       <HashCode>AAAAACAEBCIAAAEAAAACiAACAAAAAAIAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.ProgressFrm" Collapsed="true">
-    <Position X="2.5" Y="0.75" Width="1.5" />
+    <Position X="3" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>ProgressFrm.cs</FileName>
       <HashCode>AACAAAAAACABAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.OrgProgressThread" Collapsed="true">
-    <Position X="0.5" Y="4.5" Width="1.5" />
+    <Position X="0.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>ProgressThreads.cs</FileName>
       <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.File2TagProgressThread" Collapsed="true">
-    <Position X="5.25" Y="4.5" Width="1.5" />
+    <Position X="5.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>ProgressThreads.cs</FileName>
       <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.TagV12FileProgressThread" Collapsed="true">
-    <Position X="3" Y="4.5" Width="1.5" />
+    <Position X="3" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>ProgressThreads.cs</FileName>
       <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
+  <Class Name="music_tagger.EditV2_DetailCtrl" Collapsed="true">
+    <Position X="2.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_DetailCtrl.cs</FileName>
+      <HashCode>81AAAgAAACIAQhQAAACAMAACAAAACEAAADBAgAEIAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2_OriginalCtrl" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_OriginalCtrl.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.AboutBox" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>AboutBox.cs</FileName>
+      <HashCode>kIAAAAgAACAgCAUAAACAAAADAAAAEIAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.CaseConvertFrm" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CaseConvertFrm.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.CompareFile2TagFrm" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CompareFile2TagFrm.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditFrm" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditFrm.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.FormatFrm" Collapsed="true">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditFrm.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAEQAAAAAAAAIAAAgEAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditMultiV1Frm" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditMultiV1Frm.cs</FileName>
+      <HashCode>AAAAAAAAACAAAQAAAACAAAACAAAAAAAAAAAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditUserControl" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditUserControl.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV1Ctrl" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV1Ctrl.cs</FileName>
+      <HashCode>AAAKACBAiCAIGRRAEgSABgASACA8CAJAxAIPAEABQgE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV1Frm" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV1Frm.cs</FileName>
+      <HashCode>AAAAAAAAACAAEQAAAACAAAACAAAAAAAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2_LyricCtrl" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_LyricCtrl.cs</FileName>
+      <HashCode>AAAAAAAAQCAAApAQAACAAgACAAAAiAAAQAAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2_MainCtrl" Collapsed="true">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_MainCtrl.cs</FileName>
+      <HashCode>8AECQiBFgGgAIRQFgACAmADSAyQ6CABARCIIgFEgAwM=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2_PeopleCtrl" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_PeopleCtrl.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2_PictureCtrl" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_PictureCtrl.cs</FileName>
+      <HashCode>ADAAAIAAACAAARAQAACAgACCAyAAiAAAEAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2_WebCtrl" Collapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2_WebCtrl.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.EditV2Frm" Collapsed="true">
+    <Position X="20.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EditV2Frm.cs</FileName>
+      <HashCode>AAAAAAAEACAIAQkAEQCAANASoAAgAEAAgIIAEQEBKAU=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.File2TagV1Frm" Collapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File2TagV1Frm.cs</FileName>
+      <HashCode>MAAAAAAAACAAABEQAACAAMACIAAAgEAAACAAAAAEAAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.File2TagV2Frm" Collapsed="true">
+    <Position X="22.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>File2TagV2Frm.cs</FileName>
+      <HashCode>EQAAAAAAACAAABAQAACAAAACAAAYAAAAAAAAAAEAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.FindDuplicateFrm" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FindDuplicateFrm.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.FormatCtrl" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FormatCtrl.cs</FileName>
+      <HashCode>+wAQgAAAACKAABAAAAGAAAACAAAAEAAAACAAAAAAABA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.FormatEvaluator" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FormatEvaluator.cs</FileName>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAABACAAAAAgABgAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.FreeDBFrm" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FreeDBFrm.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.Globals" Collapsed="true">
+    <Position X="20.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Globals.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.MainFrm" Collapsed="true">
+    <Position X="22.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MainFrm.cs</FileName>
+      <HashCode>xoCWD/wgoGxIiqQroPSi0l5SCXxIoUDxg4sFS00sDL0=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.OrganizeFrm" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrganizeFrm.cs</FileName>
+      <HashCode>ABMAgIAAACACCREwAACAgIACIAAEAFAABAAAAAIEAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.PrefFrm" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PrefFrm.cs</FileName>
+      <HashCode>EACAAAAAACAAwBEAAACACIACAAAAEEACFCAAAAEBBEI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.Program" Collapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Program.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.ProgressCtrl" Collapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ProgressCtrl.cs</FileName>
+      <HashCode>AAAAAAAUACAAABAAAACAAAACAAAAAAAAAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.TagEditor" Collapsed="true">
+    <Position X="13.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>TagEditor.cs</FileName>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAQAAAAAAAIAAAAAAgE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.TagV12FileFrm" Collapsed="true">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>TagV12FileFrm.cs</FileName>
+      <HashCode>8wAAAAAAACAAAREwAACIAMACIAAAAFACASAAAAYEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.TagV22FileFrm" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>TagV22FileFrm.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.View" Collapsed="true">
+    <Position X="17.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>View.cs</FileName>
+      <HashCode>AAAAAEAEICIAAAAAgBDMBEEGEAAAAEAAkCEAAYAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.ViewCtrlBase" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ViewCtrlBase.cs</FileName>
+      <HashCode>AAAAAAAAACgAAQAAAACAAAACAAQACAAAAAIAAAAAAgE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.ViewManager" Collapsed="true">
+    <Position X="19" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ViewManager.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.Properties.Resources" Collapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.Properties.Settings" Collapsed="true">
+    <Position X="22.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAACRAAAICAAMAIAAEAAABAAAACAAAQAIAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="music_tagger.Column" Collapsed="true">
+    <Position X="13.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Globals.cs</FileName>
+      <HashCode>AAAAAAAEBEAAgEICABIAAABQAIAEAAQAAAAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
 </ClassDiagram>

@@ -28,6 +28,11 @@ namespace music_tagger
             }
         }
 
+        public class ColumnUpdateArgs
+        {
+            
+        }
+
         /// <summary>
         /// Status Update Event
         /// </summary>

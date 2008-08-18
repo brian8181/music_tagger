@@ -38,26 +38,6 @@ namespace music_tagger
             }
         }
 
-        /// <summary>
-        /// Column enumeration
-        /// </summary>
-        public enum Column
-        {
-            Path,
-            Size,
-            Attributes,
-            Created,
-            Accessed,
-            Modified,
-            Album,
-            Artist,
-            Title,
-            Track,
-            Comment,
-            Year,
-            Genre,
-            Length
-        }
         private FileTreeView tree = null;
         private ImageList images = new ImageList();
 
@@ -176,6 +156,8 @@ namespace music_tagger
                // add the leftovers
                foreach(Column key in tmp_items.Keys)
                {
+                   if(key == Column.File)
+                       continue;
                    string val = GetString( key, fi );
                    ListViewItem.ListViewSubItem sub_item = new ListViewItem.ListViewSubItem( lvi, val );
                    sub_item.Name = key.ToString();

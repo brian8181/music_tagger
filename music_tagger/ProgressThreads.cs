@@ -87,7 +87,7 @@ namespace music_tagger
                 string fullname = String.Format( "{0}\\{1}{2}",
                    fi.DirectoryName, eval.Value.TrimStart( '\\' ), fi.Extension );
 
-                fi.MoveTo( fullname );
+                //fi.MoveTo( fullname );
                 //Tools.Functions.MoveTo( fi, dir.TrimEnd( '\\' ), false );
             }
 

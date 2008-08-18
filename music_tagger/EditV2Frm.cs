@@ -35,14 +35,17 @@ namespace music_tagger
             this.panel1.Controls.Add( details );
             details.Location = this.panel1.Location;
             details.Dock = DockStyle.Fill;
+            details.Initialize( lv );
             details.Hide();
             this.panel1.Controls.Add( lyrics );
             lyrics.Location = this.panel1.Location;
             lyrics.Dock = DockStyle.Fill;
+            lyrics.Initialize( lv );
             lyrics.Hide();
             this.panel1.Controls.Add( pictures );
             pictures.Location = this.panel1.Location;
             pictures.Dock = DockStyle.Fill;
+            pictures.Initialize( lv );
             pictures.Hide();
             current = main;
         }
@@ -81,6 +84,22 @@ namespace music_tagger
                 pictures.Show();
                 current = pictures;
             }          
+        }
+
+        private void btnCancel_Click( object sender, EventArgs e )
+        {
+
+        }
+
+        private void btnOK_Click( object sender, EventArgs e )
+        {
+            foreach(ListViewItem item in lv.SelectedItems)
+            {
+                item.BackColor = Color.Yellow;
+                item.SubItems["Artist"].Text = main.cmbArtist.Text;
+                item.SubItems["Album"].Text = main.txtAlbum.Text;
+            }
+            Close();
         }
     }
 }

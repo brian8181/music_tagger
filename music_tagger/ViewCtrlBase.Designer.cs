@@ -1,6 +1,6 @@
 namespace music_tagger
 {
-    partial class EditV2_OriginalCtrl
+    partial class ViewCtrlBase
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,17 +28,8 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // EditV2_OriginalCtrl
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "EditV2_OriginalCtrl";
-            this.Size = new System.Drawing.Size( 615, 510 );
-            this.Load += new System.EventHandler( this.EditV2_OriginalCtrl_Load );
-            this.ResumeLayout( false );
-
         }
 
         #endregion
