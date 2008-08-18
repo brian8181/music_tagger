@@ -13,29 +13,19 @@ namespace music_tagger
         public PrefFrm()
         {
             InitializeComponent();
-           
-            columnList.Items.Add( "File Name" );
-            columnList.Items.Add( "File Path" );
-            columnList.Items.Add( "Size" );
-            columnList.Items.Add( "Attributes" );
-            columnList.Items.Add( "Last Access" );
-            columnList.Items.Add( "Last Write" );
-            columnList.Items.Add( "Created" );
-            columnList.Items.Add( "Track" );
-            columnList.Items.Add( "Artist" );
-            columnList.Items.Add( "Album" );
-            columnList.Items.Add( "Title" );
-            columnList.Items.Add( "Year" );
-            columnList.Items.Add( "Comment" );
-            columnList.Items.Add( "Genre" );
-            columnList.Items.Add( "Lenght" );
-
+            string[] cols = Enum.GetNames(typeof(Column));
+            foreach(string c in cols)
+            {
+                columnList.Items.Add( cols );
+            }
             ckRestoreFolder.Checked = Properties.Settings.Default.restore_dir;
         }
 
        
         private void btnOK_Click( object sender, EventArgs e )
         {
+            // add remove cols
+
             Properties.Settings.Default.Save();
         }
 

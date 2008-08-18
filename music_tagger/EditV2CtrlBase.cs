@@ -7,25 +7,35 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-///
 namespace music_tagger
 {
     /// <summary>
     /// 
     /// </summary>
-    public partial class ViewCtrlBase : UserControl
+    public partial class EditV2CtrlBase : UserControl
     {
-        public ViewCtrlBase()
-        {
-            InitializeComponent();
-        }
-
+        protected bool multi_edit = false;
         protected TagLib.File tag_file = null;
         protected TagLib.Id3v1.Tag v1;
         protected TagLib.Id3v2.Tag v2;
         protected ListView lv = null;
         protected int idx = -1;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public EditV2CtrlBase() : this(false)
+        {
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="multi_edit"></param>
+        public EditV2CtrlBase(bool multi_edit)
+        {
+            InitializeComponent();
+            this.multi_edit = multi_edit;
+        }
         /// <summary>
         /// intialize listview  
         /// </summary>
@@ -52,7 +62,7 @@ namespace music_tagger
             v1 = (TagLib.Id3v1.Tag)tag_file.GetTag( TagLib.TagTypes.Id3v1 );
             Fill( v2 );
         }
-        /// <summary>
+         /// <summary>
         ///  fill from tag
         /// </summary>                                                          
         /// <param name="idx"></param>

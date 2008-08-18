@@ -205,6 +205,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditMultiV1Frm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditMultiV1Frm.cs</DependentUpon>
@@ -338,11 +342,11 @@
     <Compile Include="View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCtrlBase.cs">
+    <Compile Include="EditV2CtrlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewCtrlBase.Designer.cs">
-      <DependentUpon>ViewCtrlBase.cs</DependentUpon>
+    <Compile Include="EditV2CtrlBase.Designer.cs">
+      <DependentUpon>EditV2CtrlBase.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewManager.cs" />
   </ItemGroup>

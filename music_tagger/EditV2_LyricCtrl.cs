@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace music_tagger
 {
-    public partial class EditV2_LyricCtrl : ViewCtrlBase
+    public partial class EditV2_LyricCtrl : EditV2CtrlBase
     {
         public EditV2_LyricCtrl()
         {

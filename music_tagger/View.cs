@@ -37,10 +37,8 @@ namespace music_tagger
                 return String.Compare( ( (ListViewItem)x ).SubItems[col].Text, ( (ListViewItem)y ).SubItems[col].Text );
             }
         }
-
         private FileTreeView tree = null;
         private ImageList images = new ImageList();
-
         /// <summary>
         /// 
         /// </summary>
@@ -58,7 +56,6 @@ namespace music_tagger
         {
             InitializeComponent();
         }
-
         #region Public Methods
         /// <summary>
         /// 
@@ -67,7 +64,6 @@ namespace music_tagger
         public void Configure(FileTreeView tree)
         {
             this.tree = tree;
-            
             listView.Dock = DockStyle.Fill;
             listView.View = System.Windows.Forms.View.Details;
             listView.GridLines = true;
@@ -119,12 +115,10 @@ namespace music_tagger
                ListViewItem lvi = new ListViewItem(fi.Name, 0);
                lvi.Name = fi.Name;
                lvi.Tag = fi;
-
                Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
                ////Use this to get the small Icon
                IntPtr handle = Win32.SHGetFileInfo( fi.FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
                    Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
-
                if(images.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
                {
                    //The icon is returned in the hIcon member of the shinfo struct
@@ -132,14 +126,12 @@ namespace music_tagger
                    images.Images.Add( sInfo.hIcon.ToString(), icon );
                }
                lvi.ImageIndex = images.Images.IndexOfKey( sInfo.hIcon.ToString() );
-
                Dictionary<Column, Column> tmp_items = new Dictionary<Column,Column>();
                // fill dictionary with all values
                foreach( Column c in Enum.GetValues( typeof(Column ) ) ) 
                {
                    tmp_items.Add( c, c ); 
                }
-
                // add configured, then remove
                foreach(ColumnHeader header in ListView.Columns)
                {
@@ -152,7 +144,6 @@ namespace music_tagger
                    lvi.SubItems.Add( sub_item );
                    tmp_items.Remove( key );  
                }
-
                // add the leftovers
                foreach(Column key in tmp_items.Keys)
                {
@@ -163,7 +154,6 @@ namespace music_tagger
                    sub_item.Name = key.ToString();
                    lvi.SubItems.Add( sub_item );
                }
-
                // add it to listview
                ListView.Items.Add( lvi );
             }
@@ -191,12 +181,10 @@ namespace music_tagger
             {
                 if( /*dirty=*/ true)
                 {
-
                 }
             }
         }
         #endregion
-                 
         #region Event Handlers
         /// <summary>
         /// 
@@ -275,7 +263,6 @@ namespace music_tagger
         {
         }
         #endregion
-
         #region Utility Functions
         /// <summary>
         /// returns subitem string from file by column key 
@@ -287,7 +274,6 @@ namespace music_tagger
         {
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );
             TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-
             switch(c)
             {
             case Column.Path:
@@ -321,7 +307,6 @@ namespace music_tagger
             default:
                 break;
             }
-
             return "";
         }
         /// <summary>
@@ -340,7 +325,6 @@ namespace music_tagger
                 cols[idx].Text = split[0];
                 cols[idx].DisplayIndex = int.Parse( split[1] );
             }
-
             return cols;
         }
         /// <summary>
@@ -381,6 +365,5 @@ namespace music_tagger
             }
         }
         #endregion
-
     }
 }

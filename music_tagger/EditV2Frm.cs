@@ -7,26 +7,34 @@ using System.Text;
 using System.Windows.Forms;
 namespace music_tagger
 {
-    public partial class EditV2Frm : Form
+    public partial class EditV2Frm : EditFrm
     {
-        protected ListView lv = null;
         private EditV2_MainCtrl main = new EditV2_MainCtrl();
         private EditV2_DetailCtrl details = new EditV2_DetailCtrl();
         private EditV2_LyricCtrl lyrics = new EditV2_LyricCtrl();
         private EditV2_PictureCtrl pictures = new EditV2_PictureCtrl();
         private Control current = null;
+        
+        /// <summary>
+        ///  default ctor
+        /// </summary>
         public EditV2Frm()
         {
-            InitializeComponent();
         }
-         /// <summary>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="multi_edit"></param>
+        public EditV2Frm( ListView lv)  : this( lv, false )
+        {
+        }
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="lv"></param>
-        public EditV2Frm(ListView lv) 
+        public EditV2Frm( ListView lv, bool multi_edit ) : base( lv, multi_edit )
         {
             InitializeComponent();
-            this.lv = lv;
             this.panel1.Controls.Add( main );
             main.Initialize( lv );
             main.Location = this.panel1.Location;
@@ -49,6 +57,11 @@ namespace music_tagger
             pictures.Hide();
             current = main;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void taskMain_Click( object sender, EventArgs e )
         {
             if(current != main)
@@ -58,6 +71,11 @@ namespace music_tagger
                 current = main;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void taskDetails_Click( object sender, EventArgs e )
         {
             if(current != details)
@@ -67,6 +85,11 @@ namespace music_tagger
                 current = details;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void taskLyrics_Click( object sender, EventArgs e )
         {
             if(current != lyrics)
@@ -76,6 +99,11 @@ namespace music_tagger
                 current = lyrics;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void taskPicture_Click( object sender, EventArgs e )
         {
             if(current != pictures)
@@ -85,21 +113,44 @@ namespace music_tagger
                 current = pictures;
             }          
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click( object sender, EventArgs e )
         {
-
+            // do nothing
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOK_Click( object sender, EventArgs e )
         {
-            foreach(ListViewItem item in lv.SelectedItems)
+            if(this.multi_edit)
             {
-                item.BackColor = Color.Yellow;
-                item.SubItems["Artist"].Text = main.cmbArtist.Text;
-                item.SubItems["Album"].Text = main.txtAlbum.Text;
+                foreach(ListViewItem item in lv.SelectedItems)
+                {
+                    EditItem( item ); 
+                }
+            }
+            else
+            {
+                EditItem( lv.SelectedItems[0] );
             }
             Close();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        private void EditItem( ListViewItem item )
+        {
+            item.BackColor = Color.Yellow;
+            item.SubItems["Artist"].Text = main.cmbArtist.Text;
+            item.SubItems["Album"].Text = main.txtAlbum.Text;
         }
     }
 }

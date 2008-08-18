@@ -12,7 +12,7 @@ namespace music_tagger
     /// <summary>
     /// 
     /// </summary>
-    public partial class EditV2_MainCtrl : ViewCtrlBase
+    public partial class EditV2_MainCtrl : EditV2CtrlBase
     {
          public EditV2_MainCtrl()
         {

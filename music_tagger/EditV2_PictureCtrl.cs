@@ -9,7 +9,7 @@ using System.IO;
 
 namespace music_tagger
 {
-    public partial class EditV2_PictureCtrl : ViewCtrlBase
+    public partial class EditV2_PictureCtrl : EditV2CtrlBase
     {
      
         public EditV2_PictureCtrl()

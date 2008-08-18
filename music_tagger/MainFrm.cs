@@ -74,9 +74,18 @@ namespace music_tagger
 
         private void tsb_EditV2Multi_Click( object sender, EventArgs e )
         {
-            if(this.view.ListView.SelectedItems.Count > 0)
+
+            if(this.view.ListView.SelectedItems.Count > 1)
             {
-                // todo
+                EditV2Frm dlg = new EditV2Frm( view.ListView, true );
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // todo
+                }
+            }
+            else
+            {
+                tsb_EditV2_Click( sender, e );
             }
         }
 
