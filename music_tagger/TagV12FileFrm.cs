@@ -83,7 +83,7 @@ namespace music_tagger
             thread.Start();
         }
         /// <summary>
-        /// 
+        /// status update handler
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -106,7 +106,7 @@ namespace music_tagger
             Close();
         }
         /// <summary>
-        /// 
+        /// save format to list
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -119,7 +119,7 @@ namespace music_tagger
             SaveSettings();
         }
         /// <summary>
-        /// 
+        /// remove format from list
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -16,7 +16,7 @@ namespace music_tagger
             string[] cols = Enum.GetNames(typeof(Column));
             foreach(string c in cols)
             {
-                columnList.Items.Add( cols );
+                columnList.Items.Add( c );
             }
             ckRestoreFolder.Checked = Properties.Settings.Default.restore_dir;
         }

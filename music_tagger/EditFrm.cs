@@ -49,6 +49,10 @@ namespace music_tagger
             //cmbFormat.Items.AddRange( fmts );
             //cmbFormat.SelectedIndex = 0;
         }
+
+        public virtual void Coalesce()
+        {
+        }
     }
 
     public class FormatFrm : EditFrm

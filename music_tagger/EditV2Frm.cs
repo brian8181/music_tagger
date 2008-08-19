@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+
 namespace music_tagger
 {
     public partial class EditV2Frm : EditFrm
@@ -133,24 +134,52 @@ namespace music_tagger
             {
                 foreach(ListViewItem item in lv.SelectedItems)
                 {
-                    EditItem( item ); 
+                    EditItem( (TagListViewItem)item ); 
                 }
             }
             else
             {
-                EditItem( lv.SelectedItems[0] );
+                EditItem( (TagListViewItem)lv.SelectedItems[0] );
             }
             Close();
         }
+       
         /// <summary>
         /// 
         /// </summary>
         /// <param name="item"></param>
-        private void EditItem( ListViewItem item )
+        private void EditItem( TagListViewItem item )
         {
             item.BackColor = Color.Yellow;
-            item.SubItems["Artist"].Text = main.cmbArtist.Text;
-            item.SubItems["Album"].Text = main.txtAlbum.Text;
+            if( item.Id3v2.Performers.Length > 0 )
+                item.Id3v2.Performers[0] = main.cmbArtist.Text;
+            item.Id3v2.Album = main.txtAlbum.Text;
+            item.Id3v2.Title = main.txtTitle.Text;
+            uint num = 0;
+            if(uint.TryParse( main.txtTrack.Text, out num ))
+            {
+                item.Id3v2.Track = num;
+            }
+            if(uint.TryParse( main.txtTrackCount.Text, out num ))
+            {
+                item.Id3v2.TrackCount = num;
+            }
+            if(uint.TryParse( main.txtDisc.Text, out num ))
+            {
+                item.Id3v2.Disc = num;
+            }
+            item.Id3v2.DiscCount = uint.TryParse( main.txtDiscCount.Text, out num ) ? num : 0;
+            item.Id3v2.DiscCount = uint.TryParse( main.txtBPM.Text, out num ) ? num : 0;
+            
+
+            item.RefreshItem();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override void Coalesce()
+        {
         }
     }
 }

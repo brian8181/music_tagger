@@ -33,6 +33,7 @@ namespace music_tagger
             // editCtrl
             // 
             this.editCtrl.Location = new System.Drawing.Point( 3, -1 );
+            this.editCtrl.Load += new System.EventHandler( this.editCtrl_Load );
             // 
             // EditMultiV1Frm
             // 

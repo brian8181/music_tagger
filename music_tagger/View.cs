@@ -37,8 +37,24 @@ namespace music_tagger
                 return String.Compare( ( (ListViewItem)x ).SubItems[col].Text, ( (ListViewItem)y ).SubItems[col].Text );
             }
         }
+        private bool show_ver1 = false;
         private FileTreeView tree = null;
         private ImageList images = new ImageList();
+        private TagLib.TagTypes type = TagLib.TagTypes.Id3v1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TagLib.TagTypes Type
+        {
+            get { return type; }
+            set 
+            { 
+                type = value;
+                RefreshView();
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -56,14 +72,16 @@ namespace music_tagger
         {
             InitializeComponent();
         }
+
         #region Public Methods
         /// <summary>
         /// 
         /// </summary>
         /// <param name="tree"></param>
-        public void Configure(FileTreeView tree)
+        public void Configure(FileTreeView tree, bool show_ver1)
         {
             this.tree = tree;
+            this.show_ver1 = show_ver1;
             listView.Dock = DockStyle.Fill;
             listView.View = System.Windows.Forms.View.Details;
             listView.GridLines = true;
@@ -107,53 +125,13 @@ namespace music_tagger
         /// <param name="files"></param>
         public void RefreshView( FileInfo[] files )
         {
-            ListView.Items.Clear();
+           ListView.Items.Clear();
            // fill items
            foreach(FileInfo fi in files)
            {
-               // init main item, by key (filename)
-               ListViewItem lvi = new ListViewItem(fi.Name, 0);
-               lvi.Name = fi.Name;
-               lvi.Tag = fi;
-               Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
-               ////Use this to get the small Icon
-               IntPtr handle = Win32.SHGetFileInfo( fi.FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
-                   Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
-               if(images.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
-               {
-                   //The icon is returned in the hIcon member of the shinfo struct
-                   System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
-                   images.Images.Add( sInfo.hIcon.ToString(), icon );
-               }
-               lvi.ImageIndex = images.Images.IndexOfKey( sInfo.hIcon.ToString() );
-               Dictionary<Column, Column> tmp_items = new Dictionary<Column,Column>();
-               // fill dictionary with all values
-               foreach( Column c in Enum.GetValues( typeof(Column ) ) ) 
-               {
-                   tmp_items.Add( c, c ); 
-               }
-               // add configured, then remove
-               foreach(ColumnHeader header in ListView.Columns)
-               {
-                   if(header.Text == "File")
-                       continue;
-                   Column key = (Column)Enum.Parse( typeof( Column ), header.Text );
-                   string val = GetString( key, fi );
-                   ListViewItem.ListViewSubItem sub_item = new ListViewItem.ListViewSubItem( lvi, val );
-                   sub_item.Name = key.ToString();
-                   lvi.SubItems.Add( sub_item );
-                   tmp_items.Remove( key );  
-               }
-               // add the leftovers
-               foreach(Column key in tmp_items.Keys)
-               {
-                   if(key == Column.File)
-                       continue;
-                   string val = GetString( key, fi );
-                   ListViewItem.ListViewSubItem sub_item = new ListViewItem.ListViewSubItem( lvi, val );
-                   sub_item.Name = key.ToString();
-                   lvi.SubItems.Add( sub_item );
-               }
+               TagListViewItem lvi = new TagListViewItem( this.ListView, fi.FullName );
+               lvi.Type = type;
+               lvi.IntializeItem();
                // add it to listview
                ListView.Items.Add( lvi );
             }
@@ -185,6 +163,7 @@ namespace music_tagger
             }
         }
         #endregion
+
         #region Event Handlers
         /// <summary>
         /// 
@@ -263,51 +242,13 @@ namespace music_tagger
         {
         }
         #endregion
+
         #region Utility Functions
-        /// <summary>
-        /// returns subitem string from file by column key 
-        /// </summary>
-        /// <param name="c"></param>
-        /// <param name="fi"></param>
-        /// <returns></returns>
-        public string GetString( Column c, FileInfo fi )
+        public void RemoveTag(FileInfo fi, TagLib.TagTypes type)
         {
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );
-            TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-            switch(c)
-            {
-            case Column.Path:
-                return fi.FullName;
-            case Column.Size:
-                return fi.Length.ToString();
-            case Column.Attributes:
-                return fi.Attributes.ToString();
-            case Column.Created:
-                return fi.CreationTime.ToString();
-            case Column.Accessed:
-                return fi.LastAccessTime.ToString();
-            case Column.Modified:
-                return fi.LastWriteTime.ToString();
-            case Column.Artist:
-                return tag.FirstPerformer;
-            case Column.Album:
-                return tag.Album;
-            case Column.Title:
-                return tag.Title;
-            case Column.Track:
-                return tag.Track.ToString();
-            case Column.Year:
-                return tag.Year.ToString();
-            case Column.Comment:
-                return tag.Comment;
-            case Column.Genre:
-                return tag.FirstGenre;
-            case Column.Length:
-                return tag_file.Properties.Duration.ToString();
-            default:
-                break;
-            }
-            return "";
+            tag_file.RemoveTags( TagLib.TagTypes.Id3v1 );
+            tag_file.Save();
         }
         /// <summary>
         /// 

@@ -324,6 +324,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="TagEditor.cs" />
+    <Compile Include="TagListViewItem.cs" />
     <Compile Include="TagV12FileFrm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -15,7 +15,7 @@ namespace music_tagger
         {
             InitializeComponent();
             tree.Configure();
-            view.Configure( tree );
+            view.Configure( tree, tsb_ToggleVer.Text == "Shown Ver. 1" );
         }
 
         private void LoadSettings()
@@ -118,7 +118,16 @@ namespace music_tagger
         /// </summary>
         private void ToggleVer()
         {
-             tsb_ToggleVer.Text = tsb_ToggleVer.Text == "Shown Ver. 1" ? "Shown Ver. 2" : "Shown Ver. 1";    
+            if( tsb_ToggleVer.Text == "Shown Ver. 1" )
+            {
+                tsb_ToggleVer.Text = "Shown Ver. 2";
+                view.Type = TagLib.TagTypes.Id3v2;
+            }
+            else{
+                tsb_ToggleVer.Text = "Shown Ver. 1";
+                view.Type = TagLib.TagTypes.Id3v2;
+            }
+             
         }
 
         //  todo combine these !!

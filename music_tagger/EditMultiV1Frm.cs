@@ -72,6 +72,11 @@ namespace music_tagger
             this.editCtrl.Fill( last_tag );
         }
 
+        private void editCtrl_Load( object sender, EventArgs e )
+        {
+
+        }
+
     }
 }
 
