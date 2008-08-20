@@ -37,10 +37,16 @@ namespace music_tagger
                 return String.Compare( ( (ListViewItem)x ).SubItems[col].Text, ( (ListViewItem)y ).SubItems[col].Text );
             }
         }
-        private bool show_ver1 = false;
         private FileTreeView tree = null;
         private ImageList images = new ImageList();
         private TagLib.TagTypes type = TagLib.TagTypes.Id3v1;
+        private SearchOption searchOption = SearchOption.TopDirectoryOnly;
+
+        public SearchOption SearchOption
+        {
+            get { return searchOption; }
+            set { searchOption = value; }
+        } 
 
         /// <summary>
         /// 
@@ -78,10 +84,10 @@ namespace music_tagger
         /// 
         /// </summary>
         /// <param name="tree"></param>
-        public void Configure(FileTreeView tree, bool show_ver1)
+        public void Configure( FileTreeView tree, TagLib.TagTypes type)
         {
             this.tree = tree;
-            this.show_ver1 = show_ver1;
+            this.type = type;
             listView.Dock = DockStyle.Fill;
             listView.View = System.Windows.Forms.View.Details;
             listView.GridLines = true;
@@ -98,8 +104,11 @@ namespace music_tagger
         /// </summary>
         public void RefreshView()
         {
-            DirectoryInfo di = ( (FileTreeNode)tree.SelectedNode ).FileSystemInfo as DirectoryInfo;
-            RefreshView( di );
+            if(tree != null)
+            {
+                DirectoryInfo di = ( (FileTreeNode)tree.SelectedNode ).FileSystemInfo as DirectoryInfo;
+                RefreshView( di );
+            }
         }
         /// <summary>
         /// refresh view base on directory
@@ -110,7 +119,7 @@ namespace music_tagger
             FileInfo[] files = null;
             try
             {
-                files = di.GetFiles( "*.mp3" );
+                files = di.GetFiles( "*.mp3", searchOption );
                 if( files != null)
                     RefreshView( files );
             }
@@ -155,10 +164,12 @@ namespace music_tagger
         /// </summary>
         public void Commit()
         {
-            foreach(ListViewItem item in ListView.Items)
+            foreach(TagListViewItem item in ListView.Items)
             {
-                if( /*dirty=*/ true)
+                if(item.BackColor == Color.Yellow)
                 {
+                    item.UpdateTags();
+                    item.BackColor = Color.White;
                 }
             }
         }
@@ -247,7 +258,7 @@ namespace music_tagger
         public void RemoveTag(FileInfo fi, TagLib.TagTypes type)
         {
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );
-            tag_file.RemoveTags( TagLib.TagTypes.Id3v1 );
+            tag_file.RemoveTags( type );
             tag_file.Save();
         }
         /// <summary>

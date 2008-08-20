@@ -37,7 +37,7 @@ namespace music_tagger
         {
             this.lv = lv;
             fi = new FileInfo( path );
-            this.Name = fi.Name;
+            this.Name = "File";
             this.Text = fi.Name;
             this.Tag = fi;
             
@@ -98,31 +98,11 @@ namespace music_tagger
         /// </summary>
         public void RefreshItem()
         {
-            //Dictionary<Column, Column> tmp_items = new Dictionary<Column, Column>();
-            //// fill dictionary with all values
-            //foreach(Column c in Enum.GetValues( typeof( Column ) ))
-            //{
-            //    tmp_items.Add( c, c );
-            //}
-            //// add configured, then remove
-            //foreach(ColumnHeader header in lv.Columns)
-            //{
-            //    if(header.Text == "File")
-            //        continue;
-            //    this.SubItems[header.ToString()].Text = "";
-
-            //}
-            //// add the leftovers
-            //foreach(Column key in tmp_items.Keys)
-            //{
-            //    if(key == Column.File)
-            //        continue;
-            //    this.SubItems[key.ToString()].Text = "";
-            //}
-
-            foreach(ListViewItem i in this.SubItems)
+            foreach(ListViewSubItem i in this.SubItems)
             {
-                Column c = (Column)Enum.Parse( typeof( Column ), i.Name ); 
+                Column c = (Column)Enum.Parse( typeof( Column ), i.Name );
+                if(c == Column.File)
+                    continue;
                 string val = GetString( c );
                 i.Text = val;    
             }

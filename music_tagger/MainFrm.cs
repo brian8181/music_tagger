@@ -6,18 +6,28 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace music_tagger
 {
     public partial class MainFrm : Form
     {
+        // redundant !
+        private TagLib.TagTypes type = TagLib.TagTypes.Id3v2;
+        /// <summary>
+        /// 
+        /// </summary>
         public MainFrm()
         {
             InitializeComponent();
             tree.Configure();
-            view.Configure( tree, tsb_ToggleVer.Text == "Shown Ver. 1" );
+            type = Properties.Settings.Default.view_ver1 ? TagLib.TagTypes.Id3v1 : TagLib.TagTypes.Id3v2;
+            tsb_ToggleVer.Text = ( type == TagLib.TagTypes.Id3v2 ) ? "Shown Ver. 2" : "Shown Ver. 1";
+            view.Configure( tree, type );
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void LoadSettings()
         {
             // menu
@@ -25,16 +35,22 @@ namespace music_tagger
             mnViewV2.Checked = !mnViewV1.Checked;
             mnOptionsScanSubs.Checked = Properties.Settings.Default.scan_subdirs;
 
-            string[] dirs = Properties.Settings.Default.last_dir.Split('\\');
+            string[] dirs = Properties.Settings.Default.last_dir.Split( '\\' );
             //tree.Nodes.Add(ContainsKey();
             //todo
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void SaveSettings()
         {
-
+            // todo
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsb_EditV1_Click( object sender, EventArgs e )
         {
             if(this.view.ListView.SelectedItems.Count > 0)
@@ -45,9 +61,13 @@ namespace music_tagger
                     // todo  
                 }
             }
-            
-        }
 
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsb_EditV1Multi_Click( object sender, EventArgs e )
         {
             if(this.view.ListView.SelectedItems.Count > 0)
@@ -59,19 +79,27 @@ namespace music_tagger
                 }
             }
         }
-
-        private void tsb_EditV2_Click( object sender,   EventArgs e )
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsb_EditV2_Click( object sender, EventArgs e )
         {
             if(this.view.ListView.SelectedItems.Count > 0)
             {
-                EditV2Frm dlg = new EditV2Frm(view.ListView);
+                EditV2Frm dlg = new EditV2Frm( view.ListView );
                 if(dlg.ShowDialog() == DialogResult.OK)
                 {
                     // todo
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsb_EditV2Multi_Click( object sender, EventArgs e )
         {
 
@@ -88,7 +116,6 @@ namespace music_tagger
                 tsb_EditV2_Click( sender, e );
             }
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -102,7 +129,6 @@ namespace music_tagger
                 // todo
             }
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -110,7 +136,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void OnToggleVer( object sender, EventArgs e )
         {
-            ToggleVer();   
+            ToggleVer();
         }
 
         /// <summary>
@@ -118,16 +144,19 @@ namespace music_tagger
         /// </summary>
         private void ToggleVer()
         {
-            if( tsb_ToggleVer.Text == "Shown Ver. 1" )
+            if(tsb_ToggleVer.Text == "Shown Ver. 1")
             {
                 tsb_ToggleVer.Text = "Shown Ver. 2";
                 view.Type = TagLib.TagTypes.Id3v2;
+                type = TagLib.TagTypes.Id3v2;
             }
-            else{
+            else
+            {
                 tsb_ToggleVer.Text = "Shown Ver. 1";
-                view.Type = TagLib.TagTypes.Id3v2;
+                view.Type = TagLib.TagTypes.Id3v1;
+                type = TagLib.TagTypes.Id3v1;
             }
-             
+
         }
 
         //  todo combine these !!
@@ -136,6 +165,11 @@ namespace music_tagger
             mnViewV2.Checked = !mnViewV1.Checked;
             ToggleVer();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnViewV2_Click( object sender, EventArgs e )
         {
             mnViewV1.Checked = !mnViewV2.Checked;
@@ -155,32 +189,61 @@ namespace music_tagger
                 // todo
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click( object sender, EventArgs e )
         {
             ( new AboutBox() ).ShowDialog();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnEditUndo_Click( object sender, EventArgs e )
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnEditRedo_Click( object sender, EventArgs e )
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnEditCut_Click( object sender, EventArgs e )
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnEditCopy_Click( object sender, EventArgs e )
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnEditPast_Click( object sender, EventArgs e )
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnEditSelectAll_Click( object sender, EventArgs e )
         {
             view.SelectAll();
@@ -195,7 +258,7 @@ namespace music_tagger
             // extract path from node path
             string full_path = tree.SelectedNode.FullPath;
             string pattern = @"^.*\((?<DRIVE>[A-Z]:).*\)(?<PATH>\\.*$)";
-            Regex regx = new Regex(pattern);
+            Regex regx = new Regex( pattern );
             Match m = regx.Match( full_path );
             string drive = m.Groups["DRIVE"].Value;
             string path = m.Groups["PATH"].Value;
@@ -203,12 +266,20 @@ namespace music_tagger
             Properties.Settings.Default.last_dir = drive + path;
             Properties.Settings.Default.Save();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnRemoveTagV1_Click( object sender, EventArgs e )
         {
-                    
-        }
 
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnFile2TagV1_Click( object sender, EventArgs e )
         {
             File2TagV1Frm dlg = new File2TagV1Frm();
@@ -217,7 +288,11 @@ namespace music_tagger
                 // todo
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnTag2FileV1_Click( object sender, EventArgs e )
         {
             TagV12FileFrm dlg = new TagV12FileFrm( view );
@@ -226,12 +301,20 @@ namespace music_tagger
                 // todo
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnRemoveTagV2_Click( object sender, EventArgs e )
         {
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnFile2TagV2_Click( object sender, EventArgs e )
         {
             File2TagV2Frm dlg = new File2TagV2Frm();
@@ -240,7 +323,11 @@ namespace music_tagger
                 // todo
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnTag2FileV2_Click( object sender, EventArgs e )
         {
             TagV22FileFrm dlg = new TagV22FileFrm();
@@ -249,7 +336,11 @@ namespace music_tagger
                 // todo
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void On_CaseConvert( object sender, EventArgs e )
         {
             CaseConvertFrm dlg = new CaseConvertFrm();
@@ -258,7 +349,11 @@ namespace music_tagger
                 // todo
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnFindDuplicates_Click( object sender, EventArgs e )
         {
             FindDuplicateFrm dlg = new FindDuplicateFrm();
@@ -267,7 +362,11 @@ namespace music_tagger
                 // todo
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnCompareFile2Tag_Click( object sender, EventArgs e )
         {
             CompareFile2TagFrm dlg = new CompareFile2TagFrm();
@@ -276,17 +375,11 @@ namespace music_tagger
                 // todo
             }
         }
-
-        private void spit1ToolStripMenuItem_Click( object sender, EventArgs e )
-        {
-
-        }
-
-        private void split2ToolStripMenuItem_Click( object sender, EventArgs e )
-        {
-
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void On_Save( object sender, EventArgs e )
         {
             DialogResult dr = MessageBox.Show(
@@ -299,6 +392,16 @@ namespace music_tagger
             {
                 view.Commit();
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnOptionsScanSubs_Click( object sender, EventArgs e )
+        {
+            view.SearchOption = mnOptionsScanSubs.Checked ? 
+                SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
         }
 
     }

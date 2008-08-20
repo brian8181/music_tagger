@@ -91,27 +91,6 @@ namespace music_tagger
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tree = new Tools.FileTreeView();
             this.view = new music_tagger.View();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.tsb_EditV1 = new System.Windows.Forms.ToolStripButton();
-            this.tsb_EditV1Multi = new System.Windows.Forms.ToolStripButton();
-            this.tsb_EditV2 = new System.Windows.Forms.ToolStripButton();
-            this.tsb_EditV2Multi = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.tsFile2TagV1 = new System.Windows.Forms.ToolStripButton();
-            this.tsTagV12File = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.tsb_ToggleVer = new System.Windows.Forms.ToolStripButton();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -139,6 +118,27 @@ namespace music_tagger
             this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSplitButton4 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.tsb_EditV1 = new System.Windows.Forms.ToolStripButton();
+            this.tsb_EditV1Multi = new System.Windows.Forms.ToolStripButton();
+            this.tsb_EditV2 = new System.Windows.Forms.ToolStripButton();
+            this.tsb_EditV2Multi = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsb_RemoveV1 = new System.Windows.Forms.ToolStripButton();
+            this.tsb_RemoveV2 = new System.Windows.Forms.ToolStripButton();
+            this.tsFile2TagV1 = new System.Windows.Forms.ToolStripButton();
+            this.tsTagV12File = new System.Windows.Forms.ToolStripButton();
+            this.tsFile2TagV2 = new System.Windows.Forms.ToolStripButton();
+            this.tsTagV22File = new System.Windows.Forms.ToolStripButton();
+            this.tsb_ToggleVer = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -147,9 +147,9 @@ namespace music_tagger
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.toolStrip3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
-            this.toolStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -337,14 +337,12 @@ namespace music_tagger
             this.spit1ToolStripMenuItem.Name = "spit1ToolStripMenuItem";
             this.spit1ToolStripMenuItem.Size = new System.Drawing.Size( 249, 22 );
             this.spit1ToolStripMenuItem.Text = "Split Artist into Artist && Title Ver. 1";
-            this.spit1ToolStripMenuItem.Click += new System.EventHandler( this.spit1ToolStripMenuItem_Click );
             // 
             // split2ToolStripMenuItem
             // 
             this.split2ToolStripMenuItem.Name = "split2ToolStripMenuItem";
             this.split2ToolStripMenuItem.Size = new System.Drawing.Size( 249, 22 );
             this.split2ToolStripMenuItem.Text = "Split Artist into Artist && Title Ver. 2";
-            this.split2ToolStripMenuItem.Click += new System.EventHandler( this.split2ToolStripMenuItem_Click );
             // 
             // toolStripSeparator17
             // 
@@ -414,75 +412,85 @@ namespace music_tagger
             // mnEditV1
             // 
             this.mnEditV1.Name = "mnEditV1";
-            this.mnEditV1.Size = new System.Drawing.Size( 195, 22 );
+            this.mnEditV1.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E ) ) );
+            this.mnEditV1.Size = new System.Drawing.Size( 222, 22 );
             this.mnEditV1.Text = "Edit Tag Ver. 1";
             this.mnEditV1.Click += new System.EventHandler( this.tsb_EditV1_Click );
             // 
             // mnMultiEditV1
             // 
             this.mnMultiEditV1.Name = "mnMultiEditV1";
-            this.mnMultiEditV1.Size = new System.Drawing.Size( 195, 22 );
+            this.mnMultiEditV1.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M ) ) );
+            this.mnMultiEditV1.Size = new System.Drawing.Size( 222, 22 );
             this.mnMultiEditV1.Text = "Multi-Tag Edit Ver. 1";
             this.mnMultiEditV1.Click += new System.EventHandler( this.tsb_EditV1Multi_Click );
             // 
             // mnRemoveTagV1
             // 
             this.mnRemoveTagV1.Name = "mnRemoveTagV1";
-            this.mnRemoveTagV1.Size = new System.Drawing.Size( 195, 22 );
+            this.mnRemoveTagV1.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F11 ) ) );
+            this.mnRemoveTagV1.Size = new System.Drawing.Size( 234, 22 );
             this.mnRemoveTagV1.Text = "Remove Tag Ver. 1 ";
             this.mnRemoveTagV1.Click += new System.EventHandler( this.mnRemoveTagV1_Click );
             // 
             // mnFile2TagV1
             // 
             this.mnFile2TagV1.Name = "mnFile2TagV1";
-            this.mnFile2TagV1.Size = new System.Drawing.Size( 195, 22 );
+            this.mnFile2TagV1.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F ) ) );
+            this.mnFile2TagV1.Size = new System.Drawing.Size( 234, 22 );
             this.mnFile2TagV1.Text = "Filename -> Tag Ver. 1";
             this.mnFile2TagV1.Click += new System.EventHandler( this.mnFile2TagV1_Click );
             // 
             // mnTag2FileV1
             // 
             this.mnTag2FileV1.Name = "mnTag2FileV1";
-            this.mnTag2FileV1.Size = new System.Drawing.Size( 195, 22 );
+            this.mnTag2FileV1.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T ) ) );
+            this.mnTag2FileV1.Size = new System.Drawing.Size( 234, 22 );
             this.mnTag2FileV1.Text = "Tag Ver. 1 -> Filename";
             this.mnTag2FileV1.Click += new System.EventHandler( this.mnTag2FileV1_Click );
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size( 192, 6 );
+            this.toolStripSeparator14.Size = new System.Drawing.Size( 219, 6 );
             // 
             // mnEditV2
             // 
             this.mnEditV2.Name = "mnEditV2";
-            this.mnEditV2.Size = new System.Drawing.Size( 195, 22 );
+            this.mnEditV2.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W ) ) );
+            this.mnEditV2.Size = new System.Drawing.Size( 222, 22 );
             this.mnEditV2.Text = "Edit Tag Ver. 2";
             this.mnEditV2.Click += new System.EventHandler( this.tsb_EditV2_Click );
             // 
             // mnMultiEditV2
             // 
             this.mnMultiEditV2.Name = "mnMultiEditV2";
-            this.mnMultiEditV2.Size = new System.Drawing.Size( 195, 22 );
+            this.mnMultiEditV2.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N ) ) );
+            this.mnMultiEditV2.Size = new System.Drawing.Size( 234, 22 );
             this.mnMultiEditV2.Text = "Multi-Tag Edit Ver. 2";
             this.mnMultiEditV2.Click += new System.EventHandler( this.tsb_EditV2Multi_Click );
             // 
             // mnRemoveTagV2
             // 
             this.mnRemoveTagV2.Name = "mnRemoveTagV2";
-            this.mnRemoveTagV2.Size = new System.Drawing.Size( 195, 22 );
+            this.mnRemoveTagV2.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F12 ) ) );
+            this.mnRemoveTagV2.Size = new System.Drawing.Size( 234, 22 );
             this.mnRemoveTagV2.Text = "Remove Tag Ver. 2";
             this.mnRemoveTagV2.Click += new System.EventHandler( this.mnRemoveTagV2_Click );
             // 
             // mnFile2TagV2
             // 
             this.mnFile2TagV2.Name = "mnFile2TagV2";
-            this.mnFile2TagV2.Size = new System.Drawing.Size( 195, 22 );
+            this.mnFile2TagV2.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D ) ) );
+            this.mnFile2TagV2.Size = new System.Drawing.Size( 234, 22 );
             this.mnFile2TagV2.Text = "Filename -> Tag Ver. 2";
             this.mnFile2TagV2.Click += new System.EventHandler( this.mnFile2TagV2_Click );
             // 
             // mnTag2FileV2
             // 
             this.mnTag2FileV2.Name = "mnTag2FileV2";
-            this.mnTag2FileV2.Size = new System.Drawing.Size( 195, 22 );
+            this.mnTag2FileV2.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R ) ) );
+            this.mnTag2FileV2.Size = new System.Drawing.Size( 234, 22 );
             this.mnTag2FileV2.Text = "Tag Ver. 2 -> Filename";
             this.mnTag2FileV2.Click += new System.EventHandler( this.mnTag2FileV2_Click );
             // 
@@ -498,14 +506,16 @@ namespace music_tagger
             // caseConversionToolStripMenuItem
             // 
             this.caseConversionToolStripMenuItem.Name = "caseConversionToolStripMenuItem";
-            this.caseConversionToolStripMenuItem.Size = new System.Drawing.Size( 195, 22 );
+            this.caseConversionToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.caseConversionToolStripMenuItem.Size = new System.Drawing.Size( 214, 22 );
             this.caseConversionToolStripMenuItem.Text = "Case Conversion";
             this.caseConversionToolStripMenuItem.Click += new System.EventHandler( this.On_CaseConvert );
             // 
             // transferConvertTagsToolStripMenuItem
             // 
             this.transferConvertTagsToolStripMenuItem.Name = "transferConvertTagsToolStripMenuItem";
-            this.transferConvertTagsToolStripMenuItem.Size = new System.Drawing.Size( 195, 22 );
+            this.transferConvertTagsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
+            this.transferConvertTagsToolStripMenuItem.Size = new System.Drawing.Size( 214, 22 );
             this.transferConvertTagsToolStripMenuItem.Text = "Transfer/Convert Tags";
             // 
             // anlyseToolStripMenuItem
@@ -546,6 +556,7 @@ namespace music_tagger
             this.mnOptionsScanSubs.Name = "mnOptionsScanSubs";
             this.mnOptionsScanSubs.Size = new System.Drawing.Size( 179, 22 );
             this.mnOptionsScanSubs.Text = "Scan Subdirectories";
+            this.mnOptionsScanSubs.Click += new System.EventHandler( this.mnOptionsScanSubs_Click );
             // 
             // mnPrefs
             // 
@@ -569,30 +580,30 @@ namespace music_tagger
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size( 126, 6 );
+            this.toolStripSeparator5.Size = new System.Drawing.Size( 149, 6 );
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler( this.aboutToolStripMenuItem_Click );
             // 
@@ -606,7 +617,7 @@ namespace music_tagger
             // toolStripContainer.ContentPanel
             // 
             this.toolStripContainer.ContentPanel.Controls.Add( this.splitContainer1 );
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 1119, 559 );
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 1119, 534 );
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point( 0, 0 );
             this.toolStripContainer.Name = "toolStripContainer";
@@ -617,9 +628,9 @@ namespace music_tagger
             // toolStripContainer.TopToolStripPanel
             // 
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.menuStrip );
-            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip3 );
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip1 );
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip2 );
+            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip3 );
             // 
             // statusStrip1
             // 
@@ -642,7 +653,7 @@ namespace music_tagger
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add( this.view );
-            this.splitContainer1.Size = new System.Drawing.Size( 1119, 559 );
+            this.splitContainer1.Size = new System.Drawing.Size( 1119, 534 );
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -653,7 +664,7 @@ namespace music_tagger
             this.tree.Location = new System.Drawing.Point( 0, 0 );
             this.tree.Name = "tree";
             this.tree.SelectedImageIndex = 0;
-            this.tree.Size = new System.Drawing.Size( 284, 559 );
+            this.tree.Size = new System.Drawing.Size( 284, 534 );
             this.tree.TabIndex = 0;
             // 
             // view
@@ -661,212 +672,9 @@ namespace music_tagger
             this.view.Dock = System.Windows.Forms.DockStyle.Fill;
             this.view.Location = new System.Drawing.Point( 0, 0 );
             this.view.Name = "view";
-            this.view.Size = new System.Drawing.Size( 831, 559 );
+            this.view.Size = new System.Drawing.Size( 831, 534 );
             this.view.TabIndex = 0;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripButton,
-            this.toolStripSeparator6,
-            this.cutToolStripButton,
-            this.copyToolStripButton,
-            this.pasteToolStripButton,
-            this.toolStripSeparator7,
-            this.helpToolStripButton} );
-            this.toolStrip1.Location = new System.Drawing.Point( 3, 24 );
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size( 137, 25 );
-            this.toolStrip1.TabIndex = 1;
-            // 
-            // saveToolStripButton
-            // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "saveToolStripButton.Image" ) ) );
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size( 23, 22 );
-            this.saveToolStripButton.Text = "&Save";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size( 6, 25 );
-            // 
-            // cutToolStripButton
-            // 
-            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.cutToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "cutToolStripButton.Image" ) ) );
-            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cutToolStripButton.Name = "cutToolStripButton";
-            this.cutToolStripButton.Size = new System.Drawing.Size( 23, 22 );
-            this.cutToolStripButton.Text = "C&ut";
-            // 
-            // copyToolStripButton
-            // 
-            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copyToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "copyToolStripButton.Image" ) ) );
-            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copyToolStripButton.Name = "copyToolStripButton";
-            this.copyToolStripButton.Size = new System.Drawing.Size( 23, 22 );
-            this.copyToolStripButton.Text = "&Copy";
-            // 
-            // pasteToolStripButton
-            // 
-            this.pasteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pasteToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "pasteToolStripButton.Image" ) ) );
-            this.pasteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pasteToolStripButton.Name = "pasteToolStripButton";
-            this.pasteToolStripButton.Size = new System.Drawing.Size( 23, 22 );
-            this.pasteToolStripButton.Text = "&Paste";
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size( 6, 25 );
-            // 
-            // helpToolStripButton
-            // 
-            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.helpToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "helpToolStripButton.Image" ) ) );
-            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.helpToolStripButton.Name = "helpToolStripButton";
-            this.helpToolStripButton.Size = new System.Drawing.Size( 23, 22 );
-            this.helpToolStripButton.Text = "He&lp";
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip2.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.tsb_EditV1,
-            this.tsb_EditV1Multi,
-            this.tsb_EditV2,
-            this.tsb_EditV2Multi,
-            this.toolStripSeparator8,
-            this.toolStripButton5,
-            this.toolStripButton6,
-            this.tsFile2TagV1,
-            this.tsTagV12File,
-            this.toolStripButton9,
-            this.toolStripButton10,
-            this.tsb_ToggleVer} );
-            this.toolStrip2.Location = new System.Drawing.Point( 140, 24 );
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size( 337, 25 );
-            this.toolStrip2.TabIndex = 2;
-            // 
-            // tsb_EditV1
-            // 
-            this.tsb_EditV1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_EditV1.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV1.Image" ) ) );
-            this.tsb_EditV1.ImageTransparentColor = System.Drawing.Color.White;
-            this.tsb_EditV1.Name = "tsb_EditV1";
-            this.tsb_EditV1.Size = new System.Drawing.Size( 23, 22 );
-            this.tsb_EditV1.Text = "Edit Ver.1";
-            this.tsb_EditV1.Click += new System.EventHandler( this.tsb_EditV1_Click );
-            // 
-            // tsb_EditV1Multi
-            // 
-            this.tsb_EditV1Multi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_EditV1Multi.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV1Multi.Image" ) ) );
-            this.tsb_EditV1Multi.ImageTransparentColor = System.Drawing.Color.White;
-            this.tsb_EditV1Multi.Name = "tsb_EditV1Multi";
-            this.tsb_EditV1Multi.Size = new System.Drawing.Size( 23, 22 );
-            this.tsb_EditV1Multi.Text = "Edit Multi-Ver.1";
-            this.tsb_EditV1Multi.Click += new System.EventHandler( this.tsb_EditV1Multi_Click );
-            // 
-            // tsb_EditV2
-            // 
-            this.tsb_EditV2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_EditV2.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV2.Image" ) ) );
-            this.tsb_EditV2.ImageTransparentColor = System.Drawing.Color.White;
-            this.tsb_EditV2.Name = "tsb_EditV2";
-            this.tsb_EditV2.Size = new System.Drawing.Size( 23, 22 );
-            this.tsb_EditV2.Text = "Edit Ver.2";
-            this.tsb_EditV2.Click += new System.EventHandler( this.tsb_EditV2_Click );
-            // 
-            // tsb_EditV2Multi
-            // 
-            this.tsb_EditV2Multi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_EditV2Multi.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV2Multi.Image" ) ) );
-            this.tsb_EditV2Multi.ImageTransparentColor = System.Drawing.Color.White;
-            this.tsb_EditV2Multi.Name = "tsb_EditV2Multi";
-            this.tsb_EditV2Multi.Size = new System.Drawing.Size( 23, 22 );
-            this.tsb_EditV2Multi.Text = "Edit Multi-Ver.2";
-            this.tsb_EditV2Multi.Click += new System.EventHandler( this.tsb_EditV2Multi_Click );
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size( 6, 25 );
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton5.Image" ) ) );
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.White;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size( 23, 22 );
-            this.toolStripButton5.Text = "toolStripButton5";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton6.Image" ) ) );
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.White;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size( 23, 22 );
-            this.toolStripButton6.Text = "toolStripButton6";
-            // 
-            // tsFile2TagV1
-            // 
-            this.tsFile2TagV1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsFile2TagV1.Image = ( (System.Drawing.Image)( resources.GetObject( "tsFile2TagV1.Image" ) ) );
-            this.tsFile2TagV1.ImageTransparentColor = System.Drawing.Color.White;
-            this.tsFile2TagV1.Name = "tsFile2TagV1";
-            this.tsFile2TagV1.Size = new System.Drawing.Size( 23, 22 );
-            this.tsFile2TagV1.Text = "toolStripButton7";
-            this.tsFile2TagV1.Click += new System.EventHandler( this.mnFile2TagV1_Click );
-            // 
-            // tsTagV12File
-            // 
-            this.tsTagV12File.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsTagV12File.Image = ( (System.Drawing.Image)( resources.GetObject( "tsTagV12File.Image" ) ) );
-            this.tsTagV12File.ImageTransparentColor = System.Drawing.Color.White;
-            this.tsTagV12File.Name = "tsTagV12File";
-            this.tsTagV12File.Size = new System.Drawing.Size( 23, 22 );
-            this.tsTagV12File.Text = "toolStripButton8";
-            this.tsTagV12File.Click += new System.EventHandler( this.mnTag2FileV1_Click );
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton9.Image" ) ) );
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.White;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size( 23, 22 );
-            this.toolStripButton9.Text = "toolStripButton9";
-            this.toolStripButton9.Click += new System.EventHandler( this.mnFile2TagV2_Click );
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = ( (System.Drawing.Image)( resources.GetObject( "toolStripButton10.Image" ) ) );
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.White;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size( 23, 22 );
-            this.toolStripButton10.Text = "toolStripButton10";
-            this.toolStripButton10.Click += new System.EventHandler( this.mnTag2FileV2_Click );
-            // 
-            // tsb_ToggleVer
-            // 
-            this.tsb_ToggleVer.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_ToggleVer.Image" ) ) );
-            this.tsb_ToggleVer.ImageTransparentColor = System.Drawing.Color.White;
-            this.tsb_ToggleVer.Name = "tsb_ToggleVer";
-            this.tsb_ToggleVer.Size = new System.Drawing.Size( 91, 22 );
-            this.tsb_ToggleVer.Text = "Shown Ver. 2";
-            this.tsb_ToggleVer.Click += new System.EventHandler( this.OnToggleVer );
+            this.view.Type = TagLib.TagTypes.Id3v1;
             // 
             // toolStrip3
             // 
@@ -889,7 +697,7 @@ namespace music_tagger
             this.toolStripSplitButton3,
             this.toolStripSplitButton4,
             this.toolStripButton15} );
-            this.toolStrip3.Location = new System.Drawing.Point( 477, 24 );
+            this.toolStrip3.Location = new System.Drawing.Point( 3, 49 );
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size( 474, 25 );
             this.toolStrip3.TabIndex = 3;
@@ -1098,6 +906,210 @@ namespace music_tagger
             this.toolStripButton15.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton15.Text = "toolStripButton15";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripButton,
+            this.toolStripSeparator6,
+            this.cutToolStripButton,
+            this.copyToolStripButton,
+            this.pasteToolStripButton,
+            this.toolStripSeparator7,
+            this.helpToolStripButton} );
+            this.toolStrip1.Location = new System.Drawing.Point( 3, 24 );
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size( 137, 25 );
+            this.toolStrip1.TabIndex = 1;
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "saveToolStripButton.Image" ) ) );
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size( 23, 22 );
+            this.saveToolStripButton.Text = "&Save";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size( 6, 25 );
+            // 
+            // cutToolStripButton
+            // 
+            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cutToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "cutToolStripButton.Image" ) ) );
+            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cutToolStripButton.Name = "cutToolStripButton";
+            this.cutToolStripButton.Size = new System.Drawing.Size( 23, 22 );
+            this.cutToolStripButton.Text = "C&ut";
+            // 
+            // copyToolStripButton
+            // 
+            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copyToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "copyToolStripButton.Image" ) ) );
+            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copyToolStripButton.Name = "copyToolStripButton";
+            this.copyToolStripButton.Size = new System.Drawing.Size( 23, 22 );
+            this.copyToolStripButton.Text = "&Copy";
+            // 
+            // pasteToolStripButton
+            // 
+            this.pasteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pasteToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "pasteToolStripButton.Image" ) ) );
+            this.pasteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pasteToolStripButton.Name = "pasteToolStripButton";
+            this.pasteToolStripButton.Size = new System.Drawing.Size( 23, 22 );
+            this.pasteToolStripButton.Text = "&Paste";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size( 6, 25 );
+            // 
+            // helpToolStripButton
+            // 
+            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.helpToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "helpToolStripButton.Image" ) ) );
+            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.helpToolStripButton.Name = "helpToolStripButton";
+            this.helpToolStripButton.Size = new System.Drawing.Size( 23, 22 );
+            this.helpToolStripButton.Text = "He&lp";
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
+            this.tsb_EditV1,
+            this.tsb_EditV1Multi,
+            this.tsb_EditV2,
+            this.tsb_EditV2Multi,
+            this.toolStripSeparator8,
+            this.tsb_RemoveV1,
+            this.tsb_RemoveV2,
+            this.tsFile2TagV1,
+            this.tsTagV12File,
+            this.tsFile2TagV2,
+            this.tsTagV22File,
+            this.tsb_ToggleVer} );
+            this.toolStrip2.Location = new System.Drawing.Point( 140, 24 );
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size( 337, 25 );
+            this.toolStrip2.TabIndex = 2;
+            // 
+            // tsb_EditV1
+            // 
+            this.tsb_EditV1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_EditV1.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV1.Image" ) ) );
+            this.tsb_EditV1.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_EditV1.Name = "tsb_EditV1";
+            this.tsb_EditV1.Size = new System.Drawing.Size( 23, 22 );
+            this.tsb_EditV1.Text = "Edit Ver.1";
+            this.tsb_EditV1.Click += new System.EventHandler( this.tsb_EditV1_Click );
+            // 
+            // tsb_EditV1Multi
+            // 
+            this.tsb_EditV1Multi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_EditV1Multi.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV1Multi.Image" ) ) );
+            this.tsb_EditV1Multi.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_EditV1Multi.Name = "tsb_EditV1Multi";
+            this.tsb_EditV1Multi.Size = new System.Drawing.Size( 23, 22 );
+            this.tsb_EditV1Multi.Text = "Edit Multi-Ver.1";
+            this.tsb_EditV1Multi.Click += new System.EventHandler( this.tsb_EditV1Multi_Click );
+            // 
+            // tsb_EditV2
+            // 
+            this.tsb_EditV2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_EditV2.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV2.Image" ) ) );
+            this.tsb_EditV2.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_EditV2.Name = "tsb_EditV2";
+            this.tsb_EditV2.Size = new System.Drawing.Size( 23, 22 );
+            this.tsb_EditV2.Text = "Edit Ver.2";
+            this.tsb_EditV2.Click += new System.EventHandler( this.tsb_EditV2_Click );
+            // 
+            // tsb_EditV2Multi
+            // 
+            this.tsb_EditV2Multi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_EditV2Multi.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV2Multi.Image" ) ) );
+            this.tsb_EditV2Multi.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_EditV2Multi.Name = "tsb_EditV2Multi";
+            this.tsb_EditV2Multi.Size = new System.Drawing.Size( 23, 22 );
+            this.tsb_EditV2Multi.Text = "Edit Multi-Ver.2";
+            this.tsb_EditV2Multi.Click += new System.EventHandler( this.tsb_EditV2Multi_Click );
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size( 6, 25 );
+            // 
+            // tsb_RemoveV1
+            // 
+            this.tsb_RemoveV1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_RemoveV1.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_RemoveV1.Image" ) ) );
+            this.tsb_RemoveV1.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_RemoveV1.Name = "tsb_RemoveV1";
+            this.tsb_RemoveV1.Size = new System.Drawing.Size( 23, 22 );
+            this.tsb_RemoveV1.Text = "toolStripButton5";
+            // 
+            // tsb_RemoveV2
+            // 
+            this.tsb_RemoveV2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_RemoveV2.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_RemoveV2.Image" ) ) );
+            this.tsb_RemoveV2.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_RemoveV2.Name = "tsb_RemoveV2";
+            this.tsb_RemoveV2.Size = new System.Drawing.Size( 23, 22 );
+            this.tsb_RemoveV2.Text = "toolStripButton6";
+            // 
+            // tsFile2TagV1
+            // 
+            this.tsFile2TagV1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsFile2TagV1.Image = ( (System.Drawing.Image)( resources.GetObject( "tsFile2TagV1.Image" ) ) );
+            this.tsFile2TagV1.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsFile2TagV1.Name = "tsFile2TagV1";
+            this.tsFile2TagV1.Size = new System.Drawing.Size( 23, 22 );
+            this.tsFile2TagV1.Text = "toolStripButton7";
+            this.tsFile2TagV1.Click += new System.EventHandler( this.mnFile2TagV1_Click );
+            // 
+            // tsTagV12File
+            // 
+            this.tsTagV12File.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsTagV12File.Image = ( (System.Drawing.Image)( resources.GetObject( "tsTagV12File.Image" ) ) );
+            this.tsTagV12File.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsTagV12File.Name = "tsTagV12File";
+            this.tsTagV12File.Size = new System.Drawing.Size( 23, 22 );
+            this.tsTagV12File.Text = "toolStripButton8";
+            this.tsTagV12File.Click += new System.EventHandler( this.mnTag2FileV1_Click );
+            // 
+            // tsFile2TagV2
+            // 
+            this.tsFile2TagV2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsFile2TagV2.Image = ( (System.Drawing.Image)( resources.GetObject( "tsFile2TagV2.Image" ) ) );
+            this.tsFile2TagV2.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsFile2TagV2.Name = "tsFile2TagV2";
+            this.tsFile2TagV2.Size = new System.Drawing.Size( 23, 22 );
+            this.tsFile2TagV2.Text = "toolStripButton9";
+            this.tsFile2TagV2.Click += new System.EventHandler( this.mnFile2TagV2_Click );
+            // 
+            // tsTagV22File
+            // 
+            this.tsTagV22File.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsTagV22File.Image = ( (System.Drawing.Image)( resources.GetObject( "tsTagV22File.Image" ) ) );
+            this.tsTagV22File.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsTagV22File.Name = "tsTagV22File";
+            this.tsTagV22File.Size = new System.Drawing.Size( 23, 22 );
+            this.tsTagV22File.Text = "toolStripButton10";
+            this.tsTagV22File.Click += new System.EventHandler( this.mnTag2FileV2_Click );
+            // 
+            // tsb_ToggleVer
+            // 
+            this.tsb_ToggleVer.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_ToggleVer.Image" ) ) );
+            this.tsb_ToggleVer.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_ToggleVer.Name = "tsb_ToggleVer";
+            this.tsb_ToggleVer.Size = new System.Drawing.Size( 91, 22 );
+            this.tsb_ToggleVer.Text = "Shown Ver. 2";
+            this.tsb_ToggleVer.Click += new System.EventHandler( this.OnToggleVer );
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
@@ -1120,12 +1132,12 @@ namespace music_tagger
             this.splitContainer1.Panel1.ResumeLayout( false );
             this.splitContainer1.Panel2.ResumeLayout( false );
             this.splitContainer1.ResumeLayout( false );
+            this.toolStrip3.ResumeLayout( false );
+            this.toolStrip3.PerformLayout();
             this.toolStrip1.ResumeLayout( false );
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout( false );
             this.toolStrip2.PerformLayout();
-            this.toolStrip3.ResumeLayout( false );
-            this.toolStrip3.PerformLayout();
             this.ResumeLayout( false );
 
         }
@@ -1167,13 +1179,13 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripButton tsb_EditV1Multi;
         private System.Windows.Forms.ToolStripButton tsb_EditV2;
         private System.Windows.Forms.ToolStripButton tsb_EditV2Multi;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton tsb_RemoveV1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton tsb_RemoveV2;
         private System.Windows.Forms.ToolStripButton tsFile2TagV1;
         private System.Windows.Forms.ToolStripButton tsTagV12File;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripButton tsFile2TagV2;
+        private System.Windows.Forms.ToolStripButton tsTagV22File;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private Tools.FileTreeView tree;
         private View view;

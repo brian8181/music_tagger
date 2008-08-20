@@ -156,22 +156,12 @@ namespace music_tagger
             item.Id3v2.Album = main.txtAlbum.Text;
             item.Id3v2.Title = main.txtTitle.Text;
             uint num = 0;
-            if(uint.TryParse( main.txtTrack.Text, out num ))
-            {
-                item.Id3v2.Track = num;
-            }
-            if(uint.TryParse( main.txtTrackCount.Text, out num ))
-            {
-                item.Id3v2.TrackCount = num;
-            }
-            if(uint.TryParse( main.txtDisc.Text, out num ))
-            {
-                item.Id3v2.Disc = num;
-            }
+            item.Id3v2.Track = uint.TryParse( main.txtTrack.Text, out num ) ? num : 0;
+            item.Id3v2.TrackCount = uint.TryParse( main.txtTrackCount.Text, out num ) ? num : 0;
+            item.Id3v2.Disc = uint.TryParse( main.txtDisc.Text, out num ) ? num : 0;
             item.Id3v2.DiscCount = uint.TryParse( main.txtDiscCount.Text, out num ) ? num : 0;
-            item.Id3v2.DiscCount = uint.TryParse( main.txtBPM.Text, out num ) ? num : 0;
+            item.Id3v2.BeatsPerMinute = uint.TryParse( main.txtBPM.Text, out num ) ? num : 0;
             
-
             item.RefreshItem();
         }
 
