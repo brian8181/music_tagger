@@ -40,37 +40,39 @@ namespace music_tagger
             this.Name = "File";
             this.Text = fi.Name;
             this.Tag = fi;
-
-            try
-            {
-                tag_file = TagLib.File.Create( fi.FullName );
-                v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
-                v2 = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
-            }
-            catch(TagLib.CorruptFileException)
-            {
-                // BKP todo
-                // humm, what shall we do? log?
-            }
-
-            Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
-            // Use this to get the small Icon
-            IntPtr handle = Win32.SHGetFileInfo( fi.FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
-                Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
-            if(lv.SmallImageList.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
-            {
-                // The icon is returned in the hIcon member of the shinfo struct
-                System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
-                lv.SmallImageList.Images.Add( sInfo.hIcon.ToString(), icon );
-            }
-            this.ImageIndex = lv.SmallImageList.Images.IndexOfKey( sInfo.hIcon.ToString() );
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public void IntializeItem()
+        public bool IntializeItem()
         {
+            try
+            {
+                tag_file = TagLib.File.Create( fi.FullName );
+                v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
+                v2 = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
+
+                Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
+                // Use this to get the small Icon
+                IntPtr handle = Win32.SHGetFileInfo( fi.FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
+                    Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
+                if(lv.SmallImageList.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
+                {
+                    // The icon is returned in the hIcon member of the shinfo struct
+                    System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
+                    lv.SmallImageList.Images.Add( sInfo.hIcon.ToString(), icon );
+                }
+                this.ImageIndex = lv.SmallImageList.Images.IndexOfKey( sInfo.hIcon.ToString() );
+            }
+            catch(TagLib.CorruptFileException e)
+            {
+                // BKP todo
+                // humm, what shall we do? log?
+                System.Diagnostics.Trace.WriteLine( e.Message );
+                return false;
+            }
+            
             Dictionary<Column, Column> tmp_items = new Dictionary<Column, Column>();
             // fill dictionary with all values
             foreach(Column c in Enum.GetValues( typeof( Column ) ))
@@ -99,6 +101,8 @@ namespace music_tagger
                 sub_item.Name = key.ToString();
                 this.SubItems.Add( sub_item );
             }
+
+            return true;
         }
         
         /// <summary>

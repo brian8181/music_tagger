@@ -9,7 +9,7 @@ namespace music_tagger
     /// <summary>
     /// Isolate threading
     /// </summary>
-    class ProgressThread : ProgressFrm 
+    public abstract class ProgressThread : ProgressFrm 
     {
         /// <summary>
         /// Status Args
@@ -30,7 +30,6 @@ namespace music_tagger
 
         public class ColumnUpdateArgs
         {
-            
         }
 
         /// <summary>
@@ -39,17 +38,13 @@ namespace music_tagger
         public event EventHandler<StatusArgs> StatusUpdate;
         protected Thread thread = null;
         protected FileInfo[] infos = null;
-        protected string format = null;
-        protected string path = null;
-        protected bool copy = false;
-        protected bool overwrite = false;
-
+       
         /// <summary>
         /// 
         /// </summary>
         /// <param name="infos"></param>
         /// <param name="format"></param>
-        public ProgressThread( FileInfo[] infos, string format)
+        public ProgressThread( FileInfo[] infos )
         {
             thread = new Thread( new ThreadStart( ThreadFunc ) );
             thread.Priority = ThreadPriority.BelowNormal;
@@ -57,8 +52,6 @@ namespace music_tagger
             thread.IsBackground = true;
 
             this.infos = infos;
-            this.format = format;
-          
         }
         /// <summary>
         /// 
@@ -71,10 +64,7 @@ namespace music_tagger
         /// <summary>
         /// 
         /// </summary>
-        public virtual void ThreadFunc()
-        {
-            SafeClose();
-        }
+        public abstract void ThreadFunc();
         /// <summary>
         /// 
         /// </summary>
@@ -105,4 +95,25 @@ namespace music_tagger
 
         }
     }
+
+    /// <summary>
+    /// Isolate threading
+    /// </summary>
+    public abstract class FormatProgressThread : ProgressThread
+    {
+        protected string format = null;
+        protected string path = null;
+        protected bool copy = false;
+        protected bool overwrite = false;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="infos"></param>
+        /// <param name="format"></param>
+        public FormatProgressThread( FileInfo[] infos, string format ) : base( infos )
+        {
+            this.format = format;
+        }
+   }
 }

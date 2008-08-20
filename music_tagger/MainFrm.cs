@@ -400,11 +400,8 @@ namespace music_tagger
         /// <param name="e"></param>
         private void mnOptionsScanSubs_Click( object sender, EventArgs e )
         {
-            view.SearchOption = mnOptionsScanSubs.Checked ? 
+            view.SearchOption = mnOptionsScanSubs.Checked ?
                 SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
         }
-
-             
-
-       }
+    }
 }

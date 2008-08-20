@@ -134,20 +134,22 @@ namespace music_tagger
         /// <param name="files"></param>
         public void RefreshView( FileInfo[] files )
         {
-           ListView.Items.Clear();
-           // fill items
-           foreach(FileInfo fi in files)
-           {
-               TagListViewItem lvi = new TagListViewItem( this.ListView, fi.FullName );
-               lvi.Type = type;
-               lvi.IntializeItem();
-               // add it to listview
-               ListView.Items.Add( lvi );
-            }
-            if(files.Length > 0)
-            {
-                SizeAll( listView, ColumnHeaderAutoResizeStyle.ColumnContent );
-            }
+           //ListView.Items.Clear();
+           //// fill items
+           //foreach(FileInfo fi in files)
+           //{
+           //    TagListViewItem lvi = new TagListViewItem( this.ListView, fi.FullName );
+           //    lvi.Type = type;
+           //    if(lvi.IntializeItem())
+           //    {
+           //        // add it to listview
+           //        ListView.Items.Add( lvi );
+           //    }
+           // }
+           // if(files.Length > 0)
+           // {
+           //     SizeAll( listView, ColumnHeaderAutoResizeStyle.ColumnContent );
+           // }
         }
         /// <summary>
         /// select all 

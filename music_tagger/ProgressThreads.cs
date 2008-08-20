@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Windows.Forms;
 
 namespace music_tagger
 {
     /// <summary>
     /// 
     /// </summary>
-    class OrgProgressThread : ProgressThread
+    class OrgProgressThread : FormatProgressThread
     {
         public OrgProgressThread( FileInfo[] infos, string format, string path,
             bool copy, 
@@ -50,7 +51,7 @@ namespace music_tagger
     /// <summary>
     /// 
     /// </summary>
-    class File2TagProgressThread : ProgressThread
+    class File2TagProgressThread : FormatProgressThread
     {
         public File2TagProgressThread( FileInfo[] infos, string format)
             : base( infos, format)
@@ -59,13 +60,12 @@ namespace music_tagger
 
         public override void ThreadFunc()
         {
-            base.ThreadFunc();
         }
     }
     /// <summary>
     /// 
     /// </summary>
-    class TagV12FileProgressThread : ProgressThread
+    class TagV12FileProgressThread : FormatProgressThread
     {
         public TagV12FileProgressThread( FileInfo[] infos, string format )
             : base( infos, format )
@@ -89,6 +89,52 @@ namespace music_tagger
 
                 //fi.MoveTo( fullname );
                 //Tools.Functions.MoveTo( fi, dir.TrimEnd( '\\' ), false );
+            }
+
+            OnStatusUpdate( "Finished" );
+            SafeClose();
+        }
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    class ScanProgressThread : ProgressThread
+    {
+        ListView lv = null;
+        TagLib.TagTypes type = TagLib.TagTypes.Id3v2;
+
+        public ScanProgressThread( FileInfo[] infos, ListView lv, TagLib.TagTypes type )
+            : base( infos )
+        {
+            this.lv = lv;
+            this.type = type;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public override void ThreadFunc()
+        {
+            lv.Items.Clear();
+            //// fill items
+            foreach(FileInfo fi in infos)
+            {
+                OnStatusUpdate( fi.Name );
+
+                TagListViewItem lvi = new TagListViewItem( lv, fi.FullName );
+                lvi.Type = type;
+                if(lvi.IntializeItem())
+                {
+                    // add it to listview
+                    lv.Items.Add( lvi );
+                }
+            }
+            if(infos.Length > 0)
+            {
+                int len = lv.Columns.Count;
+                for(int i = 0; i < len; ++i)
+                {
+                    lv.Columns[i].AutoResize( ColumnHeaderAutoResizeStyle.ColumnContent );
+                }
             }
 
             OnStatusUpdate( "Finished" );
