@@ -134,6 +134,12 @@ namespace music_tagger
         /// <param name="files"></param>
         public void RefreshView( FileInfo[] files )
         {
+            ListView.BeginUpdate();
+            ListView.Items.Clear();
+            ScanProgressThread thread = new ScanProgressThread( files, ListView, type);
+            thread.Finished += new EventHandler<EventArgs>( thread_Finished );
+            thread.Start(this.TopLevelControl);
+            
            //ListView.Items.Clear();
            //// fill items
            //foreach(FileInfo fi in files)
@@ -150,6 +156,11 @@ namespace music_tagger
            // {
            //     SizeAll( listView, ColumnHeaderAutoResizeStyle.ColumnContent );
            // }
+        }
+
+        void thread_Finished( object sender, EventArgs e )
+        {
+            ListView.EndUpdate();
         }
         /// <summary>
         /// select all 

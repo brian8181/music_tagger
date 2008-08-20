@@ -13,7 +13,7 @@ namespace music_tagger
         /// <summary>
         /// 
         /// </summary>
-        public ProgressFrm()
+        public ProgressFrm() 
         {
             InitializeComponent();
             progressCtrl.progressBar.Style = ProgressBarStyle.Marquee;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace music_tagger
 {
@@ -36,6 +37,7 @@ namespace music_tagger
         /// Status Update Event
         /// </summary>
         public event EventHandler<StatusArgs> StatusUpdate;
+        public event EventHandler<EventArgs> Finished;
         protected Thread thread = null;
         protected FileInfo[] infos = null;
        
@@ -50,13 +52,21 @@ namespace music_tagger
             thread.Priority = ThreadPriority.BelowNormal;
             thread.Name = "OrganizeThread";
             thread.IsBackground = true;
-
+    
             this.infos = infos;
         }
         /// <summary>
         /// 
         /// </summary>
-        public void Start()
+        public virtual void Start(IWin32Window window)
+        {
+            this.Show(window);
+            thread.Start();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual void Start()
         {
             this.Show();
             thread.Start();    
@@ -71,10 +81,35 @@ namespace music_tagger
         /// <param name="status"></param>
         protected virtual void OnStatusUpdate(string status)
         {
+            //??????
+            //if(InvokeRequired)
+            //{
+            //    this.Invoke( new SafeDelegate( OnFinished ) );
+            //    return;
+            //}
+            //???????
             this.progressCtrl.UpdateStatus( status );
             if( StatusUpdate != null ) 
-                StatusUpdate( this, new StatusArgs( status ) );  
+                StatusUpdate( this, new StatusArgs( "Finished" ) );  
         }
+
+        private delegate void SafeDelegate();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="status"></param>
+        protected virtual void OnFinished()
+        {
+            if(InvokeRequired)
+            {
+                this.Invoke( new SafeDelegate( OnFinished ) );
+                return;
+            }
+            if(Finished != null)
+                Finished( this, EventArgs.Empty );
+        }
+
         /// <summary>
         /// 
         /// </summary>

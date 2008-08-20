@@ -109,13 +109,23 @@ namespace music_tagger
             this.lv = lv;
             this.type = type;
         }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public override void Start()
+        //{
+           
+        //    //lv.Clear();
+        //    // call the base to start
+        //    base.Start();
+          
+        //} 
         /// <summary>
         /// 
         /// </summary>
         public override void ThreadFunc()
         {
-            lv.Items.Clear();
-            //// fill items
+            // fill items
             foreach(FileInfo fi in infos)
             {
                 OnStatusUpdate( fi.Name );
@@ -125,9 +135,34 @@ namespace music_tagger
                 if(lvi.IntializeItem())
                 {
                     // add it to listview
-                    lv.Items.Add( lvi );
+                    SafeAdd( lvi );
                 }
             }
+
+            SafeResize();
+
+            OnFinished();
+            SafeClose();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lvi"></param>
+        private delegate void SafeDelegate();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lvi"></param>
+        public void SafeResize()
+        {
+            if(InvokeRequired)
+            {
+                this.Invoke(
+                    new SafeDelegate( SafeResize ) );
+                return;
+            }
+
             if(infos.Length > 0)
             {
                 int len = lv.Columns.Count;
@@ -136,9 +171,26 @@ namespace music_tagger
                     lv.Columns[i].AutoResize( ColumnHeaderAutoResizeStyle.ColumnContent );
                 }
             }
-
-            OnStatusUpdate( "Finished" );
-            SafeClose();
+        }
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lvi"></param>
+        private delegate void SafeAddDelegate( TagListViewItem lvi );
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lvi"></param>
+        public void SafeAdd( TagListViewItem lvi )
+        {
+            if(InvokeRequired)
+            {
+                this.Invoke(
+                    new SafeAddDelegate( SafeAdd ), lvi );
+                return;
+            }
+            lv.Items.Add( lvi );
         }
     }
 }

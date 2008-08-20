@@ -54,11 +54,10 @@ namespace music_tagger
             // lblFile
             // 
             this.lblFile.AutoEllipsis = true;
-            this.lblFile.AutoSize = true;
-            this.lblFile.Font = new System.Drawing.Font( "Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ) );
+            this.lblFile.Font = new System.Drawing.Font( "Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ) );
             this.lblFile.Location = new System.Drawing.Point( 85, 14 );
             this.lblFile.Name = "lblFile";
-            this.lblFile.Size = new System.Drawing.Size( 19, 13 );
+            this.lblFile.Size = new System.Drawing.Size( 306, 19 );
             this.lblFile.TabIndex = 2;
             this.lblFile.Text = "...";
             // 

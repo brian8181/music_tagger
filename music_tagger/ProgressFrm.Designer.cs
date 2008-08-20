@@ -33,12 +33,14 @@ namespace music_tagger
             // 
             // progressCtrl
             // 
+            this.progressCtrl.BackColor = System.Drawing.SystemColors.Control;
+            this.progressCtrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.progressCtrl.Location = new System.Drawing.Point( 1, 12 );
             this.progressCtrl.Name = "progressCtrl";
             this.progressCtrl.Size = new System.Drawing.Size( 390, 98 );
             this.progressCtrl.TabIndex = 0;
             // 
-            // OrgProgressFrm
+            // ProgressFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -46,9 +48,10 @@ namespace music_tagger
             this.ControlBox = false;
             this.Controls.Add( this.progressCtrl );
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "OrgProgressFrm";
+            this.Name = "ProgressFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Progress";
+            this.TopMost = true;
             this.ResumeLayout( false );
 
         }
