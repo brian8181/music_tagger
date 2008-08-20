@@ -153,9 +153,7 @@ namespace music_tagger
             item.BackColor = Color.Yellow;
             if( !String.IsNullOrEmpty(  main.cmbArtist.Text ) )
             {
-                if( item.Id3v2.Performers == null || item.Id3v2.Performers.Length < 1 )
-                    item.Id3v2.Performers = new string[1];
-                item.Id3v2.Performers[0] = main.cmbArtist.Text;
+                item.Id3v2.Performers = new string[1] { main.cmbArtist.Text };
             }
 
             //item.Id3v2.Performers = new string[main.cmbArtist.Items.Count];
@@ -172,6 +170,9 @@ namespace music_tagger
             item.Id3v2.BeatsPerMinute = uint.TryParse( main.txtBPM.Text, out num ) ? num : 0;
             //item.Id3v2.Genres = new string[main.cm.Items.Count];
             //main.cmbArtist.Items.CopyTo(item.Id3v2.Performers, 0);
+
+            
+
             item.Id3v2.Comment = main.txtComment.Text;
             item.RefreshItem();
         }

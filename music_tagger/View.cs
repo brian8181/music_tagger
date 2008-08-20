@@ -42,12 +42,16 @@ namespace music_tagger
         private TagLib.TagTypes type = TagLib.TagTypes.Id3v1;
         private SearchOption searchOption = SearchOption.TopDirectoryOnly;
 
+        #region Properties
+        /// <summary>
+        /// 
+        /// </summary>
         public SearchOption SearchOption
         {
             get { return searchOption; }
+          
             set { searchOption = value; }
         } 
-
         /// <summary>
         /// 
         /// </summary>
@@ -60,7 +64,6 @@ namespace music_tagger
                 RefreshView();
             }
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -71,6 +74,25 @@ namespace music_tagger
                 return listView;
             }
         }
+        /// <summary>
+        /// checks for pending changes
+        /// </summary>
+        public bool IsDirty
+        {
+            get
+            {
+                foreach(ListViewItem item in ListView.Items)
+                {
+                    if(item.BackColor == Color.Yellow)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        #endregion
+
         /// <summary>
         /// 
         /// </summary>
@@ -100,7 +122,7 @@ namespace music_tagger
             tree.AfterSelect += new TreeViewEventHandler( tree_AfterSelect );
         }
         /// <summary>
-        /// refresh the view
+        /// refresh the view, (called by scan thread)
         /// </summary>
         public void RefreshView()
         {
@@ -139,25 +161,12 @@ namespace music_tagger
             ScanProgressThread thread = new ScanProgressThread( files, ListView, type);
             thread.Finished += new EventHandler<EventArgs>( thread_Finished );
             thread.Start(this.TopLevelControl);
-            
-           //ListView.Items.Clear();
-           //// fill items
-           //foreach(FileInfo fi in files)
-           //{
-           //    TagListViewItem lvi = new TagListViewItem( this.ListView, fi.FullName );
-           //    lvi.Type = type;
-           //    if(lvi.IntializeItem())
-           //    {
-           //        // add it to listview
-           //        ListView.Items.Add( lvi );
-           //    }
-           // }
-           // if(files.Length > 0)
-           // {
-           //     SizeAll( listView, ColumnHeaderAutoResizeStyle.ColumnContent );
-           // }
         }
-
+        /// <summary>
+        ///  refresh view is completed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void thread_Finished( object sender, EventArgs e )
         {
             ListView.EndUpdate();

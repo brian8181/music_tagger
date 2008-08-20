@@ -136,6 +136,19 @@ namespace music_tagger
         /// <param name="e"></param>
         private void OnToggleVer( object sender, EventArgs e )
         {
+            if(view.IsDirty)
+            {
+                DialogResult dr = MessageBox.Show(
+                       "This cause you to lose all pending changes. Do you with to save first?",
+                       "Save Pending Changes",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Asterisk );
+
+                if(dr == DialogResult.OK)
+                {
+                    view.Commit();
+                }
+            }
             ToggleVer();
         }
 

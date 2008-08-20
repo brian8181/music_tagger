@@ -569,7 +569,6 @@ namespace music_tagger
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cmbGenre;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -590,8 +589,6 @@ namespace music_tagger
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cmbCommentLang;
-        private System.Windows.Forms.ComboBox cmbCommentDesciptor;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -618,5 +615,8 @@ namespace music_tagger
         public System.Windows.Forms.TextBox txtTrack;
         public System.Windows.Forms.ListView commentList;
         public System.Windows.Forms.TextBox txtComment;
+        public System.Windows.Forms.ComboBox cmbGenre;
+        public System.Windows.Forms.ComboBox cmbCommentLang;
+        public System.Windows.Forms.ComboBox cmbCommentDesciptor;
     }
 }
