@@ -570,7 +570,6 @@ namespace music_tagger
         #endregion
 
         private System.Windows.Forms.ComboBox cmbGenre;
-        private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -618,5 +617,6 @@ namespace music_tagger
         public System.Windows.Forms.TextBox txtTrackCount;
         public System.Windows.Forms.TextBox txtTrack;
         public System.Windows.Forms.ListView commentList;
+        public System.Windows.Forms.TextBox txtComment;
     }
 }

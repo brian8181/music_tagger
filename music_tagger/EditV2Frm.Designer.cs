@@ -154,7 +154,7 @@ namespace music_tagger
             this.taskSwapTitle_Album} );
             this.expando2.Location = new System.Drawing.Point( 12, 224 );
             this.expando2.Name = "expando2";
-            this.expando2.Size = new System.Drawing.Size( 186, 276 );
+            this.expando2.Size = new System.Drawing.Size( 186, 200 );
             this.expando2.TabIndex = 1;
             this.expando2.Text = "Commands";
             // 
@@ -237,7 +237,7 @@ namespace music_tagger
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point( 753, 518 );
+            this.btnOK.Location = new System.Drawing.Point( 675, 518 );
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size( 75, 23 );
             this.btnOK.TabIndex = 10;
@@ -248,7 +248,7 @@ namespace music_tagger
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point( 672, 518 );
+            this.btnCancel.Location = new System.Drawing.Point( 756, 518 );
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size( 75, 23 );
             this.btnCancel.TabIndex = 9;

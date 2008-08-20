@@ -211,5 +211,37 @@ namespace music_tagger.Properties {
                 this["file2tagv2_fomats"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>File,1</string>
+  <string>Path,1</string>
+  <string>Size,1</string>
+  <string>Attributes,1</string>
+  <string>Created,1</string>
+  <string>Accessed,1</string>
+  <string>Modified,1</string>
+  <string>Album,1</string>
+  <string>Artist,1</string>
+  <string>Title,1</string>
+  <string>Track,1</string>
+  <string>TrackCount,1</string>
+  <string>Disc,1</string>
+  <string>DiscCount,1</string>
+  <string>Comment,1</string>
+  <string>Year,1</string>
+  <string>Genre,1</string>
+  <string>Length,1</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection cols {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["cols"]));
+            }
+            set {
+                this["cols"] = value;
+            }
+        }
     }
 }

@@ -151,17 +151,28 @@ namespace music_tagger
         private void EditItem( TagListViewItem item )
         {
             item.BackColor = Color.Yellow;
-            if( item.Id3v2.Performers.Length > 0 )
+            if( !String.IsNullOrEmpty(  main.cmbArtist.Text ) )
+            {
+                if( item.Id3v2.Performers == null || item.Id3v2.Performers.Length < 1 )
+                    item.Id3v2.Performers = new string[1];
                 item.Id3v2.Performers[0] = main.cmbArtist.Text;
+            }
+
+            //item.Id3v2.Performers = new string[main.cmbArtist.Items.Count];
+            //main.cmbArtist.Items.CopyTo(item.Id3v2.Performers, 0);
+         
             item.Id3v2.Album = main.txtAlbum.Text;
             item.Id3v2.Title = main.txtTitle.Text;
             uint num = 0;
+            item.Id3v2.Year = uint.TryParse( main.txtYear.Text, out num ) ? num : 0;
             item.Id3v2.Track = uint.TryParse( main.txtTrack.Text, out num ) ? num : 0;
             item.Id3v2.TrackCount = uint.TryParse( main.txtTrackCount.Text, out num ) ? num : 0;
             item.Id3v2.Disc = uint.TryParse( main.txtDisc.Text, out num ) ? num : 0;
             item.Id3v2.DiscCount = uint.TryParse( main.txtDiscCount.Text, out num ) ? num : 0;
             item.Id3v2.BeatsPerMinute = uint.TryParse( main.txtBPM.Text, out num ) ? num : 0;
-            
+            //item.Id3v2.Genres = new string[main.cm.Items.Count];
+            //main.cmbArtist.Items.CopyTo(item.Id3v2.Performers, 0);
+            item.Id3v2.Comment = main.txtComment.Text;
             item.RefreshItem();
         }
 

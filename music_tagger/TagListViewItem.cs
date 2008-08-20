@@ -40,18 +40,26 @@ namespace music_tagger
             this.Name = "File";
             this.Text = fi.Name;
             this.Tag = fi;
-            
-            tag_file = TagLib.File.Create( fi.FullName );
-            v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
-            v2 = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
+
+            try
+            {
+                tag_file = TagLib.File.Create( fi.FullName );
+                v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
+                v2 = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
+            }
+            catch(TagLib.CorruptFileException)
+            {
+                // BKP todo
+                // humm, what shall we do? log?
+            }
 
             Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
-            ////Use this to get the small Icon
+            // Use this to get the small Icon
             IntPtr handle = Win32.SHGetFileInfo( fi.FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
                 Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
             if(lv.SmallImageList.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
             {
-                //The icon is returned in the hIcon member of the shinfo struct
+                // The icon is returned in the hIcon member of the shinfo struct
                 System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
                 lv.SmallImageList.Images.Add( sInfo.hIcon.ToString(), icon );
             }

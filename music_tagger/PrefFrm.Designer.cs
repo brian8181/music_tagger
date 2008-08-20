@@ -32,6 +32,9 @@ namespace music_tagger
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ckRestoreFolder = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -60,9 +63,9 @@ namespace music_tagger
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnBrowse = new System.Windows.Forms.Button();
+            this.btnColUp = new System.Windows.Forms.Button();
+            this.btnColDown = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -125,6 +128,32 @@ namespace music_tagger
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBrowse.Location = new System.Drawing.Point( 310, 101 );
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size( 26, 23 );
+            this.btnBrowse.TabIndex = 9;
+            this.btnBrowse.Text = "...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point( 36, 106 );
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size( 61, 13 );
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Start Folder";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point( 103, 103 );
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size( 201, 20 );
+            this.textBox1.TabIndex = 6;
             // 
             // ckRestoreFolder
             // 
@@ -242,6 +271,9 @@ namespace music_tagger
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add( this.label11 );
+            this.tabPage2.Controls.Add( this.btnColDown );
+            this.tabPage2.Controls.Add( this.btnColUp );
             this.tabPage2.Controls.Add( this.columnList );
             this.tabPage2.Location = new System.Drawing.Point( 4, 22 );
             this.tabPage2.Name = "tabPage2";
@@ -254,10 +286,10 @@ namespace music_tagger
             // columnList
             // 
             this.columnList.FormattingEnabled = true;
-            this.columnList.Location = new System.Drawing.Point( 28, 16 );
+            this.columnList.Location = new System.Drawing.Point( 8, 6 );
             this.columnList.Name = "columnList";
-            this.columnList.Size = new System.Drawing.Size( 133, 289 );
-            this.columnList.Sorted = true;
+            this.columnList.ScrollAlwaysVisible = true;
+            this.columnList.Size = new System.Drawing.Size( 221, 319 );
             this.columnList.TabIndex = 2;
             // 
             // tabPage3
@@ -407,31 +439,35 @@ namespace music_tagger
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler( this.btnOK_Click );
             // 
-            // textBox1
+            // btnColUp
             // 
-            this.textBox1.Location = new System.Drawing.Point( 103, 103 );
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size( 201, 20 );
-            this.textBox1.TabIndex = 6;
+            this.btnColUp.Location = new System.Drawing.Point( 316, 112 );
+            this.btnColUp.Name = "btnColUp";
+            this.btnColUp.Size = new System.Drawing.Size( 87, 23 );
+            this.btnColUp.TabIndex = 4;
+            this.btnColUp.Text = "Move Up";
+            this.btnColUp.UseVisualStyleBackColor = true;
+            this.btnColUp.Click += new System.EventHandler( this.btnColUp_Click );
             // 
-            // label10
+            // btnColDown
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point( 36, 106 );
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size( 61, 13 );
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Start Folder";
+            this.btnColDown.Location = new System.Drawing.Point( 316, 141 );
+            this.btnColDown.Name = "btnColDown";
+            this.btnColDown.Size = new System.Drawing.Size( 87, 23 );
+            this.btnColDown.TabIndex = 5;
+            this.btnColDown.Text = "Move Down";
+            this.btnColDown.UseVisualStyleBackColor = true;
+            this.btnColDown.Click += new System.EventHandler( this.btnColDown_Click );
             // 
-            // btnBrowse
+            // label11
             // 
-            this.btnBrowse.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBrowse.Location = new System.Drawing.Point( 310, 101 );
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size( 26, 23 );
-            this.btnBrowse.TabIndex = 9;
-            this.btnBrowse.Text = "...";
-            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label11.Location = new System.Drawing.Point( 235, 281 );
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size( 248, 44 );
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Only checked columns will be dsiplayed. Reorder using the up and down buttons. No" +
+                "te: the \"Filename\" column is always displayed.  ";
             // 
             // PrefFrm
             // 
@@ -498,5 +534,8 @@ namespace music_tagger
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnColDown;
+        private System.Windows.Forms.Button btnColUp;
+        private System.Windows.Forms.Label label11;
     }
 }
