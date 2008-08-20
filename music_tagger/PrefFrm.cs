@@ -40,6 +40,14 @@ namespace music_tagger
             Properties.Settings.Default.Save();
         }
 
+        private void Apply()
+        {
+            foreach(Column c in columnList.Items)
+            {
+
+            }
+        }
+
         private void btnColUp_Click( object sender, EventArgs e )
         {
             int idx = columnList.SelectedIndex;
