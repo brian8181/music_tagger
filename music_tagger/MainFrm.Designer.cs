@@ -90,6 +90,8 @@ namespace music_tagger
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsFileCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsCurrentPath = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsVersionShown = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsScanSubs = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tree = new Tools.FileTreeView();
             this.view = new music_tagger.View();
@@ -141,8 +143,6 @@ namespace music_tagger
             this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSplitButton4 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.tsVersionShown = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsScanSubs = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -622,7 +622,7 @@ namespace music_tagger
             // toolStripContainer.ContentPanel
             // 
             this.toolStripContainer.ContentPanel.Controls.Add( this.splitContainer1 );
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 1119, 559 );
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 1119, 534 );
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point( 0, 0 );
             this.toolStripContainer.Name = "toolStripContainer";
@@ -633,8 +633,8 @@ namespace music_tagger
             // toolStripContainer.TopToolStripPanel
             // 
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.menuStrip );
-            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip2 );
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip1 );
+            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip2 );
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip3 );
             // 
             // statusStrip1
@@ -671,6 +671,26 @@ namespace music_tagger
             this.tsCurrentPath.Spring = true;
             this.tsCurrentPath.Text = "C:\\\\";
             // 
+            // tsVersionShown
+            // 
+            this.tsVersionShown.BorderSides = ( (System.Windows.Forms.ToolStripStatusLabelBorderSides)( ( ( ( System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top )
+                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right )
+                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom ) ) );
+            this.tsVersionShown.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.tsVersionShown.Name = "tsVersionShown";
+            this.tsVersionShown.Size = new System.Drawing.Size( 87, 17 );
+            this.tsVersionShown.Text = "tsVersionShown";
+            // 
+            // tsScanSubs
+            // 
+            this.tsScanSubs.BorderSides = ( (System.Windows.Forms.ToolStripStatusLabelBorderSides)( ( ( ( System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top )
+                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right )
+                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom ) ) );
+            this.tsScanSubs.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.tsScanSubs.Name = "tsScanSubs";
+            this.tsScanSubs.Size = new System.Drawing.Size( 66, 17 );
+            this.tsScanSubs.Text = "tsScanSubs";
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -684,7 +704,7 @@ namespace music_tagger
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add( this.view );
-            this.splitContainer1.Size = new System.Drawing.Size( 1119, 559 );
+            this.splitContainer1.Size = new System.Drawing.Size( 1119, 534 );
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -695,7 +715,7 @@ namespace music_tagger
             this.tree.Location = new System.Drawing.Point( 0, 0 );
             this.tree.Name = "tree";
             this.tree.SelectedImageIndex = 0;
-            this.tree.Size = new System.Drawing.Size( 284, 559 );
+            this.tree.Size = new System.Drawing.Size( 284, 534 );
             this.tree.TabIndex = 0;
             // 
             // view
@@ -704,7 +724,7 @@ namespace music_tagger
             this.view.Location = new System.Drawing.Point( 0, 0 );
             this.view.Name = "view";
             this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
-            this.view.Size = new System.Drawing.Size( 831, 559 );
+            this.view.Size = new System.Drawing.Size( 831, 534 );
             this.view.TabIndex = 0;
             this.view.Type = TagLib.TagTypes.Id3v1;
             // 
@@ -719,7 +739,7 @@ namespace music_tagger
             this.pasteToolStripButton,
             this.toolStripSeparator7,
             this.helpToolStripButton} );
-            this.toolStrip1.Location = new System.Drawing.Point( 5, 24 );
+            this.toolStrip1.Location = new System.Drawing.Point( 3, 24 );
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size( 137, 25 );
             this.toolStrip1.TabIndex = 1;
@@ -795,7 +815,7 @@ namespace music_tagger
             this.tsFile2TagV2,
             this.tsTagV22File,
             this.tsb_ToggleVer} );
-            this.toolStrip2.Location = new System.Drawing.Point( 142, 24 );
+            this.toolStrip2.Location = new System.Drawing.Point( 140, 24 );
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size( 337, 25 );
             this.toolStrip2.TabIndex = 2;
@@ -933,9 +953,9 @@ namespace music_tagger
             this.toolStripSplitButton3,
             this.toolStripSplitButton4,
             this.toolStripButton15} );
-            this.toolStrip3.Location = new System.Drawing.Point( 480, 24 );
+            this.toolStrip3.Location = new System.Drawing.Point( 3, 49 );
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size( 505, 25 );
+            this.toolStrip3.Size = new System.Drawing.Size( 474, 25 );
             this.toolStrip3.TabIndex = 3;
             // 
             // toolStripButton1
@@ -1141,26 +1161,6 @@ namespace music_tagger
             this.toolStripButton15.Name = "toolStripButton15";
             this.toolStripButton15.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton15.Text = "toolStripButton15";
-            // 
-            // tsVersionShown
-            // 
-            this.tsVersionShown.BorderSides = ( (System.Windows.Forms.ToolStripStatusLabelBorderSides)( ( ( ( System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top )
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right )
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom ) ) );
-            this.tsVersionShown.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.tsVersionShown.Name = "tsVersionShown";
-            this.tsVersionShown.Size = new System.Drawing.Size( 87, 17 );
-            this.tsVersionShown.Text = "tsVersionShown";
-            // 
-            // tsScanSubs
-            // 
-            this.tsScanSubs.BorderSides = ( (System.Windows.Forms.ToolStripStatusLabelBorderSides)( ( ( ( System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top )
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right )
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom ) ) );
-            this.tsScanSubs.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.tsScanSubs.Name = "tsScanSubs";
-            this.tsScanSubs.Size = new System.Drawing.Size( 66, 17 );
-            this.tsScanSubs.Text = "tsScanSubs";
             // 
             // MainFrm
             // 

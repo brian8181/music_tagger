@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace music_tagger
 {
-    class TagListViewItem : ListViewItem
+    public class TagListViewItem : ListViewItem
     {
         private FileInfo fi = null;
         private TagLib.File tag_file = null;

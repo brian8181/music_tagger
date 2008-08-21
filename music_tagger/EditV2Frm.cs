@@ -148,7 +148,7 @@ namespace music_tagger
         /// 
         /// </summary>
         /// <param name="item"></param>
-        private void EditItem( TagListViewItem item )
+        protected override void EditItem( TagListViewItem item )
         {
             item.BackColor = Color.Yellow;
             if( !String.IsNullOrEmpty(  main.cmbArtist.Text ) )

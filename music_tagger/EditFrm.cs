@@ -34,6 +34,14 @@ namespace music_tagger
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        protected virtual void EditItem( TagListViewItem item )
+        {
+        }
+
+        /// <summary>
         /// intialize listview  
         /// </summary>
         /// <param name="lv"></param>

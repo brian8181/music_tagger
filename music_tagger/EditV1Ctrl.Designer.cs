@@ -71,7 +71,7 @@ namespace music_tagger
             this.expando1} );
             this.taskPane1.Location = new System.Drawing.Point( 1, 2 );
             this.taskPane1.Name = "taskPane1";
-            this.taskPane1.Size = new System.Drawing.Size( 210, 238 );
+            this.taskPane1.Size = new System.Drawing.Size( 210, 203 );
             this.taskPane1.TabIndex = 39;
             this.taskPane1.Text = "taskPane1";
             // 
@@ -505,17 +505,10 @@ namespace music_tagger
         private XPExplorerBar.TaskItem taskSwapArtist_Title;
         private XPExplorerBar.TaskItem taskSwapArtist_Album;
         private XPExplorerBar.TaskItem taskSwapTitle_Album;
-        private System.Windows.Forms.ComboBox cmbGenre;
-        private System.Windows.Forms.ComboBox cmbArtist;
-        private System.Windows.Forms.TextBox txtComment;
-        private System.Windows.Forms.TextBox txtTrack;
-        private System.Windows.Forms.TextBox txtYear;
-        private System.Windows.Forms.TextBox txtAlbum;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -528,5 +521,12 @@ namespace music_tagger
         public System.Windows.Forms.CheckBox ckArtist;
         public System.Windows.Forms.Label lblFileTag;
         public System.Windows.Forms.Label lblFile;
+        public System.Windows.Forms.ComboBox cmbGenre;
+        public System.Windows.Forms.ComboBox cmbArtist;
+        public System.Windows.Forms.TextBox txtComment;
+        public System.Windows.Forms.TextBox txtTrack;
+        public System.Windows.Forms.TextBox txtYear;
+        public System.Windows.Forms.TextBox txtAlbum;
+        public System.Windows.Forms.TextBox txtTitle;
     }
 }

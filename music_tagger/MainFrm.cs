@@ -20,6 +20,7 @@ namespace music_tagger
         public MainFrm()
         {
             InitializeComponent();
+            //tree.ImageList.TransparentColor = Color.FromArgb( 192, 192, 192 );
             tree.Configure();
             type = Properties.Settings.Default.view_ver1 ? TagLib.TagTypes.Id3v1 : TagLib.TagTypes.Id3v2;
             //BKP todo clean this shit up!! 
