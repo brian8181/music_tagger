@@ -108,6 +108,7 @@ namespace music_tagger
         {
             this.lv = lv;
             this.type = type;
+            StartPosition = FormStartPosition.CenterParent;
         }
         ///// <summary>
         ///// 

@@ -18,7 +18,7 @@ namespace music_tagger
             {
                 if(c == Column.File)
                     continue;
-                columnList.Items.Add( c, true );
+                colList.Items.Add( c, true );
             }
             ckRestoreFolder.Checked = Properties.Settings.Default.restore_dir;
         }
@@ -42,7 +42,7 @@ namespace music_tagger
 
         private void Apply()
         {
-            foreach(Column c in columnList.Items)
+            foreach(Column c in colList.Items)
             {
 
             }
@@ -50,29 +50,29 @@ namespace music_tagger
 
         private void btnColUp_Click( object sender, EventArgs e )
         {
-            int idx = columnList.SelectedIndex;
+            int idx = colList.SelectedIndex;
             if(idx > 0)
             {
-                bool check = columnList.CheckedItems.Contains( columnList.SelectedItem );
-                Column c = (Column)columnList.SelectedItem;
-                columnList.Items.RemoveAt( idx );
-                columnList.Items.Insert( --idx, c );
-                columnList.SetItemChecked( idx, check );
-                columnList.SelectedIndex = idx;
+                bool check = colList.CheckedItems.Contains( colList.SelectedItem );
+                Column c = (Column)colList.SelectedItem;
+                colList.Items.RemoveAt( idx );
+                colList.Items.Insert( --idx, c );
+                colList.SetItemChecked( idx, check );
+                colList.SelectedIndex = idx;
             }
         }
 
         private void btnColDown_Click( object sender, EventArgs e )
         {
-            int idx = columnList.SelectedIndex;
-            if(idx >= 0 && idx < columnList.Items.Count-1)
+            int idx = colList.SelectedIndex;
+            if(idx >= 0 && idx < colList.Items.Count-1)
             {
-                bool check = columnList.CheckedItems.Contains( columnList.SelectedItem );
-                Column c = (Column)columnList.SelectedItem;
-                columnList.Items.RemoveAt( idx );
-                columnList.Items.Insert( ++idx, c );
-                columnList.SetItemChecked( idx, check );
-                columnList.SelectedIndex = idx;
+                bool check = colList.CheckedItems.Contains( colList.SelectedItem );
+                Column c = (Column)colList.SelectedItem;
+                colList.Items.RemoveAt( idx );
+                colList.Items.Insert( ++idx, c );
+                colList.SetItemChecked( idx, check );
+                colList.SelectedIndex = idx;
             }
         }
     }

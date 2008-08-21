@@ -16,6 +16,8 @@ namespace music_tagger
     {
         private ListView lv = null;
         private int idx = -1;
+        private TagLib.Id3v1.Tag id3v1 = null;
+        public string[] artist = null;
 
         /// <summary>
         /// 
@@ -24,7 +26,6 @@ namespace music_tagger
         {
             InitializeComponent();
         }
-
         /// <summary>
         /// intialize listview  
         /// </summary>
@@ -48,7 +49,7 @@ namespace music_tagger
             lblFile.Text = fi.FullName;
 
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );
-            TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+            id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
             Fill( id3v1 );
         }
         /// <summary>
@@ -59,11 +60,7 @@ namespace music_tagger
         {
             if(id3v1 != null)
             {
-                if(id3v1.Performers.Length > 0)
-                {
-                    cmbArtist.Items.AddRange( id3v1.Performers );
-                    cmbArtist.SelectedIndex = 0;
-                }
+                txtArtist.Text = id3v1.FirstPerformer;
                 txtAlbum.Text = id3v1.Album;
                 txtTitle.Text = id3v1.Title;
                 txtYear.Text = id3v1.Year.ToString();
@@ -108,8 +105,8 @@ namespace music_tagger
         private void taskSwapArtist_Title_Click( object sender, EventArgs e )
         {
             string org_title = txtTitle.Text;
-            txtTitle.Text = cmbArtist.Text;
-            cmbArtist.Text = org_title;
+            txtTitle.Text = txtArtist.Text;
+            txtArtist.Text = org_title;
         }
         /// <summary>
         /// swap artist & album
@@ -119,8 +116,8 @@ namespace music_tagger
         private void taskSwapArtist_Album_Click( object sender, EventArgs e )
         {
             string org_album = txtAlbum.Text;
-            txtAlbum.Text = cmbArtist.Text;
-            cmbArtist.Text = org_album;
+            txtAlbum.Text = txtArtist.Text;
+            txtArtist.Text = org_album;
         }
         /// <summary>
         ///  swap title & album
@@ -133,12 +130,7 @@ namespace music_tagger
             txtAlbum.Text = txtTitle.Text;
             txtTitle.Text = org_album;
         }
-
-        private void cmbArtist_SelectedIndexChanged( object sender, EventArgs e )
-        {
-            ckAlbum.Checked = true;
-        }
-
+               
         private void txtTitle_TextChanged( object sender, EventArgs e )
         {
             ckArtist.Checked = true;
@@ -168,6 +160,20 @@ namespace music_tagger
         {
             ckComment.Checked = true;
         }
-      
+
+        private void txtArtist_TextChanged( object sender, EventArgs e )
+        {
+            ckAlbum.Checked = true;
+        }
+
+        private void txtArtist_DoubleClick( object sender, EventArgs e )
+        {
+            EditListFrm dlg = new EditListFrm(this.id3v1.Performers);
+            dlg.ShowDialog(this);
+            artist = dlg.Strs;
+            this.txtArtist.ReadOnly = true;
+            if( artist != null && artist.Length > 0)
+                this.txtArtist.Text = artist[0];
+        }
     }
 }

@@ -47,7 +47,7 @@ namespace music_tagger
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.columnList = new System.Windows.Forms.CheckedListBox();
+            this.colList = new System.Windows.Forms.CheckedListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -274,7 +274,7 @@ namespace music_tagger
             this.tabPage2.Controls.Add( this.label11 );
             this.tabPage2.Controls.Add( this.btnColDown );
             this.tabPage2.Controls.Add( this.btnColUp );
-            this.tabPage2.Controls.Add( this.columnList );
+            this.tabPage2.Controls.Add( this.colList );
             this.tabPage2.Location = new System.Drawing.Point( 4, 22 );
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding( 3 );
@@ -283,14 +283,14 @@ namespace music_tagger
             this.tabPage2.Text = "Columns";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // columnList
+            // cmb
             // 
-            this.columnList.FormattingEnabled = true;
-            this.columnList.Location = new System.Drawing.Point( 8, 6 );
-            this.columnList.Name = "columnList";
-            this.columnList.ScrollAlwaysVisible = true;
-            this.columnList.Size = new System.Drawing.Size( 221, 319 );
-            this.columnList.TabIndex = 2;
+            this.colList.FormattingEnabled = true;
+            this.colList.Location = new System.Drawing.Point( 8, 6 );
+            this.colList.Name = "cmb";
+            this.colList.ScrollAlwaysVisible = true;
+            this.colList.Size = new System.Drawing.Size( 221, 319 );
+            this.colList.TabIndex = 2;
             // 
             // tabPage3
             // 
@@ -505,7 +505,7 @@ namespace music_tagger
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.CheckedListBox columnList;
+        private System.Windows.Forms.CheckedListBox colList;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;

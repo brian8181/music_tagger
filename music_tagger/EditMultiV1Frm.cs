@@ -9,6 +9,7 @@ using System.IO;
 
 namespace music_tagger
 {
+    //BKP combine this class with class EditV1Frm?
     public partial class EditMultiV1Frm : music_tagger.EditV1Frm
     {
         /// <summary>
@@ -18,7 +19,6 @@ namespace music_tagger
         {
             InitializeComponent();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -43,40 +43,33 @@ namespace music_tagger
             this.editCtrl.ckYear.Checked = false;
             Coalesce();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public override void Initialize()
         {
         }
-
-        public void Coalesce()
+        /// <summary>
+        /// 
+        /// </summary>
+        public override void Coalesce()
         {
             //TODO 
-
             FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );
             TagLib.Tag last_tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-
             foreach(ListViewItem item in lv.SelectedItems)
             {
                 fi = (FileInfo)item.Tag;
                 tag_file = TagLib.File.Create( fi.FullName );
                 TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-
                 last_tag.Album = last_tag.Album != "" && tag.Album == last_tag.Album ? tag.Album : "";
                 //last_tag.Artists = last_tag.Artists != "" && tag.Artists == last_tag.Artists ? tag.Artists : "";
                 last_tag.Title = last_tag.Title != "" && tag.Title == last_tag.Title ? tag.Title : "";
                 last_tag.Track = last_tag.Track != 0 && tag.Track == last_tag.Track ? tag.Track : 0;
                 last_tag.Year = last_tag.Year != 0 && tag.Year == last_tag.Year ? tag.Year : 0;
             }
-
             this.editCtrl.Fill( last_tag );
         }
-
-        private void editCtrl_Load( object sender, EventArgs e )
-        {
-
-        }
-
     }
 }
-

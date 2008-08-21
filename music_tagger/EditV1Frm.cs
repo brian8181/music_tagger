@@ -22,19 +22,49 @@ namespace music_tagger
         /// contructor 
         /// </summary>
         /// <param name="lv"></param>
-        public EditV1Frm(ListView lv) : base(lv) 
+        public EditV1Frm( ListView lv )
+            : this( lv, false )
+        {
+        }
+        /// <summary>
+        /// contructor 
+        /// </summary>
+        /// <param name="lv"></param>
+        public EditV1Frm( ListView lv, bool multi_edit )
+            : base( lv, multi_edit )
         {
             InitializeComponent();
             editCtrl.Initialize( lv );
-            Initialize();                                                               
+            Initialize();
         }
         /// <summary>
         /// intialize
         /// </summary>
         public override void Initialize()
         {
-            this.editCtrl.lblFile.Visible = true;
-            this.editCtrl.lblFileTag.Visible = true;
+            if(multi_edit)
+            {
+                this.editCtrl.ckAlbum.Visible = true;
+                this.editCtrl.ckAlbum.Checked = false;
+                this.editCtrl.ckArtist.Visible = true;
+                this.editCtrl.ckArtist.Checked = false;
+                this.editCtrl.ckComment.Visible = true;
+                this.editCtrl.ckComment.Checked = false;
+                this.editCtrl.ckGenre.Visible = true;
+                this.editCtrl.ckGenre.Checked = false;
+                this.editCtrl.ckTitle.Visible = true;
+                this.editCtrl.ckTitle.Checked = false;
+                this.editCtrl.ckTrack.Visible = true;
+                this.editCtrl.ckTrack.Checked = false;
+                this.editCtrl.ckYear.Visible = true;
+                this.editCtrl.ckYear.Checked = false;
+                Coalesce();
+            }
+            else
+            {
+                this.editCtrl.lblFile.Visible = true;
+                this.editCtrl.lblFileTag.Visible = true;
+            }
         }
         /// <summary>
         /// button click handler
@@ -64,9 +94,16 @@ namespace music_tagger
         {
             item.BackColor = Color.Yellow;
             // Performers
-            if(!String.IsNullOrEmpty( editCtrl.cmbArtist.Text ))
+            if(!String.IsNullOrEmpty( editCtrl.txtArtist.Text ))
             {
-                item.Id3v2.Performers = new string[1] { editCtrl.cmbArtist.Text };
+                if(editCtrl.txtArtist.ReadOnly)
+                {
+                    item.Id3v2.Performers = editCtrl.artist;
+                }
+                else
+                {
+                    item.Id3v1.Performers[0] = editCtrl.txtArtist.Text;
+                }
             }
             item.Id3v1.Album = this.editCtrl.txtAlbum.Text;
             item.Id3v1.Title = this.editCtrl.txtTitle.Text;
@@ -76,7 +113,7 @@ namespace music_tagger
             // Genres
             if(!String.IsNullOrEmpty( editCtrl.cmbGenre.Text ))
             {
-                item.Id3v1.Performers = new string[1] { editCtrl.cmbGenre.Text };
+                item.Id3v1.Genres = new string[1] { editCtrl.cmbGenre.Text };
             }
             item.Id3v1.Comment = this.editCtrl.txtComment.Text;
             item.RefreshItem();
@@ -89,5 +126,28 @@ namespace music_tagger
         private void btnCancel_Click( object sender, EventArgs e )
         {
         }
-   }
+        /// <summary>
+        /// merge like values, hide unlike values
+        /// </summary>
+        public override void Coalesce()
+        {
+            FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
+            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+            TagLib.Tag last_tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+
+            foreach(ListViewItem item in lv.SelectedItems)
+            {
+                fi = (FileInfo)item.Tag;
+                tag_file = TagLib.File.Create( fi.FullName );
+                TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+
+                last_tag.Album = last_tag.Album != "" && tag.Album == last_tag.Album ? tag.Album : "";
+                //last_tag.Artists = last_tag.Artists != "" && tag.Artists == last_tag.Artists ? tag.Artists : "";
+                last_tag.Title = last_tag.Title != "" && tag.Title == last_tag.Title ? tag.Title : "";
+                last_tag.Track = last_tag.Track != 0 && tag.Track == last_tag.Track ? tag.Track : 0;
+                last_tag.Year = last_tag.Year != 0 && tag.Year == last_tag.Year ? tag.Year : 0;
+            }
+            this.editCtrl.Fill( last_tag );
+        }
+    }
 }

@@ -77,7 +77,8 @@ namespace music_tagger
         {
             if(this.view.ListView.SelectedItems.Count > 0)
             {
-                EditMultiV1Frm dlg = new EditMultiV1Frm( view.ListView );
+                //EditMultiV1Frm dlg = new EditMultiV1Frm( view.ListView );
+                EditV1Frm dlg = new EditV1Frm( view.ListView, true );
                 if(dlg.ShowDialog() == DialogResult.OK)
                 {
                     // todo
@@ -141,19 +142,6 @@ namespace music_tagger
         /// <param name="e"></param>
         private void OnToggleVer( object sender, EventArgs e )
         {
-            if(view.IsDirty)
-            {
-                DialogResult dr = MessageBox.Show(
-                       "This cause you to lose all pending changes. Do you with to save first?",
-                       "Save Pending Changes",
-                       MessageBoxButtons.YesNo,
-                       MessageBoxIcon.Asterisk );
-
-                if(dr == DialogResult.Yes)
-                {
-                    view.Commit();
-                }
-            }
             ToggleVer();
         }
         /// <summary>
@@ -282,20 +270,8 @@ namespace music_tagger
 
             Properties.Settings.Default.last_dir = drive + path;
             Properties.Settings.Default.Save();
-            
-            if(view.IsDirty)
-            {
-                DialogResult dr = MessageBox.Show(
-                       "Do you with to save pending changes before closing?",
-                       "Save Pending Changes",
-                       MessageBoxButtons.YesNo,
-                       MessageBoxIcon.Asterisk );
 
-                if(dr == DialogResult.Yes)
-                {
-                    view.Commit();
-                }
-            }
+            view.AskToCommit();
         }
         /// <summary>
         /// 
@@ -413,16 +389,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void On_Save( object sender, EventArgs e )
         {
-            DialogResult dr = MessageBox.Show(
-                    "Are you sure you wish to commit all changes?",
-                    "Commit",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Asterisk );
-
-            if(dr == DialogResult.OK)
-            {
-                view.Commit();
-            }
+            view.AskToCommit();
         }
         /// <summary>
         /// 

@@ -62,6 +62,18 @@
     <Compile Include="EditFrm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditListCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditListCtrl.Designer.cs">
+      <DependentUpon>EditListCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditListFrm.Designer.cs">
+      <DependentUpon>EditListFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditMultiV1Frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +220,14 @@
     <EmbeddedResource Include="EditFrm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditListCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditListCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditListFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditListFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditMultiV1Frm.resx">
       <SubType>Designer</SubType>

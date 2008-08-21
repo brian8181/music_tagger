@@ -36,7 +36,6 @@ namespace music_tagger
             this.taskSwapArtist_Album = new XPExplorerBar.TaskItem();
             this.taskSwapTitle_Album = new XPExplorerBar.TaskItem();
             this.cmbGenre = new System.Windows.Forms.ComboBox();
-            this.cmbArtist = new System.Windows.Forms.ComboBox();
             this.txtComment = new System.Windows.Forms.TextBox();
             this.txtTrack = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
@@ -58,6 +57,7 @@ namespace music_tagger
             this.ckAlbum = new System.Windows.Forms.CheckBox();
             this.ckTitle = new System.Windows.Forms.CheckBox();
             this.ckArtist = new System.Windows.Forms.CheckBox();
+            this.txtArtist = new System.Windows.Forms.TextBox();
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).BeginInit();
             this.taskPane1.SuspendLayout();
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).BeginInit();
@@ -255,15 +255,6 @@ namespace music_tagger
             this.cmbGenre.TabIndex = 5;
             this.cmbGenre.SelectedIndexChanged += new System.EventHandler( this.cmbGenre_SelectedIndexChanged );
             // 
-            // cmbArtist
-            // 
-            this.cmbArtist.FormattingEnabled = true;
-            this.cmbArtist.Location = new System.Drawing.Point( 308, 39 );
-            this.cmbArtist.Name = "cmbArtist";
-            this.cmbArtist.Size = new System.Drawing.Size( 317, 21 );
-            this.cmbArtist.TabIndex = 0;
-            this.cmbArtist.SelectedIndexChanged += new System.EventHandler( this.cmbArtist_SelectedIndexChanged );
-            // 
             // txtComment
             // 
             this.txtComment.Location = new System.Drawing.Point( 308, 179 );
@@ -317,7 +308,7 @@ namespace music_tagger
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point( 225, 66 );
+            this.label2.Location = new System.Drawing.Point( 225, 67 );
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size( 30, 13 );
             this.label2.TabIndex = 24;
@@ -326,7 +317,7 @@ namespace music_tagger
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point( 225, 42 );
+            this.label1.Location = new System.Drawing.Point( 226, 42 );
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size( 33, 13 );
             this.label1.TabIndex = 23;
@@ -458,10 +449,21 @@ namespace music_tagger
             this.ckArtist.UseVisualStyleBackColor = true;
             this.ckArtist.Visible = false;
             // 
+            // txtArtist
+            // 
+            this.txtArtist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtArtist.Location = new System.Drawing.Point( 308, 39 );
+            this.txtArtist.Name = "txtArtist";
+            this.txtArtist.Size = new System.Drawing.Size( 317, 20 );
+            this.txtArtist.TabIndex = 49;
+            this.txtArtist.DoubleClick += new System.EventHandler( this.txtArtist_DoubleClick );
+            this.txtArtist.TextChanged += new System.EventHandler( this.txtArtist_TextChanged );
+            // 
             // EditV1Ctrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add( this.txtArtist );
             this.Controls.Add( this.ckComment );
             this.Controls.Add( this.ckGenre );
             this.Controls.Add( this.ckTrack );
@@ -473,7 +475,6 @@ namespace music_tagger
             this.Controls.Add( this.lblFileTag );
             this.Controls.Add( this.taskPane1 );
             this.Controls.Add( this.cmbGenre );
-            this.Controls.Add( this.cmbArtist );
             this.Controls.Add( this.txtComment );
             this.Controls.Add( this.txtTrack );
             this.Controls.Add( this.txtYear );
@@ -522,11 +523,11 @@ namespace music_tagger
         public System.Windows.Forms.Label lblFileTag;
         public System.Windows.Forms.Label lblFile;
         public System.Windows.Forms.ComboBox cmbGenre;
-        public System.Windows.Forms.ComboBox cmbArtist;
         public System.Windows.Forms.TextBox txtComment;
         public System.Windows.Forms.TextBox txtTrack;
         public System.Windows.Forms.TextBox txtYear;
         public System.Windows.Forms.TextBox txtAlbum;
         public System.Windows.Forms.TextBox txtTitle;
+        public System.Windows.Forms.TextBox txtArtist;
     }
 }

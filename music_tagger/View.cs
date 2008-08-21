@@ -166,8 +166,10 @@ namespace music_tagger
         /// refresh view base on directory
         /// </summary>
         /// <param name="di"></param>
-        public void RefreshView( DirectoryInfo di )
+        private void RefreshView( DirectoryInfo di )
         {
+            AskToCommit();
+
             this.di = di;
             FileInfo[] files = null;
             try
@@ -185,7 +187,7 @@ namespace music_tagger
         ///  refresh view based on files
         /// </summary>
         /// <param name="files"></param>
-        public void RefreshView( FileInfo[] files )
+        private void RefreshView( FileInfo[] files )
         {
             ListView.BeginUpdate();
             ListView.Items.Clear();
@@ -321,17 +323,22 @@ namespace music_tagger
         /// <returns></returns>
         private ColumnHeader[] CreateColumns()
         {
-            int len = Properties.Settings.Default.columns.Count;
-            ColumnHeader[] cols = new ColumnHeader[len];
+            int len = Properties.Settings.Default.cols.Count;
+            List<ColumnHeader> cols = new List<ColumnHeader>();
             for(int idx = 0; idx < len; ++idx)
             {
-                cols[idx] = new ColumnHeader();
-                string[] split = Properties.Settings.Default.columns[idx].Split( ',' );
-                cols[idx].Name = split[0];
-                cols[idx].Text = split[0];
-                cols[idx].DisplayIndex = int.Parse( split[1] );
+                ColumnHeader header = new ColumnHeader();
+                string[] split = Properties.Settings.Default.cols[idx].Split( ',' );
+                header.Name = split[0];
+                header.Text = split[0];
+                bool show = ( split[1] != "0" ) ? true : false;
+                if(show)
+                {
+                    cols.Add( header );
+                }
+                //cols[idx].DisplayIndex = int.Parse( split[1] );
             }
-            return cols;
+            return cols.ToArray();
         }
         /// <summary>
         /// 
@@ -368,6 +375,22 @@ namespace music_tagger
             for(int i = 0; i < len; ++i)
             {
                 listView.Columns[i].AutoResize( style );
+            }
+        }
+        public void AskToCommit()
+        {
+            if(IsDirty)
+            {
+                DialogResult dr = MessageBox.Show(
+                       "This cause you to lose all pending changes. Do you with to save first?",
+                       "Save Pending Changes",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Asterisk );
+
+                if(dr == DialogResult.Yes)
+                {
+                    Commit();
+                }
             }
         }
         #endregion

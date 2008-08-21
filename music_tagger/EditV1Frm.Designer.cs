@@ -35,7 +35,7 @@ namespace music_tagger
             // 
             // editCtrl
             // 
-            this.editCtrl.Location = new System.Drawing.Point( -5, -1 );
+            this.editCtrl.Location = new System.Drawing.Point( -3, 2 );
             this.editCtrl.Name = "editCtrl";
             this.editCtrl.Size = new System.Drawing.Size( 649, 248 );
             this.editCtrl.TabIndex = 0;
@@ -67,7 +67,7 @@ namespace music_tagger
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size( 650, 248 );
+            this.ClientSize = new System.Drawing.Size( 658, 248 );
             this.Controls.Add( this.btnCancel );
             this.Controls.Add( this.btnOK );
             this.Controls.Add( this.editCtrl );
