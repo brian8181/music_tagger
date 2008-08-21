@@ -48,6 +48,7 @@ namespace music_tagger
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler( this.btnOK_Click );
             // 
             // btnCancel
             // 
@@ -58,6 +59,7 @@ namespace music_tagger
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler( this.btnCancel_Click );
             // 
             // EditV1Frm
             // 

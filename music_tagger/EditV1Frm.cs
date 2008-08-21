@@ -36,5 +36,15 @@ namespace music_tagger
             this.editCtrl.lblFile.Visible = true;
             this.editCtrl.lblFileTag.Visible = true;
         }
+
+        private void btnOK_Click( object sender, EventArgs e )
+        {
+            Close();
+        }
+
+        private void btnCancel_Click( object sender, EventArgs e )
+        {
+
+        }
    }
 }
