@@ -151,7 +151,6 @@ namespace music_tagger
             }
             ToggleVer();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -278,6 +277,20 @@ namespace music_tagger
 
             Properties.Settings.Default.last_dir = drive + path;
             Properties.Settings.Default.Save();
+            
+            if(view.IsDirty)
+            {
+                DialogResult dr = MessageBox.Show(
+                       "Do you with to save pending changes before closing?",
+                       "Save Pending Changes",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Asterisk );
+
+                if(dr == DialogResult.Yes)
+                {
+                    view.Commit();
+                }
+            }
         }
         /// <summary>
         /// 

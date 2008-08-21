@@ -29,6 +29,8 @@ namespace music_tagger
         private void InitializeComponent()
         {
             this.editCtrl = new music_tagger.EditV1Ctrl();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // editCtrl
@@ -38,11 +40,34 @@ namespace music_tagger
             this.editCtrl.Size = new System.Drawing.Size( 649, 248 );
             this.editCtrl.TabIndex = 0;
             // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point( 462, 213 );
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size( 75, 23 );
+            this.btnOK.TabIndex = 1;
+            this.btnOK.Text = "&OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point( 543, 213 );
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size( 75, 23 );
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
             // EditV1Frm
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size( 650, 248 );
+            this.Controls.Add( this.btnCancel );
+            this.Controls.Add( this.btnOK );
             this.Controls.Add( this.editCtrl );
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "EditV1Frm";
@@ -54,6 +79,8 @@ namespace music_tagger
         #endregion
 
         public EditV1Ctrl editCtrl;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCancel;
 
 
 
