@@ -30,18 +30,28 @@ namespace music_tagger
             editCtrl.Initialize( lv );
             Initialize();                                                               
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public virtual void Initialize()
         {
             this.editCtrl.lblFile.Visible = true;
             this.editCtrl.lblFileTag.Visible = true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOK_Click( object sender, EventArgs e )
         {
             Close();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click( object sender, EventArgs e )
         {
 

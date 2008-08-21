@@ -73,11 +73,12 @@ namespace music_tagger
             this.btnTopComment = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.cmbGenre = new System.Windows.Forms.ComboBox();
+            this.genreList = new System.Windows.Forms.ListBox();
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -474,6 +475,7 @@ namespace music_tagger
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add( this.genreList );
             this.groupBox3.Controls.Add( this.btnTopGenre );
             this.groupBox3.Controls.Add( this.label6 );
             this.groupBox3.Controls.Add( this.btnAddGenre );
@@ -512,6 +514,93 @@ namespace music_tagger
             this.groupBox3.TabIndex = 65;
             this.groupBox3.TabStop = false;
             // 
+            // cmbGenre
+            // 
+            this.cmbGenre.FormattingEnabled = true;
+            this.cmbGenre.Items.AddRange( new object[] {
+            "Blues ",
+            "Classic Rock",
+            "Country",
+            "Dance",
+            "Disco",
+            "Grunge",
+            "Hip-Hop",
+            "Jazz",
+            "Metal",
+            "New Age",
+            "Oldies",
+            "Other",
+            "Pop",
+            "R&B",
+            "Rap",
+            "Reggae",
+            "Rock",
+            "Techno",
+            "Industrial",
+            "Alternative",
+            "Ska",
+            "Pranks",
+            "Soundtrack",
+            "Euro-Techno",
+            "Ambient",
+            "Trip-Hop",
+            "Vocal",
+            "Jazz+Funk",
+            "Fusion",
+            "Trance",
+            "Classical",
+            "Instrumental",
+            "Acid",
+            "House",
+            "Game",
+            "Sound Clip",
+            "Gospel",
+            "Noise",
+            "AlternRock",
+            "Bass",
+            "Soul",
+            "Punk",
+            "Space",
+            "Meditative",
+            "Instrumental Pop",
+            "Instrumental Rock",
+            "Ethnic",
+            "Gothic",
+            "Darkwave",
+            "Techno-Industrial",
+            "Electronic",
+            "Pop-Folk",
+            "Eurodance",
+            "Dream",
+            "Southern Rock",
+            "Comedy",
+            "Cult",
+            "Gangsta",
+            "Top 40",
+            "Christian Rap",
+            "Pop/Funk",
+            "Jungle",
+            "Native American",
+            "Cabaret",
+            "New Wave",
+            "Psychadelic",
+            "Rave",
+            "Showtunes",
+            "Trailer",
+            "Lo-Fi",
+            "Tribal",
+            "Acid Punk",
+            "Acid Jazz",
+            "Polka",
+            "Retro",
+            "Musical",
+            "Rock & Roll",
+            "Hard Rock"} );
+            this.cmbGenre.Location = new System.Drawing.Point( 120, 153 );
+            this.cmbGenre.Name = "cmbGenre";
+            this.cmbGenre.Size = new System.Drawing.Size( 344, 21 );
+            this.cmbGenre.TabIndex = 65;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point( 397, 14 );
@@ -548,14 +637,13 @@ namespace music_tagger
             this.button4.Text = "<- Ver 1";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // cmbGenre
+            // genreList
             // 
-            this.cmbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cmbGenre.FormattingEnabled = true;
-            this.cmbGenre.Location = new System.Drawing.Point( 120, 153 );
-            this.cmbGenre.Name = "cmbGenre";
-            this.cmbGenre.Size = new System.Drawing.Size( 344, 85 );
-            this.cmbGenre.TabIndex = 65;
+            this.genreList.FormattingEnabled = true;
+            this.genreList.Location = new System.Drawing.Point( 121, 180 );
+            this.genreList.Name = "genreList";
+            this.genreList.Size = new System.Drawing.Size( 343, 56 );
+            this.genreList.TabIndex = 73;
             // 
             // EditV2_MainCtrl
             // 
@@ -629,5 +717,6 @@ namespace music_tagger
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox cmbGenre;
+        private System.Windows.Forms.ListBox genreList;
     }
 }

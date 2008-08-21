@@ -39,17 +39,10 @@ namespace music_tagger
         /// <param name="lv"></param>
         public virtual void Initialize()
         {
-            //if(lv.SelectedItems.Count > 0)
-            //{
-            //    idx = 0;
-            //}
-
-            //string[] fmts = new string[Properties.Settings.Default.org_formats.Count];
-            //Properties.Settings.Default.org_formats.CopyTo( fmts, 0 );
-            //cmbFormat.Items.AddRange( fmts );
-            //cmbFormat.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public virtual void Coalesce()
         {
         }
@@ -62,7 +55,5 @@ namespace music_tagger
         Button btnRemove = new Button();
         Button btnOK = new Button();
         Button btnCancel = new Button();
-
-
-    }
+     }
 }

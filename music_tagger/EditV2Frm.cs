@@ -170,9 +170,7 @@ namespace music_tagger
             item.Id3v2.BeatsPerMinute = uint.TryParse( main.txtBPM.Text, out num ) ? num : 0;
             //item.Id3v2.Genres = new string[main.cm.Items.Count];
             //main.cmbArtist.Items.CopyTo(item.Id3v2.Performers, 0);
-
             
-
             item.Id3v2.Comment = main.txtComment.Text;
             item.RefreshItem();
         }

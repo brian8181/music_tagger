@@ -37,11 +37,41 @@ namespace music_tagger
                 return String.Compare( ( (ListViewItem)x ).SubItems[col].Text, ( (ListViewItem)y ).SubItems[col].Text );
             }
         }
+
+        /// <summary>
+        /// Status Args
+        /// </summary>
+        public class RefreshArgs : EventArgs
+        {
+            private string path = string.Empty;
+
+            public string Path
+            {
+                get { return path; }
+                set { path = value; }
+            }
+            private int file_count = 0;
+
+            public int FileCount
+            {
+                get { return file_count; }
+                set { file_count = value; }
+            }
+
+            public RefreshArgs( string path, int file_count )
+            {
+                this.path = path;
+                this.file_count = file_count;
+            }
+        }
+
+        public event EventHandler<RefreshArgs> Refreshed;
         private FileTreeView tree = null;
         private ImageList images = new ImageList();
         private TagLib.TagTypes type = TagLib.TagTypes.Id3v1;
         private SearchOption searchOption = SearchOption.TopDirectoryOnly;
-
+        private DirectoryInfo di = null;
+              
         #region Properties
         /// <summary>
         /// 
@@ -138,6 +168,7 @@ namespace music_tagger
         /// <param name="di"></param>
         public void RefreshView( DirectoryInfo di )
         {
+            this.di = di;
             FileInfo[] files = null;
             try
             {
@@ -170,6 +201,7 @@ namespace music_tagger
         void thread_Finished( object sender, EventArgs e )
         {
             ListView.EndUpdate();
+            Refreshed( this, new RefreshArgs(di.FullName, this.listView.Items.Count) );
         }
         /// <summary>
         /// select all 

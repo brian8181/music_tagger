@@ -80,13 +80,13 @@ namespace music_tagger
         private void btnAddGenre_Click( object sender, EventArgs e )
         {
             if( !String.IsNullOrEmpty( cmbGenre.Text ) )
-                cmbGenre.Items.Add( cmbGenre.Text );   
+                genreList.Items.Add( cmbGenre.Text );   
         }
 
         private void btnRemoveGenre_Click( object sender, EventArgs e )
         {
             if(cmbGenre.SelectedItem != null)
-                cmbGenre.Items.Remove( cmbGenre.SelectedItem );       
+                genreList.Items.Remove( cmbGenre.SelectedItem );       
         }
 
         private void btnTopGenre_Click( object sender, EventArgs e )
@@ -94,8 +94,8 @@ namespace music_tagger
             if(cmbGenre.SelectedItem != null)
             {
                 object o = cmbGenre.SelectedItem;
-                cmbGenre.Items.Remove( o );
-                cmbGenre.Items.Add( o );
+                genreList.Items.Remove( o );
+                genreList.Items.Add( o );
             }
         }
 

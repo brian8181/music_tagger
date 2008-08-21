@@ -22,9 +22,13 @@ namespace music_tagger
             InitializeComponent();
             tree.Configure();
             type = Properties.Settings.Default.view_ver1 ? TagLib.TagTypes.Id3v1 : TagLib.TagTypes.Id3v2;
+            //BKP todo clean this shit up!! 
             tsb_ToggleVer.Text = ( type == TagLib.TagTypes.Id3v2 ) ? "Shown Ver. 2" : "Shown Ver. 1";
             view.Configure( tree, type );
+            view.Refreshed += new EventHandler<View.RefreshArgs>( view_Refreshed );
+            SetScanOption();
         }
+               
         /// <summary>
         /// 
         /// </summary>
@@ -426,8 +430,32 @@ namespace music_tagger
         /// <param name="e"></param>
         private void mnOptionsScanSubs_Click( object sender, EventArgs e )
         {
-            view.SearchOption = mnOptionsScanSubs.Checked ?
-                SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+            SetScanOption();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void SetScanOption()
+        {
+            if(mnOptionsScanSubs.Checked)
+            {
+                view.SearchOption = SearchOption.AllDirectories;
+            }
+            else
+            {
+                view.SearchOption = SearchOption.TopDirectoryOnly;
+            }
+            tsScanSubs.Text = "Scan Option:" + view.SearchOption.ToString();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void view_Refreshed( object sender, View.RefreshArgs e )
+        {
+            tsFileCount.Text = "File Count: " + e.FileCount.ToString();
+            tsCurrentPath.Text = e.Path;
         }
     }
 }
