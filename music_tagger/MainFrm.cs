@@ -141,10 +141,10 @@ namespace music_tagger
                 DialogResult dr = MessageBox.Show(
                        "This cause you to lose all pending changes. Do you with to save first?",
                        "Save Pending Changes",
-                       MessageBoxButtons.OK,
+                       MessageBoxButtons.YesNo,
                        MessageBoxIcon.Asterisk );
 
-                if(dr == DialogResult.OK)
+                if(dr == DialogResult.Yes)
                 {
                     view.Commit();
                 }

@@ -28,7 +28,6 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.cmbArtist = new System.Windows.Forms.ComboBox();
             this.txtComment = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
@@ -41,14 +40,12 @@ namespace music_tagger
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnV1Artist = new System.Windows.Forms.Button();
             this.btnV1Title = new System.Windows.Forms.Button();
             this.btnV1Album = new System.Windows.Forms.Button();
             this.btnV1Year = new System.Windows.Forms.Button();
             this.btnV1Track = new System.Windows.Forms.Button();
             this.btnV1Genre = new System.Windows.Forms.Button();
             this.btnV1Comment = new System.Windows.Forms.Button();
-            this.genreList = new System.Windows.Forms.ListBox();
             this.txtBPM = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDisc = new System.Windows.Forms.TextBox();
@@ -75,28 +72,23 @@ namespace music_tagger
             this.btnRemoveComment = new System.Windows.Forms.Button();
             this.btnTopComment = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.cmbGenre = new System.Windows.Forms.ComboBox();
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cmbGenre
-            // 
-            this.cmbGenre.FormattingEnabled = true;
-            this.cmbGenre.Location = new System.Drawing.Point( 120, 13 );
-            this.cmbGenre.Name = "cmbGenre";
-            this.cmbGenre.Size = new System.Drawing.Size( 346, 21 );
-            this.cmbGenre.TabIndex = 33;
             // 
             // cmbArtist
             // 
             this.cmbArtist.FormattingEnabled = true;
             this.cmbArtist.Location = new System.Drawing.Point( 121, 15 );
             this.cmbArtist.Name = "cmbArtist";
-            this.cmbArtist.Size = new System.Drawing.Size( 414, 21 );
+            this.cmbArtist.Size = new System.Drawing.Size( 270, 21 );
             this.cmbArtist.TabIndex = 32;
             // 
             // txtComment
@@ -140,7 +132,7 @@ namespace music_tagger
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point( 7, 19 );
+            this.label6.Location = new System.Drawing.Point( 6, 156 );
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size( 39, 13 );
             this.label6.TabIndex = 25;
@@ -191,16 +183,6 @@ namespace music_tagger
             this.label1.TabIndex = 20;
             this.label1.Text = "Artist:";
             // 
-            // btnV1Artist
-            // 
-            this.btnV1Artist.Location = new System.Drawing.Point( 541, 15 );
-            this.btnV1Artist.Name = "btnV1Artist";
-            this.btnV1Artist.Size = new System.Drawing.Size( 59, 20 );
-            this.btnV1Artist.TabIndex = 34;
-            this.btnV1Artist.Text = "<-- Ver 1";
-            this.btnV1Artist.UseVisualStyleBackColor = true;
-            this.btnV1Artist.Click += new System.EventHandler( this.btnV1Artist_Click );
-            // 
             // btnV1Title
             // 
             this.btnV1Title.Location = new System.Drawing.Point( 541, 40 );
@@ -243,7 +225,7 @@ namespace music_tagger
             // 
             // btnV1Genre
             // 
-            this.btnV1Genre.Location = new System.Drawing.Point( 537, 38 );
+            this.btnV1Genre.Location = new System.Drawing.Point( 541, 153 );
             this.btnV1Genre.Name = "btnV1Genre";
             this.btnV1Genre.Size = new System.Drawing.Size( 59, 20 );
             this.btnV1Genre.TabIndex = 39;
@@ -260,14 +242,6 @@ namespace music_tagger
             this.btnV1Comment.Text = "<-- Ver 1";
             this.btnV1Comment.UseVisualStyleBackColor = true;
             this.btnV1Comment.Click += new System.EventHandler( this.btnV1Comment_Click );
-            // 
-            // genreList
-            // 
-            this.genreList.FormattingEnabled = true;
-            this.genreList.Location = new System.Drawing.Point( 120, 38 );
-            this.genreList.Name = "genreList";
-            this.genreList.Size = new System.Drawing.Size( 171, 56 );
-            this.genreList.TabIndex = 41;
             // 
             // txtBPM
             // 
@@ -421,7 +395,7 @@ namespace music_tagger
             // 
             // btnRemoveGenre
             // 
-            this.btnRemoveGenre.Location = new System.Drawing.Point( 537, 12 );
+            this.btnRemoveGenre.Location = new System.Drawing.Point( 476, 202 );
             this.btnRemoveGenre.Name = "btnRemoveGenre";
             this.btnRemoveGenre.Size = new System.Drawing.Size( 59, 20 );
             this.btnRemoveGenre.TabIndex = 58;
@@ -431,7 +405,7 @@ namespace music_tagger
             // 
             // btnAddGenre
             // 
-            this.btnAddGenre.Location = new System.Drawing.Point( 472, 12 );
+            this.btnAddGenre.Location = new System.Drawing.Point( 475, 150 );
             this.btnAddGenre.Name = "btnAddGenre";
             this.btnAddGenre.Size = new System.Drawing.Size( 59, 20 );
             this.btnAddGenre.TabIndex = 59;
@@ -441,7 +415,7 @@ namespace music_tagger
             // 
             // btnTopGenre
             // 
-            this.btnTopGenre.Location = new System.Drawing.Point( 472, 38 );
+            this.btnTopGenre.Location = new System.Drawing.Point( 476, 176 );
             this.btnTopGenre.Name = "btnTopGenre";
             this.btnTopGenre.Size = new System.Drawing.Size( 59, 20 );
             this.btnTopGenre.TabIndex = 60;
@@ -498,23 +472,18 @@ namespace music_tagger
             this.groupBox1.TabIndex = 64;
             this.groupBox1.TabStop = false;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add( this.genreList );
-            this.groupBox2.Controls.Add( this.btnTopGenre );
-            this.groupBox2.Controls.Add( this.label6 );
-            this.groupBox2.Controls.Add( this.btnAddGenre );
-            this.groupBox2.Controls.Add( this.cmbGenre );
-            this.groupBox2.Controls.Add( this.btnRemoveGenre );
-            this.groupBox2.Controls.Add( this.btnV1Genre );
-            this.groupBox2.Location = new System.Drawing.Point( 3, 150 );
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size( 608, 100 );
-            this.groupBox2.TabIndex = 64;
-            this.groupBox2.TabStop = false;
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add( this.btnTopGenre );
+            this.groupBox3.Controls.Add( this.label6 );
+            this.groupBox3.Controls.Add( this.btnAddGenre );
+            this.groupBox3.Controls.Add( this.cmbGenre );
+            this.groupBox3.Controls.Add( this.btnRemoveGenre );
+            this.groupBox3.Controls.Add( this.button1 );
+            this.groupBox3.Controls.Add( this.button2 );
+            this.groupBox3.Controls.Add( this.btnV1Genre );
+            this.groupBox3.Controls.Add( this.button3 );
+            this.groupBox3.Controls.Add( this.button4 );
             this.groupBox3.Controls.Add( this.label1 );
             this.groupBox3.Controls.Add( this.label2 );
             this.groupBox3.Controls.Add( this.txtTrackCount );
@@ -530,7 +499,6 @@ namespace music_tagger
             this.groupBox3.Controls.Add( this.txtYear );
             this.groupBox3.Controls.Add( this.cmbArtist );
             this.groupBox3.Controls.Add( this.txtDisc );
-            this.groupBox3.Controls.Add( this.btnV1Artist );
             this.groupBox3.Controls.Add( this.lblDics );
             this.groupBox3.Controls.Add( this.btnV1Title );
             this.groupBox3.Controls.Add( this.txtBPM );
@@ -540,16 +508,60 @@ namespace music_tagger
             this.groupBox3.Controls.Add( this.btnV1Track );
             this.groupBox3.Location = new System.Drawing.Point( 4, 0 );
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size( 608, 151 );
+            this.groupBox3.Size = new System.Drawing.Size( 608, 244 );
             this.groupBox3.TabIndex = 65;
             this.groupBox3.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point( 397, 14 );
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size( 35, 23 );
+            this.button1.TabIndex = 72;
+            this.button1.Text = "Top";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point( 438, 14 );
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size( 35, 23 );
+            this.button2.TabIndex = 71;
+            this.button2.Text = "Add";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point( 479, 14 );
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size( 56, 23 );
+            this.button3.TabIndex = 70;
+            this.button3.Text = "Remove";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point( 541, 14 );
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size( 59, 20 );
+            this.button4.TabIndex = 69;
+            this.button4.Text = "<- Ver 1";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // cmbGenre
+            // 
+            this.cmbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cmbGenre.FormattingEnabled = true;
+            this.cmbGenre.Location = new System.Drawing.Point( 120, 153 );
+            this.cmbGenre.Name = "cmbGenre";
+            this.cmbGenre.Size = new System.Drawing.Size( 344, 85 );
+            this.cmbGenre.TabIndex = 65;
             // 
             // EditV2_MainCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add( this.groupBox3 );
-            this.Controls.Add( this.groupBox2 );
             this.Controls.Add( this.groupBox1 );
             this.Controls.Add( this.numericUpDown1 );
             this.Controls.Add( this.label20 );
@@ -558,8 +570,6 @@ namespace music_tagger
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).EndInit();
             this.groupBox1.ResumeLayout( false );
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout( false );
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout( false );
             this.groupBox3.PerformLayout();
             this.ResumeLayout( false );
@@ -576,7 +586,6 @@ namespace music_tagger
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnV1Artist;
         private System.Windows.Forms.Button btnV1Title;
         private System.Windows.Forms.Button btnV1Album;
         private System.Windows.Forms.Button btnV1Year;
@@ -601,13 +610,11 @@ namespace music_tagger
         private System.Windows.Forms.Button btnRemoveComment;
         private System.Windows.Forms.Button btnTopComment;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.ComboBox cmbArtist;
         public System.Windows.Forms.TextBox txtYear;
         public System.Windows.Forms.TextBox txtAlbum;
         public System.Windows.Forms.TextBox txtTitle;
-        public System.Windows.Forms.ListBox genreList;
         public System.Windows.Forms.TextBox txtBPM;
         public System.Windows.Forms.TextBox txtDisc;
         public System.Windows.Forms.TextBox txtDiscCount;
@@ -615,8 +622,12 @@ namespace music_tagger
         public System.Windows.Forms.TextBox txtTrack;
         public System.Windows.Forms.ListView commentList;
         public System.Windows.Forms.TextBox txtComment;
-        public System.Windows.Forms.ComboBox cmbGenre;
         public System.Windows.Forms.ComboBox cmbCommentLang;
         public System.Windows.Forms.ComboBox cmbCommentDesciptor;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox cmbGenre;
     }
 }
