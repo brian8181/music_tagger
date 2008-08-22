@@ -67,7 +67,7 @@ namespace music_tagger
                 txtTitle.Text = id3v1.Title;
                 txtYear.Text = id3v1.Year.ToString();
                 txtTrack.Text = id3v1.Track.ToString();
-                txtGenres.Text = id3v1.JoinedGenres;
+                cmbGenre.Text = id3v1.JoinedGenres;
                 txtComment.Text = id3v1.Comment;
             } 
         }
@@ -179,31 +179,6 @@ namespace music_tagger
             else
             {
                 txtArtists.Text = string.Empty;
-            }
-        }
-        /// <summary>
-        ///  edit genres list
-        /// </summary>
-        /// <param name="sender">the button</param>
-        /// <param name="e">args</param>
-        private void txtGenres_DoubleClick( object sender, EventArgs e )
-        {
-            EditListFrm dlg = new EditListFrm( this.id3v1.Genres );
-            dlg.ShowDialog( this );
-            StringBuilder sb = new StringBuilder();
-            if(dlg.Strs != null)
-            {
-                foreach(string s in dlg.Strs)
-                {
-                    sb.Append( s );
-                    sb.Append( "; " );
-                }
-                sb.Remove( sb.Length - 2, 2 ); // remove comma
-                txtGenres.Text = sb.ToString();
-            }
-            else
-            {
-                txtGenres.Text = string.Empty;
             }
         }
     }

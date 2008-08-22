@@ -11,6 +11,15 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsgBoxCheck", "MsgBoxCheck\MsgBoxCheck.csproj", "{43D66268-9336-4118-A30E-FC43CED0E62D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B8B873B0-1F0E-4DD3-92C2-08E7F277B1C0}"
+	ProjectSection(SolutionItems) = preProject
+		docs\id3v1_genres.txt = docs\id3v1_genres.txt
+		docs\id3v2.3.0.txt = docs\id3v2.3.0.txt
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TextTemplating) = postSolution
 		TextTemplating = 1

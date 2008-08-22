@@ -111,19 +111,7 @@ namespace music_tagger
             uint num = 0;
             item.Id3v1.Year = uint.TryParse( this.editCtrl.txtYear.Text, out num ) ? num : 0;
             item.Id3v1.Track = uint.TryParse( this.editCtrl.txtTrack.Text, out num ) ? num : 0;
-            // Genres
-            if(!String.IsNullOrEmpty( editCtrl.txtGenres.Text ))
-            {
-                string[] splits = editCtrl.txtGenres.Text.Split( ';' );
-                // trim space
-                int len = splits.Length;
-                for(int i = 0; i < len; ++i)
-                {
-                    splits[i] = splits[i].Trim();
-                }
-                // set tag
-                item.Id3v1.Genres = splits;
-            }
+            item.Id3v1.Genres = new string[1] { editCtrl.cmbGenre.Text };
             item.Id3v1.Comment = this.editCtrl.txtComment.Text;
             item.RefreshItem();
         }
