@@ -28,6 +28,7 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.taskPane1 = new XPExplorerBar.TaskPane();
             this.expando1 = new XPExplorerBar.Expando();
             this.taskPrevious = new XPExplorerBar.TaskItem();
@@ -57,7 +58,8 @@ namespace music_tagger
             this.ckTitle = new System.Windows.Forms.CheckBox();
             this.ckArtist = new System.Windows.Forms.CheckBox();
             this.txtArtists = new System.Windows.Forms.TextBox();
-            this.txtGenres = new System.Windows.Forms.TextBox();
+            this.toolTip = new System.Windows.Forms.ToolTip( this.components );
+            this.cmbGenre = new System.Windows.Forms.ComboBox();
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).BeginInit();
             this.taskPane1.SuspendLayout();
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).BeginInit();
@@ -283,12 +285,12 @@ namespace music_tagger
             // lblFile
             // 
             this.lblFile.AutoEllipsis = true;
-            this.lblFile.AutoSize = true;
             this.lblFile.Location = new System.Drawing.Point( 305, 14 );
             this.lblFile.Name = "lblFile";
-            this.lblFile.Size = new System.Drawing.Size( 29, 13 );
+            this.lblFile.Size = new System.Drawing.Size( 341, 13 );
             this.lblFile.TabIndex = 41;
             this.lblFile.Text = "file...";
+            this.toolTip.SetToolTip( this.lblFile, "current path" );
             this.lblFile.Visible = false;
             // 
             // ckComment
@@ -297,7 +299,7 @@ namespace music_tagger
             this.ckComment.Location = new System.Drawing.Point( 631, 182 );
             this.ckComment.Name = "ckComment";
             this.ckComment.Size = new System.Drawing.Size( 15, 14 );
-            this.ckComment.TabIndex = 48;
+            this.ckComment.TabIndex = 13;
             this.ckComment.UseVisualStyleBackColor = true;
             this.ckComment.Visible = false;
             // 
@@ -307,7 +309,7 @@ namespace music_tagger
             this.ckGenre.Location = new System.Drawing.Point( 631, 158 );
             this.ckGenre.Name = "ckGenre";
             this.ckGenre.Size = new System.Drawing.Size( 15, 14 );
-            this.ckGenre.TabIndex = 47;
+            this.ckGenre.TabIndex = 12;
             this.ckGenre.UseVisualStyleBackColor = true;
             this.ckGenre.Visible = false;
             // 
@@ -317,7 +319,7 @@ namespace music_tagger
             this.ckTrack.Location = new System.Drawing.Point( 631, 135 );
             this.ckTrack.Name = "ckTrack";
             this.ckTrack.Size = new System.Drawing.Size( 15, 14 );
-            this.ckTrack.TabIndex = 46;
+            this.ckTrack.TabIndex = 11;
             this.ckTrack.UseVisualStyleBackColor = true;
             this.ckTrack.Visible = false;
             // 
@@ -327,7 +329,7 @@ namespace music_tagger
             this.ckYear.Location = new System.Drawing.Point( 631, 112 );
             this.ckYear.Name = "ckYear";
             this.ckYear.Size = new System.Drawing.Size( 15, 14 );
-            this.ckYear.TabIndex = 45;
+            this.ckYear.TabIndex = 10;
             this.ckYear.UseVisualStyleBackColor = true;
             this.ckYear.Visible = false;
             // 
@@ -337,7 +339,7 @@ namespace music_tagger
             this.ckAlbum.Location = new System.Drawing.Point( 631, 88 );
             this.ckAlbum.Name = "ckAlbum";
             this.ckAlbum.Size = new System.Drawing.Size( 15, 14 );
-            this.ckAlbum.TabIndex = 44;
+            this.ckAlbum.TabIndex = 9;
             this.ckAlbum.UseVisualStyleBackColor = true;
             this.ckAlbum.Visible = false;
             // 
@@ -347,7 +349,7 @@ namespace music_tagger
             this.ckTitle.Location = new System.Drawing.Point( 631, 66 );
             this.ckTitle.Name = "ckTitle";
             this.ckTitle.Size = new System.Drawing.Size( 15, 14 );
-            this.ckTitle.TabIndex = 43;
+            this.ckTitle.TabIndex = 8;
             this.ckTitle.UseVisualStyleBackColor = true;
             this.ckTitle.Visible = false;
             // 
@@ -357,7 +359,7 @@ namespace music_tagger
             this.ckArtist.Location = new System.Drawing.Point( 631, 42 );
             this.ckArtist.Name = "ckArtist";
             this.ckArtist.Size = new System.Drawing.Size( 15, 14 );
-            this.ckArtist.TabIndex = 42;
+            this.ckArtist.TabIndex = 7;
             this.ckArtist.UseVisualStyleBackColor = true;
             this.ckArtist.Visible = false;
             // 
@@ -367,23 +369,23 @@ namespace music_tagger
             this.txtArtists.Location = new System.Drawing.Point( 308, 39 );
             this.txtArtists.Name = "txtArtists";
             this.txtArtists.Size = new System.Drawing.Size( 317, 20 );
-            this.txtArtists.TabIndex = 49;
+            this.txtArtists.TabIndex = 0;
             this.txtArtists.DoubleClick += new System.EventHandler( this.txtArtist_DoubleClick );
             this.txtArtists.TextChanged += new System.EventHandler( this.txtArtist_TextChanged );
             // 
-            // txtGenres
+            // cmbGenre
             // 
-            this.txtGenres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtGenres.Location = new System.Drawing.Point( 308, 155 );
-            this.txtGenres.Name = "txtGenres";
-            this.txtGenres.Size = new System.Drawing.Size( 317, 20 );
-            this.txtGenres.TabIndex = 50;
+            this.cmbGenre.FormattingEnabled = true;
+            this.cmbGenre.Location = new System.Drawing.Point( 308, 155 );
+            this.cmbGenre.Name = "cmbGenre";
+            this.cmbGenre.Size = new System.Drawing.Size( 317, 21 );
+            this.cmbGenre.TabIndex = 42;
             // 
             // EditV1Ctrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add( this.txtGenres );
+            this.Controls.Add( this.cmbGenre );
             this.Controls.Add( this.txtArtists );
             this.Controls.Add( this.ckComment );
             this.Controls.Add( this.ckGenre );
@@ -448,6 +450,7 @@ namespace music_tagger
         public System.Windows.Forms.TextBox txtAlbum;
         public System.Windows.Forms.TextBox txtTitle;
         public System.Windows.Forms.TextBox txtArtists;
-        public System.Windows.Forms.TextBox txtGenres;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ComboBox cmbGenre;
     }
 }

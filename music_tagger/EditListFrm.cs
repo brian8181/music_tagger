@@ -25,7 +25,7 @@ namespace music_tagger
 
         private void EditListFrm_FormClosing( object sender, FormClosingEventArgs e )
         {
-            if( editListCtrl.cmb.Items.Count > 1 )
+            if( editListCtrl.cmb.Items.Count > 0 )
             {
                 strs = new string[editListCtrl.cmb.Items.Count];
                 editListCtrl.cmb.Items.CopyTo( strs, 0 );

@@ -17,14 +17,14 @@ namespace music_tagger
         private ListView lv = null;
         private int idx = -1;
         private TagLib.Id3v1.Tag id3v1 = null;
-        public string[] artist = null;
-
+     
         /// <summary>
-        /// 
+        /// default constructor
         /// </summary>
         public EditV1Ctrl()
         {
             InitializeComponent();
+            
         }
         /// <summary>
         /// intialize listview  
@@ -38,6 +38,8 @@ namespace music_tagger
                 idx = 0;
                 Fill( idx );
             }
+
+            this.toolTip.SetToolTip( this.lblFile, this.lblFile.Text );
         }
         /// <summary>
         ///  fill from tag
@@ -94,10 +96,10 @@ namespace music_tagger
             }
         }
         /// <summary>
-        /// 
+        /// swap the artist & title
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">task item</param>
+        /// <param name="e">args</param>
         private void taskSwapArtist_Title_Click( object sender, EventArgs e )
         {
             string org_title = txtTitle.Text;
@@ -107,8 +109,8 @@ namespace music_tagger
         /// <summary>
         /// swap artist & album
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">task item</param>
+        /// <param name="e">args</param>
         private void taskSwapArtist_Album_Click( object sender, EventArgs e )
         {
             string org_album = txtAlbum.Text;
@@ -118,58 +120,91 @@ namespace music_tagger
         /// <summary>
         ///  swap title & album
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">task item</param>
+        /// <param name="e">args</param>
         private void taskSwapTitle_Album_Click( object sender, EventArgs e )
         {
             string org_album = txtAlbum.Text;
             txtAlbum.Text = txtTitle.Text;
             txtTitle.Text = org_album;
         }
-               
         private void txtTitle_TextChanged( object sender, EventArgs e )
         {
-            ckArtist.Checked = true;
+            ckTitle.Checked = true;
         }
-
         private void txtAlbum_TextChanged( object sender, EventArgs e )
         {
             ckAlbum.Checked = true;
         }
-
         private void txtYear_TextChanged( object sender, EventArgs e )
         {
             ckYear.Checked = true;
         }
-
         private void txtTrack_TextChanged( object sender, EventArgs e )
         {
             ckTrack.Checked = true;
         }
-
-        private void cmbGenre_SelectedIndexChanged( object sender, EventArgs e )
+        private void txtGenres_TextChanged( object sender, EventArgs e )
         {
             ckGenre.Checked = true;
         }
-
         private void txtComment_TextChanged( object sender, EventArgs e )
         {
             ckComment.Checked = true;
         }
-
         private void txtArtist_TextChanged( object sender, EventArgs e )
         {
             ckAlbum.Checked = true;
         }
-
+        /// <summary>
+        /// edit artists list
+        /// </summary>
+        /// <param name="sender">the button</param>
+        /// <param name="e">args</param>
         private void txtArtist_DoubleClick( object sender, EventArgs e )
         {
             EditListFrm dlg = new EditListFrm(this.id3v1.Performers);
             dlg.ShowDialog(this);
-            artist = dlg.Strs;
-            this.txtArtists.ReadOnly = true;
-            if( artist != null && artist.Length > 0)
-                this.txtArtists.Text = artist[0];
+            StringBuilder sb = new StringBuilder();
+            if(dlg.Strs != null)
+            {
+                foreach(string s in dlg.Strs)
+                {
+                    sb.Append( s );
+                    sb.Append( "; " );
+                }
+                sb.Remove( sb.Length - 2, 2 ); // remove comma
+                txtArtists.Text = sb.ToString();
+            }
+            else
+            {
+                txtArtists.Text = string.Empty;
+            }
+        }
+        /// <summary>
+        ///  edit genres list
+        /// </summary>
+        /// <param name="sender">the button</param>
+        /// <param name="e">args</param>
+        private void txtGenres_DoubleClick( object sender, EventArgs e )
+        {
+            EditListFrm dlg = new EditListFrm( this.id3v1.Genres );
+            dlg.ShowDialog( this );
+            StringBuilder sb = new StringBuilder();
+            if(dlg.Strs != null)
+            {
+                foreach(string s in dlg.Strs)
+                {
+                    sb.Append( s );
+                    sb.Append( "; " );
+                }
+                sb.Remove( sb.Length - 2, 2 ); // remove comma
+                txtGenres.Text = sb.ToString();
+            }
+            else
+            {
+                txtGenres.Text = string.Empty;
+            }
         }
     }
 }

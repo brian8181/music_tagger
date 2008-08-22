@@ -94,9 +94,16 @@ namespace music_tagger
         {
             item.BackColor = Color.Yellow;
             // Performers
-            if(!String.IsNullOrEmpty( editCtrl.txtGenres.Text ))
+            if(!String.IsNullOrEmpty( editCtrl.txtArtists.Text ))
             {
-                string[] splits = editCtrl.txtArtists.Text.Split( ',' );
+                string[] splits = editCtrl.txtArtists.Text.Split( ';' );
+                // trim space
+                int len = splits.Length;
+                for(int i = 0; i < len; ++i)
+                {
+                    splits[i] = splits[i].Trim(); 
+                }
+                // set tag
                 item.Id3v1.Performers = splits;
             }
             item.Id3v1.Album = this.editCtrl.txtAlbum.Text;
@@ -107,7 +114,14 @@ namespace music_tagger
             // Genres
             if(!String.IsNullOrEmpty( editCtrl.txtGenres.Text ))
             {
-                string[] splits = editCtrl.txtGenres.Text.Split(',');
+                string[] splits = editCtrl.txtGenres.Text.Split( ';' );
+                // trim space
+                int len = splits.Length;
+                for(int i = 0; i < len; ++i)
+                {
+                    splits[i] = splits[i].Trim();
+                }
+                // set tag
                 item.Id3v1.Genres = splits;
             }
             item.Id3v1.Comment = this.editCtrl.txtComment.Text;
