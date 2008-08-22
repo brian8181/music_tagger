@@ -35,7 +35,6 @@ namespace music_tagger
             this.taskSwapArtist_Title = new XPExplorerBar.TaskItem();
             this.taskSwapArtist_Album = new XPExplorerBar.TaskItem();
             this.taskSwapTitle_Album = new XPExplorerBar.TaskItem();
-            this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.txtComment = new System.Windows.Forms.TextBox();
             this.txtTrack = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
@@ -57,7 +56,8 @@ namespace music_tagger
             this.ckAlbum = new System.Windows.Forms.CheckBox();
             this.ckTitle = new System.Windows.Forms.CheckBox();
             this.ckArtist = new System.Windows.Forms.CheckBox();
-            this.txtArtist = new System.Windows.Forms.TextBox();
+            this.txtArtists = new System.Windows.Forms.TextBox();
+            this.txtGenres = new System.Windows.Forms.TextBox();
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).BeginInit();
             this.taskPane1.SuspendLayout();
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).BeginInit();
@@ -166,94 +166,6 @@ namespace music_tagger
             this.taskSwapTitle_Album.Text = "Swap Title-Album";
             this.taskSwapTitle_Album.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.taskSwapTitle_Album.UseVisualStyleBackColor = false;
-            // 
-            // cmbGenre
-            // 
-            this.cmbGenre.FormattingEnabled = true;
-            this.cmbGenre.Items.AddRange( new object[] {
-            "Blues ",
-            "Classic Rock",
-            "Country",
-            "Dance",
-            "Disco",
-            "Grunge",
-            "Hip-Hop",
-            "Jazz",
-            "Metal",
-            "New Age",
-            "Oldies",
-            "Other",
-            "Pop",
-            "R&B",
-            "Rap",
-            "Reggae",
-            "Rock",
-            "Techno",
-            "Industrial",
-            "Alternative",
-            "Ska",
-            "Pranks",
-            "Soundtrack",
-            "Euro-Techno",
-            "Ambient",
-            "Trip-Hop",
-            "Vocal",
-            "Jazz+Funk",
-            "Fusion",
-            "Trance",
-            "Classical",
-            "Instrumental",
-            "Acid",
-            "House",
-            "Game",
-            "Sound Clip",
-            "Gospel",
-            "Noise",
-            "AlternRock",
-            "Bass",
-            "Soul",
-            "Punk",
-            "Space",
-            "Meditative",
-            "Instrumental Pop",
-            "Instrumental Rock",
-            "Ethnic",
-            "Gothic",
-            "Darkwave",
-            "Techno-Industrial",
-            "Electronic",
-            "Pop-Folk",
-            "Eurodance",
-            "Dream",
-            "Southern Rock",
-            "Comedy",
-            "Cult",
-            "Gangsta",
-            "Top 40",
-            "Christian Rap",
-            "Pop/Funk",
-            "Jungle",
-            "Native American",
-            "Cabaret",
-            "New Wave",
-            "Psychadelic",
-            "Rave",
-            "Showtunes",
-            "Trailer",
-            "Lo-Fi",
-            "Tribal",
-            "Acid Punk",
-            "Acid Jazz",
-            "Polka",
-            "Retro",
-            "Musical",
-            "Rock & Roll",
-            "Hard Rock"} );
-            this.cmbGenre.Location = new System.Drawing.Point( 308, 155 );
-            this.cmbGenre.Name = "cmbGenre";
-            this.cmbGenre.Size = new System.Drawing.Size( 317, 21 );
-            this.cmbGenre.TabIndex = 5;
-            this.cmbGenre.SelectedIndexChanged += new System.EventHandler( this.cmbGenre_SelectedIndexChanged );
             // 
             // txtComment
             // 
@@ -449,21 +361,30 @@ namespace music_tagger
             this.ckArtist.UseVisualStyleBackColor = true;
             this.ckArtist.Visible = false;
             // 
-            // txtArtist
+            // txtArtists
             // 
-            this.txtArtist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtArtist.Location = new System.Drawing.Point( 308, 39 );
-            this.txtArtist.Name = "txtArtist";
-            this.txtArtist.Size = new System.Drawing.Size( 317, 20 );
-            this.txtArtist.TabIndex = 49;
-            this.txtArtist.DoubleClick += new System.EventHandler( this.txtArtist_DoubleClick );
-            this.txtArtist.TextChanged += new System.EventHandler( this.txtArtist_TextChanged );
+            this.txtArtists.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtArtists.Location = new System.Drawing.Point( 308, 39 );
+            this.txtArtists.Name = "txtArtists";
+            this.txtArtists.Size = new System.Drawing.Size( 317, 20 );
+            this.txtArtists.TabIndex = 49;
+            this.txtArtists.DoubleClick += new System.EventHandler( this.txtArtist_DoubleClick );
+            this.txtArtists.TextChanged += new System.EventHandler( this.txtArtist_TextChanged );
+            // 
+            // txtGenres
+            // 
+            this.txtGenres.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtGenres.Location = new System.Drawing.Point( 308, 155 );
+            this.txtGenres.Name = "txtGenres";
+            this.txtGenres.Size = new System.Drawing.Size( 317, 20 );
+            this.txtGenres.TabIndex = 50;
             // 
             // EditV1Ctrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add( this.txtArtist );
+            this.Controls.Add( this.txtGenres );
+            this.Controls.Add( this.txtArtists );
             this.Controls.Add( this.ckComment );
             this.Controls.Add( this.ckGenre );
             this.Controls.Add( this.ckTrack );
@@ -474,7 +395,6 @@ namespace music_tagger
             this.Controls.Add( this.lblFile );
             this.Controls.Add( this.lblFileTag );
             this.Controls.Add( this.taskPane1 );
-            this.Controls.Add( this.cmbGenre );
             this.Controls.Add( this.txtComment );
             this.Controls.Add( this.txtTrack );
             this.Controls.Add( this.txtYear );
@@ -522,12 +442,12 @@ namespace music_tagger
         public System.Windows.Forms.CheckBox ckArtist;
         public System.Windows.Forms.Label lblFileTag;
         public System.Windows.Forms.Label lblFile;
-        public System.Windows.Forms.ComboBox cmbGenre;
         public System.Windows.Forms.TextBox txtComment;
         public System.Windows.Forms.TextBox txtTrack;
         public System.Windows.Forms.TextBox txtYear;
         public System.Windows.Forms.TextBox txtAlbum;
         public System.Windows.Forms.TextBox txtTitle;
-        public System.Windows.Forms.TextBox txtArtist;
+        public System.Windows.Forms.TextBox txtArtists;
+        public System.Windows.Forms.TextBox txtGenres;
     }
 }

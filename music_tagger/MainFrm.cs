@@ -24,7 +24,8 @@ namespace music_tagger
             tree.Configure();
             type = Properties.Settings.Default.view_ver1 ? TagLib.TagTypes.Id3v1 : TagLib.TagTypes.Id3v2;
             //BKP todo clean this shit up!! 
-            tsb_ToggleVer.Text = ( type == TagLib.TagTypes.Id3v2 ) ? "Shown Ver. 2" : "Shown Ver. 1";
+            tsb_ToggleVer.Text = ( type == TagLib.TagTypes.Id3v2 ) ? "Showing Ver. 2" : "Showing Ver. 1";
+            tsVersionShown.Text = tsb_ToggleVer.Text;
             view.Configure( tree, type );
             view.Refreshed += new EventHandler<View.RefreshArgs>( view_Refreshed );
             SetScanOption();
@@ -149,19 +150,19 @@ namespace music_tagger
         /// </summary>
         private void ToggleVer()
         {
-            if(tsb_ToggleVer.Text == "Shown Ver. 1")
+            if(tsb_ToggleVer.Text == "Showing Ver. 1")
             {
-                tsb_ToggleVer.Text = "Shown Ver. 2";
+                tsb_ToggleVer.Text = "Showing Ver. 2";
                 view.Type = TagLib.TagTypes.Id3v2;
                 type = TagLib.TagTypes.Id3v2;
             }
             else
             {
-                tsb_ToggleVer.Text = "Shown Ver. 1";
+                tsb_ToggleVer.Text = "Showing Ver. 1";
                 view.Type = TagLib.TagTypes.Id3v1;
                 type = TagLib.TagTypes.Id3v1;
             }
-
+            tsVersionShown.Text = tsb_ToggleVer.Text;
         }
 
         //  todo combine these !!

@@ -11,7 +11,7 @@ namespace music_tagger
     public partial class EditListCtrl : UserControl
     {
         /// <summary>
-        /// 
+        /// constuctor 
         /// </summary>
         public EditListCtrl()
         {
@@ -19,7 +19,7 @@ namespace music_tagger
  
         }
         /// <summary>
-        /// 
+        ///  staring value
         /// </summary>
         /// <param name="str"></param>
         public void Initilaize( string[] str )
@@ -33,10 +33,10 @@ namespace music_tagger
                 cmb.SelectedIndex = 0;
         }
         /// <summary>
-        /// 
+        ///  Button click handler
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">the button</param>
+        /// <param name="e">args</param>
         private void btnAdd_Click( object sender, EventArgs e )
         {
             if(!cmb.Items.Contains( cmb.Text ))
@@ -45,10 +45,10 @@ namespace music_tagger
             }
         }
         /// <summary>
-        /// 
+        ///  Button click handler
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">the button</param>
+        /// <param name="e">args</param>
         private void btnRemove_Click( object sender, EventArgs e )
         {
             if(cmb.SelectedItem != null)
@@ -57,10 +57,10 @@ namespace music_tagger
             }
         }
         /// <summary>
-        /// 
+        ///  Button click handler
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">the button</param>
+        /// <param name="e">args</param>
         private void btnUp_Click( object sender, EventArgs e )
         {
             int idx = cmb.SelectedIndex;
@@ -73,10 +73,10 @@ namespace music_tagger
             }
         }
         /// <summary>
-        /// 
+        ///  Button click handler
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">the button</param>
+        /// <param name="e">args</param>
         private void btnDown_Click( object sender, EventArgs e )
         {
             int idx = cmb.SelectedIndex;

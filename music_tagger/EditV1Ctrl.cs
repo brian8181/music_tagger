@@ -60,16 +60,12 @@ namespace music_tagger
         {
             if(id3v1 != null)
             {
-                txtArtist.Text = id3v1.FirstPerformer;
+                txtArtists.Text = id3v1.JoinedPerformers;
                 txtAlbum.Text = id3v1.Album;
                 txtTitle.Text = id3v1.Title;
                 txtYear.Text = id3v1.Year.ToString();
                 txtTrack.Text = id3v1.Track.ToString();
-                if(id3v1.Genres.Length > 0)
-                {
-                    cmbGenre.Items.AddRange( id3v1.Genres );
-                    cmbGenre.SelectedIndex = 0;
-                }
+                txtGenres.Text = id3v1.JoinedGenres;
                 txtComment.Text = id3v1.Comment;
             } 
         }
@@ -105,8 +101,8 @@ namespace music_tagger
         private void taskSwapArtist_Title_Click( object sender, EventArgs e )
         {
             string org_title = txtTitle.Text;
-            txtTitle.Text = txtArtist.Text;
-            txtArtist.Text = org_title;
+            txtTitle.Text = txtArtists.Text;
+            txtArtists.Text = org_title;
         }
         /// <summary>
         /// swap artist & album
@@ -116,8 +112,8 @@ namespace music_tagger
         private void taskSwapArtist_Album_Click( object sender, EventArgs e )
         {
             string org_album = txtAlbum.Text;
-            txtAlbum.Text = txtArtist.Text;
-            txtArtist.Text = org_album;
+            txtAlbum.Text = txtArtists.Text;
+            txtArtists.Text = org_album;
         }
         /// <summary>
         ///  swap title & album
@@ -171,9 +167,9 @@ namespace music_tagger
             EditListFrm dlg = new EditListFrm(this.id3v1.Performers);
             dlg.ShowDialog(this);
             artist = dlg.Strs;
-            this.txtArtist.ReadOnly = true;
+            this.txtArtists.ReadOnly = true;
             if( artist != null && artist.Length > 0)
-                this.txtArtist.Text = artist[0];
+                this.txtArtists.Text = artist[0];
         }
     }
 }

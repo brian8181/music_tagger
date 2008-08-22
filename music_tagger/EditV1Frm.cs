@@ -94,16 +94,10 @@ namespace music_tagger
         {
             item.BackColor = Color.Yellow;
             // Performers
-            if(!String.IsNullOrEmpty( editCtrl.txtArtist.Text ))
+            if(!String.IsNullOrEmpty( editCtrl.txtGenres.Text ))
             {
-                if(editCtrl.txtArtist.ReadOnly)
-                {
-                    item.Id3v2.Performers = editCtrl.artist;
-                }
-                else
-                {
-                    item.Id3v1.Performers[0] = editCtrl.txtArtist.Text;
-                }
+                string[] splits = editCtrl.txtArtists.Text.Split( ',' );
+                item.Id3v1.Performers = splits;
             }
             item.Id3v1.Album = this.editCtrl.txtAlbum.Text;
             item.Id3v1.Title = this.editCtrl.txtTitle.Text;
@@ -111,20 +105,13 @@ namespace music_tagger
             item.Id3v1.Year = uint.TryParse( this.editCtrl.txtYear.Text, out num ) ? num : 0;
             item.Id3v1.Track = uint.TryParse( this.editCtrl.txtTrack.Text, out num ) ? num : 0;
             // Genres
-            if(!String.IsNullOrEmpty( editCtrl.cmbGenre.Text ))
+            if(!String.IsNullOrEmpty( editCtrl.txtGenres.Text ))
             {
-                item.Id3v1.Genres = new string[1] { editCtrl.cmbGenre.Text };
+                string[] splits = editCtrl.txtGenres.Text.Split(',');
+                item.Id3v1.Genres = splits;
             }
             item.Id3v1.Comment = this.editCtrl.txtComment.Text;
             item.RefreshItem();
-        }
-        /// <summary>
-        /// button click handler
-        /// </summary>
-        /// <param name="sender">the button</param>
-        /// <param name="e">args</param>
-        private void btnCancel_Click( object sender, EventArgs e )
-        {
         }
         /// <summary>
         /// merge like values, hide unlike values
@@ -142,10 +129,18 @@ namespace music_tagger
                 TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
 
                 last_tag.Album = last_tag.Album != "" && tag.Album == last_tag.Album ? tag.Album : "";
-                //last_tag.Artists = last_tag.Artists != "" && tag.Artists == last_tag.Artists ? tag.Artists : "";
+                if( last_tag.JoinedPerformers != "" && tag.JoinedPerformers == last_tag.JoinedPerformers )
+                {
+                    //todo  
+                }
                 last_tag.Title = last_tag.Title != "" && tag.Title == last_tag.Title ? tag.Title : "";
                 last_tag.Track = last_tag.Track != 0 && tag.Track == last_tag.Track ? tag.Track : 0;
                 last_tag.Year = last_tag.Year != 0 && tag.Year == last_tag.Year ? tag.Year : 0;
+
+                if( last_tag.JoinedGenres != "" && tag.JoinedGenres == last_tag.JoinedGenres )
+                {
+                   // todo
+                }
             }
             this.editCtrl.Fill( last_tag );
         }
