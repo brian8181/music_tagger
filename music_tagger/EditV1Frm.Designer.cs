@@ -42,6 +42,7 @@ namespace music_tagger
             // 
             // btnOK
             // 
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point( 462, 213 );
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size( 75, 23 );

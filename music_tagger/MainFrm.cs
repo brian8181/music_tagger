@@ -20,17 +20,18 @@ namespace music_tagger
         public MainFrm()
         {
             InitializeComponent();
-            //tree.ImageList.TransparentColor = Color.FromArgb( 192, 192, 192 );
-            tree.Configure();
             type = Properties.Settings.Default.view_ver1 ? TagLib.TagTypes.Id3v1 : TagLib.TagTypes.Id3v2;
-            //BKP todo clean this shit up!! 
-            tsb_ToggleVer.Text = ( type == TagLib.TagTypes.Id3v2 ) ? "Showing Ver. 2" : "Showing Ver. 1";
+            tsb_ToggleVer.Text = ( type == TagLib.TagTypes.Id3v1 ) ?
+                Properties.Resources.showing_ver1 : Properties.Resources.showing_ver2;
             tsVersionShown.Text = tsb_ToggleVer.Text;
-            view.Configure( tree, type );
+            // init tree
+            tree.Initilaize();
+            // init view
+            view.Initialize( tree, type );
             view.Refreshed += new EventHandler<View.RefreshArgs>( view_Refreshed );
+            view.ListView.SelectedIndexChanged += new EventHandler( ListView_SelectedIndexChanged );
             SetScanOption();
         }
-               
         /// <summary>
         /// 
         /// </summary>
@@ -67,7 +68,6 @@ namespace music_tagger
                     // todo  
                 }
             }
-
         }
         /// <summary>
         /// 
@@ -109,7 +109,6 @@ namespace music_tagger
         /// <param name="e"></param>
         private void tsb_EditV2Multi_Click( object sender, EventArgs e )
         {
-
             if(this.view.ListView.SelectedItems.Count > 1)
             {
                 EditV2Frm dlg = new EditV2Frm( view.ListView, true );
@@ -133,7 +132,7 @@ namespace music_tagger
             PrefFrm dlg = new PrefFrm();
             if(dlg.ShowDialog() == DialogResult.OK)
             {
-                // todo
+                view.RefreshView( true );
             }
         }
         /// <summary>
@@ -150,21 +149,20 @@ namespace music_tagger
         /// </summary>
         private void ToggleVer()
         {
-            if(tsb_ToggleVer.Text == "Showing Ver. 1")
+            if(tsb_ToggleVer.Text == Properties.Resources.showing_ver1)
             {
-                tsb_ToggleVer.Text = "Showing Ver. 2";
+                tsb_ToggleVer.Text = Properties.Resources.showing_ver2;
                 view.Type = TagLib.TagTypes.Id3v2;
                 type = TagLib.TagTypes.Id3v2;
             }
             else
             {
-                tsb_ToggleVer.Text = "Showing Ver. 1";
+                tsb_ToggleVer.Text = Properties.Resources.showing_ver1;
                 view.Type = TagLib.TagTypes.Id3v1;
                 type = TagLib.TagTypes.Id3v1;
             }
             tsVersionShown.Text = tsb_ToggleVer.Text;
         }
-
         //  todo combine these !!
         private void mnViewV1_Click( object sender, EventArgs e )
         {
@@ -181,7 +179,6 @@ namespace music_tagger
             mnViewV1.Checked = !mnViewV2.Checked;
             ToggleVer();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -244,7 +241,6 @@ namespace music_tagger
         private void mnEditPast_Click( object sender, EventArgs e )
         {
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -391,8 +387,8 @@ namespace music_tagger
         private void On_Save( object sender, EventArgs e )
         {
             DialogResult dr = MessageBox.Show(
-                    "Are you sure you wish to commit all changes?",
-                    "Commit",
+                    Properties.Resources.commit_warning,
+                    Properties.Resources.save_pending,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Asterisk );
 
@@ -432,8 +428,26 @@ namespace music_tagger
         /// <param name="e"></param>
         private void view_Refreshed( object sender, View.RefreshArgs e )
         {
-            tsFileCount.Text = "File Count: " + e.FileCount.ToString();
+            UpdateFileStatus();
             tsCurrentPath.Text = e.Path;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void ListView_SelectedIndexChanged( object sender, EventArgs e )
+        {
+            UpdateFileStatus();
+        }
+        /// <summary>
+        /// update the fiel status label
+        /// </summary>
+        private void UpdateFileStatus()
+        {
+            tsFileCount.Text = String.Format( "Selected: {0} of {1}", 
+               view.ListView.SelectedItems.Count,
+                view.ListView.Items.Count ); 
         }
     }
 }

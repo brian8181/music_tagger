@@ -136,7 +136,7 @@ namespace music_tagger
         /// 
         /// </summary>
         /// <param name="tree"></param>
-        public void Configure( FileTreeView tree, TagLib.TagTypes type)
+        public void Initialize( FileTreeView tree, TagLib.TagTypes type)
         {
             this.tree = tree;
             this.type = type;
@@ -156,6 +156,18 @@ namespace music_tagger
         /// </summary>
         public void RefreshView()
         {
+            RefreshView( false );
+        }
+        /// <summary>
+        /// refresh the view, (called by scan thread)
+        /// </summary>
+        public void RefreshView(bool columns)
+        {
+            if(columns)
+            {
+                listView.Columns.Clear();
+                listView.Columns.AddRange( CreateColumns() );
+            }
             if(tree != null)
             {
                 DirectoryInfo di = ( (FileTreeNode)tree.SelectedNode ).FileSystemInfo as DirectoryInfo;
@@ -382,8 +394,8 @@ namespace music_tagger
             if(IsDirty)
             {
                 DialogResult dr = MessageBox.Show(
-                       "This cause you to lose all pending changes. Do you with to save first?",
-                       "Save Pending Changes",
+                       Properties.Resources.refresh_warning,
+                       Properties.Resources.save_pending,
                        MessageBoxButtons.YesNo,
                        MessageBoxIcon.Asterisk );
 

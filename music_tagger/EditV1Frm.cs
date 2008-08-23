@@ -93,26 +93,47 @@ namespace music_tagger
         protected override void EditItem( TagListViewItem item )
         {
             item.BackColor = Color.Yellow;
-            // Performers
-            if(!String.IsNullOrEmpty( editCtrl.txtArtists.Text ))
+            if(!multi_edit || editCtrl.ckArtist.Checked)
             {
-                string[] splits = editCtrl.txtArtists.Text.Split( ';' );
-                // trim space
-                int len = splits.Length;
-                for(int i = 0; i < len; ++i)
+                // Performers
+                if(!String.IsNullOrEmpty( editCtrl.txtArtists.Text ))
                 {
-                    splits[i] = splits[i].Trim(); 
+                    string[] splits = editCtrl.txtArtists.Text.Split( ';' );
+                    // trim space
+                    int len = splits.Length;
+                    for(int i = 0; i < len; ++i)
+                    {
+                        splits[i] = splits[i].Trim();
+                    }
+                    // set tag
+                    item.Id3v1.Performers = splits;
                 }
-                // set tag
-                item.Id3v1.Performers = splits;
             }
-            item.Id3v1.Album = this.editCtrl.txtAlbum.Text;
-            item.Id3v1.Title = this.editCtrl.txtTitle.Text;
+            if(!multi_edit || editCtrl.ckAlbum.Checked)
+            {
+                item.Id3v1.Album = this.editCtrl.txtAlbum.Text;
+            }
+            if(!multi_edit || editCtrl.ckTitle.Checked)
+            {
+                item.Id3v1.Title = this.editCtrl.txtTitle.Text;
+            }
             uint num = 0;
-            item.Id3v1.Year = uint.TryParse( this.editCtrl.txtYear.Text, out num ) ? num : 0;
-            item.Id3v1.Track = uint.TryParse( this.editCtrl.txtTrack.Text, out num ) ? num : 0;
-            item.Id3v1.Genres = new string[1] { editCtrl.cmbGenre.Text };
-            item.Id3v1.Comment = this.editCtrl.txtComment.Text;
+            if(!multi_edit || editCtrl.ckYear.Checked)
+            {
+                item.Id3v1.Year = uint.TryParse( this.editCtrl.txtYear.Text, out num ) ? num : 0;
+            }
+            if(!multi_edit || editCtrl.ckTrack.Checked)
+            {
+                item.Id3v1.Track = uint.TryParse( this.editCtrl.txtTrack.Text, out num ) ? num : 0;
+            }
+            if(!multi_edit || editCtrl.ckGenre.Checked)
+            {
+                item.Id3v1.Genres = new string[1] { editCtrl.cmbGenre.Text };
+            }
+            if(!multi_edit || editCtrl.ckComment.Checked)
+            {
+                item.Id3v1.Comment = this.editCtrl.txtComment.Text;
+            }
             item.RefreshItem();
         }
         /// <summary>

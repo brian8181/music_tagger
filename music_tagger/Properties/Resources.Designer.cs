@@ -59,5 +59,50 @@ namespace music_tagger.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you wish to commit all changes?.
+        /// </summary>
+        internal static string commit_warning {
+            get {
+                return ResourceManager.GetString("commit_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This cause you to lose all pending changes. Do you with to save first?.
+        /// </summary>
+        internal static string refresh_warning {
+            get {
+                return ResourceManager.GetString("refresh_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Pending Changes.
+        /// </summary>
+        internal static string save_pending {
+            get {
+                return ResourceManager.GetString("save_pending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Showing Ver. 1.
+        /// </summary>
+        internal static string showing_ver1 {
+            get {
+                return ResourceManager.GetString("showing_ver1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Showing Ver. 2.
+        /// </summary>
+        internal static string showing_ver2 {
+            get {
+                return ResourceManager.GetString("showing_ver2", resourceCulture);
+            }
+        }
     }
 }

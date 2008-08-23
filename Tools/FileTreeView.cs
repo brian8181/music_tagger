@@ -55,9 +55,9 @@ namespace Tools
         //}
 
         /// <summary>
-        /// 
+        ///     
         /// </summary>
-        public void Configure( )
+        public void Initilaize( )
         {
             BeginUpdate();
        
