@@ -60,12 +60,82 @@ namespace music_tagger.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _case {
+            get {
+                object obj = ResourceManager.GetObject("_case", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _enum {
+            get {
+                object obj = ResourceManager.GetObject("_enum", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Are you sure you wish to commit all changes?.
         /// </summary>
         internal static string commit_warning {
             get {
                 return ResourceManager.GetString("commit_warning", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap decrease_enum {
+            get {
+                object obj = ResourceManager.GetObject("decrease_enum", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap delfilter {
+            get {
+                object obj = ResourceManager.GetObject("delfilter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap delv1 {
+            get {
+                object obj = ResourceManager.GetObject("delv1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap delv2 {
+            get {
+                object obj = ResourceManager.GetObject("delv2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap file2v1 {
+            get {
+                object obj = ResourceManager.GetObject("file2v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap file2v2 {
+            get {
+                object obj = ResourceManager.GetObject("file2v2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap filter {
+            get {
+                object obj = ResourceManager.GetObject("filter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap increase_enum {
+            get {
+                object obj = ResourceManager.GetObject("increase_enum", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -102,6 +172,69 @@ namespace music_tagger.Properties {
         internal static string showing_ver2 {
             get {
                 return ResourceManager.GetString("showing_ver2", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap shown {
+            get {
+                object obj = ResourceManager.GetObject("shown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap transv1 {
+            get {
+                object obj = ResourceManager.GetObject("transv1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap transv1v2 {
+            get {
+                object obj = ResourceManager.GetObject("transv1v2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap transv2 {
+            get {
+                object obj = ResourceManager.GetObject("transv2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap v1_many {
+            get {
+                object obj = ResourceManager.GetObject("v1_many", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap v12file {
+            get {
+                object obj = ResourceManager.GetObject("v12file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap v2 {
+            get {
+                object obj = ResourceManager.GetObject("v2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap v2_many {
+            get {
+                object obj = ResourceManager.GetObject("v2_many", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap v22file {
+            get {
+                object obj = ResourceManager.GetObject("v22file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

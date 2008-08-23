@@ -95,7 +95,7 @@ namespace music_tagger
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tree = new Tools.FileTreeView();
             this.view = new music_tagger.View();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -152,7 +152,7 @@ namespace music_tagger
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.mainToolStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.toolStrip3.SuspendLayout();
             this.SuspendLayout();
@@ -622,7 +622,7 @@ namespace music_tagger
             // toolStripContainer.ContentPanel
             // 
             this.toolStripContainer.ContentPanel.Controls.Add( this.splitContainer1 );
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 1119, 534 );
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size( 1119, 559 );
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point( 0, 0 );
             this.toolStripContainer.Name = "toolStripContainer";
@@ -633,9 +633,9 @@ namespace music_tagger
             // toolStripContainer.TopToolStripPanel
             // 
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.menuStrip );
-            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip1 );
-            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip2 );
             this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip3 );
+            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.mainToolStrip );
+            this.toolStripContainer.TopToolStripPanel.Controls.Add( this.toolStrip2 );
             // 
             // statusStrip1
             // 
@@ -704,7 +704,7 @@ namespace music_tagger
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add( this.view );
-            this.splitContainer1.Size = new System.Drawing.Size( 1119, 534 );
+            this.splitContainer1.Size = new System.Drawing.Size( 1119, 559 );
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -715,7 +715,7 @@ namespace music_tagger
             this.tree.Location = new System.Drawing.Point( 0, 0 );
             this.tree.Name = "tree";
             this.tree.SelectedImageIndex = 0;
-            this.tree.Size = new System.Drawing.Size( 284, 534 );
+            this.tree.Size = new System.Drawing.Size( 284, 559 );
             this.tree.TabIndex = 0;
             // 
             // view
@@ -724,14 +724,14 @@ namespace music_tagger
             this.view.Location = new System.Drawing.Point( 0, 0 );
             this.view.Name = "view";
             this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
-            this.view.Size = new System.Drawing.Size( 831, 534 );
+            this.view.Size = new System.Drawing.Size( 831, 559 );
             this.view.TabIndex = 0;
             this.view.Type = TagLib.TagTypes.Id3v1;
             // 
-            // toolStrip1
+            // mainToolStrip
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
+            this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.mainToolStrip.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripButton,
             this.toolStripSeparator6,
             this.cutToolStripButton,
@@ -739,10 +739,10 @@ namespace music_tagger
             this.pasteToolStripButton,
             this.toolStripSeparator7,
             this.helpToolStripButton} );
-            this.toolStrip1.Location = new System.Drawing.Point( 3, 24 );
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size( 137, 25 );
-            this.toolStrip1.TabIndex = 1;
+            this.mainToolStrip.Location = new System.Drawing.Point( 3, 24 );
+            this.mainToolStrip.Name = "mainToolStrip";
+            this.mainToolStrip.Size = new System.Drawing.Size( 137, 25 );
+            this.mainToolStrip.TabIndex = 1;
             // 
             // saveToolStripButton
             // 
@@ -953,9 +953,9 @@ namespace music_tagger
             this.toolStripSplitButton3,
             this.toolStripSplitButton4,
             this.toolStripButton15} );
-            this.toolStrip3.Location = new System.Drawing.Point( 3, 49 );
+            this.toolStrip3.Location = new System.Drawing.Point( 479, 24 );
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size( 474, 25 );
+            this.toolStrip3.Size = new System.Drawing.Size( 505, 25 );
             this.toolStrip3.TabIndex = 3;
             // 
             // toolStripButton1
@@ -1186,8 +1186,8 @@ namespace music_tagger
             this.splitContainer1.Panel1.ResumeLayout( false );
             this.splitContainer1.Panel2.ResumeLayout( false );
             this.splitContainer1.ResumeLayout( false );
-            this.toolStrip1.ResumeLayout( false );
-            this.toolStrip1.PerformLayout();
+            this.mainToolStrip.ResumeLayout( false );
+            this.mainToolStrip.PerformLayout();
             this.toolStrip2.ResumeLayout( false );
             this.toolStrip2.PerformLayout();
             this.toolStrip3.ResumeLayout( false );
@@ -1201,7 +1201,7 @@ namespace music_tagger
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripContainer toolStripContainer;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip mainToolStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnFileSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
