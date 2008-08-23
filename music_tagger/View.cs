@@ -152,15 +152,16 @@ namespace music_tagger
             tree.AfterSelect += new TreeViewEventHandler( tree_AfterSelect );
         }
         /// <summary>
-        /// refresh the view, (called by scan thread)
+        /// refresh the view
         /// </summary>
         public void RefreshView()
         {
             RefreshView( false );
         }
         /// <summary>
-        /// refresh the view, (called by scan thread)
+        /// refresh the view
         /// </summary>
+        /// <param name="columns">true refreshes columns also</param>
         public void RefreshView(bool columns)
         {
             if(columns)
@@ -187,8 +188,12 @@ namespace music_tagger
             try
             {
                 files = di.GetFiles( "*.mp3", searchOption );
-                if( files != null)
+                if(files != null)
                     RefreshView( files );
+            }
+            catch(UnauthorizedAccessException)
+            {
+                return;
             }
             catch(IOException)
             {
@@ -261,6 +266,7 @@ namespace music_tagger
         private void mnViewMoveTo_Click( object sender, EventArgs e )
         {
             CopyTo( true );
+            RefreshView();
         }
         /// <summary>
         /// 

@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 //using BKP.Online.IO;
-
 namespace Tools
 {
     /// <summary>
@@ -21,54 +20,38 @@ namespace Tools
         private readonly int hard_drive_img_idx;
         private readonly int rom_drive_img_idx;
         private readonly int net_drive_img_idx;
-
         /// <summary>
         /// 
         /// </summary>
         public FileTreeView()
         {
             InitializeComponent();
-
             ImageList list = new ImageList();
+            list.TransparentColor = Color.Fuchsia;
             list.Images.Add( Properties.Resources.closed_folder ); // 0
             list.Images.Add( Properties.Resources.opened_folder ); // 1
             hard_drive_img_idx = 2;
-            list.Images.Add( Properties.Resources.hard_drive );
+            list.Images.Add( Properties.Resources.hard_drive2 );
             rom_drive_img_idx = 3;
-            list.Images.Add( Properties.Resources.rom_drive ); 
+            list.Images.Add( Properties.Resources.rom_drive );
             net_drive_img_idx = 4;
-            list.Images.Add( Properties.Resources.net_drive ); 
+            list.Images.Add( Properties.Resources.net_drive );
             this.ImageList = list;
             ImageIndex = closed_img_idx;
             SelectedImageIndex = opened_img_idx;
-
-            //Nodes = null;
         }
-
-
-        //public new TreeNodeCollection Nodes
-        //{
-        //    get
-        //    {
-        //        return null;
-        //    }
-        //}
-
         /// <summary>
         ///     
         /// </summary>
-        public void Initilaize( )
+        public void Initilaize()
         {
             BeginUpdate();
-       
             DriveInfo[] drives = DriveInfo.GetDrives();
             foreach(DriveInfo drive in drives)
                 AddDrive( drive );
             SelectedNode = Nodes[0];
-
             EndUpdate();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -82,11 +65,9 @@ namespace Tools
             int i = -1;
             while(root != drives[++i].RootDirectory.FullName) ;
             bool result = ( drives[i].IsReady );
-
             //TODO more checks here
             return result;
         }
-
         private void InitilalizeRoot( string path )
         {
             string d = Path.GetDirectoryName( path );
@@ -99,7 +80,6 @@ namespace Tools
                 //InitializeNode(d);
             }
         }
-
         //todo
         //protected override void OnBeforeExpand( TreeViewCancelEventArgs e )
         //{
@@ -133,7 +113,6 @@ namespace Tools
                     this.RefreshTree( node );
             }
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -146,9 +125,7 @@ namespace Tools
                 // Filter - Only Directories
                 List<FileSystemInfo> files =
                     FileMask.IncludeAttributes( directory.GetFileSystemInfos(), FileAttributes.Directory );
-
                 BeginUpdate();
-                
                 node.Nodes.Clear();
                 // create new nodes for each sub node
                 int len = files.Count;
@@ -157,10 +134,9 @@ namespace Tools
                     string name = files[i].Name;
                     FileSystemInfo fi = (FileSystemInfo)files[i];
                     FileTreeNode child = new FileTreeNode( name, fi, 0, 1 );
-                    node.Nodes.Add(child );
+                    node.Nodes.Add( child );
                     node.Intialized = true;
                 }
-
                 EndUpdate();
                 //node.Expand();
             }
@@ -174,7 +150,6 @@ namespace Tools
                 return;
             }
         }
-
         /// <summary>
         /// allow control to prepare to be updated
         /// </summary>
@@ -189,7 +164,6 @@ namespace Tools
                 InitializeNode( node );
             }
         }
-
         /// <summary>
         /// Called by delegate when drive state (added or removed) changes
         /// </summary>
@@ -201,9 +175,7 @@ namespace Tools
             if(drive.IsReady)
                 name = drive.VolumeLabel + " (" + di.Name + ")";
             DriveTreeNode node = new DriveTreeNode( name, di );
-
-            Debug.WriteLine("TOSTRING: " + node.ToString() );
-
+            Debug.WriteLine( "TOSTRING: " + node.ToString() );
             int idx = 0;
             switch(drive.DriveType)
             {
@@ -221,6 +193,5 @@ namespace Tools
             if(drive.IsReady)
                 InitializeNode( node );
         }
-
     }
 }

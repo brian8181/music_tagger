@@ -23,12 +23,9 @@ namespace music_tagger
             }
             ckRestoreFolder.Checked = Properties.Settings.Default.restore_dir;
         }
-
         public void Initialize(View view)
         {
-
         }
-        
         /// <summary>
         /// 
         /// </summary>
@@ -39,7 +36,6 @@ namespace music_tagger
             ApplySettings();
             Close();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -49,7 +45,6 @@ namespace music_tagger
         {
             ApplySettings();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -68,7 +63,6 @@ namespace music_tagger
             }
             Properties.Settings.Default.Save();
         }
-
         private void btnColUp_Click( object sender, EventArgs e )
         {
             int idx = colList.SelectedIndex;
@@ -82,7 +76,6 @@ namespace music_tagger
                 colList.SelectedIndex = idx;
             }
         }
-
         private void btnColDown_Click( object sender, EventArgs e )
         {
             int idx = colList.SelectedIndex;
@@ -96,7 +89,6 @@ namespace music_tagger
                 colList.SelectedIndex = idx;
             }
         }
-
         private void colList_ItemCheck( object sender, ItemCheckEventArgs e )
         {
             // file column always displays
@@ -106,7 +98,6 @@ namespace music_tagger
                 e.NewValue = CheckState.Checked;
             }
         }
-
         private void On_ColorDoubleClicked( object sender, EventArgs e )
         {
             ColorDialog dlg = new ColorDialog();
@@ -115,6 +106,5 @@ namespace music_tagger
                 //todo
             }
         }
-  
     }
 }

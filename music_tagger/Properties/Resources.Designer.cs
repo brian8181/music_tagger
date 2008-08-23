@@ -203,6 +203,13 @@ namespace music_tagger.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap v1 {
+            get {
+                object obj = ResourceManager.GetObject("v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap v1_many {
             get {
                 object obj = ResourceManager.GetObject("v1_many", resourceCulture);

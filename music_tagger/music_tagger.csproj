@@ -386,7 +386,64 @@
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\v12file.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v22file.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\case.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\decrease_enum.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delfilter.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delv1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delv2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enum.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file2v1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file2v2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increase_enum.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shown.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transv1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transv1v2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transv2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v1_many.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v2_many.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

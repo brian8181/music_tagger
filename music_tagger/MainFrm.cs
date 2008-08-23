@@ -41,7 +41,6 @@ namespace music_tagger
             mnViewV1.Checked = Properties.Settings.Default.view_ver1;
             mnViewV2.Checked = !mnViewV1.Checked;
             mnOptionsScanSubs.Checked = Properties.Settings.Default.scan_subdirs;
-
             string[] dirs = Properties.Settings.Default.last_dir.Split( '\\' );
             //tree.Nodes.Add(ContainsKey();
             //todo
@@ -449,5 +448,15 @@ namespace music_tagger
                view.ListView.SelectedItems.Count,
                 view.ListView.Items.Count ); 
         }
+        /// <summary>
+        /// refresh clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void On_Refresh( object sender, EventArgs e )
+        {
+            view.RefreshView();
+        }
+       
     }
 }
