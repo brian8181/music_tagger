@@ -59,6 +59,7 @@ namespace music_tagger
             this.mnViewV1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnViewV2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnViewRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.iD3FunctionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnEditV1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnMultiEditV1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,6 +95,7 @@ namespace music_tagger
             this.tsScanSubs = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tree = new Tools.FileTreeView();
+            this.view = new music_tagger.View();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -157,8 +159,6 @@ namespace music_tagger
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip( this.components );
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnViewRefresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.view = new music_tagger.View();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -414,6 +414,14 @@ namespace music_tagger
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size( 157, 6 );
+            // 
+            // mnViewRefresh
+            // 
+            this.mnViewRefresh.Name = "mnViewRefresh";
+            this.mnViewRefresh.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.mnViewRefresh.Size = new System.Drawing.Size( 160, 22 );
+            this.mnViewRefresh.Text = "Refresh";
+            this.mnViewRefresh.Click += new System.EventHandler( this.On_Refresh );
             // 
             // iD3FunctionsToolStripMenuItem
             // 
@@ -739,6 +747,16 @@ namespace music_tagger
             this.tree.Size = new System.Drawing.Size( 284, 534 );
             this.tree.TabIndex = 0;
             // 
+            // view
+            // 
+            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view.Location = new System.Drawing.Point( 0, 0 );
+            this.view.Name = "view";
+            this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
+            this.view.Size = new System.Drawing.Size( 831, 534 );
+            this.view.TabIndex = 0;
+            this.view.Type = TagLib.TagTypes.Id3v1;
+            // 
             // mainToolStrip
             // 
             this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
@@ -834,8 +852,8 @@ namespace music_tagger
             // tsb_EditV1
             // 
             this.tsb_EditV1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_EditV1.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV1.Image" ) ) );
-            this.tsb_EditV1.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_EditV1.Image = global::music_tagger.Properties.Resources.v1;
+            this.tsb_EditV1.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tsb_EditV1.Name = "tsb_EditV1";
             this.tsb_EditV1.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV1.Text = "Edit Ver.1";
@@ -844,8 +862,8 @@ namespace music_tagger
             // tsb_EditV1Multi
             // 
             this.tsb_EditV1Multi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_EditV1Multi.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV1Multi.Image" ) ) );
-            this.tsb_EditV1Multi.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_EditV1Multi.Image = global::music_tagger.Properties.Resources.v1_many;
+            this.tsb_EditV1Multi.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tsb_EditV1Multi.Name = "tsb_EditV1Multi";
             this.tsb_EditV1Multi.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV1Multi.Text = "Edit Multi-Ver.1";
@@ -854,8 +872,8 @@ namespace music_tagger
             // tsb_EditV2
             // 
             this.tsb_EditV2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_EditV2.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV2.Image" ) ) );
-            this.tsb_EditV2.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_EditV2.Image = global::music_tagger.Properties.Resources.v2;
+            this.tsb_EditV2.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tsb_EditV2.Name = "tsb_EditV2";
             this.tsb_EditV2.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV2.Text = "Edit Ver.2";
@@ -864,8 +882,8 @@ namespace music_tagger
             // tsb_EditV2Multi
             // 
             this.tsb_EditV2Multi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_EditV2Multi.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_EditV2Multi.Image" ) ) );
-            this.tsb_EditV2Multi.ImageTransparentColor = System.Drawing.Color.White;
+            this.tsb_EditV2Multi.Image = global::music_tagger.Properties.Resources.v2_many;
+            this.tsb_EditV2Multi.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.tsb_EditV2Multi.Name = "tsb_EditV2Multi";
             this.tsb_EditV2Multi.Size = new System.Drawing.Size( 23, 22 );
             this.tsb_EditV2Multi.Text = "Edit Multi-Ver.2";
@@ -966,7 +984,7 @@ namespace music_tagger
             this.toolStripButton15} );
             this.toolStrip3.Location = new System.Drawing.Point( 3, 49 );
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size( 474, 25 );
+            this.toolStrip3.Size = new System.Drawing.Size( 505, 25 );
             this.toolStrip3.TabIndex = 3;
             // 
             // toolStripButton1
@@ -1289,24 +1307,6 @@ namespace music_tagger
             this.toolStripMenuItem15.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M ) ) );
             this.toolStripMenuItem15.Size = new System.Drawing.Size( 222, 22 );
             this.toolStripMenuItem15.Text = "Multi-Tag Edit Ver. 1";
-            // 
-            // mnViewRefresh
-            // 
-            this.mnViewRefresh.Name = "mnViewRefresh";
-            this.mnViewRefresh.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.mnViewRefresh.Size = new System.Drawing.Size( 160, 22 );
-            this.mnViewRefresh.Text = "Refresh";
-            this.mnViewRefresh.Click += new System.EventHandler( this.On_Refresh );
-            // 
-            // view
-            // 
-            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.view.Location = new System.Drawing.Point( 0, 0 );
-            this.view.Name = "view";
-            this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
-            this.view.Size = new System.Drawing.Size( 831, 534 );
-            this.view.TabIndex = 0;
-            this.view.Type = TagLib.TagTypes.Id3v1;
             // 
             // MainFrm
             // 
