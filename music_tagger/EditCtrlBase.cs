@@ -12,26 +12,32 @@ namespace music_tagger
     /// <summary>
     /// 
     /// </summary>
-    public partial class EditV2CtrlBase : UserControl
+    public partial class EditCtrlBase : UserControl
     {
         protected bool multi_edit = false;
         protected TagLib.File tag_file = null;
+        protected TagLib.Tag tag;
         protected TagLib.Id3v1.Tag v1;
         protected TagLib.Id3v2.Tag v2;
         protected ListView lv = null;
-        protected int idx = -1;
+        private int idx = -1;
+
+        public int Index
+        {
+            get { return idx; }
+        }
 
         /// <summary>
         /// 
         /// </summary>
-        public EditV2CtrlBase() : this(false)
+        public EditCtrlBase() : this(false)
         {
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="multi_edit"></param>
-        public EditV2CtrlBase(bool multi_edit)
+        public EditCtrlBase(bool multi_edit)
         {
             InitializeComponent();
             this.multi_edit = multi_edit;
@@ -45,28 +51,26 @@ namespace music_tagger
             this.lv = lv;
             if(lv.SelectedItems.Count > 0)
             {
-                idx = 0;
-                Fill( idx );
+                Next();
             }
         }
         /// <summary>
-        ///  fill from tag
+        /// 
         /// </summary>
-        /// <param name="idx"></param>
-        public virtual void Fill( int idx )
+        public void Next()
         {
-            FileInfo fi = (FileInfo)lv.SelectedItems[idx].Tag;
+            FileInfo fi = (FileInfo)lv.SelectedItems[++idx].Tag;
             //  lblFile.Text = fi.FullName;
             tag_file = TagLib.File.Create( fi.FullName );
             v2 = (TagLib.Id3v2.Tag)tag_file.GetTag( TagLib.TagTypes.Id3v2 );
             v1 = (TagLib.Id3v1.Tag)tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-            Fill( v2 );
+            Fill();
         }
-         /// <summary>
+        /// <summary>
         ///  fill from tag
         /// </summary>                                                          
         /// <param name="idx"></param>
-        public virtual void Fill( TagLib.Tag tag )
+        public virtual void Fill()
         {
         }
     }

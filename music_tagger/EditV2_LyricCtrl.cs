@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace music_tagger
 {
-    public partial class EditV2_LyricCtrl : EditV2CtrlBase
+    public partial class EditV2_LyricCtrl : EditCtrlBase
     {
         public EditV2_LyricCtrl()
         {
@@ -19,9 +19,9 @@ namespace music_tagger
         ///  fill from tag
         /// </summary>                                                          
         /// <param name="idx"></param>
-        public override void Fill( TagLib.Tag tag )
+        public override void Fill()
         {
-            txtLyrics.Text = tag.Lyrics;
+            txtLyrics.Text = v2.Lyrics;
         }
     }
 }

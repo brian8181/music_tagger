@@ -12,18 +12,19 @@ namespace music_tagger
     /// <summary>
     /// 
     /// </summary>
-    public partial class EditV2_MainCtrl : EditV2CtrlBase
+    public partial class EditV2_MainCtrl : EditCtrlBase
     {
          public EditV2_MainCtrl()
         {
             InitializeComponent();
         }
-         /// <summary>
+        /// <summary>
         ///  fill from tag
         /// </summary>                                                          
         /// <param name="idx"></param>
-        public override void Fill( TagLib.Tag tag )
+        public override void Fill()
         {
+            tag = v2;
             if(tag != null)
             {
                 txtArtists.Text = tag.JoinedPerformers;
@@ -83,14 +84,14 @@ namespace music_tagger
 
         private void btnAddGenre_Click( object sender, EventArgs e )
         {
-            if( !String.IsNullOrEmpty( cmbGenre.Text ) )
-                genreList.Items.Add( cmbGenre.Text );   
+            //if( !String.IsNullOrEmpty( cmbGenre.Text ) )
+            //    genreList.Items.Add( cmbGenre.Text );   
         }
 
         private void btnRemoveGenre_Click( object sender, EventArgs e )
         {
-            if(cmbGenre.SelectedItem != null)
-                genreList.Items.Remove( cmbGenre.SelectedItem );       
+            //if(cmbGenre.SelectedItem != null)
+            //    genreList.Items.Remove( cmbGenre.SelectedItem );       
         }
 
         private void btnTopGenre_Click( object sender, EventArgs e )
@@ -98,8 +99,8 @@ namespace music_tagger
             if(cmbGenre.SelectedItem != null)
             {
                 object o = cmbGenre.SelectedItem;
-                genreList.Items.Remove( o );
-                genreList.Items.Add( o );
+                //genreList.Items.Remove( o );
+                //genreList.Items.Add( o );
             }
         }
 
@@ -127,6 +128,16 @@ namespace music_tagger
             ListViewItem lvi     = commentList.Items[cmbCommentDesciptor.Text];
             commentList.Items.RemoveByKey( cmbCommentDesciptor.Text );
             commentList.Items.Insert( 0, lvi );
+        }
+
+        private void cmbGenre_MouseDoubleClick( object sender, MouseEventArgs e )
+        {
+
+        }
+
+        private void txtArtists_DoubleClick( object sender, EventArgs e )
+        {
+
         }
     }
 }

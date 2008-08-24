@@ -1,6 +1,6 @@
 namespace music_tagger
 {
-    partial class EditV2CtrlBase
+    partial class EditCtrlBase
     {
         /// <summary> 
         /// Required designer variable.

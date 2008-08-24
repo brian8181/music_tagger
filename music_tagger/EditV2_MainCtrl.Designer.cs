@@ -65,16 +65,12 @@ namespace music_tagger
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.encodingCol = new System.Windows.Forms.ColumnHeader();
-            this.btnRemoveGenre = new System.Windows.Forms.Button();
-            this.btnAddGenre = new System.Windows.Forms.Button();
-            this.btnTopGenre = new System.Windows.Forms.Button();
             this.btnAddComment = new System.Windows.Forms.Button();
             this.btnRemoveComment = new System.Windows.Forms.Button();
             this.btnTopComment = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtArtists = new System.Windows.Forms.TextBox();
-            this.genreList = new System.Windows.Forms.ListBox();
             this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
@@ -389,36 +385,6 @@ namespace music_tagger
             // 
             this.encodingCol.Text = "Encoding";
             // 
-            // btnRemoveGenre
-            // 
-            this.btnRemoveGenre.Location = new System.Drawing.Point( 476, 202 );
-            this.btnRemoveGenre.Name = "btnRemoveGenre";
-            this.btnRemoveGenre.Size = new System.Drawing.Size( 59, 20 );
-            this.btnRemoveGenre.TabIndex = 58;
-            this.btnRemoveGenre.Text = "Remove";
-            this.btnRemoveGenre.UseVisualStyleBackColor = true;
-            this.btnRemoveGenre.Click += new System.EventHandler( this.btnRemoveGenre_Click );
-            // 
-            // btnAddGenre
-            // 
-            this.btnAddGenre.Location = new System.Drawing.Point( 475, 150 );
-            this.btnAddGenre.Name = "btnAddGenre";
-            this.btnAddGenre.Size = new System.Drawing.Size( 59, 20 );
-            this.btnAddGenre.TabIndex = 59;
-            this.btnAddGenre.Text = "Add";
-            this.btnAddGenre.UseVisualStyleBackColor = true;
-            this.btnAddGenre.Click += new System.EventHandler( this.btnAddGenre_Click );
-            // 
-            // btnTopGenre
-            // 
-            this.btnTopGenre.Location = new System.Drawing.Point( 476, 176 );
-            this.btnTopGenre.Name = "btnTopGenre";
-            this.btnTopGenre.Size = new System.Drawing.Size( 59, 20 );
-            this.btnTopGenre.TabIndex = 60;
-            this.btnTopGenre.Text = "Top";
-            this.btnTopGenre.UseVisualStyleBackColor = true;
-            this.btnTopGenre.Click += new System.EventHandler( this.btnTopGenre_Click );
-            // 
             // btnAddComment
             // 
             this.btnAddComment.Location = new System.Drawing.Point( 537, 16 );
@@ -471,12 +437,8 @@ namespace music_tagger
             // groupBox3
             // 
             this.groupBox3.Controls.Add( this.txtArtists );
-            this.groupBox3.Controls.Add( this.genreList );
-            this.groupBox3.Controls.Add( this.btnTopGenre );
             this.groupBox3.Controls.Add( this.label6 );
-            this.groupBox3.Controls.Add( this.btnAddGenre );
             this.groupBox3.Controls.Add( this.cmbGenre );
-            this.groupBox3.Controls.Add( this.btnRemoveGenre );
             this.groupBox3.Controls.Add( this.btnV1Genre );
             this.groupBox3.Controls.Add( this.button4 );
             this.groupBox3.Controls.Add( this.label1 );
@@ -513,17 +475,11 @@ namespace music_tagger
             this.txtArtists.Name = "txtArtists";
             this.txtArtists.Size = new System.Drawing.Size( 413, 20 );
             this.txtArtists.TabIndex = 74;
-            // 
-            // genreList
-            // 
-            this.genreList.FormattingEnabled = true;
-            this.genreList.Location = new System.Drawing.Point( 121, 180 );
-            this.genreList.Name = "genreList";
-            this.genreList.Size = new System.Drawing.Size( 343, 56 );
-            this.genreList.TabIndex = 73;
+            this.txtArtists.DoubleClick += new System.EventHandler( this.txtArtists_DoubleClick );
             // 
             // cmbGenre
             // 
+            this.cmbGenre.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbGenre.FormattingEnabled = true;
             this.cmbGenre.Items.AddRange( new object[] {
             "Blues ",
@@ -606,8 +562,9 @@ namespace music_tagger
             "Hard Rock"} );
             this.cmbGenre.Location = new System.Drawing.Point( 120, 153 );
             this.cmbGenre.Name = "cmbGenre";
-            this.cmbGenre.Size = new System.Drawing.Size( 344, 21 );
+            this.cmbGenre.Size = new System.Drawing.Size( 414, 21 );
             this.cmbGenre.TabIndex = 65;
+            this.cmbGenre.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler( this.cmbGenre_MouseDoubleClick );
             // 
             // button4
             // 
@@ -664,9 +621,6 @@ namespace music_tagger
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button btnRemoveGenre;
-        private System.Windows.Forms.Button btnAddGenre;
-        private System.Windows.Forms.Button btnTopGenre;
         private System.Windows.Forms.Button btnAddComment;
         private System.Windows.Forms.Button btnRemoveComment;
         private System.Windows.Forms.Button btnTopComment;
@@ -686,7 +640,6 @@ namespace music_tagger
         public System.Windows.Forms.ComboBox cmbCommentDesciptor;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox cmbGenre;
-        private System.Windows.Forms.ListBox genreList;
         private System.Windows.Forms.ColumnHeader encodingCol;
         public System.Windows.Forms.TextBox txtArtists;
     }

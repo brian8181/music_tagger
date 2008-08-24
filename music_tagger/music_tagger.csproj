@@ -363,11 +363,11 @@
     <Compile Include="View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditV2CtrlBase.cs">
+    <Compile Include="EditCtrlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EditV2CtrlBase.Designer.cs">
-      <DependentUpon>EditV2CtrlBase.cs</DependentUpon>
+    <Compile Include="EditCtrlBase.Designer.cs">
+      <DependentUpon>EditCtrlBase.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

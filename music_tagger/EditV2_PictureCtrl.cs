@@ -9,7 +9,7 @@ using System.IO;
 
 namespace music_tagger
 {
-    public partial class EditV2_PictureCtrl : EditV2CtrlBase
+    public partial class EditV2_PictureCtrl : EditCtrlBase
     {
      
         public EditV2_PictureCtrl()
@@ -17,8 +17,9 @@ namespace music_tagger
             InitializeComponent();
         }
        
-        public override void Fill( TagLib.Tag tag )
+        public override void Fill()
         {
+            tag = v2;
             if(tag.Pictures.Length > 0)
             {
                 TagLib.IPicture pic = tag.Pictures[0];

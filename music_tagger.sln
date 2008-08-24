@@ -15,6 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B8B873B0-1
 	ProjectSection(SolutionItems) = preProject
 		docs\id3v1_genres.txt = docs\id3v1_genres.txt
 		docs\id3v2.3.0.txt = docs\id3v2.3.0.txt
+		id3v2.4.0-changes.txt = id3v2.4.0-changes.txt
+		docs\id3v2.4.0-frames.txt = docs\id3v2.4.0-frames.txt
+		docs\id3v2.4.0-structure.txt = docs\id3v2.4.0-structure.txt
 	EndProjectSection
 	ProjectSection(FolderStartupServices) = postProject
 		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}

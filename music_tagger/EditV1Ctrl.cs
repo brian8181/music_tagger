@@ -12,12 +12,8 @@ namespace music_tagger
     /// <summary>
     /// 
     /// </summary>
-    public partial class EditV1Ctrl : UserControl
+    public partial class EditV1Ctrl : EditCtrlBase
     {
-        private ListView lv = null;
-        private int idx = -1;
-        private TagLib.Id3v1.Tag id3v1 = null;
-     
         /// <summary>
         /// default constructor
         /// </summary>
@@ -30,45 +26,26 @@ namespace music_tagger
         /// intialize listview  
         /// </summary>
         /// <param name="lv"></param>
-        public virtual void Initialize( ListView lv )
+        public override void Initialize( ListView lv )
         {
-            this.lv = lv;
-            if(lv.SelectedItems.Count > 0)
-            {
-                idx = 0;
-                Fill( idx );
-            }
-
+            base.Initialize( lv );
             this.toolTip.SetToolTip( this.lblFile, this.lblFile.Text );
         }
         /// <summary>
         ///  fill from tag
         /// </summary>
         /// <param name="idx"></param>
-        public void Fill(int idx)
+        public override void Fill()
         {
-            FileInfo fi = (FileInfo)lv.SelectedItems[idx].Tag;
-            lblFile.Text = fi.FullName;
-
-            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
-            id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
-            Fill( id3v1 );
-        }
-        /// <summary>
-        ///  fill from tag
-        /// </summary>
-        /// <param name="idx"></param>
-        public void Fill( TagLib.Tag id3v1 )
-        {
-            if(id3v1 != null)
+            if(v1 != null)
             {
-                txtArtists.Text = id3v1.JoinedPerformers;
-                txtAlbum.Text = id3v1.Album;
-                txtTitle.Text = id3v1.Title;
-                txtYear.Text = id3v1.Year.ToString();
-                txtTrack.Text = id3v1.Track.ToString();
-                cmbGenre.Text = id3v1.JoinedGenres;
-                txtComment.Text = id3v1.Comment;
+                txtArtists.Text = v1.JoinedPerformers;
+                txtAlbum.Text = v1.Album;
+                txtTitle.Text = v1.Title;
+                txtYear.Text = v1.Year.ToString();
+                txtTrack.Text = v1.Track.ToString();
+                cmbGenre.Text = v1.JoinedGenres;
+                txtComment.Text = v1.Comment;
             } 
         }
         /// <summary>
@@ -78,9 +55,9 @@ namespace music_tagger
         /// <param name="e"></param>
         private void taskPrevious_Click( object sender, EventArgs e )
         {
-            if(lv.SelectedItems.Count > idx && idx > 0)
+            if(lv.SelectedItems.Count > Index && Index > 0)
             {
-                Fill( --idx );
+                Next();
             }
         }
         /// <summary>
@@ -90,9 +67,9 @@ namespace music_tagger
         /// <param name="e"></param>
         private void taskNext_Click( object sender, EventArgs e )
         {
-            if(lv.SelectedItems.Count > (idx + 1))
+            if(lv.SelectedItems.Count > (Index + 1))
             {
-                Fill( ++idx );
+                Next();
             }
         }
         /// <summary>
@@ -163,17 +140,13 @@ namespace music_tagger
         /// <param name="e">args</param>
         private void txtArtist_DoubleClick( object sender, EventArgs e )
         {
-            EditListFrm dlg = new EditListFrm(this.id3v1.Performers);
+            EditListFrm dlg = new EditListFrm(this.v1.Performers);
             dlg.ShowDialog(this);
             StringBuilder sb = new StringBuilder();
             if(dlg.Strs != null)
             {
-                foreach(string s in dlg.Strs)
-                {
-                    sb.Append( s );
-                    sb.Append( "; " );
-                }
-                sb.Remove( sb.Length - 2, 2 ); // remove comma
+                EditFrm parent = (EditFrm)this.Parent;
+                parent.GetString( dlg.Strs );
                 txtArtists.Text = sb.ToString();
             }
             else

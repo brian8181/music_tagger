@@ -48,6 +48,7 @@ namespace music_tagger
             SafeClose();
         }
     }
+
     /// <summary>
     /// 
     /// </summary>
@@ -62,6 +63,7 @@ namespace music_tagger
         {
         }
     }
+
     /// <summary>
     /// 
     /// </summary>
@@ -95,14 +97,20 @@ namespace music_tagger
             SafeClose();
         }
     }
+
     /// <summary>
     /// 
     /// </summary>
     class ScanProgressThread : ProgressThread
     {
-        ListView lv = null;
-        TagLib.TagTypes type = TagLib.TagTypes.Id3v2;
-
+        private ListView lv = null;
+        private TagLib.TagTypes type = TagLib.TagTypes.Id3v2;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="infos"></param>
+        /// <param name="lv"></param>
+        /// <param name="type"></param>
         public ScanProgressThread( FileInfo[] infos, ListView lv, TagLib.TagTypes type )
             : base( infos )
         {
@@ -110,17 +118,6 @@ namespace music_tagger
             this.type = type;
             StartPosition = FormStartPosition.CenterParent;
         }
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        //public override void Start()
-        //{
-           
-        //    //lv.Clear();
-        //    // call the base to start
-        //    base.Start();
-          
-        //} 
         /// <summary>
         /// 
         /// </summary>
@@ -142,13 +139,10 @@ namespace music_tagger
                     SafeAdd( lvi );
                 }
             }
-
             SafeResize();
-
             OnFinished();
             SafeClose();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -166,7 +160,6 @@ namespace music_tagger
                     new SafeDelegate( SafeResize ) );
                 return;
             }
-
             if(infos.Length > 0)
             {
                 int len = lv.Columns.Count;
@@ -176,7 +169,6 @@ namespace music_tagger
                 }
             }
         }
-       
         /// <summary>
         /// 
         /// </summary>

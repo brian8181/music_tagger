@@ -28,9 +28,6 @@ namespace music_tagger
                 this.status = status;
             }
         }
-        public class ColumnUpdateArgs
-        {
-        }
         /// <summary>
         /// Status Update Event
         /// </summary>
@@ -39,7 +36,6 @@ namespace music_tagger
         protected Thread thread = null;
         protected FileInfo[] infos = null;
         protected volatile bool cancel = false;
-       
         /// <summary>
         /// 
         /// </summary>
@@ -141,7 +137,6 @@ namespace music_tagger
         protected string path = null;
         protected bool copy = false;
         protected bool overwrite = false;
-
         /// <summary>
         /// 
         /// </summary>

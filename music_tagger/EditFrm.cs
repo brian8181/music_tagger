@@ -74,14 +74,21 @@ namespace music_tagger
             }
             return null;
         }
+        /// <summary>
+        /// helper creates a ';' delimited string from array 
+        /// </summary>
+        /// <param name="strs"></param>
+        /// <returns></returns>
+        public virtual string GetString( string[] strs )
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(string s in strs)
+            {
+                sb.Append( s );
+                sb.Append( "; " );
+            }
+            sb.Remove( sb.Length - 2, 2 ); // remove comma
+            return sb.ToString();
+        }   
     }
-
-    //public class FormatFrm : EditFrm
-    //{
-    //    ComboBox cmbFormat = new ComboBox();
-    //    Button btnAdd = new Button();
-    //    Button btnRemove = new Button();
-    //    Button btnOK = new Button();
-    //    Button btnCancel = new Button();
-    // }
 }
