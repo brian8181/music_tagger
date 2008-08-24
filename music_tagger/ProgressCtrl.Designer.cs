@@ -36,9 +36,9 @@ namespace music_tagger
             // progressBar
             // 
             this.progressBar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.progressBar.Location = new System.Drawing.Point( 7, 42 );
+            this.progressBar.Location = new System.Drawing.Point( 3, 42 );
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size( 384, 21 );
+            this.progressBar.Size = new System.Drawing.Size( 444, 21 );
             this.progressBar.TabIndex = 0;
             // 
             // label1
@@ -57,7 +57,7 @@ namespace music_tagger
             this.lblFile.Font = new System.Drawing.Font( "Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ) );
             this.lblFile.Location = new System.Drawing.Point( 85, 14 );
             this.lblFile.Name = "lblFile";
-            this.lblFile.Size = new System.Drawing.Size( 306, 19 );
+            this.lblFile.Size = new System.Drawing.Size( 362, 19 );
             this.lblFile.TabIndex = 2;
             this.lblFile.Text = "...";
             // 
@@ -66,12 +66,11 @@ namespace music_tagger
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add( this.lblFile );
             this.Controls.Add( this.label1 );
             this.Controls.Add( this.progressBar );
             this.Name = "ProgressCtrl";
-            this.Size = new System.Drawing.Size( 397, 76 );
+            this.Size = new System.Drawing.Size( 452, 78 );
             this.ResumeLayout( false );
             this.PerformLayout();
 

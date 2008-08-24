@@ -344,7 +344,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="TagEditor.cs" />
     <Compile Include="TagListViewItem.cs" />
     <Compile Include="TagV12FileFrm.cs">
       <SubType>Form</SubType>
@@ -370,7 +369,6 @@
     <Compile Include="EditV2CtrlBase.Designer.cs">
       <DependentUpon>EditV2CtrlBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tools\Tools.csproj">

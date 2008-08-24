@@ -41,5 +41,14 @@ namespace music_tagger
 
             Close();
         }
+
+        private void btnCancel_Click( object sender, EventArgs e )
+        {
+            OnCancel();
+        }
+
+        protected virtual void OnCancel()
+        {
+        }
     }
 }

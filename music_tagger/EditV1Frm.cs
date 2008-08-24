@@ -96,18 +96,20 @@ namespace music_tagger
             if(!multi_edit || editCtrl.ckArtist.Checked)
             {
                 // Performers
-                if(!String.IsNullOrEmpty( editCtrl.txtArtists.Text ))
-                {
-                    string[] splits = editCtrl.txtArtists.Text.Split( ';' );
-                    // trim space
-                    int len = splits.Length;
-                    for(int i = 0; i < len; ++i)
-                    {
-                        splits[i] = splits[i].Trim();
-                    }
-                    // set tag
-                    item.Id3v1.Performers = splits;
-                }
+                //if(!String.IsNullOrEmpty( editCtrl.txtArtists.Text ))
+                //{
+                //    string[] splits = editCtrl.txtArtists.Text.Split( ';' );
+                //    // trim space
+                //    int len = splits.Length;
+                //    for(int i = 0; i < len; ++i)
+                //    {
+                //        splits[i] = splits[i].Trim();
+                //    }
+                //    // set tag
+                //    item.Id3v1.Performers = splits;
+                //}
+
+                item.Id3v1.Performers = GetArray( editCtrl.txtArtists.Text );
             }
             if(!multi_edit || editCtrl.ckAlbum.Checked)
             {

@@ -28,11 +28,9 @@ namespace music_tagger
                 this.status = status;
             }
         }
-
         public class ColumnUpdateArgs
         {
         }
-
         /// <summary>
         /// Status Update Event
         /// </summary>
@@ -40,6 +38,7 @@ namespace music_tagger
         public event EventHandler<EventArgs> Finished;
         protected Thread thread = null;
         protected FileInfo[] infos = null;
+        protected volatile bool cancel = false;
        
         /// <summary>
         /// 
@@ -50,9 +49,8 @@ namespace music_tagger
         {
             thread = new Thread( new ThreadStart( ThreadFunc ) );
             thread.Priority = ThreadPriority.BelowNormal;
-            thread.Name = "OrganizeThread";
+            thread.Name = "ProgressThread";
             thread.IsBackground = true;
-    
             this.infos = infos;
         }
         /// <summary>
@@ -60,16 +58,20 @@ namespace music_tagger
         /// </summary>
         public virtual void Start(IWin32Window window)
         {
-            this.Show(window);
             thread.Start();
+            this.ShowDialog(window);
         }
         /// <summary>
         /// 
         /// </summary>
         public virtual void Start()
         {
-            this.Show();
-            thread.Start();    
+            thread.Start();
+            this.ShowDialog();    
+        }
+        protected override void OnCancel()
+        {
+            cancel = true;
         }
         /// <summary>
         /// 
@@ -92,9 +94,10 @@ namespace music_tagger
             if( StatusUpdate != null ) 
                 StatusUpdate( this, new StatusArgs( "Finished" ) );  
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private delegate void SafeDelegate();
-
         /// <summary>
         /// 
         /// </summary>
@@ -109,7 +112,6 @@ namespace music_tagger
             if(Finished != null)
                 Finished( this, EventArgs.Empty );
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -121,16 +123,15 @@ namespace music_tagger
             // 
             this.progressCtrl.Location = new System.Drawing.Point( 3, 3 );
             // 
-            // OrganizeThread
+            // ProgressThread
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
-            this.ClientSize = new System.Drawing.Size( 396, 104 );
-            this.Name = "OrganizeThread";
+            this.ClientSize = new System.Drawing.Size( 451, 99 );
+            this.Name = "ProgressThread";
             this.ResumeLayout( false );
 
         }
     }
-
     /// <summary>
     /// Isolate threading
     /// </summary>

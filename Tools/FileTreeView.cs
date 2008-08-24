@@ -7,11 +7,11 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
-//using BKP.Online.IO;
+
 namespace Tools
 {
     /// <summary>
-    /// 
+    /// a file tree view
     /// </summary>
     public partial class FileTreeView : TreeView
     {
@@ -21,7 +21,7 @@ namespace Tools
         private readonly int rom_drive_img_idx;
         private readonly int net_drive_img_idx;
         /// <summary>
-        /// 
+        ///  default constructor
         /// </summary>
         public FileTreeView()
         {
@@ -31,7 +31,7 @@ namespace Tools
             list.Images.Add( Properties.Resources.closed_folder ); // 0
             list.Images.Add( Properties.Resources.opened_folder ); // 1
             hard_drive_img_idx = 2;
-            list.Images.Add( Properties.Resources.hard_drive2 );
+            list.Images.Add( Properties.Resources.hard_drive );
             rom_drive_img_idx = 3;
             list.Images.Add( Properties.Resources.rom_drive );
             net_drive_img_idx = 4;
@@ -41,7 +41,7 @@ namespace Tools
             SelectedImageIndex = opened_img_idx;
         }
         /// <summary>
-        ///     
+        /// constructor    
         /// </summary>
         public void Initilaize()
         {
@@ -59,6 +59,7 @@ namespace Tools
         /// <returns></returns>
         public bool CanReadFile( FileSystemInfo file )
         {
+            // BKP node has CanRead do I need this?
             string root = Path.GetPathRoot( file.FullName );
             // if first drive is readable - fill and expand 
             DriveInfo[] drives = DriveInfo.GetDrives();
@@ -134,9 +135,10 @@ namespace Tools
                     string name = files[i].Name;
                     FileSystemInfo fi = (FileSystemInfo)files[i];
                     FileTreeNode child = new FileTreeNode( name, fi, 0, 1 );
+                    //child.Initialize();
                     node.Nodes.Add( child );
-                    node.Intialized = true;
                 }
+                //Sort();
                 EndUpdate();
                 //node.Expand();
             }

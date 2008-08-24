@@ -26,11 +26,7 @@ namespace music_tagger
         {
             if(tag != null)
             {
-                if(tag.Performers.Length > 0)
-                {
-                    cmbArtist.Items.AddRange( tag.Performers );
-                    cmbArtist.SelectedIndex = 0;
-                }
+                txtArtists.Text = tag.JoinedPerformers;
                 txtAlbum.Text = tag.Album;
                 txtTitle.Text = tag.Title;
                 txtYear.Text = tag.Year.ToString();
@@ -39,6 +35,14 @@ namespace music_tagger
                 {
                     cmbGenre.Items.AddRange( tag.Genres );
                     cmbGenre.SelectedIndex = 0;
+                }
+                foreach(TagLib.Id3v2.CommentsFrame frame in ((TagLib.Id3v2.Tag)tag).GetFrames( "COMM" ))
+                {
+                    ListViewItem item = 
+                        commentList.Items.Add( frame.Description );
+                    item.SubItems.Add( frame.Text );
+                    item.SubItems.Add( frame.Language );
+                    item.SubItems.Add( frame.TextEncoding.ToString() );
                 }
                 txtComment.Text = tag.Comment;
 
@@ -49,7 +53,7 @@ namespace music_tagger
 
         private void btnV1Artist_Click( object sender, EventArgs e )
         {
-           cmbArtist.Text = v1.FirstPerformer;
+            txtArtists.Text = v1.JoinedPerformers;
         }
 
         private void btnV1Title_Click( object sender, EventArgs e )

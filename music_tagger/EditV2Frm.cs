@@ -151,11 +151,8 @@ namespace music_tagger
         protected override void EditItem( TagListViewItem item )
         {
             item.BackColor = Color.Yellow;
-            if( !String.IsNullOrEmpty(  main.cmbArtist.Text ) )
-            {
-                item.Id3v2.Performers = new string[1] { main.cmbArtist.Text };
-            }
-
+            
+            item.Id3v2.Performers = GetArray( main.txtArtists.Text );
             //item.Id3v2.Performers = new string[main.cmbArtist.Items.Count];
             //main.cmbArtist.Items.CopyTo(item.Id3v2.Performers, 0);
          

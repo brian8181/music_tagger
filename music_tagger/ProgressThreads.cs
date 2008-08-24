@@ -129,6 +129,9 @@ namespace music_tagger
             // fill items
             foreach(FileInfo fi in infos)
             {
+                if(cancel)
+                    break;
+
                 OnStatusUpdate( fi.Name );
 
                 TagListViewItem lvi = new TagListViewItem( lv, fi.FullName );

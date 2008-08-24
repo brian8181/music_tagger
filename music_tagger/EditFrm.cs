@@ -40,7 +40,6 @@ namespace music_tagger
         protected virtual void EditItem( TagListViewItem item )
         {
         }
-
         /// <summary>
         /// intialize listview  
         /// </summary>
@@ -54,14 +53,35 @@ namespace music_tagger
         public virtual void Coalesce()
         {
         }
+        /// <summary>
+        /// helper function creates an array from ';' delimited value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>the created array</returns>
+        public virtual string[] GetArray(string value)
+        {
+            if(!String.IsNullOrEmpty( value ))
+            {
+                string[] splits = value.Split( ';' );
+                // trim space
+                int len = splits.Length;
+                for(int i = 0; i < len; ++i)
+                {
+                    splits[i] = splits[i].Trim();
+                }
+                // set tag
+                return splits;
+            }
+            return null;
+        }
     }
 
-    public class FormatFrm : EditFrm
-    {
-        ComboBox cmbFormat = new ComboBox();
-        Button btnAdd = new Button();
-        Button btnRemove = new Button();
-        Button btnOK = new Button();
-        Button btnCancel = new Button();
-     }
+    //public class FormatFrm : EditFrm
+    //{
+    //    ComboBox cmbFormat = new ComboBox();
+    //    Button btnAdd = new Button();
+    //    Button btnRemove = new Button();
+    //    Button btnOK = new Button();
+    //    Button btnCancel = new Button();
+    // }
 }

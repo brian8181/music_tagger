@@ -29,23 +29,35 @@ namespace music_tagger
         private void InitializeComponent()
         {
             this.progressCtrl = new music_tagger.ProgressCtrl();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // progressCtrl
             // 
-            this.progressCtrl.BackColor = System.Drawing.SystemColors.Control;
-            this.progressCtrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.progressCtrl.Location = new System.Drawing.Point( 1, 12 );
+            this.progressCtrl.BackColor = System.Drawing.Color.FromArgb( ( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ) );
+            this.progressCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.progressCtrl.Location = new System.Drawing.Point( 0, 0 );
             this.progressCtrl.Name = "progressCtrl";
-            this.progressCtrl.Size = new System.Drawing.Size( 390, 98 );
+            this.progressCtrl.Size = new System.Drawing.Size( 451, 99 );
             this.progressCtrl.TabIndex = 0;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point( 372, 70 );
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size( 75, 23 );
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler( this.btnCancel_Click );
             // 
             // ProgressFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size( 395, 119 );
+            this.ClientSize = new System.Drawing.Size( 451, 99 );
             this.ControlBox = false;
+            this.Controls.Add( this.btnCancel );
             this.Controls.Add( this.progressCtrl );
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ProgressFrm";
@@ -59,6 +71,14 @@ namespace music_tagger
         #endregion
 
         public ProgressCtrl progressCtrl;
+        private System.Windows.Forms.Button btnCancel;
+
+
+
+
+
+
+
 
     }
 }

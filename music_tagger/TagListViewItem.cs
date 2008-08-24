@@ -52,18 +52,6 @@ namespace music_tagger
                 tag_file = TagLib.File.Create( fi.FullName );
                 v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
                 v2 = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
-
-                Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
-                // Use this to get the small Icon
-                IntPtr handle = Win32.SHGetFileInfo( fi.FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
-                    Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
-                if(lv.SmallImageList.Images.ContainsKey( sInfo.hIcon.ToString() ) != true)
-                {
-                    // The icon is returned in the hIcon member of the shinfo struct
-                    System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
-                    lv.SmallImageList.Images.Add( sInfo.hIcon.ToString(), icon );
-                }
-                this.ImageIndex = lv.SmallImageList.Images.IndexOfKey( sInfo.hIcon.ToString() );
             }
             catch(TagLib.CorruptFileException e)
             {
@@ -72,6 +60,18 @@ namespace music_tagger
                 System.Diagnostics.Trace.WriteLine( e.Message );
                 return false;
             }
+
+            Win32.SHFILEINFO sInfo = new OS.Win32.Win32.SHFILEINFO();
+            // Use this to get the small Icon
+            IntPtr handle = Win32.SHGetFileInfo( fi.FullName, 0, ref sInfo, (uint)Marshal.SizeOf( sInfo ),
+                Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON );
+            if(lv.SmallImageList.Images.ContainsKey( sInfo.dwAttributes.ToString() ) != true)
+            {
+                // The icon is returned in the hIcon member of the shinfo struct
+                System.Drawing.Icon icon = System.Drawing.Icon.FromHandle( sInfo.hIcon );
+                lv.SmallImageList.Images.Add( sInfo.dwAttributes.ToString(), icon );
+            }
+            this.ImageIndex = lv.SmallImageList.Images.IndexOfKey( sInfo.dwAttributes.ToString() );
             
             Dictionary<Column, Column> tmp_items = new Dictionary<Column, Column>();
             // fill dictionary with all values

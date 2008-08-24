@@ -21,12 +21,34 @@ namespace music_tagger
         /// <param name="idx"></param>
         public override void Fill( TagLib.Tag tag )
         {
-            //txtBand.Text = tag.JoinedPerformers;
+            TagLib.Id3v2.TextInformationFrame frame = 
+                TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)tag, "TPE2", false );
+            if(frame != null && frame.Text.Length > 0)
+            {
+                txtBand.Text = frame.Text[0];
+                frame = null;
+            }
+           
             txtConductor.Text = tag.Conductor;
-            //txtRemixed.Text = v2.JoinedComposers;
+            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)tag, "TPE4", false );
+            if(frame != null && frame.Text.Length > 0)
+            {
+                txtRemixed.Text = frame.Text[0];
+                frame = null;
+            }
             txtComposer.Text = v2.FirstComposer;
-            //txtWriter.Text = v2.JoinedComposers;
-            txtPublisher.Text = v2.Copyright;
+            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)tag, "TEXT", false );
+            if(frame != null && frame.Text.Length > 0)
+            {
+                txtWriter.Text = frame.Text[0];
+                frame = null;
+            }
+            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)tag, "TPUB", false );
+            if(frame != null && frame.Text.Length > 0)
+            {
+                txtPublisher.Text = frame.Text[0];
+                frame = null;
+            }
             txtCopyright.Text = v2.Copyright;
             txtContentGroup.Text = v2.Grouping;
             // todo split 

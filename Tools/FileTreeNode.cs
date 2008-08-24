@@ -7,30 +7,40 @@ using System.Windows.Forms;
 namespace Tools
 {
     /// <summary>
-    /// 
+    /// a file tree node
     /// </summary>
     public class FileTreeNode : TreeNodeExt
     {
         private System.IO.FileSystemInfo fi;
         private DriveInfo drive = null;
-
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="fi"></param>
+        /// <param name="img_idx"></param>
+        /// <param name="sel_img"></param>
         public FileTreeNode( string name, FileSystemInfo fi, int img_idx, int sel_img )
             : base( name, img_idx, sel_img )
         {
             this.fi = fi;
-            Initialize();
+            InitializeRoot();
         }
-
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="fi"></param>
         public FileTreeNode( string name, FileSystemInfo fi )
             : base( name )
         {
             this.fi = fi;
-            Initialize();
+            InitializeRoot();
         }
         /// <summary>
-        /// 
+        /// overrides Initialize
         /// </summary>
-        public override void Initialize()
+        public override void InitializeRoot()
         {
             string root = Path.GetPathRoot( fi.FullName );
             DriveInfo[] drives = DriveInfo.GetDrives();
@@ -42,43 +52,65 @@ namespace Tools
                     break;
                 }
             }
+            //intialized = true;
         }
         /// <summary>
-        /// 
+        ///  checks can read for node
+        /// </summary>
+        public override bool CanRead
+        {
+            get
+            {
+                // todo more checks
+                return drive.IsReady;
+            }
+        }
+        /// <summary>
+        /// gets the drive information
+        /// </summary>
+        public DriveInfo Drive
+        {
+            get { return drive; }
+        }
+        /// <summary>
+        /// gets the FileSystemInfo 
         /// </summary>
         public System.IO.FileSystemInfo FileSystemInfo
         {
             get { return fi; }
-            set { fi = value; }
         }
-
+        /// <summary>
+        ///  refreshes the node
+        /// </summary>
         public override void RefreshNode()
         {
             throw new Exception( "The method or operation is not implemented." );
         }
     }
-
     /// <summary>
-    /// 
+    ///  a drive node
     /// </summary>
     public class DriveTreeNode : FileTreeNode
     {
-        public DriveTreeNode( string name, FileSystemInfo fi, int img_idx, int sel_img )
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="fi"></param>
+        public DriveTreeNode( string name, FileSystemInfo fi)
+            : base( name, fi )
+        {
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="fi"></param>
+        /// <param name="img_idx"></param>
+        /// <param name="sel_img"></param>
+        public DriveTreeNode( string name, FileSystemInfo fi, int img_idx, int sel_img)
             : base( name, fi, img_idx, sel_img )
         {
         }
-
-        public DriveTreeNode( string name, FileSystemInfo fi )
-            : base( name, fi )
-        {
-          
-        }
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    //public class FileTreeNodeCollection : TreeNodeCollection
-    //{
-    //}
 }
