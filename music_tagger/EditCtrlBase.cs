@@ -1,12 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Text;
+using System.Drawing;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
-
 namespace music_tagger
 {
     /// <summary>
@@ -21,26 +20,18 @@ namespace music_tagger
         protected TagLib.Id3v2.Tag v2;
         protected ListView lv = null;
         private int idx = -1;
-
+        /// <summary>
+        ///  get the current index
+        /// </summary>
         public int Index
         {
             get { return idx; }
         }
-
         /// <summary>
-        /// 
+        /// constructor
         /// </summary>
-        public EditCtrlBase() : this(false)
+        public EditCtrlBase()
         {
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="multi_edit"></param>
-        public EditCtrlBase(bool multi_edit)
-        {
-            InitializeComponent();
-            this.multi_edit = multi_edit;
         }
         /// <summary>
         /// intialize listview  
@@ -48,6 +39,14 @@ namespace music_tagger
         /// <param name="lv"></param>
         public virtual void Initialize( ListView lv )
         {
+            Initialize( lv, false );
+        }
+        /// intialize listview  
+        /// </summary>
+        /// <param name="lv"></param>
+        public virtual void Initialize( ListView lv, bool multi_edit )
+        {
+            this.multi_edit = multi_edit; 
             this.lv = lv;
             if(lv.SelectedItems.Count > 0)
             {
@@ -55,7 +54,7 @@ namespace music_tagger
             }
         }
         /// <summary>
-        /// 
+        /// move to next tag & advance the index
         /// </summary>
         public void Next()
         {
@@ -71,6 +70,19 @@ namespace music_tagger
         /// </summary>                                                          
         /// <param name="idx"></param>
         public virtual void Fill()
+        {
+        }
+        /// <summary>
+        /// merge like values, hide unlike values
+        /// </summary>
+        public virtual void Coalesce()
+        {
+        }
+        /// <summary>
+        ///  ID3v1 edit 
+        /// </summary>
+        /// <param name="item">the item</param>
+        public virtual void EditItem( TagListViewItem item )
         {
         }
     }

@@ -28,17 +28,10 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
-            this.editCtrl = new music_tagger.EditV1Ctrl();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.editCtrl = new music_tagger.EditV1Ctrl();
             this.SuspendLayout();
-            // 
-            // editCtrl
-            // 
-            this.editCtrl.Location = new System.Drawing.Point( -3, 2 );
-            this.editCtrl.Name = "editCtrl";
-            this.editCtrl.Size = new System.Drawing.Size( 649, 248 );
-            this.editCtrl.TabIndex = 0;
             // 
             // btnOK
             // 
@@ -61,6 +54,13 @@ namespace music_tagger
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // editCtrl
+            // 
+            this.editCtrl.Location = new System.Drawing.Point( -1, 3 );
+            this.editCtrl.Name = "editCtrl";
+            this.editCtrl.Size = new System.Drawing.Size( 655, 208 );
+            this.editCtrl.TabIndex = 3;
+            // 
             // EditV1Frm
             // 
             this.AcceptButton = this.btnOK;
@@ -68,9 +68,9 @@ namespace music_tagger
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size( 658, 248 );
+            this.Controls.Add( this.editCtrl );
             this.Controls.Add( this.btnCancel );
             this.Controls.Add( this.btnOK );
-            this.Controls.Add( this.editCtrl );
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "EditV1Frm";
             this.Text = "Edit Version 1 Tag";
@@ -80,9 +80,9 @@ namespace music_tagger
 
         #endregion
 
-        public EditV1Ctrl editCtrl;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private EditV1Ctrl editCtrl;
 
 
 

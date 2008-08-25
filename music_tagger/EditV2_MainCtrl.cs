@@ -17,6 +17,16 @@ namespace music_tagger
          public EditV2_MainCtrl()
         {
             InitializeComponent();
+            string[] lines =  Properties.Resources.ISO_639_2.Split('\n');
+            cmbCommentLang.Items.Add( "xxx (default)" );
+            //alpha-3 (bibliographic) code|an alpha-3 (terminologic)|English name|French name
+            foreach(string line in lines)
+            {
+                string[] split = line.Split( '|' );
+                string lang = String.Format( "{0} ({1})", split[0], split[3] );
+                cmbCommentLang.Items.Add( lang );
+            }
+            cmbCommentLang.SelectedIndex = 0;
         }
         /// <summary>
         ///  fill from tag
@@ -112,7 +122,7 @@ namespace music_tagger
         private void btnAddComment_Click( object sender, EventArgs e )
         {
             ListViewItem lvi = commentList.Items.Add( 
-                cmbCommentDesciptor.Text, cmbCommentDesciptor.Text, 0 );
+                txtCommentDescriptor.Text, txtCommentDescriptor.Text, 0 );
             lvi.SubItems.Add( cmbCommentLang.Text );
             lvi.SubItems.Add( txtComment.Text );
             
@@ -120,22 +130,34 @@ namespace music_tagger
 
         private void btnRemoveComment_Click( object sender, EventArgs e )
         {
-            commentList.Items.RemoveByKey( cmbCommentDesciptor.Text );    
+            commentList.Items.RemoveByKey( txtCommentDescriptor.Text );    
         }
 
         private void btnTopComment_Click( object sender, EventArgs e )
         {
-            ListViewItem lvi     = commentList.Items[cmbCommentDesciptor.Text];
-            commentList.Items.RemoveByKey( cmbCommentDesciptor.Text );
+            ListViewItem lvi     = commentList.Items[txtCommentDescriptor.Text];
+            commentList.Items.RemoveByKey( txtCommentDescriptor.Text );
             commentList.Items.Insert( 0, lvi );
         }
 
-        private void cmbGenre_MouseDoubleClick( object sender, MouseEventArgs e )
+        private void txtArtists_DoubleClick( object sender, EventArgs e )
         {
 
         }
 
-        private void txtArtists_DoubleClick( object sender, EventArgs e )
+        private void cmbGenre_TextChanged( object sender, EventArgs e )
+        {
+            if(!string.IsNullOrEmpty( txtGenre.Text ))
+            {
+                txtGenre.Text += "; " + this.cmbGenre.Text;
+            }
+            else
+            {
+                txtGenre.Text = cmbGenre.Text;
+            }
+        }
+
+        private void txtYear_TextChanged( object sender, EventArgs e )
         {
 
         }

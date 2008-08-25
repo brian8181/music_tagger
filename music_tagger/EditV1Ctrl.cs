@@ -20,7 +20,6 @@ namespace music_tagger
         public EditV1Ctrl()
         {
             InitializeComponent();
-            
         }
         /// <summary>
         /// intialize listview  
@@ -39,6 +38,10 @@ namespace music_tagger
         {
             if(v1 != null)
             {
+                if(multi_edit)
+                {
+                    Coalesce();
+                }
                 txtArtists.Text = v1.JoinedPerformers;
                 txtAlbum.Text = v1.Album;
                 txtTitle.Text = v1.Title;
@@ -47,6 +50,76 @@ namespace music_tagger
                 cmbGenre.Text = v1.JoinedGenres;
                 txtComment.Text = v1.Comment;
             } 
+        }
+        /// <summary>
+        /// merge like values, hide unlike values
+        /// </summary>
+        public override void Coalesce()
+        {
+            FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
+            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+            TagLib.Id3v1.Tag last_tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
+
+            foreach(ListViewItem item in lv.SelectedItems)
+            {
+                fi = (FileInfo)item.Tag;
+                tag_file = TagLib.File.Create( fi.FullName );
+                TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+
+                last_tag.Album = last_tag.Album != "" && tag.Album == last_tag.Album ? tag.Album : "";
+                if(last_tag.JoinedPerformers != "" && tag.JoinedPerformers == last_tag.JoinedPerformers)
+                {
+                    //todo  
+                }
+                last_tag.Title = last_tag.Title != "" && tag.Title == last_tag.Title ? tag.Title : "";
+                last_tag.Track = last_tag.Track != 0 && tag.Track == last_tag.Track ? tag.Track : 0;
+                last_tag.Year = last_tag.Year != 0 && tag.Year == last_tag.Year ? tag.Year : 0;
+
+                if(last_tag.JoinedGenres != "" && tag.JoinedGenres == last_tag.JoinedGenres)
+                {
+                    // todo
+                }
+            }
+            // todo
+            v1 = last_tag;
+        }
+        /// <summary>
+        ///  ID3v1 edit 
+        /// </summary>
+        /// <param name="item">the item</param>
+        public override void EditItem( TagListViewItem item )
+        {
+            item.BackColor = Color.Yellow;
+            if(!multi_edit || ckArtist.Checked)
+            {
+                item.Id3v1.Performers = Globals.GetArray( this.txtArtists.Text );
+            }
+            if(!multi_edit || ckAlbum.Checked)
+            {
+                item.Id3v1.Album = this.txtAlbum.Text;
+            }
+            if(!multi_edit || this.ckTitle.Checked)
+            {
+                item.Id3v1.Title = this.txtTitle.Text;
+            }
+            uint num = 0;
+            if(!multi_edit || this.ckYear.Checked)
+            {
+                item.Id3v1.Year = uint.TryParse( this.txtYear.Text, out num ) ? num : 0;
+            }
+            if(!multi_edit || this.ckTrack.Checked)
+            {
+                item.Id3v1.Track = uint.TryParse( this.txtTrack.Text, out num ) ? num : 0;
+            }
+            if(!multi_edit || this.ckGenre.Checked)
+            {
+                item.Id3v1.Genres = new string[1] { this.cmbGenre.Text };
+            }
+            if(!multi_edit || this.ckComment.Checked)
+            {
+                item.Id3v1.Comment = this.txtComment.Text;
+            }
+            item.RefreshItem();
         }
         /// <summary>
         ///  go to previous tag
@@ -131,7 +204,7 @@ namespace music_tagger
         }
         private void txtArtist_TextChanged( object sender, EventArgs e )
         {
-            ckAlbum.Checked = true;
+            ckArtist.Checked = true;
         }
         /// <summary>
         /// edit artists list
@@ -145,9 +218,8 @@ namespace music_tagger
             StringBuilder sb = new StringBuilder();
             if(dlg.Strs != null)
             {
-                EditFrm parent = (EditFrm)this.Parent;
-                parent.GetString( dlg.Strs );
-                txtArtists.Text = sb.ToString();
+                string s = Globals.GetString( dlg.Strs );
+                txtArtists.Text = s;
             }
             else
             {

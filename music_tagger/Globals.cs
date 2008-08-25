@@ -116,5 +116,42 @@ namespace music_tagger
     /// </summary>
     public static class Globals
     {
+        /// <summary>
+        /// helper function creates an array from ';' delimited value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>the created array</returns>
+        public static string[] GetArray( string value )
+        {
+            if(!String.IsNullOrEmpty( value ))
+            {
+                string[] splits = value.Split( ';' );
+                // trim space
+                int len = splits.Length;
+                for(int i = 0; i < len; ++i)
+                {
+                    splits[i] = splits[i].Trim();
+                }
+                // set tag
+                return splits;
+            }
+            return null;
+        }
+        /// <summary>
+        /// helper creates a ';' delimited string from array 
+        /// </summary>
+        /// <param name="strs"></param>
+        /// <returns></returns>
+        public static string GetString( string[] strs )
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(string s in strs)
+            {
+                sb.Append( s );
+                sb.Append( "; " );
+            }
+            sb.Remove( sb.Length - 2, 2 ); // remove comma
+            return sb.ToString();
+        }   
     }
 }

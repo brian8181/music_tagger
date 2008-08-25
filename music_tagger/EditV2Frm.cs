@@ -119,15 +119,6 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnCancel_Click( object sender, EventArgs e )
-        {
-            // do nothing
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnOK_Click( object sender, EventArgs e )
         {
             if(this.multi_edit)
@@ -143,19 +134,14 @@ namespace music_tagger
             }
             Close();
         }
-       
         /// <summary>
-        /// 
+        ///  edit a item
         /// </summary>
         /// <param name="item"></param>
         protected override void EditItem( TagListViewItem item )
         {
             item.BackColor = Color.Yellow;
-            
-            item.Id3v2.Performers = GetArray( main.txtArtists.Text );
-            //item.Id3v2.Performers = new string[main.cmbArtist.Items.Count];
-            //main.cmbArtist.Items.CopyTo(item.Id3v2.Performers, 0);
-         
+            item.Id3v2.Performers = Globals.GetArray( main.txtArtists.Text );
             item.Id3v2.Album = main.txtAlbum.Text;
             item.Id3v2.Title = main.txtTitle.Text;
             uint num = 0;
@@ -166,17 +152,8 @@ namespace music_tagger
             item.Id3v2.DiscCount = uint.TryParse( main.txtDiscCount.Text, out num ) ? num : 0;
             item.Id3v2.BeatsPerMinute = uint.TryParse( main.txtBPM.Text, out num ) ? num : 0;
             //item.Id3v2.Genres = new string[main.cm.Items.Count];
-            //main.cmbArtist.Items.CopyTo(item.Id3v2.Performers, 0);
-            
             item.Id3v2.Comment = main.txtComment.Text;
             item.RefreshItem();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public override void Coalesce()
-        {
         }
     }
 }

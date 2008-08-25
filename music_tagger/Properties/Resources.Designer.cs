@@ -140,6 +140,32 @@ namespace music_tagger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to aar||aa|Afar|afar
+        ///abk||ab|Abkhazian|abkhaze
+        ///ace|||Achinese|aceh
+        ///ach|||Acoli|acoli
+        ///ada|||Adangme|adangme
+        ///ady|||Adyghe; Adygei|adyghé
+        ///afa|||Afro-Asiatic (Other)|afro-asiatiques, autres langues
+        ///afh|||Afrihili|afrihili
+        ///afr||af|Afrikaans|afrikaans
+        ///ain|||Ainu|aïnou
+        ///aka||ak|Akan|akan
+        ///akk|||Akkadian|akkadien
+        ///alb|sqi|sq|Albanian|albanais
+        ///ale|||Aleut|aléoute
+        ///alg|||Algonquian languages|algonquines, langues
+        ///alt|||Southern Altai|altai du Sud
+        ///amh||am|Amharic|amharique
+        ///ang|||English, Old (ca.450-1100)|anglo-saxon (ca.450- [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ISO_639_2 {
+            get {
+                return ResourceManager.GetString("ISO_639_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This cause you to lose all pending changes. Do you with to save first?.
         /// </summary>
         internal static string refresh_warning {

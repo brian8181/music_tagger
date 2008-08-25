@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using OS.Win32;
-using System.Runtime.InteropServices;
 
 namespace music_tagger
 {
+    /// <summary>
+    /// adds tag info to list view item
+    /// </summary>
     public class TagListViewItem : ListViewItem
     {
         private FileInfo fi = null;
@@ -16,23 +19,35 @@ namespace music_tagger
         private TagLib.Id3v2.Tag v2 = null;
         private TagLib.TagTypes type = TagLib.TagTypes.Id3v2;
         private ListView lv = null;
-
+        /// <summary>
+        /// the v1 tag
+        /// </summary>
         public TagLib.Id3v1.Tag Id3v1
         {
             get { return v1; }
             set { v1 = value; }
         }
+        /// <summary>
+        /// the v2 tag
+        /// </summary>
         public TagLib.Id3v2.Tag Id3v2
         {
             get { return v2; }
             set { v2 = value; }
         }
+        /// <summary>
+        /// the current tag type
+        /// </summary>
         public TagLib.TagTypes Type
         {
             get { return type; }
             set { type = value; }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lv"></param>
+        /// <param name="path"></param>
         public TagListViewItem(ListView lv, string path)
         {
             this.lv = lv;
@@ -41,9 +56,8 @@ namespace music_tagger
             this.Text = fi.Name;
             this.Tag = fi;
         }
-
         /// <summary>
-        /// 
+        /// init item
         /// </summary>
         public bool IntializeItem()
         {
@@ -104,9 +118,8 @@ namespace music_tagger
 
             return true;
         }
-        
         /// <summary>
-        /// 
+        /// refresh the item
         /// </summary>
         public void RefreshItem()
         {
@@ -119,15 +132,13 @@ namespace music_tagger
                 i.Text = val;    
             }
         }
-
         /// <summary>
-        /// 
+        /// update tags
         /// </summary>
         public void UpdateTags()
         {
             tag_file.Save();    
         }
-
         /// <summary>
         /// returns subitem string from file by column key 
         /// </summary>
@@ -178,6 +189,5 @@ namespace music_tagger
             }
             return "";
         }
-
     }
 }
