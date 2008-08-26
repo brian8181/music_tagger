@@ -53,6 +53,7 @@
     <Compile Include="CaseConvertFrm.Designer.cs">
       <DependentUpon>CaseConvertFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommentListViewItem.cs" />
     <Compile Include="CompareFile2TagFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +170,7 @@
       <DependentUpon>FreeDBFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="ISO_639_2.cs" />
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>

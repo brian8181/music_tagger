@@ -68,13 +68,13 @@ namespace music_tagger
             this.btnRemoveComment = new System.Windows.Forms.Button();
             this.btnTopComment = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCommentDescriptor = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtGenre = new System.Windows.Forms.TextBox();
             this.txtArtists = new System.Windows.Forms.TextBox();
             this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.txtCommentDescriptor = new System.Windows.Forms.TextBox();
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -361,6 +361,7 @@ namespace music_tagger
             this.commentList.TabIndex = 57;
             this.commentList.UseCompatibleStateImageBehavior = false;
             this.commentList.View = System.Windows.Forms.View.Details;
+            this.commentList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler( this.commentList_ItemSelectionChanged );
             // 
             // columnHeader1
             // 
@@ -429,6 +430,16 @@ namespace music_tagger
             this.groupBox1.Size = new System.Drawing.Size( 608, 294 );
             this.groupBox1.TabIndex = 64;
             this.groupBox1.TabStop = false;
+            // 
+            // txtCommentDescriptor
+            // 
+            this.txtCommentDescriptor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCommentDescriptor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCommentDescriptor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtCommentDescriptor.Location = new System.Drawing.Point( 117, 14 );
+            this.txtCommentDescriptor.Name = "txtCommentDescriptor";
+            this.txtCommentDescriptor.Size = new System.Drawing.Size( 413, 20 );
+            this.txtCommentDescriptor.TabIndex = 77;
             // 
             // groupBox3
             // 
@@ -590,16 +601,6 @@ namespace music_tagger
             this.button4.TabIndex = 69;
             this.button4.Text = "<- Ver 1";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // txtCommentDescriptor
-            // 
-            this.txtCommentDescriptor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCommentDescriptor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCommentDescriptor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtCommentDescriptor.Location = new System.Drawing.Point( 117, 14 );
-            this.txtCommentDescriptor.Name = "txtCommentDescriptor";
-            this.txtCommentDescriptor.Size = new System.Drawing.Size( 413, 20 );
-            this.txtCommentDescriptor.TabIndex = 77;
             // 
             // EditV2_MainCtrl
             // 

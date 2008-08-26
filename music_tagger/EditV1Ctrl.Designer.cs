@@ -172,6 +172,7 @@ namespace music_tagger
             // txtComment
             // 
             this.txtComment.Location = new System.Drawing.Point( 307, 190 );
+            this.txtComment.MaxLength = 30;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size( 317, 20 );
             this.txtComment.TabIndex = 6;
@@ -180,6 +181,7 @@ namespace music_tagger
             // txtTrack
             // 
             this.txtTrack.Location = new System.Drawing.Point( 307, 143 );
+            this.txtTrack.MaxLength = 2;
             this.txtTrack.Name = "txtTrack";
             this.txtTrack.Size = new System.Drawing.Size( 100, 20 );
             this.txtTrack.TabIndex = 4;
@@ -188,6 +190,7 @@ namespace music_tagger
             // txtYear
             // 
             this.txtYear.Location = new System.Drawing.Point( 307, 120 );
+            this.txtYear.MaxLength = 4;
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size( 100, 20 );
             this.txtYear.TabIndex = 3;
@@ -196,6 +199,7 @@ namespace music_tagger
             // txtAlbum
             // 
             this.txtAlbum.Location = new System.Drawing.Point( 307, 97 );
+            this.txtAlbum.MaxLength = 30;
             this.txtAlbum.Name = "txtAlbum";
             this.txtAlbum.Size = new System.Drawing.Size( 317, 20 );
             this.txtAlbum.TabIndex = 2;
@@ -240,6 +244,7 @@ namespace music_tagger
             // txtTitle
             // 
             this.txtTitle.Location = new System.Drawing.Point( 307, 74 );
+            this.txtTitle.MaxLength = 30;
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size( 317, 20 );
             this.txtTitle.TabIndex = 1;
@@ -367,6 +372,7 @@ namespace music_tagger
             // 
             this.txtArtists.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtArtists.Location = new System.Drawing.Point( 307, 50 );
+            this.txtArtists.MaxLength = 30;
             this.txtArtists.Name = "txtArtists";
             this.txtArtists.Size = new System.Drawing.Size( 317, 20 );
             this.txtArtists.TabIndex = 0;

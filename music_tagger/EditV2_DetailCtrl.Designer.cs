@@ -50,22 +50,14 @@ namespace music_tagger
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtTitleSortName = new System.Windows.Forms.TextBox();
-            this.txtArtistSortName = new System.Windows.Forms.TextBox();
-            this.txtAlbumSortName = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnFromFile = new System.Windows.Forms.Button();
+            this.txtTrackLength = new System.Windows.Forms.TextBox();
+            this.cmbMediaType = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.cmbMediaType = new System.Windows.Forms.ComboBox();
-            this.txtTrackLength = new System.Windows.Forms.TextBox();
-            this.btnFromFile = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -265,68 +257,6 @@ namespace music_tagger
             this.label10.TabIndex = 44;
             this.label10.Text = "Sub Title:";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add( this.label11 );
-            this.groupBox3.Controls.Add( this.label12 );
-            this.groupBox3.Controls.Add( this.label13 );
-            this.groupBox3.Controls.Add( this.txtTitleSortName );
-            this.groupBox3.Controls.Add( this.txtArtistSortName );
-            this.groupBox3.Controls.Add( this.txtAlbumSortName );
-            this.groupBox3.Location = new System.Drawing.Point( 3, 292 );
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size( 609, 105 );
-            this.groupBox3.TabIndex = 40;
-            this.groupBox3.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point( 18, 25 );
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size( 129, 13 );
-            this.label11.TabIndex = 45;
-            this.label11.Text = "Artist Sort Name (Ver 2.4):";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point( 18, 49 );
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size( 135, 13 );
-            this.label12.TabIndex = 46;
-            this.label12.Text = "Album Sort Name (Ver 2.4):";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point( 18, 69 );
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size( 126, 13 );
-            this.label13.TabIndex = 47;
-            this.label13.Text = "Title Sort Name (Ver 2.4):";
-            // 
-            // txtTitleSortName
-            // 
-            this.txtTitleSortName.Location = new System.Drawing.Point( 169, 66 );
-            this.txtTitleSortName.Name = "txtTitleSortName";
-            this.txtTitleSortName.Size = new System.Drawing.Size( 414, 20 );
-            this.txtTitleSortName.TabIndex = 38;
-            // 
-            // txtArtistSortName
-            // 
-            this.txtArtistSortName.Location = new System.Drawing.Point( 169, 18 );
-            this.txtArtistSortName.Name = "txtArtistSortName";
-            this.txtArtistSortName.Size = new System.Drawing.Size( 414, 20 );
-            this.txtArtistSortName.TabIndex = 36;
-            // 
-            // txtAlbumSortName
-            // 
-            this.txtAlbumSortName.Location = new System.Drawing.Point( 169, 42 );
-            this.txtAlbumSortName.Name = "txtAlbumSortName";
-            this.txtAlbumSortName.Size = new System.Drawing.Size( 414, 20 );
-            this.txtAlbumSortName.TabIndex = 37;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add( this.btnFromFile );
@@ -334,11 +264,35 @@ namespace music_tagger
             this.groupBox4.Controls.Add( this.cmbMediaType );
             this.groupBox4.Controls.Add( this.label15 );
             this.groupBox4.Controls.Add( this.label14 );
-            this.groupBox4.Location = new System.Drawing.Point( 3, 403 );
+            this.groupBox4.Location = new System.Drawing.Point( 3, 292 );
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size( 609, 104 );
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
+            // 
+            // btnFromFile
+            // 
+            this.btnFromFile.Location = new System.Drawing.Point( 397, 59 );
+            this.btnFromFile.Name = "btnFromFile";
+            this.btnFromFile.Size = new System.Drawing.Size( 75, 23 );
+            this.btnFromFile.TabIndex = 51;
+            this.btnFromFile.Text = "From File";
+            this.btnFromFile.UseVisualStyleBackColor = true;
+            // 
+            // txtTrackLength
+            // 
+            this.txtTrackLength.Location = new System.Drawing.Point( 169, 61 );
+            this.txtTrackLength.Name = "txtTrackLength";
+            this.txtTrackLength.Size = new System.Drawing.Size( 221, 20 );
+            this.txtTrackLength.TabIndex = 48;
+            // 
+            // cmbMediaType
+            // 
+            this.cmbMediaType.FormattingEnabled = true;
+            this.cmbMediaType.Location = new System.Drawing.Point( 169, 31 );
+            this.cmbMediaType.Name = "cmbMediaType";
+            this.cmbMediaType.Size = new System.Drawing.Size( 303, 21 );
+            this.cmbMediaType.TabIndex = 50;
             // 
             // label15
             // 
@@ -352,42 +306,17 @@ namespace music_tagger
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point( 19, 34 );
+            this.label14.Location = new System.Drawing.Point( 20, 34 );
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size( 66, 13 );
             this.label14.TabIndex = 48;
             this.label14.Text = "Media Type:";
-            // 
-            // cmbMediaType
-            // 
-            this.cmbMediaType.FormattingEnabled = true;
-            this.cmbMediaType.Location = new System.Drawing.Point( 169, 31 );
-            this.cmbMediaType.Name = "cmbMediaType";
-            this.cmbMediaType.Size = new System.Drawing.Size( 303, 21 );
-            this.cmbMediaType.TabIndex = 50;
-            // 
-            // txtTrackLength
-            // 
-            this.txtTrackLength.Location = new System.Drawing.Point( 169, 61 );
-            this.txtTrackLength.Name = "txtTrackLength";
-            this.txtTrackLength.Size = new System.Drawing.Size( 221, 20 );
-            this.txtTrackLength.TabIndex = 48;
-            // 
-            // btnFromFile
-            // 
-            this.btnFromFile.Location = new System.Drawing.Point( 397, 59 );
-            this.btnFromFile.Name = "btnFromFile";
-            this.btnFromFile.Size = new System.Drawing.Size( 75, 23 );
-            this.btnFromFile.TabIndex = 51;
-            this.btnFromFile.Text = "From File";
-            this.btnFromFile.UseVisualStyleBackColor = true;
             // 
             // EditV2_DetailCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add( this.groupBox4 );
-            this.Controls.Add( this.groupBox3 );
             this.Controls.Add( this.groupBox2 );
             this.Controls.Add( this.groupBox1 );
             this.Name = "EditV2_DetailCtrl";
@@ -396,8 +325,6 @@ namespace music_tagger
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout( false );
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout( false );
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout( false );
             this.groupBox4.PerformLayout();
             this.ResumeLayout( false );
@@ -418,10 +345,6 @@ namespace music_tagger
         private System.Windows.Forms.TextBox txtSubTitle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtArtistSortName;
-        private System.Windows.Forms.TextBox txtAlbumSortName;
-        private System.Windows.Forms.TextBox txtTitleSortName;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -433,9 +356,6 @@ namespace music_tagger
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtTrackLength;

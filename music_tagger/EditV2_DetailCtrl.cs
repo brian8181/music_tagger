@@ -13,6 +13,12 @@ namespace music_tagger
         public EditV2_DetailCtrl()
         {
             InitializeComponent();
+            TagLib.MediaTypes[] types = 
+                (TagLib.MediaTypes[])Enum.GetValues( typeof(TagLib.MediaTypes) );
+            foreach( TagLib.MediaTypes type in types )
+            {
+                cmbMediaType.Items.Add( type );
+            }
         }
 
         /// <summary>
@@ -48,9 +54,20 @@ namespace music_tagger
                 txtPublisher.Text = frame.Text[0];
                 frame = null;
             }
+            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)v2, "TENC", false );
+            if(frame != null && frame.Text.Length > 0)
+            {
+                txtEncoded.Text = frame.Text[0];
+                frame = null;
+            }
             txtCopyright.Text = v2.Copyright;
             txtContentGroup.Text = v2.Grouping;
-            // todo split 
+            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)v2, "TIT3", false );
+            if(frame != null && frame.Text.Length > 0)
+            {
+                txtSubTitle.Text = frame.Text[0];
+                frame = null;
+            }
             cmbMediaType.Text = tag_file.Properties.MediaTypes.ToString();
             txtTrackLength.Text = tag_file.Properties.Duration.ToString();
         }

@@ -111,6 +111,11 @@ namespace music_tagger
         Hard_Rock
     }
 
+    public enum MediaTypes
+    {
+        //todo expand on media types
+    }
+
     /// <summary>
     /// globals
     /// </summary>

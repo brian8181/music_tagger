@@ -984,7 +984,7 @@ namespace music_tagger
             this.toolStripButton15} );
             this.toolStrip3.Location = new System.Drawing.Point( 3, 49 );
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size( 505, 25 );
+            this.toolStrip3.Size = new System.Drawing.Size( 474, 25 );
             this.toolStrip3.TabIndex = 3;
             // 
             // toolStripButton1
@@ -1314,6 +1314,7 @@ namespace music_tagger
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size( 1119, 630 );
             this.Controls.Add( this.toolStripContainer );
+            this.Icon = ( (System.Drawing.Icon)( resources.GetObject( "$this.Icon" ) ) );
             this.Name = "MainFrm";
             this.Text = "Music Tagger";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -12,7 +12,9 @@ namespace music_tagger
     {
         private EditV2_MainCtrl main = new EditV2_MainCtrl();
         private EditV2_DetailCtrl details = new EditV2_DetailCtrl();
+        private EditV2_OriginalCtrl original = new EditV2_OriginalCtrl();
         private EditV2_LyricCtrl lyrics = new EditV2_LyricCtrl();
+        private EditV2_WebCtrl web = new EditV2_WebCtrl();
         private EditV2_PictureCtrl pictures = new EditV2_PictureCtrl();
         private Control current = null;
         
@@ -56,6 +58,16 @@ namespace music_tagger
             pictures.Dock = DockStyle.Fill;
             pictures.Initialize( lv );
             pictures.Hide();
+            this.panel1.Controls.Add( web );
+            web.Location = this.panel1.Location;
+            web.Dock = DockStyle.Fill;
+            web.Initialize( lv );
+            web.Hide();
+            this.panel1.Controls.Add( original );
+            original.Location = this.panel1.Location;
+            original.Dock = DockStyle.Fill;
+            original.Initialize( lv );
+            original.Hide();
             current = main;
         }
         /// <summary>
@@ -119,6 +131,34 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        private void taskWeb_Click( object sender, EventArgs e )
+        {
+            if(current != web)
+            {
+                current.Hide();
+                web.Show();
+                current = web;
+            }     
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void taskOriginal_Click( object sender, EventArgs e )
+        {
+            if(current != original)
+            {
+                current.Hide();
+                original.Show();
+                current = original;
+            }     
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOK_Click( object sender, EventArgs e )
         {
             if(this.multi_edit)
@@ -140,6 +180,7 @@ namespace music_tagger
         /// <param name="item"></param>
         protected override void EditItem( TagListViewItem item )
         {
+            //BKP  move to controls EditItem 
             item.BackColor = Color.Yellow;
             item.Id3v2.Performers = Globals.GetArray( main.txtArtists.Text );
             item.Id3v2.Album = main.txtAlbum.Text;

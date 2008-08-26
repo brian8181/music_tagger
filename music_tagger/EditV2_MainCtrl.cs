@@ -14,17 +14,17 @@ namespace music_tagger
     /// </summary>
     public partial class EditV2_MainCtrl : EditCtrlBase
     {
-         public EditV2_MainCtrl()
+       
+        public EditV2_MainCtrl()
         {
             InitializeComponent();
             string[] lines =  Properties.Resources.ISO_639_2.Split('\n');
-            cmbCommentLang.Items.Add( "xxx (default)" );
+            cmbCommentLang.Items.Add( new ISO_639_2( "xxx", "Default" ) );
             //alpha-3 (bibliographic) code|an alpha-3 (terminologic)|English name|French name
             foreach(string line in lines)
             {
                 string[] split = line.Split( '|' );
-                string lang = String.Format( "{0} ({1})", split[0], split[3] );
-                cmbCommentLang.Items.Add( lang );
+                cmbCommentLang.Items.Add( new ISO_639_2( split[0], split[3] ));
             }
             cmbCommentLang.SelectedIndex = 0;
         }
@@ -42,6 +42,10 @@ namespace music_tagger
                 txtTitle.Text = tag.Title;
                 txtYear.Text = tag.Year.ToString();
                 txtTrack.Text = tag.Track.ToString();
+                txtTrackCount.Text = tag.TrackCount.ToString();
+                txtBPM.Text = tag.BeatsPerMinute.ToString();
+                txtDisc.Text = tag.Disc.ToString();
+                txtDiscCount.Text = tag.DiscCount.ToString();
                 if(tag.Genres.Length > 0)
                 {
                     cmbGenre.Items.AddRange( tag.Genres );
@@ -49,16 +53,17 @@ namespace music_tagger
                 }
                 foreach(TagLib.Id3v2.CommentsFrame frame in ((TagLib.Id3v2.Tag)tag).GetFrames( "COMM" ))
                 {
-                    ListViewItem item = 
+                   ListViewItem item = 
                         commentList.Items.Add( frame.Description );
                     item.SubItems.Add( frame.Text );
                     item.SubItems.Add( frame.Language );
                     item.SubItems.Add( frame.TextEncoding.ToString() );
                 }
-                txtComment.Text = tag.Comment;
-
-                //
-                txtBPM.Text = tag.BeatsPerMinute.ToString();
+                // just select first item
+                if(commentList.Items.Count > 0)
+                {
+                    SetSelectedComment( commentList.Items[0] );  
+                }
             }
         }
 
@@ -160,6 +165,22 @@ namespace music_tagger
         private void txtYear_TextChanged( object sender, EventArgs e )
         {
 
+        }
+
+        private void commentList_ItemSelectionChanged( object sender, ListViewItemSelectionChangedEventArgs e )
+        {
+            if(e.IsSelected)
+            {
+                SetSelectedComment( e.Item );
+            }
+        }
+
+        private void SetSelectedComment(ListViewItem item)
+        {
+            txtCommentDescriptor.Text = item.Text;
+            txtComment.Text = item.SubItems[1].Text;
+            string lang = item.SubItems[2].Text;
+            cmbCommentLang.SelectedIndex = cmbCommentLang.FindString( lang.ToLower() ); ;
         }
     }
 }

@@ -32,12 +32,23 @@ namespace music_tagger
                     string mime_type = pic.MimeType;
                     //description = pic.Description;
                     //pic.Type.ToString();
-                    
 
-                    MemoryStream stream = new MemoryStream( data );
-                    Image img = Image.FromStream(stream);
-                    pictureBox.Image = img;
-                    stream.Close();
+                    MemoryStream stream = null;
+                    try
+                    {
+                        stream = new MemoryStream( data );
+                        Image img = Image.FromStream( stream );
+                        pictureBox.Image = img;
+                    }
+                    catch(ArgumentException)
+                    {
+                        pictureBox.Image = null;
+                    }
+                    finally
+                    {
+                        if( stream != null )
+                            stream.Close();
+                    }
                 }
 
             }
