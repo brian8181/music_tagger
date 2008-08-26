@@ -89,6 +89,9 @@ namespace music_tagger
         /// <param name="item">the item</param>
         public override void EditItem( TagListViewItem item )
         {
+            // call the base
+            base.EditItem( item );
+
             item.BackColor = Color.Yellow;
             if(!multi_edit || ckArtist.Checked)
             {

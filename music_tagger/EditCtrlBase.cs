@@ -13,6 +13,7 @@ namespace music_tagger
     /// </summary>
     public partial class EditCtrlBase : UserControl
     {
+        private bool dirty;
         protected bool multi_edit = false;
         protected TagLib.File tag_file = null;
         protected TagLib.Tag tag;
@@ -20,6 +21,14 @@ namespace music_tagger
         protected TagLib.Id3v2.Tag v2;
         protected ListView lv = null;
         private int idx = -1;
+        /// <summary>
+        /// 
+        /// </summary>
+        protected bool Dirty
+        {
+            get { return dirty; }
+            set { dirty = value; }
+        }
         /// <summary>
         ///  get the current index
         /// </summary>
@@ -84,6 +93,8 @@ namespace music_tagger
         /// <param name="item">the item</param>
         public virtual void EditItem( TagListViewItem item )
         {
+            dirty = true;
+            item.Dirty = true;
         }
     }
 }

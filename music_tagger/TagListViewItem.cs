@@ -13,12 +13,21 @@ namespace music_tagger
     /// </summary>
     public class TagListViewItem : ListViewItem
     {
+        private bool dirty = false;
         private FileInfo fi = null;
         private TagLib.File tag_file = null;
         private TagLib.Id3v1.Tag v1 = null;
         private TagLib.Id3v2.Tag v2 = null;
         private TagLib.TagTypes type = TagLib.TagTypes.Id3v2;
         private ListView lv = null;
+        /// <summary>
+        /// see if value has changed since contruction
+        /// </summary>
+        public bool Dirty
+        {
+            get { return dirty; }
+            set { dirty = value; }
+        }
         /// <summary>
         /// the v1 tag
         /// </summary>
@@ -163,6 +172,7 @@ namespace music_tagger
             case Column.Modified:
                 return fi.LastWriteTime.ToString();
             case Column.Artist:
+                // display only first
                 return tag.FirstPerformer;
             case Column.Album:
                 return tag.Album;
@@ -181,6 +191,7 @@ namespace music_tagger
             case Column.Comment:
                 return tag.Comment;
             case Column.Genre:
+                // display only first
                 return tag.FirstGenre;
             case Column.Length:
                 return tag_file.Properties.Duration.ToString();

@@ -1,43 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Font Name="Tahoma" Size="8.25" />
   <Class Name="music_tagger.EditV2_DetailCtrl" Collapsed="true">
-    <Position X="3.25" Y="6.25" Width="1.5" />
+    <Position X="3.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>EditV2_DetailCtrl.cs</FileName>
-      <HashCode>81AAAgAAACIAQhQAAACAMAACAAAACEAAADBAgAEIAAA=</HashCode>
+      <HashCode>E1AAAgAAACIAQBQAAACAMAACAAAACEAAACBAgAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.EditV2_LyricCtrl" Collapsed="true">
-    <Position X="5" Y="6.25" Width="1.5" />
+    <Position X="5.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>EditV2_LyricCtrl.cs</FileName>
       <HashCode>AAAAAAAAQCAAApAQAACAAgACAAAAiAAAQAAACAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.EditV2_MainCtrl" Collapsed="true">
-    <Position X="1.5" Y="6.25" Width="1.5" />
+    <Position X="2" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>EditV2_MainCtrl.cs</FileName>
-      <HashCode>8AECQgBFgGAAIBRFAACBmADSA2A6CABARCAIgEEkAQI=</HashCode>
+      <HashCode>8AECQgBFiCAAMRRFAASBvADaA+A6CBBARSAIgEEkAAo=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.EditV2_PictureCtrl" Collapsed="true">
-    <Position X="6.75" Y="6.25" Width="1.5" />
+    <Position X="7.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>EditV2_PictureCtrl.cs</FileName>
       <HashCode>ADAAAIAAACAAABAQAACAgACCAyAAiAAAEAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.EditCtrlBase">
-    <Position X="4" Y="2.25" Width="1.5" />
+    <Position X="4" Y="0.5" Width="2.75" />
     <TypeIdentifier>
       <FileName>EditCtrlBase.cs</FileName>
-      <HashCode>AgAAACAAACgAAQAABACAAAACAAQACAAAAAMAAAAAAgE=</HashCode>
+      <HashCode>AgAAACAEACgAAQBABACAQAACAAQACAAAAAMAAAAAAgk=</HashCode>
     </TypeIdentifier>
+    <Members>
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
   </Class>
   <Class Name="music_tagger.View" Collapsed="true">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <FileName>View.cs</FileName>
       <HashCode>AgAAAEAEICIAAQAAgBDMAEEOEAABAEAAkSEFAYAAJAA=</HashCode>
@@ -47,28 +54,32 @@
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>EditV2Frm.cs</FileName>
-      <HashCode>AAAAAAAEACAIAQkAEQCAANASoAAgAEAAgIIAEQEBKAw=</HashCode>
+      <HashCode>BAAABAAEgCAIAQkAEUCAAJASsAAgAEAAgIIAEQEBKAU=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.EditFrm" Collapsed="true">
     <Position X="1.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>EditFrm.cs</FileName>
-      <HashCode>AAAAAAAEAAAAAQAABAAABIAAAAAAAAAAAAAAAAAAAAk=</HashCode>
+      <HashCode>AAAAAAAEAAAAAQAABAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="music_tagger.EditV1Ctrl" Collapsed="true">
-    <Position X="6" Y="2.25" Width="1.5" />
+    <Position X="7.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>EditV1Ctrl.cs</FileName>
-      <HashCode>AAAKAABAiCAIERTAGgSABgASACAkCAJAxAILAEAFQAA=</HashCode>
+      <HashCode>AAAKAABEiCAIERTAGgSABgASACAkCAJAxAILAEAFQAg=</HashCode>
     </TypeIdentifier>
+    <Members>
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
   </Class>
   <Class Name="music_tagger.EditV1Frm" Collapsed="true">
     <Position X="2.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>EditV1Frm.cs</FileName>
-      <HashCode>AAAAAAAEACAAEQEAAACAAIACAAAAAEAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAAAACAAEQEAAACAAIACAAAAAEAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
 </ClassDiagram>

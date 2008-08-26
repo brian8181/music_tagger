@@ -91,7 +91,7 @@ namespace music_tagger
             set 
             { 
                 type = value;
-                RefreshView();
+                ChangeViewType();
             }
         }
         /// <summary>
@@ -181,9 +181,14 @@ namespace music_tagger
         /// <param name="di"></param>
         private void RefreshView( DirectoryInfo di )
         {
-            AskToCommit();
+            // only ask if it is a dir change
+            if(this.di != null && di.FullName != this.di.FullName)
+            {
+                AskToCommit();
+            }
 
             this.di = di;
+
             FileInfo[] files = null;
             try
             {
@@ -410,6 +415,19 @@ namespace music_tagger
                     Commit();
                 }
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ChangeViewType()
+        {
+            this.listView.BeginUpdate();
+            foreach(TagListViewItem item in this.listView.Items)
+            {
+                item.Type = this.type;
+                item.RefreshItem();
+            }
+            this.listView.EndUpdate();
         }
         #endregion
     }

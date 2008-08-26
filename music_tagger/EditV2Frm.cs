@@ -192,20 +192,8 @@ namespace music_tagger
         /// <param name="item"></param>
         protected override void EditItem( TagListViewItem item )
         {
-            //BKP  move to controls EditItem 
             item.BackColor = Color.Yellow;
-            item.Id3v2.Performers = Globals.GetArray( main.txtArtists.Text );
-            item.Id3v2.Album = main.txtAlbum.Text;
-            item.Id3v2.Title = main.txtTitle.Text;
-            uint num = 0;
-            item.Id3v2.Year = uint.TryParse( main.txtYear.Text, out num ) ? num : 0;
-            item.Id3v2.Track = uint.TryParse( main.txtTrack.Text, out num ) ? num : 0;
-            item.Id3v2.TrackCount = uint.TryParse( main.txtTrackCount.Text, out num ) ? num : 0;
-            item.Id3v2.Disc = uint.TryParse( main.txtDisc.Text, out num ) ? num : 0;
-            item.Id3v2.DiscCount = uint.TryParse( main.txtDiscCount.Text, out num ) ? num : 0;
-            item.Id3v2.BeatsPerMinute = uint.TryParse( main.txtBPM.Text, out num ) ? num : 0;
-            //item.Id3v2.Genres = new string[main.cm.Items.Count];
-            item.Id3v2.Comment = main.txtComment.Text;
+            main.EditItem( item );
             item.RefreshItem();
         }
     }
