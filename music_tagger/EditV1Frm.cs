@@ -58,7 +58,7 @@ namespace music_tagger
                 this.editCtrl.ckTrack.Checked = false;
                 this.editCtrl.ckYear.Visible = true;
                 this.editCtrl.ckYear.Checked = false;
-                }
+            }
             else
             {
                 this.editCtrl.lblFile.Visible = true;

@@ -35,6 +35,7 @@ namespace music_tagger
             this.taskLyrics = new XPExplorerBar.TaskItem();
             this.taskPicture = new XPExplorerBar.TaskItem();
             this.taskWeb = new XPExplorerBar.TaskItem();
+            this.taskOriginal = new XPExplorerBar.TaskItem();
             this.expando2 = new XPExplorerBar.Expando();
             this.taskPrevious = new XPExplorerBar.TaskItem();
             this.taskNext = new XPExplorerBar.TaskItem();
@@ -44,7 +45,6 @@ namespace music_tagger
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.taskOriginal = new XPExplorerBar.TaskItem();
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).BeginInit();
             this.taskPane1.SuspendLayout();
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).BeginInit();
@@ -159,6 +159,21 @@ namespace music_tagger
             this.taskWeb.UseVisualStyleBackColor = false;
             this.taskWeb.Click += new System.EventHandler( this.taskWeb_Click );
             // 
+            // taskOriginal
+            // 
+            this.taskOriginal.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
+                        | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.taskOriginal.BackColor = System.Drawing.Color.Transparent;
+            this.taskOriginal.Image = null;
+            this.taskOriginal.Location = new System.Drawing.Point( 13, 81 );
+            this.taskOriginal.Name = "taskOriginal";
+            this.taskOriginal.Size = new System.Drawing.Size( 146, 16 );
+            this.taskOriginal.TabIndex = 5;
+            this.taskOriginal.Text = "Original Information";
+            this.taskOriginal.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.taskOriginal.UseVisualStyleBackColor = false;
+            this.taskOriginal.Click += new System.EventHandler( this.taskOriginal_Click );
+            // 
             // expando2
             // 
             this.expando2.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
@@ -249,15 +264,15 @@ namespace music_tagger
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point( 216, 2 );
+            this.panel1.Location = new System.Drawing.Point( 215, 2 );
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size( 615, 510 );
+            this.panel1.Size = new System.Drawing.Size( 635, 510 );
             this.panel1.TabIndex = 1;
             // 
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point( 675, 518 );
+            this.btnOK.Location = new System.Drawing.Point( 694, 518 );
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size( 75, 23 );
             this.btnOK.TabIndex = 10;
@@ -268,27 +283,12 @@ namespace music_tagger
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point( 756, 518 );
+            this.btnCancel.Location = new System.Drawing.Point( 775, 518 );
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size( 75, 23 );
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // taskOriginal
-            // 
-            this.taskOriginal.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
-                        | System.Windows.Forms.AnchorStyles.Right ) ) );
-            this.taskOriginal.BackColor = System.Drawing.Color.Transparent;
-            this.taskOriginal.Image = null;
-            this.taskOriginal.Location = new System.Drawing.Point( 13, 81 );
-            this.taskOriginal.Name = "taskOriginal";
-            this.taskOriginal.Size = new System.Drawing.Size( 146, 16 );
-            this.taskOriginal.TabIndex = 5;
-            this.taskOriginal.Text = "Original Information";
-            this.taskOriginal.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.taskOriginal.UseVisualStyleBackColor = false;
-            this.taskOriginal.Click += new System.EventHandler( this.taskOriginal_Click );
             // 
             // EditV2Frm
             // 
@@ -296,12 +296,13 @@ namespace music_tagger
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size( 831, 543 );
+            this.ClientSize = new System.Drawing.Size( 852, 543 );
             this.Controls.Add( this.btnOK );
             this.Controls.Add( this.btnCancel );
             this.Controls.Add( this.panel1 );
             this.Controls.Add( this.taskPane1 );
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "EditV2Frm";
             this.Text = "Edit Tag Version 2 ";
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).EndInit();

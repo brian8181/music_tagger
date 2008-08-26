@@ -111,6 +111,24 @@ namespace music_tagger.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Multiple - Version 2.
+        /// </summary>
+        internal static string editv2frm_multi {
+            get {
+                return ResourceManager.GetString("editv2frm_multi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Single - Version 2.
+        /// </summary>
+        internal static string editv2frm_single {
+            get {
+                return ResourceManager.GetString("editv2frm_single", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap file2v1 {
             get {
                 object obj = ResourceManager.GetObject("file2v1", resourceCulture);

@@ -38,35 +38,47 @@ namespace music_tagger
         public EditV2Frm( ListView lv, bool multi_edit ) : base( lv, multi_edit )
         {
             InitializeComponent();
+
+            if(multi_edit)
+            {
+                this.Text = Properties.Resources.editv2frm_multi;
+            }
+            else
+            {
+                TagListViewItem item = (TagListViewItem)lv.Items[0];
+                this.Text = String.Format( "{0}.{1}",
+                    Properties.Resources.editv2frm_single, item.Id3v2.Version );
+            }
+
             this.panel1.Controls.Add( main );
-            main.Initialize( lv );
+            main.Initialize( lv, multi_edit );
             main.Location = this.panel1.Location;
             main.Dock = DockStyle.Fill;
             main.Show();
             this.panel1.Controls.Add( details );
             details.Location = this.panel1.Location;
             details.Dock = DockStyle.Fill;
-            details.Initialize( lv );
+            details.Initialize( lv, multi_edit );
             details.Hide();
             this.panel1.Controls.Add( lyrics );
             lyrics.Location = this.panel1.Location;
             lyrics.Dock = DockStyle.Fill;
-            lyrics.Initialize( lv );
+            lyrics.Initialize( lv, multi_edit );
             lyrics.Hide();
             this.panel1.Controls.Add( pictures );
             pictures.Location = this.panel1.Location;
             pictures.Dock = DockStyle.Fill;
-            pictures.Initialize( lv );
+            pictures.Initialize( lv, multi_edit );
             pictures.Hide();
             this.panel1.Controls.Add( web );
             web.Location = this.panel1.Location;
             web.Dock = DockStyle.Fill;
-            web.Initialize( lv );
+            web.Initialize( lv, multi_edit );
             web.Hide();
             this.panel1.Controls.Add( original );
             original.Location = this.panel1.Location;
             original.Dock = DockStyle.Fill;
-            original.Initialize( lv );
+            original.Initialize( lv, multi_edit );
             original.Hide();
             current = main;
         }

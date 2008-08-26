@@ -147,11 +147,6 @@ namespace music_tagger
         /// 
         /// </summary>
         /// <param name="lvi"></param>
-        private delegate void SafeDelegate();
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="lvi"></param>
         public void SafeResize()
         {
             if(InvokeRequired)

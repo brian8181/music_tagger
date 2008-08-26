@@ -93,7 +93,7 @@ namespace music_tagger
         /// <summary>
         /// 
         /// </summary>
-        private delegate void SafeDelegate();
+        protected delegate void SafeDelegate();
         /// <summary>
         /// 
         /// </summary>

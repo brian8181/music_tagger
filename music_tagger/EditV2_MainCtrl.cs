@@ -28,6 +28,38 @@ namespace music_tagger
             }
             cmbCommentLang.SelectedIndex = 0;
         }
+        /// intialize listview  
+        /// </summary>
+        /// <param name="lv"></param>
+        public override void Initialize( ListView lv, bool multi_edit )
+        {
+            base.Initialize( lv, multi_edit );
+            if(multi_edit)
+            {
+                ckAlbum.Visible = true;
+                ckAlbum.Checked = false;
+                ckArtist.Visible = true;
+                ckArtist.Checked = false;
+                ckBMP.Visible = true;
+                ckBMP.Checked = false;
+                ckComment.Visible = true;
+                ckComment.Checked = false;
+                ckDisc.Visible = true;
+                ckDisc.Checked = false;
+                ckGenre.Visible = true;
+                ckGenre.Checked = false;
+                ckTitle.Visible = true;
+                ckTitle.Checked = false;
+                ckTrack.Visible = true;
+                ckTrack.Checked = false;
+                ckYear.Visible = true;
+                ckYear.Checked = false;
+            }
+            else
+            {
+                // todo current file
+            }
+        }
         /// <summary>
         ///  fill from tag
         /// </summary>                                                          
@@ -147,7 +179,18 @@ namespace music_tagger
 
         private void txtArtists_DoubleClick( object sender, EventArgs e )
         {
-
+            EditListFrm dlg = new EditListFrm( this.v1.Performers );
+            dlg.ShowDialog( this );
+            StringBuilder sb = new StringBuilder();
+            if(dlg.Strs != null)
+            {
+                string s = Globals.GetString( dlg.Strs );
+                txtArtists.Text = s;
+            }
+            else
+            {
+                txtArtists.Text = string.Empty;
+            }
         }
 
         private void cmbGenre_TextChanged( object sender, EventArgs e )
