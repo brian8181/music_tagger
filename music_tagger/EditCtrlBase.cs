@@ -16,7 +16,7 @@ namespace music_tagger
         private bool dirty;
         protected bool multi_edit = false;
         protected TagLib.File tag_file = null;
-        protected TagLib.Tag tag;
+        //protected TagLib.Tag tag;
         protected TagLib.Id3v1.Tag v1;
         protected TagLib.Id3v2.Tag v2;
         protected ListView lv = null;
