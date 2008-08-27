@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="music_tagger.View">
+    <Position X="3.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>View.cs</FileName>
+      <HashCode>AgAAAEAEICIAAQAAgBDMAEEOEAABAEAAkSEFAYAgJAA=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="music_tagger.View.ListViewItemComparer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>View.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="music_tagger.View.RefreshArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>View.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+  </Class>
+  <Class Name="music_tagger.ProgressFrm" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ProgressFrm.cs</FileName>
+      <HashCode>AACAACAAACABAAEAAACAAEACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.ProgressThread">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ProgressThread.cs</FileName>
+      <HashCode>AABAACAEBCIAAAEAAAQAAAACAAAACAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Class Name="music_tagger.ProgressThread.StatusArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ProgressThread.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Delegate Name="music_tagger.ProgressThread.SafeDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ProgressThread.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+  </Class>
+  <Class Name="music_tagger.FormatProgressThread" Collapsed="true">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ProgressThread.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAACiAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.ScanProgressThread" Collapsed="true">
+    <Position X="7.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ProgressThreads.cs</FileName>
+      <HashCode>AAAAAAAABAAAAAEAAAAAAAEAAAABAAAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="music_tagger.MainFrm">
+    <Position X="0.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>MainFrm.cs</FileName>
+      <HashCode>9o+WD/0goCxYiqQroLijUlpWK3xJoUDxw4tFa0wsDP0=</HashCode>
+    </TypeIdentifier>
+    <Members>
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+  </Class>
+</ClassDiagram>

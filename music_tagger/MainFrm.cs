@@ -457,6 +457,36 @@ namespace music_tagger
         {
             view.RefreshView();
         }
-       
-    }
+        /// <summary>
+        /// get help clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnHelp_Clicked( object sender, EventArgs e )
+        {
+            OnHelp();
+        }
+        /// <summary>
+        ///  open web page for help
+        /// </summary>
+        public void OnHelp()
+        {
+            string target = @"http://fire.dynalias.org/wiki/index.php/Music_Tagger";
+            try
+            {
+                System.Diagnostics.Process.Start( target );
+            }
+            catch
+                (
+                 System.ComponentModel.Win32Exception noBrowser)
+            {
+                if(noBrowser.ErrorCode == -2147467259)
+                    MessageBox.Show( noBrowser.Message );
+            }
+            catch(System.Exception other)
+            {
+                MessageBox.Show( other.Message );
+            }
+        }
+   }
 }

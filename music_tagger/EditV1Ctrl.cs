@@ -58,7 +58,7 @@ namespace music_tagger
         {
             FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );
-            TagLib.Id3v1.Tag last_tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
+            TagLib.Id3v1.Tag first_tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
 
             foreach(ListViewItem item in lv.SelectedItems)
             {
@@ -66,22 +66,25 @@ namespace music_tagger
                 tag_file = TagLib.File.Create( fi.FullName );
                 TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
 
-                last_tag.Album = last_tag.Album != "" && tag.Album == last_tag.Album ? tag.Album : "";
-                if(last_tag.JoinedPerformers != "" && tag.JoinedPerformers == last_tag.JoinedPerformers)
+                if(tag != null)
                 {
-                    //todo  
-                }
-                last_tag.Title = last_tag.Title != "" && tag.Title == last_tag.Title ? tag.Title : "";
-                last_tag.Track = last_tag.Track != 0 && tag.Track == last_tag.Track ? tag.Track : 0;
-                last_tag.Year = last_tag.Year != 0 && tag.Year == last_tag.Year ? tag.Year : 0;
-
-                if(last_tag.JoinedGenres != "" && tag.JoinedGenres == last_tag.JoinedGenres)
-                {
-                    // todo
+                    if(first_tag.Album != tag.Album)
+                        first_tag.Album = string.Empty;
+                    if(first_tag.JoinedPerformers != tag.JoinedPerformers)
+                        first_tag.Performers = new string[0];
+                    if(first_tag.Title != tag.Title)
+                        first_tag.Title = string.Empty;
+                    if(first_tag.Track != tag.Track)
+                        first_tag.Track = 0;
+                    if(first_tag.Year != tag.Year)
+                        first_tag.Year = 0;
+                    if(first_tag.JoinedGenres != tag.JoinedGenres)
+                        first_tag.Genres = new string[0];
+                    if(first_tag.Comment != tag.Comment)
+                        first_tag.Comment = string.Empty;
                 }
             }
-            // todo
-            v1 = last_tag;
+            v1 = first_tag;
         }
         /// <summary>
         ///  ID3v1 edit 
@@ -181,30 +184,65 @@ namespace music_tagger
             txtAlbum.Text = txtTitle.Text;
             txtTitle.Text = org_album;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtTitle_TextChanged( object sender, EventArgs e )
         {
             ckTitle.Checked = true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtAlbum_TextChanged( object sender, EventArgs e )
         {
             ckAlbum.Checked = true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtYear_TextChanged( object sender, EventArgs e )
         {
             ckYear.Checked = true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtTrack_TextChanged( object sender, EventArgs e )
         {
             ckTrack.Checked = true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtGenres_TextChanged( object sender, EventArgs e )
         {
             ckGenre.Checked = true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtComment_TextChanged( object sender, EventArgs e )
         {
             ckComment.Checked = true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtArtist_TextChanged( object sender, EventArgs e )
         {
             ckArtist.Checked = true;

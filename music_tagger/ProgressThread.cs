@@ -73,22 +73,22 @@ namespace music_tagger
         /// 
         /// </summary>
         public abstract void ThreadFunc();
+
+        public delegate void StringDelegate(string stext);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="status"></param>
         protected virtual void OnStatusUpdate(string status)
         {
-            //??????
-            //if(InvokeRequired)
-            //{
-            //    this.Invoke( new SafeDelegate( OnFinished ) );
-            //    return;
-            //}
-            //???????
+            if(InvokeRequired)
+            {
+                this.BeginInvoke( new StringDelegate( OnStatusUpdate ), status );
+                return;
+            }
             this.progressCtrl.UpdateStatus( status );
             if( StatusUpdate != null ) 
-                StatusUpdate( this, new StatusArgs( "Finished" ) );  
+                StatusUpdate( this, new StatusArgs( status ) );  
         }
         /// <summary>
         /// 
@@ -102,7 +102,7 @@ namespace music_tagger
         {
             if(InvokeRequired)
             {
-                this.Invoke( new SafeDelegate( OnFinished ) );
+                this.BeginInvoke( new SafeDelegate( OnFinished ) );
                 return;
             }
             if(Finished != null)

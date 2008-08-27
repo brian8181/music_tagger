@@ -19,10 +19,9 @@ namespace music_tagger
        
         public override void Fill()
         {
-            tag = v2;
-            if(tag.Pictures.Length > 0)
+            if(v2.Pictures.Length > 0)
             {
-                TagLib.IPicture pic = tag.Pictures[0];
+                TagLib.IPicture pic = v2.Pictures[0];
                 if(pic.MimeType.StartsWith( "image/" ))
                 {
                     //string art = guid.ToString( "B" ) + pic.MimeType.Replace( "image/", "." );

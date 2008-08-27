@@ -16,7 +16,7 @@ namespace music_tagger
     {
 
         /// <summary>
-        /// 
+        ///  contructor
         /// </summary>
         public EditV2_MainCtrl()
         {
@@ -31,6 +31,8 @@ namespace music_tagger
             }
             cmbCommentLang.SelectedIndex = 0;
         }
+
+        #region Overrides
         /// intialize listview  
         /// </summary>
         /// <param name="lv"></param>
@@ -69,24 +71,27 @@ namespace music_tagger
         /// <param name="idx"></param>
         public override void Fill()
         {
-            tag = v2;
-            if(tag != null)
+            if(v2 != null)
             {
-                txtArtists.Text = tag.JoinedPerformers;
-                txtAlbum.Text = tag.Album;
-                txtTitle.Text = tag.Title;
-                txtYear.Text = tag.Year.ToString();
-                txtTrack.Text = tag.Track.ToString();
-                txtTrackCount.Text = tag.TrackCount.ToString();
-                txtBPM.Text = tag.BeatsPerMinute.ToString();
-                txtDisc.Text = tag.Disc.ToString();
-                txtDiscCount.Text = tag.DiscCount.ToString();
-                if(tag.Genres.Length > 0)
+                if(multi_edit)
+                {
+                    Coalesce();
+                }
+                txtArtists.Text = v2.JoinedPerformers;
+                txtAlbum.Text = v2.Album;
+                txtTitle.Text = v2.Title;
+                txtYear.Text = v2.Year.ToString();
+                txtTrack.Text = v2.Track.ToString();
+                txtTrackCount.Text = v2.TrackCount.ToString();
+                txtBPM.Text = v2.BeatsPerMinute.ToString();
+                txtDisc.Text = v2.Disc.ToString();
+                txtDiscCount.Text = v2.DiscCount.ToString();
+                if(v2.Genres.Length > 0)
                 {
                     // this sets txtGenre.Text also via "cmbGenre_TextChanged"
-                    cmbGenre.SelectedIndex = cmbGenre.FindStringExact( tag.FirstGenre ); ;
+                    cmbGenre.SelectedIndex = cmbGenre.FindStringExact( v2.FirstGenre ); ;
                 }
-                foreach(TagLib.Id3v2.CommentsFrame frame in ( (TagLib.Id3v2.Tag)tag ).GetFrames( "COMM" ))
+                foreach(TagLib.Id3v2.CommentsFrame frame in ( (TagLib.Id3v2.Tag)v2 ).GetFrames( "COMM" ))
                 {
                     ListViewItem item =
                          commentList.Items.Add( frame.Description );
@@ -109,40 +114,81 @@ namespace music_tagger
         {
             base.EditItem( item );
 
-            if(!multi_edit || ckArtist.Checked)
-                item.Id3v2.Performers = Globals.GetArray( this.txtArtists.Text );
-            if(!multi_edit || ckAlbum.Checked)
-                item.Id3v2.Album = this.txtAlbum.Text;
-            if(!multi_edit || ckTitle.Checked)
-                item.Id3v2.Title = this.txtTitle.Text;
-            uint num = 0;
-            if(!multi_edit || ckYear.Checked)
-                item.Id3v2.Year = uint.TryParse( this.txtYear.Text, out num ) ? num : 0;
-            if(!multi_edit || ckTrack.Checked)
+            if(v2 != null)
             {
-                item.Id3v2.Track = uint.TryParse( this.txtTrack.Text, out num ) ? num : 0;
-                item.Id3v2.TrackCount = uint.TryParse( this.txtTrackCount.Text, out num ) ? num : 0;
+                if(!multi_edit || ckArtist.Checked)
+                    item.Id3v2.Performers = Globals.GetArray( this.txtArtists.Text );
+                if(!multi_edit || ckAlbum.Checked)
+                    item.Id3v2.Album = this.txtAlbum.Text;
+                if(!multi_edit || ckTitle.Checked)
+                    item.Id3v2.Title = this.txtTitle.Text;
+                uint num = 0;
+                if(!multi_edit || ckYear.Checked)
+                    item.Id3v2.Year = uint.TryParse( this.txtYear.Text, out num ) ? num : 0;
+                if(!multi_edit || ckTrack.Checked)
+                {
+                    item.Id3v2.Track = uint.TryParse( this.txtTrack.Text, out num ) ? num : 0;
+                    item.Id3v2.TrackCount = uint.TryParse( this.txtTrackCount.Text, out num ) ? num : 0;
+                }
+                if(!multi_edit || ckDisc.Checked)
+                {
+                    item.Id3v2.Disc = uint.TryParse( this.txtDisc.Text, out num ) ? num : 0;
+                    item.Id3v2.DiscCount = uint.TryParse( this.txtDiscCount.Text, out num ) ? num : 0;
+                }
+                if(!multi_edit || ckBMP.Checked)
+                    item.Id3v2.BeatsPerMinute = uint.TryParse( this.txtBPM.Text, out num ) ? num : 0;
+                if(!multi_edit || ckGenre.Checked)
+                    item.Id3v2.Genres = Globals.GetArray( txtGenres.Text );
+                if(!multi_edit || ckComment.Checked)
+                    item.Id3v2.Comment = this.txtComment.Text;
             }
-            if(!multi_edit || ckDisc.Checked)
-            {
-                item.Id3v2.Disc = uint.TryParse( this.txtDisc.Text, out num ) ? num : 0;
-                item.Id3v2.DiscCount = uint.TryParse( this.txtDiscCount.Text, out num ) ? num : 0;
-            }
-            if(!multi_edit || ckBMP.Checked)
-                item.Id3v2.BeatsPerMinute = uint.TryParse( this.txtBPM.Text, out num ) ? num : 0;
-            if(!multi_edit || ckGenre.Checked)
-                item.Id3v2.Genres = Globals.GetArray( txtGenres.Text );
-            if(!multi_edit || ckComment.Checked)
-                item.Id3v2.Comment = this.txtComment.Text;
         }
         /// <summary>
         /// merge like values, hide unlike values
         /// </summary>
         public override void Coalesce()
         {
-            base.Coalesce();
-            //todo
+            FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
+            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+            TagLib.Id3v2.Tag first_tag = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
+
+            foreach(ListViewItem item in lv.SelectedItems)
+            {
+                fi = (FileInfo)item.Tag;
+                tag_file = TagLib.File.Create( fi.FullName );
+                TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v2 );
+
+                if(tag != null)
+                {
+                    if(first_tag.JoinedPerformers != tag.JoinedPerformers)
+                        first_tag.Performers = new string[0];
+                    if(first_tag.Album != tag.Album)
+                        first_tag.Album = string.Empty;
+                    if(first_tag.Title != tag.Title)
+                        first_tag.Title = string.Empty;
+                    if(first_tag.Track != tag.Track)
+                        first_tag.Track = 0;
+                    if(first_tag.TrackCount != tag.TrackCount)
+                        first_tag.TrackCount = 0;
+                    if(first_tag.Disc != tag.Disc)
+                        first_tag.Disc = 0;
+                    if(first_tag.DiscCount != tag.DiscCount)
+                        first_tag.DiscCount = 0;
+                    if(first_tag.Year != tag.Year)
+                        first_tag.Year = 0;
+                    if(first_tag.JoinedGenres != tag.JoinedGenres)
+                        first_tag.Genres = new string[0];
+                    if(first_tag.BeatsPerMinute != tag.BeatsPerMinute)
+                        first_tag.BeatsPerMinute = 0;
+                    if(first_tag.Comment != tag.Comment)
+                        first_tag.Comment = string.Empty;
+                }
+            }
+            v2 = first_tag;
         }
+        #endregion
+
+        #region Insert From Version 1
         /// <summary>
         /// 
         /// </summary>
@@ -153,7 +199,7 @@ namespace music_tagger
             txtArtists.Text = v1.JoinedPerformers;
         }
         /// <summary>
-        /// 
+        /// insert version 1 value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -171,7 +217,7 @@ namespace music_tagger
             txtAlbum.Text = v1.Album;
         }
         /// <summary>
-        /// 
+        ///   insert version 1 value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -180,7 +226,7 @@ namespace music_tagger
             txtYear.Text = v1.Year.ToString();
         }
         /// <summary>
-        /// 
+        /// insert version 1 value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -189,7 +235,7 @@ namespace music_tagger
             txtTrack.Text = v1.Track.ToString();
         }
         /// <summary>
-        /// 
+        /// insert version 1 value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -198,7 +244,7 @@ namespace music_tagger
             txtComment.Text = v1.Comment;
         }
         /// <summary>
-        /// 
+        /// insert version 1 value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -206,6 +252,9 @@ namespace music_tagger
         {
             cmbGenre.Text = v1.FirstGenre;
         }
+#endregion
+
+        #region Edit Comments
         /// <summary>
         /// 
         /// </summary>
@@ -244,21 +293,27 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtArtists_DoubleClick( object sender, EventArgs e )
+        private void commentList_ItemSelectionChanged( object sender, ListViewItemSelectionChangedEventArgs e )
         {
-            EditListFrm dlg = new EditListFrm( this.v1.Performers );
-            dlg.ShowDialog( this );
-            StringBuilder sb = new StringBuilder();
-            if(dlg.Strs != null)
+            if(e.IsSelected)
             {
-                string s = Globals.GetString( dlg.Strs );
-                txtArtists.Text = s;
-            }
-            else
-            {
-                txtArtists.Text = string.Empty;
+                SetSelectedComment( e.Item );
             }
         }
+        /// <summary>
+        /// set selected comment 
+        /// </summary>
+        /// <param name="item">the item</param>
+        private void SetSelectedComment( ListViewItem item )
+        {
+            txtCommentDescriptor.Text = item.Text;
+            txtComment.Text = item.SubItems[1].Text;
+            string lang = item.SubItems[2].Text;
+            cmbCommentLang.SelectedIndex = cmbCommentLang.FindString( lang.ToLower() ); ;
+        }
+        #endregion
+
+        #region Text Changed Events
         /// <summary>
         /// 
         /// </summary>
@@ -274,6 +329,7 @@ namespace music_tagger
             {
                 txtGenres.Text = cmbGenre.Text;
             }
+            ckGenre.Checked = true;
         }
         /// <summary>
         /// 
@@ -282,30 +338,29 @@ namespace music_tagger
         /// <param name="e"></param>
         private void txtYear_TextChanged( object sender, EventArgs e )
         {
-
+            ckYear.Checked = true;
         }
+        #endregion
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void commentList_ItemSelectionChanged( object sender, ListViewItemSelectionChangedEventArgs e )
+        private void txtArtists_DoubleClick( object sender, EventArgs e )
         {
-            if(e.IsSelected)
+            EditListFrm dlg = new EditListFrm( this.v1.Performers );
+            dlg.ShowDialog( this );
+            StringBuilder sb = new StringBuilder();
+            if(dlg.Strs != null)
             {
-                SetSelectedComment( e.Item );
+                string s = Globals.GetString( dlg.Strs );
+                txtArtists.Text = s;
             }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="item"></param>
-        private void SetSelectedComment( ListViewItem item )
-        {
-            txtCommentDescriptor.Text = item.Text;
-            txtComment.Text = item.SubItems[1].Text;
-            string lang = item.SubItems[2].Text;
-            cmbCommentLang.SelectedIndex = cmbCommentLang.FindString( lang.ToLower() ); ;
+            else
+            {
+                txtArtists.Text = string.Empty;
+            }
         }
     }
 }

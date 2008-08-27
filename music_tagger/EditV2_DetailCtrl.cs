@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace music_tagger
 {
@@ -27,49 +28,77 @@ namespace music_tagger
         /// <param name="idx"></param>
         public override void Fill()
         {
-            TagLib.Id3v2.TextInformationFrame frame = 
-                TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)v2, "TPE2", false );
-            if(frame != null && frame.Text.Length > 0)
+            if(v2 != null)
             {
-                txtBand.Text = frame.Text[0];
-                frame = null;
+                TagExt tag = new TagExt( v2 );
+                txtBand.Text = tag.TPE2;
+                txtRemixed.Text = tag.TPE4;
+                txtWriter.Text = tag.TEXT;
+                txtPublisher.Text = tag.TPUB;
+                txtEncoded.Text = tag.TENC;
+                txtSubTitle.Text = tag.TIT3;
+                cmbMediaType.Text = tag_file.Properties.MediaTypes.ToString();
+                txtTrackLength.Text = tag_file.Properties.Duration.ToString();
+                txtCopyright.Text = v2.Copyright;
+                txtContentGroup.Text = v2.Grouping;
+                txtConductor.Text = v2.Conductor;
+                txtComposer.Text = v2.FirstComposer;
             }
-            txtConductor.Text = v2.Conductor;
-            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)v2, "TPE4", false );
-            if(frame != null && frame.Text.Length > 0)
+        }
+        /// <summary>
+        /// merge like values, hide unlike values
+        /// </summary>
+        public override void Coalesce()
+        {
+            FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
+            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+            TagLib.Id3v2.Tag first_tag = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
+            TagExt first_tag_ext = new TagExt( first_tag );
+
+            foreach(ListViewItem item in lv.SelectedItems)
             {
-                txtRemixed.Text = frame.Text[0];
-                frame = null;
+                fi = (FileInfo)item.Tag;
+                tag_file = TagLib.File.Create( fi.FullName );
+                TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+                TagExt tag_ext = new TagExt( first_tag );
+
+                if(tag != null)
+                {
+                    if(first_tag_ext.TPE2 != tag_ext.TPE2)
+                        first_tag_ext.TPE2 = string.Empty;
+                    if(first_tag_ext.TPE4 != tag_ext.TPE4)
+                        first_tag_ext.TPE4 = string.Empty;
+                    if(first_tag_ext.TEXT != tag_ext.TEXT)
+                        first_tag_ext.TEXT = string.Empty;
+                }
             }
-            txtComposer.Text = v2.FirstComposer;
-            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)v2, "TEXT", false );
-            if(frame != null && frame.Text.Length > 0)
+            v2 = first_tag;    
+        }
+        /// <summary>
+        ///  ID3v1 edit 
+        /// </summary>
+        /// <param name="item">the item</param>
+        public override void EditItem( TagListViewItem item )
+        {
+            // call base first
+            base.EditItem( item );
+
+            if(v2 != null)
             {
-                txtWriter.Text = frame.Text[0];
-                frame = null;
+                TagExt tag = new TagExt( item.Id3v2 );
+                tag.TPE2 = txtBand.Text;
+                tag.TPE4 = txtRemixed.Text;
+                tag.TEXT = txtWriter.Text;
+                tag.TPUB = txtPublisher.Text;
+                tag.TENC = txtEncoded.Text;
+                tag.TIT3 = txtSubTitle.Text;
+                //tag_file.Properties.MediaTypes = 
+                //tag_file.Properties.Duration =
+                item.Id3v2.Copyright = txtCopyright.Text;
+                item.Id3v2.Grouping = txtContentGroup.Text;
+                item.Id3v2.Conductor = txtConductor.Text;
+                //item.Id3v2.Composers = new string[1] { txtComposer.Text };
             }
-            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)v2, "TPUB", false );
-            if(frame != null && frame.Text.Length > 0)
-            {
-                txtPublisher.Text = frame.Text[0];
-                frame = null;
-            }
-            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)v2, "TENC", false );
-            if(frame != null && frame.Text.Length > 0)
-            {
-                txtEncoded.Text = frame.Text[0];
-                frame = null;
-            }
-            txtCopyright.Text = v2.Copyright;
-            txtContentGroup.Text = v2.Grouping;
-            frame = TagLib.Id3v2.TextInformationFrame.Get( (TagLib.Id3v2.Tag)v2, "TIT3", false );
-            if(frame != null && frame.Text.Length > 0)
-            {
-                txtSubTitle.Text = frame.Text[0];
-                frame = null;
-            }
-            cmbMediaType.Text = tag_file.Properties.MediaTypes.ToString();
-            txtTrackLength.Text = tag_file.Properties.Duration.ToString();
         }
     }
 }

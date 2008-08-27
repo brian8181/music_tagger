@@ -35,10 +35,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="taglib-sharp, Version=2.0.3.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\taglib-sharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutBox.cs">
@@ -330,8 +326,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="ClassDiagram.cd" />
-    <None Include="EditV2.cd" />
+    <None Include="diagrams\ClassDiagram.cd" />
+    <None Include="diagrams\EditV2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -349,6 +345,7 @@
     <Compile Include="TagV12FileFrm.Designer.cs">
       <DependentUpon>TagV12FileFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TagV2.cs" />
     <Compile Include="TagV22FileFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +366,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\taglib\taglib-sharp.csproj">
+      <Project>{4CC18776-125E-4318-9D24-D60110AD9697}</Project>
+      <Name>taglib-sharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.csproj">
       <Project>{159597FE-1BA8-4542-9528-1A81F771C7D1}</Project>
       <Name>Tools</Name>
@@ -439,6 +440,7 @@
     <None Include="Resources\v2_many.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="diagrams\View.cd" />
     <None Include="Resources\v1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

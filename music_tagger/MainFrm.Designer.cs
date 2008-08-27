@@ -82,9 +82,8 @@ namespace music_tagger
             this.mnOptionsScanSubs = new System.Windows.Forms.ToolStripMenuItem();
             this.mnPrefs = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnHelpContents = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnHelpIndex = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
@@ -602,42 +601,37 @@ namespace music_tagger
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.contentsToolStripMenuItem,
-            this.indexToolStripMenuItem,
-            this.searchToolStripMenuItem,
+            this.mnHelpContents,
+            this.mnHelpIndex,
             this.toolStripSeparator5,
             this.aboutToolStripMenuItem} );
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size( 40, 20 );
             this.helpToolStripMenuItem.Text = "&Help";
             // 
-            // contentsToolStripMenuItem
+            // mnHelpContents
             // 
-            this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
-            this.contentsToolStripMenuItem.Text = "&Contents";
+            this.mnHelpContents.Name = "mnHelpContents";
+            this.mnHelpContents.Size = new System.Drawing.Size( 152, 22 );
+            this.mnHelpContents.Text = "&Contents";
+            this.mnHelpContents.Click += new System.EventHandler( this.OnHelp_Clicked );
             // 
-            // indexToolStripMenuItem
+            // mnHelpIndex
             // 
-            this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
-            this.indexToolStripMenuItem.Text = "&Index";
-            // 
-            // searchToolStripMenuItem
-            // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
-            this.searchToolStripMenuItem.Text = "&Search";
+            this.mnHelpIndex.Name = "mnHelpIndex";
+            this.mnHelpIndex.Size = new System.Drawing.Size( 152, 22 );
+            this.mnHelpIndex.Text = "&Index";
+            this.mnHelpIndex.Click += new System.EventHandler( this.OnHelp_Clicked );
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size( 126, 6 );
+            this.toolStripSeparator5.Size = new System.Drawing.Size( 149, 6 );
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler( this.aboutToolStripMenuItem_Click );
             // 
@@ -1365,9 +1359,8 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem mnEditSelectAll;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnHelpContents;
+        private System.Windows.Forms.ToolStripMenuItem mnHelpIndex;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;

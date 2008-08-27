@@ -151,7 +151,7 @@ namespace music_tagger
         {
             if(InvokeRequired)
             {
-                this.Invoke(
+                this.BeginInvoke(
                     new SafeDelegate( SafeResize ) );
                 return;
             }
