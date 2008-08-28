@@ -7,7 +7,7 @@ namespace music_tagger
 {
     class TagExt
     {
-        public TagLib.Id3v2.Tag tag = null;
+        private TagLib.Id3v2.Tag tag = null;
         /// <summary>
         /// 
         /// </summary>
@@ -16,6 +16,8 @@ namespace music_tagger
         {
             this.tag = tag;
         }
+
+        #region Properties
         /// <summary>
         /// Original album/movie/show title
         /// </summary>
@@ -324,6 +326,8 @@ namespace music_tagger
                 SetText( "WXXX", value );
             }
         }
+        #endregion
+
         /// <summary>
         ///  get text from id
         /// </summary>
@@ -344,7 +348,7 @@ namespace music_tagger
                 UnknownFrame frame = GetUnknownFrame( code );
                 if(frame != null)
                 {
-                    frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
+                    return frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
                 }
             }
             return string.Empty;

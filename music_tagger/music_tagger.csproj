@@ -375,7 +375,7 @@
     <Compile Include="TagV12FileFrm.Designer.cs">
       <DependentUpon>TagV12FileFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TagV2.cs" />
+    <Compile Include="Tag.cs" />
     <Compile Include="TagV22FileFrm.cs">
       <SubType>Form</SubType>
     </Compile>

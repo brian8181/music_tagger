@@ -21,54 +21,15 @@ namespace music_tagger
         /// <param name="idx"></param>
         public override void Fill()
         {
-            foreach(TagLib.Id3v2.UnknownFrame frame in
-               ( (TagLib.Id3v2.Tag)v2 ).GetFrames<TagLib.Id3v2.UnknownFrame>( "WCOP" ))
-            {
-                txtCopyrightURL.Text = frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
-                break;
-            }
-            foreach(TagLib.Id3v2.UnknownFrame frame in
-              ( (TagLib.Id3v2.Tag)v2 ).GetFrames<TagLib.Id3v2.UnknownFrame>( "WOAF" ))
-            {
-                txtFileURL.Text = frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
-                break;
-            }
-            foreach(TagLib.Id3v2.UnknownFrame frame in
-             ( (TagLib.Id3v2.Tag)v2 ).GetFrames<TagLib.Id3v2.UnknownFrame>( "WOAR" ))
-            {
-                txtArtistURL.Text = frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
-                break;
-            }
-            foreach(TagLib.Id3v2.UnknownFrame frame in
-             ( (TagLib.Id3v2.Tag)v2 ).GetFrames<TagLib.Id3v2.UnknownFrame>( "WOAS" ))
-            {
-                txtAudioSourceURL.Text = frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
-                break;
-            }
-            foreach(TagLib.Id3v2.UnknownFrame frame in
-             ( (TagLib.Id3v2.Tag)v2 ).GetFrames<TagLib.Id3v2.UnknownFrame>( "WORS" ))
-            {
-                txtRadioStationURL.Text = frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
-                break;
-            }
-            foreach(TagLib.Id3v2.UnknownFrame frame in
-             ( (TagLib.Id3v2.Tag)v2 ).GetFrames<TagLib.Id3v2.UnknownFrame>( "WPAY" ))
-            {
-                txtPaymentURL.Text = frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
-                break;
-            }
-            foreach(TagLib.Id3v2.UnknownFrame frame in
-            ( (TagLib.Id3v2.Tag)v2 ).GetFrames<TagLib.Id3v2.UnknownFrame>( "WPUB" ))
-            {
-                txtPublisherURL.Text = frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
-                break;
-            }
-            foreach(TagLib.Id3v2.UnknownFrame frame in
-            ( (TagLib.Id3v2.Tag)v2 ).GetFrames<TagLib.Id3v2.UnknownFrame>( "WCOM" ))
-            {
-                txtCommercialURL.Text = frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
-                break;
-            }
+            TagExt tag = new TagExt( v2 );
+            txtCopyrightURL.Text = tag.WCOP;
+            txtFileURL.Text = tag.WOAF;
+            txtArtistURL.Text = tag.WOAR;
+            txtAudioSourceURL.Text = tag.WOAS;
+            txtRadioStationURL.Text = tag.WORS;
+            txtPaymentURL.Text = tag.WPAY;
+            txtPublisherURL.Text = tag.WPUB;
+            txtCommercialURL.Text = tag.WCOM;
         }   
     }
 }

@@ -828,16 +828,16 @@ namespace music_tagger
             this.toolStrip2.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
             this.tsb_EditV1,
             this.tsb_EditV1Multi,
-            this.tsb_EditV2,
-            this.tsb_EditV2Multi,
             this.toolStripSeparator8,
             this.tsb_RemoveV1,
-            this.tsb_RemoveV2,
             this.tsFile2TagV1,
             this.tsTagV12File,
+            this.tsb_ToggleVer,
+            this.tsb_EditV2,
+            this.tsb_EditV2Multi,
+            this.tsb_RemoveV2,
             this.tsFile2TagV2,
-            this.tsTagV22File,
-            this.tsb_ToggleVer} );
+            this.tsTagV22File} );
             this.toolStrip2.Location = new System.Drawing.Point( 140, 24 );
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size( 337, 25 );
@@ -978,7 +978,7 @@ namespace music_tagger
             this.toolStripButton15} );
             this.toolStrip3.Location = new System.Drawing.Point( 3, 49 );
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size( 474, 25 );
+            this.toolStrip3.Size = new System.Drawing.Size( 505, 25 );
             this.toolStrip3.TabIndex = 3;
             // 
             // toolStripButton1
