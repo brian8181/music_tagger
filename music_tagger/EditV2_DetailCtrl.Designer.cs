@@ -272,6 +272,7 @@ namespace music_tagger
             // 
             // btnFromFile
             // 
+            this.btnFromFile.Enabled = false;
             this.btnFromFile.Location = new System.Drawing.Point( 397, 59 );
             this.btnFromFile.Name = "btnFromFile";
             this.btnFromFile.Size = new System.Drawing.Size( 75, 23 );
@@ -281,6 +282,7 @@ namespace music_tagger
             // 
             // txtTrackLength
             // 
+            this.txtTrackLength.Enabled = false;
             this.txtTrackLength.Location = new System.Drawing.Point( 169, 61 );
             this.txtTrackLength.Name = "txtTrackLength";
             this.txtTrackLength.Size = new System.Drawing.Size( 221, 20 );
@@ -288,6 +290,7 @@ namespace music_tagger
             // 
             // cmbMediaType
             // 
+            this.cmbMediaType.Enabled = false;
             this.cmbMediaType.FormattingEnabled = true;
             this.cmbMediaType.Location = new System.Drawing.Point( 169, 31 );
             this.cmbMediaType.Name = "cmbMediaType";

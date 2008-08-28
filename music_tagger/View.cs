@@ -224,6 +224,11 @@ namespace music_tagger
         /// <param name="e"></param>
         void thread_Finished( object sender, EventArgs e )
         {
+            if(InvokeRequired)
+            {
+                this.BeginInvoke( new EventHandler<EventArgs>( thread_Finished ) );
+                return;
+            }
             ListView.EndUpdate();
             Refreshed( this, new RefreshArgs(di.FullName, this.listView.Items.Count) );
         }

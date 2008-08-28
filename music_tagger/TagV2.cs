@@ -45,6 +45,76 @@ namespace music_tagger
             }
         }
         /// <summary>
+        ///  Original lyricist(s)/text writer(s)
+        /// </summary>
+        public string TOLY
+        {
+            get
+            {
+                return GetText( "TOLY" );
+            }
+            set
+            {
+                SetText( "TOLY", value );
+            }
+        }
+        /// <summary>
+        /// Original artist(s)/performer(s)
+        /// </summary>
+        public string TOPE
+        {
+            get
+            {
+                return GetText( "TOPE" );
+            }
+            set
+            {
+                SetText( "TOPE", value );
+            }
+        }
+        /// <summary>
+        /// Original release year
+        /// </summary>
+        public string TORY
+        {
+            get
+            {
+                return GetText( "TORY" );
+            }
+            set
+            {
+                SetText( "TORY", value );
+            }
+        }
+        /// <summary>
+        /// File owner/licensee
+        /// </summary>
+        public string TOWN
+        {
+            get
+            {
+                return GetText( "TOWN" );
+            }
+            set
+            {
+                SetText( "TOWN", value );
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string TDOR
+        {
+            get
+            {
+                return GetText( "TDOR" );
+            }
+            set
+            {
+                SetText( "TDOR", value );
+            }
+        }
+        /// <summary>
         /// Publisher
         /// </summary>
         public string TPUB
@@ -129,53 +199,228 @@ namespace music_tagger
             }
         }
         /// <summary>
-        /// 
+        /// Commercial information
         /// </summary>
-        /// <param name="code"></param>
+        public string WCOM
+        {
+            get
+            {
+                return GetText( "WCOM" );
+            }
+            set
+            {
+                SetText( "WCOM", value );
+            }
+        }
+        /// <summary>
+        ///  Copyright/Legal information
+        /// </summary>
+        public string WCOP
+        {
+            get
+            {
+                return GetText( "WCOP" );
+            }
+            set
+            {
+                SetText( "WCOP", value );
+            }
+        }
+        /// <summary>
+        ///  Official audio file webpage
+        /// </summary>
+        public string WOAF
+        {
+            get
+            {
+                return GetText( "WOAF" );
+            }
+            set
+            {
+                SetText( "WOAF", value );
+            }
+        }
+        /// <summary>
+        /// Official artist/performer webpage
+        /// </summary>
+        public string WOAR
+        {
+            get
+            {
+                return GetText( "WOAR" );
+            }
+            set
+            {
+                SetText( "WOAR", value );
+            }
+        }
+        /// <summary>
+        /// Official audio source webpage
+        /// </summary>
+        public string WOAS
+        {
+            get
+            {
+                return GetText( "WOAS" );
+            }
+            set
+            {
+                SetText( "WOAS", value );
+            }
+        }
+        /// <summary>
+        /// Official internet radio station homepage
+        /// </summary>
+        public string WORS
+        {
+            get
+            {
+                return GetText( "WORS" );
+            }
+            set
+            {
+                SetText( "WORS", value );
+            }
+        }
+        /// <summary>
+        /// Payment
+        /// </summary>
+        public string WPAY
+        {
+            get
+            {
+                return GetText( "WPAY" );
+            }
+            set
+            {
+                SetText( "WPAY", value );
+            }
+        }
+        /// <summary>
+        /// Publishers official webpage
+        /// </summary>
+        public string WPUB
+        {
+            get
+            {
+                return GetText( "WPUB" );
+            }
+            set
+            {
+                SetText( "WPUB", value );
+            }
+        }
+        /// <summary>
+        /// User defined URL link frame
+        /// </summary>
+        public string WXXX
+        {
+            get
+            {
+                return GetText( "WXXX" );
+            }
+            set
+            {
+                SetText( "WXXX", value );
+            }
+        }
+        /// <summary>
+        ///  get text from id
+        /// </summary>
+        /// <param name="code">the frame ifd</param>
         /// <returns></returns>
         public string GetText( string code )
         {
-            TextInformationFrame frame = GetTextFrame( code );
-            if(frame != null && frame.Text.Length > 0)
+            if(code.StartsWith( "T" ))
             {
-                return frame.Text[0];
+                TextInformationFrame frame = GetTextFrame( code );
+                if(frame != null && frame.Text.Length > 0)
+                {
+                    return frame.Text[0];
+                }
+            }
+            else if(code.StartsWith( "W" ))
+            {
+                UnknownFrame frame = GetUnknownFrame( code );
+                if(frame != null)
+                {
+                    frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
+                }
             }
             return string.Empty;
         }
         /// <summary>
-        /// 
+        /// set text frame from id
         /// </summary>
         /// <param name="text"></param>
         public void SetText(string code, string text)
         {
             if(text != null)
             {
-                TextInformationFrame frame = GetTextFrame( code, true );
-                if(frame != null && frame.Text.Length > 0)
+                if(code.StartsWith( "T" ))
                 {
-                    // todo check for multi!!
-                    frame.Text = new string[1] { text };
+                    TextInformationFrame frame = GetTextFrame( code, true );
+                    if(frame != null && frame.Text.Length > 0)
+                    {
+                        // todo check for multi!!
+                        frame.Text = new string[1] { text };
+                    }
+                }
+                else if(code.StartsWith( "W" ))
+                {
+                    // todo
                 }
             }
         }
         /// <summary>
-        /// 
+        ///  get text frame from id
         /// </summary>
-        /// <param name="code"></param>
+        /// <param name="code">the frame id</param>
         /// <returns></returns>
         public TextInformationFrame GetTextFrame( string code )
         {
             return GetTextFrame( code, false );
         }
         /// <summary>
-        /// 
+        /// get text frame from id
         /// </summary>
-        /// <param name="code"></param>
-        /// <param name="create"></param>
+        /// <param name="code">the frame id</param>
+        /// <param name="create">if true creates the frame</param>
         /// <returns></returns>
         public TextInformationFrame GetTextFrame( string code, bool create )
         {
             return TextInformationFrame.Get( tag, code, create );
+        }
+        /// <summary>
+        ///  get text frame from id
+        /// </summary>
+        /// <param name="code">the frame id</param>
+        /// <returns></returns>
+        public UnknownFrame GetUnknownFrame( string code )
+        {
+            return GetUnknownFrame( code, false );
+        }
+        /// <summary>
+        /// get text frame from id
+        /// </summary>
+        /// <param name="code">the frame id</param>
+        /// <param name="create">if true creates the frame</param>
+        /// <returns></returns>
+        public UnknownFrame GetUnknownFrame( string code, bool create )
+        {
+            foreach(TagLib.Id3v2.UnknownFrame frame in
+            ( (TagLib.Id3v2.Tag)tag ).GetFrames<TagLib.Id3v2.UnknownFrame>( code ) )
+            {
+                return frame;
+            }
+
+            UnknownFrame new_frame = null;
+            if(create)
+            {
+                new_frame = new UnknownFrame( code );
+                tag.AddFrame( new_frame );
+            }
+            return new_frame;
         }
     }
 }

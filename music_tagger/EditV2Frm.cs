@@ -16,6 +16,9 @@ namespace music_tagger
         private EditV2_LyricCtrl lyrics = new EditV2_LyricCtrl();
         private EditV2_WebCtrl web = new EditV2_WebCtrl();
         private EditV2_PictureCtrl pictures = new EditV2_PictureCtrl();
+        private EditV2_PeopleCtrl people = new EditV2_PeopleCtrl();
+        private EditV2_UserDefinedCtrl user = new EditV2_UserDefinedCtrl();
+        private EditV2_RatingCtrl rating = new EditV2_RatingCtrl();
         private Control current = null;
         
         /// <summary>
@@ -80,6 +83,21 @@ namespace music_tagger
             original.Dock = DockStyle.Fill;
             original.Initialize( lv, multi_edit );
             original.Hide();
+            this.panel1.Controls.Add( people );
+            people.Location = this.panel1.Location;
+            people.Dock = DockStyle.Fill;
+            people.Initialize( lv, multi_edit );
+            people.Hide();
+            this.panel1.Controls.Add( user );
+            user.Location = this.panel1.Location;
+            user.Dock = DockStyle.Fill;
+            user.Initialize( lv, multi_edit );
+            user.Hide();
+            this.panel1.Controls.Add( rating );
+            rating.Location = this.panel1.Location;
+            rating.Dock = DockStyle.Fill;
+            rating.Initialize( lv, multi_edit );
+            rating.Hide();
             current = main;
         }
         /// <summary>
@@ -164,6 +182,48 @@ namespace music_tagger
                 current.Hide();
                 original.Show();
                 current = original;
+            }     
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void taskPeople_Click( object sender, EventArgs e )
+        {
+            if(current != people)
+            {
+                current.Hide();
+                people.Show();
+                current = people;
+            }     
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void taskUserDefined_Click( object sender, EventArgs e )
+        {
+            if(current != user)
+            {
+                current.Hide();
+                user.Show();
+                current = user;
+            }     
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void taskRating_Click( object sender, EventArgs e )
+        {
+            if(current != rating)
+            {
+                current.Hide();
+                rating.Show();
+                current = rating;
             }     
         }
         /// <summary>

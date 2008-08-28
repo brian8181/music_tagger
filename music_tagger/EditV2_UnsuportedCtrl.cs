@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace music_tagger
 {
-    public partial class EditV2_PeopleCtrl : EditCtrlBase
+    public partial class EditV2_UnsuportedCtrl : EditCtrlBase
     {
-        public EditV2_PeopleCtrl()
+        public EditV2_UnsuportedCtrl()
         {
             InitializeComponent();
         }

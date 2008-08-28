@@ -8,11 +8,16 @@ using System.Windows.Forms;
 
 namespace music_tagger
 {
-    public partial class EditV2_PeopleCtrl : EditCtrlBase
+    public partial class EditV2_RatingCtrl : EditCtrlBase
     {
-        public EditV2_PeopleCtrl()
+        public EditV2_RatingCtrl()
         {
             InitializeComponent();
+        }
+
+        private void EditV2_RatingCtrl_Load( object sender, EventArgs e )
+        {
+
         }
     }
 }

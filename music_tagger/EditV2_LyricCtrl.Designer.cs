@@ -34,6 +34,10 @@ namespace music_tagger
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.cmbLanguage = new System.Windows.Forms.ComboBox();
             this.lyricsList = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnTop = new System.Windows.Forms.Button();
@@ -56,6 +60,7 @@ namespace music_tagger
             this.txtLyrics.Location = new System.Drawing.Point( 68, 64 );
             this.txtLyrics.Multiline = true;
             this.txtLyrics.Name = "txtLyrics";
+            this.txtLyrics.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtLyrics.Size = new System.Drawing.Size( 544, 237 );
             this.txtLyrics.TabIndex = 1;
             // 
@@ -76,11 +81,35 @@ namespace music_tagger
             // 
             // lyricsList
             // 
+            this.lyricsList.Columns.AddRange( new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4} );
+            this.lyricsList.FullRowSelect = true;
             this.lyricsList.Location = new System.Drawing.Point( 3, 336 );
+            this.lyricsList.MultiSelect = false;
             this.lyricsList.Name = "lyricsList";
             this.lyricsList.Size = new System.Drawing.Size( 609, 171 );
             this.lyricsList.TabIndex = 4;
             this.lyricsList.UseCompatibleStateImageBehavior = false;
+            this.lyricsList.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Descriptor";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Lyrics";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Language";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Encoding";
             // 
             // btnAdd
             // 
@@ -152,7 +181,7 @@ namespace music_tagger
             this.Controls.Add( this.txtLyrics );
             this.Controls.Add( this.label1 );
             this.Name = "EditV2_LyricCtrl";
-            this.Size = new System.Drawing.Size( 615, 510 );
+            this.Size = new System.Drawing.Size( 635, 510 );
             this.ResumeLayout( false );
             this.PerformLayout();
 
@@ -172,5 +201,9 @@ namespace music_tagger
         private System.Windows.Forms.Button btnFile;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

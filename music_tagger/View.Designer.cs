@@ -66,7 +66,7 @@ namespace music_tagger
             this.mnViewMoveTo,
             this.mnViewSelectAll} );
             this.contextViewMenu.Name = "contextViewMenu";
-            this.contextViewMenu.Size = new System.Drawing.Size( 168, 70 );
+            this.contextViewMenu.Size = new System.Drawing.Size( 168, 92 );
             // 
             // mnViewCopyTo
             // 
@@ -105,9 +105,9 @@ namespace music_tagger
         #endregion
 
         private System.Windows.Forms.ListView listView;
-        private System.Windows.Forms.ContextMenuStrip contextViewMenu;
         private System.Windows.Forms.ToolStripMenuItem mnViewCopyTo;
         private System.Windows.Forms.ToolStripMenuItem mnViewMoveTo;
         private System.Windows.Forms.ToolStripMenuItem mnViewSelectAll;
+        public System.Windows.Forms.ContextMenuStrip contextViewMenu;
     }
 }

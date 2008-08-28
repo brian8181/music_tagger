@@ -30,6 +30,17 @@ namespace music_tagger
             view.Initialize( tree, type );
             view.Refreshed += new EventHandler<View.RefreshArgs>( view_Refreshed );
             view.ListView.SelectedIndexChanged += new EventHandler( ListView_SelectedIndexChanged );
+
+            ContextMenuStrip cs1 = new ContextMenuStrip();
+            ContextMenuStrip cs2 = new ContextMenuStrip();
+
+            ToolStripManager.Merge( menuStrip, cs2 );  
+            view.contextViewMenu.Items.Add( new ToolStripSeparator() );
+
+            //ToolStripManager.Merge( mnEditV1, mnEditV2 );
+            //view.contextViewMenu.Items.Add( mnEditV1 );
+            //view.contextViewMenu.Items.Add( mnEditV2 );
+
             SetScanOption();
         }
         /// <summary>

@@ -252,7 +252,7 @@ namespace music_tagger
         {
             cmbGenre.Text = v1.FirstGenre;
         }
-#endregion
+        #endregion
 
         #region Edit Comments
         /// <summary>

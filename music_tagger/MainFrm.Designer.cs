@@ -612,26 +612,26 @@ namespace music_tagger
             // mnHelpContents
             // 
             this.mnHelpContents.Name = "mnHelpContents";
-            this.mnHelpContents.Size = new System.Drawing.Size( 152, 22 );
+            this.mnHelpContents.Size = new System.Drawing.Size( 129, 22 );
             this.mnHelpContents.Text = "&Contents";
             this.mnHelpContents.Click += new System.EventHandler( this.OnHelp_Clicked );
             // 
             // mnHelpIndex
             // 
             this.mnHelpIndex.Name = "mnHelpIndex";
-            this.mnHelpIndex.Size = new System.Drawing.Size( 152, 22 );
+            this.mnHelpIndex.Size = new System.Drawing.Size( 129, 22 );
             this.mnHelpIndex.Text = "&Index";
             this.mnHelpIndex.Click += new System.EventHandler( this.OnHelp_Clicked );
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size( 149, 6 );
+            this.toolStripSeparator5.Size = new System.Drawing.Size( 126, 6 );
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size( 129, 22 );
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler( this.aboutToolStripMenuItem_Click );
             // 
@@ -1341,7 +1341,6 @@ namespace music_tagger
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripContainer toolStripContainer;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ToolStrip mainToolStrip;
@@ -1469,6 +1468,7 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
         private System.Windows.Forms.ToolStripMenuItem mnViewRefresh;
+        public System.Windows.Forms.MenuStrip menuStrip;
     }
 }
 

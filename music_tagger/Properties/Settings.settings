@@ -92,5 +92,8 @@
   &lt;string&gt;Length,1&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
+    <Setting Name="org_last_format" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;K&gt;-&lt;A&gt;-&lt;B&gt;-&lt;T&gt;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

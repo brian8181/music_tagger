@@ -128,6 +128,24 @@
     <Compile Include="EditV2_PictureCtrl.Designer.cs">
       <DependentUpon>EditV2_PictureCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditV2_RatingCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_RatingCtrl.designer.cs">
+      <DependentUpon>EditV2_RatingCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV2_UnsuportedCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_UnsuportedCtrl.Designer.cs">
+      <DependentUpon>EditV2_UnsuportedCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditV2_UserDefinedCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_UserDefinedCtrl.Designer.cs">
+      <DependentUpon>EditV2_UserDefinedCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditV2_WebCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -262,6 +280,18 @@
     <EmbeddedResource Include="EditV2_PictureCtrl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EditV2_PictureCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditV2_RatingCtrl.resx">
+      <DependentUpon>EditV2_RatingCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditV2_UnsuportedCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2_UnsuportedCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditV2_UserDefinedCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2_UserDefinedCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditV2_WebCtrl.resx">
       <SubType>Designer</SubType>

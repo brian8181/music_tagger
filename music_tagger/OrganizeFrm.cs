@@ -38,7 +38,7 @@ namespace music_tagger
         /// <param name="lv"></param>
         public virtual void Initialize()
         {
-            if(lv.SelectedItems.Count > 0)
+            if(lv.SelectedItems.Count < 1)
             {
                 return;
             }
@@ -52,7 +52,7 @@ namespace music_tagger
             string[] fmts = new string[Properties.Settings.Default.org_formats.Count];
             Properties.Settings.Default.org_formats.CopyTo( fmts, 0 );
             cmbFormat.Items.AddRange( fmts );
-            cmbFormat.SelectedIndex = 0;
+            cmbFormat.SelectedIndex = cmbFormat.FindStringExact( Properties.Settings.Default.org_last_format );
         }
         /// <summary>
         /// 

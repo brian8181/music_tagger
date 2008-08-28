@@ -30,6 +30,10 @@ namespace music_tagger
         {
             if(v2 != null)
             {
+                if(multi_edit)
+                {
+                    Coalesce();
+                }
                 TagExt tag = new TagExt( v2 );
                 txtBand.Text = tag.TPE2;
                 txtRemixed.Text = tag.TPE4;
@@ -37,8 +41,11 @@ namespace music_tagger
                 txtPublisher.Text = tag.TPUB;
                 txtEncoded.Text = tag.TENC;
                 txtSubTitle.Text = tag.TIT3;
-                cmbMediaType.Text = tag_file.Properties.MediaTypes.ToString();
-                txtTrackLength.Text = tag_file.Properties.Duration.ToString();
+                if(!multi_edit)
+                {
+                    cmbMediaType.Text = tag_file.Properties.MediaTypes.ToString();
+                    txtTrackLength.Text = tag_file.Properties.Duration.ToString();
+                }
                 txtCopyright.Text = v2.Copyright;
                 txtContentGroup.Text = v2.Grouping;
                 txtConductor.Text = v2.Conductor;
@@ -51,14 +58,14 @@ namespace music_tagger
         public override void Coalesce()
         {
             FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
-            TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+            TagLib.File first_tag_file = TagLib.File.Create( fi.FullName );
             TagLib.Id3v2.Tag first_tag = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
             TagExt first_tag_ext = new TagExt( first_tag );
 
             foreach(ListViewItem item in lv.SelectedItems)
             {
                 fi = (FileInfo)item.Tag;
-                tag_file = TagLib.File.Create( fi.FullName );
+                first_tag_file = TagLib.File.Create( fi.FullName );
                 TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
                 TagExt tag_ext = new TagExt( first_tag );
 
@@ -70,7 +77,17 @@ namespace music_tagger
                         first_tag_ext.TPE4 = string.Empty;
                     if(first_tag_ext.TEXT != tag_ext.TEXT)
                         first_tag_ext.TEXT = string.Empty;
-                }
+                    if(first_tag_ext.TPUB != tag_ext.TPUB)
+                        first_tag_ext.TPUB = string.Empty;
+                    if(first_tag_ext.TENC != tag_ext.TENC)
+                        first_tag_ext.TENC = string.Empty;
+                    if(first_tag_ext.TIT3 != tag_ext.TIT3)
+                        first_tag_ext.TIT3 = string.Empty;
+                    //if(first_tag_file.Properties.MediaTypes != tag_file.Properties.MediaTypes)
+                    //    cmbMediaType.Text = string.Empty;
+                    // always empty
+                    txtTrackLength.Text = string.Empty;
+                 }
             }
             v2 = first_tag;    
         }
@@ -92,6 +109,7 @@ namespace music_tagger
                 tag.TPUB = txtPublisher.Text;
                 tag.TENC = txtEncoded.Text;
                 tag.TIT3 = txtSubTitle.Text;
+                //readonly ?
                 //tag_file.Properties.MediaTypes = 
                 //tag_file.Properties.Duration =
                 item.Id3v2.Copyright = txtCopyright.Text;

@@ -243,5 +243,17 @@ namespace music_tagger.Properties {
                 this["cols"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<K>-<A>-<B>-<T>")]
+        public string org_last_format {
+            get {
+                return ((string)(this["org_last_format"]));
+            }
+            set {
+                this["org_last_format"] = value;
+            }
+        }
     }
 }
