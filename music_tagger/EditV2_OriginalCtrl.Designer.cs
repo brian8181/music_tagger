@@ -29,6 +29,12 @@ namespace music_tagger
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckOriginalReleaseDate = new System.Windows.Forms.CheckBox();
+            this.ckOriginalOwner = new System.Windows.Forms.CheckBox();
+            this.ckOriginalArtist = new System.Windows.Forms.CheckBox();
+            this.ckOrginalLyricsWriter = new System.Windows.Forms.CheckBox();
+            this.ckOrginalFileName = new System.Windows.Forms.CheckBox();
+            this.ckOrginalAlbum = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtOriginalReleaseDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +52,12 @@ namespace music_tagger
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add( this.ckOriginalReleaseDate );
+            this.groupBox1.Controls.Add( this.ckOriginalOwner );
+            this.groupBox1.Controls.Add( this.ckOriginalArtist );
+            this.groupBox1.Controls.Add( this.ckOrginalLyricsWriter );
+            this.groupBox1.Controls.Add( this.ckOrginalFileName );
+            this.groupBox1.Controls.Add( this.ckOrginalAlbum );
             this.groupBox1.Controls.Add( this.label6 );
             this.groupBox1.Controls.Add( this.txtOriginalReleaseDate );
             this.groupBox1.Controls.Add( this.label5 );
@@ -63,6 +75,60 @@ namespace music_tagger
             this.groupBox1.Size = new System.Drawing.Size( 609, 185 );
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
+            // 
+            // ckOriginalReleaseDate
+            // 
+            this.ckOriginalReleaseDate.AutoSize = true;
+            this.ckOriginalReleaseDate.Location = new System.Drawing.Point( 230, 138 );
+            this.ckOriginalReleaseDate.Name = "ckOriginalReleaseDate";
+            this.ckOriginalReleaseDate.Size = new System.Drawing.Size( 15, 14 );
+            this.ckOriginalReleaseDate.TabIndex = 46;
+            this.ckOriginalReleaseDate.UseVisualStyleBackColor = true;
+            // 
+            // ckOriginalOwner
+            // 
+            this.ckOriginalOwner.AutoSize = true;
+            this.ckOriginalOwner.Location = new System.Drawing.Point( 588, 112 );
+            this.ckOriginalOwner.Name = "ckOriginalOwner";
+            this.ckOriginalOwner.Size = new System.Drawing.Size( 15, 14 );
+            this.ckOriginalOwner.TabIndex = 45;
+            this.ckOriginalOwner.UseVisualStyleBackColor = true;
+            // 
+            // ckOriginalArtist
+            // 
+            this.ckOriginalArtist.AutoSize = true;
+            this.ckOriginalArtist.Location = new System.Drawing.Point( 588, 88 );
+            this.ckOriginalArtist.Name = "ckOriginalArtist";
+            this.ckOriginalArtist.Size = new System.Drawing.Size( 15, 14 );
+            this.ckOriginalArtist.TabIndex = 44;
+            this.ckOriginalArtist.UseVisualStyleBackColor = true;
+            // 
+            // ckOrginalLyricsWriter
+            // 
+            this.ckOrginalLyricsWriter.AutoSize = true;
+            this.ckOrginalLyricsWriter.Location = new System.Drawing.Point( 588, 64 );
+            this.ckOrginalLyricsWriter.Name = "ckOrginalLyricsWriter";
+            this.ckOrginalLyricsWriter.Size = new System.Drawing.Size( 15, 14 );
+            this.ckOrginalLyricsWriter.TabIndex = 43;
+            this.ckOrginalLyricsWriter.UseVisualStyleBackColor = true;
+            // 
+            // ckOrginalFileName
+            // 
+            this.ckOrginalFileName.AutoSize = true;
+            this.ckOrginalFileName.Location = new System.Drawing.Point( 588, 40 );
+            this.ckOrginalFileName.Name = "ckOrginalFileName";
+            this.ckOrginalFileName.Size = new System.Drawing.Size( 15, 14 );
+            this.ckOrginalFileName.TabIndex = 42;
+            this.ckOrginalFileName.UseVisualStyleBackColor = true;
+            // 
+            // ckOrginalAlbum
+            // 
+            this.ckOrginalAlbum.AutoSize = true;
+            this.ckOrginalAlbum.Location = new System.Drawing.Point( 588, 16 );
+            this.ckOrginalAlbum.Name = "ckOrginalAlbum";
+            this.ckOrginalAlbum.Size = new System.Drawing.Size( 15, 14 );
+            this.ckOrginalAlbum.TabIndex = 40;
+            this.ckOrginalAlbum.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -189,5 +255,11 @@ namespace music_tagger
         private System.Windows.Forms.TextBox txtOriginalOwner;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtOriginalReleaseDate;
+        private System.Windows.Forms.CheckBox ckOriginalReleaseDate;
+        private System.Windows.Forms.CheckBox ckOriginalOwner;
+        private System.Windows.Forms.CheckBox ckOriginalArtist;
+        private System.Windows.Forms.CheckBox ckOrginalLyricsWriter;
+        private System.Windows.Forms.CheckBox ckOrginalFileName;
+        private System.Windows.Forms.CheckBox ckOrginalAlbum;
     }
 }

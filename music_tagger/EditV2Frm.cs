@@ -255,6 +255,9 @@ namespace music_tagger
             item.BackColor = Color.Yellow;
             main.EditItem( item );
             details.EditItem( item );
+            original.EditItem( item );
+            people.EditItem( item );
+            web.EditItem( item );
             item.RefreshItem();
         }
     }

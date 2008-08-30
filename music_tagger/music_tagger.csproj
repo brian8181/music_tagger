@@ -184,6 +184,8 @@
       <DependentUpon>FreeDBFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="InvolvedPeopleFrame.cs" />
+    <Compile Include="TagLib\InvolvedPeopleFrame.cs" />
     <Compile Include="ISO_639_2.cs" />
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
@@ -368,6 +370,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="TagLib\WebLinkFrame.cs" />
     <Compile Include="TagListViewItem.cs" />
     <Compile Include="TagV12FileFrm.cs">
       <SubType>Form</SubType>

@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B8B873B0-1F0E-4DD3-92C2-08E7F277B1C0}"
 	ProjectSection(SolutionItems) = preProject
 		docs\id3v1_genres.txt = docs\id3v1_genres.txt
+		id3v2-00.txt = id3v2-00.txt
 		docs\id3v2.3.0.txt = docs\id3v2.3.0.txt
 		id3v2.4.0-changes.txt = id3v2.4.0-changes.txt
 		docs\id3v2.4.0-frames.txt = docs\id3v2.4.0-frames.txt

@@ -29,6 +29,11 @@ namespace music_tagger
         private void InitializeComponent()
         {
             this.URLs = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCommercialURL = new System.Windows.Forms.TextBox();
+            this.txtPaymentURL = new System.Windows.Forms.TextBox();
+            this.txtPublisherURL = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,20 +45,31 @@ namespace music_tagger
             this.txtAudioSourceURL = new System.Windows.Forms.TextBox();
             this.txtArtistURL = new System.Windows.Forms.TextBox();
             this.txtRadioStationURL = new System.Windows.Forms.TextBox();
-            this.txtPublisherURL = new System.Windows.Forms.TextBox();
-            this.txtPaymentURL = new System.Windows.Forms.TextBox();
-            this.txtCommercialURL = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.ckCopyrightURL = new System.Windows.Forms.CheckBox();
+            this.ckFileURL = new System.Windows.Forms.CheckBox();
+            this.ckRadioStationURL = new System.Windows.Forms.CheckBox();
+            this.ckAudioSourceURL = new System.Windows.Forms.CheckBox();
+            this.ckArtistURL = new System.Windows.Forms.CheckBox();
+            this.ckCommercialURL = new System.Windows.Forms.CheckBox();
+            this.ckPublisherURL = new System.Windows.Forms.CheckBox();
+            this.ckPaymentURL = new System.Windows.Forms.CheckBox();
             this.URLs.SuspendLayout();
             this.SuspendLayout();
             // 
             // URLs
             // 
+            this.URLs.Controls.Add( this.ckPaymentURL );
+            this.URLs.Controls.Add( this.ckPublisherURL );
+            this.URLs.Controls.Add( this.ckCommercialURL );
+            this.URLs.Controls.Add( this.ckRadioStationURL );
+            this.URLs.Controls.Add( this.ckAudioSourceURL );
+            this.URLs.Controls.Add( this.ckArtistURL );
             this.URLs.Controls.Add( this.label8 );
             this.URLs.Controls.Add( this.label7 );
             this.URLs.Controls.Add( this.txtCommercialURL );
+            this.URLs.Controls.Add( this.ckFileURL );
             this.URLs.Controls.Add( this.txtPaymentURL );
+            this.URLs.Controls.Add( this.ckCopyrightURL );
             this.URLs.Controls.Add( this.txtPublisherURL );
             this.URLs.Controls.Add( this.label6 );
             this.URLs.Controls.Add( this.label5 );
@@ -72,6 +88,45 @@ namespace music_tagger
             this.URLs.TabIndex = 40;
             this.URLs.TabStop = false;
             this.URLs.Text = "Web URLs ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point( 12, 201 );
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size( 118, 13 );
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Commercial information:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point( 12, 177 );
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size( 138, 13 );
+            this.label7.TabIndex = 45;
+            this.label7.Text = "Publishers official webpage:";
+            // 
+            // txtCommercialURL
+            // 
+            this.txtCommercialURL.Location = new System.Drawing.Point( 169, 198 );
+            this.txtCommercialURL.Name = "txtCommercialURL";
+            this.txtCommercialURL.Size = new System.Drawing.Size( 414, 20 );
+            this.txtCommercialURL.TabIndex = 44;
+            // 
+            // txtPaymentURL
+            // 
+            this.txtPaymentURL.Location = new System.Drawing.Point( 169, 150 );
+            this.txtPaymentURL.Name = "txtPaymentURL";
+            this.txtPaymentURL.Size = new System.Drawing.Size( 414, 20 );
+            this.txtPaymentURL.TabIndex = 43;
+            // 
+            // txtPublisherURL
+            // 
+            this.txtPublisherURL.Location = new System.Drawing.Point( 169, 174 );
+            this.txtPublisherURL.Name = "txtPublisherURL";
+            this.txtPublisherURL.Size = new System.Drawing.Size( 414, 20 );
+            this.txtPublisherURL.TabIndex = 42;
             // 
             // label6
             // 
@@ -162,44 +217,77 @@ namespace music_tagger
             this.txtRadioStationURL.Size = new System.Drawing.Size( 414, 20 );
             this.txtRadioStationURL.TabIndex = 32;
             // 
-            // txtPublisherURL
+            // ckCopyrightURL
             // 
-            this.txtPublisherURL.Location = new System.Drawing.Point( 169, 174 );
-            this.txtPublisherURL.Name = "txtPublisherURL";
-            this.txtPublisherURL.Size = new System.Drawing.Size( 414, 20 );
-            this.txtPublisherURL.TabIndex = 42;
+            this.ckCopyrightURL.AutoSize = true;
+            this.ckCopyrightURL.Location = new System.Drawing.Point( 588, 33 );
+            this.ckCopyrightURL.Name = "ckCopyrightURL";
+            this.ckCopyrightURL.Size = new System.Drawing.Size( 15, 14 );
+            this.ckCopyrightURL.TabIndex = 41;
+            this.ckCopyrightURL.UseVisualStyleBackColor = true;
             // 
-            // txtPaymentURL
+            // ckFileURL
             // 
-            this.txtPaymentURL.Location = new System.Drawing.Point( 169, 150 );
-            this.txtPaymentURL.Name = "txtPaymentURL";
-            this.txtPaymentURL.Size = new System.Drawing.Size( 414, 20 );
-            this.txtPaymentURL.TabIndex = 43;
+            this.ckFileURL.AutoSize = true;
+            this.ckFileURL.Location = new System.Drawing.Point( 588, 57 );
+            this.ckFileURL.Name = "ckFileURL";
+            this.ckFileURL.Size = new System.Drawing.Size( 15, 14 );
+            this.ckFileURL.TabIndex = 42;
+            this.ckFileURL.UseVisualStyleBackColor = true;
             // 
-            // txtCommercialURL
+            // ckRadioStationURL
             // 
-            this.txtCommercialURL.Location = new System.Drawing.Point( 169, 198 );
-            this.txtCommercialURL.Name = "txtCommercialURL";
-            this.txtCommercialURL.Size = new System.Drawing.Size( 414, 20 );
-            this.txtCommercialURL.TabIndex = 44;
+            this.ckRadioStationURL.AutoSize = true;
+            this.ckRadioStationURL.Location = new System.Drawing.Point( 588, 129 );
+            this.ckRadioStationURL.Name = "ckRadioStationURL";
+            this.ckRadioStationURL.Size = new System.Drawing.Size( 15, 14 );
+            this.ckRadioStationURL.TabIndex = 43;
+            this.ckRadioStationURL.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // ckAudioSourceURL
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point( 12, 177 );
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size( 138, 13 );
-            this.label7.TabIndex = 45;
-            this.label7.Text = "Publishers official webpage:";
+            this.ckAudioSourceURL.AutoSize = true;
+            this.ckAudioSourceURL.Location = new System.Drawing.Point( 588, 105 );
+            this.ckAudioSourceURL.Name = "ckAudioSourceURL";
+            this.ckAudioSourceURL.Size = new System.Drawing.Size( 15, 14 );
+            this.ckAudioSourceURL.TabIndex = 44;
+            this.ckAudioSourceURL.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // ckArtistURL
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point( 12, 201 );
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size( 118, 13 );
-            this.label8.TabIndex = 46;
-            this.label8.Text = "Commercial information:";
+            this.ckArtistURL.AutoSize = true;
+            this.ckArtistURL.Location = new System.Drawing.Point( 588, 81 );
+            this.ckArtistURL.Name = "ckArtistURL";
+            this.ckArtistURL.Size = new System.Drawing.Size( 15, 14 );
+            this.ckArtistURL.TabIndex = 45;
+            this.ckArtistURL.UseVisualStyleBackColor = true;
+            // 
+            // ckCommercialURL
+            // 
+            this.ckCommercialURL.AutoSize = true;
+            this.ckCommercialURL.Location = new System.Drawing.Point( 589, 201 );
+            this.ckCommercialURL.Name = "ckCommercialURL";
+            this.ckCommercialURL.Size = new System.Drawing.Size( 15, 14 );
+            this.ckCommercialURL.TabIndex = 47;
+            this.ckCommercialURL.UseVisualStyleBackColor = true;
+            // 
+            // ckPublisherURL
+            // 
+            this.ckPublisherURL.AutoSize = true;
+            this.ckPublisherURL.Location = new System.Drawing.Point( 588, 177 );
+            this.ckPublisherURL.Name = "ckPublisherURL";
+            this.ckPublisherURL.Size = new System.Drawing.Size( 15, 14 );
+            this.ckPublisherURL.TabIndex = 48;
+            this.ckPublisherURL.UseVisualStyleBackColor = true;
+            // 
+            // ckPaymentURL
+            // 
+            this.ckPaymentURL.AutoSize = true;
+            this.ckPaymentURL.Location = new System.Drawing.Point( 588, 153 );
+            this.ckPaymentURL.Name = "ckPaymentURL";
+            this.ckPaymentURL.Size = new System.Drawing.Size( 15, 14 );
+            this.ckPaymentURL.TabIndex = 49;
+            this.ckPaymentURL.UseVisualStyleBackColor = true;
             // 
             // EditV2_WebCtrl
             // 
@@ -233,6 +321,14 @@ namespace music_tagger
         private System.Windows.Forms.TextBox txtAudioSourceURL;
         private System.Windows.Forms.TextBox txtArtistURL;
         private System.Windows.Forms.TextBox txtRadioStationURL;
+        private System.Windows.Forms.CheckBox ckPaymentURL;
+        private System.Windows.Forms.CheckBox ckPublisherURL;
+        private System.Windows.Forms.CheckBox ckCommercialURL;
+        private System.Windows.Forms.CheckBox ckRadioStationURL;
+        private System.Windows.Forms.CheckBox ckAudioSourceURL;
+        private System.Windows.Forms.CheckBox ckArtistURL;
+        private System.Windows.Forms.CheckBox ckFileURL;
+        private System.Windows.Forms.CheckBox ckCopyrightURL;
 
     }
 }

@@ -1,0 +1,20 @@
+
+Total Songs: 27180
+Total Artists: 2419
+Total Albums: 3051
+Total Art: 2461
+Total Lyrics: 757
+MP3: 26260
+WMA: 100
+OGG: 144
+FLAC: 676
+
+Orphaned Artists: 0
+Orphaned Albums: 0
+Null Artist: 132
+Null Album: 569
+Null Art: 3711
+Last Update: 2008-08-14 17:34:51
+
+Total DB Queries: 47
+Total Users: 15

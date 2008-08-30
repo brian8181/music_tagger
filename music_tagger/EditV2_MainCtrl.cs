@@ -114,7 +114,7 @@ namespace music_tagger
         {
             base.EditItem( item );
 
-            if(v2 != null)
+            if(item.Id3v2 != null)
             {
                 if(!multi_edit || ckArtist.Checked)
                     item.Id3v2.Performers = Globals.GetArray( this.txtArtists.Text );

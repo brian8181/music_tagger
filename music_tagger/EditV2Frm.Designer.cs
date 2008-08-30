@@ -36,6 +36,9 @@ namespace music_tagger
             this.taskPicture = new XPExplorerBar.TaskItem();
             this.taskWeb = new XPExplorerBar.TaskItem();
             this.taskOriginal = new XPExplorerBar.TaskItem();
+            this.taskPeople = new XPExplorerBar.TaskItem();
+            this.taskUserDefined = new XPExplorerBar.TaskItem();
+            this.taskRating = new XPExplorerBar.TaskItem();
             this.expando2 = new XPExplorerBar.Expando();
             this.taskPrevious = new XPExplorerBar.TaskItem();
             this.taskNext = new XPExplorerBar.TaskItem();
@@ -45,9 +48,6 @@ namespace music_tagger
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.taskPeople = new XPExplorerBar.TaskItem();
-            this.taskUserDefined = new XPExplorerBar.TaskItem();
-            this.taskRating = new XPExplorerBar.TaskItem();
             ( (System.ComponentModel.ISupportInitialize)( this.taskPane1 ) ).BeginInit();
             this.taskPane1.SuspendLayout();
             ( (System.ComponentModel.ISupportInitialize)( this.expando1 ) ).BeginInit();
@@ -72,7 +72,7 @@ namespace music_tagger
             // 
             this.expando1.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
                         | System.Windows.Forms.AnchorStyles.Right ) ) );
-            this.expando1.ExpandedHeight = 200;
+            this.expando1.ExpandedHeight = 275;
             this.expando1.Font = new System.Drawing.Font( "Tahoma", 8.25F );
             this.expando1.Items.AddRange( new System.Windows.Forms.Control[] {
             this.taskMain,
@@ -86,7 +86,7 @@ namespace music_tagger
             this.taskRating} );
             this.expando1.Location = new System.Drawing.Point( 12, 12 );
             this.expando1.Name = "expando1";
-            this.expando1.Size = new System.Drawing.Size( 186, 282 );
+            this.expando1.Size = new System.Drawing.Size( 186, 275 );
             this.expando1.TabIndex = 0;
             this.expando1.Text = "Tag Information";
             // 
@@ -180,6 +180,51 @@ namespace music_tagger
             this.taskOriginal.UseVisualStyleBackColor = false;
             this.taskOriginal.Click += new System.EventHandler( this.taskOriginal_Click );
             // 
+            // taskPeople
+            // 
+            this.taskPeople.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
+                        | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.taskPeople.BackColor = System.Drawing.Color.Transparent;
+            this.taskPeople.Image = null;
+            this.taskPeople.Location = new System.Drawing.Point( 13, 172 );
+            this.taskPeople.Name = "taskPeople";
+            this.taskPeople.Size = new System.Drawing.Size( 146, 16 );
+            this.taskPeople.TabIndex = 6;
+            this.taskPeople.Text = "Involved People";
+            this.taskPeople.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.taskPeople.UseVisualStyleBackColor = false;
+            this.taskPeople.Click += new System.EventHandler( this.taskPeople_Click );
+            // 
+            // taskUserDefined
+            // 
+            this.taskUserDefined.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
+                        | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.taskUserDefined.BackColor = System.Drawing.Color.Transparent;
+            this.taskUserDefined.Image = null;
+            this.taskUserDefined.Location = new System.Drawing.Point( 13, 194 );
+            this.taskUserDefined.Name = "taskUserDefined";
+            this.taskUserDefined.Size = new System.Drawing.Size( 146, 16 );
+            this.taskUserDefined.TabIndex = 7;
+            this.taskUserDefined.Text = "User Defined Infromation";
+            this.taskUserDefined.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.taskUserDefined.UseVisualStyleBackColor = false;
+            this.taskUserDefined.Click += new System.EventHandler( this.taskUserDefined_Click );
+            // 
+            // taskRating
+            // 
+            this.taskRating.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
+                        | System.Windows.Forms.AnchorStyles.Right ) ) );
+            this.taskRating.BackColor = System.Drawing.Color.Transparent;
+            this.taskRating.Image = null;
+            this.taskRating.Location = new System.Drawing.Point( 13, 216 );
+            this.taskRating.Name = "taskRating";
+            this.taskRating.Size = new System.Drawing.Size( 146, 16 );
+            this.taskRating.TabIndex = 8;
+            this.taskRating.Text = "Ratings";
+            this.taskRating.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.taskRating.UseVisualStyleBackColor = false;
+            this.taskRating.Click += new System.EventHandler( this.taskRating_Click );
+            // 
             // expando2
             // 
             this.expando2.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
@@ -192,7 +237,7 @@ namespace music_tagger
             this.taskSwapArtist_Title,
             this.taskSwapArtist_Album,
             this.taskSwapTitle_Album} );
-            this.expando2.Location = new System.Drawing.Point( 12, 300 );
+            this.expando2.Location = new System.Drawing.Point( 12, 299 );
             this.expando2.Name = "expando2";
             this.expando2.Size = new System.Drawing.Size( 186, 200 );
             this.expando2.TabIndex = 1;
@@ -295,51 +340,6 @@ namespace music_tagger
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // taskPeople
-            // 
-            this.taskPeople.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
-                        | System.Windows.Forms.AnchorStyles.Right ) ) );
-            this.taskPeople.BackColor = System.Drawing.Color.Transparent;
-            this.taskPeople.Image = null;
-            this.taskPeople.Location = new System.Drawing.Point( 13, 172 );
-            this.taskPeople.Name = "taskPeople";
-            this.taskPeople.Size = new System.Drawing.Size( 146, 16 );
-            this.taskPeople.TabIndex = 6;
-            this.taskPeople.Text = "Involved People";
-            this.taskPeople.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.taskPeople.UseVisualStyleBackColor = false;
-            this.taskPeople.Click += new System.EventHandler( this.taskPeople_Click );
-            // 
-            // taskUserDefined
-            // 
-            this.taskUserDefined.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
-                        | System.Windows.Forms.AnchorStyles.Right ) ) );
-            this.taskUserDefined.BackColor = System.Drawing.Color.Transparent;
-            this.taskUserDefined.Image = null;
-            this.taskUserDefined.Location = new System.Drawing.Point( 13, 194 );
-            this.taskUserDefined.Name = "taskUserDefined";
-            this.taskUserDefined.Size = new System.Drawing.Size( 146, 16 );
-            this.taskUserDefined.TabIndex = 7;
-            this.taskUserDefined.Text = "User Defined Infromation";
-            this.taskUserDefined.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.taskUserDefined.UseVisualStyleBackColor = false;
-            this.taskUserDefined.Click += new System.EventHandler( this.taskUserDefined_Click );
-            // 
-            // taskRating
-            // 
-            this.taskRating.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
-                        | System.Windows.Forms.AnchorStyles.Right ) ) );
-            this.taskRating.BackColor = System.Drawing.Color.Transparent;
-            this.taskRating.Image = null;
-            this.taskRating.Location = new System.Drawing.Point( 13, 216 );
-            this.taskRating.Name = "taskRating";
-            this.taskRating.Size = new System.Drawing.Size( 146, 16 );
-            this.taskRating.TabIndex = 8;
-            this.taskRating.Text = "Ratings";
-            this.taskRating.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.taskRating.UseVisualStyleBackColor = false;
-            this.taskRating.Click += new System.EventHandler( this.taskRating_Click );
             // 
             // EditV2Frm
             // 

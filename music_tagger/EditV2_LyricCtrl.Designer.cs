@@ -31,7 +31,6 @@ namespace music_tagger
             this.label1 = new System.Windows.Forms.Label();
             this.txtLyrics = new System.Windows.Forms.TextBox();
             this.txtDescriptor = new System.Windows.Forms.TextBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.cmbLanguage = new System.Windows.Forms.ComboBox();
             this.lyricsList = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
@@ -98,10 +97,12 @@ namespace music_tagger
             // columnHeader1
             // 
             this.columnHeader1.Text = "Descriptor";
+            this.columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Lyrics";
+            this.columnHeader2.Width = 225;
             // 
             // columnHeader3
             // 
@@ -192,7 +193,6 @@ namespace music_tagger
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLyrics;
         private System.Windows.Forms.TextBox txtDescriptor;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ComboBox cmbLanguage;
         private System.Windows.Forms.ListView lyricsList;
         private System.Windows.Forms.Button btnAdd;

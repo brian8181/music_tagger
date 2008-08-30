@@ -348,6 +348,9 @@ namespace music_tagger
                 UnknownFrame frame = GetUnknownFrame( code );
                 if(frame != null)
                 {
+                    // todo
+                    //string[] strs = frame.Data.ToStrings( TagLib.StringType.UTF8 );
+                    // gets the first frame
                     return frame.Data.ToString( TagLib.StringType.UTF8, 0, frame.Data.Count - 1 );
                 }
             }
@@ -372,7 +375,13 @@ namespace music_tagger
                 }
                 else if(code.StartsWith( "W" ))
                 {
-                    // todo
+                    UnknownFrame frame = GetUnknownFrame( code );
+                    if(frame != null)
+                    {
+                        byte[] byts = UTF8Encoding.UTF8.GetBytes( text );
+                        frame.Data = new TagLib.ByteVector( byts );
+                        frame.Data.Add( (byte)0 );
+                    }
                 }
             }
         }

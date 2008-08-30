@@ -48,6 +48,7 @@ namespace music_tagger
                         if( stream != null )
                             stream.Close();
                     }
+
                 }
 
             }

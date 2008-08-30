@@ -102,12 +102,24 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EditV2_RatingCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditV2_RatingCtrl.Designer.cs">
+      <DependentUpon>EditV2_RatingCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MsgBoxCheck.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EditV2_RatingCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditV2_RatingCtrl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
