@@ -1,8 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+
 namespace music_tagger
 {
+    /// <summary>
+    /// helps with ISO 639.2 
+    /// </summary>
     class ISO_639_2
     {
         private string alpha_2 = string.Empty;

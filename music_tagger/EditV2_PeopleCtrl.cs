@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using TagLib.Id3v2;
 
 namespace music_tagger
 {
@@ -22,26 +23,29 @@ namespace music_tagger
         public override void Fill()
         {
             TagExt tag = new TagExt( v2 );
+            UnknownFrame unk_frame = tag.GetUnknownFrame( "IPLS" );
 
-            InvolvedPeopleFrame frame = new InvolvedPeopleFrame( tag.GetUnknownFrame( "IPLS" ) );
-
-            string[] people = frame.Person;
-            string[] functions = frame.Function;
-
-            int len = people.Length;
-            for(int i = 0; i < len; ++i)
+            if(unk_frame != null)
             {
-                ListViewItem item = new ListViewItem(people[i]);
-                item.SubItems.Add( functions[i] );
-                personList.Items.Add( item );
-            }
-            
- 
-            if(personList.Items.Count > 0)
-            {
-                ListViewItem item = personList.Items[0]; 
-                txtName.Text = item.Text;
-                txtFunction.Text = item.SubItems[1].Text;
+                InvolvedPeopleFrame frame = new InvolvedPeopleFrame( unk_frame );
+
+                string[] people = frame.Person;
+                string[] functions = frame.Function;
+
+                int len = people.Length;
+                for(int i = 0; i < len; ++i)
+                {
+                    ListViewItem item = new ListViewItem( people[i] );
+                    item.SubItems.Add( functions[i] );
+                    personList.Items.Add( item );
+                }
+
+                if(personList.Items.Count > 0)
+                {
+                    ListViewItem item = personList.Items[0];
+                    txtName.Text = item.Text;
+                    txtFunction.Text = item.SubItems[1].Text;
+                }
             }
         }
         /// <summary>

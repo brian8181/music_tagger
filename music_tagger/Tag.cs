@@ -201,6 +201,34 @@ namespace music_tagger
             }
         }
         /// <summary>
+        /// Media type
+        /// </summary>
+        public string TMED
+        {
+            get
+            {
+                return GetText( "TMED" );
+            }
+            set
+            {
+                SetText( "TMED", value );
+            }
+        }
+        /// <summary>
+        /// Length
+        /// </summary>
+        public string TLEN
+        {
+            get
+            {
+                return GetText( "TLEN" );
+            }
+            set
+            {
+                SetText( "TLEN", value );
+            }
+        }
+        /// <summary>
         /// Commercial information
         /// </summary>
         public string WCOM

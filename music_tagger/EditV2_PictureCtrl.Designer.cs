@@ -32,7 +32,7 @@ namespace music_tagger
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPicType = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.commentList = new System.Windows.Forms.ListView();
@@ -85,13 +85,36 @@ namespace music_tagger
             this.label3.TabIndex = 3;
             this.label3.Text = "Path to picture:";
             // 
-            // comboBox1
+            // cmbPicType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point( 103, 41 );
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size( 305, 21 );
-            this.comboBox1.TabIndex = 8;
+            this.cmbPicType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPicType.FormattingEnabled = true;
+            this.cmbPicType.Items.AddRange( new object[] {
+            "Other",
+            "32x32 pixels \'file icon\' (PNG only)",
+            "Other file icon",
+            "Cover (front)",
+            "Cover (back)",
+            "Leaflet page",
+            "Media (e.g. lable side of CD)",
+            "Lead artist/lead performer/soloist",
+            "Artist/performer",
+            "Conductor",
+            "Band/Orchestra",
+            "Composer",
+            "Lyricist/text writer",
+            "Recording Location",
+            "During recording",
+            "During performance",
+            "Movie/video screen capture",
+            "A bright coloured fish",
+            "Illustration",
+            "Band/artist logotype",
+            "Publisher/Studio logotype"} );
+            this.cmbPicType.Location = new System.Drawing.Point( 103, 41 );
+            this.cmbPicType.Name = "cmbPicType";
+            this.cmbPicType.Size = new System.Drawing.Size( 305, 21 );
+            this.cmbPicType.TabIndex = 8;
             // 
             // textBox1
             // 
@@ -205,7 +228,7 @@ namespace music_tagger
             this.Controls.Add( this.commentList );
             this.Controls.Add( this.textBox2 );
             this.Controls.Add( this.textBox1 );
-            this.Controls.Add( this.comboBox1 );
+            this.Controls.Add( this.cmbPicType );
             this.Controls.Add( this.label3 );
             this.Controls.Add( this.label2 );
             this.Controls.Add( this.label1 );
@@ -224,7 +247,7 @@ namespace music_tagger
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPicType;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ListView commentList;

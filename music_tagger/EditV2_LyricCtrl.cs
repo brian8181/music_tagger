@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace music_tagger
 {
@@ -65,12 +66,32 @@ namespace music_tagger
         {
             // call base first
             base.EditItem( item );
+  
         }
         /// <summary>
         /// merge like values, hide unlike values
         /// </summary>
         public override void Coalesce()
         {
+
+            FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
+            TagLib.File first_tag_file = TagLib.File.Create( fi.FullName );
+            TagLib.Id3v2.Tag first_tag = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
+            TagExt first_tag_ext = new TagExt( first_tag );
+
+            foreach(ListViewItem item in lv.SelectedItems)
+            {
+                fi = (FileInfo)item.Tag;
+                first_tag_file = TagLib.File.Create( fi.FullName );
+                TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
+                TagExt tag_ext = new TagExt( first_tag );
+
+                if(tag != null)
+                {
+
+                }
+            }
+            v2 = first_tag; 
         }
         /// <summary>
         /// set selected comment 

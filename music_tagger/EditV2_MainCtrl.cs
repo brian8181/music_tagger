@@ -14,7 +14,7 @@ namespace music_tagger
     /// </summary>
     public partial class EditV2_MainCtrl : EditCtrlBase
     {
-
+        private bool comments_dirty = false;
         /// <summary>
         ///  contructor
         /// </summary>
@@ -141,6 +141,8 @@ namespace music_tagger
                     item.Id3v2.Genres = Globals.GetArray( txtGenres.Text );
                 if(!multi_edit || ckComment.Checked)
                     item.Id3v2.Comment = this.txtComment.Text;
+
+                UpdateCommentFrames( item );
             }
         }
         /// <summary>
@@ -182,7 +184,7 @@ namespace music_tagger
                         first_tag.BeatsPerMinute = 0;
                     if(first_tag.Comment != tag.Comment)
                         first_tag.Comment = string.Empty;
-                }
+                 }
             }
             v2 = first_tag;
         }
@@ -241,6 +243,8 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnV1Comment_Click( object sender, EventArgs e )
         {
+            txtCommentDescriptor.Text = "";
+            cmbCommentLang.SelectedIndex = cmbCommentLang.FindString( "xxx" );
             txtComment.Text = v1.Comment;
         }
         /// <summary>
@@ -264,9 +268,9 @@ namespace music_tagger
         {
             ListViewItem lvi = commentList.Items.Add(
                 txtCommentDescriptor.Text, txtCommentDescriptor.Text, 0 );
-            lvi.SubItems.Add( cmbCommentLang.Text );
             lvi.SubItems.Add( txtComment.Text );
-
+            lvi.SubItems.Add( cmbCommentLang.Text );
+            comments_dirty = true;
         }
         /// <summary>
         /// 
@@ -275,7 +279,10 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnRemoveComment_Click( object sender, EventArgs e )
         {
-            commentList.Items.RemoveByKey( txtCommentDescriptor.Text );
+            //commentList.Items.RemoveByKey( txtCommentDescriptor.Text );
+            if(commentList.SelectedItems.Count > 0)
+                commentList.SelectedItems[0].Remove();
+            comments_dirty = true;
         }
         /// <summary>
         /// 
@@ -287,6 +294,26 @@ namespace music_tagger
             ListViewItem lvi = commentList.Items[txtCommentDescriptor.Text];
             commentList.Items.RemoveByKey( txtCommentDescriptor.Text );
             commentList.Items.Insert( 0, lvi );
+            comments_dirty = true;
+        }
+        /// <summary>
+        /// Update the comment frame 
+        /// </summary>
+        private void UpdateCommentFrames( TagListViewItem item )
+        {
+            if(comments_dirty)
+            {
+                item.Id3v2.RemoveFrames( "COMM" );
+                foreach(ListViewItem ci in commentList.Items)
+                {
+                    string desc = ci.Text;
+                    string lang = ci.SubItems[2].Text;
+                    TagLib.Id3v2.CommentsFrame cf =
+                        new TagLib.Id3v2.CommentsFrame( desc, lang );
+                    cf.Text = ci.SubItems[1].Text;
+                    item.Id3v2.AddFrame( cf );
+                }
+            }
         }
         /// <summary>
         /// 

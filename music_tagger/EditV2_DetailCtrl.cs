@@ -41,10 +41,10 @@ namespace music_tagger
                 txtPublisher.Text = tag.TPUB;
                 txtEncoded.Text = tag.TENC;
                 txtSubTitle.Text = tag.TIT3;
+                cmbMediaType.Text = tag.TMED;
                 if(!multi_edit)
                 {
-                    cmbMediaType.Text = tag_file.Properties.MediaTypes.ToString();
-                    txtTrackLength.Text = tag_file.Properties.Duration.ToString();
+                    txtTrackLength.Text = tag.TLEN;
                 }
                 txtCopyright.Text = v2.Copyright;
                 txtContentGroup.Text = v2.Grouping;
@@ -57,6 +57,8 @@ namespace music_tagger
         /// </summary>
         public override void Coalesce()
         {
+            base.Coalesce();
+
             FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
             TagLib.File first_tag_file = TagLib.File.Create( fi.FullName );
             TagLib.Id3v2.Tag first_tag = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
@@ -83,11 +85,11 @@ namespace music_tagger
                         first_tag_ext.TENC = string.Empty;
                     if(first_tag_ext.TIT3 != tag_ext.TIT3)
                         first_tag_ext.TIT3 = string.Empty;
-                    //if(first_tag_file.Properties.MediaTypes != tag_file.Properties.MediaTypes)
-                    //    cmbMediaType.Text = string.Empty;
-                    // always empty
-                    txtTrackLength.Text = string.Empty;
-                 }
+                    if(first_tag_ext.TMED != tag_ext.TMED)
+                        first_tag_ext.TMED = string.Empty;
+                    if(first_tag_ext.TLEN != tag_ext.TLEN)
+                        first_tag_ext.TLEN = string.Empty;
+                }
             }
             v2 = first_tag;    
         }
@@ -109,9 +111,8 @@ namespace music_tagger
                 tag.TPUB = txtPublisher.Text;
                 tag.TENC = txtEncoded.Text;
                 tag.TIT3 = txtSubTitle.Text;
-                //readonly ?
-                //tag_file.Properties.MediaTypes = 
-                //tag_file.Properties.Duration =
+                tag.TMED = cmbMediaType.Text;
+                tag.TLEN = txtTrackLength.Text;
                 item.Id3v2.Copyright = txtCopyright.Text;
                 item.Id3v2.Grouping = txtContentGroup.Text;
                 item.Id3v2.Conductor = txtConductor.Text;

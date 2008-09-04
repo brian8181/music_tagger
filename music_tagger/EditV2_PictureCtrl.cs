@@ -15,6 +15,7 @@ namespace music_tagger
         public EditV2_PictureCtrl()
         {
             InitializeComponent();
+            cmbPicType.SelectedIndex = 0;
         }
        
         public override void Fill()

@@ -83,7 +83,7 @@ namespace music_tagger
             this.txtGenres = new System.Windows.Forms.TextBox();
             this.txtArtists = new System.Windows.Forms.TextBox();
             this.cmbGenre = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnV1Artist = new System.Windows.Forms.Button();
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -185,7 +185,7 @@ namespace music_tagger
             // 
             // btnV1Title
             // 
-            this.btnV1Title.Location = new System.Drawing.Point( 537, 59 );
+            this.btnV1Title.Location = new System.Drawing.Point( 536, 38 );
             this.btnV1Title.Name = "btnV1Title";
             this.btnV1Title.Size = new System.Drawing.Size( 59, 20 );
             this.btnV1Title.TabIndex = 35;
@@ -195,7 +195,7 @@ namespace music_tagger
             // 
             // btnV1Album
             // 
-            this.btnV1Album.Location = new System.Drawing.Point( 537, 38 );
+            this.btnV1Album.Location = new System.Drawing.Point( 536, 60 );
             this.btnV1Album.Name = "btnV1Album";
             this.btnV1Album.Size = new System.Drawing.Size( 59, 20 );
             this.btnV1Album.TabIndex = 36;
@@ -235,7 +235,7 @@ namespace music_tagger
             // 
             // btnV1Comment
             // 
-            this.btnV1Comment.Location = new System.Drawing.Point( 537, 67 );
+            this.btnV1Comment.Location = new System.Drawing.Point( 538, 66 );
             this.btnV1Comment.Name = "btnV1Comment";
             this.btnV1Comment.Size = new System.Drawing.Size( 59, 20 );
             this.btnV1Comment.TabIndex = 40;
@@ -366,6 +366,7 @@ namespace music_tagger
             this.commentList.FullRowSelect = true;
             this.commentList.GridLines = true;
             this.commentList.Location = new System.Drawing.Point( 117, 159 );
+            this.commentList.MultiSelect = false;
             this.commentList.Name = "commentList";
             this.commentList.Size = new System.Drawing.Size( 479, 107 );
             this.commentList.TabIndex = 57;
@@ -394,7 +395,7 @@ namespace music_tagger
             // 
             // btnAddComment
             // 
-            this.btnAddComment.Location = new System.Drawing.Point( 538, 93 );
+            this.btnAddComment.Location = new System.Drawing.Point( 537, 14 );
             this.btnAddComment.Name = "btnAddComment";
             this.btnAddComment.Size = new System.Drawing.Size( 59, 20 );
             this.btnAddComment.TabIndex = 62;
@@ -456,7 +457,7 @@ namespace music_tagger
             // 
             this.txtCommentDescriptor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCommentDescriptor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCommentDescriptor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtCommentDescriptor.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtCommentDescriptor.Location = new System.Drawing.Point( 117, 14 );
             this.txtCommentDescriptor.Name = "txtCommentDescriptor";
             this.txtCommentDescriptor.Size = new System.Drawing.Size( 413, 20 );
@@ -478,7 +479,7 @@ namespace music_tagger
             this.groupBox3.Controls.Add( this.label6 );
             this.groupBox3.Controls.Add( this.cmbGenre );
             this.groupBox3.Controls.Add( this.btnV1Genre );
-            this.groupBox3.Controls.Add( this.button4 );
+            this.groupBox3.Controls.Add( this.btnV1Artist );
             this.groupBox3.Controls.Add( this.label1 );
             this.groupBox3.Controls.Add( this.label2 );
             this.groupBox3.Controls.Add( this.txtTrackCount );
@@ -702,14 +703,15 @@ namespace music_tagger
             this.cmbGenre.TabIndex = 65;
             this.cmbGenre.TextChanged += new System.EventHandler( this.cmbGenre_TextChanged );
             // 
-            // button4
+            // btnV1Artist
             // 
-            this.button4.Location = new System.Drawing.Point( 537, 16 );
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size( 59, 20 );
-            this.button4.TabIndex = 69;
-            this.button4.Text = "<- Ver 1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnV1Artist.Location = new System.Drawing.Point( 537, 16 );
+            this.btnV1Artist.Name = "btnV1Artist";
+            this.btnV1Artist.Size = new System.Drawing.Size( 59, 20 );
+            this.btnV1Artist.TabIndex = 69;
+            this.btnV1Artist.Text = "<- Ver 1";
+            this.btnV1Artist.UseVisualStyleBackColor = true;
+            this.btnV1Artist.Click += new System.EventHandler( this.btnV1Artist_Click );
             // 
             // EditV2_MainCtrl
             // 
@@ -773,7 +775,7 @@ namespace music_tagger
         public System.Windows.Forms.ListView commentList;
         public System.Windows.Forms.TextBox txtComment;
         public System.Windows.Forms.ComboBox cmbCommentLang;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnV1Artist;
         private System.Windows.Forms.ComboBox cmbGenre;
         private System.Windows.Forms.ColumnHeader encodingCol;
         public System.Windows.Forms.TextBox txtArtists;
