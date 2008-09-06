@@ -315,9 +315,9 @@ namespace music_tagger
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point( 215, 2 );
+            this.panel1.Location = new System.Drawing.Point( 215, 0 );
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size( 635, 510 );
+            this.panel1.Size = new System.Drawing.Size( 635, 512 );
             this.panel1.TabIndex = 1;
             // 
             // btnOK

@@ -60,11 +60,7 @@ namespace music_tagger
                 ckYear.Visible = true;
                 ckYear.Checked = false;
             }
-            else
-            {
-                // todo current file
-            }
-        }
+       }
         /// <summary>
         ///  fill from tag
         /// </summary>                                                          

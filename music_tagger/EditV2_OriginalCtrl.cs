@@ -30,7 +30,7 @@ namespace music_tagger
             //txtOriginalReleaseDate.Text = tag.TDOR;
             txtOriginalOwner.Text = tag.TOWN;
         }
-          /// <summary>
+        /// <summary>
         /// merge like values, hide unlike values
         /// </summary>
         public override void Coalesce()

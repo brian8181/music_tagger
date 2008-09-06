@@ -21,9 +21,7 @@ namespace music_tagger
         {
             InitializeComponent();
             type = Properties.Settings.Default.view_ver1 ? TagLib.TagTypes.Id3v1 : TagLib.TagTypes.Id3v2;
-            tsb_ToggleVer.Text = ( type == TagLib.TagTypes.Id3v1 ) ?
-                Properties.Resources.showing_ver1 : Properties.Resources.showing_ver2;
-            tsVersionShown.Text = tsb_ToggleVer.Text;
+            SetVersion( Properties.Settings.Default.view_ver1 );
             // init tree
             tree.Initilaize();
             // init view
@@ -33,7 +31,6 @@ namespace music_tagger
 
             ContextMenuStrip cs1 = new ContextMenuStrip();
             ContextMenuStrip cs2 = new ContextMenuStrip();
-
             ToolStripManager.Merge( menuStrip, cs2 );  
             view.contextViewMenu.Items.Add( new ToolStripSeparator() );
 
@@ -159,7 +156,12 @@ namespace music_tagger
         /// </summary>
         private void ToggleVer()
         {
-            if(tsb_ToggleVer.Text == Properties.Resources.showing_ver1)
+            Properties.Settings.Default.view_ver1 = !Properties.Settings.Default.view_ver1;
+            SetVersion( Properties.Settings.Default.view_ver1 );             
+        }
+        private void SetVersion( bool ver1 )
+        {
+            if(Properties.Settings.Default.view_ver1)
             {
                 tsb_ToggleVer.Text = Properties.Resources.showing_ver2;
                 view.Type = TagLib.TagTypes.Id3v2;

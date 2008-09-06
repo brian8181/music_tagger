@@ -11,6 +11,9 @@ using System.Threading;
 
 namespace music_tagger
 {
+    /// <summary>
+    /// organinze form
+    /// </summary>
     public partial class OrganizeFrm : Form
     {
         private ListView lv = null;

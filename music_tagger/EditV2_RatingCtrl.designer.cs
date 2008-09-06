@@ -30,20 +30,20 @@ namespace music_tagger
         {
             this.ckComment = new System.Windows.Forms.CheckBox();
             this.btnTopComment = new System.Windows.Forms.Button();
-            this.commentList = new System.Windows.Forms.ListView();
+            this.ratingList = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.btnRemoveComment = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.udRating = new System.Windows.Forms.NumericUpDown();
+            this.udCounter = new System.Windows.Forms.NumericUpDown();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown2 ) ).BeginInit();
+            ( (System.ComponentModel.ISupportInitialize)( this.udRating ) ).BeginInit();
+            ( (System.ComponentModel.ISupportInitialize)( this.udCounter ) ).BeginInit();
             this.SuspendLayout();
             // 
             // ckComment
@@ -64,21 +64,22 @@ namespace music_tagger
             this.btnTopComment.TabIndex = 90;
             this.btnTopComment.Text = "Top";
             this.btnTopComment.UseVisualStyleBackColor = true;
+            this.btnTopComment.Click += new System.EventHandler( this.btnTopComment_Click );
             // 
-            // commentList
+            // ratingList
             // 
-            this.commentList.Columns.AddRange( new System.Windows.Forms.ColumnHeader[] {
+            this.ratingList.Columns.AddRange( new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3} );
-            this.commentList.FullRowSelect = true;
-            this.commentList.GridLines = true;
-            this.commentList.Location = new System.Drawing.Point( 3, 97 );
-            this.commentList.Name = "commentList";
-            this.commentList.Size = new System.Drawing.Size( 608, 107 );
-            this.commentList.TabIndex = 88;
-            this.commentList.UseCompatibleStateImageBehavior = false;
-            this.commentList.View = System.Windows.Forms.View.Details;
+            this.ratingList.FullRowSelect = true;
+            this.ratingList.GridLines = true;
+            this.ratingList.Location = new System.Drawing.Point( 3, 97 );
+            this.ratingList.Name = "ratingList";
+            this.ratingList.Size = new System.Drawing.Size( 608, 107 );
+            this.ratingList.TabIndex = 88;
+            this.ratingList.UseCompatibleStateImageBehavior = false;
+            this.ratingList.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -103,27 +104,28 @@ namespace music_tagger
             this.btnRemoveComment.TabIndex = 89;
             this.btnRemoveComment.Text = "Remove";
             this.btnRemoveComment.UseVisualStyleBackColor = true;
+            this.btnRemoveComment.Click += new System.EventHandler( this.btnRemoveComment_Click );
             // 
-            // numericUpDown1
+            // udRating
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point( 116, 30 );
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size( 120, 20 );
-            this.numericUpDown1.TabIndex = 92;
+            this.udRating.Location = new System.Drawing.Point( 116, 30 );
+            this.udRating.Name = "udRating";
+            this.udRating.Size = new System.Drawing.Size( 120, 20 );
+            this.udRating.TabIndex = 92;
             // 
-            // numericUpDown2
+            // udCounter
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point( 116, 56 );
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size( 120, 20 );
-            this.numericUpDown2.TabIndex = 93;
+            this.udCounter.Location = new System.Drawing.Point( 116, 56 );
+            this.udCounter.Name = "udCounter";
+            this.udCounter.Size = new System.Drawing.Size( 120, 20 );
+            this.udCounter.TabIndex = 93;
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point( 116, 4 );
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size( 325, 20 );
-            this.textBox2.TabIndex = 95;
+            this.txtEmail.Location = new System.Drawing.Point( 116, 4 );
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size( 325, 20 );
+            this.txtEmail.TabIndex = 95;
             // 
             // label1
             // 
@@ -160,6 +162,7 @@ namespace music_tagger
             this.btnAdd.TabIndex = 99;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler( this.btnAdd_Click );
             // 
             // EditV2_RatingCtrl
             // 
@@ -169,18 +172,17 @@ namespace music_tagger
             this.Controls.Add( this.label3 );
             this.Controls.Add( this.label2 );
             this.Controls.Add( this.label1 );
-            this.Controls.Add( this.textBox2 );
-            this.Controls.Add( this.numericUpDown2 );
-            this.Controls.Add( this.numericUpDown1 );
+            this.Controls.Add( this.txtEmail );
+            this.Controls.Add( this.udCounter );
+            this.Controls.Add( this.udRating );
             this.Controls.Add( this.ckComment );
             this.Controls.Add( this.btnTopComment );
-            this.Controls.Add( this.commentList );
+            this.Controls.Add( this.ratingList );
             this.Controls.Add( this.btnRemoveComment );
             this.Name = "EditV2_RatingCtrl";
             this.Size = new System.Drawing.Size( 635, 229 );
-            this.Load += new System.EventHandler( this.EditV2_RatingCtrl_Load );
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).EndInit();
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown2 ) ).EndInit();
+            ( (System.ComponentModel.ISupportInitialize)( this.udRating ) ).EndInit();
+            ( (System.ComponentModel.ISupportInitialize)( this.udCounter ) ).EndInit();
             this.ResumeLayout( false );
             this.PerformLayout();
 
@@ -190,14 +192,14 @@ namespace music_tagger
 
         private System.Windows.Forms.CheckBox ckComment;
         private System.Windows.Forms.Button btnTopComment;
-        public System.Windows.Forms.ListView commentList;
+        public System.Windows.Forms.ListView ratingList;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button btnRemoveComment;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.NumericUpDown udRating;
+        private System.Windows.Forms.NumericUpDown udCounter;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

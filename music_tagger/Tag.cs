@@ -395,10 +395,24 @@ namespace music_tagger
                 if(code.StartsWith( "T" ))
                 {
                     TextInformationFrame frame = GetTextFrame( code, true );
-                    if(frame != null && frame.Text.Length > 0)
+
+                    // add frame
+                    if(frame == null)
                     {
-                        // todo check for multi!!
+                        frame = new TextInformationFrame( code );
+                        tag.AddFrame( frame );    
+                    }
+
+                    if(frame.Text.Length < 2) // one or zero
+                    {
                         frame.Text = new string[1] { text };
+                    }
+                    else  // more than one
+                    {
+                        // add to front
+                        string[] strs = new string[frame.Text.Length];
+                        strs[0] = text;
+                        Array.Copy( frame.Text, 1, strs, 1, frame.Text.Length - 1 );
                     }
                 }
                 else if(code.StartsWith( "W" ))

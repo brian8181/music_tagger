@@ -282,7 +282,6 @@ namespace music_tagger
             // 
             // txtTrackLength
             // 
-            this.txtTrackLength.Enabled = false;
             this.txtTrackLength.Location = new System.Drawing.Point( 169, 61 );
             this.txtTrackLength.Name = "txtTrackLength";
             this.txtTrackLength.Size = new System.Drawing.Size( 221, 20 );
@@ -290,7 +289,6 @@ namespace music_tagger
             // 
             // cmbMediaType
             // 
-            this.cmbMediaType.Enabled = false;
             this.cmbMediaType.FormattingEnabled = true;
             this.cmbMediaType.Location = new System.Drawing.Point( 169, 31 );
             this.cmbMediaType.Name = "cmbMediaType";

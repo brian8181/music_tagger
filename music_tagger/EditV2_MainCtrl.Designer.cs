@@ -49,8 +49,6 @@ namespace music_tagger
             this.label8 = new System.Windows.Forms.Label();
             this.txtDisc = new System.Windows.Forms.TextBox();
             this.lblDics = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDiscCount = new System.Windows.Forms.TextBox();
             this.txtTrackCount = new System.Windows.Forms.TextBox();
@@ -84,7 +82,6 @@ namespace music_tagger
             this.txtArtists = new System.Windows.Forms.TextBox();
             this.cmbGenre = new System.Windows.Forms.ComboBox();
             this.btnV1Artist = new System.Windows.Forms.Button();
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -274,22 +271,6 @@ namespace music_tagger
             this.lblDics.Size = new System.Drawing.Size( 31, 13 );
             this.lblDics.TabIndex = 44;
             this.lblDics.Text = "Disc:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point( 294, 484 );
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size( 120, 20 );
-            this.numericUpDown1.TabIndex = 47;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point( 122, 486 );
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size( 166, 13 );
-            this.label20.TabIndex = 46;
-            this.label20.Text = "Number of digits on track number:";
             // 
             // label10
             // 
@@ -719,17 +700,13 @@ namespace music_tagger
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add( this.groupBox3 );
             this.Controls.Add( this.groupBox1 );
-            this.Controls.Add( this.numericUpDown1 );
-            this.Controls.Add( this.label20 );
             this.Name = "EditV2_MainCtrl";
-            this.Size = new System.Drawing.Size( 635, 510 );
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).EndInit();
+            this.Size = new System.Drawing.Size( 635, 503 );
             this.groupBox1.ResumeLayout( false );
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout( false );
             this.groupBox3.PerformLayout();
             this.ResumeLayout( false );
-            this.PerformLayout();
 
         }
 
@@ -750,8 +727,6 @@ namespace music_tagger
         private System.Windows.Forms.Button btnV1Comment;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblDics;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
