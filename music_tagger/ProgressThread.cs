@@ -36,6 +36,7 @@ namespace music_tagger
         protected Thread thread = null;
         protected FileInfo[] infos = null;
         protected volatile bool cancel = false;
+
         /// <summary>
         /// 
         /// </summary>
@@ -63,7 +64,7 @@ namespace music_tagger
         public virtual void Start()
         {
             thread.Start();
-            this.ShowDialog();    
+            this.ShowDialog(); 
         }
         protected override void OnCancel()
         {

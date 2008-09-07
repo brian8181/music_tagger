@@ -17,7 +17,7 @@ namespace music_tagger
         private EditV2_WebCtrl web = new EditV2_WebCtrl();
         private EditV2_PictureCtrl pictures = new EditV2_PictureCtrl();
         private EditV2_PeopleCtrl people = new EditV2_PeopleCtrl();
-        private EditV2_UserDefinedCtrl user = new EditV2_UserDefinedCtrl();
+        //private EditV2_UserDefinedCtrl user = new EditV2_UserDefinedCtrl();
         private EditV2_RatingCtrl rating = new EditV2_RatingCtrl();
         private Control current = null;
         
@@ -88,11 +88,11 @@ namespace music_tagger
             people.Dock = DockStyle.Fill;
             people.Initialize( lv, multi_edit );
             people.Hide();
-            this.panel1.Controls.Add( user );
-            user.Location = this.panel1.Location;
-            user.Dock = DockStyle.Fill;
-            user.Initialize( lv, multi_edit );
-            user.Hide();
+            //this.panel1.Controls.Add( user );
+            //user.Location = this.panel1.Location;
+            //user.Dock = DockStyle.Fill;
+            //user.Initialize( lv, multi_edit );
+            //user.Hide();
             this.panel1.Controls.Add( rating );
             rating.Location = this.panel1.Location;
             rating.Dock = DockStyle.Fill;
@@ -205,12 +205,12 @@ namespace music_tagger
         /// <param name="e"></param>
         private void taskUserDefined_Click( object sender, EventArgs e )
         {
-            if(current != user)
-            {
-                current.Hide();
-                user.Show();
-                current = user;
-            }     
+            //if(current != user)
+            //{
+            //    current.Hide();
+            //    user.Show();
+            //    current = user;
+            //}
         }
         /// <summary>
         /// 
@@ -258,6 +258,7 @@ namespace music_tagger
             original.EditItem( item );
             people.EditItem( item );
             web.EditItem( item );
+            rating.EditItem( item );
             item.RefreshItem();
         }
     }

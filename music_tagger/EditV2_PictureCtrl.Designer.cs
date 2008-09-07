@@ -33,17 +33,18 @@ namespace music_tagger
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbPicType = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.commentList = new System.Windows.Forms.ListView();
+            this.txtPath = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.pictureList = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnExtract = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckInclude = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             ( (System.ComponentModel.ISupportInitialize)( this.pictureBox ) ).BeginInit();
             this.SuspendLayout();
@@ -116,33 +117,34 @@ namespace music_tagger
             this.cmbPicType.Size = new System.Drawing.Size( 305, 21 );
             this.cmbPicType.TabIndex = 8;
             // 
-            // textBox1
+            // txtPath
             // 
-            this.textBox1.Location = new System.Drawing.Point( 103, 68 );
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size( 305, 20 );
-            this.textBox1.TabIndex = 9;
+            this.txtPath.Location = new System.Drawing.Point( 103, 68 );
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size( 305, 20 );
+            this.txtPath.TabIndex = 9;
             // 
-            // textBox2
+            // txtDesc
             // 
-            this.textBox2.Location = new System.Drawing.Point( 103, 15 );
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size( 305, 20 );
-            this.textBox2.TabIndex = 10;
+            this.txtDesc.Location = new System.Drawing.Point( 103, 15 );
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size( 305, 20 );
+            this.txtDesc.TabIndex = 10;
             // 
-            // commentList
+            // pictureList
             // 
-            this.commentList.Columns.AddRange( new System.Windows.Forms.ColumnHeader[] {
+            this.pictureList.Columns.AddRange( new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3} );
-            this.commentList.GridLines = true;
-            this.commentList.Location = new System.Drawing.Point( 3, 211 );
-            this.commentList.Name = "commentList";
-            this.commentList.Size = new System.Drawing.Size( 609, 296 );
-            this.commentList.TabIndex = 58;
-            this.commentList.UseCompatibleStateImageBehavior = false;
-            this.commentList.View = System.Windows.Forms.View.Details;
+            this.columnHeader3,
+            this.columnHeader4} );
+            this.pictureList.GridLines = true;
+            this.pictureList.Location = new System.Drawing.Point( 3, 211 );
+            this.pictureList.Name = "pictureList";
+            this.pictureList.Size = new System.Drawing.Size( 609, 296 );
+            this.pictureList.TabIndex = 58;
+            this.pictureList.UseCompatibleStateImageBehavior = false;
+            this.pictureList.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -151,13 +153,17 @@ namespace music_tagger
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Comment";
+            this.columnHeader2.Text = "Type";
             this.columnHeader2.Width = 150;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Language";
+            this.columnHeader3.Text = "Path";
             this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Include";
             // 
             // btnAdd
             // 
@@ -167,6 +173,7 @@ namespace music_tagger
             this.btnAdd.TabIndex = 59;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler( this.btnAdd_Click );
             // 
             // btnRemove
             // 
@@ -176,6 +183,7 @@ namespace music_tagger
             this.btnRemove.TabIndex = 60;
             this.btnRemove.Text = "&Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler( this.btnRemove_Click );
             // 
             // btnImport
             // 
@@ -185,6 +193,7 @@ namespace music_tagger
             this.btnImport.TabIndex = 61;
             this.btnImport.Text = "&Import";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler( this.btnImport_Click );
             // 
             // btnExtract
             // 
@@ -194,20 +203,25 @@ namespace music_tagger
             this.btnExtract.TabIndex = 62;
             this.btnExtract.Text = "&Extract";
             this.btnExtract.UseVisualStyleBackColor = true;
+            this.btnExtract.Click += new System.EventHandler( this.btnExtract_Click );
             // 
-            // checkBox1
+            // ckInclude
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point( 103, 98 );
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size( 122, 17 );
-            this.checkBox1.TabIndex = 63;
-            this.checkBox1.Text = "Save Picture To File";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckInclude.AutoSize = true;
+            this.ckInclude.Checked = true;
+            this.ckInclude.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckInclude.Enabled = false;
+            this.ckInclude.Location = new System.Drawing.Point( 103, 98 );
+            this.ckInclude.Name = "ckInclude";
+            this.ckInclude.Size = new System.Drawing.Size( 122, 17 );
+            this.ckInclude.TabIndex = 63;
+            this.ckInclude.Text = "Save Picture To File";
+            this.ckInclude.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Enabled = false;
             this.checkBox2.Location = new System.Drawing.Point( 103, 121 );
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size( 112, 17 );
@@ -220,14 +234,14 @@ namespace music_tagger
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add( this.checkBox2 );
-            this.Controls.Add( this.checkBox1 );
+            this.Controls.Add( this.ckInclude );
             this.Controls.Add( this.btnExtract );
             this.Controls.Add( this.btnImport );
             this.Controls.Add( this.btnRemove );
             this.Controls.Add( this.btnAdd );
-            this.Controls.Add( this.commentList );
-            this.Controls.Add( this.textBox2 );
-            this.Controls.Add( this.textBox1 );
+            this.Controls.Add( this.pictureList );
+            this.Controls.Add( this.txtDesc );
+            this.Controls.Add( this.txtPath );
             this.Controls.Add( this.cmbPicType );
             this.Controls.Add( this.label3 );
             this.Controls.Add( this.label2 );
@@ -248,9 +262,9 @@ namespace music_tagger
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbPicType;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ListView commentList;
+        private System.Windows.Forms.TextBox txtPath;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.ListView pictureList;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -258,7 +272,8 @@ namespace music_tagger
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnExtract;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckInclude;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

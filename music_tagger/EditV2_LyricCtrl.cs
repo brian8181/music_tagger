@@ -104,5 +104,10 @@ namespace music_tagger
             string lang = item.SubItems[2].Text;
             cmbLanguage.SelectedIndex = cmbLanguage.FindString( lang.ToLower() ); ;
         }
+
+        private void btnAdd_Click( object sender, EventArgs e )
+        {
+
+        }
     }
 }

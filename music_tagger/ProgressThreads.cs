@@ -44,7 +44,6 @@ namespace music_tagger
                     Tools.Functions.MoveTo( fi, dir + "\\" + fi.Name, overwrite );
                 }
             }
-
             SafeClose();
         }
     }
@@ -134,13 +133,15 @@ namespace music_tagger
                 TagListViewItem lvi = new TagListViewItem( lv, fi.FullName );
                 lvi.Type = type;
                 if(lvi.IntializeItem())
-                {
+                {                                                                                     
                     // add it to listview
                     SafeAdd( lvi );
                 }
             }
             SafeResize();
             OnFinished();
+            // HACK!!
+            System.Threading.Thread.Sleep( 0 );
             SafeClose();
         }
         /// <summary>

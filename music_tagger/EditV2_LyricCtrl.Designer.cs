@@ -86,6 +86,7 @@ namespace music_tagger
             this.columnHeader3,
             this.columnHeader4} );
             this.lyricsList.FullRowSelect = true;
+            this.lyricsList.GridLines = true;
             this.lyricsList.Location = new System.Drawing.Point( 3, 336 );
             this.lyricsList.MultiSelect = false;
             this.lyricsList.Name = "lyricsList";
@@ -120,6 +121,7 @@ namespace music_tagger
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler( this.btnAdd_Click );
             // 
             // btnRemove
             // 

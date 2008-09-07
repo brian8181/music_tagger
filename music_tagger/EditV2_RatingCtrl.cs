@@ -11,9 +11,16 @@ namespace music_tagger
 {
     public partial class EditV2_RatingCtrl : EditCtrlBase
     {
+        private bool ratings_dirty = false;
+       
         public EditV2_RatingCtrl()
         {
             InitializeComponent();
+
+            if(!multi_edit)
+            {
+                ckComment.Hide();
+            }
         }
         /// <summary>
         ///  fill from tag
@@ -28,7 +35,12 @@ namespace music_tagger
                 item.SubItems.Add( frame.PlayCount.ToString());
                 ratingList.Items.Add( item );    
             }
-           
+
+            // just select first item
+            if(ratingList.Items.Count > 0)
+            {
+                SetSelectedRating( ratingList.Items[0] );
+            }
         }
         /// <summary>
         /// merge like values, hide unlike values
@@ -43,10 +55,40 @@ namespace music_tagger
         {
             // call base first
             base.EditItem( item );
-
-
+            
             if(item.Id3v2 != null)
             {
+                UpdateCommentFrames( item );
+            }
+        }
+        /// <summary>
+        /// set selected rating 
+        /// </summary>
+        /// <param name="item">the item</param>
+        private void SetSelectedRating( ListViewItem item )
+        {
+            txtEmail.Text = item.Text;
+            udRating.Value = int.Parse( item.SubItems[1].Text );
+            udCounter.Value = int.Parse( item.SubItems[2].Text );
+        }
+        /// <summary>
+        /// Update the comment frame 
+        /// </summary>
+        private void UpdateCommentFrames( TagListViewItem item )
+        {
+            if(ratings_dirty)
+            {
+                item.Id3v2.RemoveFrames( "POPM" );
+                foreach(ListViewItem i in ratingList.Items)
+                {
+                    string user = i.Text;
+                    string rating = i.SubItems[1].Text;
+                    string count = i.SubItems[2].Text;
+                    PopularimeterFrame f = new PopularimeterFrame( user );
+                    f.Rating = byte.Parse( rating );
+                    f.PlayCount = ulong.Parse(count);
+                    item.Id3v2.AddFrame( f );
+                }
             }
         }
         /// <summary>
@@ -61,6 +103,7 @@ namespace music_tagger
             item.SubItems.Add( udRating.Value.ToString() );
             item.SubItems.Add( udCounter.Value.ToString() );
             ratingList.Items.Add( item );
+            ratings_dirty = true;
         }
         /// <summary>
         /// 
@@ -69,7 +112,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnTopComment_Click( object sender, EventArgs e )
         {
-
+            ratings_dirty = true;
         }
         /// <summary>
         /// 
@@ -78,7 +121,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnRemoveComment_Click( object sender, EventArgs e )
         {
-
+            ratings_dirty = true;
         }
     }
 }

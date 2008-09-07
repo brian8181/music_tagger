@@ -34,6 +34,9 @@ namespace music_tagger
             this.mnViewCopyTo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnViewMoveTo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnViewSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnEditV1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnEditV2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.contextViewMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,21 +67,24 @@ namespace music_tagger
             this.contextViewMenu.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
             this.mnViewCopyTo,
             this.mnViewMoveTo,
-            this.mnViewSelectAll} );
+            this.mnViewSelectAll,
+            this.toolStripSeparator1,
+            this.mnEditV1,
+            this.mnEditV2} );
             this.contextViewMenu.Name = "contextViewMenu";
-            this.contextViewMenu.Size = new System.Drawing.Size( 168, 92 );
+            this.contextViewMenu.Size = new System.Drawing.Size( 199, 120 );
             // 
             // mnViewCopyTo
             // 
             this.mnViewCopyTo.Name = "mnViewCopyTo";
-            this.mnViewCopyTo.Size = new System.Drawing.Size( 167, 22 );
+            this.mnViewCopyTo.Size = new System.Drawing.Size( 222, 22 );
             this.mnViewCopyTo.Text = "&CopyTo";
             this.mnViewCopyTo.Click += new System.EventHandler( this.mnViewCopyTo_Click );
             // 
             // mnViewMoveTo
             // 
             this.mnViewMoveTo.Name = "mnViewMoveTo";
-            this.mnViewMoveTo.Size = new System.Drawing.Size( 167, 22 );
+            this.mnViewMoveTo.Size = new System.Drawing.Size( 222, 22 );
             this.mnViewMoveTo.Text = "MoveTo";
             this.mnViewMoveTo.Click += new System.EventHandler( this.mnViewMoveTo_Click );
             // 
@@ -86,9 +92,30 @@ namespace music_tagger
             // 
             this.mnViewSelectAll.Name = "mnViewSelectAll";
             this.mnViewSelectAll.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A ) ) );
-            this.mnViewSelectAll.Size = new System.Drawing.Size( 167, 22 );
+            this.mnViewSelectAll.Size = new System.Drawing.Size( 222, 22 );
             this.mnViewSelectAll.Text = "Select All";
             this.mnViewSelectAll.Click += new System.EventHandler( this.mnViewSelectAll_Click );
+            // 
+            // mnEditV1
+            // 
+            this.mnEditV1.Image = global::music_tagger.Properties.Resources.v1;
+            this.mnEditV1.ImageTransparentColor = System.Drawing.Color.Fuchsia;
+            this.mnEditV1.Name = "mnEditV1";
+            this.mnEditV1.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E ) ) );
+            this.mnEditV1.Size = new System.Drawing.Size( 222, 22 );
+            this.mnEditV1.Text = "Edit Tag Ver. 1";
+            // 
+            // mnEditV2
+            // 
+            this.mnEditV2.Name = "mnEditV2";
+            this.mnEditV2.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W ) ) );
+            this.mnEditV2.Size = new System.Drawing.Size( 198, 22 );
+            this.mnEditV2.Text = "Edit Tag Ver. 2";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size( 195, 6 );
             // 
             // View
             // 
@@ -109,5 +136,8 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripMenuItem mnViewMoveTo;
         private System.Windows.Forms.ToolStripMenuItem mnViewSelectAll;
         public System.Windows.Forms.ContextMenuStrip contextViewMenu;
+        private System.Windows.Forms.ToolStripMenuItem mnEditV1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem mnEditV2;
     }
 }
