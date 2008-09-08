@@ -44,7 +44,8 @@ namespace music_tagger
 
             if(pictureList.Items.Count > 0)
             {
-                SetSelectedPicture( pictureList.Items[0] ); 
+                SetSelectedPicture( pictureList.Items[0].Tag as TagLib.IPicture  );
+                pictureList.Items[0].Selected = true;
             }
             
         }
@@ -52,10 +53,10 @@ namespace music_tagger
         /// set selected rating 
         /// </summary>
         /// <param name="item">the item</param>
-        private void SetSelectedPicture( ListViewItem item )
+        private void SetSelectedPicture( TagLib.IPicture pic )
         {
             // select first pic
-            TagLib.IPicture pic = item.Tag as TagLib.IPicture;
+            //TagLib.IPicture pic = item.Tag as TagLib.IPicture;
             if(pic != null)
             {
                 if(pic.MimeType.StartsWith( "image/" ))
@@ -184,19 +185,62 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnExtract_Click( object sender, EventArgs e )
         {
-
+            string art = string.Empty;
+            byte[] data = null;
+            TagLib.IPicture pic = GetSelectedPicture();
+            if(pic != null)
+            {
+                if(pic.MimeType.StartsWith( "image/" ))
+                {
+                    art = "picture" + pic.MimeType.Replace( "image/", "." );
+                    data = new byte[pic.Data.Count];
+                    pic.Data.CopyTo( data, 0 );
+                }
+                SaveFileDialog dlg = new SaveFileDialog();
+                dlg.OverwritePrompt = true;
+                dlg.FileName = art;
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // write file to art location
+                    System.IO.File.WriteAllBytes( dlg.FileName, data );
+                }
+            }
+            else
+            {
+                MessageBox.Show( "No picture selected" );
+            }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureList_SelectedIndexChanged( object sender, EventArgs e )
         {
-            if( this.pictureList.SelectedItems.Count > 0 )
-                SetSelectedPicture( this.pictureList.SelectedItems[0] );
+            SetSelectedPicture( GetSelectedPicture() );
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox_DoubleClick( object sender, EventArgs e )
         {
-            PictureFrm dlg = new PictureFrm();
-            dlg.ShowDialog();
+            if(this.pictureList.SelectedItems.Count > 0)
+            {
+                PictureFrm dlg = new PictureFrm( (TagLib.IPicture)this.pictureList.SelectedItems[0].Tag );
+                dlg.ShowDialog();
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private TagLib.IPicture GetSelectedPicture()
+        {
+            if(this.pictureList.SelectedItems.Count > 0)
+                return this.pictureList.SelectedItems[0].Tag as TagLib.IPicture;
+            return null;
         }
     }
 }
