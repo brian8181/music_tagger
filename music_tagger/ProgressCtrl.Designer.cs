@@ -1,4 +1,4 @@
-namespace music_tagger
+namespace music_tagger.Threading
 {
     partial class ProgressCtrl
     {

@@ -10,9 +10,29 @@ namespace music_tagger
 {
     public partial class PrefFrm : Form
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public enum DefaultType
+        {
+            Current = 0,
+            V1 = 1,
+            V2 = 2
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        DefaultType default_type = DefaultType.Current;
+        /// <summary>
+        /// 
+        /// </summary>
         public PrefFrm()
         {
             InitializeComponent();
+
+            DefaultType default_type = 
+                (DefaultType)Enum.Parse( typeof( DefaultType ), Properties.Settings.Default.pref_default_type );
+
             // get current col settings
             foreach(string str_col in Properties.Settings.Default.cols)
             {
@@ -22,7 +42,12 @@ namespace music_tagger
                 colList.Items.Add(c, check);
             }
             ckRestoreFolder.Checked = Properties.Settings.Default.restore_dir;
+            SetRestoreEnable();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="view"></param>
         public void Initialize(View view)
         {
         }
@@ -53,6 +78,8 @@ namespace music_tagger
             // add remove cols
             Properties.Settings.Default.cols.Clear();
             Properties.Settings.Default.cols.Add( "File,1" ); // always show
+            Properties.Settings.Default.pref_default_type = default_type.ToString();
+
             foreach(Column c in colList.Items)
             {
                 if(c == Column.File)
@@ -63,6 +90,11 @@ namespace music_tagger
             }
             Properties.Settings.Default.Save();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnColUp_Click( object sender, EventArgs e )
         {
             int idx = colList.SelectedIndex;
@@ -76,6 +108,11 @@ namespace music_tagger
                 colList.SelectedIndex = idx;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnColDown_Click( object sender, EventArgs e )
         {
             int idx = colList.SelectedIndex;
@@ -89,6 +126,11 @@ namespace music_tagger
                 colList.SelectedIndex = idx;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void colList_ItemCheck( object sender, ItemCheckEventArgs e )
         {
             // file column always displays
@@ -98,6 +140,11 @@ namespace music_tagger
                 e.NewValue = CheckState.Checked;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void On_ColorDoubleClicked( object sender, EventArgs e )
         {
             ColorDialog dlg = new ColorDialog();
@@ -105,6 +152,50 @@ namespace music_tagger
             {
                 //todo
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rbEditCurrent_CheckedChanged( object sender, EventArgs e )
+        {
+            default_type = DefaultType.Current;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rbEditV1_CheckedChanged( object sender, EventArgs e )
+        {
+            default_type = DefaultType.V2;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rbEditV2_CheckedChanged( object sender, EventArgs e )
+        {
+            default_type = DefaultType.V1;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ckRestoreFolder_CheckedChanged( object sender, EventArgs e )
+        {
+            SetRestoreEnable();
+        }
+        /// <summary>
+        ///  enable / dissable start folder controls 
+        /// </summary>
+        private void SetRestoreEnable()
+        {
+            txtFolder.Enabled = !ckRestoreFolder.Checked;
+            btnBrowse.Enabled = !ckRestoreFolder.Checked;
         }
     }
 }

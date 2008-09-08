@@ -5,7 +5,7 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace music_tagger
+namespace music_tagger.Threading
 {
     /// <summary>
     /// Isolate threading

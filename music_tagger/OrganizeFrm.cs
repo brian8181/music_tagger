@@ -136,7 +136,7 @@ namespace music_tagger
             {
                 infos[i] = items[i].Tag as FileInfo;
             }
-           OrgProgressThread thread = new OrgProgressThread( 
+            Threading.OrgProgressThread thread = new Threading.OrgProgressThread( 
                 infos, 
                 cmbFormat.Text, 
                 txtPath.Text, 

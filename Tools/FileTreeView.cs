@@ -55,6 +55,23 @@ namespace Tools
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="path"></param>
+        public void Open( string path )
+        {
+            // todo
+            if(!string.IsNullOrEmpty( path ))
+            {
+                string root = Path.GetPathRoot( path );
+                TreeNode[] nodes = Nodes.Find( root, true );
+                if(nodes.Length > 0)
+                {
+                    this.SelectedNode = nodes[0];
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="file"></param>
         /// <returns></returns>
         public bool CanReadFile( FileSystemInfo file )
@@ -134,7 +151,7 @@ namespace Tools
                 {
                     string name = files[i].Name;
                     FileSystemInfo fi = (FileSystemInfo)files[i];
-                    FileTreeNode child = new FileTreeNode( name, fi, 0, 1 );
+                    FileTreeNode child = new FileTreeNode( name, name, fi, 0, 1 );
                     //child.Initialize();
                     node.Nodes.Add( child );
                 }
@@ -176,7 +193,7 @@ namespace Tools
             string name = di.Name;
             if(drive.IsReady)
                 name = drive.VolumeLabel + " (" + di.Name + ")";
-            DriveTreeNode node = new DriveTreeNode( name, di );
+            DriveTreeNode node = new DriveTreeNode( di.Name, name, di );
             Debug.WriteLine( "TOSTRING: " + node.ToString() );
             int idx = 0;
             switch(drive.DriveType)

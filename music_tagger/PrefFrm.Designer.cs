@@ -30,15 +30,23 @@ namespace music_tagger
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ckRestoreFolder = new System.Windows.Forms.CheckBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtFolder = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbEditCurrent = new System.Windows.Forms.RadioButton();
             this.rbEditV2 = new System.Windows.Forms.RadioButton();
@@ -49,10 +57,29 @@ namespace music_tagger
             this.btnColUp = new System.Windows.Forms.Button();
             this.colList = new System.Windows.Forms.CheckedListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.ckUseProxy = new System.Windows.Forms.CheckBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,44 +90,17 @@ namespace music_tagger
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ckUseProxy = new System.Windows.Forms.CheckBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown2 ) ).BeginInit();
+            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown2 ) ).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,7 +124,7 @@ namespace music_tagger
             this.tabPage1.Controls.Add( this.checkBox2 );
             this.tabPage1.Controls.Add( this.groupBox4 );
             this.tabPage1.Controls.Add( this.checkBox1 );
-            this.tabPage1.Controls.Add( this.textBox1 );
+            this.tabPage1.Controls.Add( this.txtFolder );
             this.tabPage1.Controls.Add( this.label10 );
             this.tabPage1.Controls.Add( this.groupBox2 );
             this.tabPage1.Controls.Add( this.groupBox1 );
@@ -136,20 +136,16 @@ namespace music_tagger
             this.tabPage1.Text = "Settings";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // ckRestoreFolder
             // 
-            this.groupBox4.Controls.Add( this.numericUpDown2 );
-            this.groupBox4.Controls.Add( this.numericUpDown1 );
-            this.groupBox4.Controls.Add( this.textBox2 );
-            this.groupBox4.Controls.Add( this.label14 );
-            this.groupBox4.Controls.Add( this.label13 );
-            this.groupBox4.Controls.Add( this.label12 );
-            this.groupBox4.Location = new System.Drawing.Point( 214, 92 );
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size( 267, 116 );
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Enumerating Mode";
+            this.ckRestoreFolder.AutoSize = true;
+            this.ckRestoreFolder.Location = new System.Drawing.Point( 273, 245 );
+            this.ckRestoreFolder.Name = "ckRestoreFolder";
+            this.ckRestoreFolder.Size = new System.Drawing.Size( 114, 17 );
+            this.ckRestoreFolder.TabIndex = 4;
+            this.ckRestoreFolder.Text = "Save folder on exit";
+            this.ckRestoreFolder.UseVisualStyleBackColor = true;
+            this.ckRestoreFolder.CheckedChanged += new System.EventHandler( this.ckRestoreFolder_CheckedChanged );
             // 
             // btnBrowse
             // 
@@ -160,32 +156,6 @@ namespace music_tagger
             this.btnBrowse.TabIndex = 9;
             this.btnBrowse.Text = "...";
             this.btnBrowse.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point( 58, 296 );
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size( 61, 13 );
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Start Folder";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point( 125, 293 );
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size( 241, 20 );
-            this.textBox1.TabIndex = 6;
-            // 
-            // ckRestoreFolder
-            // 
-            this.ckRestoreFolder.AutoSize = true;
-            this.ckRestoreFolder.Location = new System.Drawing.Point( 273, 245 );
-            this.ckRestoreFolder.Name = "ckRestoreFolder";
-            this.ckRestoreFolder.Size = new System.Drawing.Size( 114, 17 );
-            this.ckRestoreFolder.TabIndex = 4;
-            this.ckRestoreFolder.Text = "Save folder on exit";
-            this.ckRestoreFolder.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
@@ -207,6 +177,69 @@ namespace music_tagger
             this.checkBox2.Text = "Enable edit on click";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add( this.numericUpDown2 );
+            this.groupBox4.Controls.Add( this.numericUpDown1 );
+            this.groupBox4.Controls.Add( this.textBox2 );
+            this.groupBox4.Controls.Add( this.label14 );
+            this.groupBox4.Controls.Add( this.label13 );
+            this.groupBox4.Controls.Add( this.label12 );
+            this.groupBox4.Location = new System.Drawing.Point( 214, 92 );
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size( 267, 116 );
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Enumerating Mode";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point( 138, 74 );
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size( 73, 20 );
+            this.numericUpDown2.TabIndex = 5;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point( 138, 22 );
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size( 73, 20 );
+            this.numericUpDown1.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point( 138, 48 );
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size( 73, 20 );
+            this.textBox2.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point( 56, 78 );
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size( 36, 13 );
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Digits:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point( 56, 54 );
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size( 50, 13 );
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Delimiter:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point( 56, 28 );
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size( 61, 13 );
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Start Index:";
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -216,6 +249,22 @@ namespace music_tagger
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Ignore write protection";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // txtFolder
+            // 
+            this.txtFolder.Location = new System.Drawing.Point( 125, 293 );
+            this.txtFolder.Name = "txtFolder";
+            this.txtFolder.Size = new System.Drawing.Size( 241, 20 );
+            this.txtFolder.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point( 58, 296 );
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size( 61, 13 );
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Start Folder";
             // 
             // groupBox2
             // 
@@ -227,6 +276,26 @@ namespace music_tagger
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Selection Mode";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point( 53, 61 );
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size( 92, 17 );
+            this.checkBox4.TabIndex = 10;
+            this.checkBox4.Text = "Add Selection";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point( 53, 38 );
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size( 95, 17 );
+            this.checkBox6.TabIndex = 11;
+            this.checkBox6.Text = "New Selection";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -250,6 +319,7 @@ namespace music_tagger
             this.rbEditCurrent.TabStop = true;
             this.rbEditCurrent.Text = "Edit Ver.* (Current)";
             this.rbEditCurrent.UseVisualStyleBackColor = true;
+            this.rbEditCurrent.CheckedChanged += new System.EventHandler( this.rbEditCurrent_CheckedChanged );
             // 
             // rbEditV2
             // 
@@ -261,6 +331,7 @@ namespace music_tagger
             this.rbEditV2.TabStop = true;
             this.rbEditV2.Text = "Edit Ver. 2";
             this.rbEditV2.UseVisualStyleBackColor = true;
+            this.rbEditV2.CheckedChanged += new System.EventHandler( this.rbEditV2_CheckedChanged );
             // 
             // rbEditV1
             // 
@@ -272,6 +343,7 @@ namespace music_tagger
             this.rbEditV1.TabStop = true;
             this.rbEditV1.Text = "Edit Ver. 1";
             this.rbEditV1.UseVisualStyleBackColor = true;
+            this.rbEditV1.CheckedChanged += new System.EventHandler( this.rbEditV1_CheckedChanged );
             // 
             // tabPage2
             // 
@@ -343,6 +415,119 @@ namespace music_tagger
             this.tabPage3.Text = "FreeDB";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add( this.label26 );
+            this.groupBox3.Controls.Add( this.label25 );
+            this.groupBox3.Controls.Add( this.label21 );
+            this.groupBox3.Controls.Add( this.label24 );
+            this.groupBox3.Controls.Add( this.ckUseProxy );
+            this.groupBox3.Controls.Add( this.textBox7 );
+            this.groupBox3.Controls.Add( this.textBox9 );
+            this.groupBox3.Controls.Add( this.textBox6 );
+            this.groupBox3.Controls.Add( this.textBox8 );
+            this.groupBox3.Location = new System.Drawing.Point( 8, 124 );
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size( 475, 198 );
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Proxy Settings";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point( 23, 92 );
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size( 29, 13 );
+            this.label26.TabIndex = 11;
+            this.label26.Text = "Port:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point( 23, 66 );
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size( 41, 13 );
+            this.label25.TabIndex = 11;
+            this.label25.Text = "Server:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point( 23, 118 );
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size( 32, 13 );
+            this.label21.TabIndex = 11;
+            this.label21.Text = "User:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point( 23, 144 );
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size( 56, 13 );
+            this.label24.TabIndex = 14;
+            this.label24.Text = "Password:";
+            // 
+            // ckUseProxy
+            // 
+            this.ckUseProxy.AutoSize = true;
+            this.ckUseProxy.Location = new System.Drawing.Point( 17, 32 );
+            this.ckUseProxy.Name = "ckUseProxy";
+            this.ckUseProxy.Size = new System.Drawing.Size( 74, 17 );
+            this.ckUseProxy.TabIndex = 10;
+            this.ckUseProxy.Text = "Use Proxy";
+            this.ckUseProxy.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point( 116, 89 );
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size( 292, 20 );
+            this.textBox7.TabIndex = 7;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point( 116, 141 );
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size( 292, 20 );
+            this.textBox9.TabIndex = 9;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point( 116, 63 );
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size( 292, 20 );
+            this.textBox6.TabIndex = 6;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point( 116, 115 );
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size( 292, 20 );
+            this.textBox8.TabIndex = 8;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point( 124, 78 );
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size( 292, 20 );
+            this.textBox5.TabIndex = 5;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point( 124, 54 );
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size( 292, 20 );
+            this.textBox4.TabIndex = 4;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point( 124, 28 );
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size( 292, 20 );
+            this.textBox3.TabIndex = 3;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -390,6 +575,78 @@ namespace music_tagger
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Colors";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.Black;
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label20.ForeColor = System.Drawing.Color.DarkGray;
+            this.label20.Location = new System.Drawing.Point( 192, 213 );
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size( 30, 24 );
+            this.label20.TabIndex = 12;
+            this.label20.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.FromArgb( ( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ) );
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label19.ForeColor = System.Drawing.Color.DarkGray;
+            this.label19.Location = new System.Drawing.Point( 192, 175 );
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size( 30, 24 );
+            this.label19.TabIndex = 11;
+            this.label19.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Black;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label18.ForeColor = System.Drawing.Color.DarkGray;
+            this.label18.Location = new System.Drawing.Point( 192, 61 );
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size( 30, 24 );
+            this.label18.TabIndex = 10;
+            this.label18.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.FromArgb( ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ) );
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label17.ForeColor = System.Drawing.Color.DarkGray;
+            this.label17.Location = new System.Drawing.Point( 192, 99 );
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size( 30, 24 );
+            this.label17.TabIndex = 9;
+            this.label17.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.Black;
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label16.ForeColor = System.Drawing.Color.DarkGray;
+            this.label16.Location = new System.Drawing.Point( 192, 137 );
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size( 30, 24 );
+            this.label16.TabIndex = 8;
+            this.label16.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.FromArgb( ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 128 ) ) ) ) );
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label15.ForeColor = System.Drawing.Color.DarkGray;
+            this.label15.Location = new System.Drawing.Point( 192, 23 );
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size( 30, 24 );
+            this.label15.TabIndex = 7;
+            this.label15.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
             // 
             // label9
             // 
@@ -479,259 +736,6 @@ namespace music_tagger
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler( this.btnOK_Click );
             // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point( 53, 61 );
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size( 92, 17 );
-            this.checkBox4.TabIndex = 10;
-            this.checkBox4.Text = "Add Selection";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point( 53, 38 );
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size( 95, 17 );
-            this.checkBox6.TabIndex = 11;
-            this.checkBox6.Text = "New Selection";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point( 56, 28 );
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size( 61, 13 );
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Start Index:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point( 56, 54 );
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size( 50, 13 );
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Delimiter:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point( 56, 78 );
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size( 36, 13 );
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Digits:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point( 138, 48 );
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size( 73, 20 );
-            this.textBox2.TabIndex = 3;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point( 138, 22 );
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size( 73, 20 );
-            this.numericUpDown1.TabIndex = 4;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point( 138, 74 );
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size( 73, 20 );
-            this.numericUpDown2.TabIndex = 5;
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.FromArgb( ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 128 ) ) ) ) );
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label15.ForeColor = System.Drawing.Color.DarkGray;
-            this.label15.Location = new System.Drawing.Point( 192, 23 );
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size( 30, 24 );
-            this.label15.TabIndex = 7;
-            this.label15.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
-            // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.Color.Black;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label16.ForeColor = System.Drawing.Color.DarkGray;
-            this.label16.Location = new System.Drawing.Point( 192, 137 );
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size( 30, 24 );
-            this.label16.TabIndex = 8;
-            this.label16.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.FromArgb( ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ) );
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label17.ForeColor = System.Drawing.Color.DarkGray;
-            this.label17.Location = new System.Drawing.Point( 192, 99 );
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size( 30, 24 );
-            this.label17.TabIndex = 9;
-            this.label17.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
-            // 
-            // label18
-            // 
-            this.label18.BackColor = System.Drawing.Color.Black;
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label18.ForeColor = System.Drawing.Color.DarkGray;
-            this.label18.Location = new System.Drawing.Point( 192, 61 );
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size( 30, 24 );
-            this.label18.TabIndex = 10;
-            this.label18.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
-            // 
-            // label19
-            // 
-            this.label19.BackColor = System.Drawing.Color.FromArgb( ( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ) );
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label19.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label19.ForeColor = System.Drawing.Color.DarkGray;
-            this.label19.Location = new System.Drawing.Point( 192, 175 );
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size( 30, 24 );
-            this.label19.TabIndex = 11;
-            this.label19.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
-            // 
-            // label20
-            // 
-            this.label20.BackColor = System.Drawing.Color.Black;
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label20.ForeColor = System.Drawing.Color.DarkGray;
-            this.label20.Location = new System.Drawing.Point( 192, 213 );
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size( 30, 24 );
-            this.label20.TabIndex = 12;
-            this.label20.DoubleClick += new System.EventHandler( this.On_ColorDoubleClicked );
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point( 124, 28 );
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size( 292, 20 );
-            this.textBox3.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point( 124, 54 );
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size( 292, 20 );
-            this.textBox4.TabIndex = 4;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point( 124, 78 );
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size( 292, 20 );
-            this.textBox5.TabIndex = 5;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point( 116, 63 );
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size( 292, 20 );
-            this.textBox6.TabIndex = 6;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point( 116, 89 );
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size( 292, 20 );
-            this.textBox7.TabIndex = 7;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point( 116, 115 );
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size( 292, 20 );
-            this.textBox8.TabIndex = 8;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point( 116, 141 );
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size( 292, 20 );
-            this.textBox9.TabIndex = 9;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add( this.label26 );
-            this.groupBox3.Controls.Add( this.label25 );
-            this.groupBox3.Controls.Add( this.label21 );
-            this.groupBox3.Controls.Add( this.label24 );
-            this.groupBox3.Controls.Add( this.ckUseProxy );
-            this.groupBox3.Controls.Add( this.textBox7 );
-            this.groupBox3.Controls.Add( this.textBox9 );
-            this.groupBox3.Controls.Add( this.textBox6 );
-            this.groupBox3.Controls.Add( this.textBox8 );
-            this.groupBox3.Location = new System.Drawing.Point( 8, 124 );
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size( 475, 198 );
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Proxy Settings";
-            // 
-            // ckUseProxy
-            // 
-            this.ckUseProxy.AutoSize = true;
-            this.ckUseProxy.Location = new System.Drawing.Point( 17, 32 );
-            this.ckUseProxy.Name = "ckUseProxy";
-            this.ckUseProxy.Size = new System.Drawing.Size( 74, 17 );
-            this.ckUseProxy.TabIndex = 10;
-            this.ckUseProxy.Text = "Use Proxy";
-            this.ckUseProxy.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point( 23, 118 );
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size( 32, 13 );
-            this.label21.TabIndex = 11;
-            this.label21.Text = "User:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point( 23, 144 );
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size( 56, 13 );
-            this.label24.TabIndex = 14;
-            this.label24.Text = "Password:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point( 23, 66 );
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size( 41, 13 );
-            this.label25.TabIndex = 11;
-            this.label25.Text = "Server:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point( 23, 92 );
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size( 29, 13 );
-            this.label26.TabIndex = 11;
-            this.label26.Text = "Port:";
-            // 
             // PrefFrm
             // 
             this.AcceptButton = this.btnOK;
@@ -750,6 +754,8 @@ namespace music_tagger
             this.tabPage1.PerformLayout();
             this.groupBox4.ResumeLayout( false );
             this.groupBox4.PerformLayout();
+            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown2 ) ).EndInit();
+            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).EndInit();
             this.groupBox2.ResumeLayout( false );
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout( false );
@@ -757,11 +763,9 @@ namespace music_tagger
             this.tabPage2.ResumeLayout( false );
             this.tabPage3.ResumeLayout( false );
             this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout( false );
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).EndInit();
-            ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown2 ) ).EndInit();
             this.groupBox3.ResumeLayout( false );
             this.groupBox3.PerformLayout();
+            this.tabPage4.ResumeLayout( false );
             this.ResumeLayout( false );
 
         }
@@ -797,7 +801,7 @@ namespace music_tagger
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFolder;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnColDown;

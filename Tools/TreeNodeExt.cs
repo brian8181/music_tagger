@@ -52,17 +52,19 @@ namespace Tools
         /// <param name="text"></param>
         /// <param name="img_idx"></param>
         /// <param name="sel_img_idx"></param>
-        public TreeNodeExt( string text, int img_idx, int sel_img_idx )
+        public TreeNodeExt( string key, string text, int img_idx, int sel_img_idx )
             : base( text, img_idx, sel_img_idx )
         {
+            this.Name = key;
         }
         /// <summary>
         ///  constructor
         /// </summary>
         /// <param name="text"></param>
-        public TreeNodeExt( string text )
+        public TreeNodeExt( string key, string text )
             : base( text )
         {
+            this.Name = key;
         }
         /// <summary>
         /// gets is initialized

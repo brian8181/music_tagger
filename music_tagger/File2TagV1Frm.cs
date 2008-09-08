@@ -64,12 +64,10 @@ namespace music_tagger
                 infos[i] = items[i].Tag as FileInfo;
             }
 
-            File2TagProgressThread thread = new File2TagProgressThread(
+            Threading.File2TagProgressThread thread = new Threading.File2TagProgressThread(
                 infos,
                 cmbFormat.Text );
             thread.Start();
-
-                
         }
 
         private void btnCancel_Click( object sender, EventArgs e )

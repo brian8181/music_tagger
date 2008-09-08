@@ -1,4 +1,4 @@
-namespace music_tagger
+namespace music_tagger.Threading
 {
     partial class ProgressFrm
     {
@@ -28,7 +28,7 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressCtrl = new music_tagger.ProgressCtrl();
+            this.progressCtrl = new music_tagger.Threading.ProgressCtrl();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 

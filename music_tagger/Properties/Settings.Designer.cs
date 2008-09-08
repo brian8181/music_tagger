@@ -255,5 +255,17 @@ namespace music_tagger.Properties {
                 this["org_last_format"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Current")]
+        public string pref_default_type {
+            get {
+                return ((string)(this["pref_default_type"]));
+            }
+            set {
+                this["pref_default_type"] = value;
+            }
+        }
     }
 }

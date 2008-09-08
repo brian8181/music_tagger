@@ -76,10 +76,10 @@ namespace music_tagger
             {
                 infos[i] = items[i].Tag as FileInfo;
             }
-            TagV12FileProgressThread thread = new TagV12FileProgressThread(
+            Threading.TagV12FileProgressThread thread = new Threading.TagV12FileProgressThread(
                 infos,
                 cmbFormat.Text );
-            thread.StatusUpdate += new EventHandler<ProgressThread.StatusArgs>( thread_StatusUpdate );
+            thread.StatusUpdate += new EventHandler<Threading.ProgressThread.StatusArgs>( thread_StatusUpdate );
             thread.Start();
         }
         /// <summary>
@@ -87,12 +87,12 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void thread_StatusUpdate( object sender, ProgressThread.StatusArgs e )
+        void thread_StatusUpdate( object sender, Threading.ProgressThread.StatusArgs e )
         {
             if(InvokeRequired)
             {
                 this.Invoke(
-                    new EventHandler<ProgressThread.StatusArgs>( thread_StatusUpdate ), sender, e );
+                    new EventHandler<Threading.ProgressThread.StatusArgs>( thread_StatusUpdate ), sender, e );
                 return;
             }
             if(e.Status == "Finished")

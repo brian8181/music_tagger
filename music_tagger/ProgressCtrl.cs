@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace music_tagger
+namespace music_tagger.Threading
 {
     public partial class ProgressCtrl : UserControl
     {

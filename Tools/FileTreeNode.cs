@@ -20,8 +20,8 @@ namespace Tools
         /// <param name="fi"></param>
         /// <param name="img_idx"></param>
         /// <param name="sel_img"></param>
-        public FileTreeNode( string name, FileSystemInfo fi, int img_idx, int sel_img )
-            : base( name, img_idx, sel_img )
+        public FileTreeNode( string key, string name, FileSystemInfo fi, int img_idx, int sel_img )
+            : base( key, name, img_idx, sel_img )
         {
             this.fi = fi;
             InitializeRoot();
@@ -31,8 +31,8 @@ namespace Tools
         /// </summary>
         /// <param name="name"></param>
         /// <param name="fi"></param>
-        public FileTreeNode( string name, FileSystemInfo fi )
-            : base( name )
+        public FileTreeNode( string key, string name, FileSystemInfo fi )
+            : base( key, name )
         {
             this.fi = fi;
             InitializeRoot();
@@ -97,8 +97,8 @@ namespace Tools
         /// </summary>
         /// <param name="name"></param>
         /// <param name="fi"></param>
-        public DriveTreeNode( string name, FileSystemInfo fi)
-            : base( name, fi )
+        public DriveTreeNode( string key, string name, FileSystemInfo fi)
+            : base( key, name, fi )
         {
         }
         /// <summary>
@@ -108,8 +108,8 @@ namespace Tools
         /// <param name="fi"></param>
         /// <param name="img_idx"></param>
         /// <param name="sel_img"></param>
-        public DriveTreeNode( string name, FileSystemInfo fi, int img_idx, int sel_img)
-            : base( name, fi, img_idx, sel_img )
+        public DriveTreeNode( string key, string name, FileSystemInfo fi, int img_idx, int sel_img)
+            : base( key, name, fi, img_idx, sel_img )
         {
         }
     }

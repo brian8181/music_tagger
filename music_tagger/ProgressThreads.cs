@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 
-namespace music_tagger
+namespace music_tagger.Threading
 {
     /// <summary>
     /// 
@@ -44,6 +44,9 @@ namespace music_tagger
                     Tools.Functions.MoveTo( fi, dir + "\\" + fi.Name, overwrite );
                 }
             }
+
+            // HACK!!
+            System.Threading.Thread.Sleep( 0 );
             SafeClose();
         }
     }
@@ -93,10 +96,13 @@ namespace music_tagger
             }
 
             OnStatusUpdate( "Finished" );
+
+            // HACK!!
+            System.Threading.Thread.Sleep( 0 );
             SafeClose();
         }
     }
-
+    
     /// <summary>
     /// 
     /// </summary>

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="music_tagger.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="music_tagger.Threading.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="columns" Type="System.Collections.Specialized.StringCollection" Scope="User">
@@ -94,6 +94,9 @@
     </Setting>
     <Setting Name="org_last_format" Type="System.String" Scope="User">
       <Value Profile="(Default)">&lt;K&gt;-&lt;A&gt;-&lt;B&gt;-&lt;T&gt;</Value>
+    </Setting>
+    <Setting Name="pref_default_type" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Current</Value>
     </Setting>
   </Settings>
 </SettingsFile>
