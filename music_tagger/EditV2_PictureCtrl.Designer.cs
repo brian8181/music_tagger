@@ -149,6 +149,7 @@ namespace music_tagger
             this.pictureList.UseCompatibleStateImageBehavior = false;
             this.pictureList.View = System.Windows.Forms.View.Details;
             this.pictureList.SelectedIndexChanged += new System.EventHandler( this.pictureList_SelectedIndexChanged );
+            this.pictureList.DoubleClick += new System.EventHandler( this.pictureList_DoubleClick );
             // 
             // columnHeader1
             // 

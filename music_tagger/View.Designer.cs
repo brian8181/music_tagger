@@ -34,9 +34,9 @@ namespace music_tagger
             this.mnViewCopyTo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnViewMoveTo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnViewSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnEditV1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnEditV2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.contextViewMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@ namespace music_tagger
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
+            this.listView.DoubleClick += new System.EventHandler( this.listView_DoubleClick );
             this.listView.DragDrop += new System.Windows.Forms.DragEventHandler( this.listView_DragDrop );
             this.listView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler( this.listView_ColumnClick );
             this.listView.DragEnter += new System.Windows.Forms.DragEventHandler( this.listView_DragEnter );
@@ -77,14 +78,14 @@ namespace music_tagger
             // mnViewCopyTo
             // 
             this.mnViewCopyTo.Name = "mnViewCopyTo";
-            this.mnViewCopyTo.Size = new System.Drawing.Size( 222, 22 );
+            this.mnViewCopyTo.Size = new System.Drawing.Size( 198, 22 );
             this.mnViewCopyTo.Text = "&CopyTo";
             this.mnViewCopyTo.Click += new System.EventHandler( this.mnViewCopyTo_Click );
             // 
             // mnViewMoveTo
             // 
             this.mnViewMoveTo.Name = "mnViewMoveTo";
-            this.mnViewMoveTo.Size = new System.Drawing.Size( 222, 22 );
+            this.mnViewMoveTo.Size = new System.Drawing.Size( 198, 22 );
             this.mnViewMoveTo.Text = "MoveTo";
             this.mnViewMoveTo.Click += new System.EventHandler( this.mnViewMoveTo_Click );
             // 
@@ -92,9 +93,14 @@ namespace music_tagger
             // 
             this.mnViewSelectAll.Name = "mnViewSelectAll";
             this.mnViewSelectAll.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A ) ) );
-            this.mnViewSelectAll.Size = new System.Drawing.Size( 222, 22 );
+            this.mnViewSelectAll.Size = new System.Drawing.Size( 198, 22 );
             this.mnViewSelectAll.Text = "Select All";
             this.mnViewSelectAll.Click += new System.EventHandler( this.mnViewSelectAll_Click );
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size( 195, 6 );
             // 
             // mnEditV1
             // 
@@ -102,7 +108,7 @@ namespace music_tagger
             this.mnEditV1.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.mnEditV1.Name = "mnEditV1";
             this.mnEditV1.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E ) ) );
-            this.mnEditV1.Size = new System.Drawing.Size( 222, 22 );
+            this.mnEditV1.Size = new System.Drawing.Size( 198, 22 );
             this.mnEditV1.Text = "Edit Tag Ver. 1";
             // 
             // mnEditV2
@@ -111,11 +117,6 @@ namespace music_tagger
             this.mnEditV2.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W ) ) );
             this.mnEditV2.Size = new System.Drawing.Size( 198, 22 );
             this.mnEditV2.Text = "Edit Tag Ver. 2";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size( 195, 6 );
             // 
             // View
             // 

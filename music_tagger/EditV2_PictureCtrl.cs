@@ -110,18 +110,28 @@ namespace music_tagger
             //BKP use IPicture ?
             if(this.pictures_dirty)
             {
-                item.Id3v2.RemoveFrames( "APIC" );
-                foreach(ListViewItem i in this.pictureList.Items)
+                TagLib.IPicture[] pics = new TagLib.IPicture[pictureList.Items.Count];
+                int len = pictureList.Items.Count;
+                for(int i = 0; i < len; ++i)
                 {
-                    if(File.Exists( txtPath.Text ))
-                    {
-                        AttachedPictureFrame frame = new AttachedPictureFrame();
-                        frame.Description = txtDesc.Text;
-                        frame.Type = (TagLib.PictureType)Enum.Parse( typeof( TagLib.PictureType ), cmbPicType.Text );
-                        frame.Data = File.ReadAllBytes( txtPath.Text );
-                        item.Id3v2.AddFrame( frame );
-                    }
+                    TagLib.IPicture p = pictureList.Items[i].Tag as TagLib.IPicture;
+                    pics[i] = p;
                 }
+
+                item.Id3v2.Pictures = pics;
+
+                //item.Id3v2.RemoveFrames( "APIC" );
+                //foreach(ListViewItem i in this.pictureList.Items)
+                //{
+                //    if(File.Exists( txtPath.Text ))
+                //    {
+                //        AttachedPictureFrame frame = new AttachedPictureFrame();
+                //        frame.Description = txtDesc.Text;
+                //        frame.Type = (TagLib.PictureType)Enum.Parse( typeof( TagLib.PictureType ), cmbPicType.Text );
+                //        frame.Data = File.ReadAllBytes( txtPath.Text );
+                //        item.Id3v2.AddFrame( frame );
+                //    }
+                //}
             }
         }
         /// <summary>
@@ -168,6 +178,7 @@ namespace music_tagger
             item.SubItems.Add( include );
 
             pictureList.Items.Add( item );
+            this.pictures_dirty = true;
         }
         /// <summary>
         /// 
@@ -176,7 +187,11 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnRemove_Click( object sender, EventArgs e )
         {
-
+            if(this.pictureList.SelectedItems.Count > 0)
+            {
+                pictureList.Items.Remove( this.pictureList.SelectedItems[0] );
+                this.pictures_dirty = true;
+            }
         }
         /// <summary>
         /// 
@@ -225,6 +240,22 @@ namespace music_tagger
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void pictureBox_DoubleClick( object sender, EventArgs e )
+        {
+            ShowPictureForm();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pictureList_DoubleClick( object sender, EventArgs e )
+        {
+            ShowPictureForm();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ShowPictureForm()
         {
             if(this.pictureList.SelectedItems.Count > 0)
             {

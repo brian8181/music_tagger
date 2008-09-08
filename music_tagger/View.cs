@@ -343,7 +343,7 @@ namespace music_tagger
         {
             if(this.ListView.SelectedItems.Count > 0)
             {
-                EditV2Frm dlg = new EditV2Frm( this.ListView );
+                EditV1Frm dlg = new EditV1Frm( this.ListView );
                 if(dlg.ShowDialog() == DialogResult.OK)
                 {
                     // todo
@@ -468,5 +468,17 @@ namespace music_tagger
             this.listView.EndUpdate();
         }
         #endregion
+
+        private void listView_DoubleClick( object sender, EventArgs e )
+        {
+            if(this.type == TagLib.TagTypes.Id3v1)
+            {
+                OnEditV1();
+            }
+            else
+            {
+                OnEditV2();
+            }
+        }
     }
 }
