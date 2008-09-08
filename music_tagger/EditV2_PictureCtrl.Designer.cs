@@ -58,6 +58,7 @@ namespace music_tagger
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
+            this.pictureBox.DoubleClick += new System.EventHandler( this.pictureBox_DoubleClick );
             // 
             // label1
             // 
@@ -138,13 +139,16 @@ namespace music_tagger
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4} );
+            this.pictureList.FullRowSelect = true;
             this.pictureList.GridLines = true;
             this.pictureList.Location = new System.Drawing.Point( 3, 211 );
+            this.pictureList.MultiSelect = false;
             this.pictureList.Name = "pictureList";
             this.pictureList.Size = new System.Drawing.Size( 609, 296 );
             this.pictureList.TabIndex = 58;
             this.pictureList.UseCompatibleStateImageBehavior = false;
             this.pictureList.View = System.Windows.Forms.View.Details;
+            this.pictureList.SelectedIndexChanged += new System.EventHandler( this.pictureList_SelectedIndexChanged );
             // 
             // columnHeader1
             // 

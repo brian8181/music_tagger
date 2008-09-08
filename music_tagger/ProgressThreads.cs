@@ -46,7 +46,7 @@ namespace music_tagger.Threading
             }
 
             // HACK!!
-            System.Threading.Thread.Sleep( 0 );
+            //System.Threading.Thread.Sleep( 0 );
             SafeClose();
         }
     }
@@ -87,6 +87,43 @@ namespace music_tagger.Threading
                 TagLib.File tag_file = TagLib.File.Create( fi.FullName );
                 TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
                 FormatEvaluator eval = new FormatEvaluator( format, id3v1 );
+
+                string fullname = String.Format( "{0}\\{1}{2}",
+                   fi.DirectoryName, eval.Value.TrimStart( '\\' ), fi.Extension );
+
+                //fi.MoveTo( fullname );
+                //Tools.Functions.MoveTo( fi, dir.TrimEnd( '\\' ), false );
+            }
+
+            OnStatusUpdate( "Finished" );
+
+            // HACK!!
+            System.Threading.Thread.Sleep( 0 );
+            SafeClose();
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    class TagV22FileProgressThread : FormatProgressThread
+    {
+        public TagV22FileProgressThread( FileInfo[] infos, string format )
+            : base( infos, format )
+        {
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public override void ThreadFunc()
+        {
+            foreach(FileInfo fi in infos)
+            {
+                OnStatusUpdate( fi.Name );
+
+                TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+                TagLib.Tag id3v2 = tag_file.GetTag( TagLib.TagTypes.Id3v2 );
+                FormatEvaluator eval = new FormatEvaluator( format, id3v2 );
 
                 string fullname = String.Format( "{0}\\{1}{2}",
                    fi.DirectoryName, eval.Value.TrimStart( '\\' ), fi.Extension );
@@ -147,7 +184,7 @@ namespace music_tagger.Threading
             SafeResize();
             OnFinished();
             // HACK!!
-            System.Threading.Thread.Sleep( 0 );
+            //System.Threading.Thread.Sleep( 0 );
             SafeClose();
         }
         /// <summary>

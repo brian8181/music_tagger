@@ -339,6 +339,39 @@ namespace music_tagger
         #endregion
 
         #region Utility Functions
+        public void OnEditV1()
+        {
+            if(this.ListView.SelectedItems.Count > 0)
+            {
+                EditV2Frm dlg = new EditV2Frm( this.ListView );
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // todo
+                }
+            }
+        }
+        public void OnEditV1_Multi()
+        {
+            if(this.ListView.SelectedItems.Count > 0)
+            {
+                EditV1Frm dlg = new EditV1Frm( this.ListView, true );
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // todo
+                }
+            }
+        }
+        public void OnEditV2()
+        {
+            if(this.ListView.SelectedItems.Count > 0)
+            {
+                EditV2Frm dlg = new EditV2Frm( this.ListView );
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // todo
+                }
+            }
+        }
         public void RemoveTag(FileInfo fi, TagLib.TagTypes type)
         {
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );

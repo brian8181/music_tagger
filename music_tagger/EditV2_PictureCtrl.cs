@@ -18,23 +18,51 @@ namespace music_tagger
             InitializeComponent();
             cmbPicType.SelectedIndex = 0;
         }
-       
+        /// <summary>
+        /// overrides fill 
+        /// </summary>
         public override void Fill()
         {
-            // todo loop all
-            if(v2.Pictures.Length > 0)
+            foreach(TagLib.IPicture pic in v2.Pictures)
             {
-                TagLib.IPicture pic = v2.Pictures[0];
+                ListViewItem item = new ListViewItem( pic.Description );
+                item.Tag = pic;
+                item.SubItems.Add( pic.Type.ToString() );
+
+                if(pic.MimeType == "-->")
+                {
+                    item.SubItems.Add( pic.Data.ToString() );
+                    item.SubItems.Add( "No" );
+                }
+                else
+                {
+                    item.SubItems.Add( tag_file.Name );
+                    item.SubItems.Add( "Yes" );
+                }
+                pictureList.Items.Add( item );        
+            }
+
+            if(pictureList.Items.Count > 0)
+            {
+                SetSelectedPicture( pictureList.Items[0] ); 
+            }
+            
+        }
+        /// <summary>
+        /// set selected rating 
+        /// </summary>
+        /// <param name="item">the item</param>
+        private void SetSelectedPicture( ListViewItem item )
+        {
+            // select first pic
+            TagLib.IPicture pic = item.Tag as TagLib.IPicture;
+            if(pic != null)
+            {
                 if(pic.MimeType.StartsWith( "image/" ))
                 {
-                    //string art = guid.ToString( "B" ) + pic.MimeType.Replace( "image/", "." );
                     byte[] data = new byte[pic.Data.Count];
                     pic.Data.CopyTo( data, 0 );
-                    string type = pic.Type.ToString();
-                    string mime_type = pic.MimeType;
-                    //description = pic.Description;
-                    //pic.Type.ToString();
-
+                   
                     MemoryStream stream = null;
                     try
                     {
@@ -48,21 +76,11 @@ namespace music_tagger
                     }
                     finally
                     {
-                        if( stream != null )
+                        if(stream != null)
                             stream.Close();
                     }
-
                 }
-
             }
-        }
-        /// <summary>
-        /// set selected rating 
-        /// </summary>
-        /// <param name="item">the item</param>
-        private void SetSelectedPicture( ListViewItem item )
-        {
-
         }
         /// <summary>
         /// merge like values, hide unlike values
@@ -88,6 +106,7 @@ namespace music_tagger
         /// </summary>
         private void UpdatePictureFrames( TagListViewItem item )
         {
+            //BKP use IPicture ?
             if(this.pictures_dirty)
             {
                 item.Id3v2.RemoveFrames( "APIC" );
@@ -166,6 +185,18 @@ namespace music_tagger
         private void btnExtract_Click( object sender, EventArgs e )
         {
 
+        }
+
+        private void pictureList_SelectedIndexChanged( object sender, EventArgs e )
+        {
+            if( this.pictureList.SelectedItems.Count > 0 )
+                SetSelectedPicture( this.pictureList.SelectedItems[0] );
+        }
+
+        private void pictureBox_DoubleClick( object sender, EventArgs e )
+        {
+            PictureFrm dlg = new PictureFrm();
+            dlg.ShowDialog();
         }
     }
 }

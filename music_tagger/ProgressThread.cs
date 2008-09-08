@@ -36,6 +36,7 @@ namespace music_tagger.Threading
         protected Thread thread = null;
         protected FileInfo[] infos = null;
         protected volatile bool cancel = false;
+        private AutoResetEvent closing_event = new AutoResetEvent( false );
 
         /// <summary>
         /// 
@@ -44,7 +45,7 @@ namespace music_tagger.Threading
         /// <param name="format"></param>
         public ProgressThread( FileInfo[] infos )
         {
-            thread = new Thread( new ThreadStart( ThreadFunc ) );
+            thread = new Thread( new ThreadStart( _ThreadFunc ) );
             thread.Priority = ThreadPriority.BelowNormal;
             thread.Name = "ProgressThread";
             thread.IsBackground = true;
@@ -66,9 +67,29 @@ namespace music_tagger.Threading
             thread.Start();
             this.ShowDialog(); 
         }
+        /// <summary>
+        /// 
+        /// </summary>
         protected override void OnCancel()
         {
             cancel = true;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void _ThreadFunc()
+        {
+            ThreadFunc();
+            closing_event.WaitOne(); // wait for close
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnClosing( System.ComponentModel.CancelEventArgs e )
+        {
+            base.OnClosing( e );
+            closing_event.Set();  // set closing
         }
         /// <summary>
         /// 

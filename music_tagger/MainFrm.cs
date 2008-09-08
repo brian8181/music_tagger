@@ -62,14 +62,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void tsb_EditV1_Click( object sender, EventArgs e )
         {
-            if(this.view.ListView.SelectedItems.Count > 0)
-            {
-                EditV1Frm dlg = new EditV1Frm( view.ListView );
-                if(dlg.ShowDialog() == DialogResult.OK)
-                {
-                    // todo  
-                }
-            }
+            this.view.OnEditV2();
         }
         /// <summary>
         /// 
@@ -78,14 +71,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void tsb_EditV1Multi_Click( object sender, EventArgs e )
         {
-            if(this.view.ListView.SelectedItems.Count > 0)
-            {
-                EditV1Frm dlg = new EditV1Frm( view.ListView, true );
-                if(dlg.ShowDialog() == DialogResult.OK)
-                {
-                    // todo
-                }
-            }
+            this.view.OnEditV2();
         }
         /// <summary>
         /// 
@@ -94,14 +80,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void tsb_EditV2_Click( object sender, EventArgs e )
         {
-            if(this.view.ListView.SelectedItems.Count > 0)
-            {
-                EditV2Frm dlg = new EditV2Frm( view.ListView );
-                if(dlg.ShowDialog() == DialogResult.OK)
-                {
-                    // todo
-                }
-            }
+            this.view.OnEditV2();
         }
         /// <summary>
         /// 

@@ -185,6 +185,12 @@
     </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="InvolvedPeopleFrame.cs" />
+    <Compile Include="PictureFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PictureFrm.Designer.cs">
+      <DependentUpon>PictureFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TagLib\InvolvedPeopleFrame.cs" />
     <Compile Include="ISO_639_2.cs" />
     <Compile Include="MainFrm.cs">
@@ -318,6 +324,10 @@
     <EmbeddedResource Include="OrganizeFrm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>OrganizeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PictureFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PictureFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressThread.resx">
       <SubType>Designer</SubType>
