@@ -39,6 +39,7 @@ namespace Tools
             this.ImageList = list;
             ImageIndex = closed_img_idx;
             SelectedImageIndex = opened_img_idx;
+            AllowDrop = true;
         }
         /// <summary>
         /// constructor    
@@ -211,6 +212,16 @@ namespace Tools
             Nodes.Add( node );
             if(drive.IsReady)
                 InitializeNode( node );
+        }
+
+        protected override void OnDragEnter( DragEventArgs drgevent )
+        {
+            base.OnDragEnter( drgevent );
+            drgevent.Effect = DragDropEffects.Copy;
+        }
+        protected override void OnDragOver( DragEventArgs drgevent )
+        {
+            base.OnDragOver( drgevent );
         }
     }
 }
