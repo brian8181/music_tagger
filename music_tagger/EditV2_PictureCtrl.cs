@@ -177,6 +177,14 @@ namespace music_tagger
             string include = ckInclude.Checked ? "Yes" : "No";
             item.SubItems.Add( include );
 
+            byte[] data = File.ReadAllBytes( txtPath.Text );
+            // create picture
+            TagLib.Picture p = new TagLib.Picture();
+            p.Data = data;
+            p.Description = txtDesc.Text;
+            p.MimeType = "image/" + Path.GetExtension( txtPath.Text );
+            item.Tag = p;
+
             pictureList.Items.Add( item );
             this.pictures_dirty = true;
         }
