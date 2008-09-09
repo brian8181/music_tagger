@@ -12,7 +12,9 @@ namespace music_tagger
     public partial class EditV2_RatingCtrl : EditCtrlBase
     {
         private bool ratings_dirty = false;
-       
+        /// <summary>
+        /// default ctor
+        /// </summary>
         public EditV2_RatingCtrl()
         {
             InitializeComponent();

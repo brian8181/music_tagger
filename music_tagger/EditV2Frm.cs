@@ -259,6 +259,7 @@ namespace music_tagger
             people.EditItem( item );
             web.EditItem( item );
             rating.EditItem( item );
+            pictures.EditItem( item );
             item.RefreshItem();
         }
     }

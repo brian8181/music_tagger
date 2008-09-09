@@ -45,7 +45,7 @@ namespace music_tagger
             this.btnImport = new System.Windows.Forms.Button();
             this.btnExtract = new System.Windows.Forms.Button();
             this.ckInclude = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.ckRelative = new System.Windows.Forms.CheckBox();
             ( (System.ComponentModel.ISupportInitialize)( this.pictureBox ) ).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,6 +122,7 @@ namespace music_tagger
             // 
             this.txtPath.Location = new System.Drawing.Point( 103, 68 );
             this.txtPath.Name = "txtPath";
+            this.txtPath.ReadOnly = true;
             this.txtPath.Size = new System.Drawing.Size( 305, 20 );
             this.txtPath.TabIndex = 9;
             // 
@@ -222,23 +223,24 @@ namespace music_tagger
             this.ckInclude.TabIndex = 63;
             this.ckInclude.Text = "Save Picture To File";
             this.ckInclude.UseVisualStyleBackColor = true;
+            this.ckInclude.CheckedChanged += new System.EventHandler( this.ckInclude_CheckedChanged );
             // 
-            // checkBox2
+            // ckRelative
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point( 103, 121 );
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size( 112, 17 );
-            this.checkBox2.TabIndex = 64;
-            this.checkBox2.Text = "Use Relative Path";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckRelative.AutoSize = true;
+            this.ckRelative.Enabled = false;
+            this.ckRelative.Location = new System.Drawing.Point( 103, 121 );
+            this.ckRelative.Name = "ckRelative";
+            this.ckRelative.Size = new System.Drawing.Size( 112, 17 );
+            this.ckRelative.TabIndex = 64;
+            this.ckRelative.Text = "Use Relative Path";
+            this.ckRelative.UseVisualStyleBackColor = true;
             // 
             // EditV2_PictureCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add( this.checkBox2 );
+            this.Controls.Add( this.ckRelative );
             this.Controls.Add( this.ckInclude );
             this.Controls.Add( this.btnExtract );
             this.Controls.Add( this.btnImport );
@@ -278,7 +280,7 @@ namespace music_tagger
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnExtract;
         private System.Windows.Forms.CheckBox ckInclude;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox ckRelative;
         private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

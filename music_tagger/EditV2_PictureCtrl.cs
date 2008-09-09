@@ -88,6 +88,7 @@ namespace music_tagger
         /// </summary>
         public override void Coalesce()
         {
+            base.Coalesce();
         }
         ///  ID3v1 edit 
         /// </summary>
@@ -117,21 +118,7 @@ namespace music_tagger
                     TagLib.IPicture p = pictureList.Items[i].Tag as TagLib.IPicture;
                     pics[i] = p;
                 }
-
                 item.Id3v2.Pictures = pics;
-
-                //item.Id3v2.RemoveFrames( "APIC" );
-                //foreach(ListViewItem i in this.pictureList.Items)
-                //{
-                //    if(File.Exists( txtPath.Text ))
-                //    {
-                //        AttachedPictureFrame frame = new AttachedPictureFrame();
-                //        frame.Description = txtDesc.Text;
-                //        frame.Type = (TagLib.PictureType)Enum.Parse( typeof( TagLib.PictureType ), cmbPicType.Text );
-                //        frame.Data = File.ReadAllBytes( txtPath.Text );
-                //        item.Id3v2.AddFrame( frame );
-                //    }
-                //}
             }
         }
         /// <summary>
@@ -162,6 +149,9 @@ namespace music_tagger
                     if(stream != null)
                         stream.Close();
                 }
+
+                ckInclude.Enabled = true;
+                ckRelative.Enabled = true;
             }
         }
         /// <summary>
@@ -187,6 +177,8 @@ namespace music_tagger
 
             pictureList.Items.Add( item );
             this.pictures_dirty = true;
+            ckInclude.Enabled = false;
+            ckRelative.Enabled = false;
         }
         /// <summary>
         /// 
@@ -241,6 +233,8 @@ namespace music_tagger
         private void pictureList_SelectedIndexChanged( object sender, EventArgs e )
         {
             SetSelectedPicture( GetSelectedPicture() );
+            ckInclude.Enabled = false;
+            ckRelative.Enabled = false;
         }
         /// <summary>
         /// 
@@ -280,6 +274,22 @@ namespace music_tagger
             if(this.pictureList.SelectedItems.Count > 0)
                 return this.pictureList.SelectedItems[0].Tag as TagLib.IPicture;
             return null;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ckInclude_CheckedChanged( object sender, EventArgs e )
+        {
+            if(ckInclude.Checked)
+            {
+                ckRelative.Enabled = false;
+            }
+            else
+            {
+                ckRelative.Enabled = true;
+            }
         }
     }
 }
