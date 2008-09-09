@@ -112,7 +112,13 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnTopComment_Click( object sender, EventArgs e )
         {
-            ratings_dirty = true;
+            if(ratingList.SelectedItems.Count > 0)
+            {
+                ListViewItem item = ratingList.SelectedItems[0];
+                ratingList.Items.Remove( item );
+                ratingList.Items.Insert( 0, item );
+                ratings_dirty = true;
+            }
         }
         /// <summary>
         /// 
@@ -121,7 +127,12 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnRemoveComment_Click( object sender, EventArgs e )
         {
-            ratings_dirty = true;
+            if(ratingList.SelectedItems.Count > 0)
+            {
+                ListViewItem item = ratingList.SelectedItems[0];
+                ratingList.Items.Remove( item );
+                ratings_dirty = true;
+            }
         }
     }
 }
