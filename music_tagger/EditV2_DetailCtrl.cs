@@ -34,7 +34,7 @@ namespace music_tagger
                 {
                     Coalesce();
                 }
-                TagExt tag = new TagExt( v2 );
+                TagV2Ext tag = new TagV2Ext( v2 );
                 txtBand.Text = tag.TPE2;
                 txtRemixed.Text = tag.TPE4;
                 txtWriter.Text = tag.TEXT;
@@ -62,14 +62,14 @@ namespace music_tagger
             FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
             TagLib.File first_tag_file = TagLib.File.Create( fi.FullName );
             TagLib.Id3v2.Tag first_tag = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
-            TagExt first_tag_ext = new TagExt( first_tag );
+            TagV2Ext first_tag_ext = new TagV2Ext( first_tag );
 
             foreach(ListViewItem item in lv.SelectedItems)
             {
                 fi = (FileInfo)item.Tag;
                 first_tag_file = TagLib.File.Create( fi.FullName );
                 TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-                TagExt tag_ext = new TagExt( first_tag );
+                TagV2Ext tag_ext = new TagV2Ext( first_tag );
 
                 if(tag != null)
                 {
@@ -104,7 +104,7 @@ namespace music_tagger
 
             if(v2 != null)
             {
-                TagExt tag = new TagExt( item.Id3v2 );
+                TagV2Ext tag = new TagV2Ext( item.Id3v2 );
                 tag.TPE2 = txtBand.Text;
                 tag.TPE4 = txtRemixed.Text;
                 tag.TEXT = txtWriter.Text;

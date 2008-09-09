@@ -329,12 +329,18 @@ namespace music_tagger
         }
         private void listView_DragEnter( object sender, DragEventArgs e )
         {
+            e.Effect = DragDropEffects.Copy;
         }
         private void listView_DragLeave( object sender, EventArgs e )
         {
         }
         private void listView_DragOver( object sender, DragEventArgs e )
         {
+            e.Effect = DragDropEffects.Copy;
+        }
+        private void listView_GiveFeedback( object sender, GiveFeedbackEventArgs e )
+        {
+            //this.Cursor = Cursors.
         }
         #endregion
 
@@ -480,5 +486,18 @@ namespace music_tagger
                 OnEditV2();
             }
         }
+
+        private void listView_MouseDown( object sender, MouseEventArgs e )
+        {
+            if( this.listView.SelectedItems.Count > 0 )
+            {
+            
+                TagListViewItem item = (TagListViewItem)this.listView.SelectedItems[0];
+                FileInfo fi = (FileInfo)item.Tag;
+                DataObject obj = new DataObject( DataFormats.FileDrop, fi.FullName );   
+                DragDropEffects dde = DoDragDrop( obj, DragDropEffects.Copy | DragDropEffects.Move );
+            }
+        }
+
     }
 }

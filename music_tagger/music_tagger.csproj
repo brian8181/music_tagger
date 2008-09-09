@@ -358,6 +358,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>TagV22FileFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransferFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TransferFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <SubType>Designer</SubType>
       <DependentUpon>View.cs</DependentUpon>
@@ -394,6 +398,12 @@
     </Compile>
     <Compile Include="TagV22FileFrm.Designer.cs">
       <DependentUpon>TagV22FileFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransferFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransferFrm.Designer.cs">
+      <DependentUpon>TransferFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="View.cs">
       <SubType>UserControl</SubType>

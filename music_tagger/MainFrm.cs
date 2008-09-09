@@ -60,9 +60,19 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsb_EditV1_Click( object sender, EventArgs e )
+        private void On_Transfer_Click( object sender, EventArgs e )
         {
-            this.view.OnEditV2();
+            TransferFrm dlg = new TransferFrm(this.view.ListView);
+            dlg.ShowDialog();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void On_EditV1_Click( object sender, EventArgs e )
+        {
+            this.view.OnEditV1();
         }
         /// <summary>
         /// 
@@ -71,7 +81,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void tsb_EditV1Multi_Click( object sender, EventArgs e )
         {
-            this.view.OnEditV2();
+            this.view.OnEditV1_Multi();
         }
         /// <summary>
         /// 
@@ -474,5 +484,6 @@ namespace music_tagger
                 MessageBox.Show( other.Message );
             }
         }
+
    }
 }

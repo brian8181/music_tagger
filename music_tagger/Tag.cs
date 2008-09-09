@@ -5,14 +5,14 @@ using TagLib.Id3v2;
 
 namespace music_tagger
 {
-    class TagExt
+    class TagV2Ext
     {
         private TagLib.Id3v2.Tag tag = null;
         /// <summary>
         /// 
         /// </summary>
         /// <param name="tag"></param>
-        public TagExt( TagLib.Id3v2.Tag tag )
+        public TagV2Ext( TagLib.Id3v2.Tag tag )
         {
             this.tag = tag;
         }

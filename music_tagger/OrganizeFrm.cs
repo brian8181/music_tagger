@@ -23,7 +23,7 @@ namespace music_tagger
         public OrganizeFrm()
         {
             InitializeComponent();
-                Initialize();
+            Initialize();
         }
         /// <summary>
         /// 

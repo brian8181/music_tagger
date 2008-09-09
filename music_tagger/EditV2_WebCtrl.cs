@@ -21,7 +21,7 @@ namespace music_tagger
         /// <param name="idx"></param>
         public override void Fill()
         {
-            TagExt tag = new TagExt( v2 );
+            TagV2Ext tag = new TagV2Ext( v2 );
             txtCopyrightURL.Text = tag.WCOP;
             txtFileURL.Text = tag.WOAF;
             txtArtistURL.Text = tag.WOAR;
@@ -39,13 +39,13 @@ namespace music_tagger
             FileInfo fi = (FileInfo)lv.SelectedItems[0].Tag;
             TagLib.File first_tag_file = TagLib.File.Create( fi.FullName );
             TagLib.Id3v2.Tag first_tag = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
-            TagExt first_tag_ext = new TagExt( first_tag );
+            TagV2Ext first_tag_ext = new TagV2Ext( first_tag );
             foreach(ListViewItem item in lv.SelectedItems)
             {
                 fi = (FileInfo)item.Tag;
                 first_tag_file = TagLib.File.Create( fi.FullName );
                 TagLib.Tag tag = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-                TagExt tag_ext = new TagExt( first_tag );
+                TagV2Ext tag_ext = new TagV2Ext( first_tag );
                 if(tag != null)
                 {
                     if(first_tag_ext.WCOP != tag_ext.WCOP)
@@ -77,7 +77,7 @@ namespace music_tagger
             base.EditItem( item );
             if(item.Id3v2 != null)
             {
-                TagExt tag = new TagExt( item.Id3v2 );
+                TagV2Ext tag = new TagV2Ext( item.Id3v2 );
                 if(!multi_edit ||ckCopyrightURL.Checked)
                     tag.WCOP = txtCopyrightURL.Text;
                 if(!multi_edit || ckFileURL.Checked)

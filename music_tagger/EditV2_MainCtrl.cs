@@ -287,10 +287,13 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnTopComment_Click( object sender, EventArgs e )
         {
-            ListViewItem lvi = commentList.Items[txtCommentDescriptor.Text];
-            commentList.Items.RemoveByKey( txtCommentDescriptor.Text );
-            commentList.Items.Insert( 0, lvi );
-            comments_dirty = true;
+            if(commentList.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = commentList.SelectedItems[0];
+                commentList.Items.Remove( lvi );
+                commentList.Items.Insert( 0, lvi );
+                comments_dirty = true;
+            }
         }
         /// <summary>
         /// Update the comment frame 

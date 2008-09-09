@@ -184,7 +184,7 @@ namespace music_tagger.Threading
             SafeResize();
             OnFinished();
             // HACK!!
-            //System.Threading.Thread.Sleep( 0 );
+            System.Threading.Thread.Sleep( 0 );
             SafeClose();
         }
         /// <summary>
