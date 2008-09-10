@@ -64,6 +64,7 @@ namespace music_tagger
             this.listView.DragLeave += new System.EventHandler( this.listView_DragLeave );
             this.listView.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler( this.listView_GiveFeedback );
             this.listView.ColumnReordered += new System.Windows.Forms.ColumnReorderedEventHandler( this.listView_ColumnReordered );
+            this.listView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler( this.listView_ItemDrag );
             this.listView.DragOver += new System.Windows.Forms.DragEventHandler( this.listView_DragOver );
             // 
             // contextViewMenu
