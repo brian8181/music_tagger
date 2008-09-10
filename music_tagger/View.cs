@@ -487,23 +487,6 @@ namespace music_tagger
             }
         }
         
-        private void listView_MouseDown( object sender, MouseEventArgs e )
-        {
-            //if( this.listView.SelectedItems.Count > 0 )
-            //{
-            
-            //    TagListViewItem item = (TagListViewItem)this.listView.SelectedItems[0];
-            //    FileInfo fi = (FileInfo)item.Tag;
-            //    DataObject data = new DataObject( DataFormats.FileDrop, fi.FullName );  
-                
-            //    DragDropEffects dde = DoDragDrop( data, DragDropEffects.Copy | DragDropEffects.Move );
-            //    System.Collections.Specialized.StringCollection fis = 
-            //        new System.Collections.Specialized.StringCollection();
-            //    fis.Add( fi.FullName );
-            //    Clipboard.SetFileDropList( fis ); 
-            //}
-        }
-
         private void listView_ItemDrag( object sender, ItemDragEventArgs e )
         {
             if(this.listView.SelectedItems.Count > 0)

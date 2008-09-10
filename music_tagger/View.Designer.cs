@@ -59,7 +59,6 @@ namespace music_tagger
             this.listView.DoubleClick += new System.EventHandler( this.listView_DoubleClick );
             this.listView.DragDrop += new System.Windows.Forms.DragEventHandler( this.listView_DragDrop );
             this.listView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler( this.listView_ColumnClick );
-            this.listView.MouseDown += new System.Windows.Forms.MouseEventHandler( this.listView_MouseDown );
             this.listView.DragEnter += new System.Windows.Forms.DragEventHandler( this.listView_DragEnter );
             this.listView.DragLeave += new System.EventHandler( this.listView_DragLeave );
             this.listView.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler( this.listView_GiveFeedback );
