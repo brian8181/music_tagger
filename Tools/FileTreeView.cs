@@ -59,14 +59,23 @@ namespace Tools
         /// <param name="path"></param>
         public void Open( string path )
         {
-            // todo
             if(!string.IsNullOrEmpty( path ))
             {
-                string root = Path.GetPathRoot( path );
-                TreeNode[] nodes = Nodes.Find( root, true );
-                if(nodes.Length > 0)
+                string[] dirs = path.Split( Path.DirectorySeparatorChar );
+                TreeNodeCollection cur_nodes = this.Nodes;
+                foreach(string dir in dirs)
                 {
-                    this.SelectedNode = nodes[0];
+                    TreeNode[] nodes = cur_nodes.Find( dir, false );
+                    if(nodes.Length == 1)
+                    {
+                        FileTreeNode node = (FileTreeNode)nodes[0];
+                        if(!node.Intialized)
+                            InitializeNode( node );
+
+                        this.SelectedNode = node;
+                        this.SelectedNode.Expand();
+                        cur_nodes = this.SelectedNode.Nodes;
+                    }
                 }
             }
         }
@@ -194,8 +203,7 @@ namespace Tools
             string name = di.Name;
             if(drive.IsReady)
                 name = drive.VolumeLabel + " (" + di.Name + ")";
-            DriveTreeNode node = new DriveTreeNode( di.Name, name, di );
-            Debug.WriteLine( "TOSTRING: " + node.ToString() );
+            DriveTreeNode node = new DriveTreeNode( di.Name.TrimEnd('\\'), name, di );
             int idx = 0;
             switch(drive.DriveType)
             {
