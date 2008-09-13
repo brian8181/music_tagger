@@ -40,12 +40,12 @@ namespace Tools
     public abstract class TreeNodeExt : TreeNode, ITreeNodeExt
     {
         protected bool intialized = false;
-        /// <summary>
-        /// default constructor
-        /// </summary>
-        public TreeNodeExt()
-        {
-        }
+        ///// <summary>
+        ///// default constructor
+        ///// </summary>
+        //public TreeNodeExt()
+        //{
+        //}
         /// <summary>
         /// constructor
         /// </summary>

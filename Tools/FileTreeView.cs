@@ -112,12 +112,13 @@ namespace Tools
         //protected override void OnBeforeExpand( TreeViewCancelEventArgs e )
         //{
         //    base.OnBeforeExpand( e );
-        //    // change the focus
+        //     change the focus
         //    FileTreeNode node = (FileTreeNode)e.Node;
         //    if(CanReadFile( node.FileSystemInfo ))
         //    {
         //        foreach(FileTreeNode n in node.Nodes)
         //        {
+        //            Debug.WriteLine( n.Name );
         //            if(!n.Intialized)
         //                InitializeNode( n );
         //            else
@@ -162,7 +163,6 @@ namespace Tools
                     string name = files[i].Name;
                     FileSystemInfo fi = (FileSystemInfo)files[i];
                     FileTreeNode child = new FileTreeNode( name, name, fi, 0, 1 );
-                    //child.Initialize();
                     node.Nodes.Add( child );
                 }
                 //Sort();
@@ -171,11 +171,11 @@ namespace Tools
             }
             catch(UnauthorizedAccessException)
             {
-                MessageBox.Show( "Can not access " + directory.FullName );
-                node.ImageIndex = 8;
-                node.SelectedImageIndex = 8;
-                // goto parent node
-                SelectedNode = SelectedNode.Parent;
+                //MessageBox.Show( "Can not access " + directory.FullName );
+                //node.ImageIndex = 8;
+                //node.SelectedImageIndex = 8;
+                //// goto parent node
+                //SelectedNode = SelectedNode.Parent;
                 return;
             }
         }
