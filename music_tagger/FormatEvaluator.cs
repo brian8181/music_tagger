@@ -23,7 +23,7 @@ namespace music_tagger
     /// </summary>
     public class OrganizeFormatEvaluator  : FormatEvaluator
     {
-         protected TagLib.Tag tag = null;
+        protected TagLib.Tag tag = null;
         /// <summary>
         /// return formatted string
         /// </summary>
@@ -129,11 +129,11 @@ namespace music_tagger
         private TagLib.Tag tag = null;
        
         public File2TagFormatEvaluator( string format, TagLib.File file )
-            : base( @"(?<SYM>\<\w\>)((?<SEP>.)|$)" )
+            : base(  @"\<[ABCEGKPRTYkp]\>" )
         {
             this.file = file;
             tag = file.GetTag( TagLib.TagTypes.Id3v1 );
-            string fname = System.IO.Path.GetFileName(file.Name);
+            string fname = System.IO.Path.GetFileNameWithoutExtension(file.Name);
             Regex regx = new Regex( exp );
             MatchEvaluator meval = new MatchEvaluator( ReplaceFunc );
             value = regx.Replace( format, meval );
@@ -157,18 +157,19 @@ namespace music_tagger
         /// <returns></returns>
         private string ReplaceFunc( Match m )
         {
-            return string.Format( "(?<{0}>.+)", m.Value );       
+            return string.Format( @"(?{0}.+|\s)", m.Value );       
         }
 
         private void WriteTag( string name, string value )
         {
             switch(name)
             {
-            case "<A>":
-                //tag.Album = value;
+            case "A":
+                tag.Performers = new string[1] { value };
                 break;
-            //case "<B>":
-            //    return tag.Album;
+            case "B":
+                tag.Album = value;
+                break;
             //case "<C>":
             //    return tag.Comment;
             //case "<P>":
@@ -181,11 +182,12 @@ namespace music_tagger
             //    return tag.BeatsPerMinute.ToString();
             //case "<I>":
             //    goto default;
-            //case "<T>":
-            //    return tag.Title;
-            //case "<K>":
-            //    string track_format = new string( '0', digits );
-            //    return tag.Track.ToString( track_format );
+            case "T":
+                tag.Title = value;
+                break;
+            case "K":
+                tag.Track = uint.Parse( value );
+                break;
             //case "<k>":
             //    return tag.TrackCount.ToString();
             //case "<Y>":

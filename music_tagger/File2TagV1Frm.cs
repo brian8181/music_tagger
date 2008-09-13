@@ -64,10 +64,19 @@ namespace music_tagger
                 infos[i] = items[i].Tag as FileInfo;
             }
 
-            Threading.File2TagProgressThread thread = new Threading.File2TagProgressThread(
-                infos,
-                cmbFormat.Text );
-            thread.Start();
+            //Threading.File2TagProgressThread thread = new Threading.File2TagProgressThread(
+            //    infos,
+            //    cmbFormat.Text );
+            //thread.Start();
+                       
+
+            foreach(FileInfo fi in infos)
+            {
+                TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+                File2TagFormatEvaluator eval = new File2TagFormatEvaluator( cmbFormat.Text, tag_file );
+                tag_file.Save();
+            }
+            Close();
         }
 
         private void btnCancel_Click( object sender, EventArgs e )
