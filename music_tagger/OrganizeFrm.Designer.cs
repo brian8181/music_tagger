@@ -222,7 +222,7 @@ namespace music_tagger
             this.Controls.Add( this.btnCancel );
             this.Controls.Add( this.btnOK );
             this.Controls.Add( this.formatCtrl1 );
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "OrganizeFrm";
             this.Text = "OrganizeFrm";
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).EndInit();

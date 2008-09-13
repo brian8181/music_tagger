@@ -98,7 +98,7 @@ namespace music_tagger
             item.BackColor = Color.Yellow;
             if(!multi_edit || ckArtist.Checked)
             {
-                item.Id3v1.Performers = Globals.GetArray( this.txtArtists.Text );
+                item.Id3v1.Performers = Functions.GetArray( this.txtArtists.Text );
             }
             if(!multi_edit || ckAlbum.Checked)
             {
@@ -259,7 +259,7 @@ namespace music_tagger
             StringBuilder sb = new StringBuilder();
             if(dlg.Strs != null)
             {
-                string s = Globals.GetString( dlg.Strs );
+                string s = Functions.GetString( dlg.Strs );
                 txtArtists.Text = s;
             }
             else

@@ -28,7 +28,7 @@ namespace music_tagger.Threading
 
                 TagLib.File tag_file = TagLib.File.Create( fi.FullName );
                 TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-                FormatEvaluator eval = new FormatEvaluator( format, id3v1 );
+                OrganizeFormatEvaluator eval = new OrganizeFormatEvaluator( format, id3v1 );
                 string dir = String.Format( "{0}\\{1}",
                     path.TrimEnd( '\\' ), eval.Value.TrimStart('\\') );
                 if(!Directory.Exists( dir ))
@@ -86,7 +86,7 @@ namespace music_tagger.Threading
 
                 TagLib.File tag_file = TagLib.File.Create( fi.FullName );
                 TagLib.Tag id3v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-                FormatEvaluator eval = new FormatEvaluator( format, id3v1 );
+                OrganizeFormatEvaluator eval = new OrganizeFormatEvaluator( format, id3v1 );
 
                 string fullname = String.Format( "{0}\\{1}{2}",
                    fi.DirectoryName, eval.Value.TrimStart( '\\' ), fi.Extension );
@@ -123,7 +123,7 @@ namespace music_tagger.Threading
 
                 TagLib.File tag_file = TagLib.File.Create( fi.FullName );
                 TagLib.Tag id3v2 = tag_file.GetTag( TagLib.TagTypes.Id3v2 );
-                FormatEvaluator eval = new FormatEvaluator( format, id3v2 );
+                OrganizeFormatEvaluator eval = new OrganizeFormatEvaluator( format, id3v2 );
 
                 string fullname = String.Format( "{0}\\{1}{2}",
                    fi.DirectoryName, eval.Value.TrimStart( '\\' ), fi.Extension );

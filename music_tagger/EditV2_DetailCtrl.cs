@@ -116,7 +116,7 @@ namespace music_tagger
                 item.Id3v2.Copyright = txtCopyright.Text;
                 item.Id3v2.Grouping = txtContentGroup.Text;
                 item.Id3v2.Conductor = txtConductor.Text;
-                item.Id3v2.Composers = Globals.GetArray( this.txtComposer.Text ); ;
+                item.Id3v2.Composers = Functions.GetArray( this.txtComposer.Text ); ;
             }
         }
     }

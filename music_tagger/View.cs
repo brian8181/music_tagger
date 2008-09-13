@@ -475,6 +475,11 @@ namespace music_tagger
         }
         #endregion
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listView_DoubleClick( object sender, EventArgs e )
         {
             if(this.type == TagLib.TagTypes.Id3v1)
@@ -486,7 +491,11 @@ namespace music_tagger
                 OnEditV2();
             }
         }
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listView_ItemDrag( object sender, ItemDragEventArgs e )
         {
             if(this.listView.SelectedItems.Count > 0)
@@ -497,6 +506,5 @@ namespace music_tagger
                 DoDragDrop( data, DragDropEffects.Copy );
             }
         }
-
     }
 }

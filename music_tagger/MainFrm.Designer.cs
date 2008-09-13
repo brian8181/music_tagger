@@ -93,7 +93,6 @@ namespace music_tagger
             this.tsVersionShown = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsScanSubs = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tree = new Tools.FileTreeView();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -142,6 +141,7 @@ namespace music_tagger
             this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSplitButton4 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.tree = new Tools.FileTreeView();
             this.view = new music_tagger.View();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
@@ -674,7 +674,7 @@ namespace music_tagger
                         | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom ) ) );
             this.tsCurrentPath.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.tsCurrentPath.Name = "tsCurrentPath";
-            this.tsCurrentPath.Size = new System.Drawing.Size( 855, 17 );
+            this.tsCurrentPath.Size = new System.Drawing.Size( 886, 17 );
             this.tsCurrentPath.Spring = true;
             this.tsCurrentPath.Text = "C:\\\\";
             // 
@@ -714,16 +714,6 @@ namespace music_tagger
             this.splitContainer1.Size = new System.Drawing.Size( 1119, 534 );
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // tree
-            // 
-            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tree.ImageIndex = 0;
-            this.tree.Location = new System.Drawing.Point( 0, 0 );
-            this.tree.Name = "tree";
-            this.tree.SelectedImageIndex = 0;
-            this.tree.Size = new System.Drawing.Size( 284, 534 );
-            this.tree.TabIndex = 0;
             // 
             // mainToolStrip
             // 
@@ -1158,6 +1148,17 @@ namespace music_tagger
             this.toolStripButton15.Name = "toolStripButton15";
             this.toolStripButton15.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton15.Text = "toolStripButton15";
+            // 
+            // tree
+            // 
+            this.tree.AllowDrop = true;
+            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tree.ImageIndex = 0;
+            this.tree.Location = new System.Drawing.Point( 0, 0 );
+            this.tree.Name = "tree";
+            this.tree.SelectedImageIndex = 0;
+            this.tree.Size = new System.Drawing.Size( 284, 534 );
+            this.tree.TabIndex = 0;
             // 
             // view
             // 

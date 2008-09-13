@@ -76,19 +76,19 @@ namespace music_tagger
             this.mnEditV1,
             this.mnEditV2} );
             this.contextViewMenu.Name = "contextViewMenu";
-            this.contextViewMenu.Size = new System.Drawing.Size( 199, 120 );
+            this.contextViewMenu.Size = new System.Drawing.Size( 168, 142 );
             // 
             // mnViewCopyTo
             // 
             this.mnViewCopyTo.Name = "mnViewCopyTo";
-            this.mnViewCopyTo.Size = new System.Drawing.Size( 198, 22 );
+            this.mnViewCopyTo.Size = new System.Drawing.Size( 167, 22 );
             this.mnViewCopyTo.Text = "&CopyTo";
             this.mnViewCopyTo.Click += new System.EventHandler( this.mnViewCopyTo_Click );
             // 
             // mnViewMoveTo
             // 
             this.mnViewMoveTo.Name = "mnViewMoveTo";
-            this.mnViewMoveTo.Size = new System.Drawing.Size( 198, 22 );
+            this.mnViewMoveTo.Size = new System.Drawing.Size( 167, 22 );
             this.mnViewMoveTo.Text = "MoveTo";
             this.mnViewMoveTo.Click += new System.EventHandler( this.mnViewMoveTo_Click );
             // 
@@ -96,29 +96,27 @@ namespace music_tagger
             // 
             this.mnViewSelectAll.Name = "mnViewSelectAll";
             this.mnViewSelectAll.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A ) ) );
-            this.mnViewSelectAll.Size = new System.Drawing.Size( 198, 22 );
+            this.mnViewSelectAll.Size = new System.Drawing.Size( 167, 22 );
             this.mnViewSelectAll.Text = "Select All";
             this.mnViewSelectAll.Click += new System.EventHandler( this.mnViewSelectAll_Click );
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size( 195, 6 );
+            this.toolStripSeparator1.Size = new System.Drawing.Size( 164, 6 );
             // 
             // mnEditV1
             // 
             this.mnEditV1.Image = global::music_tagger.Properties.Resources.v1;
             this.mnEditV1.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.mnEditV1.Name = "mnEditV1";
-            this.mnEditV1.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E ) ) );
-            this.mnEditV1.Size = new System.Drawing.Size( 198, 22 );
+            this.mnEditV1.Size = new System.Drawing.Size( 167, 22 );
             this.mnEditV1.Text = "Edit Tag Ver. 1";
             // 
             // mnEditV2
             // 
             this.mnEditV2.Name = "mnEditV2";
-            this.mnEditV2.ShortcutKeys = ( (System.Windows.Forms.Keys)( ( System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W ) ) );
-            this.mnEditV2.Size = new System.Drawing.Size( 198, 22 );
+            this.mnEditV2.Size = new System.Drawing.Size( 167, 22 );
             this.mnEditV2.Text = "Edit Tag Ver. 2";
             // 
             // View

@@ -119,7 +119,7 @@ namespace music_tagger
     /// <summary>
     /// globals
     /// </summary>
-    public static class Globals
+    public static class Functions
     {
         /// <summary>
         /// helper function creates an array from ';' delimited value

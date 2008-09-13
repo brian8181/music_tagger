@@ -113,7 +113,7 @@ namespace music_tagger
             if(item.Id3v2 != null)
             {
                 if(!multi_edit || ckArtist.Checked)
-                    item.Id3v2.Performers = Globals.GetArray( this.txtArtists.Text );
+                    item.Id3v2.Performers = Functions.GetArray( this.txtArtists.Text );
                 if(!multi_edit || ckAlbum.Checked)
                     item.Id3v2.Album = this.txtAlbum.Text;
                 if(!multi_edit || ckTitle.Checked)
@@ -134,7 +134,7 @@ namespace music_tagger
                 if(!multi_edit || ckBMP.Checked)
                     item.Id3v2.BeatsPerMinute = uint.TryParse( this.txtBPM.Text, out num ) ? num : 0;
                 if(!multi_edit || ckGenre.Checked)
-                    item.Id3v2.Genres = Globals.GetArray( txtGenres.Text );
+                    item.Id3v2.Genres = Functions.GetArray( txtGenres.Text );
                 if(!multi_edit || ckComment.Checked)
                     item.Id3v2.Comment = this.txtComment.Text;
 
@@ -380,7 +380,7 @@ namespace music_tagger
             StringBuilder sb = new StringBuilder();
             if(dlg.Strs != null)
             {
-                string s = Globals.GetString( dlg.Strs );
+                string s = Functions.GetString( dlg.Strs );
                 txtArtists.Text = s;
             }
             else
