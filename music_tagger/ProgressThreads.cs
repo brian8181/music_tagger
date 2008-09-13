@@ -63,6 +63,26 @@ namespace music_tagger.Threading
 
         public override void ThreadFunc()
         {
+            foreach(FileInfo fi in infos)
+            {
+                OnStatusUpdate( fi.Name );
+
+                TagLib.File tag_file = TagLib.File.Create( fi.FullName );
+               
+                File2TagFormatEvaluator eval = new File2TagFormatEvaluator( format, tag_file );
+
+                //string fullname = String.Format( "{0}\\{1}{2}",
+                //   fi.DirectoryName, eval.Value.TrimStart( '\\' ), fi.Extension );
+
+                //fi.MoveTo( fullname );
+                //Tools.Functions.MoveTo( fi, dir.TrimEnd( '\\' ), false );
+            }
+
+            OnStatusUpdate( "Finished" );
+
+            // HACK!!
+            System.Threading.Thread.Sleep( 0 );
+            SafeClose();
         }
     }
 

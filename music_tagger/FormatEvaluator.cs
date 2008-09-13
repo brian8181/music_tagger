@@ -132,6 +132,7 @@ namespace music_tagger
             : base( @"(?<SYM>\<\w\>)((?<SEP>.)|$)" )
         {
             this.file = file;
+            tag = file.GetTag( TagLib.TagTypes.Id3v1 );
             string fname = System.IO.Path.GetFileName(file.Name);
             Regex regx = new Regex( exp );
             MatchEvaluator meval = new MatchEvaluator( ReplaceFunc );
@@ -164,7 +165,7 @@ namespace music_tagger
             switch(name)
             {
             case "<A>":
-                tag.Album = value;
+                //tag.Album = value;
                 break;
             //case "<B>":
             //    return tag.Album;
