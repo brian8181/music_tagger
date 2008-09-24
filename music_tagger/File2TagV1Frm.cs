@@ -83,15 +83,30 @@ namespace music_tagger
         {
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        public void SaveSettings()
+        {
+            // formats
+            string[] fmts = new string[cmbFormat.Items.Count];
+            cmbFormat.Items.CopyTo( fmts, 0 );
+            //Properties.Settings.Default.org_formats.Clear();
+            //Properties.Settings.Default.org_formats.AddRange( fmts );
+            Properties.Settings.Default.Save();
+        }
         private void btnAdd_Click( object sender, EventArgs e )
         {
-
+            if(!cmbFormat.Items.Contains( cmbFormat.Text ))
+            {
+                cmbFormat.Items.Add( cmbFormat.Text );
+            }
+            SaveSettings();
         }
 
         private void btnRemove_Click( object sender, EventArgs e )
         {
-
+            cmbFormat.Items.Remove( cmbFormat.SelectedItem );
         }
     }
 }

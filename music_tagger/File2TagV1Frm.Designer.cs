@@ -41,7 +41,7 @@ namespace music_tagger
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.cmbFormat = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -175,15 +175,15 @@ namespace music_tagger
             this.label11.TabIndex = 9;
             this.label11.Text = "Format:";
             // 
-            // btnAdd
+            // btnSave
             // 
-            this.btnAdd.Location = new System.Drawing.Point( 266, 33 );
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size( 75, 23 );
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "&Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler( this.btnAdd_Click );
+            this.btnSave.Location = new System.Drawing.Point( 266, 33 );
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size( 75, 23 );
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "&Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler( this.btnAdd_Click );
             // 
             // btnRemove
             // 
@@ -232,7 +232,7 @@ namespace music_tagger
             this.Controls.Add( this.btnOK );
             this.Controls.Add( this.cmbFormat );
             this.Controls.Add( this.btnRemove );
-            this.Controls.Add( this.btnAdd );
+            this.Controls.Add( this.btnSave );
             this.Controls.Add( this.label11 );
             this.Controls.Add( this.groupBox1 );
             this.Controls.Add( this.label1 );
@@ -260,7 +260,7 @@ namespace music_tagger
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.ComboBox cmbFormat;
         private System.Windows.Forms.Button btnCancel;
