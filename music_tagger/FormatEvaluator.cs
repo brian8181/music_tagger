@@ -15,15 +15,11 @@ namespace music_tagger
         {
             this.exp = exp;
         }
-
     }
 
-    /// <summary>
-    /// evaluate and replace format specifers with content
-    /// </summary>
-    public class OrganizeFormatEvaluator : FormatEvaluator
+    public class FromTagEvaluator : FormatEvaluator
     {
-        protected TagLib.Tag tag = null;
+         protected TagLib.Tag tag = null;
         /// <summary>
         /// return formatted string
         /// </summary>
@@ -39,8 +35,8 @@ namespace music_tagger
         /// </summary>
         /// <param name="format"></param>
         /// <param name="tag"></param>
-        public OrganizeFormatEvaluator( string format, TagLib.Tag tag )
-            : base( @"\<[ABCEGKPRTYkp]\>" )
+        public FromTagEvaluator( string format, TagLib.Tag tag, string exp )
+            : base( exp )
         {
             this.tag = tag;
             Regex regx = new Regex( exp );
@@ -107,21 +103,38 @@ namespace music_tagger
                 return m.Value;
             }
         }
-
-        //public string Replacer( TagLib.Id3v2.Tag tag )
-        //{
-
-        //}
-
-        //public string Replacer( TagLib.Id3v1.Tag tag )
-        //{
-
-        //}
     }
 
-    //public class Tag2FileFormatEvaluator  : FormatEvaluator
-    //{
-    //}
+    /// <summary>
+    /// evaluate and replace format specifers with content
+    /// </summary>
+    public class OrganizeFormatEvaluator : FromTagEvaluator
+    {
+        //todo 
+        /// <summary>
+        /// default constuctor
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="tag"></param>
+        public OrganizeFormatEvaluator( string format, TagLib.Tag tag )
+            : base( format, tag, @"\<[ABCEGKPRTYkp]\>" )
+        {
+        }
+    }
+
+   public class Tag2FileFormatEvaluator  : FromTagEvaluator
+   {
+       //todo
+       /// <summary>
+        /// default constuctor
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="tag"></param>
+       public Tag2FileFormatEvaluator( string format, TagLib.Tag tag )
+            : base( format, tag, "TODO" )
+        {
+        }
+   }
 
     public class File2TagFormatEvaluator : FormatEvaluator
     {
@@ -147,9 +160,7 @@ namespace music_tagger
                 Group g = m.Groups[name];
                 WriteTag( name, g.Value );
             }
-
         }
-
         /// <summary>
         /// match evaluator callback function
         /// </summary>
@@ -159,7 +170,11 @@ namespace music_tagger
         {
             return string.Format( @"(?{0}.+|\s)", m.Value );
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
         private void WriteTag( string name, string value )
         {
             switch(name)
@@ -216,6 +231,5 @@ namespace music_tagger
                 return;
             }
         }
-
     }
 }
