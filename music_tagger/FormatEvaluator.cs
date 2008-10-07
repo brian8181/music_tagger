@@ -207,10 +207,10 @@ namespace music_tagger
                 tag.Track = uint.Parse( value );
                 break;
             case "k":
-                //tag.TrackCount.ToString();
+                tag.TrackCount = uint.Parse( value ); ;
                 break;
             case "Y":
-                //tag.Year.ToString();
+                tag.Year = uint.Parse( value );
                 break;
             case "G":
                 //tag.FirstGenre;

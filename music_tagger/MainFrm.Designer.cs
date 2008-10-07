@@ -93,8 +93,10 @@ namespace music_tagger
             this.tsVersionShown = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsScanSubs = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tree = new Tools.FileTreeView();
+            this.view = new music_tagger.View();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.tsb_Save = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -141,8 +143,6 @@ namespace music_tagger
             this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSplitButton4 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.tree = new Tools.FileTreeView();
-            this.view = new music_tagger.View();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -715,11 +715,32 @@ namespace music_tagger
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 0;
             // 
+            // tree
+            // 
+            this.tree.AllowDrop = true;
+            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tree.ImageIndex = 0;
+            this.tree.Location = new System.Drawing.Point( 0, 0 );
+            this.tree.Name = "tree";
+            this.tree.SelectedImageIndex = 0;
+            this.tree.Size = new System.Drawing.Size( 284, 534 );
+            this.tree.TabIndex = 0;
+            // 
+            // view
+            // 
+            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view.Location = new System.Drawing.Point( 0, 0 );
+            this.view.Name = "view";
+            this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
+            this.view.Size = new System.Drawing.Size( 831, 534 );
+            this.view.TabIndex = 0;
+            this.view.Type = TagLib.TagTypes.Id3v1;
+            // 
             // mainToolStrip
             // 
             this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.mainToolStrip.Items.AddRange( new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripButton,
+            this.tsb_Save,
             this.toolStripSeparator6,
             this.cutToolStripButton,
             this.copyToolStripButton,
@@ -728,17 +749,18 @@ namespace music_tagger
             this.helpToolStripButton} );
             this.mainToolStrip.Location = new System.Drawing.Point( 3, 24 );
             this.mainToolStrip.Name = "mainToolStrip";
-            this.mainToolStrip.Size = new System.Drawing.Size( 137, 25 );
+            this.mainToolStrip.Size = new System.Drawing.Size( 168, 25 );
             this.mainToolStrip.TabIndex = 1;
             // 
-            // saveToolStripButton
+            // tsb_Save
             // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ( (System.Drawing.Image)( resources.GetObject( "saveToolStripButton.Image" ) ) );
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size( 23, 22 );
-            this.saveToolStripButton.Text = "&Save";
+            this.tsb_Save.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_Save.Image = ( (System.Drawing.Image)( resources.GetObject( "tsb_Save.Image" ) ) );
+            this.tsb_Save.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_Save.Name = "tsb_Save";
+            this.tsb_Save.Size = new System.Drawing.Size( 23, 22 );
+            this.tsb_Save.Text = "&Save";
+            this.tsb_Save.Click += new System.EventHandler( this.On_Save );
             // 
             // toolStripSeparator6
             // 
@@ -802,7 +824,7 @@ namespace music_tagger
             this.tsb_RemoveV2,
             this.tsFile2TagV2,
             this.tsTagV22File} );
-            this.toolStrip2.Location = new System.Drawing.Point( 140, 24 );
+            this.toolStrip2.Location = new System.Drawing.Point( 171, 24 );
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size( 337, 25 );
             this.toolStrip2.TabIndex = 2;
@@ -1149,27 +1171,6 @@ namespace music_tagger
             this.toolStripButton15.Size = new System.Drawing.Size( 23, 22 );
             this.toolStripButton15.Text = "toolStripButton15";
             // 
-            // tree
-            // 
-            this.tree.AllowDrop = true;
-            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tree.ImageIndex = 0;
-            this.tree.Location = new System.Drawing.Point( 0, 0 );
-            this.tree.Name = "tree";
-            this.tree.SelectedImageIndex = 0;
-            this.tree.Size = new System.Drawing.Size( 284, 534 );
-            this.tree.TabIndex = 0;
-            // 
-            // view
-            // 
-            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.view.Location = new System.Drawing.Point( 0, 0 );
-            this.view.Name = "view";
-            this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
-            this.view.Size = new System.Drawing.Size( 831, 534 );
-            this.view.TabIndex = 0;
-            this.view.Type = TagLib.TagTypes.Id3v1;
-            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
@@ -1228,7 +1229,7 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripMenuItem mnHelpIndex;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton tsb_Save;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton cutToolStripButton;
         private System.Windows.Forms.ToolStripButton copyToolStripButton;

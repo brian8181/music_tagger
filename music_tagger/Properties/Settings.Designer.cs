@@ -13,7 +13,7 @@ namespace music_tagger.Properties {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "8.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
@@ -192,23 +192,29 @@ namespace music_tagger.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection file2tagv1_fomats {
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
+            "tring>&lt;K&gt;-&lt;T&gt;</string>\r\n</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection file2tagv1_formats {
             get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["file2tagv1_fomats"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["file2tagv1_formats"]));
             }
             set {
-                this["file2tagv1_fomats"] = value;
+                this["file2tagv1_formats"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection file2tagv2_fomats {
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
+            "tring>&lt;K&gt;-&lt;T&gt;</string>\r\n</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection file2tagv2_formats {
             get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["file2tagv2_fomats"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["file2tagv2_formats"]));
             }
             set {
-                this["file2tagv2_fomats"] = value;
+                this["file2tagv2_formats"] = value;
             }
         }
         
@@ -265,6 +271,30 @@ namespace music_tagger.Properties {
             }
             set {
                 this["pref_default_type"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<K>-<T>")]
+        public string file2tagv1_last_format {
+            get {
+                return ((string)(this["file2tagv1_last_format"]));
+            }
+            set {
+                this["file2tagv1_last_format"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<K>-<T>")]
+        public string file2tagv2_last_format {
+            get {
+                return ((string)(this["file2tagv2_last_format"]));
+            }
+            set {
+                this["file2tagv2_last_format"] = value;
             }
         }
     }

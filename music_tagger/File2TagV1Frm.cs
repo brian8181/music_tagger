@@ -11,7 +11,8 @@ namespace music_tagger
 {
     public partial class File2TagV1Frm : EditFrm
     {
-        
+
+        View view = null;
         public File2TagV1Frm()  
         {
             InitializeComponent();
@@ -21,9 +22,15 @@ namespace music_tagger
         /// 
         /// </summary>
         /// <param name="lv"></param>
-        public File2TagV1Frm( ListView lv ) : base(lv)
+        public File2TagV1Frm( View view ) : base(view.ListView)
         {
             InitializeComponent();
+
+            this.view = view;
+            string[] fmts = new string[Properties.Settings.Default.file2tagv1_formats.Count];
+            Properties.Settings.Default.file2tagv1_formats.CopyTo( fmts, 0 );
+            cmbFormat.Items.AddRange( fmts );
+            cmbFormat.SelectedIndex = cmbFormat.FindStringExact( Properties.Settings.Default.file2tagv1_last_format );
         }
 
         ///// <summary>
@@ -76,6 +83,7 @@ namespace music_tagger
                 File2TagFormatEvaluator eval = new File2TagFormatEvaluator( cmbFormat.Text, tag_file );
                 tag_file.Save();
             }
+            view.RefreshView();
             Close();
         }
 
@@ -91,8 +99,9 @@ namespace music_tagger
             // formats
             string[] fmts = new string[cmbFormat.Items.Count];
             cmbFormat.Items.CopyTo( fmts, 0 );
-            //Properties.Settings.Default.org_formats.Clear();
-            //Properties.Settings.Default.org_formats.AddRange( fmts );
+            Properties.Settings.Default.file2tagv1_formats.Clear();
+            Properties.Settings.Default.file2tagv1_formats.AddRange( fmts );
+            Properties.Settings.Default.file2tagv1_last_format = cmbFormat.Text;
             Properties.Settings.Default.Save();
         }
         private void btnAdd_Click( object sender, EventArgs e )

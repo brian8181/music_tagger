@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="music_tagger.Threading.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="music_tagger.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="columns" Type="System.Collections.Specialized.StringCollection" Scope="User">
@@ -63,11 +63,17 @@
   &lt;string&gt;&amp;lt;A&amp;gt; - &amp;lt;B&amp;gt; - &amp;lt;T&amp;gt;&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="file2tagv1_fomats" Type="System.Collections.Specialized.StringCollection" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="file2tagv1_formats" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;&amp;lt;K&amp;gt;-&amp;lt;T&amp;gt;&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="file2tagv2_fomats" Type="System.Collections.Specialized.StringCollection" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="file2tagv2_formats" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;&amp;lt;K&amp;gt;-&amp;lt;T&amp;gt;&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="cols" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -97,6 +103,12 @@
     </Setting>
     <Setting Name="pref_default_type" Type="System.String" Scope="User">
       <Value Profile="(Default)">Current</Value>
+    </Setting>
+    <Setting Name="file2tagv1_last_format" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;K&gt;-&lt;T&gt;</Value>
+    </Setting>
+    <Setting Name="file2tagv2_last_format" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;K&gt;-&lt;T&gt;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

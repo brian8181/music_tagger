@@ -281,10 +281,10 @@ namespace music_tagger
         /// <param name="e"></param>
         private void mnFile2TagV1_Click( object sender, EventArgs e )
         {
-            File2TagV1Frm dlg = new File2TagV1Frm( view.ListView );
+            File2TagV1Frm dlg = new File2TagV1Frm( view );
             if(dlg.ShowDialog() == DialogResult.OK)
             {
-                // todo
+                //
             }
         }
         /// <summary>
@@ -384,10 +384,10 @@ namespace music_tagger
             DialogResult dr = MessageBox.Show(
                     Properties.Resources.commit_warning,
                     Properties.Resources.save_pending,
-                    MessageBoxButtons.OK,
+                    MessageBoxButtons.YesNo,
                     MessageBoxIcon.Asterisk );
 
-            if(dr == DialogResult.OK)
+            if(dr == DialogResult.Yes)
             {
                 view.Commit();
             }

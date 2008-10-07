@@ -28,7 +28,7 @@ namespace music_tagger
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFormat = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -39,13 +39,13 @@ namespace music_tagger
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmbFormat
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point( 47, 12 );
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size( 395, 21 );
-            this.comboBox1.TabIndex = 0;
+            this.cmbFormat.FormattingEnabled = true;
+            this.cmbFormat.Location = new System.Drawing.Point( 47, 12 );
+            this.cmbFormat.Name = "cmbFormat";
+            this.cmbFormat.Size = new System.Drawing.Size( 395, 21 );
+            this.cmbFormat.TabIndex = 0;
             // 
             // button1
             // 
@@ -119,7 +119,8 @@ namespace music_tagger
             this.Controls.Add( this.label19 );
             this.Controls.Add( this.button2 );
             this.Controls.Add( this.button1 );
-            this.Controls.Add( this.comboBox1 );
+            this.Controls.Add( this.cmbFormat );
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "File2TagV2Frm";
             this.Text = "File2TagV2Frm";
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown1 ) ).EndInit();
@@ -130,7 +131,7 @@ namespace music_tagger
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFormat;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label19;
