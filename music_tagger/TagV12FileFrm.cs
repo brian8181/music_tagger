@@ -80,6 +80,7 @@ namespace music_tagger
                 infos,
                 cmbFormat.Text );
             thread.StatusUpdate += new EventHandler<Threading.ProgressThread.StatusArgs>( thread_StatusUpdate );
+            thread.Finished += new EventHandler<EventArgs>( thread_Finished );
             thread.Start();
         }
         /// <summary>
@@ -100,6 +101,15 @@ namespace music_tagger
                 btnCancel.Text = "Done";
                 view.RefreshView();
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void thread_Finished( object sender, EventArgs e )
+        {
+            Close();
         }
         private void btnCancel_Click( object sender, EventArgs e )
         {

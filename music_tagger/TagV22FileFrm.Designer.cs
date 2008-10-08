@@ -44,9 +44,7 @@ namespace music_tagger
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
             this.lblBitrate = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblBMP = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -73,7 +71,7 @@ namespace music_tagger
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point( 134, 164 );
+            this.label13.Location = new System.Drawing.Point( 154, 151 );
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size( 32, 13 );
             this.label13.TabIndex = 12;
@@ -81,14 +79,14 @@ namespace music_tagger
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point( 306, 162 );
+            this.numericUpDown2.Location = new System.Drawing.Point( 312, 149 );
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size( 72, 20 );
             this.numericUpDown2.TabIndex = 11;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point( 176, 164 );
+            this.numericUpDown1.Location = new System.Drawing.Point( 192, 149 );
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size( 72, 20 );
             this.numericUpDown1.TabIndex = 10;
@@ -96,7 +94,7 @@ namespace music_tagger
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point( 105, 67 );
+            this.label15.Location = new System.Drawing.Point( 67, 65 );
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size( 155, 13 );
             this.label15.TabIndex = 33;
@@ -105,7 +103,7 @@ namespace music_tagger
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point( 264, 164 );
+            this.label14.Location = new System.Drawing.Point( 270, 151 );
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size( 36, 13 );
             this.label14.TabIndex = 13;
@@ -113,9 +111,7 @@ namespace music_tagger
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add( this.label20 );
             this.groupBox1.Controls.Add( this.lblBitrate );
-            this.groupBox1.Controls.Add( this.label18 );
             this.groupBox1.Controls.Add( this.label17 );
             this.groupBox1.Controls.Add( this.lblBMP );
             this.groupBox1.Controls.Add( this.label16 );
@@ -140,7 +136,7 @@ namespace music_tagger
             this.groupBox1.Controls.Add( this.label12 );
             this.groupBox1.Location = new System.Drawing.Point( 5, 91 );
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size( 440, 211 );
+            this.groupBox1.Size = new System.Drawing.Size( 440, 187 );
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parameters";
@@ -148,7 +144,7 @@ namespace music_tagger
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point( 13, 164 );
+            this.label12.Location = new System.Drawing.Point( 13, 151 );
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size( 89, 13 );
             this.label12.TabIndex = 9;
@@ -157,7 +153,7 @@ namespace music_tagger
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point( 5, 305 );
+            this.label1.Location = new System.Drawing.Point( 5, 281 );
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size( 440, 49 );
             this.label1.TabIndex = 25;
@@ -165,16 +161,17 @@ namespace music_tagger
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point( 289, 357 );
+            this.btnOK.Location = new System.Drawing.Point( 289, 333 );
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size( 75, 23 );
             this.btnOK.TabIndex = 31;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler( this.btnOK_Click );
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point( 370, 357 );
+            this.btnCancel.Location = new System.Drawing.Point( 370, 333 );
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size( 75, 23 );
             this.btnCancel.TabIndex = 32;
@@ -218,37 +215,19 @@ namespace music_tagger
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point( 275, 65 );
+            this.numericUpDown3.Location = new System.Drawing.Point( 228, 63 );
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size( 60, 20 );
             this.numericUpDown3.TabIndex = 34;
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point( 151, 129 );
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size( 53, 13 );
-            this.label20.TabIndex = 39;
-            this.label20.Text = "\\ = Folder";
-            // 
             // lblBitrate
             // 
             this.lblBitrate.AutoSize = true;
-            this.lblBitrate.Location = new System.Drawing.Point( 13, 129 );
+            this.lblBitrate.Location = new System.Drawing.Point( 311, 111 );
             this.lblBitrate.Name = "lblBitrate";
             this.lblBitrate.Size = new System.Drawing.Size( 64, 13 );
             this.lblBitrate.TabIndex = 38;
             this.lblBitrate.Text = "<I> = Bitrate";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point( 311, 111 );
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size( 75, 13 );
-            this.label18.TabIndex = 37;
-            this.label18.Text = "<X> = Unsued";
             // 
             // label17
             // 
@@ -407,7 +386,7 @@ namespace music_tagger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size( 452, 385 );
+            this.ClientSize = new System.Drawing.Size( 452, 358 );
             this.Controls.Add( this.label15 );
             this.Controls.Add( this.groupBox1 );
             this.Controls.Add( this.label1 );
@@ -419,6 +398,8 @@ namespace music_tagger
             this.Controls.Add( this.btnSave );
             this.Controls.Add( this.numericUpDown3 );
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TagV22FileFrm";
             this.Text = "TAG Ver.2 -> Filename";
             ( (System.ComponentModel.ISupportInitialize)( this.numericUpDown2 ) ).EndInit();
@@ -448,9 +429,7 @@ namespace music_tagger
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblBitrate;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblBMP;
         private System.Windows.Forms.Label label16;
