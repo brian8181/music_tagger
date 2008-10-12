@@ -85,6 +85,5 @@ namespace music_tagger
             }
             Close();
         }
-       
     }
 }

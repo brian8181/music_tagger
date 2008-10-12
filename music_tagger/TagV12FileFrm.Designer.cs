@@ -71,6 +71,7 @@ namespace music_tagger
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point( 347, 260 );
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size( 75, 23 );
@@ -297,8 +298,10 @@ namespace music_tagger
             // 
             // TagV12FileFrm
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size( 425, 286 );
             this.Controls.Add( this.label15 );
             this.Controls.Add( this.numericUpDown3 );
@@ -312,6 +315,7 @@ namespace music_tagger
             this.Controls.Add( this.btnOK );
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "TagV12FileFrm";
+            this.ShowInTaskbar = false;
             this.Text = "TAG Ver.1 -> Filename";
             this.groupBox1.ResumeLayout( false );
             this.groupBox1.PerformLayout();

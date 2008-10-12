@@ -164,9 +164,11 @@ namespace music_tagger.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>&lt;A&gt; - &lt;B&gt; - &lt;T&gt;</string>\r\n</ArrayOfString>")]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>&lt;K&gt;-&lt;T&gt;</string>
+  <string>&lt;A&gt; - &lt;B&gt; - &lt;T&gt;</string>
+</ArrayOfString>")]
         public global::System.Collections.Specialized.StringCollection tagv12file_formats {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["tagv12file_formats"]));
@@ -178,9 +180,11 @@ namespace music_tagger.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>&lt;A&gt; - &lt;B&gt; - &lt;T&gt;</string>\r\n</ArrayOfString>")]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>&lt;K&gt;-&lt;T&gt;</string>
+  <string>&lt;A&gt; - &lt;B&gt; - &lt;T&gt;</string>
+</ArrayOfString>")]
         public global::System.Collections.Specialized.StringCollection tagv22file_formats {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["tagv22file_formats"]));
@@ -295,6 +299,30 @@ namespace music_tagger.Properties {
             }
             set {
                 this["file2tagv2_last_format"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<K>-<T>")]
+        public string tagv12file_last_format {
+            get {
+                return ((string)(this["tagv12file_last_format"]));
+            }
+            set {
+                this["tagv12file_last_format"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<K>-<T>")]
+        public string tagv22file_last_format {
+            get {
+                return ((string)(this["tagv22file_last_format"]));
+            }
+            set {
+                this["tagv22file_last_format"] = value;
             }
         }
     }

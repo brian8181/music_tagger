@@ -238,6 +238,7 @@ namespace music_tagger
             this.Controls.Add( this.label1 );
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "File2TagV1Frm";
+            this.ShowInTaskbar = false;
             this.Text = "Filename - > TAG ver. 1";
             this.groupBox1.ResumeLayout( false );
             this.groupBox1.PerformLayout();

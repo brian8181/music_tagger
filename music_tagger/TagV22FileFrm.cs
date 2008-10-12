@@ -12,7 +12,6 @@ namespace music_tagger
     public partial class TagV22FileFrm : EditFrm
     {
         View view = null;
-       
         /// <summary>
         /// 
         /// </summary>
@@ -33,7 +32,7 @@ namespace music_tagger
             string[] fmts = new string[Properties.Settings.Default.tagv22file_formats.Count];
             Properties.Settings.Default.tagv22file_formats.CopyTo( fmts, 0 );
             cmbFormat.Items.AddRange( fmts );
-            cmbFormat.SelectedIndex = 0;
+            cmbFormat.SelectedIndex = cmbFormat.FindStringExact( Properties.Settings.Default.tagv22file_last_format );
         }
         /// <summary>
         /// 
@@ -45,6 +44,7 @@ namespace music_tagger
             cmbFormat.Items.CopyTo( fmts, 0 );
             Properties.Settings.Default.tagv22file_formats.Clear();
             Properties.Settings.Default.tagv22file_formats.AddRange( fmts );
+            Properties.Settings.Default.tagv22file_last_format = cmbFormat.Text;
             Properties.Settings.Default.Save();
         }
         /// <summary>
@@ -70,6 +70,7 @@ namespace music_tagger
             {
                 infos[i] = items[i].Tag as FileInfo;
             }
+            SaveSettings();
             Threading.TagV22FileProgressThread thread = new Threading.TagV22FileProgressThread(
                 infos,
                 cmbFormat.Text );
@@ -105,6 +106,11 @@ namespace music_tagger
         {
             Close();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click( object sender, EventArgs e )
         {
             Close();

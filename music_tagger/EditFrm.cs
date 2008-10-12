@@ -46,5 +46,18 @@ namespace music_tagger
         public virtual void Initialize()
         {
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // EditFrm
+            // 
+            this.ClientSize = new System.Drawing.Size( 292, 273 );
+            this.Name = "EditFrm";
+            this.ShowInTaskbar = false;
+            this.ResumeLayout( false );
+
+        }
     }
 }
