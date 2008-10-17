@@ -13,10 +13,7 @@ namespace music_tagger
     {
 
         View view = null;
-        public File2TagV2Frm()
-        {
-            InitializeComponent();
-        }
+        
 
         /// <summary>
         /// 

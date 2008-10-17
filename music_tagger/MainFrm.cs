@@ -316,7 +316,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void mnFile2TagV2_Click( object sender, EventArgs e )
         {
-            File2TagV2Frm dlg = new File2TagV2Frm();
+            File2TagV2Frm dlg = new File2TagV2Frm( this.view );
             if(dlg.ShowDialog() == DialogResult.OK)
             {
                 // todo
