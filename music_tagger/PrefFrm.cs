@@ -33,6 +33,22 @@ namespace music_tagger
             DefaultType default_type = 
                 (DefaultType)Enum.Parse( typeof( DefaultType ), Properties.Settings.Default.pref_default_type );
 
+            switch (default_type)
+            {
+                case DefaultType.Current:
+                    rbEditCurrent.Checked = true;
+                    break;
+                case DefaultType.V1:
+                    rbEditV1.Checked = true;
+                    break;
+                case DefaultType.V2:
+                    rbEditV2.Checked = true;
+                    break;
+                default:
+                    rbEditCurrent.Checked = true;
+                    break;
+            }
+
             // get current col settings
             foreach(string str_col in Properties.Settings.Default.cols)
             {

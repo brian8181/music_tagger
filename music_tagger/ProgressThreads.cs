@@ -45,9 +45,10 @@ namespace music_tagger.Threading
                 }
             }
 
-            // HACK!!
-            //System.Threading.Thread.Sleep( 0 );
+            // hold open for at least ...
+            System.Threading.Thread.Sleep( 1000 );
             SafeClose();
+            OnFinished();
         }
     }
 

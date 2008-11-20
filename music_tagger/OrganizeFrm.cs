@@ -142,8 +142,40 @@ namespace music_tagger
                 txtPath.Text, 
                 ckCopy.Checked, 
                 ckOverwrite.Checked );
+            thread.Finished += new EventHandler<EventArgs>(thread_Finished);
             thread.Start();
+           
         }
+
+        void thread_Finished(object sender, EventArgs e)
+        {
+            SafeClose();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void SafeClose()
+        {
+            SafeClose(this, EventArgs.Empty);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SafeClose(object sender, EventArgs args)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(
+                    new EventHandler(SafeClose), sender, args);
+                return;
+            }
+
+            Close();
+        }
+
         /// <summary>
         /// 
         /// </summary>
