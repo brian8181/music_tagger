@@ -67,14 +67,14 @@ namespace Tools.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap hard_drive_ {
+        internal static System.Drawing.Bitmap hard_drive {
             get {
                 object obj = ResourceManager.GetObject("hard_drive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap hard_drive {
+        internal static System.Drawing.Bitmap hard_drive2 {
             get {
                 object obj = ResourceManager.GetObject("hard_drive2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

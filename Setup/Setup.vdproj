@@ -15,13 +15,19 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_14C9F4B68A4C5289863466C81E4642AD"
+        "MsmKey" = "8:_0741FE3FF328CAF56531E27338781FD1"
         "OwnerKey" = "8:_B7F5349F920C4615BAD157F82E3185C0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_1637E27965EF815F40ED1D76543EF9F0"
+        "MsmKey" = "8:_0CA9E504BDE91078BD9FED2B8B5A3FFC"
+        "OwnerKey" = "8:_B7F5349F920C4615BAD157F82E3185C0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_68DFC753C8339E0CE1645033BF610AB2"
         "OwnerKey" = "8:_B7F5349F920C4615BAD157F82E3185C0"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,12 +39,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F7C7A35CFA48C3E5ED44CEFE92871F24"
-        "OwnerKey" = "8:_B7F5349F920C4615BAD157F82E3185C0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_B7F5349F920C4615BAD157F82E3185C0"
         "MsmSig" = "8:_UNDEFINED"
@@ -46,19 +46,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F7C7A35CFA48C3E5ED44CEFE92871F24"
+        "OwnerKey" = "8:_0741FE3FF328CAF56531E27338781FD1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_14C9F4B68A4C5289863466C81E4642AD"
+        "OwnerKey" = "8:_0CA9E504BDE91078BD9FED2B8B5A3FFC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1637E27965EF815F40ED1D76543EF9F0"
+        "OwnerKey" = "8:_68DFC753C8339E0CE1645033BF610AB2"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -151,14 +151,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_14C9F4B68A4C5289863466C81E4642AD"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0741FE3FF328CAF56531E27338781FD1"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Tools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_14C9F4B68A4C5289863466C81E4642AD"
+                    "_0741FE3FF328CAF56531E27338781FD1"
                     {
                     "Name" = "8:Tools.dll"
                     "Attributes" = "3:512"
@@ -182,14 +182,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1637E27965EF815F40ED1D76543EF9F0"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0CA9E504BDE91078BD9FED2B8B5A3FFC"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:taglib-sharp, Version=2.0.3.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:taglib-sharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1637E27965EF815F40ED1D76543EF9F0"
+                    "_0CA9E504BDE91078BD9FED2B8B5A3FFC"
                     {
                     "Name" = "8:taglib-sharp.dll"
                     "Attributes" = "3:512"
@@ -213,14 +213,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F7C7A35CFA48C3E5ED44CEFE92871F24"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_68DFC753C8339E0CE1645033BF610AB2"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:XPExplorerBar, Version=3.3.0.0, Culture=neutral, PublicKeyToken=26272737b5f33015, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F7C7A35CFA48C3E5ED44CEFE92871F24"
+                    "_68DFC753C8339E0CE1645033BF610AB2"
                     {
                     "Name" = "8:XPExplorerBar.dll"
                     "Attributes" = "3:512"
@@ -305,13 +305,14 @@
         "MsiBootstrapper"
         {
         "LangId" = "3:1033"
+        "RequiresElevation" = "11:FALSE"
         }
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{85E6C660-0C5F-4F0F-A836-6B3DA93074AC}"
-        "PackageCode" = "8:{90543DF8-595B-4441-B380-526A911F4356}"
+        "PackageCode" = "8:{6DC6F217-AF09-4E11-861D-7B483FF3355E}"
         "UpgradeCode" = "8:{D90E151A-9752-4958-A86B-9EDBBF735093}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -410,6 +411,70 @@
             {
                 "Keys"
                 {
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_451ED3197702446BAF109073F2D6235B"
+                    {
+                    "Name" = "8:Folder"
+                    "Condition" = "8:"
+                    "AlwaysCreate" = "11:FALSE"
+                    "DeleteAtUninstall" = "11:FALSE"
+                    "Transitive" = "11:FALSE"
+                        "Keys"
+                        {
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_27C10EA420BA4F00A4DAE13A660B1CE0"
+                            {
+                            "Name" = "8:shell"
+                            "Condition" = "8:"
+                            "AlwaysCreate" = "11:FALSE"
+                            "DeleteAtUninstall" = "11:FALSE"
+                            "Transitive" = "11:FALSE"
+                                "Keys"
+                                {
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_5B71EDA7FF004D1184EE3C5C2C7F04AF"
+                                    {
+                                    "Name" = "8:Tagger"
+                                    "Condition" = "8:"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "DeleteAtUninstall" = "11:FALSE"
+                                    "Transitive" = "11:FALSE"
+                                        "Keys"
+                                        {
+                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_C10D938F6DB54153957C2944FE321B5A"
+                                            {
+                                            "Name" = "8:command"
+                                            "Condition" = "8:"
+                                            "AlwaysCreate" = "11:FALSE"
+                                            "DeleteAtUninstall" = "11:FALSE"
+                                            "Transitive" = "11:FALSE"
+                                                "Keys"
+                                                {
+                                                }
+                                                "Values"
+                                                {
+                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_841AB43DA94C4B7E854FC6C53F0EFCA4"
+                                                    {
+                                                    "Name" = "8:"
+                                                    "Condition" = "8:"
+                                                    "Transitive" = "11:FALSE"
+                                                    "ValueTypes" = "3:1"
+                                                    "Value" = "8:\"C:\\Program Files\\Setup\\music_tagger.exe\" \"%1\""
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        "Values"
+                                        {
+                                        }
+                                    }
+                                }
+                                "Values"
+                                {
+                                }
+                            }
+                        }
+                        "Values"
+                        {
+                        }
+                    }
                 }
             }
             "HKU"
@@ -997,9 +1062,6 @@
                 {
                 }
             }
-        }
-        "VJSharpPlugin"
-        {
         }
     }
 }
