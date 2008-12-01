@@ -35,8 +35,8 @@
     <Setting Name="org_formats" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;&amp;lt;K&amp;gt;-&amp;lt;A&amp;gt;-&amp;lt;B&amp;gt;-&amp;lt;T&amp;gt;&lt;/string&gt;
-  &lt;string&gt;&amp;lt;A&amp;gt;\&amp;lt;B&amp;gt;\&amp;lt;K&amp;gt;-&amp;lt;T&amp;gt;&lt;/string&gt;
+  &lt;string&gt;&amp;lt;A&amp;gt;-&amp;lt;B&amp;gt;&lt;/string&gt;
+  &lt;string&gt;&amp;lt;A&amp;gt;\&amp;lt;B&amp;gt;&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="org_ver1" Type="System.Boolean" Scope="User">
@@ -101,7 +101,7 @@
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="org_last_format" Type="System.String" Scope="User">
-      <Value Profile="(Default)">&lt;K&gt;-&lt;A&gt;-&lt;B&gt;-&lt;T&gt;</Value>
+      <Value Profile="(Default)">&lt;A&gt;\&lt;B&gt;</Value>
     </Setting>
     <Setting Name="pref_default_type" Type="System.String" Scope="User">
       <Value Profile="(Default)">Current</Value>

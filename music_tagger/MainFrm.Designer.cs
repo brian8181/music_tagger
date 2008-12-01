@@ -431,26 +431,28 @@ namespace music_tagger
             this.mnEditV1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.mnEditV1.Size = new System.Drawing.Size(234, 22);
             this.mnEditV1.Text = "Edit Tag Ver. 1";
-            this.mnEditV1.Click += new System.EventHandler(this.On_EditV1_Click);
+            this.mnEditV1.Click += new System.EventHandler(this.OnEditV1_Click);
             // 
             // mnMultiEditV1
             // 
+            this.mnMultiEditV1.Image = global::music_tagger.Properties.Resources.v1_many;
             this.mnMultiEditV1.Name = "mnMultiEditV1";
             this.mnMultiEditV1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
             this.mnMultiEditV1.Size = new System.Drawing.Size(234, 22);
             this.mnMultiEditV1.Text = "Multi-Tag Edit Ver. 1";
-            this.mnMultiEditV1.Click += new System.EventHandler(this.tsb_EditV1Multi_Click);
+            this.mnMultiEditV1.Click += new System.EventHandler(this.OnEditV1Multi_Click);
             // 
             // mnRemoveTagV1
             // 
+            this.mnRemoveTagV1.Image = global::music_tagger.Properties.Resources.delv1;
             this.mnRemoveTagV1.Name = "mnRemoveTagV1";
             this.mnRemoveTagV1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F11)));
             this.mnRemoveTagV1.Size = new System.Drawing.Size(234, 22);
             this.mnRemoveTagV1.Text = "Remove Tag Ver. 1 ";
-            this.mnRemoveTagV1.Click += new System.EventHandler(this.mnRemoveTagV1_Click);
             // 
             // mnFile2TagV1
             // 
+            this.mnFile2TagV1.Image = global::music_tagger.Properties.Resources.file2v1;
             this.mnFile2TagV1.Name = "mnFile2TagV1";
             this.mnFile2TagV1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.mnFile2TagV1.Size = new System.Drawing.Size(234, 22);
@@ -459,6 +461,7 @@ namespace music_tagger
             // 
             // mnTag2FileV1
             // 
+            this.mnTag2FileV1.Image = global::music_tagger.Properties.Resources.v12file;
             this.mnTag2FileV1.Name = "mnTag2FileV1";
             this.mnTag2FileV1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
             this.mnTag2FileV1.Size = new System.Drawing.Size(234, 22);
@@ -472,43 +475,48 @@ namespace music_tagger
             // 
             // mnEditV2
             // 
+            this.mnEditV2.Image = global::music_tagger.Properties.Resources.v2;
             this.mnEditV2.Name = "mnEditV2";
             this.mnEditV2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
             this.mnEditV2.Size = new System.Drawing.Size(234, 22);
             this.mnEditV2.Text = "Edit Tag Ver. 2";
-            this.mnEditV2.Click += new System.EventHandler(this.tsb_EditV2_Click);
+            this.mnEditV2.Click += new System.EventHandler(this.OnEditV2_Click);
             // 
             // mnMultiEditV2
             // 
+            this.mnMultiEditV2.Image = global::music_tagger.Properties.Resources.v2_many;
             this.mnMultiEditV2.Name = "mnMultiEditV2";
             this.mnMultiEditV2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.mnMultiEditV2.Size = new System.Drawing.Size(234, 22);
             this.mnMultiEditV2.Text = "Multi-Tag Edit Ver. 2";
-            this.mnMultiEditV2.Click += new System.EventHandler(this.tsb_EditV2Multi_Click);
+            this.mnMultiEditV2.Click += new System.EventHandler(this.OnEditV2Multi_Click);
             // 
             // mnRemoveTagV2
             // 
+            this.mnRemoveTagV2.Image = global::music_tagger.Properties.Resources.delv2;
             this.mnRemoveTagV2.Name = "mnRemoveTagV2";
             this.mnRemoveTagV2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F12)));
             this.mnRemoveTagV2.Size = new System.Drawing.Size(234, 22);
             this.mnRemoveTagV2.Text = "Remove Tag Ver. 2";
-            this.mnRemoveTagV2.Click += new System.EventHandler(this.mnRemoveTagV2_Click);
+            this.mnRemoveTagV2.Click += new System.EventHandler(this.OnRemoveTagV2_Click);
             // 
             // mnFile2TagV2
             // 
+            this.mnFile2TagV2.Image = global::music_tagger.Properties.Resources.file2v2;
             this.mnFile2TagV2.Name = "mnFile2TagV2";
             this.mnFile2TagV2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
             this.mnFile2TagV2.Size = new System.Drawing.Size(234, 22);
             this.mnFile2TagV2.Text = "Filename -> Tag Ver. 2";
-            this.mnFile2TagV2.Click += new System.EventHandler(this.mnFile2TagV2_Click);
+            this.mnFile2TagV2.Click += new System.EventHandler(this.OnFile2TagV2_Click);
             // 
             // mnTag2FileV2
             // 
+            this.mnTag2FileV2.Image = global::music_tagger.Properties.Resources.v22file;
             this.mnTag2FileV2.Name = "mnTag2FileV2";
             this.mnTag2FileV2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.mnTag2FileV2.Size = new System.Drawing.Size(234, 22);
             this.mnTag2FileV2.Text = "Tag Ver. 2 -> Filename";
-            this.mnTag2FileV2.Click += new System.EventHandler(this.mnTag2FileV2_Click);
+            this.mnTag2FileV2.Click += new System.EventHandler(this.OnTag2FileV2_Click);
             // 
             // extentedFunctionsToolStripMenuItem
             // 
@@ -629,7 +637,7 @@ namespace music_tagger
             // toolStripContainer.ContentPanel
             // 
             this.toolStripContainer.ContentPanel.Controls.Add(this.splitContainer1);
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(1119, 559);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(1119, 534);
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer.Name = "toolStripContainer";
@@ -711,7 +719,7 @@ namespace music_tagger
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.view);
-            this.splitContainer1.Size = new System.Drawing.Size(1119, 559);
+            this.splitContainer1.Size = new System.Drawing.Size(1119, 534);
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -723,7 +731,7 @@ namespace music_tagger
             this.tree.Location = new System.Drawing.Point(0, 0);
             this.tree.Name = "tree";
             this.tree.SelectedImageIndex = 0;
-            this.tree.Size = new System.Drawing.Size(284, 559);
+            this.tree.Size = new System.Drawing.Size(284, 534);
             this.tree.TabIndex = 0;
             // 
             // view
@@ -732,7 +740,7 @@ namespace music_tagger
             this.view.Location = new System.Drawing.Point(0, 0);
             this.view.Name = "view";
             this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
-            this.view.Size = new System.Drawing.Size(831, 559);
+            this.view.Size = new System.Drawing.Size(831, 534);
             this.view.TabIndex = 0;
             this.view.Type = TagLib.TagTypes.Id3v1;
             // 
@@ -826,7 +834,7 @@ namespace music_tagger
             this.tsTagV22File});
             this.toolStrip2.Location = new System.Drawing.Point(142, 24);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(339, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(370, 25);
             this.toolStrip2.TabIndex = 2;
             // 
             // tsb_EditV1
@@ -837,7 +845,7 @@ namespace music_tagger
             this.tsb_EditV1.Name = "tsb_EditV1";
             this.tsb_EditV1.Size = new System.Drawing.Size(23, 22);
             this.tsb_EditV1.Text = "Edit Ver.1";
-            this.tsb_EditV1.Click += new System.EventHandler(this.On_EditV1_Click);
+            this.tsb_EditV1.Click += new System.EventHandler(this.OnEditV1_Click);
             // 
             // tsb_EditV1Multi
             // 
@@ -847,7 +855,7 @@ namespace music_tagger
             this.tsb_EditV1Multi.Name = "tsb_EditV1Multi";
             this.tsb_EditV1Multi.Size = new System.Drawing.Size(23, 22);
             this.tsb_EditV1Multi.Text = "Edit Multi-Ver.1";
-            this.tsb_EditV1Multi.Click += new System.EventHandler(this.tsb_EditV1Multi_Click);
+            this.tsb_EditV1Multi.Click += new System.EventHandler(this.OnEditV1Multi_Click);
             // 
             // toolStripSeparator8
             // 
@@ -900,7 +908,7 @@ namespace music_tagger
             this.tsb_EditV2.Name = "tsb_EditV2";
             this.tsb_EditV2.Size = new System.Drawing.Size(23, 22);
             this.tsb_EditV2.Text = "Edit Ver.2";
-            this.tsb_EditV2.Click += new System.EventHandler(this.tsb_EditV2_Click);
+            this.tsb_EditV2.Click += new System.EventHandler(this.OnEditV2_Click);
             // 
             // tsb_EditV2Multi
             // 
@@ -910,7 +918,7 @@ namespace music_tagger
             this.tsb_EditV2Multi.Name = "tsb_EditV2Multi";
             this.tsb_EditV2Multi.Size = new System.Drawing.Size(23, 22);
             this.tsb_EditV2Multi.Text = "Edit Multi-Ver.2";
-            this.tsb_EditV2Multi.Click += new System.EventHandler(this.tsb_EditV2Multi_Click);
+            this.tsb_EditV2Multi.Click += new System.EventHandler(this.OnEditV2Multi_Click);
             // 
             // tsb_RemoveV2
             // 
@@ -929,7 +937,7 @@ namespace music_tagger
             this.tsFile2TagV2.Name = "tsFile2TagV2";
             this.tsFile2TagV2.Size = new System.Drawing.Size(23, 22);
             this.tsFile2TagV2.Text = "toolStripButton9";
-            this.tsFile2TagV2.Click += new System.EventHandler(this.mnFile2TagV2_Click);
+            this.tsFile2TagV2.Click += new System.EventHandler(this.OnFile2TagV2_Click);
             // 
             // tsTagV22File
             // 
@@ -939,7 +947,7 @@ namespace music_tagger
             this.tsTagV22File.Name = "tsTagV22File";
             this.tsTagV22File.Size = new System.Drawing.Size(23, 22);
             this.tsTagV22File.Text = "toolStripButton10";
-            this.tsTagV22File.Click += new System.EventHandler(this.mnTag2FileV2_Click);
+            this.tsTagV22File.Click += new System.EventHandler(this.OnTag2FileV2_Click);
             // 
             // toolStrip3
             // 
@@ -962,9 +970,9 @@ namespace music_tagger
             this.toolStripSplitButton3,
             this.toolStripSplitButton4,
             this.toolStripButton15});
-            this.toolStrip3.Location = new System.Drawing.Point(481, 24);
+            this.toolStrip3.Location = new System.Drawing.Point(3, 49);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(507, 25);
+            this.toolStrip3.Size = new System.Drawing.Size(476, 25);
             this.toolStrip3.TabIndex = 3;
             // 
             // toolStripButton1

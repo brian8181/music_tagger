@@ -100,11 +100,10 @@ namespace music_tagger.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
-  <string>&lt;K&gt;-&lt;A&gt;-&lt;B&gt;-&lt;T&gt;</string>
-  <string>&lt;A&gt;\&lt;B&gt;\&lt;K&gt;-&lt;T&gt;</string>
-</ArrayOfString>")]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
+            "tring>&lt;A&gt;-&lt;B&gt;</string>\r\n  <string>&lt;A&gt;\\&lt;B&gt;</string>\r\n</Ar" +
+            "rayOfString>")]
         public global::System.Collections.Specialized.StringCollection org_formats {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["org_formats"]));
@@ -256,7 +255,7 @@ namespace music_tagger.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<K>-<A>-<B>-<T>")]
+        [global::System.Configuration.DefaultSettingValueAttribute("<A>\\<B>")]
         public string org_last_format {
             get {
                 return ((string)(this["org_last_format"]));

@@ -74,9 +74,9 @@ namespace Tools.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap hard_drive2 {
+        internal static System.Drawing.Bitmap hard_drive1 {
             get {
-                object obj = ResourceManager.GetObject("hard_drive2", resourceCulture);
+                object obj = ResourceManager.GetObject("hard_drive1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

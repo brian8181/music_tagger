@@ -33,6 +33,7 @@ namespace music_tagger.Threading
                     path.TrimEnd( '\\' ), eval.Value.TrimStart('\\') );
                 if(!Directory.Exists( dir ))
                 {
+                    //TODO MessageBox()
                     Directory.CreateDirectory( dir );
                 }
                 if(copy)

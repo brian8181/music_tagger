@@ -12,7 +12,9 @@ namespace music_tagger
         [STAThread]
         static void Main(string[] args)
         {
-            MessageBox.Show(args[0]);
+            
+            if( args.Length > 0 )
+                MessageBox.Show(args[0]);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault( false );
             Application.Run( new MainFrm() );

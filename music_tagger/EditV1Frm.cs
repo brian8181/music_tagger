@@ -58,11 +58,15 @@ namespace music_tagger
                 this.editCtrl.ckTrack.Checked = false;
                 this.editCtrl.ckYear.Visible = true;
                 this.editCtrl.ckYear.Checked = false;
+
+                this.Text = Properties.Resources.editv1frm_multi;
             }
             else
             {
                 this.editCtrl.lblFile.Visible = true;
                 this.editCtrl.lblFileTag.Visible = true;
+
+                this.Text = Properties.Resources.editv1frm_single;
             }
         }
         /// <summary>

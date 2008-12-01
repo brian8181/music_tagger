@@ -474,15 +474,33 @@ namespace music_tagger
             this.listView.EndUpdate();
         }
         #endregion
-
         /// <summary>
-        /// 
+        /// handle key press
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ShowDefaultEditControl();
+            }
+        }
+        /// <summary>
+        /// handle double clicks
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void listView_DoubleClick( object sender, EventArgs e )
         {
-            if(this.type == TagLib.TagTypes.Id3v1)
+            ShowDefaultEditControl();
+        }
+        /// <summary>
+        /// this show the default edit control based on user settings
+        /// </summary>
+        private void ShowDefaultEditControl()
+        {
+            if (this.type == TagLib.TagTypes.Id3v1)
             {
                 OnEditV1();
             }
@@ -506,5 +524,14 @@ namespace music_tagger
                 DoDragDrop( data, DragDropEffects.Copy );
             }
         }
+        private void mnEditV1_Click(object sender, EventArgs e)
+        {
+            OnEditV1();
+        }
+        private void mnEditV2_Click(object sender, EventArgs e)
+        {
+            OnEditV2();
+        }
+
     }
 }

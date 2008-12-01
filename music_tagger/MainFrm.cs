@@ -70,7 +70,7 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void On_EditV1_Click( object sender, EventArgs e )
+        private void OnEditV1_Click( object sender, EventArgs e )
         {
             this.view.OnEditV1();
         }
@@ -79,7 +79,7 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsb_EditV1Multi_Click( object sender, EventArgs e )
+        private void OnEditV1Multi_Click( object sender, EventArgs e )
         {
             this.view.OnEditV1_Multi();
         }
@@ -88,7 +88,7 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsb_EditV2_Click( object sender, EventArgs e )
+        private void OnEditV2_Click( object sender, EventArgs e )
         {
             this.view.OnEditV2();
         }
@@ -97,7 +97,7 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tsb_EditV2Multi_Click( object sender, EventArgs e )
+        private void OnEditV2Multi_Click( object sender, EventArgs e )
         {
             if(this.view.ListView.SelectedItems.Count > 1)
             {
@@ -109,7 +109,7 @@ namespace music_tagger
             }
             else
             {
-                tsb_EditV2_Click( sender, e );
+                OnEditV2_Click( sender, e );
             }
         }
         /// <summary>
@@ -270,15 +270,6 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mnRemoveTagV1_Click( object sender, EventArgs e )
-        {
-
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void mnFile2TagV1_Click( object sender, EventArgs e )
         {
             File2TagV1Frm dlg = new File2TagV1Frm( view );
@@ -305,16 +296,16 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mnRemoveTagV2_Click( object sender, EventArgs e )
+        private void OnRemoveTagV2_Click( object sender, EventArgs e )
         {
-
+            // todo
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mnFile2TagV2_Click( object sender, EventArgs e )
+        private void OnFile2TagV2_Click( object sender, EventArgs e )
         {
             File2TagV2Frm dlg = new File2TagV2Frm( this.view );
             if(dlg.ShowDialog() == DialogResult.OK)
@@ -327,7 +318,7 @@ namespace music_tagger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mnTag2FileV2_Click( object sender, EventArgs e )
+        private void OnTag2FileV2_Click( object sender, EventArgs e )
         {
             TagV22FileFrm dlg = new TagV22FileFrm(this.view);
             if(dlg.ShowDialog() == DialogResult.OK)

@@ -66,11 +66,16 @@ namespace music_tagger
             Properties.Settings.Default.org_copy = ckCopy.Checked;
             Properties.Settings.Default.org_overwrite = ckOverwrite.Checked;
             Properties.Settings.Default.org_root_dir = txtPath.Text;
+            Properties.Settings.Default.org_last_format = cmbFormat.SelectedItem.ToString();
+            SaveFormats();           
+        }
+        public void SaveFormats()
+        {
             // formats
             string[] fmts = new string[cmbFormat.Items.Count];
-            cmbFormat.Items.CopyTo( fmts, 0 );
+            cmbFormat.Items.CopyTo(fmts, 0);
             Properties.Settings.Default.org_formats.Clear();
-            Properties.Settings.Default.org_formats.AddRange( fmts );
+            Properties.Settings.Default.org_formats.AddRange(fmts);
             Properties.Settings.Default.Save();
         }
         /// <summary>
@@ -87,7 +92,7 @@ namespace music_tagger
             }
         }
         /// <summary>
-        /// 
+        /// handle button press event, (Saves a new format)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -97,10 +102,10 @@ namespace music_tagger
             {
                 cmbFormat.Items.Add( cmbFormat.Text ); 
             }
-            SaveSettings();
+            SaveFormats();
         }
         /// <summary>
-        /// 
+        /// handle button press event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -113,7 +118,7 @@ namespace music_tagger
             SaveSettings();
         }
         /// <summary>
-        /// 
+        /// handle button press event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -128,7 +133,7 @@ namespace music_tagger
                     MessageBoxIcon.Asterisk );
                 return;
             }
-            //SaveSettings();
+            SaveSettings();
             ListView.SelectedListViewItemCollection items = lv.SelectedItems;
             int len = items.Count;
             FileInfo[] infos = new FileInfo[len];

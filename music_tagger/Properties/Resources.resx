@@ -687,4 +687,10 @@ zza|||Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki|zaza; dimili; dimli; kirdki
   <data name="v22file" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\v22file.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="editv1frm_multi" xml:space="preserve">
+    <value>Edit Multiple - Version 1</value>
+  </data>
+  <data name="editv1frm_single" xml:space="preserve">
+    <value>Edit Single - Version 1</value>
+  </data>
 </root>
