@@ -28,7 +28,18 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taglib-sharp", "..\taglib\taglib-sharp.csproj", "{4CC18776-125E-4318-9D24-D60110AD9697}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{AD1B8AA9-EA95-449E-B9BC-C1372A89F8F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{69718E71-A577-4121-A1D0-82BF0C2990AC}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		music_tagger.vsmdi = music_tagger.vsmdi
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = music_tagger.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Deploy_Debug|Any CPU = Deploy_Debug|Any CPU
@@ -63,6 +74,12 @@ Global
 		{4CC18776-125E-4318-9D24-D60110AD9697}.Deploy_Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CC18776-125E-4318-9D24-D60110AD9697}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CC18776-125E-4318-9D24-D60110AD9697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1B8AA9-EA95-449E-B9BC-C1372A89F8F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1B8AA9-EA95-449E-B9BC-C1372A89F8F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1B8AA9-EA95-449E-B9BC-C1372A89F8F6}.Deploy_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1B8AA9-EA95-449E-B9BC-C1372A89F8F6}.Deploy_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1B8AA9-EA95-449E-B9BC-C1372A89F8F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1B8AA9-EA95-449E-B9BC-C1372A89F8F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
