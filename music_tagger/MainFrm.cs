@@ -14,11 +14,20 @@ namespace music_tagger
     {
         // redundant !
         private TagLib.TagTypes type = TagLib.TagTypes.Id3v2;
+
         /// <summary>
         /// 
         /// </summary>
         public MainFrm()
+            : this(Properties.Settings.Default.last_dir)
         {
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public MainFrm(string path)
+        {
+            Properties.Settings.Default.last_dir = path;
             InitializeComponent();
             type = Properties.Settings.Default.view_ver1 ? TagLib.TagTypes.Id3v1 : TagLib.TagTypes.Id3v2;
             SetVersion( Properties.Settings.Default.view_ver1 );

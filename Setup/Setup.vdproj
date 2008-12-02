@@ -21,13 +21,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0CA9E504BDE91078BD9FED2B8B5A3FFC"
+        "MsmKey" = "8:_3B460FF4D440E3B0479FE90AB1FF7FDE"
         "OwnerKey" = "8:_B7F5349F920C4615BAD157F82E3185C0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_68DFC753C8339E0CE1645033BF610AB2"
+        "MsmKey" = "8:_4139258B79061C21346C05447C99D2BD"
         "OwnerKey" = "8:_B7F5349F920C4615BAD157F82E3185C0"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,19 +46,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3B460FF4D440E3B0479FE90AB1FF7FDE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4139258B79061C21346C05447C99D2BD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_0741FE3FF328CAF56531E27338781FD1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0CA9E504BDE91078BD9FED2B8B5A3FFC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_68DFC753C8339E0CE1645033BF610AB2"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -182,14 +182,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0CA9E504BDE91078BD9FED2B8B5A3FFC"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3B460FF4D440E3B0479FE90AB1FF7FDE"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:taglib-sharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0CA9E504BDE91078BD9FED2B8B5A3FFC"
+                    "_3B460FF4D440E3B0479FE90AB1FF7FDE"
                     {
                     "Name" = "8:taglib-sharp.dll"
                     "Attributes" = "3:512"
@@ -213,14 +213,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_68DFC753C8339E0CE1645033BF610AB2"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4139258B79061C21346C05447C99D2BD"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:XPExplorerBar, Version=3.3.0.0, Culture=neutral, PublicKeyToken=26272737b5f33015, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_68DFC753C8339E0CE1645033BF610AB2"
+                    "_4139258B79061C21346C05447C99D2BD"
                     {
                     "Name" = "8:XPExplorerBar.dll"
                     "Attributes" = "3:512"
@@ -312,7 +312,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{85E6C660-0C5F-4F0F-A836-6B3DA93074AC}"
-        "PackageCode" = "8:{6DC6F217-AF09-4E11-861D-7B483FF3355E}"
+        "PackageCode" = "8:{195010CB-0831-4B6A-8FCC-3A61D886DCF7}"
         "UpgradeCode" = "8:{D90E151A-9752-4958-A86B-9EDBBF735093}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -434,7 +434,7 @@
                                     "Name" = "8:Tagger"
                                     "Condition" = "8:"
                                     "AlwaysCreate" = "11:FALSE"
-                                    "DeleteAtUninstall" = "11:FALSE"
+                                    "DeleteAtUninstall" = "11:TRUE"
                                     "Transitive" = "11:FALSE"
                                         "Keys"
                                         {
@@ -443,7 +443,7 @@
                                             "Name" = "8:command"
                                             "Condition" = "8:"
                                             "AlwaysCreate" = "11:FALSE"
-                                            "DeleteAtUninstall" = "11:FALSE"
+                                            "DeleteAtUninstall" = "11:TRUE"
                                             "Transitive" = "11:FALSE"
                                                 "Keys"
                                                 {
@@ -454,7 +454,7 @@
                                                     {
                                                     "Name" = "8:"
                                                     "Condition" = "8:"
-                                                    "Transitive" = "11:FALSE"
+                                                    "Transitive" = "11:TRUE"
                                                     "ValueTypes" = "3:1"
                                                     "Value" = "8:\"C:\\Program Files\\Setup\\music_tagger.exe\" \"%1\""
                                                     }

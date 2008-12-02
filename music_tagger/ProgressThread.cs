@@ -36,6 +36,8 @@ namespace music_tagger.Threading
         protected Thread thread = null;
         protected FileInfo[] infos = null;
         protected volatile bool cancel = false;
+        protected bool defer_action = true;
+        protected bool running = false;
        
         /// <summary>
         /// 
@@ -50,22 +52,47 @@ namespace music_tagger.Threading
             thread.IsBackground = true;
             this.infos = infos;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        public virtual void Start(IWin32Window window)
-        {
-            thread.Start();
-            this.ShowDialog(window);
-        }
+
         /// <summary>
         /// 
         /// </summary>
         public virtual void Start()
         {
-            thread.Start();
-            this.ShowDialog(); 
+            if (running == true)
+                    return;
+         
+            if (IsHandleCreated)
+            {
+                thread.Start();
+                running = true;
+            }
+            else
+            {
+                defer_action = true;
+            }
+         }
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            if (defer_action)
+            {
+                defer_action = false;
+                Start();
+            }
         }
+
+        protected override void OnHandleDestroyed(EventArgs e)
+        {
+            // If the handle is being destroyed and you are not
+            // recreating it, then abort the search.
+            if (!RecreatingHandle)
+            {
+                // TODO stop ? 
+            }
+            base.OnHandleDestroyed(e);
+        }
+
         /// <summary>
         /// 
         /// </summary>

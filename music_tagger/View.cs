@@ -215,7 +215,8 @@ namespace music_tagger
             ListView.Items.Clear();
             Threading.ScanProgressThread thread = new Threading.ScanProgressThread( files, ListView, type );
             thread.Finished += new EventHandler<EventArgs>( thread_Finished );
-            thread.Start(this.TopLevelControl);
+            thread.ShowDialog(this.TopLevelControl);
+            thread.Start();
         }
         /// <summary>
         ///  refresh view is completed

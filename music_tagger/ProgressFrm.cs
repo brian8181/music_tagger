@@ -38,9 +38,9 @@ namespace music_tagger.Threading
                     new EventHandler( SafeClose ), sender, args);
                 return;
             }
-
             Close();
         }
+              
 
         private void btnCancel_Click( object sender, EventArgs e )
         {

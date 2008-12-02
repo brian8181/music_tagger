@@ -148,6 +148,7 @@ namespace music_tagger
                 ckCopy.Checked, 
                 ckOverwrite.Checked );
             thread.Finished += new EventHandler<EventArgs>(thread_Finished);
+            thread.ShowDialog();
             thread.Start();
            
         }

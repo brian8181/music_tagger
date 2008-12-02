@@ -419,6 +419,9 @@
     <Compile Include="TagV22FileFrm.Designer.cs">
       <DependentUpon>TagV22FileFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Threads\ScanProgressThread.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TransferFrm.cs">
       <SubType>Form</SubType>
     </Compile>

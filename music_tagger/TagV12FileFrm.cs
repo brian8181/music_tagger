@@ -84,6 +84,7 @@ namespace music_tagger
                 cmbFormat.Text );
             thread.StatusUpdate += new EventHandler<Threading.ProgressThread.StatusArgs>( thread_StatusUpdate );
             thread.Finished += new EventHandler<EventArgs>( thread_Finished );
+            thread.ShowDialog();
             thread.Start();
         }
         /// <summary>
