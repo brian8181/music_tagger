@@ -485,5 +485,15 @@ namespace music_tagger
             }
         }
 
+        private void mnFileCopyTo_Click(object sender, EventArgs e)
+        {
+            view.CopyTo(false);
+        }
+
+        private void mnFileMoveTo_Click(object sender, EventArgs e)
+        {
+            view.CopyTo(true);
+        }
+
    }
 }

@@ -36,45 +36,45 @@ namespace music_tagger
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point( 462, 213 );
+            this.btnOK.Location = new System.Drawing.Point(462, 213);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size( 75, 23 );
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler( this.btnOK_Click );
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point( 543, 213 );
+            this.btnCancel.Location = new System.Drawing.Point(543, 213);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size( 75, 23 );
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // editCtrl
             // 
-            this.editCtrl.Location = new System.Drawing.Point( -1, 3 );
+            this.editCtrl.Location = new System.Drawing.Point(-1, 3);
             this.editCtrl.Name = "editCtrl";
-            this.editCtrl.Size = new System.Drawing.Size( 655, 208 );
+            this.editCtrl.Size = new System.Drawing.Size(655, 208);
             this.editCtrl.TabIndex = 3;
             // 
             // EditV1Frm
             // 
             this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size( 658, 248 );
-            this.Controls.Add( this.editCtrl );
-            this.Controls.Add( this.btnCancel );
-            this.Controls.Add( this.btnOK );
+            this.ClientSize = new System.Drawing.Size(658, 248);
+            this.Controls.Add(this.editCtrl);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "EditV1Frm";
             this.Text = "Edit Version 1 Tag";
-            this.ResumeLayout( false );
+            this.ResumeLayout(false);
 
         }
 

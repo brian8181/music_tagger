@@ -262,5 +262,39 @@ namespace music_tagger
             pictures.EditItem( item );
             item.RefreshItem();
         }
+               
+        /// <summary>
+        /// swap the artist & title
+        /// </summary>
+        /// <param name="sender">task item</param>
+        /// <param name="e">args</param>
+        private void taskSwapArtist_Title_Click(object sender, EventArgs e)
+        {
+            string org_title = main.txtTitle.Text;
+            main.txtTitle.Text = main.txtArtists.Text;
+            main.txtArtists.Text = org_title;
+        }
+        /// <summary>
+        /// swap artist & album
+        /// </summary>
+        /// <param name="sender">task item</param>
+        /// <param name="e">args</param>
+        private void taskSwapArtist_Album_Click(object sender, EventArgs e)
+        {
+            string org_album = main.txtAlbum.Text;
+            main.txtAlbum.Text = main.txtArtists.Text;
+            main.txtArtists.Text = org_album;
+        }
+        /// <summary>
+        ///  swap title & album
+        /// </summary>
+        /// <param name="sender">task item</param>
+        /// <param name="e">args</param>
+        private void taskSwapTitle_Album_Click(object sender, EventArgs e)
+        {
+            string org_album = main.txtAlbum.Text;
+            main.txtAlbum.Text = main.txtTitle.Text;
+            main.txtTitle.Text = org_album;
+        }
     }
 }

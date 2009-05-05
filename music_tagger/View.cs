@@ -412,7 +412,7 @@ namespace music_tagger
         /// 
         /// </summary>
         /// <param name="isMove"></param>
-        private void CopyTo(bool isMove)
+        public void CopyTo(bool isMove)
         {
             if(listView.SelectedItems.Count > 0)
             {
@@ -532,6 +532,15 @@ namespace music_tagger
         private void mnEditV2_Click(object sender, EventArgs e)
         {
             OnEditV2();
+        }
+        public void SwapArtistTitle()
+        {
+        }
+        public void SwapArtistAlbum()
+        {
+        }
+        public void SwapTitleAlbum()
+        {
         }
 
     }

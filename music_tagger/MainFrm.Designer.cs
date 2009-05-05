@@ -93,8 +93,6 @@ namespace music_tagger
             this.tsVersionShown = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsScanSubs = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tree = new Tools.FileTreeView();
-            this.view = new music_tagger.View();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.tsb_Save = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -143,6 +141,8 @@ namespace music_tagger
             this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSplitButton4 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.tree = new Tools.FileTreeView();
+            this.view = new music_tagger.View();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -209,12 +209,14 @@ namespace music_tagger
             this.mnFileCopyTo.Name = "mnFileCopyTo";
             this.mnFileCopyTo.Size = new System.Drawing.Size(192, 22);
             this.mnFileCopyTo.Text = "CopyTo";
+            this.mnFileCopyTo.Click += new System.EventHandler(this.mnFileCopyTo_Click);
             // 
             // mnFileMoveTo
             // 
             this.mnFileMoveTo.Name = "mnFileMoveTo";
             this.mnFileMoveTo.Size = new System.Drawing.Size(192, 22);
             this.mnFileMoveTo.Text = "MoveTo";
+            this.mnFileMoveTo.Click += new System.EventHandler(this.mnFileMoveTo_Click);
             // 
             // mnFileOrganize
             // 
@@ -723,27 +725,6 @@ namespace music_tagger
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 0;
             // 
-            // tree
-            // 
-            this.tree.AllowDrop = true;
-            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tree.ImageIndex = 0;
-            this.tree.Location = new System.Drawing.Point(0, 0);
-            this.tree.Name = "tree";
-            this.tree.SelectedImageIndex = 0;
-            this.tree.Size = new System.Drawing.Size(284, 534);
-            this.tree.TabIndex = 0;
-            // 
-            // view
-            // 
-            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.view.Location = new System.Drawing.Point(0, 0);
-            this.view.Name = "view";
-            this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
-            this.view.Size = new System.Drawing.Size(831, 534);
-            this.view.TabIndex = 0;
-            this.view.Type = TagLib.TagTypes.Id3v1;
-            // 
             // mainToolStrip
             // 
             this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
@@ -834,7 +815,7 @@ namespace music_tagger
             this.tsTagV22File});
             this.toolStrip2.Location = new System.Drawing.Point(142, 24);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(370, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(339, 25);
             this.toolStrip2.TabIndex = 2;
             // 
             // tsb_EditV1
@@ -1178,6 +1159,27 @@ namespace music_tagger
             this.toolStripButton15.Name = "toolStripButton15";
             this.toolStripButton15.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton15.Text = "toolStripButton15";
+            // 
+            // tree
+            // 
+            this.tree.AllowDrop = true;
+            this.tree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tree.ImageIndex = 0;
+            this.tree.Location = new System.Drawing.Point(0, 0);
+            this.tree.Name = "tree";
+            this.tree.SelectedImageIndex = 0;
+            this.tree.Size = new System.Drawing.Size(284, 534);
+            this.tree.TabIndex = 0;
+            // 
+            // view
+            // 
+            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view.Location = new System.Drawing.Point(0, 0);
+            this.view.Name = "view";
+            this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
+            this.view.Size = new System.Drawing.Size(831, 534);
+            this.view.TabIndex = 0;
+            this.view.Type = TagLib.TagTypes.Id3v1;
             // 
             // MainFrm
             // 
