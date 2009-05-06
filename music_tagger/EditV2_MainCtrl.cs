@@ -267,6 +267,7 @@ namespace music_tagger
             lvi.SubItems.Add( txtComment.Text );
             lvi.SubItems.Add( cmbCommentLang.Text );
             comments_dirty = true;
+            ckComment.Checked = true;
         }
         /// <summary>
         /// 
@@ -279,6 +280,7 @@ namespace music_tagger
             if(commentList.SelectedItems.Count > 0)
                 commentList.SelectedItems[0].Remove();
             comments_dirty = true;
+            ckComment.Checked = true;
         }
         /// <summary>
         /// 
@@ -293,6 +295,7 @@ namespace music_tagger
                 commentList.Items.Remove( lvi );
                 commentList.Items.Insert( 0, lvi );
                 comments_dirty = true;
+                ckComment.Checked = true;
             }
         }
         /// <summary>
@@ -340,6 +343,18 @@ namespace music_tagger
         #endregion
 
         #region Text Changed Events
+        private void txtArtists_TextChanged(object sender, EventArgs e)
+        {
+            ckArtist.Checked = true;
+        }
+        private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+            ckTitle.Checked = true;
+        }
+        private void txtAlbum_TextChanged(object sender, EventArgs e)
+        {
+            ckAlbum.Checked = true;
+        }
         /// <summary>
         /// 
         /// </summary>

@@ -38,6 +38,9 @@ namespace music_tagger
             this.mnEditV1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnEditV2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnDeleteFiles = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.openFileLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextViewMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,21 +80,24 @@ namespace music_tagger
             this.toolStripSeparator1,
             this.mnEditV1,
             this.mnEditV2,
-            this.mnDeleteFiles});
+            this.mnDeleteFiles,
+            this.toolStripSeparator2,
+            this.openFileLocationToolStripMenuItem,
+            this.renameToolStripMenuItem});
             this.contextViewMenu.Name = "contextViewMenu";
-            this.contextViewMenu.Size = new System.Drawing.Size(168, 164);
+            this.contextViewMenu.Size = new System.Drawing.Size(174, 192);
             // 
             // mnViewCopyTo
             // 
             this.mnViewCopyTo.Name = "mnViewCopyTo";
-            this.mnViewCopyTo.Size = new System.Drawing.Size(167, 22);
+            this.mnViewCopyTo.Size = new System.Drawing.Size(173, 22);
             this.mnViewCopyTo.Text = "&CopyTo";
             this.mnViewCopyTo.Click += new System.EventHandler(this.mnViewCopyTo_Click);
             // 
             // mnViewMoveTo
             // 
             this.mnViewMoveTo.Name = "mnViewMoveTo";
-            this.mnViewMoveTo.Size = new System.Drawing.Size(167, 22);
+            this.mnViewMoveTo.Size = new System.Drawing.Size(173, 22);
             this.mnViewMoveTo.Text = "MoveTo";
             this.mnViewMoveTo.Click += new System.EventHandler(this.mnViewMoveTo_Click);
             // 
@@ -99,37 +105,55 @@ namespace music_tagger
             // 
             this.mnViewSelectAll.Name = "mnViewSelectAll";
             this.mnViewSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.mnViewSelectAll.Size = new System.Drawing.Size(167, 22);
+            this.mnViewSelectAll.Size = new System.Drawing.Size(173, 22);
             this.mnViewSelectAll.Text = "Select All";
             this.mnViewSelectAll.Click += new System.EventHandler(this.mnViewSelectAll_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(170, 6);
             // 
             // mnEditV1
             // 
             this.mnEditV1.Image = global::music_tagger.Properties.Resources.v1;
             this.mnEditV1.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.mnEditV1.Name = "mnEditV1";
-            this.mnEditV1.Size = new System.Drawing.Size(167, 22);
+            this.mnEditV1.Size = new System.Drawing.Size(173, 22);
             this.mnEditV1.Text = "Edit Tag Ver. 1";
             this.mnEditV1.Click += new System.EventHandler(this.mnEditV1_Click);
             // 
             // mnEditV2
             // 
             this.mnEditV2.Name = "mnEditV2";
-            this.mnEditV2.Size = new System.Drawing.Size(167, 22);
+            this.mnEditV2.Size = new System.Drawing.Size(173, 22);
             this.mnEditV2.Text = "Edit Tag Ver. 2";
             this.mnEditV2.Click += new System.EventHandler(this.mnEditV2_Click);
             // 
             // mnDeleteFiles
             // 
             this.mnDeleteFiles.Name = "mnDeleteFiles";
-            this.mnDeleteFiles.Size = new System.Drawing.Size(167, 22);
+            this.mnDeleteFiles.Size = new System.Drawing.Size(173, 22);
             this.mnDeleteFiles.Text = "Delete Files";
             this.mnDeleteFiles.Click += new System.EventHandler(this.mnDeleteFiles_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(170, 6);
+            // 
+            // openFileLocationToolStripMenuItem
+            // 
+            this.openFileLocationToolStripMenuItem.Name = "openFileLocationToolStripMenuItem";
+            this.openFileLocationToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.openFileLocationToolStripMenuItem.Text = "Open File Location";
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.renameToolStripMenuItem.Text = "Rename";
             // 
             // View
             // 
@@ -154,5 +178,8 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem mnEditV2;
         private System.Windows.Forms.ToolStripMenuItem mnDeleteFiles;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem openFileLocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
     }
 }

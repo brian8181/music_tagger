@@ -550,19 +550,29 @@ namespace music_tagger
         {
             OnEditV2();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void SwapArtistTitle()
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void SwapArtistAlbum()
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void SwapTitleAlbum()
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnDeleteFiles_Click(object sender, EventArgs e)
         {
             Delete();

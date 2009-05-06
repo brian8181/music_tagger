@@ -495,5 +495,10 @@ namespace music_tagger
             view.CopyTo(true);
         }
 
+        private void deleteFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            view.Delete();
+        }
+
    }
 }
