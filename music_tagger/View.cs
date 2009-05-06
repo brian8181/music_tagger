@@ -435,6 +435,23 @@ namespace music_tagger
         /// <summary>
         /// 
         /// </summary>
+        public void Delete()
+        {
+            if (listView.SelectedItems.Count > 0)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                foreach (ListViewItem item in listView.SelectedItems)
+                {
+                    FileInfo fi = (FileInfo)item.Tag;
+                    fi.Delete();
+                }
+                RefreshView();
+                Cursor.Current = Cursors.Default;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="listView"></param>
         /// <param name="style"></param>
         private void SizeAll( ListView listView, ColumnHeaderAutoResizeStyle style )
@@ -533,15 +550,22 @@ namespace music_tagger
         {
             OnEditV2();
         }
+
         public void SwapArtistTitle()
         {
         }
+
         public void SwapArtistAlbum()
         {
         }
+
         public void SwapTitleAlbum()
         {
         }
 
+        private void mnDeleteFiles_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
     }
 }

@@ -37,6 +37,7 @@ namespace music_tagger
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnEditV1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnEditV2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnDeleteFiles = new System.Windows.Forms.ToolStripMenuItem();
             this.contextViewMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,9 +76,10 @@ namespace music_tagger
             this.mnViewSelectAll,
             this.toolStripSeparator1,
             this.mnEditV1,
-            this.mnEditV2});
+            this.mnEditV2,
+            this.mnDeleteFiles});
             this.contextViewMenu.Name = "contextViewMenu";
-            this.contextViewMenu.Size = new System.Drawing.Size(168, 120);
+            this.contextViewMenu.Size = new System.Drawing.Size(168, 164);
             // 
             // mnViewCopyTo
             // 
@@ -122,6 +124,13 @@ namespace music_tagger
             this.mnEditV2.Text = "Edit Tag Ver. 2";
             this.mnEditV2.Click += new System.EventHandler(this.mnEditV2_Click);
             // 
+            // mnDeleteFiles
+            // 
+            this.mnDeleteFiles.Name = "mnDeleteFiles";
+            this.mnDeleteFiles.Size = new System.Drawing.Size(167, 22);
+            this.mnDeleteFiles.Text = "Delete Files";
+            this.mnDeleteFiles.Click += new System.EventHandler(this.mnDeleteFiles_Click);
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,5 +153,6 @@ namespace music_tagger
         private System.Windows.Forms.ToolStripMenuItem mnEditV1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem mnEditV2;
+        private System.Windows.Forms.ToolStripMenuItem mnDeleteFiles;
     }
 }
