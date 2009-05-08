@@ -68,12 +68,30 @@ namespace music_tagger
         /// </summary>
         public void Next()
         {
-            FileInfo fi = (FileInfo)lv.SelectedItems[++idx].Tag;
-            //  lblFile.Text = fi.FullName;
-            tag_file = TagLib.File.Create( fi.FullName );
-            v2 = (TagLib.Id3v2.Tag)tag_file.GetTag( TagLib.TagTypes.Id3v2 );
-            v1 = (TagLib.Id3v1.Tag)tag_file.GetTag( TagLib.TagTypes.Id3v1 );
-            Fill();
+            if (lv.SelectedItems.Count > (Index + 1))
+            {
+                FileInfo fi = (FileInfo)lv.SelectedItems[++idx].Tag;
+                //  lblFile.Text = fi.FullName;
+                tag_file = TagLib.File.Create(fi.FullName);
+                v2 = (TagLib.Id3v2.Tag)tag_file.GetTag(TagLib.TagTypes.Id3v2);
+                v1 = (TagLib.Id3v1.Tag)tag_file.GetTag(TagLib.TagTypes.Id3v1);
+                Fill();
+            }
+        }
+        /// <summary>
+        /// move to previous tag & retreat index
+        /// </summary>
+        public void Previous()
+        {
+            if (lv.SelectedItems.Count > Index && Index > 0)
+            {
+                FileInfo fi = (FileInfo)lv.SelectedItems[--idx].Tag;
+                //  lblFile.Text = fi.FullName;
+                tag_file = TagLib.File.Create(fi.FullName);
+                v2 = (TagLib.Id3v2.Tag)tag_file.GetTag(TagLib.TagTypes.Id3v2);
+                v1 = (TagLib.Id3v1.Tag)tag_file.GetTag(TagLib.TagTypes.Id3v1);
+                Fill();
+            }
         }
         /// <summary>
         ///  fill from tag

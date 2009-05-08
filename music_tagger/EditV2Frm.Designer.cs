@@ -256,6 +256,7 @@ namespace music_tagger
             this.taskPrevious.Text = "Previous File";
             this.taskPrevious.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.taskPrevious.UseVisualStyleBackColor = false;
+            this.taskPrevious.Click += new System.EventHandler(this.taskPrevious_Click);
             // 
             // taskNext
             // 
@@ -270,6 +271,7 @@ namespace music_tagger
             this.taskNext.Text = "Next File";
             this.taskNext.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.taskNext.UseVisualStyleBackColor = false;
+            this.taskNext.Click += new System.EventHandler(this.taskNext_Click);
             // 
             // taskSwapArtist_Title
             // 

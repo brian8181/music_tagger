@@ -134,10 +134,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void taskPrevious_Click( object sender, EventArgs e )
         {
-            if(lv.SelectedItems.Count > Index && Index > 0)
-            {
-                Next();
-            }
+            Previous();
         }
         /// <summary>
         /// go to next tag
@@ -146,10 +143,7 @@ namespace music_tagger
         /// <param name="e"></param>
         private void taskNext_Click( object sender, EventArgs e )
         {
-            if(lv.SelectedItems.Count > (Index + 1))
-            {
-                Next();
-            }
+            Next();
         }
         /// <summary>
         /// swap the artist & title

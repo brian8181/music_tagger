@@ -87,6 +87,7 @@ namespace music_tagger
                     // this sets txtGenre.Text also via "cmbGenre_TextChanged"
                     cmbGenre.SelectedIndex = cmbGenre.FindStringExact( v2.FirstGenre ); ;
                 }
+                commentList.Items.Clear(); // clear all current
                 foreach(TagLib.Id3v2.CommentsFrame frame in ( (TagLib.Id3v2.Tag)v2 ).GetFrames( "COMM" ))
                 {
                     ListViewItem item =

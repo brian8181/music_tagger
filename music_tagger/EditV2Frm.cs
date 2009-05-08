@@ -45,6 +45,8 @@ namespace music_tagger
             if(multi_edit)
             {
                 this.Text = Properties.Resources.editv2frm_multi;
+                taskNext.Enabled = false;
+                taskPrevious.Enabled = false;
             }
             else
             {
@@ -99,6 +101,13 @@ namespace music_tagger
             rating.Initialize( lv, multi_edit );
             rating.Hide();
             current = main;
+        }
+        TagListViewItem Item
+        {
+            get
+            {
+                return lv.SelectedItems[main.Index] as TagListViewItem;
+            }
         }
         /// <summary>
         /// 
@@ -233,18 +242,22 @@ namespace music_tagger
         /// <param name="e"></param>
         private void btnOK_Click( object sender, EventArgs e )
         {
-            if(this.multi_edit)
+            ApplyChanges();
+            Close();
+        }
+        private void ApplyChanges()
+        {
+            if (this.multi_edit)
             {
-                foreach(ListViewItem item in lv.SelectedItems)
+                foreach (ListViewItem item in lv.SelectedItems)
                 {
-                    EditItem( (TagListViewItem)item ); 
+                    EditItem((TagListViewItem)item);
                 }
             }
             else
             {
-                EditItem( (TagListViewItem)lv.SelectedItems[0] );
+                EditItem((TagListViewItem)lv.SelectedItems[main.Index]);
             }
-            Close();
         }
         /// <summary>
         ///  edit a item
@@ -295,6 +308,54 @@ namespace music_tagger
             string org_album = main.txtAlbum.Text;
             main.txtAlbum.Text = main.txtTitle.Text;
             main.txtTitle.Text = org_album;
+        }
+
+        private void taskPrevious_Click(object sender, EventArgs e)
+        {
+            if (Item.Dirty == false)
+            {
+                DialogResult result = MessageBox.Show("Do you want to apply any chnages to current item?",
+                                                        "Apply Chnages?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    ApplyChanges();
+                }
+            }
+
+
+            main.Previous();
+            details.Previous();
+            original.Previous();
+            lyrics.Previous();
+            web.Previous();
+            pictures.Previous();
+            people.Previous();
+            //user.Previous();
+            rating.Previous();
+        }
+
+        private void taskNext_Click(object sender, EventArgs e)
+        {
+
+            if (Item.Dirty == false)
+            {
+                DialogResult result = MessageBox.Show("Do you want to apply any chnages to current item?",
+                                                        "Apply Chnages?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    ApplyChanges();
+                }
+            }
+
+            main.Next();
+            details.Next();
+            original.Next();
+            lyrics.Next();
+            web.Next();
+            pictures.Next();
+            people.Next();
+            //user.Next();
+            rating.Next();
         }
     }
 }
