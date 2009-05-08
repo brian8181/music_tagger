@@ -307,7 +307,17 @@ namespace music_tagger
         /// <param name="e"></param>
         private void OnRemoveTagV2_Click( object sender, EventArgs e )
         {
-            // todo
+            view.RemoveTags(TagLib.TagTypes.Id3v2);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnRemoveTagV1_Click(object sender, EventArgs e)
+        {
+
+            view.RemoveTags(TagLib.TagTypes.Id3v1);
         }
         /// <summary>
         /// 
@@ -499,6 +509,6 @@ namespace music_tagger
         {
             view.Delete();
         }
-
+    
    }
 }

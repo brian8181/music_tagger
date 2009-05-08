@@ -379,6 +379,14 @@ namespace music_tagger
                 }
             }
         }
+        public void RemoveTags(TagLib.TagTypes type)
+        {
+            foreach (ListViewItem item in listView.SelectedItems)
+            {
+                FileInfo fi = (FileInfo)item.Tag;
+                RemoveTag(fi, type);
+            }
+        }
         public void RemoveTag(FileInfo fi, TagLib.TagTypes type)
         {
             TagLib.File tag_file = TagLib.File.Create( fi.FullName );
