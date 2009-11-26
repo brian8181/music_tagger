@@ -66,7 +66,9 @@ namespace music_tagger
             Properties.Settings.Default.org_copy = ckCopy.Checked;
             Properties.Settings.Default.org_overwrite = ckOverwrite.Checked;
             Properties.Settings.Default.org_root_dir = txtPath.Text;
-            Properties.Settings.Default.org_last_format = cmbFormat.SelectedItem.ToString();
+            //Properties.Settings.Default.org_last_format = cmbFormat.SelectedItem.ToString();
+            Properties.Settings.Default.org_last_format = cmbFormat.Text;
+
             SaveFormats();           
         }
         public void SaveFormats()
