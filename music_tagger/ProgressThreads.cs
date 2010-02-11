@@ -143,9 +143,17 @@ namespace music_tagger.Threading
                 TagLib.Tag id3v2 = tag_file.GetTag(TagLib.TagTypes.Id3v2);
                 OrganizeFormatEvaluator eval = new OrganizeFormatEvaluator(format, id3v2);
 
-                string fullname = String.Format("{0}\\{1}{2}",
-                   fi.DirectoryName, eval.Value.TrimStart('\\'), fi.Extension);
+                // HACK LOOK AT THIS!!!
+                string fn = eval.Value.TrimStart('\\');
+                char[] chars = System.IO.Path.GetInvalidFileNameChars();
+                foreach (char c in chars)
+                {
+                    fn = fn.Replace(c, '_');
+                }
 
+                string fullname = String.Format("{0}\\{1}{2}",
+                   fi.DirectoryName, fn, fi.Extension);
+               
                 fi.MoveTo(fullname);
                 //Tools.Functions.MoveTo( fi, dir.TrimEnd( '\\' ), false );
             }

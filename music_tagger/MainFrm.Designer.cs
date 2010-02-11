@@ -92,6 +92,7 @@ namespace music_tagger
             this.tsScanSubs = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tree = new Tools.FileTreeView();
+            this.view = new music_tagger.View();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.tsb_Save = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -124,7 +125,6 @@ namespace music_tagger
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
-            this.view = new music_tagger.View();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -700,6 +700,16 @@ namespace music_tagger
             this.tree.Size = new System.Drawing.Size(284, 559);
             this.tree.TabIndex = 0;
             // 
+            // view
+            // 
+            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view.Location = new System.Drawing.Point(0, 0);
+            this.view.Name = "view";
+            this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
+            this.view.Size = new System.Drawing.Size(831, 559);
+            this.view.TabIndex = 0;
+            this.view.Type = TagLib.TagTypes.Id3v1;
+            // 
             // mainToolStrip
             // 
             this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
@@ -795,7 +805,7 @@ namespace music_tagger
             this.toolStripSplitButton3});
             this.toolStrip2.Location = new System.Drawing.Point(142, 24);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(486, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(455, 25);
             this.toolStrip2.TabIndex = 2;
             // 
             // tsb_EditV1
@@ -996,16 +1006,6 @@ namespace music_tagger
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
             this.toolStripMenuItem9.Size = new System.Drawing.Size(166, 22);
             this.toolStripMenuItem9.Text = "Tile <-> Album";
-            // 
-            // view
-            // 
-            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.view.Location = new System.Drawing.Point(0, 0);
-            this.view.Name = "view";
-            this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
-            this.view.Size = new System.Drawing.Size(831, 559);
-            this.view.TabIndex = 0;
-            this.view.Type = TagLib.TagTypes.Id3v1;
             // 
             // MainFrm
             // 
