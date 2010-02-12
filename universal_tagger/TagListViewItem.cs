@@ -26,6 +26,11 @@ namespace universal_tagger
             get { return dirty; }
             set { dirty = value; }
         }
+
+        public TagLib.Tag MetaTag
+        {
+            get { return tag; } 
+        }
         
         /// <summary>
         /// 

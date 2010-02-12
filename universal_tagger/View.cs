@@ -178,7 +178,9 @@ namespace universal_tagger
             FileInfo[] files = null;
             try
             {
-                files = di.GetFiles( "*.mp3", searchOption );
+                //files = di.GetFiles( "*.mp3", searchOption );
+                //BKP Todo config types
+                files = DirectoryExt.GetFileInfos(di, "*.mp3;*.flac", searchOption);
                 if(files != null)
                     RefreshView( files );
             }

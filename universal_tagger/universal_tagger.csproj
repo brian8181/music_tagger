@@ -48,11 +48,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditCtrlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditCtrlBase.Designer.cs">
+      <DependentUpon>EditCtrlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditListCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditListCtrl.Designer.cs">
+      <DependentUpon>EditListCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditListFrm.Designer.cs">
+      <DependentUpon>EditListFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditTagFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditTagFrm.Designer.cs">
       <DependentUpon>EditTagFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditMainCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditMainCtrl.Designer.cs">
+      <DependentUpon>EditMainCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="File2TagFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="File2TagFrm.Designer.cs">
+      <DependentUpon>File2TagFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormatCtrl.cs">
       <SubType>UserControl</SubType>
@@ -60,12 +90,14 @@
     <Compile Include="FormatCtrl.Designer.cs">
       <DependentUpon>FormatCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormatEvaluator.cs" />
     <Compile Include="Globals.cs" />
-    <Compile Include="Main.cs">
+    <Compile Include="ISO_639_2.cs" />
+    <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrganizeFrm.cs">
       <SubType>Form</SubType>
@@ -89,16 +121,32 @@
     <Compile Include="ProgressThread.cs">
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditListCtrl.resx">
+      <DependentUpon>EditListCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditListFrm.resx">
+      <DependentUpon>EditListFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditTagFrm.resx">
       <DependentUpon>EditTagFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMainCtrl.resx">
+      <DependentUpon>EditMainCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File2TagFrm.resx">
+      <DependentUpon>File2TagFrm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormatCtrl.resx">
       <DependentUpon>FormatCtrl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrganizeFrm.resx">
       <DependentUpon>OrganizeFrm.cs</DependentUpon>
@@ -114,6 +162,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag2FileFrm.resx">
+      <DependentUpon>Tag2FileFrm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
@@ -144,6 +196,12 @@
     <Compile Include="ScanProgressThread.cs">
     </Compile>
     <Compile Include="TagListViewItem.cs" />
+    <Compile Include="Tag2FileFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tag2FileFrm.Designer.cs">
+      <DependentUpon>Tag2FileFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View.cs">
       <SubType>UserControl</SubType>
     </Compile>

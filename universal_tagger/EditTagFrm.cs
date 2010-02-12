@@ -12,7 +12,7 @@ namespace universal_tagger
     {
         protected bool multi_edit = false;
         protected ListView lv = null;
-        //private EditV2_MainCtrl main = new EditV2_MainCtrl();
+        private EditMainCtrl main = new EditMainCtrl();
         //private EditV2_DetailCtrl details = new EditV2_DetailCtrl();
         //private EditV2_OriginalCtrl original = new EditV2_OriginalCtrl();
         //private EditV2_LyricCtrl lyrics = new EditV2_LyricCtrl();
@@ -60,11 +60,11 @@ namespace universal_tagger
                 //    Properties.Resources.editv2frm_single, item.Id3v2.Version );
             }
 
-            //this.panel1.Controls.Add( main );
-            //main.Initialize( lv, multi_edit );
-            //main.Location = this.panel1.Location;
-            //main.Dock = DockStyle.Fill;
-            //main.Show();
+            this.panel1.Controls.Add(main);
+            main.Initialize(lv, multi_edit);
+            main.Location = this.panel1.Location;
+            main.Dock = DockStyle.Fill;
+            main.Show();
             //this.panel1.Controls.Add( details );
             //details.Location = this.panel1.Location;
             //details.Dock = DockStyle.Fill;
