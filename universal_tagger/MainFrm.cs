@@ -51,6 +51,14 @@ namespace universal_tagger
             //   view.ListView.SelectedItems.Count,
             //    view.ListView.Items.Count);
         }
+
+        private void mnOptions_Click(object sender, EventArgs e)
+        {
+            OptionsFrm frm = new OptionsFrm();
+            if (frm.ShowDialog() != DialogResult.OK)
+                return;
+
+        }
     }
       
 }

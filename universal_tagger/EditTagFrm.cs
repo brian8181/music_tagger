@@ -49,15 +49,14 @@ namespace universal_tagger
 
             if(multi_edit)
             {
-                //this.Text = Properties.Resources.editv2frm_multi;
+                this.Text = "Edit Multi";
                 taskNext.Enabled = false;
                 taskPrevious.Enabled = false;
             }
             else
             {
-                //TagListViewItem item = (TagListViewItem)lv.Items[0];
-                //this.Text = String.Format( "{0}.{1}",
-                //    Properties.Resources.editv2frm_single, item.Id3v2.Version );
+                TagListViewItem item = (TagListViewItem)lv.Items[0];
+                this.Text = String.Format( "{0}.{1}", "Edit Single", "Version 0" );
             }
 
             this.panel1.Controls.Add(main);
@@ -122,12 +121,12 @@ namespace universal_tagger
         /// <param name="e"></param>
         private void taskMain_Click( object sender, EventArgs e )
         {
-            //if(current != main)
-            //{
-            //    current.Hide();
-            //    main.Show();
-            //    current = main;
-            //}
+            if (current != main)
+            {
+                current.Hide();
+                main.Show();
+                current = main;
+            }
         }
         /// <summary>
         /// 
@@ -253,17 +252,17 @@ namespace universal_tagger
         }
         private void ApplyChanges()
         {
-            //if (this.multi_edit)
-            //{
-            //    foreach (ListViewItem item in lv.SelectedItems)
-            //    {
-            //        EditItem((TagListViewItem)item);
-            //    }
-            //}
-            //else
-            //{
-            //    EditItem((TagListViewItem)lv.SelectedItems[main.Index]);
-            //}
+            if (this.multi_edit)
+            {
+                foreach (ListViewItem item in lv.SelectedItems)
+                {
+                    EditItem((TagListViewItem)item);
+                }
+            }
+            else
+            {
+                EditItem((TagListViewItem)lv.SelectedItems[main.Index]);
+            }
         }
         /// <summary>
         ///  edit a item
@@ -272,7 +271,7 @@ namespace universal_tagger
         protected void EditItem( TagListViewItem item )
         {
             item.BackColor = Color.Yellow;
-            //main.EditItem( item );
+            main.EditItem( item );
             //details.EditItem( item );
             //original.EditItem( item );
             //people.EditItem( item );
@@ -289,9 +288,9 @@ namespace universal_tagger
         /// <param name="e">args</param>
         private void taskSwapArtist_Title_Click(object sender, EventArgs e)
         {
-            //string org_title = main.txtTitle.Text;
-            //main.txtTitle.Text = main.txtArtists.Text;
-            //main.txtArtists.Text = org_title;
+            string org_title = main.txtTitle.Text;
+            main.txtTitle.Text = main.txtArtists.Text;
+            main.txtArtists.Text = org_title;
         }
         /// <summary>
         /// swap artist & album
@@ -300,9 +299,9 @@ namespace universal_tagger
         /// <param name="e">args</param>
         private void taskSwapArtist_Album_Click(object sender, EventArgs e)
         {
-            //string org_album = main.txtAlbum.Text;
-            //main.txtAlbum.Text = main.txtArtists.Text;
-            //main.txtArtists.Text = org_album;
+            string org_album = main.txtAlbum.Text;
+            main.txtAlbum.Text = main.txtArtists.Text;
+            main.txtArtists.Text = org_album;
         }
         /// <summary>
         ///  swap title & album
@@ -311,9 +310,9 @@ namespace universal_tagger
         /// <param name="e">args</param>
         private void taskSwapTitle_Album_Click(object sender, EventArgs e)
         {
-            //string org_album = main.txtAlbum.Text;
-            //main.txtAlbum.Text = main.txtTitle.Text;
-            //main.txtTitle.Text = org_album;
+            string org_album = main.txtAlbum.Text;
+            main.txtAlbum.Text = main.txtTitle.Text;
+            main.txtTitle.Text = org_album;
         }
 
         private void taskPrevious_Click(object sender, EventArgs e)
@@ -329,7 +328,7 @@ namespace universal_tagger
             }
 
 
-            //main.Previous();
+            main.Previous();
             //details.Previous();
             //original.Previous();
             //lyrics.Previous();
@@ -353,7 +352,7 @@ namespace universal_tagger
                 }
             }
 
-            //main.Next();
+            main.Next();
             //details.Next();
             //original.Next();
             //lyrics.Next();

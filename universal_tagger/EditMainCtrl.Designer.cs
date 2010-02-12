@@ -39,12 +39,6 @@ namespace universal_tagger
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnV1Title = new System.Windows.Forms.Button();
-            this.btnV1Album = new System.Windows.Forms.Button();
-            this.btnV1Year = new System.Windows.Forms.Button();
-            this.btnV1Track = new System.Windows.Forms.Button();
-            this.btnV1Genre = new System.Windows.Forms.Button();
-            this.btnV1Comment = new System.Windows.Forms.Button();
             this.txtBPM = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDisc = new System.Windows.Forms.TextBox();
@@ -54,20 +48,8 @@ namespace universal_tagger
             this.txtTrackCount = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTrack = new System.Windows.Forms.TextBox();
-            this.cmbCommentLang = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.commentList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.encodingCol = new System.Windows.Forms.ColumnHeader();
-            this.btnAddComment = new System.Windows.Forms.Button();
-            this.btnRemoveComment = new System.Windows.Forms.Button();
-            this.btnTopComment = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ckComment = new System.Windows.Forms.CheckBox();
-            this.txtCommentDescriptor = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ckTrack = new System.Windows.Forms.CheckBox();
             this.ckYear = new System.Windows.Forms.CheckBox();
@@ -81,18 +63,17 @@ namespace universal_tagger
             this.txtGenres = new System.Windows.Forms.TextBox();
             this.txtArtists = new System.Windows.Forms.TextBox();
             this.cmbGenre = new System.Windows.Forms.ComboBox();
-            this.btnV1Artist = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(117, 67);
+            this.txtComment.Location = new System.Drawing.Point(121, 19);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtComment.Size = new System.Drawing.Size(414, 86);
+            this.txtComment.Size = new System.Drawing.Size(414, 133);
             this.txtComment.TabIndex = 31;
             // 
             // txtYear
@@ -122,7 +103,7 @@ namespace universal_tagger
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 71);
+            this.label7.Location = new System.Drawing.Point(8, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 26;
@@ -181,66 +162,6 @@ namespace universal_tagger
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "Artists:";
-            // 
-            // btnV1Title
-            // 
-            this.btnV1Title.Location = new System.Drawing.Point(536, 38);
-            this.btnV1Title.Name = "btnV1Title";
-            this.btnV1Title.Size = new System.Drawing.Size(59, 20);
-            this.btnV1Title.TabIndex = 35;
-            this.btnV1Title.Text = "<-- Ver 1";
-            this.btnV1Title.UseVisualStyleBackColor = true;
-            this.btnV1Title.Click += new System.EventHandler(this.btnV1Title_Click);
-            // 
-            // btnV1Album
-            // 
-            this.btnV1Album.Location = new System.Drawing.Point(536, 60);
-            this.btnV1Album.Name = "btnV1Album";
-            this.btnV1Album.Size = new System.Drawing.Size(59, 20);
-            this.btnV1Album.TabIndex = 36;
-            this.btnV1Album.Text = "<-- Ver 1";
-            this.btnV1Album.UseVisualStyleBackColor = true;
-            this.btnV1Album.Click += new System.EventHandler(this.btnV1Album_Click);
-            // 
-            // btnV1Year
-            // 
-            this.btnV1Year.Location = new System.Drawing.Point(226, 82);
-            this.btnV1Year.Name = "btnV1Year";
-            this.btnV1Year.Size = new System.Drawing.Size(59, 20);
-            this.btnV1Year.TabIndex = 37;
-            this.btnV1Year.Text = "<-- Ver 1";
-            this.btnV1Year.UseVisualStyleBackColor = true;
-            this.btnV1Year.Click += new System.EventHandler(this.btnV1Year_Click);
-            // 
-            // btnV1Track
-            // 
-            this.btnV1Track.Location = new System.Drawing.Point(226, 105);
-            this.btnV1Track.Name = "btnV1Track";
-            this.btnV1Track.Size = new System.Drawing.Size(59, 20);
-            this.btnV1Track.TabIndex = 38;
-            this.btnV1Track.Text = "<-- Ver 1";
-            this.btnV1Track.UseVisualStyleBackColor = true;
-            this.btnV1Track.Click += new System.EventHandler(this.btnV1Track_Click);
-            // 
-            // btnV1Genre
-            // 
-            this.btnV1Genre.Location = new System.Drawing.Point(536, 149);
-            this.btnV1Genre.Name = "btnV1Genre";
-            this.btnV1Genre.Size = new System.Drawing.Size(59, 20);
-            this.btnV1Genre.TabIndex = 39;
-            this.btnV1Genre.Text = "<-- Ver 1";
-            this.btnV1Genre.UseVisualStyleBackColor = true;
-            this.btnV1Genre.Click += new System.EventHandler(this.btnV1Genre_Click);
-            // 
-            // btnV1Comment
-            // 
-            this.btnV1Comment.Location = new System.Drawing.Point(538, 66);
-            this.btnV1Comment.Name = "btnV1Comment";
-            this.btnV1Comment.Size = new System.Drawing.Size(59, 20);
-            this.btnV1Comment.TabIndex = 40;
-            this.btnV1Comment.Text = "<-- Ver 1";
-            this.btnV1Comment.UseVisualStyleBackColor = true;
-            this.btnV1Comment.Click += new System.EventHandler(this.btnV1Comment_Click);
             // 
             // txtBPM
             // 
@@ -313,113 +234,11 @@ namespace universal_tagger
             this.txtTrack.Size = new System.Drawing.Size(35, 20);
             this.txtTrack.TabIndex = 50;
             // 
-            // cmbCommentLang
-            // 
-            this.cmbCommentLang.FormattingEnabled = true;
-            this.cmbCommentLang.Location = new System.Drawing.Point(117, 40);
-            this.cmbCommentLang.Name = "cmbCommentLang";
-            this.cmbCommentLang.Size = new System.Drawing.Size(414, 21);
-            this.cmbCommentLang.TabIndex = 53;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 13);
-            this.label12.TabIndex = 55;
-            this.label12.Text = "Comment Descriptor:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 43);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(105, 13);
-            this.label13.TabIndex = 56;
-            this.label13.Text = "Comment Language:";
-            // 
-            // commentList
-            // 
-            this.commentList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.encodingCol});
-            this.commentList.FullRowSelect = true;
-            this.commentList.GridLines = true;
-            this.commentList.Location = new System.Drawing.Point(117, 159);
-            this.commentList.MultiSelect = false;
-            this.commentList.Name = "commentList";
-            this.commentList.Size = new System.Drawing.Size(479, 107);
-            this.commentList.TabIndex = 57;
-            this.commentList.UseCompatibleStateImageBehavior = false;
-            this.commentList.View = System.Windows.Forms.View.Details;
-            this.commentList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.commentList_ItemSelectionChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Decriptor";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Comment";
-            this.columnHeader2.Width = 150;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Language";
-            this.columnHeader3.Width = 100;
-            // 
-            // encodingCol
-            // 
-            this.encodingCol.Text = "Encoding";
-            // 
-            // btnAddComment
-            // 
-            this.btnAddComment.Location = new System.Drawing.Point(537, 14);
-            this.btnAddComment.Name = "btnAddComment";
-            this.btnAddComment.Size = new System.Drawing.Size(59, 20);
-            this.btnAddComment.TabIndex = 62;
-            this.btnAddComment.Text = "Add";
-            this.btnAddComment.UseVisualStyleBackColor = true;
-            this.btnAddComment.Click += new System.EventHandler(this.btnAddComment_Click);
-            // 
-            // btnRemoveComment
-            // 
-            this.btnRemoveComment.Location = new System.Drawing.Point(182, 268);
-            this.btnRemoveComment.Name = "btnRemoveComment";
-            this.btnRemoveComment.Size = new System.Drawing.Size(59, 20);
-            this.btnRemoveComment.TabIndex = 61;
-            this.btnRemoveComment.Text = "Remove";
-            this.btnRemoveComment.UseVisualStyleBackColor = true;
-            this.btnRemoveComment.Click += new System.EventHandler(this.btnRemoveComment_Click);
-            // 
-            // btnTopComment
-            // 
-            this.btnTopComment.Location = new System.Drawing.Point(117, 268);
-            this.btnTopComment.Name = "btnTopComment";
-            this.btnTopComment.Size = new System.Drawing.Size(59, 20);
-            this.btnTopComment.TabIndex = 63;
-            this.btnTopComment.Text = "Top";
-            this.btnTopComment.UseVisualStyleBackColor = true;
-            this.btnTopComment.Click += new System.EventHandler(this.btnTopComment_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ckComment);
-            this.groupBox1.Controls.Add(this.txtCommentDescriptor);
-            this.groupBox1.Controls.Add(this.btnTopComment);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.btnAddComment);
-            this.groupBox1.Controls.Add(this.commentList);
             this.groupBox1.Controls.Add(this.txtComment);
-            this.groupBox1.Controls.Add(this.btnRemoveComment);
-            this.groupBox1.Controls.Add(this.btnV1Comment);
-            this.groupBox1.Controls.Add(this.cmbCommentLang);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Location = new System.Drawing.Point(3, 184);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(627, 294);
@@ -429,22 +248,12 @@ namespace universal_tagger
             // ckComment
             // 
             this.ckComment.AutoSize = true;
-            this.ckComment.Location = new System.Drawing.Point(602, 159);
+            this.ckComment.Location = new System.Drawing.Point(603, 22);
             this.ckComment.Name = "ckComment";
             this.ckComment.Size = new System.Drawing.Size(15, 14);
             this.ckComment.TabIndex = 87;
             this.ckComment.UseVisualStyleBackColor = true;
             this.ckComment.Visible = false;
-            // 
-            // txtCommentDescriptor
-            // 
-            this.txtCommentDescriptor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtCommentDescriptor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCommentDescriptor.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtCommentDescriptor.Location = new System.Drawing.Point(117, 14);
-            this.txtCommentDescriptor.Name = "txtCommentDescriptor";
-            this.txtCommentDescriptor.Size = new System.Drawing.Size(413, 20);
-            this.txtCommentDescriptor.TabIndex = 77;
             // 
             // groupBox3
             // 
@@ -461,8 +270,6 @@ namespace universal_tagger
             this.groupBox3.Controls.Add(this.txtArtists);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.cmbGenre);
-            this.groupBox3.Controls.Add(this.btnV1Genre);
-            this.groupBox3.Controls.Add(this.btnV1Artist);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtTrackCount);
@@ -478,12 +285,8 @@ namespace universal_tagger
             this.groupBox3.Controls.Add(this.txtYear);
             this.groupBox3.Controls.Add(this.txtDisc);
             this.groupBox3.Controls.Add(this.lblDics);
-            this.groupBox3.Controls.Add(this.btnV1Title);
             this.groupBox3.Controls.Add(this.txtBPM);
-            this.groupBox3.Controls.Add(this.btnV1Album);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.btnV1Year);
-            this.groupBox3.Controls.Add(this.btnV1Track);
             this.groupBox3.Location = new System.Drawing.Point(4, 0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(626, 178);
@@ -493,7 +296,7 @@ namespace universal_tagger
             // ckTrack
             // 
             this.ckTrack.AutoSize = true;
-            this.ckTrack.Location = new System.Drawing.Point(291, 108);
+            this.ckTrack.Location = new System.Drawing.Point(226, 107);
             this.ckTrack.Name = "ckTrack";
             this.ckTrack.Size = new System.Drawing.Size(15, 14);
             this.ckTrack.TabIndex = 85;
@@ -503,7 +306,7 @@ namespace universal_tagger
             // ckYear
             // 
             this.ckYear.AutoSize = true;
-            this.ckYear.Location = new System.Drawing.Point(291, 86);
+            this.ckYear.Location = new System.Drawing.Point(226, 86);
             this.ckYear.Name = "ckYear";
             this.ckYear.Size = new System.Drawing.Size(15, 14);
             this.ckYear.TabIndex = 84;
@@ -523,7 +326,7 @@ namespace universal_tagger
             // ckDisc
             // 
             this.ckDisc.AutoSize = true;
-            this.ckDisc.Location = new System.Drawing.Point(540, 106);
+            this.ckDisc.Location = new System.Drawing.Point(555, 104);
             this.ckDisc.Name = "ckDisc";
             this.ckDisc.Size = new System.Drawing.Size(15, 14);
             this.ckDisc.TabIndex = 81;
@@ -533,7 +336,7 @@ namespace universal_tagger
             // ckBMP
             // 
             this.ckBMP.AutoSize = true;
-            this.ckBMP.Location = new System.Drawing.Point(540, 84);
+            this.ckBMP.Location = new System.Drawing.Point(555, 84);
             this.ckBMP.Name = "ckBMP";
             this.ckBMP.Size = new System.Drawing.Size(15, 14);
             this.ckBMP.TabIndex = 80;
@@ -687,23 +490,13 @@ namespace universal_tagger
             this.cmbGenre.TabIndex = 65;
             this.cmbGenre.TextChanged += new System.EventHandler(this.cmbGenre_TextChanged);
             // 
-            // btnV1Artist
-            // 
-            this.btnV1Artist.Location = new System.Drawing.Point(537, 16);
-            this.btnV1Artist.Name = "btnV1Artist";
-            this.btnV1Artist.Size = new System.Drawing.Size(59, 20);
-            this.btnV1Artist.TabIndex = 69;
-            this.btnV1Artist.Text = "<- Ver 1";
-            this.btnV1Artist.UseVisualStyleBackColor = true;
-            this.btnV1Artist.Click += new System.EventHandler(this.btnV1Artist_Click);
-            // 
-            // EditV2_MainCtrl
+            // EditMainCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Name = "EditV2_MainCtrl";
+            this.Name = "EditMainCtrl";
             this.Size = new System.Drawing.Size(635, 503);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -722,24 +515,10 @@ namespace universal_tagger
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnV1Title;
-        private System.Windows.Forms.Button btnV1Album;
-        private System.Windows.Forms.Button btnV1Year;
-        private System.Windows.Forms.Button btnV1Track;
-        private System.Windows.Forms.Button btnV1Genre;
-        private System.Windows.Forms.Button btnV1Comment;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblDics;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button btnAddComment;
-        private System.Windows.Forms.Button btnRemoveComment;
-        private System.Windows.Forms.Button btnTopComment;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.TextBox txtYear;
@@ -750,16 +529,11 @@ namespace universal_tagger
         public System.Windows.Forms.TextBox txtDiscCount;
         public System.Windows.Forms.TextBox txtTrackCount;
         public System.Windows.Forms.TextBox txtTrack;
-        public System.Windows.Forms.ListView commentList;
         public System.Windows.Forms.TextBox txtComment;
-        public System.Windows.Forms.ComboBox cmbCommentLang;
-        private System.Windows.Forms.Button btnV1Artist;
         private System.Windows.Forms.ComboBox cmbGenre;
-        private System.Windows.Forms.ColumnHeader encodingCol;
         public System.Windows.Forms.TextBox txtArtists;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtGenres;
-        public System.Windows.Forms.TextBox txtCommentDescriptor;
         private System.Windows.Forms.CheckBox ckComment;
         private System.Windows.Forms.CheckBox ckTrack;
         private System.Windows.Forms.CheckBox ckYear;
