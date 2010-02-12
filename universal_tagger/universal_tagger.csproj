@@ -48,6 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditTagFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTagFrm.Designer.cs">
+      <DependentUpon>EditTagFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormatCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormatCtrl.Designer.cs">
+      <DependentUpon>FormatCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -55,10 +67,49 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrganizeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganizeFrm.Designer.cs">
+      <DependentUpon>OrganizeFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgressCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProgressCtrl.Designer.cs">
+      <DependentUpon>ProgressCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressFrm.Designer.cs">
+      <DependentUpon>ProgressFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressThread.cs">
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditTagFrm.resx">
+      <DependentUpon>EditTagFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormatCtrl.resx">
+      <DependentUpon>FormatCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganizeFrm.resx">
+      <DependentUpon>OrganizeFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressCtrl.resx">
+      <DependentUpon>ProgressCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressFrm.resx">
+      <DependentUpon>ProgressFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +135,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ScanProgressFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScanProgressFrm.Designer.cs">
+      <DependentUpon>ScanProgressFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScanProgressThread.cs">
+    </Compile>
     <Compile Include="TagListViewItem.cs" />
     <Compile Include="View.cs">
       <SubType>UserControl</SubType>
@@ -100,6 +159,10 @@
     <ProjectReference Include="..\Tools\Tools.csproj">
       <Project>{159597FE-1BA8-4542-9528-1A81F771C7D1}</Project>
       <Name>Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XPExplorerBar VS2005\XPExplorerBar.csproj">
+      <Project>{D4B2101F-AF3A-4E28-B3BE-6F69C131BFB5}</Project>
+      <Name>XPExplorerBar</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

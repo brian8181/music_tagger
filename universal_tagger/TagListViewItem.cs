@@ -16,9 +16,7 @@ namespace universal_tagger
         private bool dirty = false;
         private FileInfo fi = null;
         private TagLib.File tag_file = null;
-        private TagLib.Id3v1.Tag v1 = null;
-        private TagLib.Id3v2.Tag v2 = null;
-        private TagLib.TagTypes type = TagLib.TagTypes.Id3v2;
+        private TagLib.Tag tag = null;
         private ListView lv = null;
         /// <summary>
         /// see if value has changed since contruction
@@ -28,30 +26,7 @@ namespace universal_tagger
             get { return dirty; }
             set { dirty = value; }
         }
-        /// <summary>
-        /// the v1 tag
-        /// </summary>
-        public TagLib.Id3v1.Tag Id3v1
-        {
-            get { return v1; }
-            set { v1 = value; }
-        }
-        /// <summary>
-        /// the v2 tag
-        /// </summary>
-        public TagLib.Id3v2.Tag Id3v2
-        {
-            get { return v2; }
-            set { v2 = value; }
-        }
-        /// <summary>
-        /// the current tag type
-        /// </summary>
-        public TagLib.TagTypes Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
+        
         /// <summary>
         /// 
         /// </summary>
@@ -73,8 +48,7 @@ namespace universal_tagger
             try
             {
                 tag_file = TagLib.File.Create( fi.FullName );
-                v1 = tag_file.GetTag( TagLib.TagTypes.Id3v1 ) as TagLib.Id3v1.Tag;
-                v2 = tag_file.GetTag( TagLib.TagTypes.Id3v2 ) as TagLib.Id3v2.Tag;
+                tag = tag_file.Tag;
             }
             catch(TagLib.CorruptFileException e)
             {
@@ -156,7 +130,6 @@ namespace universal_tagger
         /// <returns></returns>
         public string GetString( Column c )
         {
-            TagLib.Tag tag = ( type == TagLib.TagTypes.Id3v1 ) ? (TagLib.Tag)v1 : (TagLib.Tag)v2;
             switch(c)
             {
             case Column.Path:

@@ -9,13 +9,48 @@ using System.Windows.Forms;
 
 namespace universal_tagger
 {
-    public partial class Main : Form
+    public partial class MainFrm : Form
     {
-        public Main()
+        public MainFrm()
         {
             InitializeComponent();
             // init tree
             tree.Initilaize();
+
+            // init view
+            view.Initialize(tree);
+            view.Refreshed += new EventHandler<View.RefreshArgs>(view_Refreshed);
+            view.ListView.SelectedIndexChanged += new EventHandler(ListView_SelectedIndexChanged);
+        }
+
+        /// <summary>
+        /// handler for view.Refreshed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void view_Refreshed(object sender, View.RefreshArgs e)
+        {
+            UpdateFileStatus();
+            //tsCurrentPath.Text = e.Path;
+        }
+        /// <summary>
+        /// handler for ListView.SelectedIndexChanged event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void ListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateFileStatus();
+        }
+        /// <summary>
+        /// update the fiel status label
+        /// </summary>
+        private void UpdateFileStatus()
+        {
+            //tsFileCount.Text = String.Format("Selected: {0} of {1}",
+            //   view.ListView.SelectedItems.Count,
+            //    view.ListView.Items.Count);
         }
     }
+      
 }

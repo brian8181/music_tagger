@@ -1,6 +1,6 @@
 ﻿namespace universal_tagger
 {
-    partial class Main
+    partial class MainFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -486,7 +486,6 @@
             this.view.SearchOption = System.IO.SearchOption.TopDirectoryOnly;
             this.view.Size = new System.Drawing.Size(680, 671);
             this.view.TabIndex = 0;
-            this.view.Type = TagLib.TagTypes.Id3v1;
             // 
             // Main
             // 

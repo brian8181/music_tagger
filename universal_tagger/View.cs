@@ -68,7 +68,6 @@ namespace universal_tagger
         public event EventHandler<RefreshArgs> Refreshed;
         private FileTreeView tree = null;
         private ImageList images = new ImageList();
-        private TagLib.TagTypes type = TagLib.TagTypes.Id3v1;
         private SearchOption searchOption = SearchOption.TopDirectoryOnly;
         private DirectoryInfo di = null;
               
@@ -82,18 +81,6 @@ namespace universal_tagger
           
             set { searchOption = value; }
         } 
-        /// <summary>
-        /// 
-        /// </summary>
-        public TagLib.TagTypes Type
-        {
-            get { return type; }
-            set 
-            { 
-                type = value;
-                ChangeViewType();
-            }
-        }
         /// <summary>
         /// 
         /// </summary>
@@ -136,10 +123,9 @@ namespace universal_tagger
         /// 
         /// </summary>
         /// <param name="tree"></param>
-        public void Initialize( FileTreeView tree, TagLib.TagTypes type)
+        public void Initialize( FileTreeView tree )
         {
             this.tree = tree;
-            this.type = type;
             listView.Dock = DockStyle.Fill;
             listView.View = System.Windows.Forms.View.Details;
             listView.GridLines = true;
@@ -213,11 +199,58 @@ namespace universal_tagger
         {
             ListView.BeginUpdate();
             ListView.Items.Clear();
+            
+            // OLD WAY!!!
             //Threading.ScanProgressThread thread = new System.Threading.ScanProgressThread( files, ListView, type );
             //thread.Finished += new EventHandler<EventArgs>( thread_Finished );
             //thread.ShowDialog(this.TopLevelControl);
             //thread.Start();
+
+            ScanProgressFrm frm = new ScanProgressFrm(this, files);
+            
+            ((ScanProgressThread)frm.Thread).ItemFound +=
+                new ScanProgressThread.ItemFoundDelegate(thread_ItemFound);
+            ((ScanProgressThread)frm.Thread).Finished +=
+                new EventHandler<EventArgs>(thread_Finished);
+
+            //frm.StartThread();
+            frm.ShowDialog();
+        
         }
+
+        #region Thread Callback Functions
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lvi"></param>
+        void thread_ItemFound(TagListViewItem lvi)
+        {
+            SafeAdd(lvi);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lvi"></param>
+        private delegate void SafeAddDelegate(TagListViewItem lvi);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lvi"></param>
+        public void SafeAdd(TagListViewItem lvi)
+        {
+            if (InvokeRequired)
+            {
+                this.BeginInvoke(
+                    new SafeAddDelegate(SafeAdd), lvi);
+                return;
+            }
+            //ListView.BeginUpdate();
+            ListView.Items.Add(lvi);
+            //ListView.EndUpdate();
+        }
+        
+
         /// <summary>
         ///  refresh view is completed
         /// </summary>
@@ -225,14 +258,19 @@ namespace universal_tagger
         /// <param name="e"></param>
         void thread_Finished( object sender, EventArgs e )
         {
-            if(InvokeRequired)
+            if (InvokeRequired)
             {
-                this.BeginInvoke( new EventHandler<EventArgs>( thread_Finished ) );
+                this.BeginInvoke( 
+                    new EventHandler<EventArgs>(thread_Finished), new object[] {sender, e} );
                 return;
             }
             ListView.EndUpdate();
-            Refreshed( this, new RefreshArgs(di.FullName, this.listView.Items.Count) );
+            //Refreshed( this, new RefreshArgs(di.FullName, this.listView.Items.Count) );
         }
+
+        #endregion
+
+
         /// <summary>
         /// select all 
         /// </summary>
@@ -260,34 +298,6 @@ namespace universal_tagger
         #endregion
 
         #region Event Handlers
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void mnViewCopyTo_Click( object sender, EventArgs e )
-        {
-            CopyTo( false );
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void mnViewMoveTo_Click( object sender, EventArgs e )
-        {
-            CopyTo( true );
-            RefreshView();
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void mnViewSelectAll_Click( object sender, EventArgs e )
-        {
-            SelectAll();
-        }
         /// <summary>
         /// 
         /// </summary>
@@ -346,7 +356,6 @@ namespace universal_tagger
         #endregion
 
         #region Utility Functions
-       
         public void RemoveTags(TagLib.TagTypes type)
         {
             foreach (ListViewItem item in listView.SelectedItems)
@@ -454,19 +463,6 @@ namespace universal_tagger
                 }
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        public void ChangeViewType()
-        {
-            this.listView.BeginUpdate();
-            foreach(TagListViewItem item in this.listView.Items)
-            {
-                item.Type = this.type;
-                item.RefreshItem();
-            }
-            this.listView.EndUpdate();
-        }
         #endregion
         /// <summary>
         /// handle key press
@@ -477,7 +473,7 @@ namespace universal_tagger
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ShowDefaultEditControl();
+                ShowEditControl();
             }
         }
         /// <summary>
@@ -487,21 +483,14 @@ namespace universal_tagger
         /// <param name="e"></param>
         private void listView_DoubleClick( object sender, EventArgs e )
         {
-            ShowDefaultEditControl();
+            ShowEditControl();
         }
         /// <summary>
         /// this show the default edit control based on user settings
         /// </summary>
-        private void ShowDefaultEditControl()
+        private void ShowEditControl()
         {
-            if (this.type == TagLib.TagTypes.Id3v1)
-            {
-                //OnEditV1();
-            }
-            else
-            {
-                //OnEditV2();
-            }
+            // todo
         }
         /// <summary>
         /// 
@@ -517,14 +506,6 @@ namespace universal_tagger
                 DataObject data = new DataObject( DataFormats.FileDrop, new string[1] { fi.FullName } );
                 DoDragDrop( data, DragDropEffects.Copy );
             }
-        }
-        private void mnEditV1_Click(object sender, EventArgs e)
-        {
-            //OnEditV1();
-        }
-        private void mnEditV2_Click(object sender, EventArgs e)
-        {
-            //OnEditV2();
         }
         /// <summary>
         /// 
@@ -544,14 +525,12 @@ namespace universal_tagger
         public void SwapTitleAlbum()
         {
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void mnDeleteFiles_Click(object sender, EventArgs e)
+
+        private void mnEditTag_Click(object sender, EventArgs e)
         {
-            Delete();
+            EditTagFrm frm = new EditTagFrm(this.listView, false);
+            frm.ShowDialog();
         }
+       
     }
 }

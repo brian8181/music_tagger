@@ -15,7 +15,7 @@ namespace universal_tagger
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new MainFrm());
         }
     }
 }
