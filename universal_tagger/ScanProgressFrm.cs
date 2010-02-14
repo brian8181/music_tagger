@@ -20,8 +20,18 @@ namespace universal_tagger
             this.view = view;
             
         }
+    }
 
-       
-   
+    public partial class OrgProgressFrm : universal_tagger.ProgressFrm
+    {
+        private View view = null;
+
+        public OrgProgressFrm(View view, FileInfo[] infos)
+            : base( null )
+        {
+            //InitializeComponent();
+            this.view = view;
+
+        }
     }
 }

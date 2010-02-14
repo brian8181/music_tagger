@@ -76,6 +76,8 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.mnTag2File = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnFile2Tag = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -256,6 +258,8 @@
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customizeToolStripMenuItem,
+            this.mnTag2File,
+            this.mnFile2Tag,
             this.mnOptions});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -270,7 +274,7 @@
             // mnOptions
             // 
             this.mnOptions.Name = "mnOptions";
-            this.mnOptions.Size = new System.Drawing.Size(152, 22);
+            this.mnOptions.Size = new System.Drawing.Size(171, 22);
             this.mnOptions.Text = "&Options";
             this.mnOptions.Click += new System.EventHandler(this.mnOptions_Click);
             // 
@@ -483,6 +487,20 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // mnTag2File
+            // 
+            this.mnTag2File.Name = "mnTag2File";
+            this.mnTag2File.Size = new System.Drawing.Size(171, 22);
+            this.mnTag2File.Text = "Tag --> File Name";
+            this.mnTag2File.Click += new System.EventHandler(this.mnTag2File_Click);
+            // 
+            // mnFile2Tag
+            // 
+            this.mnFile2Tag.Name = "mnFile2Tag";
+            this.mnFile2Tag.Size = new System.Drawing.Size(171, 22);
+            this.mnFile2Tag.Text = "File Name --> Tag";
+            this.mnFile2Tag.Click += new System.EventHandler(this.mnFile2Tag_Click);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,6 +577,8 @@
         private Tools.FileTreeView tree;
         private View view;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnTag2File;
+        private System.Windows.Forms.ToolStripMenuItem mnFile2Tag;
 
     }
 }

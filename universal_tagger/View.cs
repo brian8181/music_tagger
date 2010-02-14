@@ -217,7 +217,7 @@ namespace universal_tagger
 
             //frm.StartThread();
             frm.ShowDialog();
-        
+       
         }
 
         #region Thread Callback Functions

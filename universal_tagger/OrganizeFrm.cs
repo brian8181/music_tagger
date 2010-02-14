@@ -126,23 +126,24 @@ namespace universal_tagger
         /// <param name="e"></param>
         private void btnOK_Click( object sender, EventArgs e )
         {
-            //if(String.IsNullOrEmpty( txtPath.Text ) || String.IsNullOrEmpty( cmbFormat.Text ))
-            //{
-            //    MessageBox.Show(
-            //        "Please eneter a valid format and path.",
-            //        "Invalid",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Asterisk );
-            //    return;
-            //}
-            //SaveSettings();
-            //ListView.SelectedListViewItemCollection items = lv.SelectedItems;
-            //int len = items.Count;
-            //FileInfo[] infos = new FileInfo[len];
-            //for( int i = 0; i < len; ++i ) 
-            //{
-            //    infos[i] = items[i].Tag as FileInfo;
-            //}
+            if (String.IsNullOrEmpty(txtPath.Text) || String.IsNullOrEmpty(cmbFormat.Text))
+            {
+                MessageBox.Show(
+                    "Please eneter a valid format and path.",
+                    "Invalid",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Asterisk);
+                return;
+            }
+            SaveSettings();
+            ListView.SelectedListViewItemCollection items = lv.SelectedItems;
+            int len = items.Count;
+            FileInfo[] infos = new FileInfo[len];
+            for (int i = 0; i < len; ++i)
+            {
+                infos[i] = items[i].Tag as FileInfo;
+            }
+
             //Threading.OrgProgressThread thread = new Threading.OrgProgressThread( 
             //    infos, 
             //    cmbFormat.Text, 
@@ -152,6 +153,14 @@ namespace universal_tagger
             //thread.Finished += new EventHandler<EventArgs>(thread_Finished);
             //thread.ShowDialog();
             //thread.Start();
+
+            OrgProgressThread frm = new OrgProgressThread( 
+                infos,
+                cmbFormat.Text,
+                txtPath.Text,
+                ckCopy.Checked,
+                ckOverwrite.Checked);
+
            
         }
 

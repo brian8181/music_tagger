@@ -55,9 +55,28 @@ namespace universal_tagger
         private void mnOptions_Click(object sender, EventArgs e)
         {
             OptionsFrm frm = new OptionsFrm();
-            if (frm.ShowDialog() != DialogResult.OK)
-                return;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                view.RefreshView(true);
+            }
+        }
 
+        private void mnTag2File_Click(object sender, EventArgs e)
+        {
+            Tag2FileFrm frm = new Tag2FileFrm( this.view );
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
+        }
+
+        private void mnFile2Tag_Click(object sender, EventArgs e)
+        {
+            File2TagFrm frm = new File2TagFrm(this.view);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                // todo
+            }
         }
     }
       
