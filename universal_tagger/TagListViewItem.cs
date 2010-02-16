@@ -31,6 +31,11 @@ namespace universal_tagger
         {
             get { return tag; } 
         }
+
+        public FileInfo FileInfo
+        {
+            get { return fi; }
+        }
         
         /// <summary>
         /// 

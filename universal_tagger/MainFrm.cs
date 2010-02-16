@@ -43,7 +43,7 @@ namespace universal_tagger
             UpdateFileStatus();
         }
         /// <summary>
-        /// update the fiel status label
+        /// update the file status label
         /// </summary>
         private void UpdateFileStatus()
         {

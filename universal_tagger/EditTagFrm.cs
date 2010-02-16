@@ -17,7 +17,7 @@ namespace universal_tagger
         //private EditV2_OriginalCtrl original = new EditV2_OriginalCtrl();
         //private EditV2_LyricCtrl lyrics = new EditV2_LyricCtrl();
         //private EditV2_WebCtrl web = new EditV2_WebCtrl();
-        //private EditV2_PictureCtrl pictures = new EditV2_PictureCtrl();
+        private EditPictureCtrl pictures = new EditPictureCtrl();
         //private EditV2_PeopleCtrl people = new EditV2_PeopleCtrl();
         ////private EditV2_UserDefinedCtrl user = new EditV2_UserDefinedCtrl();
         //private EditV2_RatingCtrl rating = new EditV2_RatingCtrl();
@@ -56,7 +56,8 @@ namespace universal_tagger
             else
             {
                 TagListViewItem item = (TagListViewItem)lv.Items[0];
-                this.Text = String.Format( "{0}.{1}", "Edit Single", "Version 0" );
+                string file = item.FileInfo.Name;
+                this.Text = String.Format( "{0} {1}", "Edit Single: -->", file );
             }
 
             this.panel1.Controls.Add(main);
@@ -74,11 +75,11 @@ namespace universal_tagger
             //lyrics.Dock = DockStyle.Fill;
             //lyrics.Initialize( lv, multi_edit );
             //lyrics.Hide();
-            //this.panel1.Controls.Add( pictures );
-            //pictures.Location = this.panel1.Location;
-            //pictures.Dock = DockStyle.Fill;
-            //pictures.Initialize( lv, multi_edit );
-            //pictures.Hide();
+            this.panel1.Controls.Add(pictures);
+            pictures.Location = this.panel1.Location;
+            pictures.Dock = DockStyle.Fill;
+            pictures.Initialize(lv, multi_edit);
+            pictures.Hide();
             //this.panel1.Controls.Add( web );
             //web.Location = this.panel1.Location;
             //web.Dock = DockStyle.Fill;
@@ -104,16 +105,17 @@ namespace universal_tagger
             //rating.Dock = DockStyle.Fill;
             //rating.Initialize( lv, multi_edit );
             //rating.Hide();
-            //current = main;
+            current = main;
         }
+
         TagListViewItem Item
         {
             get
             {
-                //return lv.SelectedItems[main.Index] as TagListViewItem;
-                return null;
+                return lv.SelectedItems[main.Index] as TagListViewItem;
             }
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -163,12 +165,12 @@ namespace universal_tagger
         /// <param name="e"></param>
         private void taskPicture_Click( object sender, EventArgs e )
         {
-            //if(current != pictures)
-            //{
-            //    current.Hide();
-            //    pictures.Show();
-            //    current = pictures;
-            //}          
+            if (current != pictures)
+            {
+                current.Hide();
+                pictures.Show();
+                current = pictures;
+            }          
         }
         /// <summary>
         /// 
@@ -277,7 +279,7 @@ namespace universal_tagger
             //people.EditItem( item );
             //web.EditItem( item );
             //rating.EditItem( item );
-            //pictures.EditItem( item );
+            pictures.EditItem( item );
             item.RefreshItem();
         }
                
@@ -333,7 +335,7 @@ namespace universal_tagger
             //original.Previous();
             //lyrics.Previous();
             //web.Previous();
-            //pictures.Previous();
+            pictures.Previous();
             //people.Previous();
             ////user.Previous();
             //rating.Previous();
@@ -357,7 +359,7 @@ namespace universal_tagger
             //original.Next();
             //lyrics.Next();
             //web.Next();
-            //pictures.Next();
+            pictures.Next();
             //people.Next();
             ////user.Next();
             //rating.Next();

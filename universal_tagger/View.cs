@@ -530,6 +530,7 @@ namespace universal_tagger
 
         private void mnEditTag_Click(object sender, EventArgs e)
         {
+            // BKP TODO ( find the correct item!!)
             EditTagFrm frm = new EditTagFrm(this.listView, false);
             frm.ShowDialog();
         }
