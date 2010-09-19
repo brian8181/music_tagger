@@ -55,7 +55,7 @@ namespace universal_tagger
             }
             else
             {
-                TagListViewItem item = (TagListViewItem)lv.Items[0];
+                TagListViewItem item = (TagListViewItem)lv.SelectedItems[0];
                 string file = item.FileInfo.Name;
                 this.Text = String.Format( "{0} {1}", "Edit Single: -->", file );
             }
@@ -319,7 +319,7 @@ namespace universal_tagger
 
         private void taskPrevious_Click(object sender, EventArgs e)
         {
-            if (Item.Dirty == false)
+            if (Item.Dirty == true)
             {
                 DialogResult result = MessageBox.Show("Do you want to apply any chnages to current item?",
                                                         "Apply Chnages?", MessageBoxButtons.YesNo);
@@ -344,7 +344,7 @@ namespace universal_tagger
         private void taskNext_Click(object sender, EventArgs e)
         {
 
-            if (Item.Dirty == false)
+            if (Item.Dirty == true)
             {
                 DialogResult result = MessageBox.Show("Do you want to apply any chnages to current item?",
                                                         "Apply Chnages?", MessageBoxButtons.YesNo);

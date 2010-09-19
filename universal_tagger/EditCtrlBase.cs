@@ -18,8 +18,6 @@ namespace universal_tagger
         protected bool multi_edit = false;
         protected TagLib.File tag_file = null;
         protected TagLib.Tag tag;
-        //protected TagLib.Id3v1.Tag v1;
-        //protected TagLib.Id3v2.Tag v2;
         protected ListView lv = null;
         private int idx = -1;
         /// <summary>
@@ -71,11 +69,9 @@ namespace universal_tagger
             if (lv.SelectedItems.Count > (Index + 1))
             {
                 FileInfo fi = (FileInfo)lv.SelectedItems[++idx].Tag;
-                //  lblFile.Text = fi.FullName;
+                //lblFile.Text = fi.FullName;
                 tag_file = TagLib.File.Create(fi.FullName);
                 tag = tag_file.Tag;
-                //v2 = (TagLib.Id3v2.Tag)tag_file.GetTag(TagLib.TagTypes.Id3v2);
-                //v1 = (TagLib.Id3v1.Tag)tag_file.GetTag(TagLib.TagTypes.Id3v1);
                 Fill();
             }
         }
@@ -87,11 +83,9 @@ namespace universal_tagger
             if (lv.SelectedItems.Count > Index && Index > 0)
             {
                 FileInfo fi = (FileInfo)lv.SelectedItems[--idx].Tag;
-                //  lblFile.Text = fi.FullName;
+                //lblFile.Text = fi.FullName;
                 tag_file = TagLib.File.Create(fi.FullName);
                 tag = tag_file.Tag;
-                //v2 = (TagLib.Id3v2.Tag)tag_file.GetTag(TagLib.TagTypes.Id3v2);
-                //v1 = (TagLib.Id3v1.Tag)tag_file.GetTag(TagLib.TagTypes.Id3v1);
                 Fill();
             }
         }

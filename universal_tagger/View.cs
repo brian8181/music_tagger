@@ -530,9 +530,15 @@ namespace universal_tagger
 
         private void mnEditTag_Click(object sender, EventArgs e)
         {
-            // BKP TODO ( find the correct item!!)
-            EditTagFrm frm = new EditTagFrm(this.listView, false);
-            frm.ShowDialog();
+            if (this.ListView.SelectedItems.Count > 0)
+            {
+                EditTagFrm dlg = new EditTagFrm(this.listView, false);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // todo
+                }
+            }
+
         }
        
     }

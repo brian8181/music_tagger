@@ -1,3 +1,4 @@
 * remove all picture
 * auto number tracks
 * right click to close picture window ( or size it some how? )
+* capitalizer
